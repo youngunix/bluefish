@@ -1225,27 +1225,54 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 				}
 				xmlFree(name);
 			}
-		}
-		if (values && values[0]) {
-			valuecontext = new_context(bfparser->st, 8, ">\"=' \t\n\r", NULL, FALSE, FALSE, FALSE);;
+			if (values && values[0]) {
+				valuecontext = new_context(bfparser->st, 8, ">\"=' \t\n\r", NULL, FALSE, FALSE, FALSE);;
 
-			pattern = g_strconcat(attribute_name, "[ \t\n\r]*=[ \t\n\r]*", NULL);
-			attribmatchnum = add_pattern_to_scanning_table(bfparser->st,
-									pattern,TRUE,TRUE,tagattributecontext, &bfparser->ldb);
-			pattern_set_runtime_properties(bfparser->st, attribmatchnum,
-									 highlight ? highlight : ih_attribhighlight,
-									 valuecontext,FALSE,FALSE,0,FALSE,FALSE);
-		} else {
-			attribmatchnum = add_pattern_to_scanning_table(bfparser->st, attribute_name, FALSE, TRUE, tagattributecontext, &bfparser->ldb);
-			pattern_set_runtime_properties(bfparser->st, attribmatchnum,highlight ? highlight : ih_attribhighlight, 0, FALSE, FALSE,0, FALSE, FALSE);
+				pattern = g_strconcat(attribute_name, "[ \t\n\r]*=[ \t\n\r]*", NULL);
+				attribmatchnum = add_pattern_to_scanning_table(bfparser->st,
+										pattern,TRUE,TRUE,tagattributecontext, &bfparser->ldb);
+				pattern_set_runtime_properties(bfparser->st, attribmatchnum,
+										 highlight ? highlight : ih_attribhighlight,
+										 valuecontext,FALSE,FALSE,0,FALSE,FALSE);
+			} else {
+				attribmatchnum = add_pattern_to_scanning_table(bfparser->st, attribute_name, FALSE, TRUE, tagattributecontext, &bfparser->ldb);
+				pattern_set_runtime_properties(bfparser->st, attribmatchnum,highlight ? highlight : ih_attribhighlight, 0, FALSE, FALSE,0, FALSE, FALSE);
+			}
+			if (reference) {
+				match_set_reference(bfparser->st, attribmatchnum, reference);
+			}
+			autocomp_string = g_strconcat(attribute_name, "=\"\"", NULL);
+			match_add_autocomp_item(bfparser->st, attribmatchnum, autocomp_string,NULL,1,1,NULL,0,0);
+			g_free(autocomp_string);
+			match_autocomplete_reference(bfparser->st, attribmatchnum, tagattributecontext);
+
+			if (values) {
+				values_arr = g_strsplit(values, ",", -1);
+				if (values_arr) {
+					gchar **tmp2;
+
+					tmp2 = values_arr;
+					while (*tmp2) {
+						gchar *var;
+						/*g_print("add attribute value %s\n",*tmp2);*/
+						attribute_add_value(bfparser, *tmp2, valuecontext);
+						var = g_strconcat("'", *tmp2, "'", NULL);
+						attribute_add_value(bfparser, var, valuecontext);
+						var = g_strconcat("\"", *tmp2, "\"", NULL);
+						attribute_add_value(bfparser, var, valuecontext);
+						tmp2++;
+					}
+					valmatchnum = add_pattern_to_scanning_table(bfparser->st,"(&quot;[^&quot;]*&quot;|'[^']*')",TRUE,TRUE,valuecontext, &bfparser->ldb);
+					pattern_set_runtime_properties(bfparser->st, valmatchnum,"string", -1, FALSE, FALSE,0, FALSE, FALSE);
+				}
+			}
+
+			if (auto_attribute_id) {
+				DBG_PARSING("process_scanning_attribute, insert %s into hash for attribute-auto-re-use\n", auto_attribute_id);
+				g_hash_table_insert(bfparser->patterns, auto_attribute_id,
+							GINT_TO_POINTER((gint) attribmatchnum));
+			}
 		}
-		if (reference) {
-			match_set_reference(bfparser->st, attribmatchnum, reference);
-		}
-		autocomp_string = g_strconcat(attribute_name, "=\"\"", NULL);
-		match_add_autocomp_item(bfparser->st, attribmatchnum, autocomp_string,NULL,1,1,NULL,0,0);
-		g_free(autocomp_string);
-		match_autocomplete_reference(bfparser->st, attribmatchnum, tagattributecontext);
 		if (id) {
 			if (g_hash_table_lookup(bfparser->patterns, id) != NULL) {
 				gchar *dbstring = ldb_stack_string(&bfparser->ldb);
@@ -1254,31 +1281,6 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 			} else {
 				g_hash_table_insert(bfparser->patterns, g_strdup(id),GINT_TO_POINTER((gint) attribmatchnum));
 			}
-		}
-		if (values) {
-			values_arr = g_strsplit(values, ",", -1);
-			if (values_arr) {
-				gchar **tmp2;
-
-				tmp2 = values_arr;
-				while (*tmp2) {
-					gchar *var;
-					/*g_print("add attribute value %s\n",*tmp2);*/
-					attribute_add_value(bfparser, *tmp2, valuecontext);
-					var = g_strconcat("'", *tmp2, "'", NULL);
-					attribute_add_value(bfparser, var, valuecontext);
-					var = g_strconcat("\"", *tmp2, "\"", NULL);
-					attribute_add_value(bfparser, var, valuecontext);
-					tmp2++;
-				}
-				valmatchnum = add_pattern_to_scanning_table(bfparser->st,"(&quot;[^&quot;]*&quot;|'[^']*')",TRUE,TRUE,valuecontext, &bfparser->ldb);
-				pattern_set_runtime_properties(bfparser->st, valmatchnum,"string", -1, FALSE, FALSE,0, FALSE, FALSE);
-			}
-		}
-		if (auto_attribute_id) {
-			DBG_PARSING("process_scanning_attribute, insert %s into hash for attribute-auto-re-use\n", auto_attribute_id);
-			g_hash_table_insert(bfparser->patterns, auto_attribute_id,
-						GINT_TO_POINTER((gint) attribmatchnum));
 		}
 	}
 	g_strfreev(values_arr);
