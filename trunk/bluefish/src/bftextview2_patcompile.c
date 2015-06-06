@@ -715,13 +715,6 @@ match_autocomplete_reference(Tscantable * st, guint16 matchnum, guint16 context)
 		g_array_index(st->contexts, Tcontext, context).has_tagclose_from_blockstack = 1;
 	}
 
-/*	if (g_array_index(st->matches, Tpattern, matchnum).reference && !g_array_index(st->matches, Tpattern, matchnum).is_regex) {
-		if (!g_array_index(st->contexts, Tcontext, context).reference) {
-			DBG_PATCOMPILE("create hashtable for context %d\n",context);
-			g_array_index(st->contexts, Tcontext, context).reference = g_hash_table_new(g_str_hash,g_str_equal);
-		}
-		g_hash_table_insert(g_array_index(st->contexts, Tcontext, context).reference,g_array_index(st->matches, Tpattern, matchnum).pattern,g_array_index(st->matches, Tpattern, matchnum).reference);
-	}*/
 	if (g_array_index(st->matches, Tpattern, matchnum).autocomp_items) {
 		GSList *tmpslist = g_array_index(st->matches, Tpattern, matchnum).autocomp_items;
 		GList *list = NULL;
@@ -747,17 +740,20 @@ match_autocomplete_reference(Tscantable * st, guint16 matchnum, guint16 context)
 				}
 			}
 #ifdef DEVELOPMENT
-			gint hashpat = GPOINTER_TO_INT(g_hash_table_lookup(g_array_index(st->contexts, Tcontext, context).patternhash,pac->autocomplete_string));
-			if (hashpat && !already_handled) {
-				g_print("autocompletion item %s is already in the hash table for pattern %d, now handling pattern %d?!\n", pac->autocomplete_string, hashpat, pattern_id);
+			if (g_strcmp0(pac->autocomplete_string, g_array_index(st->matches, Tpattern, matchnum).pattern)!=0) {
+				gint hashpat = GPOINTER_TO_INT(g_hash_table_lookup(g_array_index(st->contexts, Tcontext, context).patternhash,pac->autocomplete_string));
+				if (hashpat && !already_handled) {
+					g_print("autocompletion item %s is already in the context %d hash table for pattern %d, now handling pattern %d that has %d autocomplete entries?!\n", pac->autocomplete_string, context, hashpat, pattern_id, g_slist_length(g_array_index(st->matches, Tpattern, matchnum).autocomp_items));
+				}
 			}
 #endif
 			if (!already_handled) {
 				list = g_list_prepend(list, pac->autocomplete_string);
 				/* we only need to add an autocomplete string to the hash table if the pattern has a
 				reference text, or backup_cursor is set, or trigger_new_autocomp_popup, or there
-				is a condition */
-				if (has_reference || pac->condition != 0 || pac->autocomplete_backup_cursor!=0 || pac->trigger_new_autocomp_popup!=0) {
+				is a condition AND if the autocompletion patern is different than the pattern itself (which is
+				added to the hash table earlier in this function) */
+				if (g_strcmp0(pac->autocomplete_string, g_array_index(st->matches, Tpattern, matchnum).pattern)!=0 && (has_reference || pac->condition != 0 || pac->autocomplete_backup_cursor!=0 || pac->trigger_new_autocomp_popup!=0)) {
 					DBG_AUTOCOMP("match_autocomplete_reference, enter autocompletion item %s in hash table\n",pac->autocomplete_string);
 					g_hash_table_insert(g_array_index(st->contexts, Tcontext, context).patternhash,
 									pac->autocomplete_string, GINT_TO_POINTER(pattern_id));
