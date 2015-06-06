@@ -20,8 +20,8 @@
 -->
 
 <!DOCTYPE bflang [
-	<!ENTITY i18n "dir,lang">
-	<!ENTITY univ "accesskey,class,contenteditable,contextmenu,draggable,dropzone,hidden,id,spellcheck,style=c.html.attrib.style,tabindex,title,translate">
+	<!ENTITY i18n "">
+	<!ENTITY univ "accesskey,class,contenteditable,contextmenudir,draggable,dropzone,hidden,id,lang,spellcheck,style=c.html.attrib.style,tabindex,title,translate">
 	<!ENTITY evnt "onclick,ondblclick,ondrag,ondragend,ondragenter,ondragleave,ondragover,ondragstart,ondrop,onmousedown,onmouseup,onmouseover,onmousemove,onmouseout,onkeypress,onkeydown,onkeyup,onmousewheel,onscroll,onwheel,oncopy,oncut,onpaste">
 	<!ENTITY css-selectors SYSTEM "css-selectors.bfinc">
 	<!ENTITY css-rules SYSTEM "css-rules.bfinc">

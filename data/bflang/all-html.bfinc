@@ -168,7 +168,7 @@ The rtl keyword indicates that the contents of the element are explicitly direct
 The auto keyword indicates that the contents of the element are explicitly directionally isolated text, but that the direction is to be determined programmatically using the contents of the element.</reference>
 		</attribute>
 </tag>
-<tag name="head" case_insens="1" sgml_shorttag="1" attributes="profile,&i18n;" highlight="html-tag" >
+<tag name="head" case_insens="1" sgml_shorttag="1" attributes="&univ;" highlight="html-tag" >
 	<autocomplete append="&gt;&#10;&#10;&lt;/head&gt;" backup_cursor="8" />
 	<reference>Defines the header information about the document</reference>
 	<attribute name="profile"><reference>Specifies a URL to a document that contains a set of rules. The rules can be read by browsers to clearly understand the information in the &lt;meta&gt; tag's content attribute. This is no longer used in HTML5.</reference></attribute>
@@ -176,19 +176,28 @@ The auto keyword indicates that the contents of the element are explicitly direc
 <tag name="frameset" case_insens="1" sgml_shorttag="1" attributes="&univ;,cols,onload,onunload,rows">
 	<reference>Defines a frameset</reference>
 </tag>
-<tag name="base" highlight="html-tag" case_insens="1" sgml_shorttag="1" no_close="1" attributes="href,target" attribhighlight="html-attribute" >
-	<autocomplete append="&gt; &lt;/base&gt;" />
+<tag name="base" highlight="html-tag" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;" attribhighlight="html-attribute" >
+	<autocomplete append="href=&quot;&quot; target=&quot;&quot; /&gt;" backup_cursor="14"/>
 	<reference>Defines a default address or a default target for all links on a page</reference>
+	<attribute name="href"><reference>Specifies an URL</reference></attribute>
+	<attribute name="target"><reference>Specifies a target for hyperlinks and forms.
+	Use _blank, _parent, _self, _top or any framename.</reference></attribute>
 </tag>
-<tag name="meta" highlight="html-tag" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&i18n;,content,http-equiv,name,scheme" attribhighlight="html-attribute"  attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1">
+<tag name="meta" highlight="html-tag" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,content,scheme" attribhighlight="html-attribute"  attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1">
 	<autocomplete append=" /&gt;" backup_cursor="2"/>
 	<reference>Defines metadata about an HTML document</reference>
+	<attribute name="http-equiv" values="content-type,default-style,refresh"><reference>Provides an HTTP header for the information/value of the content attribute</reference></attribute>
+	<attribute name="name" values="application-name,author,description,generator,keywords"><reference>Specifies a name for the metadata</reference></attribute>
+	<attribute name="charset"><reference>HTML5 has a new attribute, charset, which makes it easier to define charset:
+    HTML 4.01: &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+    HTML5: &lt;meta charset=&quot;UTF-8&quot;&gt;
+</reference></attribute>
 </tag>
-<tag name="title" highlight="html-tag" case_insens="1" sgml_shorttag="1" attributes="&i18n;" attribhighlight="html-attribute">
+<tag name="title" highlight="html-tag" case_insens="1" sgml_shorttag="1" attributes="&univ;" attribhighlight="html-attribute">
 	<reference>Defines the title of a document</reference>
 </tag>
 
-<tag id="t.html.script" name="script" highlight="html-tag" case_insens="1" sgml_shorttag="1" attributes="charset,defer,event,language,for,src,type" attribhighlight="html-attribute" >
+<tag id="t.html.script" name="script" highlight="html-tag" case_insens="1" sgml_shorttag="1" attributes="&univ;,charset,defer,event,language,for,src,type" attribhighlight="html-attribute" >
 	<autocomplete append=" type=&quot;text/javascript&quot; &gt;&#10;&#10;&lt;/script&gt;" backup_cursor="10" />
 	<context symbols=" ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;." commentid_line="cm.cpplinecomment"  commentid_block="cm.cblockcomment" default_spellcheck="0">
 		<element pattern="(" id="e.html.js.lparen" starts_block="1" highlight="js-brackets" block_name="Javascript Parentheses block"/>
@@ -217,33 +226,33 @@ The auto keyword indicates that the contents of the element are explicitly direc
 	</context>
 </tag>
 
-<tag name="link" highlight="html-tag" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&i18n;&evnt;,charset,href,hreflang,media,rel,rev,target,type" attribhighlight="html-attribute"  attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1" >
+<tag name="link" highlight="html-tag" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;&evnt;,charset,href,hreflang,media,rel,rev,target,type" attribhighlight="html-attribute"  attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1" >
 	<autocomplete append=" /&gt;" backup_cursor="2"/>
 	<reference>Defines the relationship between a document and an external resource </reference>
 </tag>
 
-<tag name="body" highlight="html-tag" case_insens="1" sgml_shorttag="1"   attributes="alink,background,bgcolor,link,onload,onunload,text,vlink,&univ;,&i18n;" attribhighlight="html-attribute">
+<tag name="body" highlight="html-tag" case_insens="1" sgml_shorttag="1"   attributes="alink,background,bgcolor,link,onload,onunload,text,vlink,&univ;" attribhighlight="html-attribute">
 	<autocomplete append="&gt;&#10;&#10;&lt;/body&gt;" backup_cursor="8" />
 	<reference>Defines the document's body</reference>
 </tag>
 </group>
 <group highlight="html-reference-external-tag" attribhighlight="html-attribute" attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1">
 	<autocomplete enable="1" />
-	<tag name="a" case_insens="1" sgml_shorttag="1" attributes="charset,coords,href,hreflang,name,onblur,onfocus,rel,rev,shape,target,type,&univ;,&i18n;,&evnt;" >
+	<tag name="a" case_insens="1" sgml_shorttag="1" attributes="charset,coords,href,hreflang,name,onblur,onfocus,rel,rev,shape,target,type,&univ;,&evnt;" >
 		<autocomplete append=" href=&#34;&#34; &gt;" />
 		<reference>The a tag defines an anchor, but it is usually referred to as a link or a hyperlink. An anchor can be used in two ways:
 1. To create a link to another document, by using the href attribute &lt;a href=&quot;http://example/&quot;&gt;text to click on&lt;/a&gt;
 2. To create a bookmark inside a document, by using the name attribute &lt;a name=&quot;foo&quot;&gt;&lt;/a&gt;
 </reference>
 	</tag>
-	<tag name="img" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&i18n;,&evnt;,align,alt,border,height,hspace,ismap,longdesc,name,src,usemap,vspace,width" >
+	<tag name="img" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&evnt;,align,alt,border,height,hspace,ismap,longdesc,name,src,usemap,vspace,width" >
 		<autocomplete append=" src=&#34;&#34; alt=&#34;&#34; /&gt;" backup_cursor="11"  class="self_close_singleton_tags" />
 		<autocomplete append=" src=&#34;&#34; alt=&#34;&#34;&gt;" backup_cursor="9" notclass="self_close_singleton_tags" />
 		<reference>The img tag inserts an image into a document.
 It is mostly used as &lt;img src=&quot;example.jpg&quot; width=&quot;100&quot; height=&quot;100&quot; alt=&quot;text to show when image isnot loaded&quot;/&gt;
 		</reference>
 	</tag>
-	<tag name="object" case_insens="1" sgml_shorttag="1" attributes="align,archive,border,classid,codebase,codetype,data,declare,height,hspace,name,standby,tabindex,type,usemap,vspace,width,&univ;,&i18n;,&evnt;">
+	<tag name="object" case_insens="1" sgml_shorttag="1" attributes="align,archive,border,classid,codebase,codetype,data,declare,height,hspace,name,standby,tabindex,type,usemap,vspace,width,&univ;,&evnt;">
 		<reference>Defines an embedded object</reference>
 	</tag>
 	<tag name="param" case_insens="1" sgml_shorttag="1" no_close="1" attributes="id,name,type,value,valuetype" >
@@ -253,28 +262,28 @@ It is mostly used as &lt;img src=&quot;example.jpg&quot; width=&quot;100&quot; h
 
 <group highlight="html-tag" attribhighlight="html-attribute" attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1">
 	<autocomplete enable="1" />
-	<tag name="abbr" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="abbr" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines an abbreviation</reference>
 	</tag>
-	<tag name="acronym" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="acronym" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines an acronym</reference>
 	</tag>
-	<tag name="address" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="address" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines an address</reference>
 	</tag>
-	<tag name="area" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&i18n;,&evnt;,alt,coords,href,nohref,onblur,onfocus,shape,target">
+	<tag name="area" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&evnt;,alt,coords,href,nohref,onblur,onfocus,shape,target">
 		<reference>Defines a click-able area inside an image-map</reference>
 	</tag>
-	<tag name="b" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="b" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Render content in bold face</reference>
 	</tag>
-	<tag name="bdo" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;">
+	<tag name="bdo" case_insens="1" sgml_shorttag="1" attributes="&univ;">
 		<reference>Defines/overrides the text direction (right-to-left or left-to-right)</reference>
 	</tag>
-	<tag name="big" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;">
+	<tag name="big" case_insens="1" sgml_shorttag="1" attributes="&univ;">
 		<reference>Renders content as bigger text</reference>
 	</tag>
-	<tag name="blockquote" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,cite">
+	<tag name="blockquote" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,cite">
 		<reference>Defines a long quotation</reference>
 	</tag>
 	<tag name="br" case_insens="1" sgml_shorttag="1" no_close="1"  attributes="&univ;,clear">
@@ -282,46 +291,46 @@ It is mostly used as &lt;img src=&quot;example.jpg&quot; width=&quot;100&quot; h
 		<autocomplete append="&gt;" notclass="self_close_singleton_tags" />
 		<reference>Defines a single line break</reference>
 	</tag>
-	<tag name="button" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,disabled,name,onblur,onfocus,type,value">
+	<tag name="button" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,disabled,name,onblur,onfocus,type,value">
 		<reference>Defines a push button</reference>
 	</tag>
-	<tag name="cite" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="cite" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a citation</reference>
 	</tag>
-	<tag name="code" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="code" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines computer code text</reference>
 	</tag>
-	<tag name="col" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&i18n;,&evnt;,align,char,charoff,span,valign,width">
+	<tag name="col" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&evnt;,align,char,charoff,span,valign,width">
 		<reference>Defines attribute values for one or more columns in a table</reference>
 	</tag>
-	<tag name="colgroup" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,align,char,charoff,span,valign,width">
+	<tag name="colgroup" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,align,char,charoff,span,valign,width">
 		<reference>Defines a column group in a table for formatting</reference>
 	</tag>
-	<tag name="dd" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="dd" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a definition list definition</reference>
 	</tag>
-	<tag name="del" case_insens="1" sgml_shorttag="1"  attributes="&univ;,&i18n;,&evnt;,cite,datetime">
+	<tag name="del" case_insens="1" sgml_shorttag="1"  attributes="&univ;,&evnt;,cite,datetime">
 		<reference>Defines deleted text</reference>
 	</tag>
-	<tag name="dfn" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="dfn" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a definition term</reference>
 	</tag>
-	<tag name="div" block_name="DIV block" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,align">
+	<tag name="div" block_name="DIV block" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,align">
 		<reference>Defines a block section in a document - it provides no visual change by itself</reference>
 	</tag>
-	<tag name="dl" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,compact">
+	<tag name="dl" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,compact">
 		<reference>Defines a definition list</reference>
 	</tag>
-	<tag name="dt" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="dt" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a definition list term</reference>
 	</tag>
-	<tag name="em" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="em" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines emphasized text</reference>
 	</tag>
-	<tag name="h1" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,align">
+	<tag name="h1" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,align">
 		<reference>Defines a HTML heading</reference>
 	</tag>
-	<tag name="h2" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,align">
+	<tag name="h2" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,align">
 		<reference>Defines a HTML heading</reference>
 	</tag>
 	<tag name="h3" case_insens="1" sgml_shorttag="1" attributes_id="html.h" 
@@ -346,10 +355,10 @@ The auto keyword indicates that the contents of the element are explicitly direc
 	</tag>
 
 
-<!--	<tag name="h5" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,align">
+<!--	<tag name="h5" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,align">
 		<reference>Defines a HTML heading</reference>
 	</tag>
-	<tag name="h6" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,align">
+	<tag name="h6" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,align">
 		<reference>Defines a HTML heading</reference>
 	</tag>
 -->
@@ -468,165 +477,165 @@ The tabindex attribute, if specified, must have a value that is a valid integer.
 		<autocomplete append="&gt;" notclass="self_close_singleton_tags" />
 		<reference>Defines a horizontal line</reference>
 	</tag>
-	<tag name="i" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="i" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines italic text</reference>
 	</tag>
-	<tag name="ins" case_insens="1" sgml_shorttag="1"  attributes="&univ;,&i18n;,&evnt;,cite,datetime">
+	<tag name="ins" case_insens="1" sgml_shorttag="1"  attributes="&univ;,&evnt;,cite,datetime">
 		<reference>Defines inserted text</reference>
 	</tag>
-	<tag name="kbd" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="kbd" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines keyboard text</reference>
 	</tag>
-	<tag name="li" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,type,value">
+	<tag name="li" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,type,value">
 		<reference>Defines a list item</reference>
 	</tag>
-	<tag name="map" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,name">
+	<tag name="map" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,name">
 		<reference>Defines an image-map with clickable areas</reference>
 	</tag>
-	<tag name="noscript" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="noscript" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines alternate content for users that have scripts disabled</reference>
 	</tag>
-	<tag name="ol" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,compact,start,type">
+	<tag name="ol" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,compact,start,type">
 		<reference>Defines an ordered list</reference>
 	</tag>
-	<tag name="p" block_name="Paragraph block" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,align">
+	<tag name="p" block_name="Paragraph block" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,align">
 		<reference>Defines a paragraph</reference>
 	</tag>
-	<tag name="pre" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,width">
+	<tag name="pre" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,width">
 		<reference>Defines preformatted text</reference>
 	</tag>
-	<tag name="q" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,cite">
+	<tag name="q" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,cite">
 		<reference>Defines a short quotation</reference>
 	</tag>
-	<tag name="samp" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="samp" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines sample computer code</reference>
 	</tag>
-	<tag name="small" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="small" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Renders as smaller text</reference>
 	</tag>
-	<tag name="span" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="span" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines an inline section of the document - it provides no visual change by itself</reference>
 	</tag>
-	<tag name="strong" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="strong" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines strong emphasized text</reference>
 	</tag>
-	<tag name="sub" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="sub" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines subscripted text</reference>
 	</tag>
-	<tag name="sup" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="sup" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines superscripted text</reference>
 	</tag>
-	<tag name="tt" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="tt" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines teletype text</reference>
 	</tag>
-	<tag name="ul" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,compact,type">
+	<tag name="ul" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,compact,type">
 		<reference>Defines an unordered list</reference>
 	</tag>
-	<!--<tag name="var" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<!--<tag name="var" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a variable part of a text</reference>
 	</tag>-->
-	<tag name="section"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="section"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a section in the document</reference>
 	</tag>
-	<tag name="summary"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="summary"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a visible heading for a &lt;details&gt; element</reference>
 	</tag>
-	<tag name="nav"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="nav"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines navigation links in the document</reference>
 	</tag>
-	<tag name="article"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="article"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines an article in the document</reference>
 	</tag>
-	<tag name="aside"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="aside"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines content aside from the page content</reference>
 	</tag>
-	<tag name="bdi"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="bdi"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a part of text that might be formatted in a different direction from other text</reference>
 	</tag>
-	<tag name="details"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="details"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines additional details that the user can view or hide</reference>
 	</tag>
-	<tag name="dialog"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="dialog"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a dialog box or window</reference>
 	</tag>
-	<tag name="main"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="main"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines the main content of a document
 <b>Categories:</b> flow
 <b>Parents:</b> flow
 <b>Children:</b> flow
 <b>Interface:</b> HTMLElement</reference>
 	</tag>
-	<tag name="menuitem"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="menuitem"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a command/menu item that the user can invoke from a popup menu</reference>
 	</tag>
-	<tag name="meter"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="meter"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a scalar measurement within a known range (a gauge)</reference>
 	</tag>
-	<tag name="hgroup"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="hgroup"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference></reference>
 	</tag>
-	<tag name="header"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="header"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a header for the document or a section</reference>
 	</tag>
-	<tag name="footer"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="footer"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a footer for the document or a section</reference>
 	</tag>
-	<tag name="figcaption"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="figcaption"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a caption for a &lt;figure&gt; element</reference>
 	</tag>
-	<tag name="figure"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="figure"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines self-contained content, like illustrations, diagrams, photos, code listings, etc.</reference>
 	</tag>
-	<tag name="mark"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="mark"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines marked or highlighted text</reference>
 	</tag>
-	<tag name="ruby"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="ruby"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a ruby annotation (for East Asian typography)</reference>
 	</tag>
-	<tag name="rp"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="rp"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines what to show in browsers that do not support ruby annotations</reference>
 	</tag>
-	<tag name="rt"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="rt"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines an explanation/pronunciation of characters (for East Asian typography)</reference>
 	</tag>
-	<tag name="time"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,datetime">
+	<tag name="time"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,datetime">
 		<reference>Defines a date/time</reference>
 	</tag>
-	<tag name="video"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,width,height,src,poster,autoplay,controls,loop,mute,preload">
+	<tag name="video"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,width,height,src,poster,autoplay,controls,loop,mute,preload">
 		<reference></reference>
 	</tag>
-	<tag name="wbr"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="wbr"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a possible line-break</reference>
 	</tag>
-	<tag name="datalist"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="datalist"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines pre-defined options for input controls (a form element)</reference>
 	</tag>
-	<tag name="keygen"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="keygen"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a key-pair generator field (for forms)</reference>
 	</tag>
-	<tag name="output"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="output"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines the result of a calculation</reference>
 	</tag>
-	<tag name="audio"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,autoplay,controls,loop,mute,preload,src">
+	<tag name="audio"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,autoplay,controls,loop,mute,preload,src">
 		<reference></reference>
 	</tag>
-	<tag name="canvas"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,width,height">
+	<tag name="canvas"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,width,height">
 		<reference></reference>
 	</tag>
-	<tag name="track"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="track"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference></reference>
 	</tag>
-	<tag name="source"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="source"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference></reference>
 	</tag>
-	<tag name="progress"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,value,max">
+	<tag name="progress"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,value,max">
 		<reference>Defines the progress of a task
 <b>Categories:</b>flow; phrasing; labelable
 <b>Parents:</b>phrasing
 <b>Children:</b>phrasing*
 <b>Interface:</b> HTMLProgressElement</reference>
 	</tag>
-	<tag name=""  case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name=""  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference></reference>
 	</tag>
 
@@ -747,28 +756,28 @@ The tabindex attribute, if specified, must have a value that is a valid integer.
 	<tag name="basefont" case_insens="1" sgml_shorttag="1" attributes="id,color,face,size">
 		<reference>Defines the default font face, size and color for the text in a document (<b>deprecated</b>)</reference>
 	</tag>
-	<tag name="center" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="center" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Center text (<b>deprecated</b>). Use style=&quot;text-align: center;&quot; instead.</reference>
 	</tag>
-	<tag name="dir" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,compact">
+	<tag name="dir" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,compact">
 		<reference>Defines a list of directory titles (<b>deprecated</b>)</reference>
 	</tag>
-	<tag name="font" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,color,face,size">
+	<tag name="font" case_insens="1" sgml_shorttag="1" attributes="&univ;,color,face,size">
 		<reference>Defines font face, color and size for text (<b>deprecated</b>)</reference>
 	</tag>
 	<tag name="isindex" case_insens="1" sgml_shorttag="1" attributes="class,dir,id,lang,prompt,style,title">
 		<reference>Defines an input control</reference>
 	</tag>
-	<tag name="menu" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,compact">
+	<tag name="menu" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,compact">
 		<reference>Defines a list of menu choices (<b>deprecated</b>)</reference>
 	</tag>
-	<tag name="s" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="s" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Render strike-through style text (<b>deprecated</b>)</reference>
 	</tag>
-	<tag name="strike" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="strike" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Render strike-through style text (<b>deprecated</b>)</reference>
 	</tag>
-	<tag name="u" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="u" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines underlined text (<b>deprecated</b>)</reference>
 	</tag>
 </group>
@@ -778,7 +787,7 @@ The tabindex attribute, if specified, must have a value that is a valid integer.
 	<tag name="frame" case_insens="1" sgml_shorttag="1" attributes="&univ;,frameborder,longdesc,marginwidth,marginheight,name,noresize,scrolling,src">
 		<reference>Defines a particular window (frame) within a frameset</reference>
 	</tag>
-	<tag name="noframes" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="noframes" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines content for browsers not able to handle/show frames</reference>
 	</tag>
 	<tag name="iframe" case_insens="1" sgml_shorttag="1" attributes="&univ;,align,frameborder,height,longdesc,marginwidth,marginheight,name,scrolling,src,width">
@@ -788,10 +797,10 @@ The tabindex attribute, if specified, must have a value that is a valid integer.
 
 <group highlight="html-form-tag" attribhighlight="html-attribute" attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1">
 	<autocomplete enable="1" />
-	<tag name="fieldset" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;">
+	<tag name="fieldset" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a border around elements in a form</reference>
 	</tag>
-	<tag name="form" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,accept,accept-charset,action,enctype,method,name,onreset,onsubmit,target">
+	<tag name="form" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,accept,accept-charset,action,enctype,method,name,onreset,onsubmit,target">
 		<reference>Defines an HTML form for user input. The action attribute defines where a submit will be sent to. The form tag usually surrounds other form elements such as input, textarea and buttons.
 A simple example is:
 &lt;form action=&quot;form_action.php&quot; method=&quot;get&quot;&gt;
@@ -801,7 +810,7 @@ Last name: &lt;input type=&quot;text&quot; name=&quot;lname&quot; /&gt;&lt;br /&
 &lt;/form&gt;
 		</reference>
 	</tag>
-	<tag name="input" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&i18n;,&evnt;,accept,align,alt,checked,disabled,ismap,maxlength,name,onblur,onchange,onfocus,onselect,readonly,size,src,type,usemap,value" >
+	<tag name="input" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&evnt;,accept,align,alt,checked,disabled,ismap,maxlength,name,onblur,onchange,onfocus,onselect,readonly,size,src,type,usemap,value" >
 		<autocomplete append=" /&gt;" backup_cursor="2" />
 		<reference>Defines an input control for a form. The input field has many forms depending on the type attribute.
 &lt;input type=&quot;button&quot; name=&quot;foo&quot; value=&quot;title&quot; /&gt;
@@ -816,19 +825,19 @@ Last name: &lt;input type=&quot;text&quot; name=&quot;lname&quot; /&gt;&lt;br /&
 &lt;input type=&quot;text&quot; name=&quot;foo&quot; value=&quot;title&quot; maxlenght=&quot;50&quot; /&gt;
 		</reference>
 	</tag>
-	<tag name="label" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,for,onblur,onfocus">
+	<tag name="label" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,for,onblur,onfocus">
 		<reference>Defines a label for an input element</reference>
 	</tag>
-	<tag name="legend" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,align">
+	<tag name="legend" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,align">
 		<reference>Defines a caption for a fieldset element</reference>
 	</tag>
-	<tag name="optgroup" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,disabled,label">
+	<tag name="optgroup" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,disabled,label">
 		<reference>	Defines a group of related options in a select list</reference>
 	</tag>
-	<tag name="option" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,disabled,label,selected,value">
+	<tag name="option" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,disabled,label,selected,value">
 		<reference>Defines an option in a select list</reference>
 	</tag>
-	<tag name="select" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,disabled,multiple,name,onblur,onchange,onfocus,size">
+	<tag name="select" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,disabled,multiple,name,onblur,onchange,onfocus,size">
 		<reference>Defines a select list (drop-down list)
 &lt;select name=&quot;favourite&quot;&gt;
   &lt;option value=&quot;vi&quot;&gt;Vi&lt;/option&gt;
@@ -838,7 +847,7 @@ Last name: &lt;input type=&quot;text&quot; name=&quot;lname&quot; /&gt;&lt;br /&
 &lt;/select&gt;
 </reference>
 	</tag>
-	<tag name="textarea" case_insens="1" sgml_shorttag="1" attributes="&univ;,&i18n;,&evnt;,cols,disabled,name,onblur,onchange,onfocus,onselect,readonly,rows">
+	<tag name="textarea" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,cols,disabled,name,onblur,onchange,onfocus,onselect,readonly,rows">
 		<reference>Defines a multi-line text input control
 &lt;textarea rows=&quot;2&quot; cols=&quot;20&quot;&gt;
 Initial text here.
@@ -849,29 +858,29 @@ Initial text here.
 
 <group highlight="html-table-tag" attribhighlight="html-attribute" attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1">
 	<autocomplete enable="1" />
-	<tag name="table" case_insens="1" sgml_shorttag="1" attributes="align,border,bgcolor,cellpadding,cellspacing,frame,rules,summary,width,&univ;,&i18n;,&evnt;" >
+	<tag name="table" case_insens="1" sgml_shorttag="1" attributes="align,border,bgcolor,cellpadding,cellspacing,frame,rules,summary,width,&univ;,&evnt;" >
 		<autocomplete append=" summary=&quot;&quot; &gt;&#10;&#10;&lt;/table&gt;" backup_cursor="9" />
 		<reference>Defines a table</reference>
 	</tag>
-	<tag name="caption" case_insens="1" sgml_shorttag="1" attributes="align,&univ;,&i18n;,&evnt;" >
+	<tag name="caption" case_insens="1" sgml_shorttag="1" attributes="align,&univ;,&evnt;" >
 		<reference>Defines a table caption</reference>
 	</tag>
-	<tag name="td" case_insens="1" sgml_shorttag="1" attributes="abbr,align,axis,bgcolor,char,charoff,colspan,headers,height,nowrap,rowspan,scope,valign,width,&univ;,&i18n;,&evnt;" >
+	<tag name="td" case_insens="1" sgml_shorttag="1" attributes="abbr,align,axis,bgcolor,char,charoff,colspan,headers,height,nowrap,rowspan,scope,valign,width,&univ;,&evnt;" >
 		<reference>Defines a cell in a table</reference>
 	</tag>
-	<tag name="th" case_insens="1" sgml_shorttag="1" attributes="abbr,align,axis,bgcolor,char,charoff,colspan,headers,height,nowrap,rowspan,scope,valign,width,&univ;,&i18n;,&evnt;" >
+	<tag name="th" case_insens="1" sgml_shorttag="1" attributes="abbr,align,axis,bgcolor,char,charoff,colspan,headers,height,nowrap,rowspan,scope,valign,width,&univ;,&evnt;" >
 		<reference>Defines a header cell in a table</reference>
 	</tag>
-	<tag name="tr" case_insens="1" sgml_shorttag="1" attributes="align,bgcolor,char,charoff,valign,&univ;,&i18n;,&evnt;" >
+	<tag name="tr" case_insens="1" sgml_shorttag="1" attributes="align,bgcolor,char,charoff,valign,&univ;,&evnt;" >
 		<reference>Defines a row in a table</reference>
 	</tag>
-	<tag name="tbody" case_insens="1" sgml_shorttag="1" attributes="align,char,charoff,valign,&univ;,&i18n;,&evnt;" >
+	<tag name="tbody" case_insens="1" sgml_shorttag="1" attributes="align,char,charoff,valign,&univ;,&evnt;" >
 		<reference>Groups the body content in a table</reference>
 	</tag>
-	<tag name="tfoot" case_insens="1" sgml_shorttag="1" attributes="align,char,charoff,valign,&univ;,&i18n;,&evnt;" >
+	<tag name="tfoot" case_insens="1" sgml_shorttag="1" attributes="align,char,charoff,valign,&univ;,&evnt;" >
 		<reference>Groups the footer content in a table</reference>
 	</tag>
-	<tag name="thead" case_insens="1" sgml_shorttag="1" attributes="align,char,charoff,valign,&univ;,&i18n;,&evnt;" >
+	<tag name="thead" case_insens="1" sgml_shorttag="1" attributes="align,char,charoff,valign,&univ;,&evnt;" >
 		<reference>Groups the header content in a table</reference>
 	</tag>
 </group>
