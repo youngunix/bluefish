@@ -640,7 +640,7 @@ compile_keyword_to_DFA(Tscantable * st, const gchar * keyword, guint16 matchnum,
 /*
  * symbols can be free'ed
  * contexthighlight is directly stored in Tcontext
- * 
+ *
  *
  */
 gint16
@@ -697,9 +697,9 @@ match_autocomplete_reference(Tscantable * st, guint16 matchnum, guint16 context)
 {
 	gint pattern_id = matchnum;
 	gboolean has_reference;
-	
+
 	has_reference = (g_array_index(st->matches, Tpattern, matchnum).reference!=NULL);
-	
+
 	if (!g_array_index(st->contexts, Tcontext, context).patternhash) {
 		g_array_index(st->contexts, Tcontext, context).patternhash =
 			g_hash_table_new(g_str_hash, g_str_equal);
@@ -746,14 +746,19 @@ match_autocomplete_reference(Tscantable * st, guint16 matchnum, guint16 context)
 					already_handled = TRUE;
 				}
 			}
-
+#ifdef DEVELOPMENT
+			gint hashpat = GPOINTER_TO_INT(g_hash_table_lookup(g_array_index(st->contexts, Tcontext, context).patternhash,pac->autocomplete_string));
+			if (hashpat && !already_handled) {
+				g_print("autocompletion item %s is already in the hash table for pattern %d, now handling pattern %d?!\n", pac->autocomplete_string, hashpat, pattern_id);
+			}
+#endif
 			if (!already_handled) {
 				list = g_list_prepend(list, pac->autocomplete_string);
-				/* we only need to add an autocomplete string to the hash table if the pattern has a 
+				/* we only need to add an autocomplete string to the hash table if the pattern has a
 				reference text, or backup_cursor is set, or trigger_new_autocomp_popup, or there
 				is a condition */
 				if (has_reference || pac->condition != 0 || pac->autocomplete_backup_cursor!=0 || pac->trigger_new_autocomp_popup!=0) {
-					/*g_print("enter key %s in hash table=\n",pac->autocomplete_string);*/
+					DBG_AUTOCOMP("match_autocomplete_reference, enter autocompletion item %s in hash table\n",pac->autocomplete_string);
 					g_hash_table_insert(g_array_index(st->contexts, Tcontext, context).patternhash,
 									pac->autocomplete_string, GINT_TO_POINTER(pattern_id));
 				}
@@ -768,7 +773,7 @@ match_autocomplete_reference(Tscantable * st, guint16 matchnum, guint16 context)
  * refname should not be freed, it is set in Tpattern_condition
  *
  */
-static guint16 
+static guint16
 add_condition(Tscantable * st, const gchar *refname, gint relation, gint mode)
 {
 	guint16 condnum = st->conditions->len;
