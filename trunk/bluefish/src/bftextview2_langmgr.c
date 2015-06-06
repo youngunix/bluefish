@@ -1086,7 +1086,6 @@ add_attribute_to_tag(Tbflangparsing * bfparser, const gchar *attrstring, gint co
 		if (attrmatch) {
 			DBG_PARSING("add_attribute_to_tag, auto re-use attribute %s\n",attrstring);
 			compile_existing_match(bfparser->st, attrmatch, contexttag, &bfparser->ldb);
-			match_autocomplete_reference(bfparser->st, attrmatch, contexttag);
 			g_free(auto_attribute_id);
 			return;
 		}
@@ -1096,6 +1095,7 @@ add_attribute_to_tag(Tbflangparsing * bfparser, const gchar *attrstring, gint co
 		attrmatch = add_pattern_to_scanning_table(bfparser->st, attrstring, FALSE, TRUE, contexttag, &bfparser->ldb);
 		pattern_set_runtime_properties(bfparser->st, attrmatch,attribhighlight, 0, FALSE, FALSE,0, FALSE, FALSE);
 		match_add_autocomp_item(bfparser->st, attrmatch, NULL,attrib_autocomplete_append,attrib_autocomplete_backup_cursor, 0,NULL,0,0);
+		g_print("add_attribute_to_tag:%d, call match_autocomplete_reference(%d,%d)\n",__LINE__,attrmatch, contexttag);
 		match_autocomplete_reference(bfparser->st, attrmatch, contexttag);
 	} else {
 		/* contains a =, so split the attribute, and the context */
@@ -1113,6 +1113,7 @@ add_attribute_to_tag(Tbflangparsing * bfparser, const gchar *attrstring, gint co
 		g_free(tmp);
 		pattern_set_runtime_properties(bfparser->st, attrmatch,attribhighlight,startscontext,FALSE,FALSE,0,FALSE,FALSE);
 		match_add_autocomp_item(bfparser->st, attrmatch, splitted[0],attrib_autocomplete_append,attrib_autocomplete_backup_cursor, 0,NULL,0,0);
+		g_print("add_attribute_to_tag:%d, call match_autocomplete_reference(%d,%d)\n",__LINE__,attrmatch, contexttag);
 		match_autocomplete_reference(bfparser->st, attrmatch, contexttag);
 		g_strfreev(splitted);
 	}
@@ -1133,6 +1134,7 @@ attribute_add_value(Tbflangparsing * bfparser, gchar *string, guint16 valueconte
 	valmatchnum = add_pattern_to_scanning_table(bfparser->st,string,FALSE,TRUE,valuecontext, &bfparser->ldb);
 	pattern_set_runtime_properties(bfparser->st, valmatchnum,"string", -1, FALSE, FALSE,0, FALSE, FALSE);
 	match_add_autocomp_item(bfparser->st, valmatchnum, string,NULL,0,0,NULL,0,0);
+	g_print("attribute_add_value:%d, call match_autocomplete_reference(%d,%d)\n",__LINE__,valmatchnum, valuecontext);
 	match_autocomplete_reference(bfparser->st, valmatchnum, valuecontext);
 }
 
@@ -1148,7 +1150,6 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 	gboolean enabled, is_empty = xmlTextReaderIsEmptyElement(reader);
 	gint depth = xmlTextReaderDepth(reader);
 	gchar *auto_attribute_id=NULL;
-	g_print("depth before parse_attributes is %d, is_empty=%d\n",depth,is_empty);
 	Tattrib attribs[] = {{"name", &attribute_name, attribtype_string},
 					{"values", &values, attribtype_string},
 					{"id", &id, attribtype_string},
@@ -1172,7 +1173,7 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 	}
 
 	ldb_stack_push(&bfparser->ldb, id?id:attribute_name);
-	DBG_PARSING("process_scanning_attribute, name=%s, id=%s, idref=%s\n",attribute_name,id,idref);
+	g_print("process_scanning_attribute, name=%s, id=%s, idref=%s\n",attribute_name,id,idref);
 	if ((idref && idref[0]) || bfparser->auto_re_use_attributes) {
 		if (idref) {
 			attribmatchnum = GPOINTER_TO_INT(g_hash_table_lookup(bfparser->patterns, idref));
@@ -1182,13 +1183,12 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 			auto_attribute_id = g_strconcat("__auto__", attribute_name, NULL);
 			attribmatchnum = GPOINTER_TO_INT(g_hash_table_lookup(bfparser->patterns, auto_attribute_id));
 			if (attribmatchnum) {
-				DBG_PARSING("process_scanning_attribute, auto re-use attribute %s\n",attribute_name);
+				g_print("process_scanning_attribute, auto re-use attribute %s\n",attribute_name);
 			}
 		}
 
 		if (attribmatchnum) {
 			compile_existing_match(bfparser->st, attribmatchnum, tagattributecontext, &bfparser->ldb);
-			match_autocomplete_reference(bfparser->st, attribmatchnum, tagattributecontext);
 		} else if (idref!=NULL) {
 			g_print("Error in language file, tag attribute with id %s does not exist (but is refferred to with an idref)\n", idref);
 		}
@@ -1244,6 +1244,7 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 			autocomp_string = g_strconcat(attribute_name, "=\"\"", NULL);
 			match_add_autocomp_item(bfparser->st, attribmatchnum, autocomp_string,NULL,1,1,NULL,0,0);
 			g_free(autocomp_string);
+			g_print("process_scanning_attribute:%d, call match_autocomplete_reference(%d,%d)\n",__LINE__,attribmatchnum, tagattributecontext);
 			match_autocomplete_reference(bfparser->st, attribmatchnum, tagattributecontext);
 
 			if (values) {
@@ -1384,8 +1385,9 @@ process_scanning_tag(xmlTextReaderPtr reader, Tbflangparsing * bfparser, guint16
 				g_print("Error in language file, tag with id %s does not exist\n", idref);
 			}
 			DBG_PARSING("process_scanning_tag, lookup tag with id %s returned matchnum %d\n", id, matchnum);
-			if (matchnum)
+			if (matchnum) {
 				compile_existing_match(bfparser->st, matchnum, context, &bfparser->ldb);
+			}
 		} else if (tag && tag[0]) {
 			gchar *startinnertagmatch_id=NULL;
 			guint16 startinnertagmatch = 0, endtagmatch;
@@ -1447,6 +1449,7 @@ process_scanning_tag(xmlTextReaderPtr reader, Tbflangparsing * bfparser, guint16
 					if (bfparser->autoclose_tags) {
 						match_add_autocomp_item(bfparser->st, tmpnum, NULL, NULL, 0, 0,NULL,0,0);
 					}
+					g_print("process_scanning_tag:%d, call match_autocomplete_reference(%d,%d)\n",__LINE__,tmpnum, contexttag);
 					match_autocomplete_reference(bfparser->st, tmpnum, contexttag);
 				}
 
@@ -1490,6 +1493,7 @@ process_scanning_tag(xmlTextReaderPtr reader, Tbflangparsing * bfparser, guint16
 					match_add_autocomp_item(bfparser->st, startinnertagmatch, NULL, NULL, 0, 0,NULL,0,0);
 				}
 			}
+			g_print("process_scanning_tag:%d, call match_autocomplete_reference(%d,%d)\n",__LINE__,startinnertagmatch, contexttag);
 			match_autocomplete_reference(bfparser->st, startinnertagmatch, contexttag);
 			g_free(tagpattern);
 
@@ -1553,6 +1557,7 @@ process_scanning_tag(xmlTextReaderPtr reader, Tbflangparsing * bfparser, guint16
 				match_set_reference(bfparser->st, matchnum, reference);
 				xmlFree(reference);
 			}
+			g_print("process_scanning_tag:%d, call match_autocomplete_reference(%d,%d)\n",__LINE__,matchnum, context);
 			match_autocomplete_reference(bfparser->st, matchnum, context);
 			if (!no_close) {
 				tmp = g_strconcat("</", tag, ">", NULL);
@@ -1565,6 +1570,7 @@ process_scanning_tag(xmlTextReaderPtr reader, Tbflangparsing * bfparser, guint16
 									FALSE,TRUE,matchnum,NULL,NULL, TRUE);
 /*				g_print("context %d: matchnum %d is ended by endtagmatch %d while working on id %s\n",innercontext,matchnum, endtagmatch, id);*/
 				match_add_autocomp_item(bfparser->st, endtagmatch, NULL, NULL, 0, 0,NULL,0,0);
+				g_print("process_scanning_tag:%d, call match_autocomplete_reference(%d,%d)\n",__LINE__,endtagmatch, innercontext);
 				match_autocomplete_reference(bfparser->st, endtagmatch, innercontext);
 				if (g_hash_table_lookup(bfparser->patterns, tmp)) {
 					gchar *dbstring = ldb_stack_string(&bfparser->ldb);
