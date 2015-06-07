@@ -260,28 +260,61 @@ It is mostly used as &lt;img src=&quot;example.jpg&quot; width=&quot;100&quot; h
 	</tag>
 </group>
 
-<group highlight="html-tag" attribhighlight="html-attribute" attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1">
-	<autocomplete enable="1" />
-	<tag name="abbr" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
-		<reference>Defines an abbreviation</reference>
-	</tag>
+<group class="deprecated_in_html5" highlight="html-tag" attribhighlight="html-attribute" attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1">
+
 	<tag name="acronym" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines an acronym</reference>
 	</tag>
-	<tag name="address" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
+	<tag name="big" case_insens="1" sgml_shorttag="1" attributes="&univ;">
+		<reference>Renders content as bigger text</reference>
+	</tag>
+
+
+</group>
+
+<group highlight="html-tag" attribhighlight="html-attribute" attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1">
+	<autocomplete enable="1" />
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+below this line we have tags that re-use the attributes_id="t.html.attribs.univ_and_global" defined for tag abbr
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<tag name="abbr" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_id="t.html.attribs.univ_and_global">
+		<reference>Defines an abbreviation</reference>
+	</tag>
+	<tag name="b" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
+		<reference>Render content in bold face</reference>
+	</tag>
+	<tag name="bdo" case_insens="1" sgml_shorttag="1" attributes="&univ;" attributes_idref="t.html.attribs.univ_and_global">
+		<reference>Defines/overrides the text direction (right-to-left or left-to-right)</reference>
+	</tag>
+	<tag name="cite" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
+		<reference>Defines a citation</reference>
+	</tag>
+	<tag name="code" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
+		<reference>Defines computer code text</reference>
+	</tag>
+	<tag name="dd" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
+		<reference>Defines a definition list definition</reference>
+	</tag>
+	<tag name="dfn" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
+		<reference>Defines a definition term</reference>
+	</tag>
+	<tag name="dt" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
+		<reference>Defines a definition list term</reference>
+	</tag>
+	<tag name="em" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
+		<reference>Defines emphasized text</reference>
+	</tag>
+
+
+<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+above this line we have tags that re-use the attributes_id="t.html.attribs.univ_and_global" 
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+	<tag name="address" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
 		<reference>Defines an address</reference>
 	</tag>
 	<tag name="area" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&evnt;,alt,coords,href,nohref,onblur,onfocus,shape,target">
 		<reference>Defines a click-able area inside an image-map</reference>
-	</tag>
-	<tag name="b" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
-		<reference>Render content in bold face</reference>
-	</tag>
-	<tag name="bdo" case_insens="1" sgml_shorttag="1" attributes="&univ;">
-		<reference>Defines/overrides the text direction (right-to-left or left-to-right)</reference>
-	</tag>
-	<tag name="big" case_insens="1" sgml_shorttag="1" attributes="&univ;">
-		<reference>Renders content as bigger text</reference>
 	</tag>
 	<tag name="blockquote" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,cite">
 		<reference>Defines a long quotation</reference>
@@ -294,38 +327,22 @@ It is mostly used as &lt;img src=&quot;example.jpg&quot; width=&quot;100&quot; h
 	<tag name="button" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,disabled,name,onblur,onfocus,type,value">
 		<reference>Defines a push button</reference>
 	</tag>
-	<tag name="cite" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
-		<reference>Defines a citation</reference>
-	</tag>
-	<tag name="code" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
-		<reference>Defines computer code text</reference>
-	</tag>
+
 	<tag name="col" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&evnt;,align,char,charoff,span,valign,width">
 		<reference>Defines attribute values for one or more columns in a table</reference>
 	</tag>
 	<tag name="colgroup" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,align,char,charoff,span,valign,width">
 		<reference>Defines a column group in a table for formatting</reference>
 	</tag>
-	<tag name="dd" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
-		<reference>Defines a definition list definition</reference>
-	</tag>
+
 	<tag name="del" case_insens="1" sgml_shorttag="1"  attributes="&univ;,&evnt;,cite,datetime">
 		<reference>Defines deleted text</reference>
-	</tag>
-	<tag name="dfn" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
-		<reference>Defines a definition term</reference>
 	</tag>
 	<tag name="div" block_name="DIV block" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,align">
 		<reference>Defines a block section in a document - it provides no visual change by itself</reference>
 	</tag>
 	<tag name="dl" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,compact">
 		<reference>Defines a definition list</reference>
-	</tag>
-	<tag name="dt" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
-		<reference>Defines a definition list term</reference>
-	</tag>
-	<tag name="em" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
-		<reference>Defines emphasized text</reference>
 	</tag>
 	<tag name="h1" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,align">
 		<reference>Defines a HTML heading</reference>
