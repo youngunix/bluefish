@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		html.bflang2 $Revision$
 
-		Copyright (C) 2008-2012 Olivier Sessink
+		Copyright (C) 2008-2015 Olivier Sessink
 
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -20,7 +20,6 @@
 -->
 
 <!DOCTYPE bflang [
-	<!ENTITY i18n "">
 	<!ENTITY univ "accesskey,class,contenteditable,contextmenudir,draggable,dropzone,hidden,id,lang,spellcheck,style=c.html.attrib.style,tabindex,title,translate">
 	<!ENTITY evnt "onclick,ondblclick,ondrag,ondragend,ondragenter,ondragleave,ondragover,ondragstart,ondrop,onmousedown,onmouseup,onmouseover,onmousemove,onmouseout,onkeypress,onkeydown,onkeyup,onmousewheel,onscroll,onwheel,oncopy,oncut,onpaste">
 	<!ENTITY css-selectors SYSTEM "css-selectors.bfinc">
