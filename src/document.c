@@ -1807,11 +1807,15 @@ buffer_find_encoding(gchar * buffer, gsize buflen, gchar ** encoding, const gcha
 
 	/* <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	   OR  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=iso-8859-1" />
+	   or in html5 <meta charset="iso-8859-1" />
 	 */
-	tmpencoding =
-		encoding_by_regex(buffer,
+	tmpencoding = encoding_by_regex(buffer, "<meta[ \t\n\r\f]*charset[ \t\n\r\f]*=[ \t\n\r\f]*\"([a-z0-9_-]+)\"", 1);
+	if (!tmpencoding) {
+		tmpencoding =
+			encoding_by_regex(buffer,
 						  "<meta[ \t\n\r\f]http-equiv[ \t\n\r\f]*=[ \t\n\r\f]*\"content-type\"[ \t\n\r\f]+content[ \t\n\r\f]*=[ \t\n\r\f]*\"[^;\"]+;[ \t\n\r\f]*charset=([a-z0-9_-]+)\"[ \t\n\r\f]*/?>",
 						  1);
+	}
 	if (!tmpencoding) {
 		tmpencoding = encoding_by_regex(buffer, "encoding=\"([a-z0-9_-]+)\"", 1);
 	}
