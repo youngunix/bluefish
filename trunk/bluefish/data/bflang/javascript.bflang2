@@ -54,18 +54,18 @@
 </properties>
 
 <definition>
-	<context symbols=" ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;." commentid_line="cm.cpplinecomment"  commentid_block="cm.cblockcomment">
+	<context symbols=" ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;." commentid_line="cm.cpplinecomment"  commentid_block="cm.cblockcomment" dump_dfa_chars="a=1; " dump_dfa_run="1">
 		<element pattern="(" id="e.html.js.lparen" starts_block="1" highlight="js-brackets" />
 		<element pattern=")" highlight="js-brackets" ends_block="1" blockstartelement="e.html.js.lparen" />
 		<element pattern="{" id="e.html.js.lbrace" starts_block="1" highlight="js-brackets" block_name="Curly brackets block"/>
 		<element pattern="}" highlight="js-brackets" ends_block="1" blockstartelement="e.html.js.lbrace" />
 		<element pattern="[" id="e.html.js.lbracket" starts_block="1" highlight="js-brackets" />
 		<element pattern="]" highlight="js-brackets" ends_block="1" blockstartelement="e.html.js.lbracket" />
-		&all-javascript;
+<!--		&all-javascript;
 		<group class="JQuery">
 			&JQuery;
 		</group>
-		<element id="e.bcomment" pattern="/*" starts_block="1" highlight="js-comment" block_name="C style comment">
+-->		<element id="e.bcomment" pattern="/*" starts_block="1" highlight="js-comment" block_name="C style comment">
 			<context symbols="*/&#9;&#10;&#13; " highlight="js-comment">
 				<element pattern="*/" ends_block="1" blockstartelement="e.bcomment" highlight="js-comment" ends_context="1" />
 			</context>

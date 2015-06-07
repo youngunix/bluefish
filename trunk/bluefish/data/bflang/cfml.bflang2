@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		cfml.bflang2 $$Revision$
 
-		Copyright (C) 2008-2011 Olivier Sessink
+		Copyright (C) 2008-2015 Olivier Sessink
 
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -19,9 +19,8 @@
 		along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <!DOCTYPE bflang [
-	<!ENTITY i18n "dir,lang">
-	<!ENTITY univ "class,id,style,title">
-	<!ENTITY evnt "onload,onclick,ondblclick,onmousedown,onmouseup,onmouseover,onmousemove,onmouseout,onkeypress,onkeydown,onkeyup">
+	<!ENTITY univ "accesskey,class,contenteditable,contextmenudir,draggable,dropzone,hidden,id,lang,spellcheck,style=c.html.attrib.style,tabindex,title,translate">
+	<!ENTITY evnt "onclick,ondblclick,ondrag,ondragend,ondragenter,ondragleave,ondragover,ondragstart,ondrop,onmousedown,onmouseup,onmouseover,onmousemove,onmouseout,onkeypress,onkeydown,onkeyup,onmousewheel,onscroll,onwheel,oncopy,oncut,onpaste">
 	<!ENTITY css-selectors SYSTEM "css-selectors.bfinc">
 	<!ENTITY css-rules SYSTEM "css-rules.bfinc">
 	<!ENTITY all-javascript SYSTEM "all-javascript.bfinc">
@@ -91,6 +90,7 @@
 	<comment id="cm.cpplinecomment" type="line" start="//" />
 	<comment id="cm.scriptcomment" type="line" start="#" />
 	<default_spellcheck enabled="1" spell_decode_entities="1" />
+	<auto_re_use_attributes enabled="1" />
 </properties>
 <definition>
 <context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;-/" commentid_block="cm.htmlcomment" commentid_line="none">
