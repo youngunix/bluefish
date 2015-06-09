@@ -63,7 +63,7 @@ bflang_bflang2_files = \
 	wordpress.bflang2 \
 	xhtml.bflang2 \
 	xml.bflang2 \
-	xstl.bflang2
+	xslt.bflang2
 
 bflangdir = $(pkgdatadir)/bflang
 bflang_DATA = \
