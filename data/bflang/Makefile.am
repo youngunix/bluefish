@@ -31,12 +31,15 @@ bflang_bflang2_files = \
 	css.bflang2 \
 	d.bflang2 \
 	diff.bflang2 \
+	go.bflang2 \
 	highlighter.bflang2 \
 	html.bflang2 \
 	html5.bflang2 \
 	java.bflang2 \
 	javascript.bflang2 \
+	json.bflang2 \
 	jsp.bflang2 \
+	latex.bflang2 \
 	lua.bflang2 \
 	mediawiki.bflang2 \
 	nsis.bflang2 \
@@ -59,7 +62,8 @@ bflang_bflang2_files = \
 	vbscript.bflang2 \
 	wordpress.bflang2 \
 	xhtml.bflang2 \
-	xml.bflang2
+	xml.bflang2 \
+	xstl.bflang2
 
 bflangdir = $(pkgdatadir)/bflang
 bflang_DATA = \
