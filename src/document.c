@@ -2370,13 +2370,15 @@ update_encoding_meta_in_file(Tdocument * doc, gchar * encoding)
 {
 	if (!encoding)
 		return;
-	GRegex *regex;
+	GRegex *regex1, *regex2, *foundregex=NULL;
 	GMatchInfo *match_info;
 	gchar *type, *xhtmlend, *fulltext, *replacestring = NULL;
 	gint so, eo, cso, ceo;
 	const gchar *langname, *userval;
 	gboolean is_xhtml = 0;
-	/* first find if there is a meta encoding tag already */
+	/* first find if there is an encoding in the document already, if so, make sure it points to the right encoding
+		if not, detect if we should do it html4, xhtml or html5 style, and insert the correct encoding
+	 */
 
 	langname = bluefish_text_view_get_lang_name(BLUEFISH_TEXT_VIEW(doc->view));
 	userval = lookup_user_option(langname, "is_XHTML");
@@ -2385,12 +2387,28 @@ update_encoding_meta_in_file(Tdocument * doc, gchar * encoding)
 	}
 
 	fulltext = doc_get_chars(doc, 0, -1);
-	regex =
+	/*
+	encoding_by_regex(buffer, "<meta[ \t\n\r\f]*charset[ \t\n\r\f]*=[ \t\n\r\f]*\"([a-z0-9_-]+)\"", 1);
+	
+	*/
+	regex1 =
 		g_regex_new
-		("<meta[ \t\n]http-equiv[ \t\n]*=[ \t\n]*\"content-type\"[ \t\n]+content[ \t\n]*=[ \t\n]*\"([^;]*);[ \t\n]*charset=[a-z0-9-]*\"[ \t\n]*(/?)>",
+		("<meta[ \t\n\r\f]http-equiv[ \t\n\r\f]*=[ \t\n\r\f]*\"content-type\"[ \t\n\r\f]+content[ \t\n\r\f]*=[ \t\n\r\f]*\"([^;]*);[ \t\n\r\f]*charset=[a-z0-9-]*\"[ \t\n\r\f]*(/?)>",
 		 G_REGEX_MULTILINE | G_REGEX_CASELESS, 0, NULL);
-	if (g_regex_match(regex, fulltext, 0, &match_info)) {
-		DEBUG_MSG("we have a match, replace the encoding\n");
+	if (g_regex_match(regex1, fulltext, 0, &match_info)) {
+		foundregex = regex1;
+	} else {
+		/* no html4 or xhtml <meta encoding tag, try html5, re-use match_info variable */
+		g_match_info_free(match_info);
+		regex2 = g_regex_new
+			("<meta[ \t\n\r\f]*charset[ \t\n\r\f]*=[ \t\n\r\f]*\"([a-z0-9_-]+)\"[ \t\n\r\f]*/?>" ,
+			 G_REGEX_MULTILINE | G_REGEX_CASELESS, 0, NULL);
+		if (g_regex_match(regex2, fulltext, 0, &match_info)) {
+			foundregex = regex2;
+		}
+	}
+	if (foundregex) {
+		DEBUG_MSG("we have a match, see if the encoding needs change, and if so replace the encoding\n");
 		if (g_match_info_get_match_count(match_info) > 2) {
 			type = g_match_info_fetch(match_info, 1);
 			xhtmlend = g_match_info_fetch(match_info, 2);
@@ -2398,24 +2416,38 @@ update_encoding_meta_in_file(Tdocument * doc, gchar * encoding)
 			type = g_strdup("text/html");
 			xhtmlend = g_strdup(is_xhtml ? "/" : "");
 		}
-		replacestring =
-			g_strconcat("<meta http-equiv=\"content-type\" content=\"", type, "; charset=", encoding,
+		if (foundregex == regex1) {
+			replacestring =
+				g_strconcat("<meta http-equiv=\"content-type\" content=\"", type, "; charset=", encoding,
 						"\" ", xhtmlend, ">", NULL);
+		} else {
+			replacestring =
+				g_strconcat("<meta charset=\"", encoding,"\">", NULL);
+		}
 		g_free(type);
 		g_free(xhtmlend);
+		
 	} else {
+		GRegex *regex3;
 		DEBUG_MSG("no match, add the encoding\n");
-		/* no <meta encoding tag yet */
-		g_regex_unref(regex);
+		/* no <meta encoding tag yet, re-use match_info variable */
 		g_match_info_free(match_info);
-		regex = g_regex_new("<head>", G_REGEX_CASELESS, 0, NULL);
-		g_regex_match(regex, fulltext, 0, &match_info);
+		/* check if we need html5 or html4 */		
+		regex3 = g_regex_new("<head>", G_REGEX_CASELESS, 0, NULL);
+		g_regex_match(regex3, fulltext, 0, &match_info);
 		if (g_match_info_matches(match_info)) {
-			replacestring =
-				g_strconcat("<head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=",
+			if (g_regex_match_simple ("<!DOCTYPE[ \t\n\r\f]*html>",fulltext,G_REGEX_CASELESS,0)) {
+				replacestring =
+					g_strconcat("<head>\n<meta charset=\"", encoding, "\">", NULL);
+			} else {
+				replacestring =
+					g_strconcat("<head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=",
 							encoding, "\" ", (is_xhtml ? "/>" : ">"), NULL);
+			}
 		}
+		g_regex_unref(regex3);
 	}
+
 	if (replacestring) {
 		g_match_info_fetch_pos(match_info, 0, &so, &eo);
 		cso = utf8_byteoffset_to_charsoffset(fulltext, so);
@@ -2425,7 +2457,8 @@ update_encoding_meta_in_file(Tdocument * doc, gchar * encoding)
 		g_free(replacestring);
 		g_match_info_free(match_info);
 	}
-	g_regex_unref(regex);
+	g_regex_unref(regex1);
+	g_regex_unref(regex2);
 	g_free(fulltext);
 }
 
@@ -3427,9 +3460,9 @@ doc_activate(Tdocument * doc)
 	DEBUG_MSG("doc_activate, started for %p\n", doc);
 	if (doc == BFWIN(doc->bfwin)->last_activated_doc || doc->close_doc) {
 		/* DO enable the scanner, because it is disabled in notebook_changed(), but if the last document is also the new document it needs to be re-enabled again */
-		DEBUG_MSG("doc_activate, enable the scanner for doc %p\n", doc);
+		DEBUG_MSG("doc_activate, ONLY enable the scanner for doc %p\n", doc);
 		BLUEFISH_TEXT_VIEW(doc->view)->enable_scanner = TRUE;
-		DEBUG_MSG("doc_activate, not doing anything, doc=%p, last_avtivated_doc=%p, close_doc=%d\n", doc,
+		g_print("doc_activate, not doing anything, doc=%p, last_avtivated_doc=%p, close_doc=%d\n", doc,
 				  BFWIN(doc->bfwin)->last_activated_doc, doc->close_doc);
 		return;
 	}
@@ -3492,6 +3525,7 @@ doc_activate(Tdocument * doc)
 			BLUEFISH_TEXT_VIEW(doc->view)->enable_scanner = TRUE;
 			bftextview2_schedule_scanning(BLUEFISH_TEXT_VIEW(doc->view));
 		}
+		g_print("doc_activate, call gtk_widget_show(doc->view) for doc %p\n",doc);
 		gtk_widget_show(doc->view);	/* This might be the first time this document is activated. */
 	}
 	BFWIN(doc->bfwin)->last_activated_doc = doc;
@@ -3534,7 +3568,7 @@ doc_activate(Tdocument * doc)
 	}
 	if (doc->highlightstate)
 		BLUEFISH_TEXT_VIEW(doc->view)->enable_scanner = TRUE;
-	DEBUG_MSG("doc_activate, doc=%p, about to grab focus\n", doc);
+	g_print("doc_activate, doc=%p, about to grab focus\n", doc);
 	gtk_widget_grab_focus(GTK_WIDGET(doc->view));
 
 	DEBUG_MSG("doc_activate, doc=%p, finished\n", doc);
@@ -3544,6 +3578,7 @@ void
 doc_force_activate(Tdocument * doc)
 {
 	BFWIN(doc->bfwin)->last_activated_doc = NULL;
+	g_print("doc_force_activate, called for %p\n",doc);
 	doc_activate(doc);
 }
 
