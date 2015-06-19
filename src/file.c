@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * file.c - file operations based on GIO
  *
- * Copyright (C) 2002-2014 Olivier Sessink
+ * Copyright (C) 2002-2015 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -643,6 +643,7 @@ fileintodoc_finished_idle_lcb(gpointer data)
 		}
 	}
 	if (fid->bfwin->current_document == fid->doc) {
+		DEBUG_MSG("fileintodoc_finished_idle_lcb, call doc_force_activate(%p)\n",fid->doc);
 		doc_force_activate(fid->doc);
 	}
 	if (fid->buffer) {
@@ -769,22 +770,10 @@ static gboolean
 file2doc_goto_idle_cb(gpointer data)
 {
 	Tfile2doc *f2d = data;
+
 	DEBUG_MSG("file2doc_goto_idle_cb, goto_line=%d, goto_offset=%d, cursor_offset=%d\n", f2d->doc->goto_line,
 			  f2d->doc->goto_offset, f2d->doc->cursor_offset);
-	if (f2d->doc->goto_line >= 0) {
-		DEBUG_MSG("file2doc_goto_idle_cb, goto_line=%d\n", f2d->doc->goto_line);
-		doc_select_line(f2d->doc, f2d->doc->goto_line, TRUE);
-	} else {
-		if (f2d->doc->goto_offset >= 0) {
-			DEBUG_MSG("file2doc_goto_idle_cb, goto_offset=%d, align_center=%d\n", f2d->doc->goto_offset,
-					  f2d->doc->align_center);
-			doc_select_line_by_offset(f2d->doc, f2d->doc->goto_offset, TRUE, f2d->doc->align_center);
-		}
-		if (f2d->doc->cursor_offset >= 0) {
-			DEBUG_MSG("file2doc_goto_idle_cb, cursor_offset=%d\n", f2d->doc->cursor_offset);
-			doc_set_cursor_position(f2d->doc, f2d->doc->cursor_offset);
-		}
-	}
+	doc_scroll(f2d->doc, f2d->doc->goto_line, f2d->doc->goto_offset, f2d->doc->cursor_offset);
 	f2d->doc->goto_line = -1;
 	f2d->doc->cursor_offset = -1;
 	f2d->doc->goto_offset = -1;
@@ -864,15 +853,17 @@ file2doc_finished_idle_lcb(gpointer data)
 		doc_set_status(f2d->doc, DOC_STATUS_COMPLETE);
 		bfwin_docs_not_complete(f2d->doc->bfwin, FALSE);
 		bmark_set_for_doc(f2d->doc, TRUE);
-		DEBUG_MSG("file2doc_finished_idle_lcb, focus_next_new_doc=%d\n", f2d->bfwin->focus_next_new_doc);
+		DEBUG_MSG("file2doc_finished_idle_lcb, bfwin->focus_next_new_doc=%d\n", f2d->bfwin->focus_next_new_doc);
 		if (f2d->bfwin->focus_next_new_doc) {
 			f2d->bfwin->focus_next_new_doc = FALSE;
 			if (f2d->bfwin->current_document == f2d->doc) {
+				DEBUG_MSG("file2doc_finished_idle_lcb:%d, call doc_force_activate(%p)\n",__LINE__,f2d->doc);
 				doc_force_activate(f2d->doc);
 			} else {
 				bfwin_switch_to_document_by_pointer(f2d->bfwin, f2d->doc);
 			}
 		} else if (f2d->bfwin->current_document == f2d->doc) {
+			DEBUG_MSG("file2doc_finished_idle_lcb:%d, call doc_force_activate(%p)\n",__LINE__,f2d->doc);
 			doc_force_activate(f2d->doc);
 		} else if (f2d->doc->load_first) {
 			bfwin_switch_to_document_by_pointer(f2d->bfwin, f2d->doc);

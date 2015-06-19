@@ -753,8 +753,8 @@ bftextview2_insert_text_after_lcb(GtkTextBuffer * buffer, GtkTextIter * iter, gc
 	end = start = *iter;
 	gtk_text_iter_backward_chars(&start, charlen);
 
-	DBG_SIGNALS("bftextview2_insert_text_after_lcb: mark text from %d to %d as needscanning %p\n",
-				gtk_text_iter_get_offset(&start), gtk_text_iter_get_offset(iter), btv->needscanning);
+	DBG_SIGNALS("bftextview2_insert_text_after_lcb: mark text from %d to %d with markregion\n",
+				gtk_text_iter_get_offset(&start), gtk_text_iter_get_offset(iter));
 	startpos = gtk_text_iter_get_offset(&start);
 #ifdef MARKREGION
 	markregion_insert(&btv->scanning, startpos, startpos + charlen);
