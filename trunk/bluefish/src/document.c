@@ -1183,11 +1183,31 @@ doc_get_chars(Tdocument * doc, gint start, gint end)
 }
 
 void
-doc_select_and_scroll(Tdocument * doc, GtkTextIter * it1,
+doc_scroll(Tdocument *doc, gint goto_line, gint goto_offset, gint cursor_offset)
+{
+	GtkTextIter it;
+	
+	if (goto_line >= 0) {
+		gtk_text_buffer_get_iter_at_line(doc->buffer, &it, goto_line - 1);
+		gtk_text_view_scroll_to_iter(GTK_TEXT_VIEW(doc->view), &it, 0.25, FALSE, 0.5, 0.95);
+	} else {
+		if (goto_offset >= 0) {
+			gtk_text_buffer_get_iter_at_offset(doc->buffer, &it, goto_offset);
+			gtk_text_view_scroll_to_iter(GTK_TEXT_VIEW(doc->view), &it, 0.25, FALSE, 0.5, 0.95);
+		}
+	}
+	if (cursor_offset >= 0) {
+		gtk_text_buffer_get_iter_at_offset(doc->buffer, &it, cursor_offset);
+		gtk_text_buffer_place_cursor(doc->buffer, &it);
+	}
+}
+
+static void
+doc_select_grab_and_scroll(Tdocument * doc, GtkTextIter * it1,
 					  GtkTextIter * it2, gboolean select_it1_line, gboolean do_scroll, gboolean align_center)
 {
 	GtkTextIter sit1 = *it1, sit2 = *it2;
-	DEBUG_MSG("doc_select_and_scroll, do_scroll=%d\n",do_scroll);
+	DEBUG_MSG("doc_select_grab_and_scroll, do_scroll=%d\n",do_scroll);
 	if (select_it1_line) {
 		sit2 = sit1;
 		gtk_text_iter_set_line_offset(&sit1, 0);
@@ -1242,7 +1262,7 @@ doc_select_line(Tdocument * doc, gint line, gboolean do_scroll)
 {
 	GtkTextIter itstart;
 	gtk_text_buffer_get_iter_at_line(doc->buffer, &itstart, line - 1);
-	doc_select_and_scroll(doc, &itstart, &itstart, TRUE, do_scroll, TRUE);
+	doc_select_grab_and_scroll(doc, &itstart, &itstart, TRUE, do_scroll, TRUE);
 }
 
 /**
@@ -1261,7 +1281,7 @@ doc_select_line_by_offset(Tdocument * doc, gint offset, gboolean do_scroll, gboo
 {
 	GtkTextIter itstart;
 	gtk_text_buffer_get_iter_at_offset(doc->buffer, &itstart, offset);
-	doc_select_and_scroll(doc, &itstart, &itstart, TRUE, do_scroll, align_center);
+	doc_select_grab_and_scroll(doc, &itstart, &itstart, TRUE, do_scroll, align_center);
 }
 
 /**
@@ -3259,7 +3279,7 @@ doc_new_from_uri(Tbfwin * bfwin, GFile * opturi, GFileInfo * finfo, gboolean del
 	} else {					/* document is not yet opened */
 		if (!delay_activate)
 			bfwin->focus_next_new_doc = TRUE;
-		DEBUG_MSG
+		g_print
 			("doc_new_from_uri, uri=%p, delay_activate=%d, focus_next_new_doc=%d, goto_offset=%d, cursor_offset=%d, align_center=%d\n",
 			 uri, delay_activate, bfwin->focus_next_new_doc, goto_offset, cursor_offset, align_center);
 		file_doc_from_uri(bfwin, uri, NULL, finfo, goto_line, goto_offset, open_readonly, cursor_offset,
@@ -3577,6 +3597,7 @@ doc_activate(Tdocument * doc)
 void
 doc_force_activate(Tdocument * doc)
 {
+	g_print("doc_force_activate, called for %p\n",doc);
 	BFWIN(doc->bfwin)->last_activated_doc = NULL;
 	g_print("doc_force_activate, called for %p\n",doc);
 	doc_activate(doc);

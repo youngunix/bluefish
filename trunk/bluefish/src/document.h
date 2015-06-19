@@ -2,7 +2,7 @@
  * document.h - global function for document handling
  *
  * Copyright (C) 1998 Olivier Sessink and Chris Mazuc
- * Copyright (C) 1999-2011 Olivier Sessink
+ * Copyright (C) 1999-2015 Olivier Sessink
  * Copyright (C) 2011 James Hayward
  *
  * This program is free software; you can redistribute it and/or modify
@@ -74,8 +74,7 @@ gboolean test_only_empty_doc_left(GList * doclist);
 #define doc_has_selection(doc) gtk_text_buffer_get_has_selection(((Tdocument *)doc)->buffer)
 void doc_set_status(Tdocument * doc, gint status);
 void doc_set_modified(Tdocument * doc, gint value);
-void doc_select_and_scroll(Tdocument * doc, GtkTextIter * it1,
-						   GtkTextIter * it2, gboolean select_it1_line, gboolean do_scroll, gboolean align_center);
+void doc_scroll(Tdocument *doc, gint goto_line, gint goto_offset, gint cursor_offset);
 void doc_scroll_to_cursor(Tdocument * doc);
 gchar *doc_get_chars(Tdocument * doc, gint start, gint end);
 gint doc_get_max_offset(Tdocument * doc);

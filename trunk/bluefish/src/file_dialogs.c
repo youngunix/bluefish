@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * file_dialogs.c - file dialogs
  *
- * Copyright (C) 2005-2014 Olivier Sessink
+ * Copyright (C) 2005-2015 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1204,9 +1204,13 @@ file_new_doc(Tbfwin * bfwin)
 
 	if (bfwin->session->template && bfwin->session->template[0]) {
 		template = g_file_new_for_commandline_arg(bfwin->session->template);
+		bfwin->focus_next_new_doc = TRUE;
 	}
 	doc = doc_new_with_template(bfwin, template, TRUE);
-	bfwin_switch_to_document_by_pointer(bfwin, doc);
+	if (!template && doc != bfwin->current_document) {
+		/* for a template this will be done by the template loader callback */
+		bfwin_switch_to_document_by_pointer(bfwin, doc);
+	}
 }
 
 /**
@@ -1221,13 +1225,7 @@ file_new_doc(Tbfwin * bfwin)
 void
 file_new_cb(GtkWidget * widget, Tbfwin * bfwin)
 {
-	Tdocument *doc;
-	GFile *template = NULL;
-	if (bfwin->session->template && bfwin->session->template[0]) {
-		template = g_file_new_for_commandline_arg(bfwin->session->template);
-	}
-	doc = doc_new_with_template(bfwin, template, TRUE);
-	bfwin_switch_to_document_by_pointer(bfwin, doc);
+	file_new_doc(bfwin);
 }
 
 static void
