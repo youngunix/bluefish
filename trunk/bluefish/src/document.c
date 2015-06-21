@@ -1189,11 +1189,11 @@ doc_scroll(Tdocument *doc, gint goto_line, gint goto_offset, gint cursor_offset)
 	
 	if (goto_line >= 0) {
 		gtk_text_buffer_get_iter_at_line(doc->buffer, &it, goto_line - 1);
-		gtk_text_view_scroll_to_iter(GTK_TEXT_VIEW(doc->view), &it, 0.25, FALSE, 0.5, 0.95);
+		gtk_text_view_scroll_to_iter(GTK_TEXT_VIEW(doc->view), &it, 0.1, TRUE, 0.5, 0.0);
 	} else {
 		if (goto_offset >= 0) {
 			gtk_text_buffer_get_iter_at_offset(doc->buffer, &it, goto_offset);
-			gtk_text_view_scroll_to_iter(GTK_TEXT_VIEW(doc->view), &it, 0.25, FALSE, 0.5, 0.95);
+			gtk_text_view_scroll_to_iter(GTK_TEXT_VIEW(doc->view), &it, 0.1, TRUE, 0.5, 0.0);
 		}
 	}
 	if (cursor_offset >= 0) {
