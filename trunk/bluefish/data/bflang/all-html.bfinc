@@ -304,17 +304,27 @@ below this line we have tags that re-use the attributes_id="t.html.attribs.univ_
 	<tag name="em" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
 		<reference>Defines emphasized text</reference>
 	</tag>
+	<tag name="address" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
+		<reference>Defines an (real world) address</reference>
+	</tag>
 
 
 <!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 above this line we have tags that re-use the attributes_id="t.html.attribs.univ_and_global" 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-	<tag name="address" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
-		<reference>Defines an address</reference>
-	</tag>
-	<tag name="area" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&evnt;,alt,coords,href,nohref,onblur,onfocus,shape,target">
+	<tag name="area" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&evnt;,href,nohref,onblur,onfocus,shape,target">
 		<reference>Defines a click-able area inside an image-map</reference>
+		<attribute name="alt"><reference>Specifies an alternate text. For the area tag this is required if the href attribute is present</reference></attribute>
+		<attribute name="coords"><reference>Specify the coordinates.  
+For a square left,top,right,bottom.
+For a circle the x,y of the center and the radius.
+For a polygon this is a sequence of x,y coordinates. </reference></attribute>
+		<!--<attribute name="" values=""><reference></reference></attribute>
+		<attribute name="" values=""><reference></reference></attribute>-->
+
+
+		<!--<attribute name="" values=""><reference></reference></attribute>-->
 	</tag>
 	<tag name="blockquote" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,cite">
 		<reference>Defines a long quotation</reference>
