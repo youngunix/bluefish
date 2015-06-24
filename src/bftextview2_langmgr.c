@@ -1476,7 +1476,7 @@ process_scanning_tag(xmlTextReaderPtr reader, Tbflangparsing * bfparser, guint16
 						/* conditional autocompletion has a performance drawback, so make this only conditional if there is a
 						chance that the attribute context will be re-used (because attributes_id is set) */
 						match_add_autocomp_item(bfparser->st, startinnertagmatch, tmp2, NULL, strlen(tag)+3, 0,id?id:tagpattern,0,3);
-						g_print("conditional autocompletion because attributes_id=%s or attributes_idref=%s\n",attributes_id,attributes_idref);
+						DBG_AUTOCOMP("conditional autocompletion because attributes_id=%s or attributes_idref=%s\n",attributes_id,attributes_idref);
 					} else {
 						match_add_autocomp_item(bfparser->st, startinnertagmatch, tmp2, NULL, strlen(tag)+3, 0,NULL,0,0);
 					}

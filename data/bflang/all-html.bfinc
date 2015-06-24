@@ -116,7 +116,6 @@ The attribute, if specified, must have a value that is a set of space-separated
 tokens representing the various classes that the element belongs to.</reference></attribute>
 	<attribute name="contenteditable" values="true,false"><reference>Specifies whether the content of an element is editable or not</reference></attribute>
 	<attribute name="contextmenu"><reference>Specifies a context menu for an element. The context menu appears when a user right-clicks on the element </reference></attribute>
-	<attribute name="lang"><reference>Specifies the language of the element's content</reference></attribute>
 	<attribute name="dir" values="ltr,rtl,auto">
 		<reference>The dir attribute specifies the element's text directionality. The attribute is an enumerated attribute with the following keywords and states:
 The ltr keyword indicates that the contents of the element are explicitly directionally isolated left-to-right text.
@@ -323,7 +322,7 @@ Only valid if the href attribute is set.</reference></attribute>
 It is mostly used as &lt;img src=&quot;example.jpg&quot; width=&quot;100&quot; height=&quot;100&quot; alt=&quot;text to show when image isnot loaded&quot;/&gt;
 		</reference>
 	</tag>
-	<tag name="object" case_insens="1" sgml_shorttag="1" attributes="align,archive,border,classid,codebase,codetype,data,declare,height,hspace,name,standby,tabindex,type,usemap,vspace,width,&univ;,&evnt;">
+	<tag name="object" case_insens="1" sgml_shorttag="1" attributes="align,archive,border,classid,codebase,codetype,data,declare,height,hspace,name,standby,type,usemap,vspace,width,&univ;,&evnt;">
 		<reference>Defines an embedded object</reference>
 	</tag>
 	<tag name="param" case_insens="1" sgml_shorttag="1" no_close="1" attributes="id,name,type,value,valuetype" >
@@ -869,7 +868,7 @@ week 	Defines a week and year control (no time zone)
 	</tag>
 	<tag name="label" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,for,form">
 <reference>Defines a label for an input element.
-The for attribute of the <label> tag should be equal to the id attribute of the related element to bind them together. </reference>
+The for attribute of the &lt;label&gt; tag should be equal to the id attribute of the related element to bind them together. </reference>
 	</tag>
 	<tag name="legend" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,align">
 		<reference>Defines a caption for a fieldset element</reference>

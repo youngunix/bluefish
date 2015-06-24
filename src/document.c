@@ -3279,8 +3279,7 @@ doc_new_from_uri(Tbfwin * bfwin, GFile * opturi, GFileInfo * finfo, gboolean del
 	} else {					/* document is not yet opened */
 		if (!delay_activate)
 			bfwin->focus_next_new_doc = TRUE;
-		g_print
-			("doc_new_from_uri, uri=%p, delay_activate=%d, focus_next_new_doc=%d, goto_offset=%d, cursor_offset=%d, align_center=%d\n",
+		DEBUG_MSG("doc_new_from_uri, uri=%p, delay_activate=%d, focus_next_new_doc=%d, goto_offset=%d, cursor_offset=%d, align_center=%d\n",
 			 uri, delay_activate, bfwin->focus_next_new_doc, goto_offset, cursor_offset, align_center);
 		file_doc_from_uri(bfwin, uri, NULL, finfo, goto_line, goto_offset, open_readonly, cursor_offset,
 						  align_center, load_first);
@@ -3482,7 +3481,7 @@ doc_activate(Tdocument * doc)
 		/* DO enable the scanner, because it is disabled in notebook_changed(), but if the last document is also the new document it needs to be re-enabled again */
 		DEBUG_MSG("doc_activate, ONLY enable the scanner for doc %p\n", doc);
 		BLUEFISH_TEXT_VIEW(doc->view)->enable_scanner = TRUE;
-		g_print("doc_activate, not doing anything, doc=%p, last_avtivated_doc=%p, close_doc=%d\n", doc,
+		DEBUG_MSG("doc_activate, not doing anything, doc=%p, last_avtivated_doc=%p, close_doc=%d\n", doc,
 				  BFWIN(doc->bfwin)->last_activated_doc, doc->close_doc);
 		return;
 	}
@@ -3545,7 +3544,7 @@ doc_activate(Tdocument * doc)
 			BLUEFISH_TEXT_VIEW(doc->view)->enable_scanner = TRUE;
 			bftextview2_schedule_scanning(BLUEFISH_TEXT_VIEW(doc->view));
 		}
-		g_print("doc_activate, call gtk_widget_show(doc->view) for doc %p\n",doc);
+		DEBUG_MSG("doc_activate, call gtk_widget_show(doc->view) for doc %p\n",doc);
 		gtk_widget_show(doc->view);	/* This might be the first time this document is activated. */
 	}
 	BFWIN(doc->bfwin)->last_activated_doc = doc;
@@ -3588,7 +3587,6 @@ doc_activate(Tdocument * doc)
 	}
 	if (doc->highlightstate)
 		BLUEFISH_TEXT_VIEW(doc->view)->enable_scanner = TRUE;
-	g_print("doc_activate, doc=%p, about to grab focus\n", doc);
 	gtk_widget_grab_focus(GTK_WIDGET(doc->view));
 
 	DEBUG_MSG("doc_activate, doc=%p, finished\n", doc);
@@ -3597,9 +3595,8 @@ doc_activate(Tdocument * doc)
 void
 doc_force_activate(Tdocument * doc)
 {
-	g_print("doc_force_activate, called for %p\n",doc);
+	DEBUG_MSG("doc_force_activate, called for %p\n",doc);
 	BFWIN(doc->bfwin)->last_activated_doc = NULL;
-	g_print("doc_force_activate, called for %p\n",doc);
 	doc_activate(doc);
 }
 
