@@ -149,6 +149,7 @@ Some elements are identifiers, for example the name of a function or variable. I
 					<tag idref="t.autocomplete" />
 					<tag idref="t.context" />
 					<tag id="t.attribute" name="attribute" highlight="pattern-tag" attributes="name,values" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;">
+						<autocomplete append=" name=&quot;&quot; values=&quot;&quot;&gt;&lt;reference&gt;&lt;/reference&gt;&lt;/attribute&gt;" backup_cursor="25" />
 						<context id="c.innertag.innerattribute" symbols="&gt;&lt;&amp;; &#9;&#10;&#13;">
 							<element idref="e.comment"/>
 							<element idref="e.entity" />
