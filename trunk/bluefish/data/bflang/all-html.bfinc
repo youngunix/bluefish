@@ -426,10 +426,9 @@ The content inside the &lt;noscript&gt; element will be displayed if scripts are
 	<tag name="sup" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
 		<reference>Defines superscripted text</reference>
 	</tag>
-<!-- HUH? getting an error that this pattern exists already ????
 	<tag name="var" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
 		<reference>Defines a variable part of a text</reference>
-	</tag>-->
+	</tag>
 	<tag name="section"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
 		<reference>Defines a section in the document</reference>
 	</tag>
@@ -530,7 +529,7 @@ For a polygon this is a sequence of x,y coordinates. </reference></attribute>
 <!--<attribute name="" values=""><reference></reference></attribute>-->
 	</tag>
 
-<!--next tags use the same attributes from blockquote --> 
+<!-- next tags use the same attributes from blockquote --> 
 	<tag name="blockquote" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_id="t.html.attribs.blockquote">
 		<reference>Defines a long quotation quoted from another source.
 Browsers usually indent &lt;blockquote&gt; elements.</reference>
@@ -581,9 +580,40 @@ that have a deprecated align attribute
 above this line we have tags that re-use the attributes_id="t.html.attribs.univ_and_global_align"
 that have a deprecated align attribute 
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<tag name="del" case_insens="1" sgml_shorttag="1"  attributes="&univ;,&evnt;,cite" attributes_id="t.html.attribs.del">
+		<reference>Defines deleted text, you can define the date and time of the change with attribute datetime.</reference>
+		<attribute name="datetime" ><reference>Specifies the date and time. For example:
+datetime="1914" means the year 1914
+datetime="1914-12-20" means 20 December 1914
+datetime="1914-12-20 08:30:45" with minutes and seconds
+datetime="08:00" means 8am</reference></attribute>
+	</tag>
+	<tag name="ins" case_insens="1" sgml_shorttag="1"  attributes="&univ;,&evnt;,cite,datetime" attributes_idref="t.html.attribs.del">
+		<reference>Defines inserted text, you can define the date and time of the change with attribute datetime.</reference>
+	</tag>
+<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<tag name="video"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,width,height,src">
+		<reference>The &lt;video&gt; tag specifies video, such as a movie clip or other video streams.
+Currently, there are 3 supported video formats for the &lt;video&gt; element: MP4, WebM, and Ogg.</reference>
+	<attribute name="poster"><reference>Specifies an image URL to be shown while the video is downloading, or until the user hits the play button</reference></attribute>
+	<attribute name="autoplay"><reference>Specifies that the audio/video will start playing as soon as it is ready</reference></attribute>
+	<attribute name="controls"><reference>The controls attribute is a boolean attribute.
+When present, it specifies that audio/video controls should be displayed.</reference></attribute>
+	<attribute name="loop"><reference>The loop attribute is a boolean attribute.
+When present, it specifies that the video will start over again, every time it is finished.</reference></attribute>
+<attribute name="muted"><reference>The muted attribute is a boolean attribute.
+When present, it specifies that the audio output should be muted.</reference></attribute>
+<attribute name="preload" values="none,auto,metadata"><reference>The preload attribute specifies if and how the author thinks that the video should be loaded when the page loads.
+The preload attribute allows the author to provide a hint to the browser about what he/she thinks will lead to the best user experience. This attribute may be ignored in some instances.</reference></attribute>
+	</tag>
+<tag name="audio"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,autoplay,controls,loop,muted,preload,src">
+	<reference>The &lt;audio&gt; tag defines sound, such as music or other audio streams.
+Currently, there are 3 supported file formats for the &lt;audio&gt; element: MP3, Wav, and Ogg.</reference>
+</tag>
+<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-
-	
 	<tag name="br" case_insens="1" sgml_shorttag="1" no_close="1"  attributes="&univ;,clear">
 		<autocomplete append=" /&gt;" class="self_close_singleton_tags" />
 		<autocomplete append="&gt;" notclass="self_close_singleton_tags" />
@@ -592,59 +622,40 @@ that have a deprecated align attribute
 	<tag name="button" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,disabled,name,onblur,onfocus,type,value">
 		<reference>Defines a push button</reference>
 	</tag>
-
 	<tag name="col" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&evnt;,align,char,charoff,span,valign,width">
 		<reference>Defines attribute values for one or more columns in a table</reference>
 	</tag>
 	<tag name="colgroup" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,align,char,charoff,span,valign,width">
 		<reference>Defines a column group in a table for formatting</reference>
 	</tag>
-
-	<tag name="del" case_insens="1" sgml_shorttag="1"  attributes="&univ;,&evnt;,cite,datetime">
-		<reference>Defines deleted text</reference>
-	</tag>
-
-
 	<tag name="hr" case_insens="1" sgml_shorttag="1" no_close="1"  attributes="&univ;,align,noshade,size,width" >
 		<autocomplete append=" /&gt;" class="self_close_singleton_tags" />
 		<autocomplete append="&gt;" notclass="self_close_singleton_tags" />
 		<reference>Defines a horizontal line</reference>
 	</tag>
-
-	<tag name="ins" case_insens="1" sgml_shorttag="1"  attributes="&univ;,&evnt;,cite,datetime">
-		<reference>Defines inserted text</reference>
-	</tag>
-
 	<tag name="li" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,type,value">
 		<reference>Defines a list item</reference>
 	</tag>
 	<tag name="map" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,name">
 		<reference>Defines an image-map with clickable areas</reference>
 	</tag>
-
 	<tag name="ol" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,compact,start,type">
 		<reference>Defines an ordered list</reference>
 	</tag>
-
 	<tag name="pre" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,width">
-		<reference>Defines preformatted text</reference>
+		<reference>Defines preformatted text, displayed in a fixed-width font (usually Courier), and it preserves both spaces and line breaks</reference>
 	</tag>
-
 	<tag name="ul" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,compact,type">
 		<reference>Defines an unordered list</reference>
 	</tag>
 
 	<tag name="time"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,datetime">
-		<reference>Defines a date/time</reference>
-	</tag>
-	<tag name="video"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,width,height,src,poster,autoplay,controls,loop,mute,preload">
-		<reference></reference>
-	</tag>
-	<tag name="audio"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,autoplay,controls,loop,mute,preload,src">
-		<reference></reference>
+		<reference>Defines a date/time.
+By setting the datetime attribute you make it machine readable, such that a browser may add it to a calendar.</reference>
 	</tag>
 	<tag name="canvas"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,width,height">
-		<reference></reference>
+		<reference>The &lt;canvas&gt; tag is used to draw graphics, on the fly, via scripting (usually JavaScript).
+The &lt;canvas&gt; tag is only a container for graphics, you must use a script to actually draw the graphics.</reference>
 	</tag>
 	<tag name="progress"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,value,max">
 		<reference>Defines the progress of a task
@@ -729,39 +740,6 @@ that have a deprecated align attribute
 	</element>
 </context>
 
-<element id="tag.var" pattern="&lt;var" highlight="html-tag" case_insens="1" starts_block="1">
-<reference>Defines a variable part of a text</reference>
-<context symbols=" &gt;'&quot;">
-	<element pattern="&gt;" ends_context="1" highlight="html-tag"/>
-	<element pattern="/&gt;" ends_context="1" highlight="html-tag" ends_block="1" blockstartelement="tag.var" />
-	<element pattern="style[ ]*=[ ]*['&quot;]" is_regex="1" highlight="html-attribute" case_insens="1">
-		<autocomplete string="style=&quot;&quot;" backup_cursor="1" />
-		<context idref="attribute.string.style" />
-	</element>
-	<element pattern="id[ ]*=" highlight="html-attribute" case_insens="1" is_regex="1">
-		<autocomplete string="id=&quot;&quot;" backup_cursor="1" />
-		<context idref="attribute.string" />
-	</element>
-	<element pattern="lang[ ]*=" highlight="html-attribute" case_insens="1" is_regex="1">
-		<autocomplete string="lang=&quot;&quot;" backup_cursor="1" />
-		<context idref="attribute.string" />
-	</element>
-	<element pattern="class[ ]*=" highlight="html-attribute" case_insens="1" is_regex="1">
-		<reference>specifies one or more classnames for an element (refers to a class in a style sheet)</reference>
-		<autocomplete string="class=&quot;&quot;" backup_cursor="1" />
-		<context idref="attribute.string" />
-	</element>
-	<element pattern="dir[ ]*=" highlight="html-attribute" case_insens="1" is_regex="1">
-		<reference>specifies the text direction of the element's content</reference>
-		<autocomplete string="dir=&quot;&quot;" backup_cursor="1" />
-		<context idref="attribute.string.dir" />
-	</element>
-</context>
-</element>
-<element pattern="&lt;/var&gt;" highlight="html-tag" ends_block="1" blockstartelement="tag.var" />
-
-
-
 <group highlight="html-deprecated-tag" attribhighlight="html-attribute" attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1">
 	<autocomplete enable="1" />
 	<tag name="applet" case_insens="1" sgml_shorttag="1" attributes="&univ;,align,alt,archive,code,codebase,height,hspace,name,object,vspace,width">
@@ -813,8 +791,13 @@ that have a deprecated align attribute
 	<autocomplete enable="1" />
 	<tag name="fieldset" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;">
 		<reference>Defines a border around elements in a form</reference>
+	<attribute name="disabled" ><reference>When present, it specifies that a group of related form elements (a fieldset) should be disabled.</reference></attribute>
+	<attribute name="form" ><reference>The form attribute specifies one or more forms the form item belongs to.
+The value of this attribute must be the id attribute of a &lt;form&gt; element in the same document.</reference></attribute>
+<attribute name="name" ><reference>Specifies a name
+The name is used to reference elements in a JavaScript, or to reference form data after a form is submitted.</reference></attribute>
 	</tag>
-	<tag name="form" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,accept,accept-charset,action,enctype,method,name,onreset,onsubmit,target">
+	<tag name="form" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,accept,accept-charset,action,autocomplete,enctype,method,name,novalidate,target">
 		<reference>Defines an HTML form for user input. The action attribute defines where a submit will be sent to. The form tag usually surrounds other form elements such as input, textarea and buttons.
 A simple example is:
 &lt;form action=&quot;form_action.php&quot; method=&quot;get&quot;&gt;
@@ -824,7 +807,7 @@ Last name: &lt;input type=&quot;text&quot; name=&quot;lname&quot; /&gt;&lt;br /&
 &lt;/form&gt;
 		</reference>
 	</tag>
-	<tag name="input" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&evnt;,accept,align,alt,checked,disabled,ismap,maxlength,name,onblur,onchange,onfocus,onselect,readonly,size,src,type,usemap,value" >
+	<tag name="input" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&evnt;,accept,align,alt,autocomplete,autofocus,checked,disabled,form,formaction,formenctype,formmethod,formnovalidate,formtarget,height,list,max,maxlength,min,multiple,name,pattern,placeholder,readonly,required,size,src,step,value,width" >
 		<autocomplete append=" /&gt;" backup_cursor="2" />
 		<reference>Defines an input control for a form. The input field has many forms depending on the type attribute.
 &lt;input type=&quot;button&quot; name=&quot;foo&quot; value=&quot;title&quot; /&gt;
@@ -838,20 +821,49 @@ Last name: &lt;input type=&quot;text&quot; name=&quot;lname&quot; /&gt;&lt;br /&
 &lt;input type=&quot;submit&quot; name=&quot;foo&quot; value=&quot;title&quot; /&gt;
 &lt;input type=&quot;text&quot; name=&quot;foo&quot; value=&quot;title&quot; maxlenght=&quot;50&quot; /&gt;
 		</reference>
+<attribute name="type" values="button,checkbox,color,date,datetime,datetime-local,email,file,hidden,image,month,number,password,radio,range,reset,search,submit,tel,text,time,url,week"><reference>
+button 	Defines a clickable button (mostly used with a JavaScript to activate a script)
+checkbox 	Defines a checkbox
+color 	Defines a color picker
+date 	Defines a date control (year, month and day (no time))
+datetime 	The input type datetime has been removed from the HTML standard. Use datetime-local instead.
+datetime-local 	Defines a date and time control (year, month, day, hour, minute, second, and fraction of a second (no time zone)
+email 	Defines a field for an e-mail address
+file 	Defines a file-select field and a "Browse..." button (for file uploads)
+hidden 	Defines a hidden input field
+image 	Defines an image as the submit button
+month 	Defines a month and year control (no time zone)
+number 	Defines a field for entering a number
+password 	Defines a password field (characters are masked)
+radio 	Defines a radio button
+range 	Defines a control for entering a number whose exact value is not important (like a slider control)
+reset 	Defines a reset button (resets all form values to default values)
+search 	Defines a text field for entering a search string
+submit 	Defines a submit button
+tel 	Defines a field for entering a telephone number
+text 	Default. Defines a single-line text field (default width is 20 characters)
+time 	Defines a control for entering a time (no time zone)
+url 	Defines a field for entering a URL
+week 	Defines a week and year control (no time zone)
+</reference></attribute>
 	</tag>
-	<tag name="label" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,for,onblur,onfocus">
-		<reference>Defines a label for an input element</reference>
+	<tag name="label" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,for,form">
+<reference>Defines a label for an input element.
+The for attribute of the <label> tag should be equal to the id attribute of the related element to bind them together. </reference>
 	</tag>
 	<tag name="legend" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,align">
 		<reference>Defines a caption for a fieldset element</reference>
 	</tag>
 	<tag name="optgroup" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,disabled,label">
-		<reference>	Defines a group of related options in a select list</reference>
+		<reference>	Defines a group of related options in a select (drop-down) list.
+If you have a long list of options, groups of related options are easier to handle for a user.</reference>
 	</tag>
 	<tag name="option" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,disabled,label,selected,value">
-		<reference>Defines an option in a select list</reference>
+		<reference>Defines an option in a select list.
+The &lt;option&gt; tag can be used without any attributes, but you usually need the value attribute, which indicates what is sent to the server.
+</reference>
 	</tag>
-	<tag name="select" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,disabled,multiple,name,onblur,onchange,onfocus,size">
+	<tag name="select" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,autofocus,disabled,form,multiple,name,required,size">
 		<reference>Defines a select list (drop-down list)
 &lt;select name=&quot;favourite&quot;&gt;
   &lt;option value=&quot;vi&quot;&gt;Vi&lt;/option&gt;
@@ -861,7 +873,7 @@ Last name: &lt;input type=&quot;text&quot; name=&quot;lname&quot; /&gt;&lt;br /&
 &lt;/select&gt;
 </reference>
 	</tag>
-	<tag name="textarea" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,cols,disabled,name,onblur,onchange,onfocus,onselect,readonly,rows">
+	<tag name="textarea" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,autofocus,cols,disabled,form,maxlength,name,placeholder,readonly,required,rows,wrap">
 		<reference>Defines a multi-line text input control
 &lt;textarea rows=&quot;2&quot; cols=&quot;20&quot;&gt;
 Initial text here.
@@ -872,9 +884,10 @@ Initial text here.
 
 <group highlight="html-table-tag" attribhighlight="html-attribute" attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1">
 	<autocomplete enable="1" />
-	<tag name="table" case_insens="1" sgml_shorttag="1" attributes="align,border,bgcolor,cellpadding,cellspacing,frame,rules,summary,width,&univ;,&evnt;" >
+	<tag name="table" case_insens="1" sgml_shorttag="1" attributes="align,border,bgcolor,cellpadding,cellspacing,frame,rules,summary,sortable,width,&univ;,&evnt;" >
 		<autocomplete append=" summary=&quot;&quot; &gt;&#10;&#10;&lt;/table&gt;" backup_cursor="9" />
-		<reference>Defines a table</reference>
+		<reference>Defines a table.
+The &quot;align&quot;, &quot;bgcolor&quot;, &quot;border&quot;, &quot;cellpadding&quot;, &quot;cellspacing&quot;, &quot;frame&quot;, &quot;rules&quot;, &quot;summary&quot;, and &quot;width&quot; attributes are not supported in HTML5.</reference>
 	</tag>
 	<tag name="caption" case_insens="1" sgml_shorttag="1" attributes="align,&univ;,&evnt;" >
 		<reference>Defines a table caption</reference>
@@ -1275,6 +1288,39 @@ The tabindex attribute, if specified, must have a value that is a valid integer.
 </element>
 <element pattern="&lt;/h5&gt;" highlight="tag" ends_block="1" blockstartelement="&lt;h5" />
 -->
+
+<!--<element id="tag.var" pattern="&lt;var" highlight="html-tag" case_insens="1" starts_block="1">
+<reference>Defines a variable part of a text</reference>
+<context symbols=" &gt;'&quot;">
+	<element pattern="&gt;" ends_context="1" highlight="html-tag"/>
+	<element pattern="/&gt;" ends_context="1" highlight="html-tag" ends_block="1" blockstartelement="tag.var" />
+	<element pattern="style[ ]*=[ ]*['&quot;]" is_regex="1" highlight="html-attribute" case_insens="1">
+		<autocomplete string="style=&quot;&quot;" backup_cursor="1" />
+		<context idref="attribute.string.style" />
+	</element>
+	<element pattern="id[ ]*=" highlight="html-attribute" case_insens="1" is_regex="1">
+		<autocomplete string="id=&quot;&quot;" backup_cursor="1" />
+		<context idref="attribute.string" />
+	</element>
+	<element pattern="lang[ ]*=" highlight="html-attribute" case_insens="1" is_regex="1">
+		<autocomplete string="lang=&quot;&quot;" backup_cursor="1" />
+		<context idref="attribute.string" />
+	</element>
+	<element pattern="class[ ]*=" highlight="html-attribute" case_insens="1" is_regex="1">
+		<reference>specifies one or more classnames for an element (refers to a class in a style sheet)</reference>
+		<autocomplete string="class=&quot;&quot;" backup_cursor="1" />
+		<context idref="attribute.string" />
+	</element>
+	<element pattern="dir[ ]*=" highlight="html-attribute" case_insens="1" is_regex="1">
+		<reference>specifies the text direction of the element's content</reference>
+		<autocomplete string="dir=&quot;&quot;" backup_cursor="1" />
+		<context idref="attribute.string.dir" />
+	</element>
+</context>
+</element>
+<element pattern="&lt;/var&gt;" highlight="html-tag" ends_block="1" blockstartelement="tag.var" />
+-->
+
 
 
 </bfinc>
