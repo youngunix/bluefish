@@ -467,7 +467,8 @@ The content inside the &lt;noscript&gt; element will be displayed if scripts are
 		<reference>Defines a scalar measurement within a known range (a gauge)</reference>
 	</tag>
 	<tag name="hgroup"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
-		<reference></reference>
+		<reference>The hgroup element is typically used to group a set of one or more h1-h6 elements.
+To group, for example, a section title and an accompanying subtitle.</reference>
 	</tag>
 	<tag name="header"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
 		<reference>Defines a header for the document or a section</reference>
@@ -482,7 +483,7 @@ The content inside the &lt;noscript&gt; element will be displayed if scripts are
 		<reference>Defines self-contained content, like illustrations, diagrams, photos, code listings, etc.</reference>
 	</tag>
 	<tag name="mark"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
-		<reference>Defines marked or highlighted text</reference>
+		<reference>Defines marked or highlighted text. Usually displayed with yellow highlighted background.</reference>
 	</tag>
 	<tag name="ruby"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
 		<reference>Defines a ruby annotation (for East Asian typography)</reference>
@@ -494,10 +495,19 @@ The content inside the &lt;noscript&gt; element will be displayed if scripts are
 		<reference>Defines an explanation/pronunciation of characters (for East Asian typography)</reference>
 	</tag>
 	<tag name="wbr"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
-		<reference>Defines a possible line-break</reference>
+		<reference>Word Break Opportunity. Defines a possible line-break</reference>
 	</tag>
 	<tag name="datalist"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
-		<reference>Defines pre-defined options for input controls (a form element)</reference>
+		<reference>Defines pre-defined options for input controls (a form element). For example:
+&lt;input list=&quot;browsers&quot;&gt;
+&lt;datalist id=&quot;browsers&quot;&gt;
+  &lt;option value=&quot;Internet Explorer&quot;&gt;
+  &lt;option value=&quot;Firefox&quot;&gt;
+  &lt;option value=&quot;Chrome&quot;&gt;
+  &lt;option value=&quot;Opera&quot;&gt;
+  &lt;option value=&quot;Safari&quot;&gt;
+&lt;/datalist&gt; 
+		</reference>
 	</tag>
 	<tag name="keygen"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
 		<reference>Defines a key-pair generator field (for forms)</reference>
@@ -506,10 +516,12 @@ The content inside the &lt;noscript&gt; element will be displayed if scripts are
 		<reference>Defines the result of a calculation</reference>
 	</tag>
 	<tag name="track"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
-		<reference></reference>
+		<reference>The &lt;track&gt; tag specifies text tracks for media elements (&lt;audio&gt; and &lt;video&gt;).
+This element is used to specify subtitles, caption files or other files containing text, that should be visible when the media is playing.</reference>
 	</tag>
 	<tag name="source"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;" attributes_idref="t.html.attribs.univ_and_global">
-		<reference></reference>
+		<reference>The &lt;source&gt; tag is used to specify multiple media resources for media elements, such as &lt;video&gt; and &lt;audio&gt;.
+The &lt;source&gt; tag allows you to specify alternative video/audio files which the browser may choose from, based on its media type or codec support.</reference>
 	</tag>
 
 <!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -595,7 +607,8 @@ datetime="08:00" means 8am</reference></attribute>
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<tag name="video"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,width,height,src">
 		<reference>The &lt;video&gt; tag specifies video, such as a movie clip or other video streams.
-Currently, there are 3 supported video formats for the &lt;video&gt; element: MP4, WebM, and Ogg.</reference>
+Currently, there are 3 supported video formats for the &lt;video&gt; element: MP4, WebM, and Ogg.
+See also &lt;track&gt; and &lt;source&gt;.</reference>
 	<attribute name="poster"><reference>Specifies an image URL to be shown while the video is downloading, or until the user hits the play button</reference></attribute>
 	<attribute name="autoplay"><reference>Specifies that the audio/video will start playing as soon as it is ready</reference></attribute>
 	<attribute name="controls"><reference>The controls attribute is a boolean attribute.
@@ -609,7 +622,8 @@ The preload attribute allows the author to provide a hint to the browser about w
 	</tag>
 <tag name="audio"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,autoplay,controls,loop,muted,preload,src">
 	<reference>The &lt;audio&gt; tag defines sound, such as music or other audio streams.
-Currently, there are 3 supported file formats for the &lt;audio&gt; element: MP3, Wav, and Ogg.</reference>
+Currently, there are 3 supported file formats for the &lt;audio&gt; element: MP3, Wav, and Ogg.
+See also &lt;track&gt; and &lt;source&gt;.</reference>
 </tag>
 <!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -634,7 +648,10 @@ Currently, there are 3 supported file formats for the &lt;audio&gt; element: MP3
 		<reference>Defines a horizontal line</reference>
 	</tag>
 	<tag name="li" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,type,value">
-		<reference>Defines a list item</reference>
+		<reference>Defines a list item.
+The &lt;li&gt; tag is used in ordered lists(&lt;ol&gt;), unordered lists (&lt;ul&gt;), and in menu lists (&lt;menu&gt;).
+The type attribute is deprecated in HTML5, use the CSS list-style-type property.
+For ol lists only, the value attribute specifies the value of a list item. The following list items will increment from that number.</reference>
 	</tag>
 	<tag name="map" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,name">
 		<reference>Defines an image-map with clickable areas</reference>
@@ -646,7 +663,8 @@ Currently, there are 3 supported file formats for the &lt;audio&gt; element: MP3
 		<reference>Defines preformatted text, displayed in a fixed-width font (usually Courier), and it preserves both spaces and line breaks</reference>
 	</tag>
 	<tag name="ul" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,compact,type">
-		<reference>Defines an unordered list</reference>
+		<reference>Defines an unordered (bulleted) list.
+All attributes have been deprecated in HTML5.</reference>
 	</tag>
 
 	<tag name="time"  case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,datetime">
@@ -807,7 +825,7 @@ Last name: &lt;input type=&quot;text&quot; name=&quot;lname&quot; /&gt;&lt;br /&
 &lt;/form&gt;
 		</reference>
 	</tag>
-	<tag name="input" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&evnt;,accept,align,alt,autocomplete,autofocus,checked,disabled,form,formaction,formenctype,formmethod,formnovalidate,formtarget,height,list,max,maxlength,min,multiple,name,pattern,placeholder,readonly,required,size,src,step,value,width" >
+	<tag name="input" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;,&evnt;,accept,align,alt,checked,disabled,form,formaction,formenctype,formmethod,formnovalidate,formtarget,height,list,max,maxlength,min,multiple,name,pattern,placeholder,readonly,required,size,src,step,value,width" >
 		<autocomplete append=" /&gt;" backup_cursor="2" />
 		<reference>Defines an input control for a form. The input field has many forms depending on the type attribute.
 &lt;input type=&quot;button&quot; name=&quot;foo&quot; value=&quot;title&quot; /&gt;
@@ -846,6 +864,8 @@ time 	Defines a control for entering a time (no time zone)
 url 	Defines a field for entering a URL
 week 	Defines a week and year control (no time zone)
 </reference></attribute>
+<attribute name="autofocus" ><reference>Specifies that the element should automatically get focus when the page loads</reference></attribute>
+<attribute name="autocomplete" values="on,off"><reference>Specifies whether an element should have autocomplete enabled</reference></attribute>
 	</tag>
 	<tag name="label" case_insens="1" sgml_shorttag="1" attributes="&univ;,&evnt;,for,form">
 <reference>Defines a label for an input element.
@@ -892,23 +912,41 @@ The &quot;align&quot;, &quot;bgcolor&quot;, &quot;border&quot;, &quot;cellpaddin
 	<tag name="caption" case_insens="1" sgml_shorttag="1" attributes="align,&univ;,&evnt;" >
 		<reference>Defines a table caption</reference>
 	</tag>
-	<tag name="td" case_insens="1" sgml_shorttag="1" attributes="abbr,align,axis,bgcolor,char,charoff,colspan,headers,height,nowrap,rowspan,scope,valign,width,&univ;,&evnt;" >
-		<reference>Defines a cell in a table</reference>
+	<tag name="td" case_insens="1" sgml_shorttag="1" attributes="abbr,align,axis,bgcolor,char,charoff,headers,height,nowrap,scope,valign,width,&univ;,&evnt;" >
+		<reference>Defines a cell in a table.
+All attributes except for rowspan, colspan and headers are deprecated in HTML5.</reference>
+<attribute name="colspan"><reference>Specifies the number of columns a cell should span. 
+Note: colspan="0" tells the browser to span the cell to the last column of the column group (colgroup)</reference></attribute>
+<attribute name="rowspan"><reference>Specifies the number of rows a cell should span.
+Note: rowspan="0" tells the browser to span the cell to the last row of the table section (thead, tbody, or tfoot)</reference></attribute>
 	</tag>
 	<tag name="th" case_insens="1" sgml_shorttag="1" attributes="abbr,align,axis,bgcolor,char,charoff,colspan,headers,height,nowrap,rowspan,scope,valign,width,&univ;,&evnt;" >
-		<reference>Defines a header cell in a table</reference>
+		<reference>Defines a header cell in a table.
+All attributes except for abbr, rowspan, colspan, headers, scope and sorted are deprecated in HTML5.
+</reference>
 	</tag>
 	<tag name="tr" case_insens="1" sgml_shorttag="1" attributes="align,bgcolor,char,charoff,valign,&univ;,&evnt;" >
-		<reference>Defines a row in a table</reference>
+		<reference>Defines a row in a table.
+All attributes have been deprecated in HTML5.
+</reference>
 	</tag>
 	<tag name="tbody" case_insens="1" sgml_shorttag="1" attributes="align,char,charoff,valign,&univ;,&evnt;" >
-		<reference>Groups the body content in a table</reference>
+		<reference>Groups the body content in a table. 
+The &lt;tbody&gt; element is used in conjunction with the &lt;thead&gt; and &lt;tfoot&gt; elements to specify each part of a table (body, header, footer).
+Browsers can use these elements to enable scrolling of the table body independently of the header and footer. Also, when printing a large table that spans multiple pages, these elements can enable the table header and footer to be printed at the top and bottom of each page.
+All attributes have been deprecated in HTML5.</reference>
 	</tag>
 	<tag name="tfoot" case_insens="1" sgml_shorttag="1" attributes="align,char,charoff,valign,&univ;,&evnt;" >
-		<reference>Groups the footer content in a table</reference>
+		<reference>Groups the footer content in a table. 
+The &lt;tfoot&gt; element is used in conjunction with the &lt;body&gt; and &lt;thead&gt; elements to specify each part of a table (body, header, footer).
+Browsers can use these elements to enable scrolling of the table body independently of the header and footer. Also, when printing a large table that spans multiple pages, these elements can enable the table header and footer to be printed at the top and bottom of each page.
+All attributes have been deprecated in HTML5.</reference>
 	</tag>
 	<tag name="thead" case_insens="1" sgml_shorttag="1" attributes="align,char,charoff,valign,&univ;,&evnt;" >
-		<reference>Groups the header content in a table</reference>
+		<reference>Groups the header content in a table. 
+The &lt;thead&gt; element is used in conjunction with the &lt;body&gt; and &lt;tfoot&gt; elements to specify each part of a table (body, header, footer).
+Browsers can use these elements to enable scrolling of the table body independently of the header and footer. Also, when printing a large table that spans multiple pages, these elements can enable the table header and footer to be printed at the top and bottom of each page.
+All attributes have been deprecated in HTML5.</reference>
 	</tag>
 </group>
 
