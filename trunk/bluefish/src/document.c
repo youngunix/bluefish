@@ -2390,7 +2390,7 @@ update_encoding_meta_in_file(Tdocument * doc, gchar * encoding)
 {
 	if (!encoding)
 		return;
-	GRegex *regex1, *regex2, *foundregex=NULL;
+	GRegex *regex1=NULL, *regex2=NULL, *foundregex=NULL;
 	GMatchInfo *match_info;
 	gchar *type, *xhtmlend, *fulltext, *replacestring = NULL;
 	gint so, eo, cso, ceo;
@@ -2478,7 +2478,9 @@ update_encoding_meta_in_file(Tdocument * doc, gchar * encoding)
 		g_match_info_free(match_info);
 	}
 	g_regex_unref(regex1);
-	g_regex_unref(regex2);
+	if (regex2) {
+		g_regex_unref(regex2);
+	}
 	g_free(fulltext);
 }
 
