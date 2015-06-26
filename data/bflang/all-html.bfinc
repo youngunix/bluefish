@@ -838,7 +838,8 @@ Last name: &lt;input type=&quot;text&quot; name=&quot;lname&quot; /&gt;&lt;br /&
 &lt;input type=&quot;submit&quot; name=&quot;foo&quot; value=&quot;title&quot; /&gt;
 &lt;input type=&quot;text&quot; name=&quot;foo&quot; value=&quot;title&quot; maxlenght=&quot;50&quot; /&gt;
 		</reference>
-<attribute name="type" values="button,checkbox,color,date,datetime,datetime-local,email,file,hidden,image,month,number,password,radio,range,reset,search,submit,tel,text,time,url,week"><reference>
+		<!-- adding an id to an attribute disables auto re-use for this specific case -->
+<attribute name="type" id="t.html.input.type" values="button,checkbox,color,date,datetime,datetime-local,email,file,hidden,image,month,number,password,radio,range,reset,search,submit,tel,text,time,url,week"><reference>
 button 	Defines a clickable button (mostly used with a JavaScript to activate a script)
 checkbox 	Defines a checkbox
 color 	Defines a color picker

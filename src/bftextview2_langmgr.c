@@ -893,6 +893,11 @@ process_scanning_element(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gin
 
 			}
 		}
+		if (!used_idref && (!pattern || pattern[0] == '\0')) {
+			gchar *dbstring = ldb_stack_string(&bfparser->ldb);
+			g_print("Error in language file %s, pattern is empty.",dbstring);
+			g_free(dbstring);
+		}
 		if (!used_idref && pattern && pattern[0]) {
 			gchar *reference = NULL;
 			gboolean foldable=TRUE;
@@ -1085,6 +1090,10 @@ add_attribute_to_tag(Tbflangparsing * bfparser, const gchar *attrstring, gint co
 			return;
 		}
 	}
+	
+	if (!attrstring || attrstring[0] == '\0') {
+		return;
+	}
 
 	if (strchr(attrstring, '=')== NULL) {
 		attrmatch = add_pattern_to_scanning_table(bfparser->st, attrstring, FALSE, TRUE, contexttag, &bfparser->ldb);
@@ -1126,6 +1135,9 @@ static void
 attribute_add_value(Tbflangparsing * bfparser, gchar *string, guint16 valuecontext)
 {
 	guint16 valmatchnum;
+	if (!string || string[0]=='\0') {
+		return;
+	}
 	valmatchnum = add_pattern_to_scanning_table(bfparser->st,string,FALSE,TRUE,valuecontext, &bfparser->ldb);
 	pattern_set_runtime_properties(bfparser->st, valmatchnum,"string", -1, FALSE, FALSE,0, FALSE, FALSE);
 	match_add_autocomp_item(bfparser->st, valmatchnum, string,NULL,0,0,NULL,0,0);
@@ -1169,19 +1181,18 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 
 	ldb_stack_push(&bfparser->ldb, id?id:attribute_name);
 	DBG_PARSING("process_scanning_attribute, name=%s, id=%s, idref=%s\n",attribute_name,id,idref);
-	if ((idref && idref[0]) || bfparser->auto_re_use_attributes) {
+	auto_attribute_id = g_strconcat("__auto__", attribute_name, NULL);
+	if ((idref && idref[0]) || (!id && bfparser->auto_re_use_attributes)) {
 		if (idref) {
 			attribmatchnum = GPOINTER_TO_INT(g_hash_table_lookup(bfparser->patterns, idref));
 		}
 		/* if auto_re_use_attributes is set we should also try for an auto id */
 		if (!attribmatchnum && bfparser->auto_re_use_attributes) {
-			auto_attribute_id = g_strconcat("__auto__", attribute_name, NULL);
 			attribmatchnum = GPOINTER_TO_INT(g_hash_table_lookup(bfparser->patterns, auto_attribute_id));
 			if (attribmatchnum) {
 				DBG_PARSING("process_scanning_attribute, auto re-use attribute %s\n",attribute_name);
 			}
 		}
-
 		if (attribmatchnum) {
 			compile_existing_match(bfparser->st, attribmatchnum, tagattributecontext, &bfparser->ldb);
 		} else if (idref!=NULL) {
@@ -1214,7 +1225,7 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 					break;
 				} else {
 					if (nodetype == XML_READER_TYPE_ELEMENT || nodetype == XML_READER_TYPE_END_ELEMENT) {
-						DBG_PARSING("process_scanning_attribute, parsing UNKNOWN element with name %s nodetype=%d\n", name,nodetype);
+						g_print("process_scanning_attribute, parsing UNKNOWN element with name %s nodetype=%d\n", name,nodetype);
 					}
 
 				}
@@ -1265,7 +1276,7 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 
 			if (auto_attribute_id) {
 				DBG_PARSING("process_scanning_attribute, insert %s into hash for attribute-auto-re-use\n", auto_attribute_id);
-				g_hash_table_insert(bfparser->patterns, auto_attribute_id,
+				g_hash_table_insert(bfparser->patterns, g_strdup(auto_attribute_id),
 							GINT_TO_POINTER((gint) attribmatchnum));
 			}
 		}
@@ -1279,6 +1290,7 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 			}
 		}
 	}
+	g_free(auto_attribute_id);
 	g_strfreev(values_arr);
 	g_free(values);
 	g_free(id);
