@@ -2,7 +2,7 @@
 <!--
 		Bluefish HTML Editor
 		svg.bflang2 $Revision: 6476 $
-		Copyright (C) 2008-2011 Olivier Sessink
+		P15 Olivier Sessink
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
 		the Free Software Foundation, either version 3 of the License, or
@@ -18,7 +18,7 @@
 	<!ENTITY univ "id,xml:base,xml:lang,xml:space">
 	<!ENTITY event  "onactivate,onclick,onfocusin,onfocusout,onload,onmousedown,onmousemove,onmouseout,onmouseover,onmouseup">
 ]>
-<bflang name="SVG" version="2.0" table="15037" contexts="83" matches="2241">
+<bflang name="SVG" version="3" contexts="83" matches="2241">
 <header>
 	<mime type="image/svg+xml"/>
 	<option name="load_reference" default="1"/>

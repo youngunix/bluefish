@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		smarty.bflang2 $Revision: 6414 $
 
-		Copyright (C) 2008-20015 Olivier Sessink
+		P15 Olivier Sessink
 
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -46,7 +46,7 @@
 		'>
 ]>
 
-<bflang name="Smarty template" version="2.0" table="61634" contexts="358" matches="10868">
+<bflang name="Smarty template" version="3" contexts="358" matches="10868">
 <header>
 	<mime type="application/x-smarty" />
 	<option name="load_reference" default="1"/>

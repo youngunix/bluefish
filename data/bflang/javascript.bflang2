@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		javascript.bflang2 $Revision$
  
-		Copyright (C) 2008-2012 Olivier Sessink
+		P15 Olivier Sessink
 
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
 	<!ENTITY JQuery SYSTEM "JQuery.bfinc">
 ]>
 
-<bflang name="Javascript" version="2.0" table="3476" contexts="10" matches="778">
+<bflang name="Javascript" version="3" contexts="10" matches="778">
 <header>
 	<mime type="application/javascript"/>
 	<option name="load_reference" default="1"/>

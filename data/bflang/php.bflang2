@@ -39,7 +39,7 @@
 	<!ENTITY JQuery SYSTEM "JQuery.bfinc">
 ]>
 
-<bflang name="PHP" version="2.0" table="51704" contexts="192" matches="8171">
+<bflang name="PHP" version="3" contexts="421" matches="9456">
 <header>
 	<mime type="application/x-php"/>
 	<mime type="text/plain?php"/>

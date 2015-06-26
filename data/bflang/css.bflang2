@@ -3,7 +3,7 @@
 	Bluefish HTML Editor
 	css.bflang2 $Revision$
 
-	Copyright (C) 2008-2012 Olivier Sessink
+	P15 Olivier Sessink
 
     This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
 	<!ENTITY css-selectors SYSTEM "css-selectors.bfinc">
 	<!ENTITY css-rules SYSTEM "css-rules.bfinc">
 ]>
-<bflang name="CSS" version="2.0" table="7886" contexts="77" matches="1323">
+<bflang name="CSS" version="3" contexts="77" matches="1323">
 <header>
 	<mime type="text/css" />
 	<option name="load_reference" default="1" />

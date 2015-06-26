@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		lua.bflang2 $Revision$
  
-		Copyright (C) 2008-2011 Olivier Sessink
+		P15 Olivier Sessink
 		
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
 		References from Lua 5.1 Reference Manual <http://www.lua.org/manual/5.1/>
 		Copyright © 1994–2011 Lua.org, PUC-Rio under the terms of the MIT license.
 -->
-<bflang name="Lua" version="2.0" table="1636" contexts="11" matches="329">
+<bflang name="Lua" version="3" contexts="11" matches="329">
 <header>
 	<mime type="text/x-lua?lua"/>
 	<option name="load_reference" default="1"/>

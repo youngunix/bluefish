@@ -19,7 +19,7 @@
 		along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<bflang name="Chuck" version="2.0" table="1918" contexts="8" matches="419">
+<bflang name="Chuck" version="3" contexts="8" matches="419">
 <header>
 	<mime type="text/x-Chuck"/>
 	<mime type="text/plain?ck"/>

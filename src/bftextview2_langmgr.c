@@ -50,6 +50,7 @@ typedef struct {
 	gchar *smartindentchars;
 	gchar *smartoutdentchars;
 	Tbflang *bflang;
+	gboolean failed;
 	gboolean load_completion;
 	gboolean load_reference;
 	guint reference_size;
@@ -536,8 +537,9 @@ process_condition(Tbflang *bflang, gchar *value)
 static void
 parse_attributes(Tbflang *bflang,xmlTextReaderPtr reader, Tattrib *attribs, gint num_attribs)
 {
-	while (xmlTextReaderMoveToNextAttribute(reader)) {
+	while (1 == xmlTextReaderMoveToNextAttribute(reader)) {
 		gint i;
+		gboolean found=FALSE;
 		xmlChar *aname = xmlTextReaderName(reader);
 /*#ifdef DEVELOPMENT
 		g_print("parse_attributes, name=%s\n",aname);
@@ -565,8 +567,12 @@ parse_attributes(Tbflang *bflang,xmlTextReaderPtr reader, Tattrib *attribs, gint
 					break;
 				}
 				xmlFree(value);
+				found=TRUE;
 				break;
 			}
+		}
+		if (!found) {
+			g_print("Error in language file, found unknown attribute %s\n",aname);
 		}
 		xmlFree(aname);
 	}
@@ -877,7 +883,8 @@ process_scanning_element(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gin
 			guint16 matchnum;
 			matchnum = GPOINTER_TO_INT(g_hash_table_lookup(bfparser->patterns, idref));
 			if (!matchnum && !pattern) {
-				g_print("Error in language file, element with id %s does not exist\n", idref);
+				g_print("Error in language file, element with id %s does not exist, ABORT\n", idref);
+				bfparser->failed = TRUE;
 			} else if (matchnum) {
 				compile_existing_match(bfparser->st, matchnum, context, &bfparser->ldb);
 				used_idref=TRUE;
@@ -981,7 +988,8 @@ process_scanning_element(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gin
 					name = xmlTextReaderName(reader);
 					if (nodetype == XML_READER_TYPE_ELEMENT && xmlStrEqual(name, (xmlChar *) "context")) {
 						if (processed_context) {
-							g_print("Error in language file: element %s with pattern %s has multiple inner contexts\n",id?id:"without id",pattern);
+							g_print("Error in language file: element %s with pattern %s has multiple inner contexts, ABORT\n",id?id:"without id",pattern);
+							bfparser->failed = TRUE;
 						}
 						DBG_PARSING("in pattern, found countext\n");
 						nextcontext = process_scanning_context(reader, bfparser, contextstack);
@@ -1170,7 +1178,8 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 	enabled = do_parse(bfparser, class, notclass);
 	if (!enabled || attribute_name==NULL || attribute_name[0]=='\0') {
 		if (attribute_name==NULL || attribute_name[0]=='\0') {
-			g_warning("Error in language file: <attribute> without name\n");
+			g_warning("Error in language file: <attribute> without name, ABORT\n");
+			bfparser->failed = TRUE;
 		}
 		if (!is_empty) {
 			DBG_PARSING("attribute disabled, class=%s, notclass=%s, skip to end of attribute, my depth=%d\n", class,notclass, depth);
@@ -1196,7 +1205,8 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 		if (attribmatchnum) {
 			compile_existing_match(bfparser->st, attribmatchnum, tagattributecontext, &bfparser->ldb);
 		} else if (idref!=NULL) {
-			g_print("Error in language file, tag attribute with id %s does not exist (but is refferred to with an idref)\n", idref);
+			g_print("Error in language file, tag attribute with id %s does not exist (but is refferred to with an idref), ABORT\n", idref);
+			bfparser->failed = TRUE;
 		}
 	}
 	if (!is_empty) {
@@ -1388,7 +1398,8 @@ process_scanning_tag(xmlTextReaderPtr reader, Tbflangparsing * bfparser, guint16
 		if (idref && idref[0] && !tag) {
 			guint16 matchnum = GPOINTER_TO_INT(g_hash_table_lookup(bfparser->patterns, idref));
 			if (!matchnum) {
-				g_print("Error in language file, tag with id %s does not exist\n", idref);
+				g_print("Error in language file, tag with id %s does not exist, ABORT\n", idref);
+				bfparser->failed = TRUE;
 			}
 			DBG_PARSING("process_scanning_tag, lookup tag with id %s returned matchnum %d\n", id, matchnum);
 			if (matchnum) {
@@ -1431,8 +1442,9 @@ process_scanning_tag(xmlTextReaderPtr reader, Tbflangparsing * bfparser, guint16
 					have_reusable_attribute_context = TRUE;
 				} else {
 					gchar *dbstring = ldb_stack_string(&bfparser->ldb);
-					g_warning("Error in language file %s: referring to attributes_idref %s but it cannot be found\n",dbstring,attributes_idref);
+					g_warning("Error in language file %s: referring to attributes_idref %s but it cannot be found, ABORT\n",dbstring,attributes_idref);
 					g_free(dbstring);
+					bfparser->failed = TRUE;
 				}
 			}
 			if (!contexttag) {
@@ -1785,7 +1797,8 @@ process_scanning_context(xmlTextReaderPtr reader, Tbflangparsing * bfparser, GQu
 		DBG_PARSING("lookup context %s in hash table..\n", idref);
 		context = GPOINTER_TO_INT(g_hash_table_lookup(bfparser->contexts, idref));
 		if (context == 0 && (!id || isempty)) {
-			g_print("Error in language file: context with id %s does not exist\n",idref);
+			g_print("Error in language file: context with id %s does not exist, ABORT\n",idref);
+			bfparser->failed = TRUE;
 		}
 #ifdef DEVELOPMENT
 		if (context == 0 && (!id || isempty)) {
@@ -1810,9 +1823,10 @@ process_scanning_context(xmlTextReaderPtr reader, Tbflangparsing * bfparser, GQu
 	/*g_print("got context with symbols %s\n",symbols);*/
 	if (!symbols) {
 		gchar *dbstring = ldb_stack_string(&bfparser->ldb);
-		g_warning("Error in language file: context without symbols at %s, abort.",dbstring);
+		g_warning("Error in language file: context without symbols at %s, ABORT",dbstring);
 		g_free(dbstring);
 		ldb_stack_pop(&bfparser->ldb);
+		bfparser->failed = TRUE;
 		return 0;
 	}
 	/* create context */
@@ -1913,6 +1927,16 @@ bftextview2_match_conditions(Tbflangparsing * bfparser) {
 	}
 }
 
+
+static void xmlreadererror_body(void * arg,const char * msg, 
+					 xmlParserSeverities severity, 
+					 xmlTextReaderLocatorPtr locator) {
+	Tbflangparsing *bfparser = arg;
+	g_print("Error in language file %s: %s\n",bfparser->bflang->filename,msg);
+	bfparser->failed = TRUE;
+}
+
+
 static gpointer
 build_lang_thread(gpointer data)
 {
@@ -1955,7 +1979,7 @@ build_lang_thread(gpointer data)
 		return NULL;
 	}
 	xmlTextReaderSetParserProp(reader, XML_PARSER_SUBST_ENTITIES, TRUE);
-
+	xmlTextReaderSetErrorHandler(reader,xmlreadererror_body,bfparser);
 	while (xmlTextReaderRead(reader) == 1) {
 		xmlChar *name = xmlTextReaderName(reader);
 		DBG_PARSING("build_lang_thread, found %s\n", name);
@@ -2044,6 +2068,18 @@ build_lang_thread(gpointer data)
 		xmlFree(name);
 	}
 	xmlFreeTextReader(reader);
+	
+	if (bfparser->failed) {
+		/* TODO,do a nice free of the memory */
+		g_array_free(bfparser->st->matches, TRUE);
+		g_array_free(bfparser->st->contexts, TRUE);
+		g_array_free(bfparser->st->comments, TRUE);
+		g_array_free(bfparser->st->blocks, TRUE);
+		g_array_free(bfparser->st->conditions, TRUE);
+		g_slice_free(Tscantable, bfparser->st);
+		bfparser->st = NULL;
+	}
+	
 	/************************
 	 * finished parsing the XML,
 	 * do some final memory management
@@ -2135,6 +2171,13 @@ langmgr_get_tagtable(void)
 	return langmgr.tagtable;
 }
 
+static void xmlreadererror_header(void * arg,const char * msg, 
+					 xmlParserSeverities severity, 
+					 xmlTextReaderLocatorPtr locator) {
+	Tbflang *bflang = arg;
+	g_print("xmlreadererrorheader, error %s in language file %s\n",msg,bflang->filename);
+}
+
 static Tbflang *
 parse_bflang2_header(const gchar * filename)
 {
@@ -2149,18 +2192,15 @@ parse_bflang2_header(const gchar * filename)
 		return NULL;
 	}
 	bflang = g_slice_new0(Tbflang);
-	bflang->size_table = 2;	/* bare minimum sizes */
-	bflang->size_matches = 2;
-	bflang->size_contexts = 2;
+	xmlTextReaderSetErrorHandler(reader,xmlreadererror_header,bflang);
 	bflang->filename = g_strdup(filename);
 	while (xmlTextReaderRead(reader) == 1) {
 		xmlChar *name = xmlTextReaderName(reader);
 		if (xmlStrEqual(name, (xmlChar *) "bflang")) {
 			Tattrib attribs[] = {{"name", &bflang->name, attribtype_string},
-					{"version", &bflangversion, attribtype_string},
-					{"table", &bflang->size_table, attribtype_int},
 					{"matches", &bflang->size_matches, attribtype_int},
-					{"contexts", &bflang->size_contexts, attribtype_int}};
+					{"contexts", &bflang->size_contexts, attribtype_int},
+					{"version", &bflangversion, attribtype_string}};
 			parse_attributes(bflang,reader, attribs, sizeof(attribs)/sizeof(Tattrib));
 		} else if (xmlStrEqual(name, (xmlChar *) "header")) {
 			process_header(reader, bflang);
@@ -2170,13 +2210,12 @@ parse_bflang2_header(const gchar * filename)
 		xmlFree(name);
 	}
 	xmlFreeTextReader(reader);
-
 	if (bflang->name == NULL) {
 		g_print("Language file %s has no name.. abort..\n", filename);
 		failed=TRUE;
 	}
-	if (g_strcmp0(bflangversion, CURRENT_BFLANG2_VERSION)!=0) {
-		g_print("Language file %s has incompatible version %s (need version "CURRENT_BFLANG2_VERSION"), abort..\n", filename, bflangversion);
+	if (g_strcmp0(bflangversion, "2.0")!=0 && g_strcmp0(bflangversion, "3")!=0) {
+		g_print("Language file %s has incompatible version %s (need version 2.0 or 3), abort..\n", filename, bflangversion);
 		failed=TRUE;
 	}
 	g_free(bflangversion);

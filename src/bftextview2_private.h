@@ -31,8 +31,6 @@ extern void g_none(char *first, ...);
 #endif
  /**/
 
-#define CURRENT_BFLANG2_VERSION "2.0"
-
 #define BF_OFFSET_UNDEFINED G_MAXINT32
 #define BF_POSITION_UNDEFINED G_MAXINT32
 
