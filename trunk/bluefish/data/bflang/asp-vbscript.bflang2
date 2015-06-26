@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		asp-vbs.bflang2 $Revision: 6403 $
 
-		Copyright (C) 2008-20011 Olivier Sessink, Alex Bodnaru
+		P15 Olivier Sessink, Alex Bodnaru
 
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 	<!ENTITY JQuery SYSTEM "JQuery.bfinc">
 	<!ENTITY all-vbscript SYSTEM "all-vbscript.bfinc">
 ]>
-<bflang name="ASP-VBS" version="2.0" table="14086" contexts="143" matches="2905">
+<bflang name="ASP-VBS" version="3" contexts="143" matches="2905">
 <header>
 	<mime type="application/x-asp"/>
 	<option name="load_reference" default="1"/>

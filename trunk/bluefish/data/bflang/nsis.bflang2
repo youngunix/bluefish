@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		nsis.bflang2
  
-		Copyright (C) 2008-2009 Olivier Sessink
+		P15 Olivier Sessink
 
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 		along with this program.  If not, see <http://www.gnu.org/licenses/>.		
 -->
 
-<bflang name="NSIS" version="2.0" table="1591" contexts="5" matches="234">
+<bflang name="NSIS" version="3" contexts="5" matches="234">
 <header>
 	<mime type="text/x-nsi" />
 	<mime type="text/x-nsh" />

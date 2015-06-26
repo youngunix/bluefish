@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		sql.bflang2 $Revision: 5464 $
  
-		Copyright (C) 2009 Daniel Leidert
+		Copyright (C) 2009-2015 Daniel Leidert and Olivier Sessink
 
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 		along with this program.  If not, see <http://www.gnu.org/licenses/>.		
 -->
 
-<bflang name="SQL" version="2.0" table="1090" contexts="5" matches="273">
+<bflang name="SQL" version="3" contexts="5" matches="273">
 <header>
 	<mime type="application/x-sqlite2"/>
 	<mime type="application/x-sqlite3"/>

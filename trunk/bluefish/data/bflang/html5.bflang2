@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		html5.bflang2 $Revision$
 
-		Copyright (C) 2008-2012 Olivier Sessink
+		P15 Olivier Sessink
 
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@
 	<!ENTITY JQuery SYSTEM "JQuery.bfinc">
 ]>
 
-<bflang name="HTML5" version="2.0" table="59239" contexts="192" matches="10435">
+<bflang name="HTML5" version="3" contexts="192" matches="10435">
 <header>
 	<mime type="text/x-html5"/>
 	<option name="load_reference" default="1"/>
