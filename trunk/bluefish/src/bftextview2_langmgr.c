@@ -105,6 +105,12 @@ static Tlangmgr langmgr = { FALSE, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL }
 static Tlangmgr langmgr = { FALSE, NULL, NULL, NULL, 0, NULL, NULL };
 #endif
 
+
+/* some function declarations */
+static void cleanup_scantable(Tscantable *st);
+
+
+
 /* utils */
 
 /* these hash functions hash the first 2 strings in a gchar ** */
@@ -468,7 +474,7 @@ foreachdoc_lcb(Tdocument * doc, gpointer data)
 	}
 }
 
-/* this is called in the mainloop again */
+/* this is called in the mainloop again, no longer in the separate thread that parses the language file */
 static gboolean
 build_lang_finished_lcb(gpointer data)
 {
@@ -476,9 +482,6 @@ build_lang_finished_lcb(gpointer data)
 	DEBUG_SIG("build_lang_finished_lcb, priority=%d\n",BUILD_LANG_FINISHED_PRIORITY);
 	if (bfparser->st) {
 		bfparser->bflang->st = bfparser->st;
-		/*bfparser->bflang->line = bfparser->line;
-		   bfparser->bflang->block = bfparser->block; */
-/*		g_print("build_lang_finished_lcb, bflang %p, line=%p, block=%p\n",bfparser->bflang, bfparser->bflang->line, bfparser->bflang->block);*/
 	} else {
 		bfparser->bflang->no_st = TRUE;
 	}
@@ -1932,7 +1935,7 @@ static void xmlreadererror_body(void * arg,const char * msg,
 					 xmlParserSeverities severity, 
 					 xmlTextReaderLocatorPtr locator) {
 	Tbflangparsing *bfparser = arg;
-	g_print("Error in language file %s: %s\n",bfparser->bflang->filename,msg);
+	g_print("Error in language file %s: %s ABORT\n",bfparser->bflang->filename,msg);
 	bfparser->failed = TRUE;
 }
 
@@ -1992,12 +1995,7 @@ build_lang_thread(gpointer data)
 			if (xmlTextReaderIsEmptyElement(reader)) {
 				DBG_PARSING("empty <definition />\n");
 				/* empty <definition />, probably text/plain */
-				g_array_free(bfparser->st->matches, TRUE);
-				g_array_free(bfparser->st->contexts, TRUE);
-				g_array_free(bfparser->st->comments, TRUE);
-				g_array_free(bfparser->st->blocks, TRUE);
-				g_array_free(bfparser->st->conditions, TRUE);
-				g_slice_free(Tscantable, bfparser->st);
+				cleanup_scantable(bfparser->st);
 				bfparser->st = NULL;
 				xmlFree(name);
 				break;
@@ -2070,13 +2068,7 @@ build_lang_thread(gpointer data)
 	xmlFreeTextReader(reader);
 	
 	if (bfparser->failed) {
-		/* TODO,do a nice free of the memory */
-		g_array_free(bfparser->st->matches, TRUE);
-		g_array_free(bfparser->st->contexts, TRUE);
-		g_array_free(bfparser->st->comments, TRUE);
-		g_array_free(bfparser->st->blocks, TRUE);
-		g_array_free(bfparser->st->conditions, TRUE);
-		g_slice_free(Tscantable, bfparser->st);
+		cleanup_scantable(bfparser->st);
 		bfparser->st = NULL;
 	}
 	
@@ -2320,51 +2312,49 @@ sort_bflang_list(gconstpointer a, gconstpointer b)
 }
 
 static void
-bflang_cleanup_scantable(Tbflang * bflang)
+cleanup_scantable(Tscantable *st)
 {
 	gint i;
-	for (i = 1; i < bflang->st->matches->len; i++) {
+	for (i = 1; i < st->matches->len; i++) {
 		GSList *slist;
-		g_free(g_array_index(bflang->st->matches, Tpattern, i).reference);
-		g_free(g_array_index(bflang->st->matches, Tpattern, i).pattern);
+		g_free(g_array_index(st->matches, Tpattern, i).reference);
+		g_free(g_array_index(st->matches, Tpattern, i).pattern);
 		/* TODO: cleanup autocomplete list */
-/*		g_free(g_array_index(bflang->st->matches, Tpattern, i).autocomplete_string);*/
+/*		g_free(g_array_index(st->matches, Tpattern, i).autocomplete_string);*/
 		/* we cannot cleanup selfhighlight because there are several tags/elements that
 		   use the same string in memory for this value... for example if they are part of
 		   the same <group>
-		   g_free(g_array_index(bflang->st->matches, Tpattern, i).selfhighlight); */
-		/*g_free(g_array_index(bflang->st->matches, Tpattern, i).blockhighlight);*/
-		for (slist = g_array_index(bflang->st->matches, Tpattern, i).autocomp_items; slist;
+		   g_free(g_array_index(st->matches, Tpattern, i).selfhighlight); */
+		/*g_free(g_array_index(st->matches, Tpattern, i).blockhighlight);*/
+		for (slist = g_array_index(st->matches, Tpattern, i).autocomp_items; slist;
 			 slist = g_slist_next(slist)) {
 			g_slice_free(Tpattern_autocomplete, slist->data);
 		}
-		g_slist_free(g_array_index(bflang->st->matches, Tpattern, i).autocomp_items);
+		g_slist_free(g_array_index(st->matches, Tpattern, i).autocomp_items);
 	}
-	for (i = 1; i < bflang->st->contexts->len; i++) {
-		if (g_array_index(bflang->st->contexts, Tcontext, i).ac)
-			g_completion_free(g_array_index(bflang->st->contexts, Tcontext, i).ac);
-		if (g_array_index(bflang->st->contexts, Tcontext, i).patternhash)
-			g_hash_table_destroy(g_array_index(bflang->st->contexts, Tcontext, i).patternhash);
-		g_free(g_array_index(bflang->st->contexts, Tcontext, i).contexthighlight);
-		g_array_free(g_array_index(bflang->st->contexts, Tcontext, i).table, TRUE);
+	for (i = 1; i < st->contexts->len; i++) {
+		if (g_array_index(st->contexts, Tcontext, i).ac)
+			g_completion_free(g_array_index(st->contexts, Tcontext, i).ac);
+		if (g_array_index(st->contexts, Tcontext, i).patternhash)
+			g_hash_table_destroy(g_array_index(st->contexts, Tcontext, i).patternhash);
+		g_free(g_array_index(st->contexts, Tcontext, i).contexthighlight);
+		g_array_free(g_array_index(st->contexts, Tcontext, i).table, TRUE);
 	}
-	for (i = 1; i < bflang->st->comments->len; i++) {
-		g_free(g_array_index(bflang->st->comments, Tcomment, i).so);
-		g_free(g_array_index(bflang->st->comments, Tcomment, i).eo);
+	for (i = 1; i < st->comments->len; i++) {
+		g_free(g_array_index(st->comments, Tcomment, i).so);
+		g_free(g_array_index(st->comments, Tcomment, i).eo);
 	}
-	for (i = 1; i < bflang->st->blocks->len; i++) {
-		g_free(g_array_index(bflang->st->blocks, Tpattern_block, i).name);
-		g_free(g_array_index(bflang->st->blocks, Tpattern_block, i).highlight);
+	for (i = 1; i < st->blocks->len; i++) {
+		g_free(g_array_index(st->blocks, Tpattern_block, i).name);
+		g_free(g_array_index(st->blocks, Tpattern_block, i).highlight);
 	}
-	g_array_free(bflang->st->matches, TRUE);
-	g_array_free(bflang->st->contexts, TRUE);
-	g_array_free(bflang->st->comments, TRUE);
-	g_array_free(bflang->st->blocks, TRUE);
-	g_array_free(bflang->st->conditions, TRUE);
-	g_slice_free(Tscantable, bflang->st);
-	bflang->st = NULL;
+	g_array_free(st->matches, TRUE);
+	g_array_free(st->contexts, TRUE);
+	g_array_free(st->comments, TRUE);
+	g_array_free(st->blocks, TRUE);
+	g_array_free(st->conditions, TRUE);
+	g_slice_free(Tscantable, st);
 }
-
 
 static void
 bflang_cleanup(Tbflang * bflang)
@@ -2374,7 +2364,8 @@ bflang_cleanup(Tbflang * bflang)
 		return;
 	}
 	if (bflang->st) {
-		bflang_cleanup_scantable(bflang);
+		cleanup_scantable(bflang->st);
+		bflang->st = NULL;
 	}
 	g_free(bflang->filename);
 	g_free(bflang->name);

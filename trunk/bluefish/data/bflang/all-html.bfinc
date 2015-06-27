@@ -198,7 +198,7 @@ However, there are many extensions.
 	<attribute name="charset"><reference>HTML5 has a new attribute, charset, which makes it easier to define charset:
     HTML 4.01: &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
     HTML5: &lt;meta charset=&quot;UTF-8&quot;&gt;
-</reference></attribute>
+</reference></attribut
 </tag>
 <tag name="title" highlight="html-tag" case_insens="1" sgml_shorttag="1" attributes="&univ;" attribhighlight="html-attribute">
 	<reference>Defines the title of a document</reference>
