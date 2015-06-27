@@ -190,7 +190,11 @@ A script (like href="javascript:alert('Example');")</reference></attribute>
 	<autocomplete append=" /&gt;" backup_cursor="2"/>
 	<reference>Defines metadata about an HTML document</reference>
 	<attribute name="http-equiv" values="content-type,default-style,refresh"><reference>Provides an HTTP header for the information/value of the content attribute</reference></attribute>
-	<attribute name="name" values="application-name,author,description,generator,keywords"><reference>Specifies a name for the metadata</reference></attribute>
+	<attribute name="name"><reference>Specifies a name for the metadata.
+There are 5 names specified in the HTML5 spec:
+application-name, author, description, generator, and keywords
+However, there are many extensions.
+	</reference></attribute>
 	<attribute name="charset"><reference>HTML5 has a new attribute, charset, which makes it easier to define charset:
     HTML 4.01: &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
     HTML5: &lt;meta charset=&quot;UTF-8&quot;&gt;
