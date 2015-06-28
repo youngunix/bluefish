@@ -27,4 +27,4 @@ bfdata_SCRIPTS = \
 	lorem-ipsum-generator \
 	jsbeautify \
 	jsmin.py \
-	cssmin.py
+	css_decompressor
