@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.7\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2015-05-28 12:07+0200\n"
+"POT-Creation-Date: 2015-06-28 14:54+0200\n"
 "PO-Revision-Date: 2015-5-24 14:30+0200\n"
 "Last-Translator: Frédéric Falsetti <falsetti@clansco.org>\n"
 "Language-Team: \n"
@@ -117,20 +117,20 @@ msgstr "Fichier de projet Bluefish"
 msgid "Bluefish language definition file"
 msgstr "Fichier de définition de language Bluefish"
 
-#: ../src/bftextview2.c:1826
+#: ../src/bftextview2.c:1827
 msgid "Collapse all"
 msgstr "Tout replier"
 
-#: ../src/bftextview2.c:1829
+#: ../src/bftextview2.c:1830
 msgid "Expand all"
 msgstr "Tout Déplier"
 
-#: ../src/bftextview2.c:1837
+#: ../src/bftextview2.c:1838
 #, c-format
 msgid "Collapse %s"
 msgstr "Replier %s"
 
-#: ../src/bftextview2.c:1847
+#: ../src/bftextview2.c:1848
 #, c-format
 msgid "Expand %s"
 msgstr "Déplier %s"
@@ -151,48 +151,48 @@ msgstr "Ignorer"
 msgid "Insert special characters as entities"
 msgstr "Insérer des entités pour les caractères spéciaux"
 
-#: ../src/bfwin.c:231
+#: ../src/bfwin.c:228
 msgid "Filebrowser"
 msgstr "Explorateur de fichiers"
 
-#: ../src/bfwin.c:233
+#: ../src/bfwin.c:230
 msgid "Bookmarks"
 msgstr "Signets"
 
-#: ../src/bfwin.c:988
+#: ../src/bfwin.c:982
 msgid "Goto Line:"
 msgstr "Aller à la ligne :"
 
-#: ../src/bfwin.c:999
+#: ../src/bfwin.c:993
 msgid "Find:"
 msgstr "Rechercher :"
 
-#: ../src/bfwin.c:1010 ../src/snr3.c:1526
+#: ../src/bfwin.c:1004 ../src/snr3.c:1526
 msgid "Regular expression (pcre)"
 msgstr "Expression régulière (pcre)"
 
-#: ../src/bfwin.c:1013
+#: ../src/bfwin.c:1007
 msgid "Case sensitive"
 msgstr "Respecter la c_asse"
 
-#: ../src/bfwin.c:1016
+#: ../src/bfwin.c:1010
 msgid "Dot character matches newlines"
 msgstr "Un point dans le modèle correspond à un saut de ligne"
 
-#: ../src/bfwin.c:1019
+#: ../src/bfwin.c:1013
 msgid "Pattern contains backslash escaped sequences"
 msgstr "Le modèle contient des caractères d'échappement"
 
-#: ../src/bfwin.c:1031
+#: ../src/bfwin.c:1025
 msgid "Advanced"
 msgstr "Options"
 
-#: ../src/bfwin.c:1508
+#: ../src/bfwin.c:1499
 msgid "New Bluefish Window"
 msgstr "Nouvelle fenêtre Bluefish"
 
 #. Fake-label (for notebook_hide() and _show() ;)
-#: ../src/bfwin.c:1574
+#: ../src/bfwin.c:1565
 msgid "Stand by..."
 msgstr "Veuillez patienter..."
 
@@ -365,7 +365,7 @@ msgstr "Tout sélectionner"
 msgid "Add Boo_kmark"
 msgstr "Ajouter un _signet"
 
-#: ../src/bfwin_uimanager.c:856 ../src/document.c:2284
+#: ../src/bfwin_uimanager.c:856 ../src/document.c:2310
 msgid "Add bookmark"
 msgstr "Ajouter un signet"
 
@@ -693,7 +693,7 @@ msgstr "_Justifier"
 msgid "Wrap text"
 msgstr "Justifier"
 
-#: ../src/bfwin_uimanager.c:945 ../src/document.c:2071 ../src/document.c:3435
+#: ../src/bfwin_uimanager.c:945 ../src/document.c:2097 ../src/document.c:3493
 msgid "_Close"
 msgstr "Fermer le doc_ument "
 
@@ -710,7 +710,7 @@ msgid "Close all files"
 msgstr "Fermer tous les fichiers"
 
 #: ../src/bfwin_uimanager.c:949 ../src/bfwin_uimanager.c:1025
-#: ../src/file_dialogs.c:1457
+#: ../src/file_dialogs.c:1455
 msgid "_Save"
 msgstr "_Enregistrer"
 
@@ -1210,7 +1210,7 @@ msgstr "É_diter…"
 msgid "_Delete"
 msgstr "_Supprimer "
 
-#: ../src/bookmark.c:901 ../src/document.c:2280
+#: ../src/bookmark.c:901 ../src/document.c:2306
 msgid "Delete bookmark"
 msgstr "Supprimer le signet"
 
@@ -1366,45 +1366,45 @@ msgstr "Ouvrir en lecture seule"
 msgid "Do not open"
 msgstr "Ne pas ouvrir"
 
-#: ../src/document.c:1359
+#: ../src/document.c:1381
 #, c-format
 msgid " Ln: %d, Col: %d, Char: %d"
 msgstr " Lig : %d, Col : %d, Car : %d"
 
-#: ../src/document.c:1362
+#: ../src/document.c:1384
 #, c-format
 msgid " Ln: %d, Col: %d"
 msgstr " Lig : %d, Col : %d"
 
-#: ../src/document.c:1385
+#: ../src/document.c:1407
 msgid " OVR"
 msgstr " OVR"
 
-#: ../src/document.c:1385
+#: ../src/document.c:1407
 msgid " INS"
 msgstr " INS"
 
-#: ../src/document.c:1387
+#: ../src/document.c:1409
 msgid " RO"
 msgstr " RO"
 
-#: ../src/document.c:1406
+#: ../src/document.c:1428
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: ../src/document.c:1990
+#: ../src/document.c:2016
 msgid "_No"
 msgstr "_Non"
 
-#: ../src/document.c:1990
+#: ../src/document.c:2016
 msgid "_Split"
 msgstr "_Scinder"
 
-#: ../src/document.c:1993
+#: ../src/document.c:2019
 msgid "File contains very long lines. Split these lines?"
 msgstr "Le fichier contient des lignes très longues. Scinder ces lignes?"
 
-#: ../src/document.c:1995
+#: ../src/document.c:2021
 msgid ""
 "The lines in this file are longer than Bluefish can handle with reasonable "
 "performance. This split function, however, is unaware of any language "
@@ -1417,11 +1417,11 @@ msgstr ""
 "tabulations par des sauts de ligne à n'importe quel endroit,ou créer des "
 "retour à la ligne si aucun espace ou tabulation n'est trouvé."
 
-#: ../src/document.c:2071
+#: ../src/document.c:2097
 msgid "_Convert"
 msgstr "Con_version"
 
-#: ../src/document.c:2075
+#: ../src/document.c:2101
 #, c-format
 msgid ""
 "File '%s' is not a valid text file.\n"
@@ -1430,7 +1430,7 @@ msgstr ""
 "Le fichier '%s' n'est pas un fichier texte valide. Le fichier peut être "
 "endommagé, tronqué ou dans un encodage inattendu."
 
-#: ../src/document.c:2080
+#: ../src/document.c:2106
 msgid ""
 "Bluefish can convert this file into a valid one by replacing illegal symbols "
 "with spaces. Convert?"
@@ -1438,7 +1438,7 @@ msgstr ""
 "Bluefish peut convertir ce fichier dans un format valide en remplaçanten "
 "remplaçant les caractères illégaux par des espaces. Convertir ?"
 
-#: ../src/document.c:2092
+#: ../src/document.c:2118
 #, c-format
 msgid ""
 "File is opened in read-only mode since it differs from original one.\n"
@@ -1447,26 +1447,26 @@ msgstr ""
 "Le fichier est ouvert en lecture seule car il diffère de l'original.\n"
 "%lu caractères ont été remplacés par des espaces"
 
-#: ../src/document.c:2095
+#: ../src/document.c:2121
 msgid "Use 'Save As' to save it with different name and make editable"
 msgstr "Utiliser 'Enregistrer sous' pour le renommer et le rendre éditable"
 
-#: ../src/document.c:2290
+#: ../src/document.c:2316
 msgid "Exit fullscreen"
 msgstr "Quitter le plein écran"
 
 #. if (main_v->props.backup_abort_action == 2)
 #. we have to ask the user
 #. we have to ask the user what to do
-#: ../src/document.c:2455 ../src/file_dialogs.c:450 ../src/file_dialogs.c:488
+#: ../src/document.c:2516 ../src/file_dialogs.c:450 ../src/file_dialogs.c:488
 msgid "_Abort save"
 msgstr "_Abandonner l'enregistrement"
 
-#: ../src/document.c:2455
+#: ../src/document.c:2516
 msgid "_Continue save in UTF-8"
 msgstr "_Continuer l'enregistrement en UTF-8"
 
-#: ../src/document.c:2468
+#: ../src/document.c:2529
 #, c-format
 msgid ""
 "Failed to convert %s to character encoding %s. Encoding failed on character "
@@ -1479,19 +1479,19 @@ msgstr ""
 "\n"
 "Continuer l'enregistrement en UTF-8 ?"
 
-#: ../src/document.c:2473
+#: ../src/document.c:2534
 msgid "File encoding conversion failure"
 msgstr "Échec de la conversion d'encodage du fichier"
 
-#: ../src/document.c:2652
+#: ../src/document.c:2711
 msgid "Previously: "
 msgstr "Précédemment : "
 
-#: ../src/document.c:3351
+#: ../src/document.c:3409
 msgid "Unable to open file"
 msgstr "Impossible d'ouvrir le fichier"
 
-#: ../src/document.c:3363
+#: ../src/document.c:3421
 #, c-format
 msgid ""
 "If you revert \"%s\" to your last saved copy, your current changes will be "
@@ -1500,92 +1500,92 @@ msgstr ""
 "Si vous ramenez \"%s\" à la dernière copie sauvegardée, vous perdrez "
 "définitivement les modifications en cours."
 
-#: ../src/document.c:3367
+#: ../src/document.c:3425
 msgid "Revert changes to last saved copy?"
 msgstr "Supprimer les modifications et revenir à la dernière sauvegarde ?"
 
-#: ../src/document.c:3435
+#: ../src/document.c:3493
 msgid "_Retry"
 msgstr "_Réessayer"
 
-#: ../src/document.c:3435
+#: ../src/document.c:3493
 msgid "Retry _all failed"
 msgstr "Échec de _Tout réessayer"
 
-#: ../src/document.c:3435
+#: ../src/document.c:3493
 msgid "Close all _failed"
 msgstr "Échec de Tout _fermer"
 
-#: ../src/document.c:3440
+#: ../src/document.c:3498
 msgid "File "
 msgstr "Le fichier "
 
-#: ../src/document.c:3440
+#: ../src/document.c:3498
 msgid " failed to load."
 msgstr " n'a pas pu être chargé."
 
-#: ../src/document.c:3444
+#: ../src/document.c:3502
 msgid "File failed to load\n"
 msgstr "Le fichier n'a pas pu être chargé\n"
 
-#: ../src/document.c:3570
+#: ../src/document.c:3629
 msgid "Select file to insert"
 msgstr "Sélectionner le fichier à insérer"
 
-#: ../src/document.c:3579
+#: ../src/document.c:3638
 msgid "No file to insert"
 msgstr "Aucun fichier à insérer"
 
-#: ../src/document.c:3659
+#: ../src/document.c:3730
 msgid "Save pasted image as"
 msgstr "Enregistrer l'image collée comme"
 
-#: ../src/document.c:3761
+#: ../src/document.c:3832
 msgid "Paste special"
 msgstr "Coller spécial"
 
-#: ../src/document.c:3767
+#: ../src/document.c:3838
 msgid "No compatible clipboard data found"
 msgstr "Pas de donnée utilisable dans le presse-papier"
 
-#: ../src/document.c:3772
+#: ../src/document.c:3843
 msgid "Paste as _HTML"
 msgstr "Coller comme _HTML"
 
-#: ../src/document.c:3777
+#: ../src/document.c:3848
 msgid "Paste as HTML with _JPG"
 msgstr "Coller comme HTML avec _JPG"
 
-#: ../src/document.c:3787
+#: ../src/document.c:3858
 msgid "Paste as plain text"
 msgstr "Coller comme texte brut"
 
-#: ../src/document.c:3882
+#: ../src/document.c:3953
 #, c-format
 msgid "%d line"
 msgid_plural "%d lines"
 msgstr[0] "%d ligne"
 msgstr[1] "%d lignes"
 
-#: ../src/document.c:3883
+#: ../src/document.c:3954
 #, c-format
 msgid "%d word"
 msgid_plural "%d words"
 msgstr[0] "%d mot"
 msgstr[1] "%d mots"
 
-#: ../src/document.c:3884
+#: ../src/document.c:3955
 #, c-format
 msgid "%d character"
 msgid_plural "%d characters"
 msgstr[0] "%d caractère"
 msgstr[1] "%d caractères"
 
-#: ../src/document.c:3886
+#: ../src/document.c:3957
 msgid "Selection statistics: "
 msgstr "Dans la sélection : "
 
-#: ../src/document.c:3886
+#: ../src/document.c:3957
 msgid "Statistics: "
 msgstr "Dans le document : "
 
@@ -1967,43 +1967,43 @@ msgstr ""
 "équivalent à\n"
 "<b>%s%s</b>"
 
-#: ../src/file.c:884
+#: ../src/file.c:875
 #, c-format
 msgid "Still loading %d file, finished %s"
 msgid_plural "Still loading %d files, finished %s"
 msgstr[0] "Ouverture de %d fichier, %s ouvert"
 msgstr[1] "Ouverture de %d fichiers, %s ouverts"
 
-#: ../src/file.c:892
+#: ../src/file.c:883
 #, c-format
 msgid "All files loaded, finished %s, %d document open"
 msgid_plural "All files loaded, finished %s, %d documents open"
 msgstr[0] "Tous les fichiers sont chargés, %s complet, %d document ouvert"
 msgstr[1] "Tous les fichiers sont chargés, %s complet, %d documents ouverts"
 
-#: ../src/file.c:1454
+#: ../src/file.c:1445
 #, c-format
 msgid "Finished advanced open, %d document open."
 msgid_plural "Finished advanced open, %d documents open."
 msgstr[0] "Ouverture paramétrable terminée, %d document ouvert"
 msgstr[1] "Ouverture paramétrable terminée, %d documents ouverts"
 
-#: ../src/file.c:1634
+#: ../src/file.c:1625
 msgid "_Skip"
 msgstr "_Ignorer"
 
-#: ../src/file.c:1634 ../src/file_dialogs.c:624 ../src/file_dialogs.c:645
+#: ../src/file.c:1625 ../src/file_dialogs.c:624 ../src/file_dialogs.c:645
 #: ../src/project.c:339
 msgid "_Overwrite"
 msgstr "_Écraser"
 
-#: ../src/file.c:1638
+#: ../src/file.c:1629
 #, c-format
 msgid "%s cannot be copied, it already exists, overwrite?"
 msgstr ""
 "%s ne peut être copié, il existe déjà, voulez-vous vraiment l'écraser ?"
 
-#: ../src/file.c:1640
+#: ../src/file.c:1631
 msgid "Overwrite file?"
 msgstr "Voulez-vous écraser le fichier ?"
 
@@ -2088,7 +2088,7 @@ msgstr "Échec de la sauvegarde"
 msgid "Could not save file "
 msgstr "Impossible d'enregistrer le fichier "
 
-#: ../src/file_dialogs.c:509 ../src/file_dialogs.c:1498
+#: ../src/file_dialogs.c:509 ../src/file_dialogs.c:1496
 msgid "File changed on disk\n"
 msgstr "Le fichier a été modifié sur le disque\n"
 
@@ -2189,56 +2189,56 @@ msgstr "Tout enregi_strer"
 msgid "One or more open files have been changed."
 msgstr "Un ou plusieurs fichiers ont été modifiés."
 
-#: ../src/file_dialogs.c:1290
+#: ../src/file_dialogs.c:1288
 #, c-format
 msgid "<span color=\"red\">%d failure</span>"
 msgid_plural "<span color=\"red\">%d failures</span>"
 msgstr[0] "<span color=\"red\">%d echec</span>"
 msgstr[1] "<span color=\"red\">%d échecs</span>"
 
-#: ../src/file_dialogs.c:1299
+#: ../src/file_dialogs.c:1297
 msgid "incomplete finished"
 msgstr "terminé de façon incomplète"
 
-#: ../src/file_dialogs.c:1301
+#: ../src/file_dialogs.c:1299
 msgid "completed"
 msgstr "terminé"
 
-#: ../src/file_dialogs.c:1359
+#: ../src/file_dialogs.c:1357
 msgid "Upload / Download"
 msgstr "Envoyer / Télécharger"
 
-#: ../src/file_dialogs.c:1362
+#: ../src/file_dialogs.c:1360
 msgid "Upload"
 msgstr "Envoyer"
 
-#: ../src/file_dialogs.c:1362
+#: ../src/file_dialogs.c:1360
 msgid "Download"
 msgstr "Télécharger"
 
-#: ../src/file_dialogs.c:1369
+#: ../src/file_dialogs.c:1367
 msgid "Local directory"
 msgstr "Répertoire local"
 
-#: ../src/file_dialogs.c:1375
+#: ../src/file_dialogs.c:1373
 msgid "Remote directory"
 msgstr "Répertoire distant"
 
-#: ../src/file_dialogs.c:1380
+#: ../src/file_dialogs.c:1378
 msgid "Delete deprecated files"
 msgstr "Supprimer les fichiers obsolètes"
 
-#: ../src/file_dialogs.c:1384
+#: ../src/file_dialogs.c:1382
 msgid "Include hidden files"
 msgstr "Inclure les fichiers cachés"
 
-#: ../src/file_dialogs.c:1387
+#: ../src/file_dialogs.c:1385
 msgid "Include backup files"
 msgstr "Inclure les fichiers de sauvegarde"
 
 # c-format
 #. g_print("oldtimestr=%s, newtimestr=%s\n",oldtimestr,newtimestr);
-#: ../src/file_dialogs.c:1434
+#: ../src/file_dialogs.c:1432
 #, c-format
 msgid ""
 "Filename:%s changed on disk.\n"
@@ -2255,29 +2255,29 @@ msgstr ""
 "Taille originale : %s\n"
 "Nouvelle taille : %s"
 
-#: ../src/file_dialogs.c:1457
+#: ../src/file_dialogs.c:1455
 msgid "_Unset file name"
 msgstr "S_upprimer le nom de fichier"
 
 #. file is deleted on disk, what do we do now ?
-#: ../src/file_dialogs.c:1459
+#: ../src/file_dialogs.c:1457
 #, c-format
 msgid "File name: %s"
 msgstr "Nom du fichier : %s"
 
-#: ../src/file_dialogs.c:1462
+#: ../src/file_dialogs.c:1460
 msgid "File disappeared from disk\n"
 msgstr "Le fichier n'est plus sur le disque\n"
 
-#: ../src/file_dialogs.c:1481
+#: ../src/file_dialogs.c:1479
 msgid "_Ignore"
 msgstr "_Ignorer"
 
-#: ../src/file_dialogs.c:1481
+#: ../src/file_dialogs.c:1479
 msgid "_Reload"
 msgstr "_Recharger"
 
-#: ../src/file_dialogs.c:1481
+#: ../src/file_dialogs.c:1479
 msgid "Check and reload all documents"
 msgstr "Vérifier et recharger tous les documents"
 
@@ -3385,8 +3385,8 @@ msgid "Javascript Minify with jsmin"
 msgstr "Compacter javascript avec jsmin"
 
 #: ../src/rcfile.c:786 ../src/rcfile.c:793
-msgid "CSS Minify with cssmin"
-msgstr "Compacter CSS avec cssmin"
+msgid "Toggle CSS compression"
+msgstr "Basculer la compression CSS"
 
 #: ../src/rcfile.c:797
 msgid "CSS tidy"
@@ -3686,18 +3686,21 @@ msgstr "Tout _chercher"
 msgid "B_ookmark All"
 msgstr "Si_gnets"
 
-#: ../src/undo_redo.c:552 ../src/undo_redo.c:694
+#: ../src/undo_redo.c:555 ../src/undo_redo.c:697
 msgid "Undo in _all documents"
 msgstr "Annuler dans _tous les documents ouverts"
 
-#: ../src/undo_redo.c:552 ../src/undo_redo.c:694
+#: ../src/undo_redo.c:555 ../src/undo_redo.c:697
 msgid "Undo only _this document"
 msgstr "Annuler seulement dans ce _document"
 
-#: ../src/undo_redo.c:555 ../src/undo_redo.c:697
+#: ../src/undo_redo.c:558 ../src/undo_redo.c:700
 msgid "Undo this change in all documents?"
 msgstr "Annuler ce changement dans tous les documents ?"
 
-#: ../src/undo_redo.c:556 ../src/undo_redo.c:698
+#: ../src/undo_redo.c:559 ../src/undo_redo.c:701
 msgid "This change concerns multiple documents."
 msgstr "Ce changement affecte de multiple documents."
+
+#~ msgid "CSS Minify with cssmin"
+#~ msgstr "Compacter CSS avec cssmin"
