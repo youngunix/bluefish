@@ -1,17 +1,113 @@
-#!/usr/bin/env python
+#!/usr/bin/python2.7
 # -*- coding: utf-8 -*-
+#
 
-"""`cssmin` - A Python port of the YUI CSS compressor."""
+#  Copyright (C) 2015  Rafael Senties Martinelli <rsm@imap.cc>
+#
+#  This program is free software; you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License 3 as published by
+#   the Free Software Foundation.
+#
+#  This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+#   along with this program; if not, write to the Free Software Foundation,
+#   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA.
 
+"""
+	** This file contains "cssmin 0.2.0" - A Python port of the YUI CSS compressor. **
+	
+	This file is a css compressor/decompressor for BlueFish. If you put this file over:
+		/usr/share/bluefish/cssmin.py
+		
+	The cssmin option of bluefish will compress uncompressed code, and decompress compressed code.
+	
+"""
+
+
+__version__ = '1.2~0'
+
+
+import sys
+
+def CSS_decompresser(text):
+	"""
+		You should only use this function for highly compressed CSS
+	"""
+	
+	for char in ['\t','\n']:
+		text=text.replace(char,'')
+
+	indent_level=0
+	new_text=''
+	for i in range(len(text)):
+		char=text[i]
+		
+		try:
+			next_char=text[i+1]
+		except:
+			next_char=''
+	
+		try:
+			previous_char=text[i-1]
+		except:
+			previous_char=''	
+					
+		if char in [',','%'] and not next_char in [';',' ']:
+			char+=' '
+		
+		elif char == '#' and previous_char == ':':
+			char = ' #'
+	
+		elif char == '.' and not previous_char.isdigit() and next_char.isdigit():
+			char=' '+char
+			
+		elif char == '{':
+			indent_level+=1
+			char =' {\n'+'\t'*indent_level
+			
+		elif char == '}':
+			indent_level-=1
+			char ='\n'+'\t'*indent_level+'}'
+			if next_char != '}':
+				char+='\n'+'\t'*indent_level
+			
+			if indent_level==0:
+				char+='\n'
+			
+		elif char == ';':
+			char = ';\n'+'\t'*indent_level
+			
+		elif char == ')' and not next_char in [' ',';']:
+			char+=' '
+		
+		new_text+=char
+		
+	return new_text
+	
+	
+
+
+"""
+
+
+
+
+	 C S S   M I N
+
+
+
+
+"""	
+	
 try:
     from StringIO import StringIO # The pure-Python StringIO supports unicode.
 except ImportError:
     from io import StringIO
 import re
-
-
-__version__ = '0.2.0'
-
 
 def remove_comments(css):
     """Remove all CSS comment blocks."""
@@ -204,9 +300,8 @@ def cssmin(css, wrap=None):
     return css.strip()
 
 
-def main():
+def main(input):
     import optparse
-    import sys
 
     p = optparse.OptionParser(
         prog="cssmin", version=__version__,
@@ -218,8 +313,15 @@ def main():
         help="Wrap output to approximately N chars per line.")
 
     options, args = p.parse_args()
-    sys.stdout.write(cssmin(sys.stdin.read(), wrap=options.wrap))
-
-
+    sys.stdout.write(cssmin(input, wrap=options.wrap))	
+	
+	
 if __name__ == '__main__':
-    main()
+	
+	input=sys.stdin.read()
+	
+	text=cssmin(input)
+	if input.strip() == text:
+		text=CSS_decompresser(input)
+
+	sys.stdout.write(text)
