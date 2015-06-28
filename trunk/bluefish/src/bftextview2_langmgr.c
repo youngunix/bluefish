@@ -1282,7 +1282,7 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 						attribute_add_value(bfparser, var, valuecontext);
 						tmp2++;
 					}
-					valmatchnum = add_pattern_to_scanning_table(bfparser->st,"(&quot;[^&quot;]*&quot;|'[^']*')",TRUE,TRUE,valuecontext, &bfparser->ldb);
+					valmatchnum = add_pattern_to_scanning_table(bfparser->st,"(\"[^\"]*\"|'[^']*')",TRUE,TRUE,valuecontext, &bfparser->ldb);
 					pattern_set_runtime_properties(bfparser->st, valmatchnum,"string", -1, FALSE, FALSE,0, FALSE, FALSE);
 				}
 			}
