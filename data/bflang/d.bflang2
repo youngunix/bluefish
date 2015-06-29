@@ -19,7 +19,7 @@
 		along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<bflang name="D" version="2.0" matches="113" contexts="5" table="430">
+<bflang name="D" version="2.0" matches="113" contexts="5">
 <header>
 	<mime type="text/x-dsrc" />
 	<option name="show_in_menu" default="1"/>

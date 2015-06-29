@@ -19,7 +19,7 @@
 		along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<bflang name="R" version="2.0" matches="89" contexts="4" table="33">
+<bflang name="R" version="2.0" matches="89" contexts="4">
 <header>
 	<mime type="text/x-rsrc" />
 	<option name="show_in_menu" default="1"/>
