@@ -25,8 +25,7 @@ Snippets for the Highlighter are avaible at:
 http://bfwiki.tellefsen.net/index.php/Highlighter_snippets
  -->
  
-<bflang name="Highlighter" version="2.0" table ="15" contexts="2" matches ="4"   
->
+<bflang name="Highlighter" version="2.0" contexts="2" matches ="4">
 
 <header>
 	<mime type="text/highlight"/>

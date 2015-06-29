@@ -27,7 +27,7 @@
 ]>
 
 
-<bflang name="Mediawiki" version="2.0" matches="999" contexts="67" table="4566">
+<bflang name="Mediawiki" version="2.0" matches="999" contexts="67">
 
 <header>
    <mime type="text/x-mediawiki"/>

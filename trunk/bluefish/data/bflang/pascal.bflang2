@@ -19,7 +19,7 @@
 		along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<bflang name="Pascal and Delpi" version="2.0" matches="151" contexts="5" table="566">
+<bflang name="Pascal and Delpi" version="2.0" matches="151" contexts="5">
 <header>
 	<mime type="text/x-pascal"/>
 	<option name="show_in_menu" default="0"/>
