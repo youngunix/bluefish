@@ -231,10 +231,9 @@ side_panel_build(Tbfwin * bfwin)
 								  gtk_label_new(_("Filebrowser")));
 	gtk_notebook_append_page_menu(GTK_NOTEBOOK(bfwin->leftpanel_notebook), bmarks, new_pixmap(104),
 								  gtk_label_new(_("Bookmarks")));
-
 	provider = gtk_css_provider_new();
 	error = NULL;
-	css = ".notebook tab { padding: 8px; }";
+	css = ".notebook tab { padding-left: 2px; padding-right: 2px; }";
 	gtk_css_provider_load_from_data (provider, css, -1, &error);
 	if (error != NULL) {
 		g_critical("Could not load CSS: %s\n", error->message);
