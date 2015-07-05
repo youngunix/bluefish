@@ -208,9 +208,10 @@ side_panel_build(Tbfwin * bfwin)
 {
 	GtkWidget *bmarks;
 	GtkWidget *fb2g;
+#if GTK_CHECK_VERSION(3,0,0)
 	GtkCssProvider *provider;
-	const char *css;
-	GError *error;
+	GError *error = NULL;
+#endif
 
 	bfwin->leftpanel_notebook = gtk_notebook_new();
 	gtk_notebook_set_tab_pos(GTK_NOTEBOOK(bfwin->leftpanel_notebook), main_v->props.leftpanel_tabposition);
@@ -231,18 +232,22 @@ side_panel_build(Tbfwin * bfwin)
 								  gtk_label_new(_("Filebrowser")));
 	gtk_notebook_append_page_menu(GTK_NOTEBOOK(bfwin->leftpanel_notebook), bmarks, new_pixmap(104),
 								  gtk_label_new(_("Bookmarks")));
+
+#if GTK_CHECK_VERSION(3,0,0)
 	provider = gtk_css_provider_new();
-	error = NULL;
-	css = ".notebook tab { padding-left: 2px; padding-right: 2px; }";
-	gtk_css_provider_load_from_data (provider, css, -1, &error);
+	gtk_css_provider_load_from_data (GTK_CSS_PROVIDER (provider),
+	                                 ".notebook tab {\n"
+	                                 "   padding-left: 2px; padding-right: 2px;\n"
+	                                 "}\n", -1, &error);
 	if (error != NULL) {
 		g_critical("Could not load CSS: %s\n", error->message);
 		g_error_free(error);
 	} else {
 		gtk_style_context_add_provider(gtk_widget_get_style_context(bfwin->leftpanel_notebook),
-					       provider, GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+					      GTK_STYLE_PROVIDER(provider), GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 	}
 	g_object_unref(provider);
+#endif
 
 	if (main_v->sidepanel_initgui) {
 		GSList *tmplist = main_v->sidepanel_initgui;
