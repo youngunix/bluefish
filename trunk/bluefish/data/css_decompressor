@@ -18,91 +18,101 @@
 #   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA.
 
 """
-	** This file contains "cssmin 0.2.0" - A Python port of the YUI CSS compressor. **
-	
-	This file is a css compressor/decompressor for BlueFish. If you put this file over:
-		/usr/share/bluefish/cssmin.py
-		
-	The cssmin option of bluefish will compress uncompressed code, and decompress compressed code.
-	
+    ** This file contains "cssmin 0.2.0" - A Python port of the YUI CSS compressor. **
+    
+    This file is a css compressor/decompressor for BlueFish. If you put this file over:
+        /usr/share/bluefish/cssmin.py
+        
+    The cssmin option of bluefish will compress uncompressed code, and decompress compressed code.
+    
 """
 
 
-__version__ = '1.2~0'
+__version__ = '1.3~0'
 
 
 import sys
 
+
+def inside_brackets(start, end, text):
+	for i in range(start, end):
+		if text[i]=='}':
+			return True
+		elif text[i]=='{':
+			return False
+			
+	return False
+	
 def CSS_decompresser(text):
-	"""
-		You should only use this function for highly compressed CSS
-	"""
-	
-	for char in ['\t','\n']:
-		text=text.replace(char,'')
+    
+    for char in ['\t','\n']:
+        text=text.replace(char,'')
 
-	indent_level=0
-	new_text=''
-	for i in range(len(text)):
-		char=text[i]
-		
-		try:
-			next_char=text[i+1]
-		except:
-			next_char=''
-	
-		try:
-			previous_char=text[i-1]
-		except:
-			previous_char=''	
+    indent_level=0
+    new_text=''
+    text_lenght=len(text)
+    for i in range(text_lenght):
+        
+        chars={k:'' for k in range(-4,3)}
+        
+        for k in range(-5,3):
+            try:
+                chars[k]=text[i+k]
+            except:
+				pass
+        
+        char=chars[0]
+        
+        if 	(char in [',','%','>'] and not chars[1] in [';',' ']) or \
+				(char == 's' and chars[-1].isdigit() and not chars[1]+chars[2]=='ol') or \
+				(char == ':' and not chars[1] == ' ' and inside_brackets(i, text_lenght, text)) or \
+				(char in ['n','x'] and chars[-4].isdigit() and ''.join(chars[x] for x in range(-3,1)) in ['vmin','vmax']) or \
+				(char == ['m'] and chars[-3].isdigit() and ''.join(chars[x] for x in range(-2,1)) == 'rem') or \
+				(char == ')' and not chars[1] in [' ',';']) or \
+				(char in ['m','x','n','t','c','h','v'] and not chars[-3]==' ' and chars[-2].isdigit() \
+					and chars[-1]+char in ['em','ex','px','cm','mm','in','pt','pc','ch','vh','vw'] and chars[1] != ';'):
+        
+            char+=' '
+        
+        
+        elif 	(char == '#' and chars[-1] == ':') or \
+				(char == '.' and not chars[-1].isdigit() and chars[1].isdigit()):
 					
-		if char in [',','%'] and not next_char in [';',' ']:
-			char+=' '
-		
-		elif char == '#' and previous_char == ':':
-			char = ' #'
-	
-		elif char == '.' and not previous_char.isdigit() and next_char.isdigit():
-			char=' '+char
-			
-		elif char == '{':
-			indent_level+=1
-			char =' {\n'+'\t'*indent_level
-			
-		elif char == '}':
-			indent_level-=1
-			char ='\n'+'\t'*indent_level+'}'
-			if next_char != '}':
-				char+='\n'+'\t'*indent_level
-			
-			if indent_level==0:
-				char+='\n'
-			
-		elif char == ';':
-			char = ';\n'+'\t'*indent_level
-			
-		elif char == ')' and not next_char in [' ',';']:
-			char+=' '
-		
-		new_text+=char
-		
-	return new_text
-	
-	
-
+            char = ' '+char
+    
+        elif char == '{':
+            indent_level+=1
+            char =' {\n'+'\t'*indent_level
+            
+        elif char == '}':
+            indent_level-=1
+            char ='\n'+'\t'*indent_level+'}'
+            if chars[1] != '}':
+                char+='\n'+'\t'*indent_level
+            
+            if indent_level==0:
+                char+='\n'
+            
+        elif char == ';':
+            char = ';\n'+'\t'*indent_level
+            
+        new_text+=char
+        
+    return new_text.replace('  ',' ')
+    
 
 """
 
 
 
 
-	 C S S   M I N
+     C S S   M I N
 
 
 
 
-"""	
-	
+""" 
+    
 try:
     from StringIO import StringIO # The pure-Python StringIO supports unicode.
 except ImportError:
@@ -313,15 +323,16 @@ def main(input):
         help="Wrap output to approximately N chars per line.")
 
     options, args = p.parse_args()
-    sys.stdout.write(cssmin(input, wrap=options.wrap))	
-	
-	
+    sys.stdout.write(cssmin(input, wrap=options.wrap))  
+    
+    
 if __name__ == '__main__':
-	
-	input=sys.stdin.read()
-	
-	text=cssmin(input)
-	if input.strip() == text:
-		text=CSS_decompresser(input)
+    
+    input=sys.stdin.read()
+    
+    text=cssmin(input).strip()
+    if input.strip() == text:
+        text=CSS_decompresser(input)
 
-	sys.stdout.write(text)
+    sys.stdout.write(text)
+    
