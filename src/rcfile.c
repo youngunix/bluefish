@@ -542,34 +542,34 @@ merge_config_files(GFile * oldrc, GFile * oldsession, GFile * newrc, GFile * new
 
 	istream = (GInputStream *) g_file_read(oldrc, NULL, &gerror);
 	if (gerror) {
-		g_print("config file migration error %d:%s", gerror->code, gerror->message);
+		g_print("config file migration error while reading old file %d:%s\n", gerror->code, gerror->message);
 		g_error_free(gerror);
 		return FALSE;
 	}
 	ostream = (GOutputStream *) g_file_append_to(newrc, G_FILE_CREATE_PRIVATE, NULL, &gerror);
 	if (gerror) {
-		g_print("config file migration error %d:%s", gerror->code, gerror->message);
+		g_print("config file migration error while appending %d:%s\n", gerror->code, gerror->message);
 		g_error_free(gerror);
 		g_input_stream_close(istream, NULL, &gerror);
 		return FALSE;
 	}
 	g_output_stream_splice(ostream, istream, G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE, NULL, &gerror);
 	if (gerror) {
-		g_print("config file migration error %d:%s", gerror->code, gerror->message);
+		g_print("config file migration error while splicing %d:%s\n", gerror->code, gerror->message);
 		g_error_free(gerror);
 		g_output_stream_close(ostream, NULL, &gerror);
 		return FALSE;
 	}
 	istream = (GInputStream *) g_file_read(oldsession, NULL, &gerror);
 	if (gerror) {
-		g_print("config file migration error %d:%s", gerror->code, gerror->message);
+		g_print("config file migration error while reading session file %d:%s\n", gerror->code, gerror->message);
 		g_error_free(gerror);
 		g_output_stream_close(ostream, NULL, &gerror);
 		return FALSE;
 	}
 	g_output_stream_splice(ostream, istream, G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE, NULL, &gerror);
 	if (gerror) {
-		g_print("config file migration error %d:%s", gerror->code, gerror->message);
+		g_print("config file migration error while splicing session file %d:%s\n", gerror->code, gerror->message);
 		g_error_free(gerror);
 		g_output_stream_close(ostream, NULL, &gerror);
 		return FALSE;
@@ -577,7 +577,7 @@ merge_config_files(GFile * oldrc, GFile * oldsession, GFile * newrc, GFile * new
 	g_output_stream_close(ostream, NULL, &gerror);
 	g_file_copy(newrc, newsession, G_FILE_COPY_BACKUP, NULL, NULL, NULL, &gerror);
 	if (gerror) {
-		g_print("config file migration error %d:%s", gerror->code, gerror->message);
+		g_print("config file migration error while copying %d:%s\n", gerror->code, gerror->message);
 		g_error_free(gerror);
 		return FALSE;
 	}
