@@ -584,20 +584,24 @@ merge_config_files(GFile * oldrc, GFile * oldsession, GFile * newrc, GFile * new
 	return TRUE;
 }
 
-static void
+static gboolean
 migrate_config_files(GHashTable * main_configlist, GFile * newrc)
 {
 	GFile *oldrc, *oldsession, *newsession;
 	oldrc = user_bfdir(OLDCONFIG);
 	oldsession = user_bfdir(OLDSESSION);
 	newsession = user_bfdir(CURSESSION);
-	merge_config_files(oldrc, oldsession, newrc, newsession);
+	if (merge_config_files(oldrc, oldsession, newrc, newsession)) {
 	/* add some entries to main_configlist. because main_configlist is used for
 	   saving as well this means we'll save these entries too */
-	if (parse_config_file(main_configlist, newrc)) {
-		/* are there any entries that we want to convert ?? */
-		save_config_file(main_configlist, newrc);
+		if (parse_config_file(main_configlist, newrc)) {
+			/* are there any entries that we want to convert ?? */
+			save_config_file(main_configlist, newrc);
+			return TRUE;
+		}
+		return FALSE;
 	}
+	return FALSE;
 }
 
 
@@ -908,7 +912,10 @@ rcfile_parse_main(void)
 		g_warning("no configfile %s, try to convert config files from older versions\n", CURCONFIG);
 		/* probably there is no configfile. try to migrate the configfile from a previous
 		   version */
-		migrate_config_files(main_configlist, file);
+		if (!migrate_config_files(main_configlist, file)) {
+			g_free(main_v->props.config_version);
+			main_v->props.config_version = NULL; 	/* We do not have any config file */	
+		}
 	}
 	g_object_unref(file);
 	if (main_v->props.encoding_search_Nbytes < 1000)
@@ -916,8 +923,10 @@ rcfile_parse_main(void)
 
 	/* do some default configuration for the lists */
 	DEBUG_MSG("config_version=%s\n",main_v->props.config_version);
-	if (!main_v->props.config_version || strlen(main_v->props.config_version)<5 ||main_v->props.config_version[0] < '2' || main_v->props.config_version[2] < '2' || main_v->props.config_version[4] < '4') {
-		main_v->props.rcfile_from_old_version = 1;
+	if (main_v->props.config_version && (strlen(main_v->props.config_version)<5 ||main_v->props.config_version[0] < '2' || main_v->props.config_version[2] < '2' || main_v->props.config_version[4] < '4')) {
+		main_v->props.rcfile_from_old_version = 1; /* We got old version after migration */
+	}
+	if (!main_v->props.config_version || (main_v->props.rcfile_from_old_version == 1)) {
 		main_v->props.external_command = update_commands(main_v->props.external_command, FALSE);
 		main_v->props.external_filter = update_filters(main_v->props.external_filter, FALSE);
 		main_v->props.external_outputbox = update_outputbox(main_v->props.external_outputbox, FALSE);
