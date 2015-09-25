@@ -7,11 +7,12 @@
 # Michèle Garoche <michele.garoche@easyconnect.fr>, 2004.
 # Frédéric Falsetti <falsetti@clansco.org>,2009-2015.
 #
+#: ../src/xmlstrings.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.7\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2015-06-28 14:54+0200\n"
+"POT-Creation-Date: 2015-09-25 11:01+0200\n"
 "PO-Revision-Date: 2015-5-24 14:30+0200\n"
 "Last-Translator: Frédéric Falsetti <falsetti@clansco.org>\n"
 "Language-Team: \n"
@@ -151,48 +152,48 @@ msgstr "Ignorer"
 msgid "Insert special characters as entities"
 msgstr "Insérer des entités pour les caractères spéciaux"
 
-#: ../src/bfwin.c:228
+#: ../src/bfwin.c:232
 msgid "Filebrowser"
 msgstr "Explorateur de fichiers"
 
-#: ../src/bfwin.c:230
+#: ../src/bfwin.c:234
 msgid "Bookmarks"
 msgstr "Signets"
 
-#: ../src/bfwin.c:982
+#: ../src/bfwin.c:1002
 msgid "Goto Line:"
 msgstr "Aller à la ligne :"
 
-#: ../src/bfwin.c:993
+#: ../src/bfwin.c:1013
 msgid "Find:"
 msgstr "Rechercher :"
 
-#: ../src/bfwin.c:1004 ../src/snr3.c:1526
+#: ../src/bfwin.c:1024 ../src/snr3.c:1526
 msgid "Regular expression (pcre)"
 msgstr "Expression régulière (pcre)"
 
-#: ../src/bfwin.c:1007
+#: ../src/bfwin.c:1027
 msgid "Case sensitive"
 msgstr "Respecter la c_asse"
 
-#: ../src/bfwin.c:1010
+#: ../src/bfwin.c:1030
 msgid "Dot character matches newlines"
 msgstr "Un point dans le modèle correspond à un saut de ligne"
 
-#: ../src/bfwin.c:1013
+#: ../src/bfwin.c:1033
 msgid "Pattern contains backslash escaped sequences"
 msgstr "Le modèle contient des caractères d'échappement"
 
-#: ../src/bfwin.c:1025
+#: ../src/bfwin.c:1045
 msgid "Advanced"
 msgstr "Options"
 
-#: ../src/bfwin.c:1499
+#: ../src/bfwin.c:1519
 msgid "New Bluefish Window"
 msgstr "Nouvelle fenêtre Bluefish"
 
 #. Fake-label (for notebook_hide() and _show() ;)
-#: ../src/bfwin.c:1565
+#: ../src/bfwin.c:1585
 msgid "Stand by..."
 msgstr "Veuillez patienter..."
 
@@ -3196,7 +3197,7 @@ msgstr "Documents, onglet modifié :"
 
 #. arr = array_from_arglist(_("Java programming"),"1", "java:image:jsp", NULL);
 #. main_v->globses.filefilters = g_list_append(main_v->globses.filefilters, arr);
-#: ../src/preferences.c:3025 ../src/rcfile.c:1429
+#: ../src/preferences.c:3025 ../src/rcfile.c:1438
 msgid "Images"
 msgstr "Images"
 
@@ -3300,207 +3301,207 @@ msgstr "Créer un projet avec les documents ouverts"
 msgid "Create empty project"
 msgstr "Créer un projet vide"
 
-#: ../src/rcfile.c:697 ../src/rcfile.c:725
+#: ../src/rcfile.c:701 ../src/rcfile.c:729
 msgid "php"
 msgstr "php"
 
-#: ../src/rcfile.c:703
+#: ../src/rcfile.c:707
 msgid "make"
 msgstr "make"
 
-#: ../src/rcfile.c:707
+#: ../src/rcfile.c:711
 msgid "weblint HTML checker"
 msgstr "vérificateur HTML weblint"
 
-#: ../src/rcfile.c:712
+#: ../src/rcfile.c:716
 msgid "tidy HTML validator"
 msgstr "validateur HTML tidy"
 
-#: ../src/rcfile.c:716
+#: ../src/rcfile.c:720
 msgid "javac"
 msgstr "javac"
 
-#: ../src/rcfile.c:720
+#: ../src/rcfile.c:724
 msgid "xmllint XML checker"
 msgstr "vérificateur XML xmllint"
 
-#: ../src/rcfile.c:729
+#: ../src/rcfile.c:733
 msgid "php syntax check"
 msgstr "Vérifier la syntaxe PHP"
 
-#: ../src/rcfile.c:733
+#: ../src/rcfile.c:737
 msgid "perl syntax check"
 msgstr "Vérifier la syntaxe Perl"
 
-#: ../src/rcfile.c:737
+#: ../src/rcfile.c:741
 msgid "php codesniffer"
 msgstr "php codesniffer"
 
-#: ../src/rcfile.c:741
+#: ../src/rcfile.c:745
 msgid "pylint"
 msgstr "pylint"
 
-#: ../src/rcfile.c:754
+#: ../src/rcfile.c:758
 msgid "Sort"
 msgstr "Trier"
 
-#: ../src/rcfile.c:757
+#: ../src/rcfile.c:761
 msgid "Sort / Uniq"
 msgstr "Trier / Uniq"
 
-#: ../src/rcfile.c:760
+#: ../src/rcfile.c:764
 msgid "Reverse lines"
 msgstr "Inverser les lignes"
 
-#: ../src/rcfile.c:763
+#: ../src/rcfile.c:767
 msgid "Dos2unix"
 msgstr "Dos2unix"
 
-#: ../src/rcfile.c:765
+#: ../src/rcfile.c:769
 msgid "Tidy HTML"
 msgstr "Tidy HTML"
 
-#: ../src/rcfile.c:767
+#: ../src/rcfile.c:771
 msgid "Tidy convert to XHTML"
 msgstr "Tidy conversion vers XHTML"
 
-#: ../src/rcfile.c:770
+#: ../src/rcfile.c:774
 msgid "Tidy HTML (perltidy)"
 msgstr "Tidy HTML (perltidy)"
 
-#: ../src/rcfile.c:773
+#: ../src/rcfile.c:777
 msgid "Strip empty lines"
 msgstr "Ôter les lignes vides"
 
-#: ../src/rcfile.c:776
+#: ../src/rcfile.c:780
 msgid "Render HTML to text"
 msgstr "Rendu HTML en texte"
 
-#: ../src/rcfile.c:779
+#: ../src/rcfile.c:783
 msgid "PHP Beautifier"
 msgstr "PHP Beautifier"
 
-#: ../src/rcfile.c:783 ../src/rcfile.c:790
+#: ../src/rcfile.c:787 ../src/rcfile.c:794
 msgid "Javascript Minify with jsmin"
 msgstr "Compacter javascript avec jsmin"
 
-#: ../src/rcfile.c:786 ../src/rcfile.c:793
+#: ../src/rcfile.c:790 ../src/rcfile.c:797
 msgid "Toggle CSS compression"
 msgstr "Basculer la compression CSS"
 
-#: ../src/rcfile.c:797
+#: ../src/rcfile.c:801
 msgid "CSS tidy"
 msgstr "CSS tidy"
 
-#: ../src/rcfile.c:809
+#: ../src/rcfile.c:813
 msgid "Windows XP Firefox"
 msgstr "Windows XP Firefox"
 
-#: ../src/rcfile.c:814
+#: ../src/rcfile.c:818
 msgid "Windows XP Internet Explorer"
 msgstr "Windows XP IInternet Explorer"
 
-#: ../src/rcfile.c:819
+#: ../src/rcfile.c:823
 msgid "Windows XP Opera"
 msgstr "Windows XP Opera"
 
-#: ../src/rcfile.c:823
+#: ../src/rcfile.c:827
 msgid "Windows XP Safari"
 msgstr "Windows XP Safari"
 
-#: ../src/rcfile.c:827
+#: ../src/rcfile.c:831
 msgid "Windows 7 Firefox 32-bit"
 msgstr "Windows 7 Firefox 32-bit"
 
-#: ../src/rcfile.c:832
+#: ../src/rcfile.c:836
 msgid "Windows 7 Internet Explorer 32-bit"
 msgstr "Windows 7 Internet Explorer 32-bitr"
 
-#: ../src/rcfile.c:837
+#: ../src/rcfile.c:841
 msgid "Windows 7 Internet Explorer 64-bit"
 msgstr "Windows 7 Internet Explorer 64-bit"
 
-#: ../src/rcfile.c:843
+#: ../src/rcfile.c:847
 msgid "Safari"
 msgstr "Safari"
 
-#: ../src/rcfile.c:846 ../src/rcfile.c:862
+#: ../src/rcfile.c:850 ../src/rcfile.c:866
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ../src/rcfile.c:849
+#: ../src/rcfile.c:853
 msgid "Google Chrome"
 msgstr "Google Chrome"
 
-#: ../src/rcfile.c:852 ../src/rcfile.c:870
+#: ../src/rcfile.c:856 ../src/rcfile.c:874
 msgid "Chromium"
 msgstr "Chromium"
 
-#: ../src/rcfile.c:855 ../src/rcfile.c:866
+#: ../src/rcfile.c:859 ../src/rcfile.c:870
 msgid "Opera"
 msgstr "Opera"
 
-#: ../src/rcfile.c:858 ../src/rcfile.c:885
+#: ../src/rcfile.c:862 ../src/rcfile.c:889
 msgid "chmod a+x"
 msgstr "chmod a+x"
 
-#: ../src/rcfile.c:873
+#: ../src/rcfile.c:877
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: ../src/rcfile.c:876
+#: ../src/rcfile.c:880
 msgid "Epiphany"
 msgstr "Epiphany"
 
-#: ../src/rcfile.c:879
+#: ../src/rcfile.c:883
 msgid "Kazehakase"
 msgstr "Kazehakase"
 
-#: ../src/rcfile.c:882
+#: ../src/rcfile.c:886
 msgid "Links2 (graphics)"
 msgstr "Links2 (graphics)"
 
-#: ../src/rcfile.c:929
+#: ../src/rcfile.c:938
 msgid "C Header"
 msgstr "En-tête C"
 
-#: ../src/rcfile.c:932
+#: ../src/rcfile.c:941
 msgid "C Header GPL"
 msgstr "En-tête C GPL"
 
-#: ../src/rcfile.c:935
+#: ../src/rcfile.c:944
 msgid "XHTML 1.0"
 msgstr "XHTML 1.0"
 
-#: ../src/rcfile.c:938
+#: ../src/rcfile.c:947
 msgid "HTML 5"
 msgstr "HTML 5"
 
-#: ../src/rcfile.c:941
+#: ../src/rcfile.c:950
 msgid "PHP"
 msgstr "PHP"
 
-#: ../src/rcfile.c:944
+#: ../src/rcfile.c:953
 msgid "LaTex Book"
 msgstr "LaTex Book"
 
-#: ../src/rcfile.c:947
+#: ../src/rcfile.c:956
 msgid "LaTex Presentation"
 msgstr "LaTex Présentation"
 
-#: ../src/rcfile.c:1314
+#: ../src/rcfile.c:1323
 msgid "Untitled Project"
 msgstr "Projet sans titre"
 
-#: ../src/rcfile.c:1421
+#: ../src/rcfile.c:1430
 msgid "C programming"
 msgstr "Programmation C"
 
-#: ../src/rcfile.c:1425
+#: ../src/rcfile.c:1434
 msgid "Web files"
 msgstr "fichiers de type web"
 
-#: ../src/rcfile.c:1432
+#: ../src/rcfile.c:1441
 msgid "Hide objectfiles"
 msgstr "Cacher les fichiers objets"
 
@@ -3701,6 +3702,190 @@ msgstr "Annuler ce changement dans tous les documents ?"
 #: ../src/undo_redo.c:559 ../src/undo_redo.c:701
 msgid "This change concerns multiple documents."
 msgstr "Ce changement affecte de multiple documents."
+
+#: ../src/xmlstrings.h:2
+msgid "Allow folding of C style comments"
+msgstr ""
+
+#: ../src/xmlstrings.h:3
+msgid "Allow folding of Curly brackets block"
+msgstr ""
+
+#: ../src/xmlstrings.h:4
+msgid "Allow folding of Javascript Curly brackets block"
+msgstr ""
+
+#: ../src/xmlstrings.h:5
+msgid "Allow folding of Javascript Parentheses block"
+msgstr ""
+
+#: ../src/xmlstrings.h:6
+msgid "Allow folding of Javascript Square brackets block"
+msgstr ""
+
+#: ../src/xmlstrings.h:7
+msgid "Allow folding of Parentheses block"
+msgstr ""
+
+#: ../src/xmlstrings.h:8
+msgid "Allow folding of PHP blocks"
+msgstr ""
+
+#: ../src/xmlstrings.h:9
+msgid "Allow folding of Square brackets block"
+msgstr ""
+
+#: ../src/xmlstrings.h:10
+msgid "Allow folding of the Parentheses block"
+msgstr ""
+
+#: ../src/xmlstrings.h:11
+msgid "Allow to fold the the root html tag"
+msgstr ""
+
+#: ../src/xmlstrings.h:12
+msgid "All php functions"
+msgstr ""
+
+#: ../src/xmlstrings.h:13
+msgid "All wordpress functions"
+msgstr ""
+
+#: ../src/xmlstrings.h:14
+msgid "Autocomplete function names with semicolon"
+msgstr ""
+
+#: ../src/xmlstrings.h:15
+#, fuzzy
+msgid "Autocomplete HTML entities"
+msgstr "Auto-completion & Références"
+
+#: ../src/xmlstrings.h:16
+msgid "Autocomplete Javascript object methods"
+msgstr ""
+
+#: ../src/xmlstrings.h:17
+msgid "autocomplete javascript variables"
+msgstr ""
+
+#: ../src/xmlstrings.h:18
+#, fuzzy
+msgid "Auto-complete PHP functions"
+msgstr "Auto-completion & Références"
+
+#: ../src/xmlstrings.h:19
+msgid "Auto-complete PHP variables"
+msgstr ""
+
+#: ../src/xmlstrings.h:20
+#, fuzzy
+msgid "Autocomplete tags"
+msgstr "terminé"
+
+#: ../src/xmlstrings.h:21
+msgid "autocomplete with newlines"
+msgstr ""
+
+#: ../src/xmlstrings.h:22
+msgid "CSS properties"
+msgstr ""
+
+#: ../src/xmlstrings.h:23
+msgid "Enable the PHP short open tag"
+msgstr ""
+
+#: ../src/xmlstrings.h:24
+msgid "GNU Coreutils functions"
+msgstr ""
+
+#: ../src/xmlstrings.h:25
+msgid "HTML entities"
+msgstr ""
+
+#: ../src/xmlstrings.h:26
+msgid "include JQuery syntax"
+msgstr ""
+
+#: ../src/xmlstrings.h:27
+#, fuzzy
+msgid "Javascript CSS properties"
+msgstr "Javascript beautifier"
+
+#: ../src/xmlstrings.h:28
+msgid "Load all php functions"
+msgstr ""
+
+#: ../src/xmlstrings.h:29
+#, fuzzy
+msgid "Load auto-completion information"
+msgstr "Afficher la fenêtre contextuelle de complétion"
+
+#: ../src/xmlstrings.h:30
+#, fuzzy
+msgid "Load completion data"
+msgstr "Afficher la fenêtre contextuelle de complétion"
+
+#: ../src/xmlstrings.h:31
+msgid "Load glib types and functions"
+msgstr ""
+
+#: ../src/xmlstrings.h:32
+msgid "Load GObject functions"
+msgstr ""
+
+#: ../src/xmlstrings.h:33
+msgid "Load GTK+ functions"
+msgstr ""
+
+#: ../src/xmlstrings.h:34
+#, fuzzy
+msgid "Load reference data"
+msgstr "Charger les informations de références du fichier de language"
+
+#: ../src/xmlstrings.h:35
+#, fuzzy
+msgid "Load reference information"
+msgstr "<b>Références</b>"
+
+#: ../src/xmlstrings.h:36
+msgid "Load standard C library functions "
+msgstr ""
+
+#: ../src/xmlstrings.h:37
+msgid "Load XSLT 2.0 support."
+msgstr ""
+
+#: ../src/xmlstrings.h:38
+msgid "Methods in javadoc but not in references"
+msgstr ""
+
+#: ../src/xmlstrings.h:39
+msgid "scan for sql in php strings"
+msgstr ""
+
+#: ../src/xmlstrings.h:40
+msgid "Scan for sql in strings"
+msgstr ""
+
+#: ../src/xmlstrings.h:41
+msgid "Self-close tags such as br, hr, and img with /&gt;"
+msgstr ""
+
+#: ../src/xmlstrings.h:42
+msgid "Show a string as a block"
+msgstr ""
+
+#: ../src/xmlstrings.h:43
+msgid "Show tag attributes as block"
+msgstr ""
+
+#: ../src/xmlstrings.h:44
+msgid "Show this language in the menu"
+msgstr ""
+
+#: ../src/xmlstrings.h:45
+msgid "Tag block-start includes all attributes"
+msgstr ""
 
 #~ msgid "CSS Minify with cssmin"
 #~ msgstr "Compacter CSS avec cssmin"
