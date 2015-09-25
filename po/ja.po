@@ -5,11 +5,12 @@
 # Timothy Joko-Veltman <tim-oss@indigopixel.com>, 2004
 # Takeshi HAMASAKI <hmatrjp@users.sourceforge.jp>, 2005-2014
 #
+#: ../src/xmlstrings.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.7\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2014-12-26 19:17+0900\n"
+"POT-Creation-Date: 2015-09-25 11:01+0200\n"
 "PO-Revision-Date: 2014-12-26 19:47+0900\n"
 "Last-Translator: Takeshi Hamasaki <hmatrjp@users.sourceforge.jp>\n"
 "Language-Team: \n"
@@ -115,20 +116,20 @@ msgstr "Bluefish プロジェクトファイル"
 msgid "Bluefish language definition file"
 msgstr "Bluefish 言語定義ファイル"
 
-#: ../src/bftextview2.c:1793
+#: ../src/bftextview2.c:1827
 msgid "Collapse all"
 msgstr "すべて畳む"
 
-#: ../src/bftextview2.c:1796
+#: ../src/bftextview2.c:1830
 msgid "Expand all"
 msgstr "すべて展開"
 
-#: ../src/bftextview2.c:1805
+#: ../src/bftextview2.c:1838
 #, c-format
 msgid "Collapse %s"
 msgstr "%s を畳む"
 
-#: ../src/bftextview2.c:1815
+#: ../src/bftextview2.c:1848
 #, c-format
 msgid "Expand %s"
 msgstr "%s を展開"
@@ -149,48 +150,48 @@ msgstr "綴りを無視"
 msgid "Insert special characters as entities"
 msgstr "特殊文字を実体参照として入力"
 
-#: ../src/bfwin.c:231
+#: ../src/bfwin.c:232
 msgid "Filebrowser"
 msgstr "ファイルブラウザ"
 
-#: ../src/bfwin.c:233
+#: ../src/bfwin.c:234
 msgid "Bookmarks"
 msgstr "ブックマーク"
 
-#: ../src/bfwin.c:988
+#: ../src/bfwin.c:1002
 msgid "Goto Line:"
 msgstr "行ジャンプ:"
 
-#: ../src/bfwin.c:999
+#: ../src/bfwin.c:1013
 msgid "Find:"
 msgstr "検索: "
 
-#: ../src/bfwin.c:1010 ../src/snr3.c:1523
+#: ../src/bfwin.c:1024 ../src/snr3.c:1526
 msgid "Regular expression (pcre)"
 msgstr "正規表現(pcre)"
 
-#: ../src/bfwin.c:1013
+#: ../src/bfwin.c:1027
 msgid "Case sensitive"
 msgstr "大文字小文字を区別する(_M)"
 
-#: ../src/bfwin.c:1016
+#: ../src/bfwin.c:1030
 msgid "Dot character matches newlines"
 msgstr "正規表現の中で小数点が改行にもマッチするようにする"
 
-#: ../src/bfwin.c:1019
+#: ../src/bfwin.c:1033
 msgid "Pattern contains backslash escaped sequences"
 msgstr "パターンはエスケープシーケンスを含む(_Q)"
 
-#: ../src/bfwin.c:1031
+#: ../src/bfwin.c:1045
 msgid "Advanced"
 msgstr "詳細..."
 
-#: ../src/bfwin.c:1508
+#: ../src/bfwin.c:1519
 msgid "New Bluefish Window"
 msgstr "新規 Bluefish ウィンドウ"
 
 #. Fake-label (for notebook_hide() and _show() ;)
-#: ../src/bfwin.c:1574
+#: ../src/bfwin.c:1585
 msgid "Stand by..."
 msgstr "しばらくお待ちください..."
 
@@ -363,7 +364,7 @@ msgstr "すべて選択"
 msgid "Add Boo_kmark"
 msgstr "ブックマークに追加(_K)"
 
-#: ../src/bfwin_uimanager.c:856 ../src/document.c:2249
+#: ../src/bfwin_uimanager.c:856 ../src/document.c:2310
 msgid "Add bookmark"
 msgstr "ブックマークを追加する"
 
@@ -435,7 +436,7 @@ msgstr "色分け再スキャン(_X)"
 msgid "_New Project..."
 msgstr "新規プロジェクト(_N)..."
 
-#: ../src/bfwin_uimanager.c:881 ../src/project.c:228
+#: ../src/bfwin_uimanager.c:881 ../src/project.c:231
 msgid "New project"
 msgstr "新規プロジェクト"
 
@@ -692,7 +693,7 @@ msgstr "行を折り返す(_W)"
 msgid "Wrap text"
 msgstr "行の幅に合わせて折り返す"
 
-#: ../src/bfwin_uimanager.c:945 ../src/document.c:2039 ../src/document.c:3385
+#: ../src/bfwin_uimanager.c:945 ../src/document.c:2097 ../src/document.c:3493
 msgid "_Close"
 msgstr "閉じる(_C)"
 
@@ -709,7 +710,7 @@ msgid "Close all files"
 msgstr "すべてのファイルを閉じる"
 
 #: ../src/bfwin_uimanager.c:949 ../src/bfwin_uimanager.c:1025
-#: ../src/file_dialogs.c:1457
+#: ../src/file_dialogs.c:1455
 msgid "_Save"
 msgstr "保存(_S)"
 
@@ -1019,31 +1020,31 @@ msgstr "すべてやり直す"
 msgid "Always use this syntax for files of type %s ?"
 msgstr "この種類のファイル %s には、いつもこの文法を使いますか？"
 
-#: ../src/bfwin_uimanager.c:1225
+#: ../src/bfwin_uimanager.c:1227
 msgid "Open _URL..."
 msgstr "URLを開く(_U)..."
 
-#: ../src/bfwin_uimanager.c:1235
+#: ../src/bfwin_uimanager.c:1237
 msgid "Upload _/ Download..."
 msgstr "アップロード _/ ダウンロード..."
 
-#: ../src/bfwin_uimanager.c:1248
+#: ../src/bfwin_uimanager.c:1250
 msgid "_Spell Check"
 msgstr "スペルチェック(_S)"
 
-#: ../src/bfwin_uimanager.c:1715
+#: ../src/bfwin_uimanager.c:1717
 msgid "Text area to filter"
 msgstr "フィルタに渡す範囲"
 
-#: ../src/bfwin_uimanager.c:1716
+#: ../src/bfwin_uimanager.c:1718
 msgid "All text"
 msgstr "文書全体"
 
-#: ../src/bfwin_uimanager.c:1717
+#: ../src/bfwin_uimanager.c:1719
 msgid "Selected text only"
 msgstr "選択した部分のみ"
 
-#: ../src/bfwin_uimanager.c:1719
+#: ../src/bfwin_uimanager.c:1721
 msgid "Never ask again"
 msgstr "今後この質問を表示しない"
 
@@ -1209,7 +1210,7 @@ msgstr "編集(_E)..."
 msgid "_Delete"
 msgstr "削除(_D)"
 
-#: ../src/bookmark.c:901 ../src/document.c:2245
+#: ../src/bookmark.c:901 ../src/document.c:2306
 msgid "Delete bookmark"
 msgstr "ブックマークを削除する"
 
@@ -1283,11 +1284,11 @@ msgstr "ブックマークを追加できません"
 msgid "You already have a bookmark here!"
 msgstr "すでにここにブックマークがあります!"
 
-#: ../src/document.c:514
+#: ../src/document.c:518
 msgid "Name: "
 msgstr "名前: "
 
-#: ../src/document.c:541
+#: ../src/document.c:545
 msgid ""
 "\n"
 "Language mode: "
@@ -1295,7 +1296,7 @@ msgstr ""
 "\n"
 "言語モード:"
 
-#: ../src/document.c:545
+#: ../src/document.c:549
 msgid ""
 "\n"
 "Encoding: "
@@ -1303,7 +1304,7 @@ msgstr ""
 "\n"
 "文字コード: "
 
-#: ../src/document.c:557
+#: ../src/document.c:561
 msgid ""
 "\n"
 "Mime type: "
@@ -1311,7 +1312,7 @@ msgstr ""
 "\n"
 "MIME タイプ:"
 
-#: ../src/document.c:565
+#: ../src/document.c:569
 #, c-format
 msgid ""
 "\n"
@@ -1322,7 +1323,7 @@ msgstr ""
 "権限: %s\n"
 "Uid: %u Gid: %u"
 
-#: ../src/document.c:582
+#: ../src/document.c:586
 msgid ""
 "\n"
 "Size (on disk): "
@@ -1330,7 +1331,7 @@ msgstr ""
 "\n"
 "(ディスク上での)サイズ: "
 
-#: ../src/document.c:591
+#: ../src/document.c:595
 msgid ""
 "\n"
 "Last modified: "
@@ -1338,72 +1339,72 @@ msgstr ""
 "\n"
 "最終更新: "
 
-#: ../src/document.c:647
+#: ../src/document.c:663
 #, c-format
 msgid "Untitled %d"
 msgstr "無題 %d"
 
-#: ../src/document.c:828
+#: ../src/document.c:846
 #, c-format
 msgid "Changed tab width to %d"
 msgstr "タブの幅を %d に変更しました"
 
-#: ../src/document.c:1003
+#: ../src/document.c:1024
 #, c-format
 msgid "Document %s is already open in another Bluefish window."
 msgstr "文書 %s は既に他の Bluefish のウィンドウで開いています。"
 
-#: ../src/document.c:1005
+#: ../src/document.c:1026
 msgid "Move to this window"
 msgstr "このウィンドウに移す"
 
-#: ../src/document.c:1005
+#: ../src/document.c:1026
 msgid "Open readonly"
 msgstr "読み込み専用で開く"
 
-#: ../src/document.c:1006
+#: ../src/document.c:1027
 msgid "Do not open"
 msgstr "開きません"
 
-#: ../src/document.c:1338
+#: ../src/document.c:1381
 #, c-format
 msgid " Ln: %d, Col: %d, Char: %d"
 msgstr " 行: %d, 列: %d, 文字: %d"
 
-#: ../src/document.c:1341
+#: ../src/document.c:1384
 #, c-format
 msgid " Ln: %d, Col: %d"
 msgstr "%d 行, %d 列目"
 
-#: ../src/document.c:1364
+#: ../src/document.c:1407
 msgid " OVR"
 msgstr " 上書き"
 
-#: ../src/document.c:1364
+#: ../src/document.c:1407
 msgid " INS"
 msgstr " 挿入"
 
-#: ../src/document.c:1366
+#: ../src/document.c:1409
 msgid " RO"
 msgstr " 読み込み専用"
 
-#: ../src/document.c:1385
+#: ../src/document.c:1428
 msgid "Unknown"
 msgstr "未知の言語"
 
-#: ../src/document.c:1959
+#: ../src/document.c:2016
 msgid "_No"
 msgstr "いいえ(_N)"
 
-#: ../src/document.c:1959
+#: ../src/document.c:2016
 msgid "_Split"
 msgstr "分割(_S)"
 
-#: ../src/document.c:1962
+#: ../src/document.c:2019
 msgid "File contains very long lines. Split these lines?"
 msgstr "ファイルにとても長い行が含まれます。長い行を分割しますか？"
 
-#: ../src/document.c:1962
+#: ../src/document.c:2021
 msgid ""
 "The lines in this file are longer than Bluefish can handle with reasonable "
 "performance. This split function, however, is unaware of any language "
@@ -1415,11 +1416,11 @@ msgstr ""
 "改行に置き換えることがあります。また、空白、タブのない所に改行を挿入すること"
 "があります。"
 
-#: ../src/document.c:2039
+#: ../src/document.c:2097
 msgid "_Convert"
 msgstr "変換(_C)"
 
-#: ../src/document.c:2043
+#: ../src/document.c:2101
 #, c-format
 msgid ""
 "File '%s' is not a valid text file.\n"
@@ -1429,7 +1430,7 @@ msgstr ""
 "一部が壊れているか、途中で切れているか、想定外のエンコーディングである可能性"
 "があります。"
 
-#: ../src/document.c:2045
+#: ../src/document.c:2106
 msgid ""
 "Bluefish can convert this file into a valid one by replacing illegal symbols "
 "with spaces. Convert?"
@@ -1437,7 +1438,7 @@ msgstr ""
 "Bluefish は無効なシンボルをスペースに変換し、ファイルを開くことができます。変"
 "換しますか?"
 
-#: ../src/document.c:2057
+#: ../src/document.c:2118
 #, c-format
 msgid ""
 "File is opened in read-only mode since it differs from original one.\n"
@@ -1446,26 +1447,26 @@ msgstr ""
 "内容を変更したので、ファイルを読み取り専用モードで開いています。\n"
 "%lu 文字をスペースに置換しました。"
 
-#: ../src/document.c:2060
+#: ../src/document.c:2121
 msgid "Use 'Save As' to save it with different name and make editable"
 msgstr "「別名で保存」を使うと、別名で保存し、編集可能となります。"
 
-#: ../src/document.c:2255
+#: ../src/document.c:2316
 msgid "Exit fullscreen"
 msgstr "全画面表示の解除"
 
 #. if (main_v->props.backup_abort_action == 2)
 #. we have to ask the user
 #. we have to ask the user what to do
-#: ../src/document.c:2413 ../src/file_dialogs.c:450 ../src/file_dialogs.c:488
+#: ../src/document.c:2516 ../src/file_dialogs.c:450 ../src/file_dialogs.c:488
 msgid "_Abort save"
 msgstr "保存中止(_A)"
 
-#: ../src/document.c:2413
+#: ../src/document.c:2516
 msgid "_Continue save in UTF-8"
 msgstr "UTF-8 で保存を続ける(_C)"
 
-#: ../src/document.c:2426
+#: ../src/document.c:2529
 #, c-format
 msgid ""
 "Failed to convert %s to character encoding %s. Encoding failed on character "
@@ -1478,19 +1479,19 @@ msgstr ""
 "\n"
 "文字コード UTF-8 で保存を続けますか?"
 
-#: ../src/document.c:2431
+#: ../src/document.c:2534
 msgid "File encoding conversion failure"
 msgstr "ファイルの文字コード変換に失敗しました"
 
-#: ../src/document.c:2609
+#: ../src/document.c:2711
 msgid "Previously: "
 msgstr "元: "
 
-#: ../src/document.c:3301
+#: ../src/document.c:3409
 msgid "Unable to open file"
 msgstr "ファイルをオープンできません"
 
-#: ../src/document.c:3313
+#: ../src/document.c:3421
 #, c-format
 msgid ""
 "If you revert \"%s\" to your last saved copy, your current changes will be "
@@ -1499,89 +1500,89 @@ msgstr ""
 "ファイル \"%s\"について 一つ前の保存から行われた変更を破棄すると、その変更は"
 "失われます。"
 
-#: ../src/document.c:3317
+#: ../src/document.c:3425
 msgid "Revert changes to last saved copy?"
 msgstr "一つ前の保存から行われた変更を破棄しますか？"
 
-#: ../src/document.c:3385
+#: ../src/document.c:3493
 msgid "_Retry"
 msgstr "再試行(_R)"
 
-#: ../src/document.c:3385
+#: ../src/document.c:3493
 msgid "Retry _all failed"
 msgstr "失敗したすべての文書をもう一度開く(_A)"
 
-#: ../src/document.c:3385
+#: ../src/document.c:3493
 msgid "Close all _failed"
 msgstr "失敗したすべての文書を閉じる(_F)"
 
-#: ../src/document.c:3390
+#: ../src/document.c:3498
 msgid "File "
 msgstr "ファイル"
 
-#: ../src/document.c:3390
+#: ../src/document.c:3498
 msgid " failed to load."
 msgstr " 読み込みに失敗しました。"
 
-#: ../src/document.c:3394
+#: ../src/document.c:3502
 msgid "File failed to load\n"
 msgstr "ファイルの読み込みに失敗しました\n"
 
-#: ../src/document.c:3519
+#: ../src/document.c:3629
 msgid "Select file to insert"
 msgstr "挿入するファイルの選択"
 
-#: ../src/document.c:3528
+#: ../src/document.c:3638
 msgid "No file to insert"
 msgstr "挿入するファイルがありません"
 
-#: ../src/document.c:3608
+#: ../src/document.c:3730
 msgid "Save pasted image as"
 msgstr "貼り付けた画像を別名で保存"
 
-#: ../src/document.c:3704
+#: ../src/document.c:3832
 msgid "Paste special"
 msgstr "特殊な貼り付け"
 
-#: ../src/document.c:3710
+#: ../src/document.c:3838
 msgid "No compatible clipboard data found"
 msgstr "互換性のあるデータがクリップボードにありません"
 
-#: ../src/document.c:3714
+#: ../src/document.c:3843
 msgid "Paste as _HTML"
 msgstr "HTMLとして貼り付け"
 
-#: ../src/document.c:3719
+#: ../src/document.c:3848
 msgid "Paste as HTML with _JPG"
 msgstr "HTML と _JPG　として貼り付け"
 
-#: ../src/document.c:3729
+#: ../src/document.c:3858
 msgid "Paste as plain text"
 msgstr "平文テキストとして挿入"
 
-#: ../src/document.c:3825
+#: ../src/document.c:3953
 #, c-format
 msgid "%d line"
 msgid_plural "%d lines"
 msgstr[0] "%d 行"
 
-#: ../src/document.c:3826
+#: ../src/document.c:3954
 #, c-format
 msgid "%d word"
 msgid_plural "%d words"
 msgstr[0] "%d 語"
 
-#: ../src/document.c:3827
+#: ../src/document.c:3955
 #, c-format
 msgid "%d character"
 msgid_plural "%d characters"
 msgstr[0] "%d 文字"
 
-#: ../src/document.c:3829
+#: ../src/document.c:3957
 msgid "Selection statistics: "
 msgstr "選択範囲の統計:"
 
-#: ../src/document.c:3829
+#: ../src/document.c:3957
 msgid "Statistics: "
 msgstr "統計:"
 
@@ -1685,35 +1686,70 @@ msgstr "メニューで使用するエンコーディング(_M)."
 msgid "Add or remove document encodings"
 msgstr "削除する"
 
-#: ../src/external_commands.c:446
+#: ../src/external_commands.c:463
 msgid "Supply extra arguments"
 msgstr "追加の引数を与える"
 
-#: ../src/external_commands.c:451
+#: ../src/external_commands.c:468
 #, c-format
 msgid "Supply arguments to define %%a in '%s'"
 msgstr "'%s' の中にある %%a を定義するために追加引数を入力してください"
 
-#: ../src/external_commands.c:721
-#, c-format
-msgid "Failed to create a command for %s."
+#: ../src/external_commands.c:749
+msgid "Internal error."
+msgstr ""
+
+#: ../src/external_commands.c:752
+msgid ""
+"This command requires the current document to have a file name. Please save "
+"your document first."
+msgstr ""
+
+#: ../src/external_commands.c:755
+msgid ""
+"This command requires the current document to be a local file. Please save "
+"your document to a loacal file."
+msgstr ""
+
+#: ../src/external_commands.c:758
+msgid ""
+"External commands cannot have an output defined. Please fix this command in "
+"the preferences."
+msgstr ""
+
+#: ../src/external_commands.c:761
+msgid ""
+"This command has multiple inputs. Please fix this command in the preferences."
+msgstr ""
+
+#: ../src/external_commands.c:764
+msgid ""
+"This command has multiple outputs. Please fix this command in the "
+"preferences."
+msgstr ""
+
+#: ../src/external_commands.c:768
+#, fuzzy, c-format
+msgid ""
+"Failed to create a command for %s.\n"
+"%s"
 msgstr "コマンド行の生成に失敗しました: %s"
 
-#: ../src/external_commands.c:723
+#: ../src/external_commands.c:770
 msgid "Failed to create a command"
 msgstr "コマンド行の生成に失敗しました"
 
-#: ../src/external_commands.c:744 ../src/external_commands.c:761
+#: ../src/external_commands.c:792 ../src/external_commands.c:809
 #, c-format
 msgid "The command %s exited with error code %d. %s"
 msgstr "コマンド %s が終了しました。エラーコードは %d です。%s"
 
-#: ../src/external_commands.c:747 ../src/external_commands.c:765
+#: ../src/external_commands.c:795 ../src/external_commands.c:813
 msgid "Probably this application is not installed on your system."
 msgstr ""
 "おそらくこのアプリケーションはあなたのシステムにインストールされていません。"
 
-#: ../src/external_commands.c:750
+#: ../src/external_commands.c:798
 msgid "Command returned error code"
 msgstr "コマンドがエラーコード返しました"
 
@@ -1923,33 +1959,33 @@ msgid "Still loading %d file, finished %s"
 msgid_plural "Still loading %d files, finished %s"
 msgstr[0] "まだ %d 個のファイルを読み込んでいます, 完了 %s"
 
-#: ../src/file.c:881
+#: ../src/file.c:883
 #, c-format
 msgid "All files loaded, finished %s, %d document open"
 msgid_plural "All files loaded, finished %s, %d documents open"
 msgstr[0] "すべてのファイルを読み込みました, %s 完了, %d 個の文書を開きました"
 
-#: ../src/file.c:1425
+#: ../src/file.c:1445
 #, c-format
 msgid "Finished advanced open, %d document open."
 msgid_plural "Finished advanced open, %d documents open."
 msgstr[0] "高度なファイル選択が終了しました、%d 個の文書を開きました。"
 
-#: ../src/file.c:1601
+#: ../src/file.c:1625
 msgid "_Skip"
 msgstr "スキップ(_S)"
 
-#: ../src/file.c:1601 ../src/file_dialogs.c:624 ../src/file_dialogs.c:645
-#: ../src/project.c:336
+#: ../src/file.c:1625 ../src/file_dialogs.c:624 ../src/file_dialogs.c:645
+#: ../src/project.c:339
 msgid "_Overwrite"
 msgstr "上書き(_O)"
 
-#: ../src/file.c:1605
+#: ../src/file.c:1629
 #, c-format
 msgid "%s cannot be copied, it already exists, overwrite?"
 msgstr "ファイル %s はコピーできません, 既に存在します, 上書きしますか?"
 
-#: ../src/file.c:1607
+#: ../src/file.c:1631
 msgid "Overwrite file?"
 msgstr "ファイルを上書きしますか?"
 
@@ -2034,12 +2070,12 @@ msgstr "ファイルのバックアップに失敗"
 msgid "Could not save file "
 msgstr "ファイルを保存できませんでした"
 
-#: ../src/file_dialogs.c:509 ../src/file_dialogs.c:1498
+#: ../src/file_dialogs.c:509 ../src/file_dialogs.c:1496
 msgid "File changed on disk\n"
 msgstr "ディスク上でファイルが変更されました\n"
 
 #: ../src/file_dialogs.c:624 ../src/file_dialogs.c:645
-#: ../src/file_dialogs.c:964 ../src/project.c:336
+#: ../src/file_dialogs.c:964 ../src/project.c:339
 msgid "_Cancel"
 msgstr "キャンセル(_C)"
 
@@ -2052,12 +2088,12 @@ msgstr "ファイル %s は存在し, 開いています. 上書きしますか 
 msgid "The file you have selected is being edited in Bluefish."
 msgstr "選択したファイルは Bluefish で編集されています."
 
-#: ../src/file_dialogs.c:646 ../src/project.c:338
+#: ../src/file_dialogs.c:646 ../src/project.c:341
 #, c-format
 msgid "A file named \"%s\" already exists."
 msgstr "\"%s\"  というファイル名は既に存在します."
 
-#: ../src/file_dialogs.c:649 ../src/project.c:342
+#: ../src/file_dialogs.c:649 ../src/project.c:345
 msgid "Do you want to replace the existing file?"
 msgstr "存在しているファイルを置き換えますか？"
 
@@ -2133,54 +2169,54 @@ msgstr "すべて保存(_S)"
 msgid "One or more open files have been changed."
 msgstr "いくつかのファイルが変更されています."
 
-#: ../src/file_dialogs.c:1290
+#: ../src/file_dialogs.c:1288
 #, c-format
 msgid "<span color=\"red\">%d failure</span>"
 msgid_plural "<span color=\"red\">%d failures</span>"
 msgstr[0] "<span color=\"red\">%d 個の失敗</span>"
 
-#: ../src/file_dialogs.c:1299
+#: ../src/file_dialogs.c:1297
 msgid "incomplete finished"
 msgstr "不完全な終了"
 
-#: ../src/file_dialogs.c:1301
+#: ../src/file_dialogs.c:1299
 msgid "completed"
 msgstr "完了"
 
-#: ../src/file_dialogs.c:1359
+#: ../src/file_dialogs.c:1357
 msgid "Upload / Download"
 msgstr "アップロード / ダウンロード"
 
-#: ../src/file_dialogs.c:1362
+#: ../src/file_dialogs.c:1360
 msgid "Upload"
 msgstr "アップロード"
 
-#: ../src/file_dialogs.c:1362
+#: ../src/file_dialogs.c:1360
 msgid "Download"
 msgstr "ダウンロード"
 
-#: ../src/file_dialogs.c:1369
+#: ../src/file_dialogs.c:1367
 msgid "Local directory"
 msgstr "ローカルディレクトリ"
 
-#: ../src/file_dialogs.c:1375
+#: ../src/file_dialogs.c:1373
 msgid "Remote directory"
 msgstr "リモートディレクトリ"
 
-#: ../src/file_dialogs.c:1380
+#: ../src/file_dialogs.c:1378
 msgid "Delete deprecated files"
 msgstr "非推奨のファイルを削除"
 
-#: ../src/file_dialogs.c:1384
+#: ../src/file_dialogs.c:1382
 msgid "Include hidden files"
 msgstr "隠しファイルを表示する"
 
-#: ../src/file_dialogs.c:1387
+#: ../src/file_dialogs.c:1385
 msgid "Include backup files"
 msgstr "バックアップファイルも含める"
 
 #. g_print("oldtimestr=%s, newtimestr=%s\n",oldtimestr,newtimestr);
-#: ../src/file_dialogs.c:1434
+#: ../src/file_dialogs.c:1432
 #, c-format
 msgid ""
 "Filename:%s changed on disk.\n"
@@ -2197,34 +2233,34 @@ msgstr ""
 "　元のサイズは %s バイト\n"
 "新しいサイズは %s バイト"
 
-#: ../src/file_dialogs.c:1457
+#: ../src/file_dialogs.c:1455
 msgid "_Unset file name"
 msgstr "ファイル名の設定を外す(_U)"
 
 #. file is deleted on disk, what do we do now ?
-#: ../src/file_dialogs.c:1459
+#: ../src/file_dialogs.c:1457
 #, c-format
 msgid "File name: %s"
 msgstr "ファイル名: %s"
 
-#: ../src/file_dialogs.c:1462
+#: ../src/file_dialogs.c:1460
 msgid "File disappeared from disk\n"
 msgstr "ディスクからファイルがなくなりました\n"
 
-#: ../src/file_dialogs.c:1481
+#: ../src/file_dialogs.c:1479
 msgid "_Ignore"
 msgstr "無視(_I)"
 
-#: ../src/file_dialogs.c:1481
+#: ../src/file_dialogs.c:1479
 msgid "_Reload"
 msgstr "再読込み(_R)"
 
-#: ../src/file_dialogs.c:1481
+#: ../src/file_dialogs.c:1479
 msgid "Check and reload all documents"
 msgstr "すべての文書を確認し開き直す"
 
 #. build a list of filters
-#: ../src/filefilter.c:250 ../src/gtk_easy.c:1351 ../src/preferences.c:2438
+#: ../src/filefilter.c:250 ../src/gtk_easy.c:1351 ../src/preferences.c:2440
 msgid "All files"
 msgstr "すべてのファイル"
 
@@ -2314,7 +2350,7 @@ msgstr "指定しない"
 msgid "_Template:"
 msgstr "テンプレート(_T):"
 
-#: ../src/preferences.c:542 ../src/snr3.c:1583
+#: ../src/preferences.c:542 ../src/snr3.c:1586
 msgid "<b>Options</b>"
 msgstr "<b>オプション</b>"
 
@@ -2346,7 +2382,7 @@ msgstr "行番号を表示(_N)"
 msgid "Show _right margin indicator"
 msgstr "右マージンの目印を表示(_R)"
 
-#: ../src/preferences.c:562 ../src/preferences.c:2502
+#: ../src/preferences.c:562 ../src/preferences.c:2504
 msgid "Smart auto indentin_g"
 msgstr "賢い自動字下げ(_G)"
 
@@ -2410,19 +2446,19 @@ msgstr ""
 msgid "Label"
 msgstr "ラベル"
 
-#: ../src/preferences.c:1157 ../src/preferences.c:2616
+#: ../src/preferences.c:1157 ../src/preferences.c:2618
 msgid "Foreground color"
 msgstr "文字色"
 
-#: ../src/preferences.c:1158 ../src/preferences.c:2617
+#: ../src/preferences.c:1158 ../src/preferences.c:2619
 msgid "_Foreground color:"
 msgstr "前景色(_F):"
 
-#: ../src/preferences.c:1159 ../src/preferences.c:2620
+#: ../src/preferences.c:1159 ../src/preferences.c:2622
 msgid "Background color"
 msgstr "背景色"
 
-#: ../src/preferences.c:1160 ../src/preferences.c:2621
+#: ../src/preferences.c:1160 ../src/preferences.c:2623
 msgid "_Background color:"
 msgstr "背景色(_B):"
 
@@ -2621,585 +2657,595 @@ msgstr "色分けの名前"
 msgid "Textstyle"
 msgstr "テキストスタイル"
 
-#: ../src/preferences.c:2166 ../src/preferences.c:2858
+#: ../src/preferences.c:2167 ../src/preferences.c:2862
 msgid "Auto"
 msgstr "自動"
 
-#: ../src/preferences.c:2430
+#: ../src/preferences.c:2431
 msgid "Delayed"
 msgstr "遅延"
 
-#: ../src/preferences.c:2430
+#: ../src/preferences.c:2431
 msgid "Immediately"
 msgstr "すぐに"
 
-#: ../src/preferences.c:2431
+#: ../src/preferences.c:2432
 msgid "Continue save"
 msgstr "保存継続"
 
-#: ../src/preferences.c:2431
+#: ../src/preferences.c:2432
 msgid "Abort save"
 msgstr "保存中止"
 
-#: ../src/preferences.c:2431
+#: ../src/preferences.c:2432
 msgid "Ask what to do"
 msgstr "どうするか尋ねる"
 
-#: ../src/preferences.c:2433
-msgid "Nothing"
-msgstr "チェックしない"
-
-#: ../src/preferences.c:2433
-msgid "Modified time and file size"
-msgstr "更新時刻とファイルサイズ"
-
-#: ../src/preferences.c:2433
-msgid "Modified time"
-msgstr "更新時刻"
-
-#: ../src/preferences.c:2433
-msgid "File size"
-msgstr "ファイルサイズ"
-
-#: ../src/preferences.c:2434 ../src/preferences.c:2435
-msgid "left"
-msgstr "左"
-
-#: ../src/preferences.c:2434 ../src/preferences.c:2435
-msgid "right"
-msgstr "右"
-
-#: ../src/preferences.c:2434
-msgid "top"
-msgstr "上"
-
-#: ../src/preferences.c:2434
-msgid "bottom"
-msgstr "下"
-
-#: ../src/preferences.c:2436
-msgid "Recently opened"
-msgstr "最近開いたファイル"
-
-#: ../src/preferences.c:2436
-msgid "Recently closed"
-msgstr "最近閉じたファイル"
-
-#: ../src/preferences.c:2438 ../src/preferences.c:2445
+#: ../src/preferences.c:2433 ../src/preferences.c:2440
+#: ../src/preferences.c:2447
 msgid "Never"
 msgstr "登録しない"
 
+#: ../src/preferences.c:2433
+msgid "Periodically and during save"
+msgstr ""
+
+#: ../src/preferences.c:2433
+msgid "Only during save"
+msgstr ""
+
+#: ../src/preferences.c:2435
+msgid "Nothing"
+msgstr "チェックしない"
+
+#: ../src/preferences.c:2435
+msgid "Modified time and file size"
+msgstr "更新時刻とファイルサイズ"
+
+#: ../src/preferences.c:2435
+msgid "Modified time"
+msgstr "更新時刻"
+
+#: ../src/preferences.c:2435
+msgid "File size"
+msgstr "ファイルサイズ"
+
+#: ../src/preferences.c:2436 ../src/preferences.c:2437
+msgid "left"
+msgstr "左"
+
+#: ../src/preferences.c:2436 ../src/preferences.c:2437
+msgid "right"
+msgstr "右"
+
+#: ../src/preferences.c:2436
+msgid "top"
+msgstr "上"
+
+#: ../src/preferences.c:2436
+msgid "bottom"
+msgstr "下"
+
 #: ../src/preferences.c:2438
+msgid "Recently opened"
+msgstr "最近開いたファイル"
+
+#: ../src/preferences.c:2438
+msgid "Recently closed"
+msgstr "最近閉じたファイル"
+
+#: ../src/preferences.c:2440
 msgid "Only project files"
 msgstr "プロジェクトファイルのみ"
 
-#: ../src/preferences.c:2442
+#: ../src/preferences.c:2444
 msgid "All"
 msgstr "すべて"
 
-#: ../src/preferences.c:2442
+#: ../src/preferences.c:2444
 msgid "All except spaces"
 msgstr "スペースを除くすべて"
 
-#: ../src/preferences.c:2442
+#: ../src/preferences.c:2444
 msgid "All trailing"
 msgstr "行末にあるすべて"
 
-#: ../src/preferences.c:2442
+#: ../src/preferences.c:2444
 msgid "All except non-trailing spaces"
 msgstr "行頭のスペースを除くすべて"
 
-#: ../src/preferences.c:2445
+#: ../src/preferences.c:2447
 msgid "Always"
 msgstr "常に"
 
-#: ../src/preferences.c:2445
+#: ../src/preferences.c:2447
 msgid "Smart"
 msgstr "自動的に判断"
 
-#: ../src/preferences.c:2456
+#: ../src/preferences.c:2458
 msgid "Edit preferences"
 msgstr "環境設定"
 
 #.
 #. *  Initial document settings
 #.
-#: ../src/preferences.c:2480
+#: ../src/preferences.c:2482
 msgid "<b>Non Project Defaults</b>"
 msgstr "<b>プロジェクトに属さないファイルのための既定値</b>"
 
-#: ../src/preferences.c:2482
+#: ../src/preferences.c:2484
 msgid "Initial document settings"
 msgstr "文書の初期設定"
 
-#: ../src/preferences.c:2494
+#: ../src/preferences.c:2496
 msgid "Editor settings"
 msgstr "エディタの設定"
 
-#: ../src/preferences.c:2497
+#: ../src/preferences.c:2499
 msgid "<b>Editor settings</b>"
 msgstr "<b>エディタの設定</b>"
 
-#: ../src/preferences.c:2505
+#: ../src/preferences.c:2507
 msgid "Smart Home/_End cursor positioning"
 msgstr "行頭と行末での Home/_End キーによる賢いカーソル移動"
 
-#: ../src/preferences.c:2509
+#: ../src/preferences.c:2511
 msgid "_Tab key indents selection"
 msgstr "_Tab キーで選択範囲をインデントする"
 
-#: ../src/preferences.c:2515
+#: ../src/preferences.c:2517
 msgid "Automatically insert closing brackets"
 msgstr "括弧を自動的に閉じる"
 
-#: ../src/preferences.c:2522
+#: ../src/preferences.c:2524
 msgid "Right _margin/split line end position:"
 msgstr "行分割の位置(_M)"
 
-#: ../src/preferences.c:2525
+#: ../src/preferences.c:2527
 msgid "Wrap lines on right margin indicator"
 msgstr "右マージンの目印で折り返す"
 
-#: ../src/preferences.c:2531
+#: ../src/preferences.c:2533
 msgid "Visible _whitespace mode:"
 msgstr "空白文字表示モード(_W):"
 
-#: ../src/preferences.c:2534
+#: ../src/preferences.c:2536
 msgid "<b>Undo</b>"
 msgstr "<b>元に戻す</b>"
 
-#: ../src/preferences.c:2539
+#: ../src/preferences.c:2541
 msgid "_Number of actions in history:"
 msgstr "履歴に残す直近の操作の数:"
 
-#: ../src/preferences.c:2542
+#: ../src/preferences.c:2544
 msgid "Clear _history on save"
 msgstr "保存時にUndo履歴をクリア(_H)"
 
-#: ../src/preferences.c:2547
+#: ../src/preferences.c:2549
 msgid "Auto-completion & Reference"
 msgstr "自動補完とリファレンス"
 
-#: ../src/preferences.c:2553
+#: ../src/preferences.c:2555
 msgid "<b>Auto-completion</b>"
 msgstr "<b>自動補完</b>"
 
-#: ../src/preferences.c:2559
+#: ../src/preferences.c:2561
 msgid "Show _pop-up window:"
 msgstr "自動補完候補をポップアップ表示:"
 
-#: ../src/preferences.c:2563
+#: ../src/preferences.c:2565
 msgid "Minimum matching length for auto-completion:"
 msgstr "自動補間の候補との最短一致長さ:"
 
-#: ../src/preferences.c:2568
+#: ../src/preferences.c:2570
 msgid "Shortcut _key combination:"
 msgstr "ショートカットキーの組み合わせ(_K):"
 
-#: ../src/preferences.c:2571
+#: ../src/preferences.c:2573
 msgid "<b>Reference Information</b>"
 msgstr "<b>参考情報</b>"
 
-#: ../src/preferences.c:2574
+#: ../src/preferences.c:2576
 msgid "_Load reference data from language files"
 msgstr "言語ファイルからリファレンスを読み込み(_L)"
 
-#: ../src/preferences.c:2577
+#: ../src/preferences.c:2579
 msgid "Show references in auto-completion _pop-up window"
 msgstr "自動補完ポップアップウィンドウにリファレンスを表示する(_P)"
 
-#: ../src/preferences.c:2580
+#: ../src/preferences.c:2582
 msgid "Show references if mouse is over text editor"
 msgstr "マウスカーソルがテキストエディタに重なったらリファレンスを表示"
 
-#: ../src/preferences.c:2589 ../src/preferences.c:2964
+#: ../src/preferences.c:2591 ../src/preferences.c:2968
 msgid "Font & Colors"
 msgstr "フォントと色"
 
-#: ../src/preferences.c:2595
+#: ../src/preferences.c:2597
 msgid "<b>Font &amp; Cursor</b>"
 msgstr "<b>フォント と カーソル</b>"
 
-#: ../src/preferences.c:2599
+#: ../src/preferences.c:2601
 msgid "_Editor font:"
 msgstr "エディタのフォント(_E):"
 
-#: ../src/preferences.c:2607
+#: ../src/preferences.c:2609
 msgid "Cursor / font size ratio (%):"
 msgstr "フォントサイズに対するカーソルサイズの割合 (%):"
 
-#: ../src/preferences.c:2609 ../src/preferences.c:2990
+#: ../src/preferences.c:2611 ../src/preferences.c:2994
 msgid "<b>Colors</b>"
 msgstr "<b>色</b>"
 
-#: ../src/preferences.c:2613
+#: ../src/preferences.c:2615
 msgid "Use system wide color settings"
 msgstr "システムの色設定を使用する"
 
-#: ../src/preferences.c:2624
+#: ../src/preferences.c:2626
 msgid "Cursor color"
 msgstr "カーソルの色"
 
-#: ../src/preferences.c:2625
+#: ../src/preferences.c:2627
 msgid "C_ursor color:"
 msgstr "カーソルの色(_U):"
 
-#: ../src/preferences.c:2628
+#: ../src/preferences.c:2630
 msgid "Selection background color"
 msgstr "選択範囲の背景色"
 
-#: ../src/preferences.c:2629
+#: ../src/preferences.c:2631
 msgid "_Selection background color:"
 msgstr "選択範囲の背景色(_S):"
 
-#: ../src/preferences.c:2634
+#: ../src/preferences.c:2636
 msgid "Highlight cursor position"
 msgstr "カーソル位置をハイライト"
 
-#: ../src/preferences.c:2636
+#: ../src/preferences.c:2638
 msgid "Cursor highlight color"
 msgstr "ハイライトするカーソルの色"
 
-#: ../src/preferences.c:2637
+#: ../src/preferences.c:2639
 msgid "_Cursor highlight color:"
 msgstr "ハイライトするカーソルの色(_C):"
 
-#: ../src/preferences.c:2642
+#: ../src/preferences.c:2644
 msgid "Current line color"
 msgstr "現在の行の色"
 
-#: ../src/preferences.c:2643
+#: ../src/preferences.c:2645
 msgid "Cu_rrent line color:"
 msgstr "現在行の色(_R):"
 
-#: ../src/preferences.c:2646
+#: ../src/preferences.c:2648
 msgid "Visible whitespace color"
 msgstr "空白文字につける色"
 
-#: ../src/preferences.c:2647
+#: ../src/preferences.c:2649
 msgid "_Visible whitespace color:"
 msgstr "空白文字を表示する色(_V):"
 
-#: ../src/preferences.c:2659
+#: ../src/preferences.c:2661
 msgid "Text styles"
 msgstr "テキストスタイル"
 
-#: ../src/preferences.c:2661
+#: ../src/preferences.c:2663
 msgid "<b>Text Styles</b>"
 msgstr "<b>テキストのスタイル</b>"
 
-#: ../src/preferences.c:2674
+#: ../src/preferences.c:2676
 msgid "Files"
 msgstr "ファイル"
 
-#: ../src/preferences.c:2677
+#: ../src/preferences.c:2679
 msgid "<b>Encoding</b>"
 msgstr "<b>エンコーディング</b>"
 
-#: ../src/preferences.c:2693
+#: ../src/preferences.c:2695
 msgid "_Default character set for new files:"
 msgstr "新規ファイルに使用する文字コード(_D):"
 
-#: ../src/preferences.c:2699
+#: ../src/preferences.c:2701
 msgid "Auto set <meta> _HTML tag on encoding change"
 msgstr ""
 "使用するエンコーディングが変わった時に _HTMLの <meta>タグを自動的に設定する"
 
-#: ../src/preferences.c:2703 ../src/preferences.c:2847
+#: ../src/preferences.c:2705 ../src/preferences.c:2851
 msgid "<b>Misc</b>"
 msgstr "<b>その他</b>"
 
-#: ../src/preferences.c:2706
+#: ../src/preferences.c:2708
 msgid "Strip trailing spaces on save"
 msgstr "保存時に末尾の空白文字を取り除く"
 
-#: ../src/preferences.c:2712
+#: ../src/preferences.c:2714
 msgid "Open co_mmandline files in running bluefish process"
 msgstr ""
 "コマンドラインファイルを既に起動している bluefish のウィンドウで開く(_M)"
 
-#: ../src/preferences.c:2717
+#: ../src/preferences.c:2719
 msgid "Open commandline files in new _window"
 msgstr "新しいウィンドウでコマンドラインファイルを開く(_W)"
 
-#: ../src/preferences.c:2722
-msgid "_Periodically check if file is modified on disk"
+#: ../src/preferences.c:2726
+#, fuzzy
+msgid "Check if file is modified on disk:"
 msgstr "ファイルがディスク上で変更されたか定期的にチェックする(_P)"
 
-#: ../src/preferences.c:2728
+#: ../src/preferences.c:2732
 msgid "File properties to check on dis_k for modifications:"
 msgstr "ディスク上での変更を確認するためのファイルのプロパティ(_K)"
 
-#: ../src/preferences.c:2732
+#: ../src/preferences.c:2736
 msgid "Show warning for files with very long lines"
 msgstr "とても長い行を含むファイルについて警告"
 
-#: ../src/preferences.c:2742
+#: ../src/preferences.c:2746
 msgid "Backup & Recovery"
 msgstr "バックアップと復元"
 
-#: ../src/preferences.c:2745
+#: ../src/preferences.c:2749
 msgid "<b>Backup</b>"
 msgstr "<b>バックアップ</b>"
 
-#: ../src/preferences.c:2747
+#: ../src/preferences.c:2751
 msgid "Create _backup file during file save"
 msgstr "保存時にバックアップを作成(_B)"
 
-#: ../src/preferences.c:2752
+#: ../src/preferences.c:2756
 msgid "_Remove backup file on close"
 msgstr "ファイルを閉じる時にバックアップファイルを削除"
 
-#: ../src/preferences.c:2757
+#: ../src/preferences.c:2761
 msgid "If back_up fails:"
 msgstr "バックアップが失敗したら:"
 
-#: ../src/preferences.c:2764
+#: ../src/preferences.c:2768
 msgid "<b>Document Recovery</b>"
 msgstr "<b>文書の復元</b>"
 
-#: ../src/preferences.c:2766
+#: ../src/preferences.c:2770
 msgid "_Enable recovery of modified documents"
 msgstr "変更された文書の復元を可能にする(_E)"
 
-#: ../src/preferences.c:2770
+#: ../src/preferences.c:2774
 msgid "_Frequency to store changes (seconds):"
 msgstr "変更を保存する頻度（秒単位）(_F)"
 
-#: ../src/preferences.c:2784 ../src/preferences.c:2785
+#: ../src/preferences.c:2788 ../src/preferences.c:2789
 msgid "File Associations"
 msgstr "ファイルの関連付け"
 
-#: ../src/preferences.c:2803
+#: ../src/preferences.c:2807
 msgid "Templates"
 msgstr "テンプレート"
 
-#: ../src/preferences.c:2806
+#: ../src/preferences.c:2810
 msgid "<b>Templates</b>"
 msgstr "<b>テンプレート</b>"
 
-#: ../src/preferences.c:2819
+#: ../src/preferences.c:2823
 msgid "User interface"
 msgstr "インターフェイス"
 
-#: ../src/preferences.c:2822
+#: ../src/preferences.c:2826
 msgid "<b>Layout</b>"
 msgstr "<b>レイアウト</b>"
 
-#: ../src/preferences.c:2828
+#: ../src/preferences.c:2832
 msgid "Document _tab position:"
 msgstr "文書タブの位置(_T):"
 
-#: ../src/preferences.c:2833
+#: ../src/preferences.c:2837
 msgid "Maximum filename length shown in tab (0 is no limit)"
 msgstr "タブに表示するファイル名の長さ制限(0 で制限なし)"
 
-#: ../src/preferences.c:2839
+#: ../src/preferences.c:2843
 msgid "_Sidebar position:"
 msgstr "サイドバーの位置(_S):"
 
-#: ../src/preferences.c:2845
+#: ../src/preferences.c:2849
 msgid "Sidebar tab _position:"
 msgstr "サイドバータブの位置(_P)"
 
-#: ../src/preferences.c:2849
+#: ../src/preferences.c:2853
 msgid "Hide toolbars on full-screen"
 msgstr "全画面表示でツールバーを非表示"
 
-#: ../src/preferences.c:2858
+#: ../src/preferences.c:2862
 msgid "User interface _language:"
 msgstr "ユーザインターフェイスに使用する言語(_L)"
 
-#: ../src/preferences.c:2861
+#: ../src/preferences.c:2865
 msgid "<b>Recent Files</b>"
 msgstr "<b>最近使用したファイル</b>"
 
-#: ../src/preferences.c:2866
+#: ../src/preferences.c:2870
 msgid "Recent files _shows:"
 msgstr "最近編集した文書 で表示する対象(_S):"
 
-#: ../src/preferences.c:2871
+#: ../src/preferences.c:2875
 msgid "_Number of files in 'Open recent' menu:"
 msgstr "[最近開いたファイル]リストの最大表示数(_N):"
 
-#: ../src/preferences.c:2876
+#: ../src/preferences.c:2880
 msgid "_Register recent files with your desktop:"
 msgstr "最近使用したファイル に登録(_R):"
 
-#: ../src/preferences.c:2887
+#: ../src/preferences.c:2891
 msgid "Shortcut keys"
 msgstr "ショートカットキー"
 
-#: ../src/preferences.c:2892
+#: ../src/preferences.c:2896
 msgid "<b>Shortcut keys</b>"
 msgstr "<b>ショートカットキー</b>"
 
-#: ../src/preferences.c:2896
+#: ../src/preferences.c:2900
 msgid "_Switch between tabs with <Alt>+0..9"
 msgstr "<Alt>+0..9 でタブを切り替える(_S)"
 
-#: ../src/preferences.c:2899
+#: ../src/preferences.c:2903
 msgid "_Switch between tabs with <Command>+0..9"
 msgstr "<Command>+0..9 でタブを切り替える(_S)"
 
-#: ../src/preferences.c:2904
+#: ../src/preferences.c:2908
 msgid "Save menu accelerators on exit"
 msgstr "終了時にメニューのショートカットを保存する"
 
-#: ../src/preferences.c:2907
+#: ../src/preferences.c:2911
 msgid "Save user customised menu accelerators now"
 msgstr "ユーザがカスタマイズしたメニューのショートカットをすぐに保存する"
 
-#: ../src/preferences.c:2911
+#: ../src/preferences.c:2915
 msgid "Reset menu accelerators to application defaults"
 msgstr ""
 "メニューのショートカットキーをアプリケーションのデフォルトにリセットする"
 
-#: ../src/preferences.c:2923
+#: ../src/preferences.c:2927
 msgid "Dimensions"
 msgstr "ウィンドウサイズ"
 
-#: ../src/preferences.c:2926
+#: ../src/preferences.c:2930
 msgid "<b>Dimensions</b>"
 msgstr "<b>ウィンドウサイズ</b>"
 
-#: ../src/preferences.c:2928
+#: ../src/preferences.c:2932
 msgid "_Leave dimensions to window manager"
 msgstr "サイズの決定をウィンドウマネージャに任せる(_L)"
 
-#: ../src/preferences.c:2935
+#: ../src/preferences.c:2939
 msgid "_Restore last used dimensions"
 msgstr "前回終了時のウィンドウサイズを覚えておく(_R)"
 
-#: ../src/preferences.c:2943
+#: ../src/preferences.c:2947
 msgid "Initial _sidebar width:"
 msgstr "起動時のサイドバーの幅(_S):"
 
-#: ../src/preferences.c:2947
+#: ../src/preferences.c:2951
 msgid "Initial window _height:"
 msgstr "起動時のウィンドウの高さ(_H):"
 
-#: ../src/preferences.c:2950
+#: ../src/preferences.c:2954
 msgid "Initial window _width:"
 msgstr "起動時のウィンドウの幅(_W):"
 
-#: ../src/preferences.c:2957
+#: ../src/preferences.c:2961
 msgid "_Limit window title length"
 msgstr "ウィンドウタイトルの長さを制限する(_L)"
 
-#: ../src/preferences.c:2970
+#: ../src/preferences.c:2974
 msgid "<b>Document tab</b>"
 msgstr "<b>文書のタブ</b>"
 
-#: ../src/preferences.c:2975
+#: ../src/preferences.c:2979
 msgid "_Use system document tab font"
 msgstr "システムの文書、タブのフォントを使う(_U)"
 
-#: ../src/preferences.c:2980
+#: ../src/preferences.c:2984
 msgid "_Document tab font:"
 msgstr "文書タブのフォント(_D):"
 
-#: ../src/preferences.c:2994
+#: ../src/preferences.c:2998
 msgid "Document error tab color"
 msgstr "タブの色（文書エラーあり）"
 
-#: ../src/preferences.c:2996
+#: ../src/preferences.c:3000
 msgid "Document tab _error color:"
 msgstr "タブの色（文書エラーあり）(_E):"
 
-#: ../src/preferences.c:3000
+#: ../src/preferences.c:3004
 msgid "Document loading tab color"
 msgstr "タブの色（文書読み込み中）"
 
-#: ../src/preferences.c:3002
+#: ../src/preferences.c:3006
 msgid "Document tab loadin_g color:"
 msgstr "タブの色（文書読み込み中）(_G):"
 
-#: ../src/preferences.c:3006
+#: ../src/preferences.c:3010
 msgid "Document modified tab color"
 msgstr "タブの色（文書変更あり）"
 
-#: ../src/preferences.c:3008
+#: ../src/preferences.c:3012
 msgid "Document tab _modified color:"
 msgstr "タブの色（文書変更あり）(_M):"
 
 #. arr = array_from_arglist(_("Java programming"),"1", "java:image:jsp", NULL);
 #. main_v->globses.filefilters = g_list_append(main_v->globses.filefilters, arr);
-#: ../src/preferences.c:3021 ../src/rcfile.c:1427
+#: ../src/preferences.c:3025 ../src/rcfile.c:1438
 msgid "Images"
 msgstr "画像ファイル"
 
-#: ../src/preferences.c:3024
+#: ../src/preferences.c:3028
 msgid "<b>Thumbnails</b>"
 msgstr "<b>サムネイル</b>"
 
-#: ../src/preferences.c:3030
+#: ../src/preferences.c:3034
 msgid "Thumbnail _filetype:"
 msgstr "サムネイルファイルの形式(_F):"
 
-#: ../src/preferences.c:3034
+#: ../src/preferences.c:3038
 msgid "Thumbnail _suffix:"
 msgstr "サムネイルファイルの後ろに付ける文字(_S):"
 
-#: ../src/preferences.c:3047
+#: ../src/preferences.c:3051
 msgid "External commands"
 msgstr "外部コマンド"
 
-#: ../src/preferences.c:3049
+#: ../src/preferences.c:3053
 msgid "<b>External Commands</b>"
 msgstr "<b>外部コマンド</b>"
 
-#: ../src/preferences.c:3062
+#: ../src/preferences.c:3066
 msgid "External filters"
 msgstr "外部フィルタ"
 
-#: ../src/preferences.c:3065
+#: ../src/preferences.c:3069
 msgid "<b>External Filters</b>"
 msgstr "<b>外部フィルタ</b>"
 
-#: ../src/preferences.c:3078
+#: ../src/preferences.c:3082
 msgid "Output parsers"
 msgstr "出力パーサ"
 
-#: ../src/preferences.c:3080
+#: ../src/preferences.c:3084
 msgid "<b>Output Parsers</b>"
 msgstr "<b>出力パーサ</b>"
 
-#: ../src/preferences.c:3093
+#: ../src/preferences.c:3097
 msgid "Plugins"
 msgstr "プラグイン"
 
-#: ../src/preferences.c:3095
+#: ../src/preferences.c:3099
 msgid "<b>Plugins</b>"
 msgstr "<b>プラグイン</b>"
 
-#: ../src/preferences.c:3117
+#: ../src/preferences.c:3121
 msgid "Language support"
 msgstr "言語サポート"
 
-#: ../src/project.c:308
+#: ../src/project.c:311
 msgid "Enter Bluefish project filename"
 msgstr "Bluefishプロジェクトのファイル名を入力してください"
 
-#: ../src/project.c:491
+#: ../src/project.c:494
 msgid "Select Bluefish project filename"
 msgstr "プロジェクトのファイル名を選択"
 
-#: ../src/project.c:654
+#: ../src/project.c:657
 msgid "Create New Project"
 msgstr "新規プロジェクトの作成"
 
-#: ../src/project.c:657
+#: ../src/project.c:660
 msgid "Edit Project"
 msgstr "プロジェクトの編集"
 
-#: ../src/project.c:682
+#: ../src/project.c:685
 #, c-format
 msgid "This project contains %d file"
 msgid_plural "This project contains %d files"
 msgstr[0] "このプロジェクトには %d 個のファイルが存在します"
 
-#: ../src/project.c:695
+#: ../src/project.c:698
 msgid "Project _Name:"
 msgstr "プロジェクト名(_N):"
 
@@ -3208,227 +3254,228 @@ msgstr "プロジェクト名(_N):"
 #. but = file_but_new(pred->entries[template], 1, NULL);
 #. gtk_table_attach_defaults(GTK_TABLE(table), pred->entries[template], 2, 3, 3, 4);
 #. gtk_table_attach_defaults(GTK_TABLE(table), but, 3, 4, 3, 4);
-#: ../src/project.c:703
+#: ../src/project.c:706
 msgid "<b>Project Defaults</b>"
 msgstr "<b>プロジェクトのデフォルト</b>"
 
-#: ../src/project.c:717
+#: ../src/project.c:720
 msgid "Create _Project"
 msgstr "プロジェクトを作成(_P)"
 
-#: ../src/project.c:766
+#: ../src/project.c:769
 msgid "Create project"
 msgstr "プロジェクトを作成する"
 
-#: ../src/project.c:771
+#: ../src/project.c:774
 msgid "Create project with currently opened documents"
 msgstr "現在開いているファイルからプロジェクトを作成する"
 
-#: ../src/project.c:773
+#: ../src/project.c:776
 msgid "Create empty project"
 msgstr "空のプロジェクトを作成する"
 
-#: ../src/rcfile.c:696 ../src/rcfile.c:724
+#: ../src/rcfile.c:701 ../src/rcfile.c:729
 msgid "php"
 msgstr "php"
 
-#: ../src/rcfile.c:702
+#: ../src/rcfile.c:707
 msgid "make"
 msgstr "make"
 
-#: ../src/rcfile.c:706
+#: ../src/rcfile.c:711
 msgid "weblint HTML checker"
 msgstr "weblint HTML 文法チェッカ"
 
-#: ../src/rcfile.c:711
+#: ../src/rcfile.c:716
 msgid "tidy HTML validator"
 msgstr "tidy HTML 妥当性チェック"
 
-#: ../src/rcfile.c:715
+#: ../src/rcfile.c:720
 msgid "javac"
 msgstr "javac"
 
-#: ../src/rcfile.c:719
+#: ../src/rcfile.c:724
 msgid "xmllint XML checker"
 msgstr "xmllink XML 文法チェッカ"
 
-#: ../src/rcfile.c:728
+#: ../src/rcfile.c:733
 msgid "php syntax check"
 msgstr "PHP 文法チェック"
 
-#: ../src/rcfile.c:732
+#: ../src/rcfile.c:737
 msgid "perl syntax check"
 msgstr "Perl 文法チェック"
 
-#: ../src/rcfile.c:736
+#: ../src/rcfile.c:741
 msgid "php codesniffer"
 msgstr "PHP codesniffer コーディング規約チェック"
 
-#: ../src/rcfile.c:740
+#: ../src/rcfile.c:745
 msgid "pylint"
 msgstr "pylint"
 
-#: ../src/rcfile.c:753
+#: ../src/rcfile.c:758
 msgid "Sort"
 msgstr "行単位で正順に並べ替え"
 
-#: ../src/rcfile.c:756
+#: ../src/rcfile.c:761
 msgid "Sort / Uniq"
 msgstr "行単位で正順に並べ替え → 重複行まとめ"
 
-#: ../src/rcfile.c:759
+#: ../src/rcfile.c:764
 msgid "Reverse lines"
 msgstr "行単位で逆順に並べ替え"
 
-#: ../src/rcfile.c:762
+#: ../src/rcfile.c:767
 msgid "Dos2unix"
 msgstr "Dos2unix 改行変換"
 
-#: ../src/rcfile.c:764
+#: ../src/rcfile.c:769
 msgid "Tidy HTML"
 msgstr "Tidy HTML 妥当性チェック"
 
-#: ../src/rcfile.c:766
+#: ../src/rcfile.c:771
 msgid "Tidy convert to XHTML"
 msgstr "Tidy XHTML への変換"
 
-#: ../src/rcfile.c:769
+#: ../src/rcfile.c:774
 msgid "Tidy HTML (perltidy)"
 msgstr "Tidy HTML (perltidy) 妥当性チェック"
 
-#: ../src/rcfile.c:772
+#: ../src/rcfile.c:777
 msgid "Strip empty lines"
 msgstr "空行を削除する"
 
-#: ../src/rcfile.c:775
+#: ../src/rcfile.c:780
 msgid "Render HTML to text"
 msgstr "HTMLをテキストに変換する"
 
-#: ../src/rcfile.c:778
+#: ../src/rcfile.c:783
 msgid "PHP Beautifier"
 msgstr "PHP 整形ツール"
 
-#: ../src/rcfile.c:782 ../src/rcfile.c:789
+#: ../src/rcfile.c:787 ../src/rcfile.c:794
 msgid "Javascript Minify with jsmin"
 msgstr "Javascript を圧縮する(jsmin)"
 
-#: ../src/rcfile.c:785 ../src/rcfile.c:792
-msgid "CSS Minify with cssmin"
-msgstr "CSS を最小化(cssmin)"
+#: ../src/rcfile.c:790 ../src/rcfile.c:797
+#, fuzzy
+msgid "Toggle CSS compression"
+msgstr "コメントを切替え"
 
-#: ../src/rcfile.c:796
+#: ../src/rcfile.c:801
 msgid "CSS tidy"
 msgstr "CSS整形 (CSS tidy)"
 
-#: ../src/rcfile.c:808
+#: ../src/rcfile.c:813
 msgid "Windows XP Firefox"
 msgstr "Windows XP Firefox"
 
-#: ../src/rcfile.c:813
+#: ../src/rcfile.c:818
 msgid "Windows XP Internet Explorer"
 msgstr "Windows XP Internet Explorer"
 
-#: ../src/rcfile.c:818
+#: ../src/rcfile.c:823
 msgid "Windows XP Opera"
 msgstr "Windows XP Opera"
 
-#: ../src/rcfile.c:822
+#: ../src/rcfile.c:827
 msgid "Windows XP Safari"
 msgstr "Windows XP Safari"
 
-#: ../src/rcfile.c:826
+#: ../src/rcfile.c:831
 msgid "Windows 7 Firefox 32-bit"
 msgstr "Windows 7 Firefox 32-bit"
 
-#: ../src/rcfile.c:831
+#: ../src/rcfile.c:836
 msgid "Windows 7 Internet Explorer 32-bit"
 msgstr "Windows 7 Internet Explorer 32-bit"
 
-#: ../src/rcfile.c:836
+#: ../src/rcfile.c:841
 msgid "Windows 7 Internet Explorer 64-bit"
 msgstr "Windows 7 Internet Explorer 64-bit"
 
-#: ../src/rcfile.c:842
+#: ../src/rcfile.c:847
 msgid "Safari"
 msgstr "Safari で確認"
 
-#: ../src/rcfile.c:845 ../src/rcfile.c:861
+#: ../src/rcfile.c:850 ../src/rcfile.c:866
 msgid "Firefox"
 msgstr "Firefox で確認"
 
-#: ../src/rcfile.c:848
+#: ../src/rcfile.c:853
 msgid "Google Chrome"
 msgstr "Google Chrome で確認"
 
-#: ../src/rcfile.c:851 ../src/rcfile.c:869
+#: ../src/rcfile.c:856 ../src/rcfile.c:874
 msgid "Chromium"
 msgstr "Chromium で確認"
 
-#: ../src/rcfile.c:854 ../src/rcfile.c:865
+#: ../src/rcfile.c:859 ../src/rcfile.c:870
 msgid "Opera"
 msgstr "Opera で確認"
 
-#: ../src/rcfile.c:857 ../src/rcfile.c:884
+#: ../src/rcfile.c:862 ../src/rcfile.c:889
 msgid "chmod a+x"
 msgstr "実行可能属性をオン"
 
-#: ../src/rcfile.c:872
+#: ../src/rcfile.c:877
 msgid "Konqueror"
 msgstr "Konqueror で確認"
 
-#: ../src/rcfile.c:875
+#: ../src/rcfile.c:880
 msgid "Epiphany"
 msgstr "Epiphany で確認"
 
-#: ../src/rcfile.c:878
+#: ../src/rcfile.c:883
 msgid "Kazehakase"
 msgstr "風博士 で確認"
 
-#: ../src/rcfile.c:881
+#: ../src/rcfile.c:886
 msgid "Links2 (graphics)"
 msgstr "Links2 (グラフィック版) で確認"
 
-#: ../src/rcfile.c:928
+#: ../src/rcfile.c:938
 msgid "C Header"
 msgstr "C言語ヘッダファイル"
 
-#: ../src/rcfile.c:931
+#: ../src/rcfile.c:941
 msgid "C Header GPL"
 msgstr "C言語ヘッダファイル GPL"
 
-#: ../src/rcfile.c:934
+#: ../src/rcfile.c:944
 msgid "XHTML 1.0"
 msgstr "XHTML 1.0"
 
-#: ../src/rcfile.c:937
+#: ../src/rcfile.c:947
 msgid "HTML 5"
 msgstr "HTML 5"
 
-#: ../src/rcfile.c:940
+#: ../src/rcfile.c:950
 msgid "PHP"
 msgstr "PHP"
 
-#: ../src/rcfile.c:943
+#: ../src/rcfile.c:953
 msgid "LaTex Book"
 msgstr "LaTeX 本"
 
-#: ../src/rcfile.c:946
+#: ../src/rcfile.c:956
 msgid "LaTex Presentation"
 msgstr "LaTex プレゼンテーション"
 
-#: ../src/rcfile.c:1312
+#: ../src/rcfile.c:1323
 msgid "Untitled Project"
 msgstr "無題のプロジェクト"
 
-#: ../src/rcfile.c:1419
+#: ../src/rcfile.c:1430
 msgid "C programming"
 msgstr "C プログラム"
 
-#: ../src/rcfile.c:1423
+#: ../src/rcfile.c:1434
 msgid "Web files"
 msgstr "Webファイル"
 
-#: ../src/rcfile.c:1430
+#: ../src/rcfile.c:1441
 msgid "Hide objectfiles"
 msgstr "オブジェクトファイルを隠す"
 
@@ -3490,100 +3537,100 @@ msgid "<i>Found %d result in the active document</i>"
 msgid_plural "<i>Found %d results in the active document</i>"
 msgstr[0] "<i>%d 個の一致が編集対象になっている文書で見つかりました</i>"
 
-#: ../src/snr3.c:1416
+#: ../src/snr3.c:1419
 msgid "No (more) results"
 msgstr "（これ以上）一致する結果はありません"
 
-#: ../src/snr3.c:1514
+#: ../src/snr3.c:1517
 msgid "Active document"
 msgstr "編集対象になっている文書"
 
-#: ../src/snr3.c:1515
+#: ../src/snr3.c:1518
 msgid "Forward from cursor position"
 msgstr "カーソル位置からスタート"
 
-#: ../src/snr3.c:1516
+#: ../src/snr3.c:1519
 msgid "Current selection"
 msgstr "現在の選択範囲"
 
-#: ../src/snr3.c:1517
+#: ../src/snr3.c:1520
 msgid "All open documents"
 msgstr "開いているすべてのファイル"
 
-#: ../src/snr3.c:1518
+#: ../src/snr3.c:1521
 msgid "Files on disk"
 msgstr "ディスク上のファイル"
 
-#: ../src/snr3.c:1522 ../src/snr3.c:1527
+#: ../src/snr3.c:1525 ../src/snr3.c:1530
 msgid "Normal"
 msgstr "通常"
 
-#: ../src/snr3.c:1528
+#: ../src/snr3.c:1531
 msgid "Uppercase"
 msgstr "大文字"
 
-#: ../src/snr3.c:1529
+#: ../src/snr3.c:1532
 msgid "Lowercase"
 msgstr "小文字"
 
-#: ../src/snr3.c:1536
+#: ../src/snr3.c:1539
 msgid "Find and Replace"
 msgstr "検索と置換"
 
-#: ../src/snr3.c:1555
+#: ../src/snr3.c:1558
 msgid "<b>_Search for</b>"
 msgstr "<b>検索対象(_S)</b>"
 
-#: ../src/snr3.c:1578
+#: ../src/snr3.c:1581
 msgid "<b>Replace _with</b>"
 msgstr "<b>置換文字列(_W)</b>"
 
-#: ../src/snr3.c:1593
+#: ../src/snr3.c:1596
 msgid "Match Patter_n: "
 msgstr "検索パターン(_N):"
 
-#: ../src/snr3.c:1605
+#: ../src/snr3.c:1608
 msgid "Replace T_ype: "
 msgstr "置換の種類(_Y):"
 
-#: ../src/snr3.c:1618
+#: ../src/snr3.c:1621
 msgid "Sco_pe: "
 msgstr "範囲(_P):"
 
-#: ../src/snr3.c:1628
+#: ../src/snr3.c:1631
 msgid "Filename pattern: "
 msgstr "ファイル名パターン:"
 
-#: ../src/snr3.c:1634
+#: ../src/snr3.c:1637
 msgid "Recursion level: "
 msgstr "検索するディレクトリの深さ:"
 
-#: ../src/snr3.c:1640
+#: ../src/snr3.c:1643
 msgid "Basedir: "
 msgstr "ベースディレクトリ:"
 
-#: ../src/snr3.c:1659
+#: ../src/snr3.c:1663
 msgid "Case sensitive _matching"
 msgstr "大文字小文字を区別する(_M)"
 
-#: ../src/snr3.c:1661
+#: ../src/snr3.c:1665
 msgid "Only match if case (upper/lower) is identical."
 msgstr "小文字が一致した場合のみ。"
 
-#: ../src/snr3.c:1665
+#: ../src/snr3.c:1669
 msgid "Pattern contains escape-se_quences"
 msgstr "パターンはエスケープシーケンスを含む(_Q)"
 
-#: ../src/snr3.c:1668
+#: ../src/snr3.c:1672
 msgid "Pattern contains backslash escaped characters such as \\n \\t etc."
 msgstr ""
 "バックスラッシュを使用した \\n,\\t のようなエスケープ文字を含むパターン"
 
-#: ../src/snr3.c:1672
+#: ../src/snr3.c:1676
 msgid "Dot character in regex pattern matches newlines"
 msgstr "正規表現の中で小数点が改行にもマッチするようにする"
 
-#: ../src/snr3.c:1675
+#: ../src/snr3.c:1679
 msgid ""
 "The . character will match everything including newlines, use for multiline "
 "matching."
@@ -3591,34 +3638,221 @@ msgstr ""
 "文字 . が改行を含めてすべての文字にマッチするようにします。複数行に渡る検索に"
 "も使えます。"
 
-#: ../src/snr3.c:1697
+#: ../src/snr3.c:1701
 msgid "Replace _All"
 msgstr "すべて置換(_A)"
 
-#: ../src/snr3.c:1699
+#: ../src/snr3.c:1703
 msgid "_Replace"
 msgstr "置換(_R)"
 
-#: ../src/snr3.c:1703
+#: ../src/snr3.c:1707
 msgid "_Find All"
 msgstr "すべてを検索(_F)"
 
-#: ../src/snr3.c:1705
+#: ../src/snr3.c:1709
 msgid "B_ookmark All"
 msgstr "検索に合致したすべての箇所をブックマークする(_O)"
 
-#: ../src/undo_redo.c:552 ../src/undo_redo.c:694
+#: ../src/undo_redo.c:555 ../src/undo_redo.c:697
 msgid "Undo in _all documents"
 msgstr "すべての文書でこの変更を元に戻す(_A)"
 
-#: ../src/undo_redo.c:552 ../src/undo_redo.c:694
+#: ../src/undo_redo.c:555 ../src/undo_redo.c:697
 msgid "Undo only _this document"
 msgstr "この文書で変更を元に戻す(_T)"
 
-#: ../src/undo_redo.c:555 ../src/undo_redo.c:697
+#: ../src/undo_redo.c:558 ../src/undo_redo.c:700
 msgid "Undo this change in all documents?"
 msgstr "すべての文書でこの変更を元に戻しますか?"
 
-#: ../src/undo_redo.c:556 ../src/undo_redo.c:698
+#: ../src/undo_redo.c:559 ../src/undo_redo.c:701
 msgid "This change concerns multiple documents."
 msgstr "この変更には複数の文書が関係しています。"
+
+#: ../src/xmlstrings.h:2
+msgid "Allow folding of C style comments"
+msgstr ""
+
+#: ../src/xmlstrings.h:3
+msgid "Allow folding of Curly brackets block"
+msgstr ""
+
+#: ../src/xmlstrings.h:4
+msgid "Allow folding of Javascript Curly brackets block"
+msgstr ""
+
+#: ../src/xmlstrings.h:5
+msgid "Allow folding of Javascript Parentheses block"
+msgstr ""
+
+#: ../src/xmlstrings.h:6
+msgid "Allow folding of Javascript Square brackets block"
+msgstr ""
+
+#: ../src/xmlstrings.h:7
+msgid "Allow folding of Parentheses block"
+msgstr ""
+
+#: ../src/xmlstrings.h:8
+msgid "Allow folding of PHP blocks"
+msgstr ""
+
+#: ../src/xmlstrings.h:9
+msgid "Allow folding of Square brackets block"
+msgstr ""
+
+#: ../src/xmlstrings.h:10
+msgid "Allow folding of the Parentheses block"
+msgstr ""
+
+#: ../src/xmlstrings.h:11
+msgid "Allow to fold the the root html tag"
+msgstr ""
+
+#: ../src/xmlstrings.h:12
+msgid "All php functions"
+msgstr ""
+
+#: ../src/xmlstrings.h:13
+msgid "All wordpress functions"
+msgstr ""
+
+#: ../src/xmlstrings.h:14
+msgid "Autocomplete function names with semicolon"
+msgstr ""
+
+#: ../src/xmlstrings.h:15
+#, fuzzy
+msgid "Autocomplete HTML entities"
+msgstr "自動補完とリファレンス"
+
+#: ../src/xmlstrings.h:16
+msgid "Autocomplete Javascript object methods"
+msgstr ""
+
+#: ../src/xmlstrings.h:17
+msgid "autocomplete javascript variables"
+msgstr ""
+
+#: ../src/xmlstrings.h:18
+#, fuzzy
+msgid "Auto-complete PHP functions"
+msgstr "自動補完とリファレンス"
+
+#: ../src/xmlstrings.h:19
+msgid "Auto-complete PHP variables"
+msgstr ""
+
+#: ../src/xmlstrings.h:20
+#, fuzzy
+msgid "Autocomplete tags"
+msgstr "完了"
+
+#: ../src/xmlstrings.h:21
+msgid "autocomplete with newlines"
+msgstr ""
+
+#: ../src/xmlstrings.h:22
+msgid "CSS properties"
+msgstr ""
+
+#: ../src/xmlstrings.h:23
+msgid "Enable the PHP short open tag"
+msgstr ""
+
+#: ../src/xmlstrings.h:24
+msgid "GNU Coreutils functions"
+msgstr ""
+
+#: ../src/xmlstrings.h:25
+msgid "HTML entities"
+msgstr ""
+
+#: ../src/xmlstrings.h:26
+msgid "include JQuery syntax"
+msgstr ""
+
+#: ../src/xmlstrings.h:27
+#, fuzzy
+msgid "Javascript CSS properties"
+msgstr "Javascript 整形ツール"
+
+#: ../src/xmlstrings.h:28
+msgid "Load all php functions"
+msgstr ""
+
+#: ../src/xmlstrings.h:29
+#, fuzzy
+msgid "Load auto-completion information"
+msgstr "自動補完候補ウィンドウを表示する"
+
+#: ../src/xmlstrings.h:30
+#, fuzzy
+msgid "Load completion data"
+msgstr "自動補完候補ウィンドウを表示する"
+
+#: ../src/xmlstrings.h:31
+msgid "Load glib types and functions"
+msgstr ""
+
+#: ../src/xmlstrings.h:32
+msgid "Load GObject functions"
+msgstr ""
+
+#: ../src/xmlstrings.h:33
+msgid "Load GTK+ functions"
+msgstr ""
+
+#: ../src/xmlstrings.h:34
+#, fuzzy
+msgid "Load reference data"
+msgstr "言語ファイルからリファレンスを読み込み(_L)"
+
+#: ../src/xmlstrings.h:35
+#, fuzzy
+msgid "Load reference information"
+msgstr "<b>参考情報</b>"
+
+#: ../src/xmlstrings.h:36
+msgid "Load standard C library functions "
+msgstr ""
+
+#: ../src/xmlstrings.h:37
+msgid "Load XSLT 2.0 support."
+msgstr ""
+
+#: ../src/xmlstrings.h:38
+msgid "Methods in javadoc but not in references"
+msgstr ""
+
+#: ../src/xmlstrings.h:39
+msgid "scan for sql in php strings"
+msgstr ""
+
+#: ../src/xmlstrings.h:40
+msgid "Scan for sql in strings"
+msgstr ""
+
+#: ../src/xmlstrings.h:41
+msgid "Self-close tags such as br, hr, and img with /&gt;"
+msgstr ""
+
+#: ../src/xmlstrings.h:42
+msgid "Show a string as a block"
+msgstr ""
+
+#: ../src/xmlstrings.h:43
+msgid "Show tag attributes as block"
+msgstr ""
+
+#: ../src/xmlstrings.h:44
+msgid "Show this language in the menu"
+msgstr ""
+
+#: ../src/xmlstrings.h:45
+msgid "Tag block-start includes all attributes"
+msgstr ""
+
+#~ msgid "CSS Minify with cssmin"
+#~ msgstr "CSS を最小化(cssmin)"

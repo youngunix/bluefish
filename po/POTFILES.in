@@ -31,3 +31,4 @@ src/rcfile.c
 src/snr3.c
 src/stringlist.c
 src/undo_redo.c
+src/xmlstrings.h
