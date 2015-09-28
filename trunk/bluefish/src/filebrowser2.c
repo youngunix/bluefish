@@ -2307,7 +2307,7 @@ file_search_func(GtkTreeModel *model, gint column,const gchar *key, GtkTreeIter 
 		return TRUE;
 	gtk_tree_model_get(model, iter, filetreemodel_COL_NAME, &tmp, -1);
 	len = strlen(key);
-	if (strncmp(key, tmp, len)==0){
+	if (strncasecmp(key, tmp, len)==0){
 		retval = FALSE;
 	}
 	g_free(tmp);
