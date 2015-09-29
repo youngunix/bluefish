@@ -1524,3 +1524,37 @@ load_templates(void)
 	g_object_unref(uri);
 	main_v->templates = g_list_concat(t1, t2);
 }
+
+#ifdef MEMORY_LEAK_DEBUG
+void props_free()
+{
+	gint i;
+	g_free(main_v->props.config_version);
+	g_free(main_v->props.editor_font_string);
+	g_free(main_v->props.tab_font_string);
+	g_free(main_v->props.tab_color_modified);
+	g_free(main_v->props.tab_color_loading);
+	g_free(main_v->props.tab_color_error);
+	free_arraylist(external_command);
+	free_arraylist(external_filter);
+	free_arraylist(external_outputbox);
+	g_free(main_v->props.image_thumbnailstring);
+	g_free(main_v->props.image_thumbnailtype);
+	g_free(main_v->props.newfile_default_encoding);
+	g_free(main_v->props.project_suffix);
+	free_arraylist(plugin_config);
+	for (i=0;i<BTV_COLOR_COUNT;i++) {
+		g_free(btv_color_str[i]);
+	}
+	free_arraylist(textstyles);
+	free_arraylist(highlight_styles);
+	free_arraylist(bflang_options);
+#ifdef WIN32
+	free_arraylist(file_association);
+#endif
+	g_free(main_v->props.autocomp_accel_string);
+	g_free(main_v->props.autosave_file_prefix);
+	g_free(main_v->props.autosave_file_suffix);
+	g_free(main_v->props.language);
+}
+#endif
