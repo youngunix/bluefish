@@ -550,6 +550,7 @@ int main(int argc, char *argv[])
 	main_v->bmarkdata = bookmark_data_cleanup(main_v->bmarkdata);
 	bluefish_cleanup_plugins();
 	langmgr_cleanup();
+	props_free();
 	xmlCleanupParser();
 
 	/*cairo_debug_reset_static_data();
