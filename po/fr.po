@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.7\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2015-09-25 11:01+0200\n"
+"POT-Creation-Date: 2015-09-26 08:42+0200\n"
 "PO-Revision-Date: 2015-5-24 14:30+0200\n"
 "Last-Translator: Frédéric Falsetti <falsetti@clansco.org>\n"
 "Language-Team: \n"
@@ -3705,187 +3705,179 @@ msgstr "Ce changement affecte de multiple documents."
 
 #: ../src/xmlstrings.h:2
 msgid "Allow folding of C style comments"
-msgstr ""
+msgstr "Permettre le pliage des commentaires C style"
 
 #: ../src/xmlstrings.h:3
 msgid "Allow folding of Curly brackets block"
-msgstr ""
+msgstr "Permettre le pliage des blocs entre accolades"
 
 #: ../src/xmlstrings.h:4
 msgid "Allow folding of Javascript Curly brackets block"
-msgstr ""
+msgstr "Permettre le pliage des blocs Javascript entre accolades"
 
 #: ../src/xmlstrings.h:5
 msgid "Allow folding of Javascript Parentheses block"
-msgstr ""
+msgstr "Permettre le pliage des blocs Javascript entre parenthèses"
 
 #: ../src/xmlstrings.h:6
 msgid "Allow folding of Javascript Square brackets block"
-msgstr ""
+msgstr "Permettre le pliage des blocs Javascript entre crochets"
 
 #: ../src/xmlstrings.h:7
 msgid "Allow folding of Parentheses block"
-msgstr ""
+msgstr "Permettre le pliage des blocs entre parenthèses"
 
 #: ../src/xmlstrings.h:8
 msgid "Allow folding of PHP blocks"
-msgstr ""
+msgstr "Permettre le pliage de"
 
 #: ../src/xmlstrings.h:9
 msgid "Allow folding of Square brackets block"
-msgstr ""
+msgstr "Permettre le pliage des blocs entre crochets"
 
 #: ../src/xmlstrings.h:10
 msgid "Allow folding of the Parentheses block"
-msgstr ""
+msgstr "Permettre le pliage des blocs entre parenthèses"
 
 #: ../src/xmlstrings.h:11
 msgid "Allow to fold the the root html tag"
-msgstr ""
+msgstr "Permettre le pliage de la balise html racine"
 
 #: ../src/xmlstrings.h:12
 msgid "All php functions"
-msgstr ""
+msgstr "Toutes les fonctions PHP"
 
 #: ../src/xmlstrings.h:13
 msgid "All wordpress functions"
-msgstr ""
+msgstr "Toutes les fonctions Wordpress"
 
 #: ../src/xmlstrings.h:14
 msgid "Autocomplete function names with semicolon"
-msgstr ""
+msgstr "Autocompléter les noms de fonction avec un point virgule "
 
 #: ../src/xmlstrings.h:15
-#, fuzzy
 msgid "Autocomplete HTML entities"
-msgstr "Auto-completion & Références"
+msgstr "Autocompléter les entités HTML"
 
 #: ../src/xmlstrings.h:16
 msgid "Autocomplete Javascript object methods"
-msgstr ""
+msgstr "Autocompléter les méthodes des objets Javascript"
 
 #: ../src/xmlstrings.h:17
 msgid "autocomplete javascript variables"
-msgstr ""
+msgstr "Autocompléter les variables Javascript"
 
 #: ../src/xmlstrings.h:18
-#, fuzzy
 msgid "Auto-complete PHP functions"
-msgstr "Auto-completion & Références"
+msgstr "Autocompléter les fonctions PHP"
 
 #: ../src/xmlstrings.h:19
 msgid "Auto-complete PHP variables"
-msgstr ""
+msgstr "Autocompléter les variables PHP"
 
 #: ../src/xmlstrings.h:20
-#, fuzzy
 msgid "Autocomplete tags"
-msgstr "terminé"
+msgstr "Autocompléter les balises"
 
 #: ../src/xmlstrings.h:21
 msgid "autocomplete with newlines"
-msgstr ""
+msgstr "Autocompléter avec un retour à la ligne"
 
 #: ../src/xmlstrings.h:22
 msgid "CSS properties"
-msgstr ""
+msgstr "Propriétés CSS"
 
 #: ../src/xmlstrings.h:23
 msgid "Enable the PHP short open tag"
-msgstr ""
+msgstr "Autoriser la balise PHP courte"
 
 #: ../src/xmlstrings.h:24
 msgid "GNU Coreutils functions"
-msgstr ""
+msgstr "Fonctions GNU Coreutils"
 
 #: ../src/xmlstrings.h:25
 msgid "HTML entities"
-msgstr ""
+msgstr "Entités HTML"
 
 #: ../src/xmlstrings.h:26
 msgid "include JQuery syntax"
-msgstr ""
+msgstr "inclure la syntaxe JQuery"
 
 #: ../src/xmlstrings.h:27
-#, fuzzy
 msgid "Javascript CSS properties"
-msgstr "Javascript beautifier"
+msgstr "Propriétés CSS Javascript"
 
 #: ../src/xmlstrings.h:28
 msgid "Load all php functions"
-msgstr ""
+msgstr "Charger toutes les fonctions php"
 
 #: ../src/xmlstrings.h:29
-#, fuzzy
 msgid "Load auto-completion information"
-msgstr "Afficher la fenêtre contextuelle de complétion"
+msgstr "Charger les informations de complétion"
 
 #: ../src/xmlstrings.h:30
-#, fuzzy
 msgid "Load completion data"
-msgstr "Afficher la fenêtre contextuelle de complétion"
+msgstr "Charger les données de complétion"
 
 #: ../src/xmlstrings.h:31
 msgid "Load glib types and functions"
-msgstr ""
+msgstr "Charger les types et fonctions glib"
 
 #: ../src/xmlstrings.h:32
 msgid "Load GObject functions"
-msgstr ""
+msgstr "Charger les fonctions GObjec"
 
 #: ../src/xmlstrings.h:33
 msgid "Load GTK+ functions"
-msgstr ""
+msgstr "Charger les fonctions GTK+"
 
 #: ../src/xmlstrings.h:34
-#, fuzzy
 msgid "Load reference data"
-msgstr "Charger les informations de références du fichier de language"
+msgstr "Charger les références"
 
 #: ../src/xmlstrings.h:35
-#, fuzzy
 msgid "Load reference information"
-msgstr "<b>Références</b>"
+msgstr "Charger les références"
 
 #: ../src/xmlstrings.h:36
 msgid "Load standard C library functions "
-msgstr ""
+msgstr "Charger les fonctions standard de la bibliothèque C "
 
 #: ../src/xmlstrings.h:37
 msgid "Load XSLT 2.0 support."
-msgstr ""
+msgstr "Charger le support de XSLT 2.0."
 
 #: ../src/xmlstrings.h:38
 msgid "Methods in javadoc but not in references"
-msgstr ""
+msgstr "Méthodes dans javadoc mais pas dans les références"
 
 #: ../src/xmlstrings.h:39
 msgid "scan for sql in php strings"
-msgstr ""
+msgstr "Analyser sql dans les chaînes php"
 
 #: ../src/xmlstrings.h:40
 msgid "Scan for sql in strings"
-msgstr ""
+msgstr "Analyser sql dans les chaînes"
 
 #: ../src/xmlstrings.h:41
 msgid "Self-close tags such as br, hr, and img with /&gt;"
-msgstr ""
+msgstr "Fermer les balises br, hr et img avec /&gt;"
 
 #: ../src/xmlstrings.h:42
 msgid "Show a string as a block"
-msgstr ""
+msgstr "Afficher les chaînes comme des blocs"
 
 #: ../src/xmlstrings.h:43
 msgid "Show tag attributes as block"
-msgstr ""
+msgstr "Afficher les chaînes comme des blocs"
 
 #: ../src/xmlstrings.h:44
 msgid "Show this language in the menu"
-msgstr ""
+msgstr "Afficher ce language dans le menu"
 
 #: ../src/xmlstrings.h:45
 msgid "Tag block-start includes all attributes"
-msgstr ""
+msgstr "Le bloc de balise ouvrante inclut tous les attributs"
 
 #~ msgid "CSS Minify with cssmin"
 #~ msgstr "Compacter CSS avec cssmin"
