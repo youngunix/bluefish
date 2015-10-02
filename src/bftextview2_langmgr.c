@@ -439,7 +439,7 @@ langmgr_reload_user_highlights(void)
 gchar *
 langmgr_get_option_description(const gchar *optionname)
 {
-	return g_hash_table_lookup(langmgr.option_descriptions, optionname);
+	return _(g_hash_table_lookup(langmgr.option_descriptions, optionname));
 }
 
 static gchar *
