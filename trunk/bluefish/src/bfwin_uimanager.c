@@ -2,7 +2,7 @@
  * Bluefish HTML Editor
  * bfwin_uimanager.c
  *
- * Copyright (C) 2011, 2012 James Hayward and Olivier Sessink
+ * Copyright (C) 2011, 2015 James Hayward and Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -323,7 +323,7 @@ static void
 ui_find(GtkAction * action, gpointer user_data)
 {
 	bfwin_simplesearch_show(BFWIN(user_data));
-	/*snr_dialog_new(BFWIN(user_data), BF_FIND_DIALOG);*/
+	/*snr_dialog_new(BFWIN(user_data), BF_FIND_DIALOG); */
 }
 
 static void
@@ -336,7 +336,7 @@ static void
 ui_find_from_clipboard(GtkAction * action, gpointer user_data)
 {
 	bfwin_simplesearch_from_clipboard(BFWIN(user_data));
-	/*search_from_selection(BFWIN(user_data));*/
+	/*search_from_selection(BFWIN(user_data)); */
 }
 
 static void
@@ -344,7 +344,7 @@ ui_replace(GtkAction * action, gpointer user_data)
 {
 
 	snr3_advanced_dialog(BFWIN(user_data), NULL);
-	/*snr_dialog_new(BFWIN(user_data), BF_REPLACE_DIALOG);*/
+	/*snr_dialog_new(BFWIN(user_data), BF_REPLACE_DIALOG); */
 }
 
 /*static void
@@ -753,7 +753,7 @@ ui_insert_absolute_filename(GtkAction * action, gpointer user_data)
 /* view action callbacks */
 
 void
-sync_fullscreen_toggle(Tbfwin *bfwin, gboolean is_fullscreen)
+sync_fullscreen_toggle(Tbfwin * bfwin, gboolean is_fullscreen)
 {
 	GtkAction *action = gtk_ui_manager_get_action(bfwin->uimanager, "/MainToolbar/ViewFullScreen");
 	/* TODO: This only works when "use-action-appearance" is TRUE. TRUE is default */
@@ -808,7 +808,7 @@ ui_browser_preview(GtkAction * action, gpointer user_data)
 		 * arr[3] = is_default_browser
 		 */
 		if (g_strv_length(arr) == 4 && arr[3][0] == '1') {
-			DEBUG_MSG("ui_browser_preview, start %s\n",arr[2]);
+			DEBUG_MSG("ui_browser_preview, start %s\n", arr[2]);
 			external_command(BFWIN(user_data), arr[2]);
 		}
 	}
@@ -884,16 +884,20 @@ static const GtkActionEntry global_actions[] = {
 	 G_CALLBACK(ui_synch_text_block)},
 	{"ToggleComment", NULL, N_("_Toggle Comment"), "<shift><control>C", N_("Toggle comment"),
 	 G_CALLBACK(ui_toggle_comment)},
-	 {"SelectBlock", NULL, N_("Select _Block"), "<shift><control>b", N_("Select block, use multiple times to select parent blocks "),
+	{"SelectBlock", NULL, N_("Select _Block"), "<shift><control>b",
+	 N_("Select block, use multiple times to select parent blocks "),
 	 G_CALLBACK(ui_select_block)},
-	 {"DuplicateLine", NULL, N_("D_uplicate Line"), "<control>d", N_("Duplicate the current line"),
+	{"DuplicateLine", NULL, N_("D_uplicate Line"), "<control>d", N_("Duplicate the current line"),
 	 G_CALLBACK(ui_duplicate_line)},
-	 {"DeleteLine", NULL, N_("_Delete Line"), "<control>y", N_("Delete the current line"),
+	{"DeleteLine", NULL, N_("_Delete Line"), "<control>y", N_("Delete the current line"),
 	 G_CALLBACK(ui_delete_line)},
 	{"WordCount", NULL, N_("_Word Count"), NULL, N_("Word count"), G_CALLBACK(ui_word_count)},
-	{"LoremIpsum", NULL, N_("Lorem Ipsum generator"), NULL, N_("Lorem Ipsum generator"), G_CALLBACK(ui_lorem_ipsum)},
-	{"RelativeFilename", NULL, N_("Insert Relative Filename"), NULL, N_("Insert Relative Filename"), G_CALLBACK(ui_insert_relative_filename)},
-	{"AbsoluteFilename", NULL, N_("Insert Absolute Filename"), NULL, N_("Insert Absolute Filename"), G_CALLBACK(ui_insert_absolute_filename)},
+	{"LoremIpsum", NULL, N_("Lorem Ipsum generator"), NULL, N_("Lorem Ipsum generator"),
+	 G_CALLBACK(ui_lorem_ipsum)},
+	{"RelativeFilename", NULL, N_("Insert Relative Filename"), NULL, N_("Insert Relative Filename"),
+	 G_CALLBACK(ui_insert_relative_filename)},
+	{"AbsoluteFilename", NULL, N_("Insert Absolute Filename"), NULL, N_("Insert Absolute Filename"),
+	 G_CALLBACK(ui_insert_absolute_filename)},
 	{"IndentingToSpaces", NULL, N_("Indenting to S_paces"), NULL, N_("Indenting to spaces"),
 	 G_CALLBACK(ui_indenting_to_spaces)},
 	{"IndentingToTabs", NULL, N_("Indenting to T_abs"), NULL, N_("Indenting to tabs"),
@@ -907,8 +911,9 @@ static const GtkActionEntry global_actions[] = {
 	{"RewrapLines", NULL, N_("Rewrap _Lines"), NULL, N_("Rewrap lines"), G_CALLBACK(ui_rewrap_lines)},
 	{"StripTrailingWhitespace", NULL, N_("Strip T_railing Whitespace"), NULL, N_("Strip trailing whitespace"),
 	 G_CALLBACK(ui_strip_trailing_whitespace)},
-	{"JsBeautify", NULL, N_("Javascript beautifier"), NULL, N_("Javascript beautifier"), G_CALLBACK(ui_jsbeautify)},
-	 {"BrowserPreview", BF_STOCK_BROWSER_PREVIEW, N_("Preview in browser"), NULL, N_("Preview in browser"),
+	{"JsBeautify", NULL, N_("Javascript beautifier"), NULL, N_("Javascript beautifier"),
+	 G_CALLBACK(ui_jsbeautify)},
+	{"BrowserPreview", BF_STOCK_BROWSER_PREVIEW, N_("Preview in browser"), NULL, N_("Preview in browser"),
 	 G_CALLBACK(ui_browser_preview)}
 };
 
@@ -950,11 +955,13 @@ static const GtkActionEntry document_actions[] = {
 	 G_CALLBACK(ui_file_save)},
 	{"FileSaveAs", GTK_STOCK_SAVE_AS, N_("Save _as..."), "<shift><control>S", N_("Save file as"),
 	 G_CALLBACK(ui_file_save_as)},
-	{"FileSaveAll", NULL, N_("Sav_e All"), "<alt><shift>s", N_("Save all files"), G_CALLBACK(ui_file_save_all)},
+	{"FileSaveAll", NULL, N_("Sav_e All"), "<alt><shift>s", N_("Save all files"),
+	 G_CALLBACK(ui_file_save_all)},
 	{"FileRevert", GTK_STOCK_REVERT_TO_SAVED, N_("Rever_t to Saved"), NULL, N_("Reload current file"),
 	 G_CALLBACK(ui_file_reload)},
-	{"FileSaveCopy", NULL, N_("Save a cop_y..."), "<shift><control>y", N_("Save a copy"), G_CALLBACK(ui_file_save_copy)},
-	{"FileInsert", NULL, N_("_Insert..."), NULL, N_("Insert file"), G_CALLBACK(ui_insert_doc)}, /* Required to move here to disable sensitivity on OSX */
+	{"FileSaveCopy", NULL, N_("Save a cop_y..."), "<shift><control>y", N_("Save a copy"),
+	 G_CALLBACK(ui_file_save_copy)},
+	{"FileInsert", NULL, N_("_Insert..."), NULL, N_("Insert file"), G_CALLBACK(ui_insert_doc)},	/* Required to move here to disable sensitivity on OSX */
 	{"FileRename", NULL, N_("Rena_me..."), "F2", N_("Rename file"), G_CALLBACK(ui_file_rename)},
 	{"EditIndent", GTK_STOCK_INDENT, N_("_Indent"), "<control>period", N_("Indent"), G_CALLBACK(ui_indent)},
 	{"EditUnindent", GTK_STOCK_UNINDENT, N_("Unin_dent"), "<control>comma", N_("Unindent"),
@@ -973,24 +980,29 @@ static const GtkActionEntry document_actions[] = {
 	 G_CALLBACK(ui_move_tab_right)},
 	{"DocRecent", NULL, N_("_Recent Document"), "<control>Tab", N_("Goto most recent document"),
 	 G_CALLBACK(ui_doc_recent)},
-	{"DocFirst", GTK_STOCK_GOTO_FIRST, N_("_First Document"), "<shift><control>Page_Up", N_("Goto first document"),
+	{"DocFirst", GTK_STOCK_GOTO_FIRST, N_("_First Document"), "<shift><control>Page_Up",
+	 N_("Goto first document"),
 	 G_CALLBACK(ui_doc_first)},
-	{"DocLast", GTK_STOCK_GOTO_LAST, N_("_Last Document"), "<shift><control>Page_Down", N_("Goto last document"),
+	{"DocLast", GTK_STOCK_GOTO_LAST, N_("_Last Document"), "<shift><control>Page_Down",
+	 N_("Goto last document"),
 	 G_CALLBACK(ui_doc_last)},
 	{"DocNext", GTK_STOCK_GO_FORWARD, N_("_Next Document"), "<control>Page_Down", N_("Goto next document"),
 	 G_CALLBACK(ui_doc_next)},
-	{"DocPrevious", GTK_STOCK_GO_BACK, N_("_Previous Document"), "<control>Page_Up", N_("Goto previous document"),
+	{"DocPrevious", GTK_STOCK_GO_BACK, N_("_Previous Document"), "<control>Page_Up",
+	 N_("Goto previous document"),
 	 G_CALLBACK(ui_doc_previous)},
 	{"GotoLine", NULL, N_("_Goto Line"), "<control>L", N_("Goto line"), G_CALLBACK(ui_goto_line)},
 	{"GotoLineSelection", NULL, N_("Goto Line Number from _Clipboard"), "<shift><control>L",
 	 N_("Goto line number in clipboard or selection"), G_CALLBACK(ui_goto_line_selection)},
 	{"JumpToReference", NULL, N_("_Jump to Reference"), "<control>J", N_("Jump to reference"),
 	 G_CALLBACK(ui_jump_to_reference)},
-#ifdef MAC_INTEGRATION /* On Mac Cmd+m is reserved for Minimise Window shortcut */	 
-	{"JumpToMatchingBlockBoundary", NULL, N_("Jump to Matching Block Boundary"), "<shift><control>M", N_("Jump to Matching Block Boundary"),
+#ifdef MAC_INTEGRATION			/* On Mac Cmd+m is reserved for Minimise Window shortcut */
+	{"JumpToMatchingBlockBoundary", NULL, N_("Jump to Matching Block Boundary"), "<shift><control>M",
+	 N_("Jump to Matching Block Boundary"),
 	 G_CALLBACK(ui_jump_to_matching_block_boundary)}
 #else
-	{"JumpToMatchingBlockBoundary", NULL, N_("Jump to Matching Block Boundary"), "<control>m", N_("Jump to Matching Block Boundary"),
+	{"JumpToMatchingBlockBoundary", NULL, N_("Jump to Matching Block Boundary"), "<control>m",
+	 N_("Jump to Matching Block Boundary"),
 	 G_CALLBACK(ui_jump_to_matching_block_boundary)}
 #endif
 };
@@ -999,19 +1011,23 @@ static const GtkActionEntry edit_actions[] = {
 	{"Cut", GTK_STOCK_CUT, N_("Cu_t"), "<control>X", N_("Cut"), G_CALLBACK(ui_cut)},
 	{"Copy", GTK_STOCK_COPY, N_("_Copy"), "<control>C", N_("Copy"), G_CALLBACK(ui_copy)},
 	{"Paste", GTK_STOCK_PASTE, N_("_Paste"), "<control>V", N_("Paste"), G_CALLBACK(ui_paste)},
-	{"PasteSpecial", GTK_STOCK_PASTE, N_("Paste Specia_l"), "<control><shift>v", N_("Paste Special"), G_CALLBACK(ui_paste_special)},
+	{"PasteSpecial", GTK_STOCK_PASTE, N_("Paste Specia_l"), "<control><shift>v", N_("Paste Special"),
+	 G_CALLBACK(ui_paste_special)},
 };
 
 static const GtkActionEntry find_replace_actions[] = {
 	{"Find", GTK_STOCK_FIND, N_("_Find"), "<control>F", N_("Show find bar"), G_CALLBACK(ui_find)},
 	{"FindAgain", NULL, N_("Find A_gain"), "<control>G", N_("Find again"), G_CALLBACK(ui_find_again)},
-	{"FindSelection", NULL, N_("Find from Clip_board"), "<shift><control>F", N_("Find from clipboard or selection"),
+	{"FindSelection", NULL, N_("Find from Clip_board"), "<shift><control>F",
+	 N_("Find from clipboard or selection"),
 	 G_CALLBACK(ui_find_from_clipboard)},
-#ifdef MAC_INTEGRATION /* On Mac Cmd+H is reserved for Hide Application shortcut */
-	{"Replace", GTK_STOCK_FIND_AND_REPLACE, N_("Ad_vanced Find & Replace..."), "<shift><control>H", N_("Advanced Find and Replace"),
+#ifdef MAC_INTEGRATION			/* On Mac Cmd+H is reserved for Hide Application shortcut */
+	{"Replace", GTK_STOCK_FIND_AND_REPLACE, N_("Ad_vanced Find & Replace..."), "<shift><control>H",
+	 N_("Advanced Find and Replace"),
 	 G_CALLBACK(ui_replace)}
 #else
-	{"Replace", GTK_STOCK_FIND_AND_REPLACE, N_("Ad_vanced Find & Replace..."), "<control>H", N_("Advanced Find and Replace"),
+	{"Replace", GTK_STOCK_FIND_AND_REPLACE, N_("Ad_vanced Find & Replace..."), "<control>H",
+	 N_("Advanced Find and Replace"),
 	 G_CALLBACK(ui_replace)}
 #endif
 /*,
@@ -1036,28 +1052,30 @@ static const GtkActionEntry undo_redo_actions[] = {
 };
 
 static void
-dynamic_menu_empty(GtkUIManager *uimanager, guint merge_id, GtkActionGroup *action_group)
+dynamic_menu_empty(GtkUIManager * uimanager, guint merge_id, GtkActionGroup * action_group)
 {
 	GList *actions, *list;
 
 	gtk_ui_manager_remove_ui(uimanager, merge_id);
 	actions = gtk_action_group_list_actions(action_group);
 	for (list = actions; list; list = list->next) {
-		DEBUG_MSG("dynamic_menu_empty, remove action %s\n",gtk_action_get_label(list->data));
+		DEBUG_MSG("dynamic_menu_empty, remove action %s\n", gtk_action_get_label(list->data));
 		/*g_signal_handlers_disconnect_by_func(GTK_ACTION(list->data),
-											 G_CALLBACK(commands_menu_activate), bfwin);*/
+		   G_CALLBACK(commands_menu_activate), bfwin); */
 		gtk_action_group_remove_action(action_group, GTK_ACTION(list->data));
 	}
 	g_list_free(actions);
 }
 
 static void
-ask_register_custom_mime_for_bflang(Tbfwin *bfwin, Tbflang *bflang, const gchar *mime)
+ask_register_custom_mime_for_bflang(Tbfwin * bfwin, Tbflang * bflang, const gchar * mime)
 {
 	GtkWidget *dialog;
 	gint response;
-	dialog =	gtk_message_dialog_new(GTK_WINDOW(bfwin->main_window), GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_QUESTION
-			, GTK_BUTTONS_YES_NO,_("Always use this syntax for files of type %s ?"), mime);
+	dialog =
+		gtk_message_dialog_new(GTK_WINDOW(bfwin->main_window), GTK_DIALOG_DESTROY_WITH_PARENT,
+							   GTK_MESSAGE_QUESTION, GTK_BUTTONS_YES_NO,
+							   _("Always use this syntax for files of type %s ?"), mime);
 	response = gtk_dialog_run(GTK_DIALOG(dialog));
 	if (response == GTK_RESPONSE_YES) {
 		langmgr_add_custom_mime(bflang, mime);
@@ -1071,25 +1089,31 @@ lang_mode_menu_activate(GtkAction * action, gpointer user_data)
 	Tbfwin *bfwin = BFWIN(user_data);
 	Tdocument *doc = bfwin->current_document;
 	Tbflang *bflang = g_object_get_data(G_OBJECT(action), "bflang");
-	DEBUG_MSG("lang_mode_menu_activate, bfwin=%p, action=%p, active=%d, bflang=%p (%s)\n",bfwin,action,gtk_toggle_action_get_active(GTK_TOGGLE_ACTION(action)),bflang, bflang?bflang->name:"not set");
+	DEBUG_MSG("lang_mode_menu_activate, bfwin=%p, action=%p, active=%d, bflang=%p (%s)\n", bfwin, action,
+			  gtk_toggle_action_get_active(GTK_TOGGLE_ACTION(action)), bflang,
+			  bflang ? bflang->name : "not set");
 	if (!bflang)
 		return;
 	if (gtk_toggle_action_get_active(GTK_TOGGLE_ACTION(action)) && bfwin->current_document) {
 		Tbflang *tmpbflang;
-		const gchar *oldmime = g_file_info_get_attribute_string(doc->fileinfo, G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE);
-		DEBUG_MSG("lang_mode_menu_activate, got 'standard_content_type' %s from fileinfo %p\n",oldmime,doc->fileinfo );
+		const gchar *oldmime =
+			g_file_info_get_attribute_string(doc->fileinfo, G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE);
+		DEBUG_MSG("lang_mode_menu_activate, got 'standard_content_type' %s from fileinfo %p\n", oldmime,
+				  doc->fileinfo);
 		if (!oldmime) {
-			oldmime = g_file_info_get_attribute_string(doc->fileinfo, G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE);
-			DEBUG_MSG("lang_mode_menu_activate, got 'fast_content_type' %s\n",oldmime);
+			oldmime =
+				g_file_info_get_attribute_string(doc->fileinfo, G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE);
+			DEBUG_MSG("lang_mode_menu_activate, got 'fast_content_type' %s\n", oldmime);
 		}
-		if (doc->uri && oldmime && strchr(oldmime, '?')==NULL) {
+		if (doc->uri && oldmime && strchr(oldmime, '?') == NULL) {
 			gchar *curi = NULL;
 			curi = g_file_get_uri(doc->uri);
 			tmpbflang = langmgr_get_bflang(oldmime, NULL);
 
-			DEBUG_MSG("lang_mode_menu_activate, got %p for tmpbflang with name %s\n",tmpbflang, tmpbflang->name);
+			DEBUG_MSG("lang_mode_menu_activate, got %p for tmpbflang with name %s\n", tmpbflang,
+					  tmpbflang->name);
 
-			if (!tmpbflang && g_strcmp0(oldmime, "application/octet-stream")!=0) {
+			if (!tmpbflang && g_strcmp0(oldmime, "application/octet-stream") != 0) {
 				/* ask the user to register oldmime for the chosen language */
 				ask_register_custom_mime_for_bflang(bfwin, bflang, oldmime);
 			} else {
@@ -1115,7 +1139,7 @@ lang_mode_menu_create(Tbfwin * bfwin)
 		return;
 
 	freelist = langmgr_get_languages();
-	DEBUG_MSG("lang_mode_menu_create, add %d languages to bfwin %p\n",g_list_length(freelist),bfwin);
+	DEBUG_MSG("lang_mode_menu_create, add %d languages to bfwin %p\n", g_list_length(freelist), bfwin);
 
 	if (!freelist)
 		return;
@@ -1124,7 +1148,7 @@ lang_mode_menu_create(Tbfwin * bfwin)
 		bfwin->lang_mode_group = gtk_action_group_new("LangModeActions");
 		gtk_ui_manager_insert_action_group(bfwin->uimanager, bfwin->lang_mode_group, 1);
 	} else {
-		dynamic_menu_empty(bfwin->uimanager,bfwin->lang_mode_merge_id, bfwin->lang_mode_group);
+		dynamic_menu_empty(bfwin->uimanager, bfwin->lang_mode_merge_id, bfwin->lang_mode_group);
 	}
 
 	bfwin->lang_mode_merge_id = gtk_ui_manager_new_merge_id(bfwin->uimanager);
@@ -1133,12 +1157,14 @@ lang_mode_menu_create(Tbfwin * bfwin)
 		if (bflang->in_menu) {
 			GtkRadioAction *action;
 			action = gtk_radio_action_new(bflang->name, bflang->name, NULL, NULL, value);
-			DEBUG_MSG("lang_mode_menu_create, create action %p for lang %p (%s)\n",action,bflang,bflang->name);
+			DEBUG_MSG("lang_mode_menu_create, create action %p for lang %p (%s)\n", action, bflang,
+					  bflang->name);
 			gtk_action_group_add_action(bfwin->lang_mode_group, GTK_ACTION(action));
 			gtk_radio_action_set_group(action, group);
 			group = gtk_radio_action_get_group(action);
 			g_object_set_data(G_OBJECT(action), "bflang", (gpointer) bflang);
-			if (bfwin->current_document && BLUEFISH_TEXT_VIEW(bfwin->current_document->view)->bflang == bflang) {
+			if (bfwin->current_document
+				&& BLUEFISH_TEXT_VIEW(bfwin->current_document->view)->bflang == bflang) {
 				gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(action), TRUE);
 			}
 			g_signal_connect(G_OBJECT(action), "activate", G_CALLBACK(lang_mode_menu_activate), bfwin);
@@ -1215,13 +1241,12 @@ bfwin_main_ui_init(Tbfwin * bfwin, GtkWidget * vbox)
 	gtk_ui_manager_insert_action_group(manager, action_group, 0);
 	g_object_unref(action_group);
 	bfwin->projectGroup = action_group;
-	/*g_print("loading UI from %s\n",MAIN_MENU_UI);*/
+	/*g_print("loading UI from %s\n",MAIN_MENU_UI); */
 	gtk_ui_manager_add_ui_from_file(manager, MAIN_MENU_UI, &error);
 	if (error != NULL) {
 		g_warning("building main menu failed: %s", error->message);
 		g_error_free(error);
 	}
-
 #ifndef WIN32
 #ifndef MAC_INTEGRATION
 	GtkAction *action = gtk_action_new("FileOpenURL", _("Open _URL..."), NULL, NULL);
@@ -1260,7 +1285,7 @@ bfwin_main_ui_init(Tbfwin * bfwin, GtkWidget * vbox)
 
 	bfwin->menubar = gtk_ui_manager_get_widget(manager, "/MainMenu");
 #if GTK_CHECK_VERSION(3,4,0)
-	gtk_container_add(GTK_CONTAINER(vbox),bfwin->menubar);
+	gtk_container_add(GTK_CONTAINER(vbox), bfwin->menubar);
 #else
 	gtk_box_pack_start(GTK_BOX(vbox), bfwin->menubar, FALSE, FALSE, 0);
 #endif
@@ -1268,7 +1293,7 @@ bfwin_main_ui_init(Tbfwin * bfwin, GtkWidget * vbox)
 
 	bfwin_templates_menu_create(bfwin);
 	bfwin_encodings_menu_create(bfwin);
-	DEBUG_MSG("bfwin_main_ui_init, call lang_mode_menu_create(bfwin=%p)\n",bfwin);
+	DEBUG_MSG("bfwin_main_ui_init, call lang_mode_menu_create(bfwin=%p)\n", bfwin);
 	lang_mode_menu_create(bfwin);
 	bfwin_commands_menu_create(bfwin);
 	bfwin_filters_menu_create(bfwin);
@@ -1277,15 +1302,18 @@ bfwin_main_ui_init(Tbfwin * bfwin, GtkWidget * vbox)
 
 	set_project_menu_actions(bfwin, FALSE);
 
-	bfwin_set_menu_toggle_item_from_path(bfwin->uimanager, "/MainMenu/ViewMenu/ViewSidePane", bfwin->session->view_left_panel);
-	bfwin_set_menu_toggle_item_from_path(bfwin->uimanager, "/MainMenu/ViewMenu/ViewMainToolbar", bfwin->session->view_main_toolbar);
-	bfwin_set_menu_toggle_item_from_path(bfwin->uimanager, "/MainMenu/ViewMenu/ViewStatusbar", bfwin->session->view_statusbar);
+	bfwin_set_menu_toggle_item_from_path(bfwin->uimanager, "/MainMenu/ViewMenu/ViewSidePane",
+										 bfwin->session->view_left_panel);
+	bfwin_set_menu_toggle_item_from_path(bfwin->uimanager, "/MainMenu/ViewMenu/ViewMainToolbar",
+										 bfwin->session->view_main_toolbar);
+	bfwin_set_menu_toggle_item_from_path(bfwin->uimanager, "/MainMenu/ViewMenu/ViewStatusbar",
+										 bfwin->session->view_statusbar);
 
 	/* now the toolbars */
 #if GTK_CHECK_VERSION(3,4,0)
 	bfwin->main_toolbar_hb = gtk_grid_new();
 	gtk_orientable_set_orientation(GTK_ORIENTABLE(bfwin->main_toolbar_hb), GTK_ORIENTATION_HORIZONTAL);
-	gtk_container_add(GTK_CONTAINER(bfwin->toolbarbox),bfwin->main_toolbar_hb);
+	gtk_container_add(GTK_CONTAINER(bfwin->toolbarbox), bfwin->main_toolbar_hb);
 #else
 	bfwin->main_toolbar_hb = gtk_handle_box_new();
 	gtk_box_pack_start(GTK_BOX(bfwin->toolbarbox), bfwin->main_toolbar_hb, TRUE, FALSE, 0);
@@ -1300,7 +1328,7 @@ bfwin_main_ui_init(Tbfwin * bfwin, GtkWidget * vbox)
 #if GTK_CHECK_VERSION(3,4,0)
 	/* This shouldn't be necessary, but work around a sizing issue when using GtkGrid */
 	gtk_toolbar_set_show_arrow(GTK_TOOLBAR(toolbar), FALSE);
-	gtk_widget_set_hexpand(GTK_WIDGET(toolbar),TRUE);
+	gtk_widget_set_hexpand(GTK_WIDGET(toolbar), TRUE);
 #endif
 	gtk_container_add(GTK_CONTAINER(bfwin->main_toolbar_hb), toolbar);
 
@@ -1357,7 +1385,8 @@ bfwin_set_document_menu_items(Tdocument * doc)
 																					 (doc->view)));
 	bfwin_set_menu_toggle_item_from_path(manager, "/MainMenu/DocumentMenu/ShowSplitView",
 										 (doc->slave != NULL));
-	bfwin_set_menu_toggle_item_from_path(manager, "/MainMenu/DocumentMenu/WrapText", gtk_text_view_get_wrap_mode(GTK_TEXT_VIEW(doc->view))==GTK_WRAP_WORD);
+	bfwin_set_menu_toggle_item_from_path(manager, "/MainMenu/DocumentMenu/WrapText",
+										 gtk_text_view_get_wrap_mode(GTK_TEXT_VIEW(doc->view)) != GTK_WRAP_NONE);
 	bfwin_set_menu_toggle_item_from_path(manager, "/MainMenu/DocumentMenu/HighlightSyntax",
 										 doc->highlightstate);
 #ifdef HAVE_LIBENCHANT
@@ -1376,7 +1405,7 @@ bfwin_set_document_menu_items(Tdocument * doc)
 	bfwin_action_set_sensitive(manager, "/MainMenu/EditMenu/Cut", !doc->readonly);
 	bfwin_action_set_sensitive(manager, "/MainMenu/EditMenu/Paste", !doc->readonly);
 	bfwin_action_set_sensitive(manager, "/MainMenu/EditMenu/Replace", !doc->readonly);
-	/*bfwin_action_set_sensitive(manager, "/MainMenu/EditMenu/ReplaceAgain", !doc->readonly);*/
+	/*bfwin_action_set_sensitive(manager, "/MainMenu/EditMenu/ReplaceAgain", !doc->readonly); */
 	bfwin_action_set_sensitive(manager, "/MainMenu/ToolsMenu/ToolsFormat/EditIndent", !doc->readonly);
 	bfwin_action_set_sensitive(manager, "/MainMenu/ToolsMenu/ToolsFormat/EditUnindent", !doc->readonly);
 }
@@ -1413,16 +1442,15 @@ bfwin_action_groups_set_sensitive(Tbfwin * bfwin, gboolean sensitive)
 {
 	GList *tmplist;
 	GtkUIManager *manager = bfwin->uimanager;
-	GList *action_group_list = gtk_ui_manager_get_action_groups (manager);
+	GList *action_group_list = gtk_ui_manager_get_action_groups(manager);
 	for (tmplist = g_list_first(action_group_list); tmplist; tmplist = tmplist->next) {
 		const gchar *group_name = gtk_action_group_get_name(GTK_ACTION_GROUP(tmplist->data));
 		if (!sensitive) {
 			if (strcmp(group_name, "topLevelMenus") != 0
-		 		&& strcmp(group_name, "GlobalActions") !=0
-		  		&& strcmp(group_name, "AboutActions") !=0
-		   		&& strcmp(group_name, "TemplateActions") !=0 ) {
-			DEBUG_MSG("setting action group sensitivity %s \n", group_name);
-			gtk_action_group_set_sensitive(GTK_ACTION_GROUP(tmplist->data), sensitive);
+				&& strcmp(group_name, "GlobalActions") != 0
+				&& strcmp(group_name, "AboutActions") != 0 && strcmp(group_name, "TemplateActions") != 0) {
+				DEBUG_MSG("setting action group sensitivity %s \n", group_name);
+				gtk_action_group_set_sensitive(GTK_ACTION_GROUP(tmplist->data), sensitive);
 			}
 		} else {
 			DEBUG_MSG("setting action group sensitivity %s \n", group_name);
@@ -1444,13 +1472,14 @@ bfwin_action_groups_set_sensitive(Tbfwin * bfwin, gboolean sensitive)
 
 /* Returns whether action group is available in menu bar */
 gboolean
-bfwin_action_group_is_available(GtkUIManager * manager, gchar * action_group_name) {
+bfwin_action_group_is_available(GtkUIManager * manager, gchar * action_group_name)
+{
 	GList *tmplist;
 	gboolean retval = FALSE;
-	GList *action_group_list = gtk_ui_manager_get_action_groups (manager);
+	GList *action_group_list = gtk_ui_manager_get_action_groups(manager);
 	for (tmplist = g_list_first(action_group_list); tmplist; tmplist = tmplist->next) {
 		const gchar *group_name = gtk_action_group_get_name(GTK_ACTION_GROUP(tmplist->data));
-		if (strcmp(group_name, action_group_name) == 0 ) {
+		if (strcmp(group_name, action_group_name) == 0) {
 			retval = TRUE;
 			break;
 		}
@@ -1473,11 +1502,11 @@ bfwin_set_menu_toggle_item_from_path(GtkUIManager * manager, const gchar * path,
 }
 
 static void
-dynamic_menu_item_create(GtkUIManager *uimanager, GtkActionGroup *action_group,
-						guint merge_id, const gchar *path,
-						const gchar *action_name, const gchar *action_label,
-						gint radio_value /* -1 for non-radio-item */, GSList **radio_group,
-						GCallback callback, gpointer callbackdata, gpointer actiondata)
+dynamic_menu_item_create(GtkUIManager * uimanager, GtkActionGroup * action_group,
+						 guint merge_id, const gchar * path,
+						 const gchar * action_name, const gchar * action_label,
+						 gint radio_value /* -1 for non-radio-item */ , GSList ** radio_group,
+						 GCallback callback, gpointer callbackdata, gpointer actiondata)
 {
 	GtkAction *action;
 	/* avoid duplicate actions */
@@ -1490,7 +1519,7 @@ dynamic_menu_item_create(GtkUIManager *uimanager, GtkActionGroup *action_group,
 	if (radio_value == -1) {
 		action = gtk_action_new(action_name, action_label, NULL, NULL);
 	} else {
-		action = (GtkAction *)gtk_radio_action_new(action_name,action_label,NULL,NULL,radio_value);
+		action = (GtkAction *) gtk_radio_action_new(action_name, action_label, NULL, NULL, radio_value);
 	}
 	if (!action)
 		return;
@@ -1504,7 +1533,7 @@ dynamic_menu_item_create(GtkUIManager *uimanager, GtkActionGroup *action_group,
 	g_object_set_data(G_OBJECT(action), "adata", actiondata);
 	g_signal_connect(G_OBJECT(action), "activate", callback, callbackdata);
 	DEBUG_MSG("dynamic_menu_item_create, add action %s at path %s\n", action_name, path);
-	gtk_ui_manager_add_ui(uimanager, merge_id,path, action_name,action_name, GTK_UI_MANAGER_MENUITEM, TRUE);
+	gtk_ui_manager_add_ui(uimanager, merge_id, path, action_name, action_name, GTK_UI_MANAGER_MENUITEM, TRUE);
 	g_object_unref(action);
 }
 
@@ -1535,25 +1564,25 @@ void
 bfwin_lang_mode_set_wo_activate(Tbfwin * bfwin, Tbflang * bflang)
 {
 	GtkAction *action;
-	if (!bflang || !bfwin->lang_mode_group) { /* At startup time doc is created faster that lang_mode_group*/
-		DEBUG_MSG("bfwin_lang_mode_set_wo_activate, bflang=%p ????? return\n",bflang);
+	if (!bflang || !bfwin->lang_mode_group) {	/* At startup time doc is created faster that lang_mode_group */
+		DEBUG_MSG("bfwin_lang_mode_set_wo_activate, bflang=%p ????? return\n", bflang);
 		return;
 	}
 	action = gtk_action_group_get_action(bfwin->lang_mode_group, bflang->name);
-	DEBUG_MSG("bfwin_lang_mode_set_wo_activate, got action %p for bflang=%s\n",action,bflang->name);
+	DEBUG_MSG("bfwin_lang_mode_set_wo_activate, got action %p for bflang=%s\n", action, bflang->name);
 	if (!action) {
 		/* because we hide certain languages from the menu it is perfectly fine if we cannot find an
-		action for a certain language file. */
+		   action for a certain language file. */
 		return;
 	}
 
 	if (!gtk_toggle_action_get_active(GTK_TOGGLE_ACTION(action))) {
-		DEBUG_MSG("action %p was not active, so activate it!\n",action);
+		DEBUG_MSG("action %p was not active, so activate it!\n", action);
 		/*gtk_action_block_activate(action); this only blocks a direct call to gtk_action_activate, not a set_active() */
 		g_object_set_data(G_OBJECT(action), "bflang", (gpointer) NULL);
 		gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(action), TRUE);
 		g_object_set_data(G_OBJECT(action), "bflang", (gpointer) bflang);
-		/*gtk_action_unblock_activate(action);*/
+		/*gtk_action_unblock_activate(action); */
 	}
 
 }
@@ -1562,7 +1591,8 @@ static void
 commands_menu_activate(GtkAction * action, gpointer user_data)
 {
 	gchar **arr = g_object_get_data(G_OBJECT(action), "adata");
-	DEBUG_MSG("commands_menu_activate, call external_command with bfwin=%p and command_string=%s\n",user_data,arr[2]);
+	DEBUG_MSG("commands_menu_activate, call external_command with bfwin=%p and command_string=%s\n",
+			  user_data, arr[2]);
 	external_command(BFWIN(user_data), arr[2]);
 }
 
@@ -1585,15 +1615,17 @@ bfwin_commands_menu_create(Tbfwin * bfwin)
 		 *  arr[2] = command
 		 *  arr[3] = is_default_browser
 		 */
-		if (g_strv_length(arr) == 4 &&(arr[0][0]=='1'||arr[0][0]=='3')) {
+		if (g_strv_length(arr) == 4 && (arr[0][0] == '1' || arr[0][0] == '3')) {
 			if (arr[3][0] == '1') {
-				dynamic_menu_item_create(bfwin->uimanager,bfwin->commands_group, bfwin->commands_merge_id,
-						"/MainMenu/ToolsMenu/DefaultBrowserPlaceholder",
-						arr[1], arr[1], -1, NULL, G_CALLBACK(commands_menu_activate), bfwin, arr);
+				dynamic_menu_item_create(bfwin->uimanager, bfwin->commands_group, bfwin->commands_merge_id,
+										 "/MainMenu/ToolsMenu/DefaultBrowserPlaceholder",
+										 arr[1], arr[1], -1, NULL, G_CALLBACK(commands_menu_activate), bfwin,
+										 arr);
 			} else {
-				dynamic_menu_item_create(bfwin->uimanager,bfwin->commands_group, bfwin->commands_merge_id,
-						"/MainMenu/ToolsMenu/ToolsCommands/CommandsPlaceholder",
-						arr[1], arr[1], -1, NULL, G_CALLBACK(commands_menu_activate), bfwin, arr);
+				dynamic_menu_item_create(bfwin->uimanager, bfwin->commands_group, bfwin->commands_merge_id,
+										 "/MainMenu/ToolsMenu/ToolsCommands/CommandsPlaceholder",
+										 arr[1], arr[1], -1, NULL, G_CALLBACK(commands_menu_activate), bfwin,
+										 arr);
 			}
 		}
 	}
@@ -1613,8 +1645,7 @@ encodings_menu_activate(GtkAction * action, gpointer user_data)
 
 	DEBUG_MSG("encodings_menu_activate, encoding=%s\n", arr[1]);
 	if (arr[1] && bfwin->current_document) {
-		if ((!bfwin->current_document->encoding
-			 || strcmp(arr[1], bfwin->current_document->encoding) != 0)) {
+		if ((!bfwin->current_document->encoding || strcmp(arr[1], bfwin->current_document->encoding) != 0)) {
 			if (bfwin->current_document->encoding)
 				g_free(bfwin->current_document->encoding);
 			bfwin->current_document->encoding = g_strdup(arr[1]);
@@ -1653,9 +1684,10 @@ bfwin_encodings_menu_create(Tbfwin * bfwin)
 
 		if (g_strv_length(arr) == 3 && arr[2][0] == '1') {
 			gchar *label = g_strdup_printf("%s (%s)", arr[0], arr[1]);
-			dynamic_menu_item_create(bfwin->uimanager,bfwin->encodings_group, bfwin->encodings_merge_id,
-						"/MainMenu/DocumentMenu/DocumentEncoding/EncodingPlaceholder",
-						arr[1], label, value, &group, G_CALLBACK(encodings_menu_activate), bfwin, arr);
+			dynamic_menu_item_create(bfwin->uimanager, bfwin->encodings_group, bfwin->encodings_merge_id,
+									 "/MainMenu/DocumentMenu/DocumentEncoding/EncodingPlaceholder",
+									 arr[1], label, value, &group, G_CALLBACK(encodings_menu_activate), bfwin,
+									 arr);
 			g_free(label);
 			value++;
 		}
@@ -1697,7 +1729,8 @@ filters_menu_activate(GtkAction * action, gpointer user_data)
 	/* if we have a selection, and the filter can be used on a selection,
 	   we should ask if it should be the complete file or the selection */
 
-	if (main_v->globses.filter_on_selection_mode != 2 && operatable_on_selection(command) && bfwin->current_document && doc_has_selection(bfwin->current_document)) {
+	if (main_v->globses.filter_on_selection_mode != 2 && operatable_on_selection(command)
+		&& bfwin->current_document && doc_has_selection(bfwin->current_document)) {
 		if (main_v->globses.filter_on_selection_mode == 1) {
 			DEBUG_MSG("filters_menu_activate, don't ask, just work on selection\n");
 			doc_get_selection(bfwin->current_document, &begin, &end);
@@ -1750,11 +1783,11 @@ bfwin_filters_menu_create(Tbfwin * bfwin)
 		 * arr[1] = name
 		 * arr[2] = command
 		 */
-		if (g_strv_length(arr) == 3 && (arr[0][0]=='1' || arr[0][0]=='3')) {
+		if (g_strv_length(arr) == 3 && (arr[0][0] == '1' || arr[0][0] == '3')) {
 			dynamic_menu_item_create(bfwin->uimanager, bfwin->filters_group,
-						bfwin->filters_merge_id, "/MainMenu/ToolsMenu/ToolsFilters/FiltersPlaceholder",
-						arr[1], arr[1], -1, NULL,
-						G_CALLBACK(filters_menu_activate), bfwin, arr);
+									 bfwin->filters_merge_id,
+									 "/MainMenu/ToolsMenu/ToolsFilters/FiltersPlaceholder", arr[1], arr[1],
+									 -1, NULL, G_CALLBACK(filters_menu_activate), bfwin, arr);
 		} else {
 			DEBUG_MSG("bfwin_filters_menu_create, CORRUPT ENTRY IN filter actions; array count =%d\n",
 					  g_strv_length(arr));
@@ -1766,7 +1799,7 @@ static void
 outputbox_menu_activate(GtkAction * action, gpointer user_data)
 {
 	gchar **arr = g_object_get_data(G_OBJECT(action), "adata");
-	DEBUG_MSG("outputbox_menu_activate, open outputbox with command %s and filter %s\n",arr[6],arr[2]);
+	DEBUG_MSG("outputbox_menu_activate, open outputbox with command %s and filter %s\n", arr[6], arr[2]);
 	outputbox(BFWIN(user_data), arr[2], atoi(arr[3]), atoi(arr[4]), atoi(arr[5]), arr[6]);
 }
 
@@ -1779,7 +1812,7 @@ bfwin_outputbox_menu_create(Tbfwin * bfwin)
 		bfwin->outputbox_group = gtk_action_group_new("OutputboxActions");
 		gtk_ui_manager_insert_action_group(bfwin->uimanager, bfwin->outputbox_group, 1);
 	} else {
-		dynamic_menu_empty(bfwin->uimanager,bfwin->outputbox_merge_id , bfwin->outputbox_group);
+		dynamic_menu_empty(bfwin->uimanager, bfwin->outputbox_merge_id, bfwin->outputbox_group);
 	}
 
 	bfwin->outputbox_merge_id = gtk_ui_manager_new_merge_id(bfwin->uimanager);
@@ -1794,11 +1827,11 @@ bfwin_outputbox_menu_create(Tbfwin * bfwin)
 		 * arr[5] = output subpattern   gint
 		 * arr[6] = command
 		 */
-		if (g_strv_length(arr) == 7 && (arr[0][0]=='1'||arr[0][0]=='3')) {
+		if (g_strv_length(arr) == 7 && (arr[0][0] == '1' || arr[0][0] == '3')) {
 			dynamic_menu_item_create(bfwin->uimanager, bfwin->outputbox_group,
-						bfwin->outputbox_merge_id, "/MainMenu/ToolsMenu/ToolsOutputBox/OutputBoxPlaceholder",
-						arr[1], arr[1], -1, NULL,
-						G_CALLBACK(outputbox_menu_activate), bfwin, arr);
+									 bfwin->outputbox_merge_id,
+									 "/MainMenu/ToolsMenu/ToolsOutputBox/OutputBoxPlaceholder", arr[1],
+									 arr[1], -1, NULL, G_CALLBACK(outputbox_menu_activate), bfwin, arr);
 		} else {
 			DEBUG_MSG("bfwin_outputbox_menu_create, CORRUPT ENTRY IN outputbox action; array count =%d\n",
 					  g_strv_length(arr));
@@ -1807,16 +1840,16 @@ bfwin_outputbox_menu_create(Tbfwin * bfwin)
 }
 
 static void
-recent_menu_remove_backend(Tbfwin *bfwin, const gchar *menupath, const gchar *curi)
+recent_menu_remove_backend(Tbfwin * bfwin, const gchar * menupath, const gchar * curi)
 {
 	GtkWidget *menuitem, *menu;
 	GList *list, *tmplist;
 
-	menuitem = gtk_ui_manager_get_widget(bfwin->uimanager,menupath);
+	menuitem = gtk_ui_manager_get_widget(bfwin->uimanager, menupath);
 	menu = gtk_menu_item_get_submenu(GTK_MENU_ITEM(menuitem));
 	list = gtk_container_get_children(GTK_CONTAINER(menu));
 	for (tmplist = list; tmplist; tmplist = tmplist->next) {
-		if (g_strcmp0(gtk_menu_item_get_label(tmplist->data), curi)==0) {
+		if (g_strcmp0(gtk_menu_item_get_label(tmplist->data), curi) == 0) {
 			gtk_widget_destroy(tmplist->data);
 			break;
 		}
@@ -1825,17 +1858,18 @@ recent_menu_remove_backend(Tbfwin *bfwin, const gchar *menupath, const gchar *cu
 }
 
 void
-bfwin_recent_menu_remove(Tbfwin *bfwin, gboolean project, const gchar *curi)
+bfwin_recent_menu_remove(Tbfwin * bfwin, gboolean project, const gchar * curi)
 {
 	GList *tmplist;
 	if (!project && bfwin->session != main_v->session) {
 		recent_menu_remove_backend(bfwin, "/MainMenu/FileMenu/FileOpenRecent", curi);
 		return;
 	}
-	for (tmplist=g_list_first(main_v->bfwinlist);tmplist;tmplist=g_list_next(tmplist)) {
+	for (tmplist = g_list_first(main_v->bfwinlist); tmplist; tmplist = g_list_next(tmplist)) {
 		if (project || BFWIN(tmplist->data)->session == main_v->session) {
 			recent_menu_remove_backend(bfwin,
-					project ? "/MainMenu/ProjectMenu/ProjectOpenRecent" :"/MainMenu/FileMenu/FileOpenRecent", curi);
+									   project ? "/MainMenu/ProjectMenu/ProjectOpenRecent" :
+									   "/MainMenu/FileMenu/FileOpenRecent", curi);
 		}
 	}
 }
@@ -1847,27 +1881,29 @@ recent_menu_activate(GtkMenuItem * menuitem, gpointer user_data)
 	const gchar *str = gtk_menu_item_get_label(menuitem);
 	gint len = strlen(str);
 	GFile *uri = g_file_new_for_uri(str);
-	if (g_strcmp0(str+len-10,".bfproject")==0) {
+	if (g_strcmp0(str + len - 10, ".bfproject") == 0) {
 		gint status = project_open_from_file(bfwin, uri);
 		if (status == 0) {
 			gint retval = project_not_found_dialog(bfwin, uri);
 			switch (retval) {
-				case 0:
-					remove_filename_from_recentlist(bfwin, TRUE, uri);
-					break;
-				case 1:
-					remove_filename_from_recentlist(bfwin, TRUE, uri);
-					project_open(bfwin);
-					break;
+			case 0:
+				remove_filename_from_recentlist(bfwin, TRUE, uri);
+				break;
+			case 1:
+				remove_filename_from_recentlist(bfwin, TRUE, uri);
+				project_open(bfwin);
+				break;
 			}
 		}
 	} else {
 		doc_new_from_uri(bfwin, uri, NULL, FALSE, FALSE, -1, -1, -1, TRUE, FALSE);
 	}
-  	g_object_unref(uri);
+	g_object_unref(uri);
 }
 
-static void recent_menu_add(Tbfwin *bfwin, GtkMenu *menu, const gchar *curi) {
+static void
+recent_menu_add(Tbfwin * bfwin, GtkMenu * menu, const gchar * curi)
+{
 	GtkWidget *menuitem;
 	menuitem = gtk_menu_item_new_with_label(curi);
 	g_signal_connect(menuitem, "activate", G_CALLBACK(recent_menu_activate), bfwin);
@@ -1876,21 +1912,21 @@ static void recent_menu_add(Tbfwin *bfwin, GtkMenu *menu, const gchar *curi) {
 }
 
 static void
-recent_menu_add_backend(Tbfwin *bfwin, const gchar *menupath, const gchar *curi)
+recent_menu_add_backend(Tbfwin * bfwin, const gchar * menupath, const gchar * curi)
 {
 	GtkWidget *menuitem, *menu;
 	GList *tmplist, *list;
-	gint num=0;
-	menuitem = gtk_ui_manager_get_widget(bfwin->uimanager,menupath);
+	gint num = 0;
+	menuitem = gtk_ui_manager_get_widget(bfwin->uimanager, menupath);
 	menu = gtk_menu_item_get_submenu(GTK_MENU_ITEM(menuitem));
 
 	/* avoid duplicate entries,
-	if recent_means_recently_closed==1 this is not essential, because
-	removing from the menu is done when the file is opened, and adding only
-	during close.
+	   if recent_means_recently_closed==1 this is not essential, because
+	   removing from the menu is done when the file is opened, and adding only
+	   during close.
 
-	if recent_means_recently_closed==0 this is essential because the file is
-	actually added to the menu during opening */
+	   if recent_means_recently_closed==0 this is essential because the file is
+	   actually added to the menu during opening */
 	recent_menu_remove_backend(bfwin, menupath, curi);
 
 	recent_menu_add(bfwin, GTK_MENU(menu), curi);
@@ -1907,26 +1943,29 @@ recent_menu_add_backend(Tbfwin *bfwin, const gchar *menupath, const gchar *curi)
 }
 
 void
-bfwin_recent_menu_add(Tbfwin *bfwin, gboolean project, const gchar *curi)
+bfwin_recent_menu_add(Tbfwin * bfwin, gboolean project, const gchar * curi)
 {
 	GList *tmplist;
 	if (!project && bfwin->session != main_v->session) {
 		recent_menu_add_backend(bfwin, "/MainMenu/FileMenu/FileOpenRecent", curi);
 		return;
 	}
-	for (tmplist=g_list_first(main_v->bfwinlist);tmplist;tmplist=g_list_next(tmplist)) {
+	for (tmplist = g_list_first(main_v->bfwinlist); tmplist; tmplist = g_list_next(tmplist)) {
 		if (project || BFWIN(tmplist->data)->session == main_v->session) {
 			recent_menu_add_backend(tmplist->data,
-					project ? "/MainMenu/ProjectMenu/ProjectOpenRecent" :"/MainMenu/FileMenu/FileOpenRecent", curi);
+									project ? "/MainMenu/ProjectMenu/ProjectOpenRecent" :
+									"/MainMenu/FileMenu/FileOpenRecent", curi);
 		}
 	}
 
 }
 
-static void recent_create_backend(Tbfwin *bfwin, const gchar *menupath, GList *recentlist) {
+static void
+recent_create_backend(Tbfwin * bfwin, const gchar * menupath, GList * recentlist)
+{
 	GtkWidget *menuitem, *menu;
 	GList *list, *tmplist;
-	gint num=0;
+	gint num = 0;
 
 	menuitem = gtk_ui_manager_get_widget(bfwin->uimanager, menupath);
 	menu = gtk_menu_item_get_submenu(GTK_MENU_ITEM(menuitem));
@@ -1944,19 +1983,20 @@ static void recent_create_backend(Tbfwin *bfwin, const gchar *menupath, GList *r
 		tmplist = g_list_last(recentlist);
 	for (; tmplist; tmplist = tmplist->prev) {
 		/* recent_menu_add adds from the top, so the last item added will be on top */
-		recent_menu_add(bfwin, GTK_MENU(menu), (const gchar *)tmplist->data);
+		recent_menu_add(bfwin, GTK_MENU(menu), (const gchar *) tmplist->data);
 		num++;
 	}
 	gtk_widget_show_all(menuitem);
 }
 
 void
-bfwin_recent_menu_create(Tbfwin *bfwin, gboolean only_update_session)
+bfwin_recent_menu_create(Tbfwin * bfwin, gboolean only_update_session)
 {
-	DEBUG_MSG("bfwin_recent_menu_create, only_update_session=%d\n",only_update_session);
+	DEBUG_MSG("bfwin_recent_menu_create, only_update_session=%d\n", only_update_session);
 	recent_create_backend(bfwin, "/MainMenu/FileMenu/FileOpenRecent", bfwin->session->recent_files);
 	if (!only_update_session)
-		recent_create_backend(bfwin, "/MainMenu/ProjectMenu/ProjectOpenRecent", main_v->globses.recent_projects);
+		recent_create_backend(bfwin, "/MainMenu/ProjectMenu/ProjectOpenRecent",
+							  main_v->globses.recent_projects);
 }
 
 static void
@@ -1978,7 +2018,7 @@ bfwin_templates_menu_create(Tbfwin * bfwin)
 		bfwin->templates_group = gtk_action_group_new("TemplateActions");
 		gtk_ui_manager_insert_action_group(bfwin->uimanager, bfwin->templates_group, 1);
 	} else {
-		dynamic_menu_empty(bfwin->uimanager, bfwin->templates_merge_id,bfwin->templates_group);
+		dynamic_menu_empty(bfwin->uimanager, bfwin->templates_merge_id, bfwin->templates_group);
 	}
 	bfwin->templates_merge_id = gtk_ui_manager_new_merge_id(bfwin->uimanager);
 
@@ -1987,9 +2027,9 @@ bfwin_templates_menu_create(Tbfwin * bfwin)
 		if (arr && arr[0] && arr[1]) {
 			gchar *action_name = g_strconcat("template ", arr[0], NULL);
 			dynamic_menu_item_create(bfwin->uimanager, bfwin->templates_group,
-						bfwin->templates_merge_id, "/MainMenu/FileMenu/NewFromTemplate/TemplatePlaceholder",
-						action_name, arr[0], -1, NULL,
-						G_CALLBACK(templates_menu_activate), bfwin, arr);
+									 bfwin->templates_merge_id,
+									 "/MainMenu/FileMenu/NewFromTemplate/TemplatePlaceholder", action_name,
+									 arr[0], -1, NULL, G_CALLBACK(templates_menu_activate), bfwin, arr);
 			g_free(action_name);
 		}
 	}
