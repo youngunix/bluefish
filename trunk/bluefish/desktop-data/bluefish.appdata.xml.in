@@ -21,8 +21,11 @@
 </ul>
 <_p>If you are an occasional coder who is in need for a simple to learn editor, or a heavy coder who dislikes heavy IDE's like eclipse or netbeans, Bluefish is your editor of choice!</_p>
 </description>
- <screenshots>
-  <screenshot width="640" type="default" height="477">http://bluefish.openoffice.nl/images/bluefish-appdata-screenshot.jpg</screenshot>
+<screenshots>
+ <screenshot type="default">
+  <image>http://bluefish.openoffice.nl/images/bluefish-appdata-screenshot.png</image>
+  <caption>The main window showing the application</caption>
+ </screenshot>
 </screenshots>
 <url type="homepage">http://bluefish.openoffice.nl/</url>
 <updatecontact>olivier(at)bluefish.openoffice.nl</updatecontact>
