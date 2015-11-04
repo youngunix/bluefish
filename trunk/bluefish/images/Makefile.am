@@ -18,7 +18,9 @@ APPS_PICS = \
 	bluefish-icon_72.png \
 	bluefish-icon_96.png \
 	bluefish-icon_128.png \
-	bluefish-icon_192.png
+	bluefish-icon_192.png \
+	bluefish-icon_256.png \
+	bluefish-icon_512.png
 
 MIME_SVG = bluefish-project.svg
 
@@ -32,7 +34,9 @@ MIME_PICS = \
 	bluefish-project_72.png \
 	bluefish-project_96.png \
 	bluefish-project_128.png \
-	bluefish-project_192.png
+	bluefish-project_192.png \
+	bluefish-project_256.png \
+	bluefish-project_512.png
 
 SPLASH_PICS = \
 	bluefish-splash-nb2.svg \
@@ -42,7 +46,7 @@ SPLASH_PICS = \
 
 MAINTAINERCLEANFILES = Makefile.in
 
-ICON_SIZES = 16 22 32 36 48 64 72 96 128 192
+ICON_SIZES = 16 22 32 36 48 64 72 96 128 192 256 512
 
 if INSTALL_THEMEICONS
 appsiconsvgdir = $(iconthemepath)/scalable/apps
