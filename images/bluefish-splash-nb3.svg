@@ -13,7 +13,7 @@
    height="210"
    id="svg3334"
    sodipodi:version="0.32"
-   inkscape:version="0.48.5 r10040"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="bluefish-splash-nb3.svg"
    inkscape:export-filename="/Users/michga/bluefishcvs/bluefish-artwork/bluefish-splash/bluefish-splash-nb3.png"
    inkscape:export-xdpi="90"
@@ -31,7 +31,7 @@
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     inkscape:window-height="1014"
+     inkscape:window-height="1016"
      inkscape:window-width="1920"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -993,8 +993,7 @@
          sodipodi:cx="24.60516"
          sodipodi:cy="20.25193"
          sodipodi:rx="5.6613641"
-         sodipodi:ry="7.185555"
-         d="m 30.266524,20.25193 c 0,3.968473 -2.534679,7.185555 -5.661364,7.185555 -3.126685,0 -5.661364,-3.217082 -5.661364,-7.185555 0,-3.968472 2.534679,-7.185555 5.661364,-7.185555 3.126685,0 5.661364,3.217083 5.661364,7.185555 z" />
+         sodipodi:ry="7.185555" />
       <path
          id="path648"
          style="fill:url(#radialGradient9673);fill-rule:evenodd;stroke-width:1pt"
@@ -1019,8 +1018,7 @@
            sodipodi:cx="62.402035"
            sodipodi:cy="21.172836"
            sodipodi:rx="2.074306"
-           sodipodi:ry="2.1607211"
-           d="m 64.476341,21.172836 c 0,1.193334 -0.928699,2.160721 -2.074306,2.160721 -1.145608,0 -2.074306,-0.967387 -2.074306,-2.160721 0,-1.193333 0.928698,-2.160721 2.074306,-2.160721 1.145607,0 2.074306,0.967388 2.074306,2.160721 z" />
+           sodipodi:ry="2.1607211" />
         <ellipse
            id="path657"
            style="fill:gray;fill-rule:evenodd;stroke-width:1pt"
@@ -1031,8 +1029,7 @@
            sodipodi:cx="63.179901"
            sodipodi:cy="20.394981"
            sodipodi:rx="0.77786398"
-           sodipodi:ry="1.037178"
-           d="m 63.957765,20.394981 c 0,0.572818 -0.348261,1.037178 -0.777864,1.037178 -0.429602,0 -0.777864,-0.46436 -0.777864,-1.037178 0,-0.572817 0.348262,-1.037178 0.777864,-1.037178 0.429603,0 0.777864,0.464361 0.777864,1.037178 z" />
+           sodipodi:ry="1.037178" />
       </g>
       <path
          id="path658"
@@ -1065,8 +1062,7 @@
          sodipodi:cx="65.82074"
          sodipodi:cy="25.081871"
          sodipodi:rx="6.5392952"
-         sodipodi:ry="5.1947398"
-         d="m 72.360035,25.081871 c 0,2.868976 -2.927742,5.19474 -6.539295,5.19474 -3.611553,0 -6.539295,-2.325764 -6.539295,-5.19474 0,-2.868976 2.927742,-5.19474 6.539295,-5.19474 3.611553,0 6.539295,2.325764 6.539295,5.19474 z" />
+         sodipodi:ry="5.1947398" />
       <ellipse
          id="path663"
          style="fill:url(#linearGradient634);fill-rule:evenodd;stroke-width:1pt"
@@ -1078,8 +1074,7 @@
          sodipodi:cx="24.323729"
          sodipodi:cy="22.20948"
          sodipodi:rx="5.744801"
-         sodipodi:ry="6.2337108"
-         d="m 30.06853,22.20948 c 0,3.442784 -2.572035,6.233711 -5.744801,6.233711 -3.172766,0 -5.744801,-2.790927 -5.744801,-6.233711 0,-3.442783 2.572035,-6.23371 5.744801,-6.23371 3.172766,0 5.744801,2.790927 5.744801,6.23371 z" />
+         sodipodi:ry="6.2337108" />
       <ellipse
          id="path664"
          style="fill:url(#linearGradient611);fill-rule:evenodd;stroke-width:1pt"
@@ -1091,8 +1086,7 @@
          sodipodi:cx="24.60516"
          sodipodi:cy="20.25193"
          sodipodi:rx="5.6613641"
-         sodipodi:ry="7.185555"
-         d="m 30.266524,20.25193 c 0,3.968473 -2.534679,7.185555 -5.661364,7.185555 -3.126685,0 -5.661364,-3.217082 -5.661364,-7.185555 0,-3.968472 2.534679,-7.185555 5.661364,-7.185555 3.126685,0 5.661364,3.217083 5.661364,7.185555 z" />
+         sodipodi:ry="7.185555" />
       <path
          id="path665"
          style="fill:url(#radialGradient560);fill-rule:evenodd;stroke-width:1pt"
@@ -1112,8 +1106,7 @@
            sodipodi:cx="62.402035"
            sodipodi:cy="21.172836"
            sodipodi:rx="2.074306"
-           sodipodi:ry="2.1607211"
-           d="m 64.476341,21.172836 c 0,1.193334 -0.928699,2.160721 -2.074306,2.160721 -1.145608,0 -2.074306,-0.967387 -2.074306,-2.160721 0,-1.193333 0.928698,-2.160721 2.074306,-2.160721 1.145607,0 2.074306,0.967388 2.074306,2.160721 z" />
+           sodipodi:ry="2.1607211" />
         <ellipse
            id="path668"
            style="fill:gray;fill-rule:evenodd;stroke-width:1pt"
@@ -1124,8 +1117,7 @@
            sodipodi:cx="63.179901"
            sodipodi:cy="20.394981"
            sodipodi:rx="0.77786398"
-           sodipodi:ry="1.037178"
-           d="m 63.957765,20.394981 c 0,0.572818 -0.348261,1.037178 -0.777864,1.037178 -0.429602,0 -0.777864,-0.46436 -0.777864,-1.037178 0,-0.572817 0.348262,-1.037178 0.777864,-1.037178 0.429603,0 0.777864,0.464361 0.777864,1.037178 z" />
+           sodipodi:ry="1.037178" />
       </g>
       <path
          id="path669"
@@ -1323,11 +1315,11 @@
      id="text4143"
      y="203.93335"
      x="181.75749"
-     style="font-size:18px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#bddaf7;fill-opacity:1;stroke:none;display:inline;font-family:Luxi Sans;-inkscape-font-specification:Liberation Sans Bold"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18px;line-height:125%;font-family:'Luxi Sans';-inkscape-font-specification:'Liberation Sans Bold';text-align:justify;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#bddaf7;fill-opacity:1;stroke:none"
      xml:space="preserve"><tspan
        y="203.93335"
        x="181.75749"
        id="tspan1687"
        transform="matrix(0.7665088,0,0,1,43.216003,0)"
-       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:justify;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans Bold">2.2.7</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24px;line-height:125%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans Bold';text-align:justify;writing-mode:lr-tb;text-anchor:start">2.2.8</tspan></text>
 </svg>
