@@ -83,8 +83,8 @@ about_options_dialog_create(GtkAction * action, gpointer user_data)
 							   PACKAGE_STRING);
 #endif	/* SVN_REVISION */
 	sec_text = g_strconcat(_("This version of Bluefish was built with:\n"), CONFIGURE_OPTIONS, NULL);
-	
-	gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(dialog), 
+
+	gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(dialog),
 			"%s\ngtk %d.%d.%d (runtime gtk %d.%d.%d)\nglib %d.%d.%d (runtime %d.%d.%d)\n"
 			"with libenchant... %s\nwith libenchant >= 1.4... %s\n"
 			"with libgucharmap... %s\nwith libgucharmap_2... %s\n"
@@ -120,7 +120,7 @@ about_options_dialog_create(GtkAction * action, gpointer user_data)
 			, "no"
 #endif
 			);
-	
+
 	g_free(sec_text);
 
 	gtk_dialog_run(GTK_DIALOG(dialog));
@@ -242,7 +242,7 @@ about_dialog_create(GtkAction * action, gpointer user_data)
 		NULL
 	};
 
-	const gchar *copyright = "Copyright \xc2\xa9 1998-2014 Olivier Sessink and others.\n";
+	const gchar *copyright = "Copyright \xc2\xa9 1998-2015 Olivier Sessink and others.\n";
 
 	/* wrap the license here,
 	 * the "wrap-license" property is only available with GTK >= 2.8
@@ -288,7 +288,7 @@ about_dialog_create(GtkAction * action, gpointer user_data)
 	gtk_about_dialog_set_url_hook(about_activate_url, NULL, NULL);
 #endif /* gtk3 */
 #ifndef MAC_INTEGRATION
-	gtk_show_about_dialog(GTK_WINDOW(bfwin->main_window), "logo", logo, "name", PACKAGE, 
+	gtk_show_about_dialog(GTK_WINDOW(bfwin->main_window), "logo", logo, "name", PACKAGE,
 #ifdef SVN_REVISION
 						  "version", VERSION " rev" SVN_REVISION,
 #else	/* SVN_REVISION */
@@ -308,7 +308,7 @@ about_dialog_create(GtkAction * action, gpointer user_data)
 	if (logo)
 		g_object_unref(logo);
 #else
-/* gtk_show_about_dialog hides window when it is closed (no other choices). On OSX this hidden dead window can be accessed from WIndow menu, so we have 
+/* gtk_show_about_dialog hides window when it is closed (no other choices). On OSX this hidden dead window can be accessed from WIndow menu, so we have
 to construct about dialog manually and destroy it after use */
 	GtkWidget *dialog;
 	dialog = gtk_about_dialog_new();
@@ -317,12 +317,12 @@ to construct about dialog manually and destroy it after use */
 	g_signal_connect (dialog, "activate-link", G_CALLBACK (activate_link_lcb), NULL);
          /* Set it's properties */
 	gtk_about_dialog_set_program_name(GTK_ABOUT_DIALOG(dialog), "Bluefish" );
-	gtk_about_dialog_set_version(GTK_ABOUT_DIALOG(dialog), 
+	gtk_about_dialog_set_version(GTK_ABOUT_DIALOG(dialog),
 #ifdef SVN_REVISION
 						  VERSION " rev" SVN_REVISION
 #else	/* SVN_REVISION */
 					  VERSION
-#endif	/* SVN_REVISION */	
+#endif	/* SVN_REVISION */
 	 );
 	gtk_about_dialog_set_copyright(GTK_ABOUT_DIALOG(dialog), copyright);
 	gtk_about_dialog_set_website(GTK_ABOUT_DIALOG(dialog), "http://bluefish.openoffice.nl" );
