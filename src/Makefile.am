@@ -126,7 +126,8 @@ bluefish_SOURCES = \
 	undo_redo.c \
 	undo_redo.h \
 	xml_entity.c \
-	xml_entity.h
+	xml_entity.h \
+	xmlstrings.h
 
 bluefish_rc.rc: bluefish_rc.rc.in
 	$(SED) -e "s#SRCDIR#$(top_srcdir)/win32/pixmaps#g" $< > $@
