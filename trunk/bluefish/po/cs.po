@@ -1,14 +1,14 @@
 # Czech language file for Bluefish.
 # Copyright (C) 2009 Free Software Foundation, Inc.
-# Marek Černocký <marek@manet.cz>, 2009, 2010, 2011, 2012, 2013, 2014.
+# Marek Černocký <marek@manet.cz>, 2009, 2010, 2011, 2012, 2013, 2014, 2015.
 #
 #: ../src/xmlstrings.h:1
 msgid ""
 msgstr ""
-"Project-Id-Version: Bluefish 2.2.4\n"
+"Project-Id-Version: Bluefish 2.2.8\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2015-09-25 11:01+0200\n"
-"PO-Revision-Date: 2014-12-19 11:34+0100\n"
+"POT-Creation-Date: 2015-11-05 23:22+0100\n"
+"PO-Revision-Date: 2015-11-08 10:04+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: ../desktop-data/bluefish.appdata.xml.in.h:1
 msgid ""
@@ -466,582 +466,583 @@ msgstr "Přepnout komentář"
 msgid "Select _Block"
 msgstr "Vybrat _blok"
 
-#: ../src/bfwin_uimanager.c:887
+#: ../src/bfwin_uimanager.c:888
 msgid "Select block, use multiple times to select parent blocks "
 msgstr "Vybrat blok; pokud chcete vybrat rodičovské bloky, použijte vícekrát"
 
-#: ../src/bfwin_uimanager.c:889
+#: ../src/bfwin_uimanager.c:890
 msgid "D_uplicate Line"
 msgstr "D_uplikovat řádek"
 
-#: ../src/bfwin_uimanager.c:889
+#: ../src/bfwin_uimanager.c:890
 msgid "Duplicate the current line"
 msgstr "Duplikovat aktuální řádek"
 
-#: ../src/bfwin_uimanager.c:891
+#: ../src/bfwin_uimanager.c:892
 msgid "_Delete Line"
 msgstr "Smazat řá_dek"
 
-#: ../src/bfwin_uimanager.c:891
+#: ../src/bfwin_uimanager.c:892
 msgid "Delete the current line"
 msgstr "Odstranit aktuální řádek"
 
-#: ../src/bfwin_uimanager.c:893
+#: ../src/bfwin_uimanager.c:894
 msgid "_Word Count"
 msgstr "Počet _slov"
 
-#: ../src/bfwin_uimanager.c:893
+#: ../src/bfwin_uimanager.c:894
 msgid "Word count"
 msgstr "Počet slov"
 
-#: ../src/bfwin_uimanager.c:894 ../src/doc_extern_tools.c:47
+#: ../src/bfwin_uimanager.c:895 ../src/doc_extern_tools.c:47
 msgid "Lorem Ipsum generator"
 msgstr "Generátor Lorem Ipsum"
 
-#: ../src/bfwin_uimanager.c:895
+#: ../src/bfwin_uimanager.c:897
 msgid "Insert Relative Filename"
 msgstr "Vložit relativní název souboru"
 
-#: ../src/bfwin_uimanager.c:896
+#: ../src/bfwin_uimanager.c:899
 msgid "Insert Absolute Filename"
 msgstr "Vložit absolutní název souboru"
 
-#: ../src/bfwin_uimanager.c:897
+#: ../src/bfwin_uimanager.c:901
 msgid "Indenting to S_paces"
 msgstr "Odsazování na _mezery"
 
-#: ../src/bfwin_uimanager.c:897
+#: ../src/bfwin_uimanager.c:901
 msgid "Indenting to spaces"
 msgstr "Odsazování na mezery"
 
-#: ../src/bfwin_uimanager.c:899
+#: ../src/bfwin_uimanager.c:903
 msgid "Indenting to T_abs"
 msgstr "Odsazování na _tabulátory"
 
-#: ../src/bfwin_uimanager.c:899
+#: ../src/bfwin_uimanager.c:903
 msgid "Indenting to tabs"
 msgstr "Odsazování na tabulátory"
 
-#: ../src/bfwin_uimanager.c:901
+#: ../src/bfwin_uimanager.c:905
 msgid "_Join Lines Together"
 msgstr "Spo_jit řádky dohromady"
 
-#: ../src/bfwin_uimanager.c:901
+#: ../src/bfwin_uimanager.c:905
 msgid "Join lines together"
 msgstr "Spojit řádky dohromady"
 
-#: ../src/bfwin_uimanager.c:903
+#: ../src/bfwin_uimanager.c:907
 msgid "Split Lines on Right _Margin"
 msgstr "Rozdělit řádky na pravém _okraji"
 
-#: ../src/bfwin_uimanager.c:903
+#: ../src/bfwin_uimanager.c:907
 msgid "Split lines on right margin"
 msgstr "Rozdělit řádky na pravém okraji"
 
-#: ../src/bfwin_uimanager.c:905
+#: ../src/bfwin_uimanager.c:909
 msgid "Merge Lines Into Col_umns"
 msgstr "Rozsadit řádky na sloup_ce"
 
-#: ../src/bfwin_uimanager.c:905
+#: ../src/bfwin_uimanager.c:909
 msgid "Merge lines into columns"
 msgstr "Rozsadit řádky na sloupce"
 
-#: ../src/bfwin_uimanager.c:907
+#: ../src/bfwin_uimanager.c:911
 msgid "Rewrap _Lines"
 msgstr "Znovu za_lámat řádky"
 
-#: ../src/bfwin_uimanager.c:907
+#: ../src/bfwin_uimanager.c:911
 msgid "Rewrap lines"
 msgstr "Znovu zalámat řádky"
 
-#: ../src/bfwin_uimanager.c:908
+#: ../src/bfwin_uimanager.c:912
 msgid "Strip T_railing Whitespace"
 msgstr "Odst_ranit koncové bílé znaky"
 
-#: ../src/bfwin_uimanager.c:908
+#: ../src/bfwin_uimanager.c:912
 msgid "Strip trailing whitespace"
 msgstr "Odstranit koncové bílé znaky"
 
-#: ../src/bfwin_uimanager.c:910
+#: ../src/bfwin_uimanager.c:914
 msgid "Javascript beautifier"
 msgstr "Hezčí Javascript"
 
-#: ../src/bfwin_uimanager.c:911
+#: ../src/bfwin_uimanager.c:916
 msgid "Preview in browser"
 msgstr "Ukázat v prohlížeči"
 
-#: ../src/bfwin_uimanager.c:916
+#: ../src/bfwin_uimanager.c:921
 msgid "_Full Screen"
 msgstr "_Celá obrazovka"
 
-#: ../src/bfwin_uimanager.c:916
+#: ../src/bfwin_uimanager.c:921
 msgid "Full screen"
 msgstr "Celá obrazovka"
 
-#: ../src/bfwin_uimanager.c:918
+#: ../src/bfwin_uimanager.c:923
 msgid "_Main Toolbar"
 msgstr "Hl_avní panel nástrojů"
 
-#: ../src/bfwin_uimanager.c:918
+#: ../src/bfwin_uimanager.c:923
 msgid "Show main toolbar"
 msgstr "Zobrazit hlavní panel nástrojů"
 
-#: ../src/bfwin_uimanager.c:920
+#: ../src/bfwin_uimanager.c:925
 msgid "_Side Pane"
 msgstr "_Postranní panel"
 
-#: ../src/bfwin_uimanager.c:920
+#: ../src/bfwin_uimanager.c:925
 msgid "Show side pane"
 msgstr "Zobrazit postranní panel"
 
-#: ../src/bfwin_uimanager.c:921
+#: ../src/bfwin_uimanager.c:926
 msgid "_Output Pane"
 msgstr "_Výstupní panel"
 
-#: ../src/bfwin_uimanager.c:921
+#: ../src/bfwin_uimanager.c:926
 msgid "Show output pane"
 msgstr "Zobrazit výstupní panel"
 
-#: ../src/bfwin_uimanager.c:923
+#: ../src/bfwin_uimanager.c:928
 msgid "Status_bar"
 msgstr "_Stavový panel"
 
-#: ../src/bfwin_uimanager.c:923
+#: ../src/bfwin_uimanager.c:928
 msgid "Show statusbar"
 msgstr "Zobrazit stavový panel"
 
-#: ../src/bfwin_uimanager.c:925
+#: ../src/bfwin_uimanager.c:930
 msgid "Auto _Completion Popup"
 msgstr "Vyskakovací a_utomatické dokončování"
 
-#: ../src/bfwin_uimanager.c:925
+#: ../src/bfwin_uimanager.c:930
 msgid "Show auto completion popup"
 msgstr "Zobrazovat vyskakovací nabídku automatického dokončování"
 
-#: ../src/bfwin_uimanager.c:927
+#: ../src/bfwin_uimanager.c:932
 msgid "_Auto Indent"
 msgstr "_Automatické odsazování"
 
-#: ../src/bfwin_uimanager.c:927
+#: ../src/bfwin_uimanager.c:932
 msgid "Auto indent"
 msgstr "Automatické odsazování"
 
-#: ../src/bfwin_uimanager.c:928
+#: ../src/bfwin_uimanager.c:933
 msgid "Highlight Block _Delimiters"
 msgstr "Zvýrazňovat _hranice bloků"
 
-#: ../src/bfwin_uimanager.c:929
+#: ../src/bfwin_uimanager.c:934
 msgid "Highlight block delimiters"
 msgstr "Zvýrazňovat hranice bloků"
 
-#: ../src/bfwin_uimanager.c:930
+#: ../src/bfwin_uimanager.c:935
 msgid "_Highlight Syntax"
 msgstr "Zvýrazňovat s_yntaxe"
 
-#: ../src/bfwin_uimanager.c:930
+#: ../src/bfwin_uimanager.c:935
 msgid "Highlight syntax"
 msgstr "Zvýrazňovat syntaxe"
 
-#: ../src/bfwin_uimanager.c:932
+#: ../src/bfwin_uimanager.c:937
 msgid "Show _Blocks"
 msgstr "Zobrazovat _bloky"
 
-#: ../src/bfwin_uimanager.c:932
+#: ../src/bfwin_uimanager.c:937
 msgid "Show blocks"
 msgstr "Zobrazovat bloky ve stavovém řádku"
 
-#: ../src/bfwin_uimanager.c:933
+#: ../src/bfwin_uimanager.c:938
 msgid "Show Line N_umbers"
 msgstr "Z_obrazovat čísla řádků"
 
-#: ../src/bfwin_uimanager.c:933
+#: ../src/bfwin_uimanager.c:938
 msgid "Show line numbers"
 msgstr "Zobrazovat čísla řádků"
 
-#: ../src/bfwin_uimanager.c:935
+#: ../src/bfwin_uimanager.c:940
 msgid "Show Right _Margin"
 msgstr "Zobrazovat pravý o_kraj"
 
-#: ../src/bfwin_uimanager.c:935
+#: ../src/bfwin_uimanager.c:940
 msgid "Show right margin"
 msgstr "Zobrazovat vyznačení pravého okraje"
 
-#: ../src/bfwin_uimanager.c:937
+#: ../src/bfwin_uimanager.c:942
 msgid "Show Split _View"
 msgstr "Zobrazovat d_vojitý pohled"
 
-#: ../src/bfwin_uimanager.c:937
+#: ../src/bfwin_uimanager.c:942
 msgid "Show split view"
 msgstr "Rozdělit zobrazení na dva pohledy"
 
-#: ../src/bfwin_uimanager.c:939
+#: ../src/bfwin_uimanager.c:944
 msgid "Show V_isible Spacing"
 msgstr "Zobrazovat v_iditelné mezery"
 
-#: ../src/bfwin_uimanager.c:939
+#: ../src/bfwin_uimanager.c:944
 msgid "Show visible spacing"
 msgstr "Zobrazovat viditelné mezery"
 
-#: ../src/bfwin_uimanager.c:941
+#: ../src/bfwin_uimanager.c:946
 msgid "_Wrap Text"
 msgstr "Zalamovat te_xt"
 
-#: ../src/bfwin_uimanager.c:941
+#: ../src/bfwin_uimanager.c:946
 msgid "Wrap text"
 msgstr "Zalamovat text"
 
-#: ../src/bfwin_uimanager.c:945 ../src/document.c:2097 ../src/document.c:3493
+#: ../src/bfwin_uimanager.c:950 ../src/document.c:2097 ../src/document.c:3493
 msgid "_Close"
 msgstr "_Zavřít"
 
-#: ../src/bfwin_uimanager.c:945
+#: ../src/bfwin_uimanager.c:950
 msgid "Close current file"
 msgstr "Zavřít aktuální soubor"
 
-#: ../src/bfwin_uimanager.c:947
+#: ../src/bfwin_uimanager.c:952
 msgid "Close A_ll"
 msgstr "Zavří_t vše…"
 
-#: ../src/bfwin_uimanager.c:947
+#: ../src/bfwin_uimanager.c:952
 msgid "Close all files"
 msgstr "Zavřít všechny soubory"
 
-#: ../src/bfwin_uimanager.c:949 ../src/bfwin_uimanager.c:1025
+#: ../src/bfwin_uimanager.c:954 ../src/bfwin_uimanager.c:1041
 #: ../src/file_dialogs.c:1455
 msgid "_Save"
 msgstr "_Uložit"
 
-#: ../src/bfwin_uimanager.c:949
+#: ../src/bfwin_uimanager.c:954
 msgid "Save current file"
 msgstr "Uložit aktuální soubor"
 
-#: ../src/bfwin_uimanager.c:951 ../src/bfwin_uimanager.c:1026
+#: ../src/bfwin_uimanager.c:956 ../src/bfwin_uimanager.c:1042
 msgid "Save _as..."
 msgstr "Uložit _jako…"
 
-#: ../src/bfwin_uimanager.c:951
+#: ../src/bfwin_uimanager.c:956
 msgid "Save file as"
 msgstr "Uložit soubor jako"
 
-#: ../src/bfwin_uimanager.c:953
+#: ../src/bfwin_uimanager.c:958
 msgid "Sav_e All"
 msgstr "Uložit vš_e…"
 
-#: ../src/bfwin_uimanager.c:953
+#: ../src/bfwin_uimanager.c:958
 msgid "Save all files"
 msgstr "Uložit všechny soubory"
 
-#: ../src/bfwin_uimanager.c:954
+#: ../src/bfwin_uimanager.c:960
 msgid "Rever_t to Saved"
 msgstr "Zpět podle u_loženého…"
 
-#: ../src/bfwin_uimanager.c:954
+#: ../src/bfwin_uimanager.c:960
 msgid "Reload current file"
 msgstr "Znovu načíst aktuální soubor"
 
-#: ../src/bfwin_uimanager.c:956
+#: ../src/bfwin_uimanager.c:962
 msgid "Save a cop_y..."
 msgstr "Uložit kopi_i…"
 
-#: ../src/bfwin_uimanager.c:956
+#: ../src/bfwin_uimanager.c:962
 msgid "Save a copy"
 msgstr "Uložit kopii"
 
-#: ../src/bfwin_uimanager.c:957
+#: ../src/bfwin_uimanager.c:964
 msgid "_Insert..."
 msgstr "_Vložit…"
 
-#: ../src/bfwin_uimanager.c:957
+#: ../src/bfwin_uimanager.c:964
 msgid "Insert file"
 msgstr "Vložit soubor"
 
 #. Required to move here to disable sensitivity on OSX
-#: ../src/bfwin_uimanager.c:958
+#: ../src/bfwin_uimanager.c:965
 msgid "Rena_me..."
 msgstr "Přej_menovat…"
 
-#: ../src/bfwin_uimanager.c:958
+#: ../src/bfwin_uimanager.c:965
 msgid "Rename file"
 msgstr "Přejmenovat soubor"
 
-#: ../src/bfwin_uimanager.c:959
+#: ../src/bfwin_uimanager.c:966
 msgid "_Indent"
 msgstr "Odsad_it"
 
-#: ../src/bfwin_uimanager.c:959
+#: ../src/bfwin_uimanager.c:966
 msgid "Indent"
 msgstr "Odstadit"
 
-#: ../src/bfwin_uimanager.c:960
+#: ../src/bfwin_uimanager.c:967
 msgid "Unin_dent"
 msgstr "Přir_azit"
 
-#: ../src/bfwin_uimanager.c:960
+#: ../src/bfwin_uimanager.c:967
 msgid "Unindent"
 msgstr "Přirazit"
 
-#: ../src/bfwin_uimanager.c:962
+#: ../src/bfwin_uimanager.c:969
 msgid "F_irst Bookmark"
 msgstr "Pr_vní záložka"
 
-#: ../src/bfwin_uimanager.c:962
+#: ../src/bfwin_uimanager.c:969
 msgid "Goto first bookmark"
 msgstr "Přejít na první záložku"
 
-#: ../src/bfwin_uimanager.c:964
+#: ../src/bfwin_uimanager.c:971
 msgid "L_ast Bookmark"
 msgstr "Poslední záložk_a"
 
-#: ../src/bfwin_uimanager.c:964
+#: ../src/bfwin_uimanager.c:971
 msgid "Goto last bookmark"
 msgstr "Přejít na poslední záložku"
 
-#: ../src/bfwin_uimanager.c:966
+#: ../src/bfwin_uimanager.c:973
 msgid "N_ext Bookmark"
 msgstr "Násled_ující záložka"
 
-#: ../src/bfwin_uimanager.c:966
+#: ../src/bfwin_uimanager.c:973
 msgid "Goto next bookmark"
 msgstr "Přejít na následující záložku"
 
-#: ../src/bfwin_uimanager.c:968
+#: ../src/bfwin_uimanager.c:975
 msgid "P_revious Bookmark"
 msgstr "Př_edchozí záložka"
 
-#: ../src/bfwin_uimanager.c:969 ../src/bfwin_uimanager.c:982
+#: ../src/bfwin_uimanager.c:976 ../src/bfwin_uimanager.c:992
 msgid "Goto previous document"
 msgstr "Přejít na předchozí dokument"
 
-#: ../src/bfwin_uimanager.c:970
+#: ../src/bfwin_uimanager.c:977
 msgid "Move Tab _Left"
 msgstr "Posunout kartu do_leva"
 
-#: ../src/bfwin_uimanager.c:970
+#: ../src/bfwin_uimanager.c:977
 msgid "Move current tab left"
 msgstr "Posunout aktuální kartu doleva"
 
-#: ../src/bfwin_uimanager.c:972
+#: ../src/bfwin_uimanager.c:979
 msgid "Move Tab _Right"
 msgstr "Posunout kartu dop_rava"
 
-#: ../src/bfwin_uimanager.c:972
+#: ../src/bfwin_uimanager.c:979
 msgid "Move current tab right"
 msgstr "Posunout aktuální kartu doprava"
 
-#: ../src/bfwin_uimanager.c:974
+#: ../src/bfwin_uimanager.c:981
 msgid "_Recent Document"
 msgstr "Ne_dávný dokument"
 
-#: ../src/bfwin_uimanager.c:974
+#: ../src/bfwin_uimanager.c:981
 msgid "Goto most recent document"
 msgstr "Přejít na nejnovější nedávný dokument"
 
-#: ../src/bfwin_uimanager.c:976
+#: ../src/bfwin_uimanager.c:983
 msgid "_First Document"
 msgstr "P_rvní dokument"
 
-#: ../src/bfwin_uimanager.c:976
+#: ../src/bfwin_uimanager.c:984
 msgid "Goto first document"
 msgstr "Přejít na první dokument"
 
-#: ../src/bfwin_uimanager.c:978
+#: ../src/bfwin_uimanager.c:986
 msgid "_Last Document"
 msgstr "Pos_lední dokument"
 
-#: ../src/bfwin_uimanager.c:978
+#: ../src/bfwin_uimanager.c:987
 msgid "Goto last document"
 msgstr "Přejít na poslední dokument"
 
-#: ../src/bfwin_uimanager.c:980
+#: ../src/bfwin_uimanager.c:989
 msgid "_Next Document"
 msgstr "_Následující dokument"
 
-#: ../src/bfwin_uimanager.c:980
+#: ../src/bfwin_uimanager.c:989
 msgid "Goto next document"
 msgstr "Přejít na následující dokument"
 
-#: ../src/bfwin_uimanager.c:982
+#: ../src/bfwin_uimanager.c:991
 msgid "_Previous Document"
 msgstr "_Předchozí dokument"
 
-#: ../src/bfwin_uimanager.c:984
+#: ../src/bfwin_uimanager.c:994
 msgid "_Goto Line"
 msgstr "_Jít na řádek"
 
-#: ../src/bfwin_uimanager.c:984
+#: ../src/bfwin_uimanager.c:994
 msgid "Goto line"
 msgstr "Přejít na řádek"
 
-#: ../src/bfwin_uimanager.c:985
+#: ../src/bfwin_uimanager.c:995
 msgid "Goto Line Number from _Clipboard"
 msgstr "Na řádek podle čísla ve schrán_ce"
 
-#: ../src/bfwin_uimanager.c:986
+#: ../src/bfwin_uimanager.c:996
 msgid "Goto line number in clipboard or selection"
 msgstr "Přejít na řádek podle čísla ve schránce nebo výběru"
 
-#: ../src/bfwin_uimanager.c:987
+#: ../src/bfwin_uimanager.c:997
 msgid "_Jump to Reference"
 msgstr "_Jít na odkaz"
 
-#: ../src/bfwin_uimanager.c:987
+#: ../src/bfwin_uimanager.c:997
 msgid "Jump to reference"
 msgstr "Přejít na odkaz"
 
-#: ../src/bfwin_uimanager.c:990 ../src/bfwin_uimanager.c:993
+#: ../src/bfwin_uimanager.c:1000 ../src/bfwin_uimanager.c:1001
+#: ../src/bfwin_uimanager.c:1004 ../src/bfwin_uimanager.c:1005
 msgid "Jump to Matching Block Boundary"
 msgstr "Přejít na hranici odpovídajícího bloku"
 
-#: ../src/bfwin_uimanager.c:999
+#: ../src/bfwin_uimanager.c:1011
 msgid "Cu_t"
 msgstr "Vyjmou_t"
 
-#: ../src/bfwin_uimanager.c:999
+#: ../src/bfwin_uimanager.c:1011
 msgid "Cut"
 msgstr "Vyjmout"
 
-#: ../src/bfwin_uimanager.c:1000
+#: ../src/bfwin_uimanager.c:1012
 msgid "_Copy"
 msgstr "_Kopírovat"
 
-#: ../src/bfwin_uimanager.c:1000
+#: ../src/bfwin_uimanager.c:1012
 msgid "Copy"
 msgstr "Kopírovat"
 
-#: ../src/bfwin_uimanager.c:1001
+#: ../src/bfwin_uimanager.c:1013
 msgid "_Paste"
 msgstr "V_ložit"
 
-#: ../src/bfwin_uimanager.c:1001
+#: ../src/bfwin_uimanager.c:1013
 msgid "Paste"
 msgstr "Vložit"
 
-#: ../src/bfwin_uimanager.c:1002
+#: ../src/bfwin_uimanager.c:1014
 msgid "Paste Specia_l"
 msgstr "Vložit jin_ak"
 
-#: ../src/bfwin_uimanager.c:1002
+#: ../src/bfwin_uimanager.c:1014
 msgid "Paste Special"
 msgstr "Vložit jinak"
 
-#: ../src/bfwin_uimanager.c:1006
+#: ../src/bfwin_uimanager.c:1019
 msgid "_Find"
 msgstr "_Najít"
 
-#: ../src/bfwin_uimanager.c:1006
+#: ../src/bfwin_uimanager.c:1019
 msgid "Show find bar"
 msgstr "Zobrazit lištu hledání"
 
-#: ../src/bfwin_uimanager.c:1007
+#: ../src/bfwin_uimanager.c:1020
 msgid "Find A_gain"
 msgstr "Na_jít znovu"
 
-#: ../src/bfwin_uimanager.c:1007
+#: ../src/bfwin_uimanager.c:1020
 msgid "Find again"
 msgstr "Najít znovu"
 
-#: ../src/bfwin_uimanager.c:1008
+#: ../src/bfwin_uimanager.c:1021
 msgid "Find from Clip_board"
 msgstr "Najít po_dle schránky"
 
-#: ../src/bfwin_uimanager.c:1008
+#: ../src/bfwin_uimanager.c:1022
 msgid "Find from clipboard or selection"
 msgstr "Najít podle obsahu schránky nebo výběru"
 
-#: ../src/bfwin_uimanager.c:1011 ../src/bfwin_uimanager.c:1014
+#: ../src/bfwin_uimanager.c:1025 ../src/bfwin_uimanager.c:1029
 msgid "Ad_vanced Find & Replace..."
 msgstr "Pokročilé hledání a nahrazování…"
 
-#: ../src/bfwin_uimanager.c:1011 ../src/bfwin_uimanager.c:1014
+#: ../src/bfwin_uimanager.c:1026 ../src/bfwin_uimanager.c:1030
 msgid "Advanced Find and Replace"
 msgstr "Pokročilé hledání a nahrazování"
 
-#: ../src/bfwin_uimanager.c:1023
+#: ../src/bfwin_uimanager.c:1039
 msgid "Save & _close"
 msgstr "Uložit a _zavřít"
 
-#: ../src/bfwin_uimanager.c:1023
+#: ../src/bfwin_uimanager.c:1039
 msgid "Save & close project"
 msgstr "Uložit a zavřít projekt"
 
-#: ../src/bfwin_uimanager.c:1025
+#: ../src/bfwin_uimanager.c:1041
 msgid "Save project"
 msgstr "Uložit projekt"
 
-#: ../src/bfwin_uimanager.c:1026
+#: ../src/bfwin_uimanager.c:1042
 msgid "Save project as"
 msgstr "Uložit projekt jako"
 
-#: ../src/bfwin_uimanager.c:1027
+#: ../src/bfwin_uimanager.c:1043
 msgid "_Edit Project Options..."
 msgstr "Upravit volby proj_ektu…"
 
-#: ../src/bfwin_uimanager.c:1027
+#: ../src/bfwin_uimanager.c:1043
 msgid "Edit project options"
 msgstr "Upravit volby projektu"
 
-#: ../src/bfwin_uimanager.c:1032
+#: ../src/bfwin_uimanager.c:1048
 msgid "_Undo"
 msgstr "_Zpět"
 
-#: ../src/bfwin_uimanager.c:1032
+#: ../src/bfwin_uimanager.c:1048
 msgid "Undo"
 msgstr "Zpět"
 
-#: ../src/bfwin_uimanager.c:1033
+#: ../src/bfwin_uimanager.c:1049
 msgid "U_ndo All"
 msgstr "Zpět _vše"
 
-#: ../src/bfwin_uimanager.c:1033
+#: ../src/bfwin_uimanager.c:1049
 msgid "Undo All"
 msgstr "Zpět vše"
 
-#: ../src/bfwin_uimanager.c:1034
+#: ../src/bfwin_uimanager.c:1050
 msgid "_Redo"
 msgstr "Zn_ovu"
 
-#: ../src/bfwin_uimanager.c:1034
+#: ../src/bfwin_uimanager.c:1050
 msgid "Redo"
 msgstr "Znovu"
 
-#: ../src/bfwin_uimanager.c:1035
+#: ../src/bfwin_uimanager.c:1051
 msgid "R_edo All"
 msgstr "Znovu vš_e"
 
-#: ../src/bfwin_uimanager.c:1035
+#: ../src/bfwin_uimanager.c:1051
 msgid "Redo All"
 msgstr "Znovu vše"
 
-#: ../src/bfwin_uimanager.c:1060
+#: ../src/bfwin_uimanager.c:1078
 #, c-format
 msgid "Always use this syntax for files of type %s ?"
 msgstr "Má se tato syntax pro soubory typu %s použít vždy?"
 
-#: ../src/bfwin_uimanager.c:1227
+#: ../src/bfwin_uimanager.c:1252
 msgid "Open _URL..."
 msgstr "Otevřít U_RL…"
 
-#: ../src/bfwin_uimanager.c:1237
+#: ../src/bfwin_uimanager.c:1262
 msgid "Upload _/ Download..."
 msgstr "Nahrát _/ stáhnout…"
 
-#: ../src/bfwin_uimanager.c:1250
+#: ../src/bfwin_uimanager.c:1275
 msgid "_Spell Check"
 msgstr "_Kontrola pravopisu"
 
-#: ../src/bfwin_uimanager.c:1717
+#: ../src/bfwin_uimanager.c:1750
 msgid "Text area to filter"
 msgstr "Oblast textu, která se má filtrovat"
 
-#: ../src/bfwin_uimanager.c:1718
+#: ../src/bfwin_uimanager.c:1751
 msgid "All text"
 msgstr "Všechen text"
 
-#: ../src/bfwin_uimanager.c:1719
+#: ../src/bfwin_uimanager.c:1752
 msgid "Selected text only"
 msgstr "Pouze vybraný text"
 
-#: ../src/bfwin_uimanager.c:1721
+#: ../src/bfwin_uimanager.c:1754
 msgid "Never ask again"
 msgstr "Nikdy se již neptat"
 
@@ -1701,43 +1702,51 @@ msgstr "Zadejte parametry, které nahradí %%a v „%s“"
 
 #: ../src/external_commands.c:749
 msgid "Internal error."
-msgstr ""
+msgstr "Interní chyba."
 
 #: ../src/external_commands.c:752
 msgid ""
 "This command requires the current document to have a file name. Please save "
 "your document first."
 msgstr ""
+"Tento příkaz vyžaduje, aby měl aktuální dokument přidělený název. Nejprve "
+"prosím dokument uložte."
 
 #: ../src/external_commands.c:755
 msgid ""
 "This command requires the current document to be a local file. Please save "
 "your document to a loacal file."
 msgstr ""
+"Tento příkaz vyžaduje, aby byl dokument v místním souboru. Uložte prosím "
+"dokument do místního souboru."
 
 #: ../src/external_commands.c:758
 msgid ""
 "External commands cannot have an output defined. Please fix this command in "
 "the preferences."
 msgstr ""
+"Externí příkazy nemohou mít definovaný výstup. Opravte prosím tento příkaz v "
+"předvolbách."
 
 #: ../src/external_commands.c:761
 msgid ""
 "This command has multiple inputs. Please fix this command in the preferences."
-msgstr ""
+msgstr "Tento příkaz má více vstupů. Opravte jej prosím v předvolbách."
 
 #: ../src/external_commands.c:764
 msgid ""
 "This command has multiple outputs. Please fix this command in the "
 "preferences."
-msgstr ""
+msgstr "Tento příkaz má více výstupů. Opravte jej prosím v předvolbách."
 
 #: ../src/external_commands.c:768
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Failed to create a command for %s.\n"
 "%s"
-msgstr "Selhalo vytvoření příkazu pro %s."
+msgstr ""
+"Selhalo vytvoření příkazu pro %s.\n"
+"%s"
 
 #: ../src/external_commands.c:770
 msgid "Failed to create a command"
@@ -2702,11 +2711,11 @@ msgstr "Nikdy"
 
 #: ../src/preferences.c:2433
 msgid "Periodically and during save"
-msgstr ""
+msgstr "Pravidelně a při ukládání"
 
 #: ../src/preferences.c:2433
 msgid "Only during save"
-msgstr ""
+msgstr "Jen při ukládání"
 
 #: ../src/preferences.c:2435
 msgid "Nothing"
@@ -2837,7 +2846,7 @@ msgstr "Při ukládání smazat _historii pro funkci zpět"
 
 #: ../src/preferences.c:2549
 msgid "Auto-completion & Reference"
-msgstr "Autodokončování a nápovědy"
+msgstr "Automatické dokončování a nápovědy"
 
 #: ../src/preferences.c:2555
 msgid "<b>Auto-completion</b>"
@@ -2981,9 +2990,8 @@ msgid "Open commandline files in new _window"
 msgstr "Otevřít soubory zadané v příkazové řádce v novém _okně"
 
 #: ../src/preferences.c:2726
-#, fuzzy
 msgid "Check if file is modified on disk:"
-msgstr "_Pravidelně kontrolovat, zda nebyl soubor na disku změněn"
+msgstr "Kontrolovat, jestli nebyl soubor na disku změněn:"
 
 #: ../src/preferences.c:2732
 msgid "File properties to check on dis_k for modifications:"
@@ -3373,9 +3381,8 @@ msgid "Javascript Minify with jsmin"
 msgstr "Minimalizovat Javascript (jsmin)"
 
 #: ../src/rcfile.c:790 ../src/rcfile.c:797
-#, fuzzy
 msgid "Toggle CSS compression"
-msgstr "Přepnout komentář"
+msgstr "Přepnout komprimaci CSS"
 
 #: ../src/rcfile.c:801
 msgid "CSS tidy"
@@ -3697,214 +3704,176 @@ msgstr "Tato změna se dotkne více dokumentů."
 
 #: ../src/xmlstrings.h:2
 msgid "Allow folding of C style comments"
-msgstr ""
+msgstr "Umožnit sbalování komentářů ve stylu C"
 
 #: ../src/xmlstrings.h:3
 msgid "Allow folding of Curly brackets block"
-msgstr ""
+msgstr "Umožnit sbalování bloků ve složených závorkách"
 
 #: ../src/xmlstrings.h:4
 msgid "Allow folding of Javascript Curly brackets block"
-msgstr ""
+msgstr "Umožnit sbalování bloků v jazyce Javascript ve složených závorkách"
 
 #: ../src/xmlstrings.h:5
 msgid "Allow folding of Javascript Parentheses block"
-msgstr ""
+msgstr "Umožnit sbalování bloků v jazyce Javascript v kulatých závorkách"
 
 #: ../src/xmlstrings.h:6
 msgid "Allow folding of Javascript Square brackets block"
-msgstr ""
+msgstr "Umožnit sbalování bloků v jazyce Javascript v hranatých závorkách"
 
 #: ../src/xmlstrings.h:7
 msgid "Allow folding of Parentheses block"
-msgstr ""
+msgstr "Umožnit sbalování bloků v kulatých závorkách"
 
 #: ../src/xmlstrings.h:8
 msgid "Allow folding of PHP blocks"
-msgstr ""
+msgstr "Umožnit sbalování bloků v jazyce PHP"
 
 #: ../src/xmlstrings.h:9
 msgid "Allow folding of Square brackets block"
-msgstr ""
+msgstr "Umožnit sbalování bloků v hranatých závorkách"
 
 #: ../src/xmlstrings.h:10
 msgid "Allow folding of the Parentheses block"
-msgstr ""
+msgstr "Umožnit sbalování bloků v kulatých závorkách"
 
 #: ../src/xmlstrings.h:11
 msgid "Allow to fold the the root html tag"
-msgstr ""
+msgstr "Umožnit sbalování kořenové značky html"
 
 #: ../src/xmlstrings.h:12
 msgid "All php functions"
-msgstr ""
+msgstr "Všechny funkce PHP"
 
 #: ../src/xmlstrings.h:13
 msgid "All wordpress functions"
-msgstr ""
+msgstr "Všechny funkce wordpress"
 
 #: ../src/xmlstrings.h:14
 msgid "Autocomplete function names with semicolon"
-msgstr ""
+msgstr "Automaticky dokončovat názvy funkcí se středníkem"
 
 #: ../src/xmlstrings.h:15
-#, fuzzy
 msgid "Autocomplete HTML entities"
-msgstr "Autodokončování a nápovědy"
+msgstr "Automaticky dokončovat entity HTML"
 
 #: ../src/xmlstrings.h:16
 msgid "Autocomplete Javascript object methods"
-msgstr ""
+msgstr "Automaticky dokončovat objekty metod jazyka Javascript"
 
 #: ../src/xmlstrings.h:17
 msgid "autocomplete javascript variables"
-msgstr ""
+msgstr "Automaticky dokončovat proměnné jazyka Javascript"
 
 #: ../src/xmlstrings.h:18
-#, fuzzy
 msgid "Auto-complete PHP functions"
-msgstr "Autodokončování a nápovědy"
+msgstr "Automaticky dokončovat funkce jazyka PHP"
 
 #: ../src/xmlstrings.h:19
 msgid "Auto-complete PHP variables"
-msgstr ""
+msgstr "Automaticky dokončovat proměnné jazyka PHP"
 
 #: ../src/xmlstrings.h:20
-#, fuzzy
 msgid "Autocomplete tags"
-msgstr "hotovo"
+msgstr "Automaticky dokončovat značky"
 
 #: ../src/xmlstrings.h:21
 msgid "autocomplete with newlines"
-msgstr ""
+msgstr "Automaticky dokončovat s novými řádky"
 
 #: ../src/xmlstrings.h:22
 msgid "CSS properties"
-msgstr ""
+msgstr "Vlastnosti CSS"
 
 #: ../src/xmlstrings.h:23
 msgid "Enable the PHP short open tag"
-msgstr ""
+msgstr "Povolit krátkou otevírací značku PHP"
 
 #: ../src/xmlstrings.h:24
 msgid "GNU Coreutils functions"
-msgstr ""
+msgstr "Základní funkce GNU"
 
 #: ../src/xmlstrings.h:25
 msgid "HTML entities"
-msgstr ""
+msgstr "Entity HTML"
 
 #: ../src/xmlstrings.h:26
 msgid "include JQuery syntax"
-msgstr ""
+msgstr "Včetně syntaxe JQuery"
 
 #: ../src/xmlstrings.h:27
-#, fuzzy
 msgid "Javascript CSS properties"
-msgstr "Hezčí Javascript"
+msgstr "Vlastnosti Javascript CSS"
 
 #: ../src/xmlstrings.h:28
 msgid "Load all php functions"
-msgstr ""
+msgstr "Načíst všechny funkce PHP"
 
 #: ../src/xmlstrings.h:29
-#, fuzzy
 msgid "Load auto-completion information"
-msgstr "Zobrazovat vyskakovací nabídku automatického dokončování"
+msgstr "Načíst informace pro automatické dokončování"
 
 #: ../src/xmlstrings.h:30
-#, fuzzy
 msgid "Load completion data"
-msgstr "Zobrazovat vyskakovací nabídku automatického dokončování"
+msgstr "Načíst data pro automatické dokončování"
 
 #: ../src/xmlstrings.h:31
 msgid "Load glib types and functions"
-msgstr ""
+msgstr "Načíst typy a funkce glib"
 
 #: ../src/xmlstrings.h:32
 msgid "Load GObject functions"
-msgstr ""
+msgstr "Načíst funkce GObject"
 
 #: ../src/xmlstrings.h:33
 msgid "Load GTK+ functions"
-msgstr ""
+msgstr "Načíst funkce GTK+"
 
 #: ../src/xmlstrings.h:34
-#, fuzzy
 msgid "Load reference data"
-msgstr "_Načíst referenční nápovědu ze souborů s definicemi jazyků"
+msgstr "Načíst data pro referenční nápovědu"
 
 #: ../src/xmlstrings.h:35
-#, fuzzy
 msgid "Load reference information"
-msgstr "<b>Referenční nápovědy</b>"
+msgstr "Načíst informace pro referenční nápovědu"
 
 #: ../src/xmlstrings.h:36
 msgid "Load standard C library functions "
-msgstr ""
+msgstr "Načíst standardní funkce knihovny C "
 
 #: ../src/xmlstrings.h:37
 msgid "Load XSLT 2.0 support."
-msgstr ""
+msgstr "Načíst podporu XSLT 2.0."
 
 #: ../src/xmlstrings.h:38
 msgid "Methods in javadoc but not in references"
-msgstr ""
+msgstr "Metody v javadoc, ale ne v referenčních nápovědách"
 
 #: ../src/xmlstrings.h:39
 msgid "scan for sql in php strings"
-msgstr ""
+msgstr "Vyhledávat SQL v řetězcích PHP"
 
 #: ../src/xmlstrings.h:40
 msgid "Scan for sql in strings"
-msgstr ""
+msgstr "Vyhledávat SQL v řetězcích"
 
 #: ../src/xmlstrings.h:41
 msgid "Self-close tags such as br, hr, and img with /&gt;"
-msgstr ""
+msgstr "Samouzavírací značky, jako je br, hr a img s /&gt;"
 
 #: ../src/xmlstrings.h:42
 msgid "Show a string as a block"
-msgstr ""
+msgstr "Zobrazovat řetězce jako blok"
 
 #: ../src/xmlstrings.h:43
 msgid "Show tag attributes as block"
-msgstr ""
+msgstr "Zobrazovat atributy značky jako blok"
 
 #: ../src/xmlstrings.h:44
 msgid "Show this language in the menu"
-msgstr ""
+msgstr "Zobrazovat tento jazyk v nabídce"
 
 #: ../src/xmlstrings.h:45
 msgid "Tag block-start includes all attributes"
-msgstr ""
-
-#~ msgid "CSS Minify with cssmin"
-#~ msgstr "Minimalzovat CSS (cssmin)"
-
-#~ msgid "_Outputbox"
-#~ msgstr "Panel s výst_upem"
-
-#~ msgid "Cannot display file, unknown characters found."
-#~ msgstr "Soubor nelze zobrazit, nalezeny neznámé znaky."
-
-#~ msgid ""
-#~ "Your glib version (%d.%d.%d) is unreliable with remote files. Please "
-#~ "upgrade to 2.18.0 or newer."
-#~ msgstr ""
-#~ "Vaše verze knihovny glib (%d.%d.%d) je nespolehlivá při práci se "
-#~ "vzdálenými soubory. Proveďte prosím aktualizaci na verzi 2.18.0 nebo "
-#~ "novější."
-
-#~ msgid ""
-#~ "<b>Your glib version (%d.%d.%d) works unreliable with remote files (smb, "
-#~ "ftp, sftp, webdav etc.). Please upgrade to a glib version newer than "
-#~ "2.18.0 if you rely on remote file support.</b>"
-#~ msgstr ""
-#~ "<b>Vaše verze knihovny glib (%d.%d.%d) je nespolehlivá při práci se "
-#~ "vzdálenými soubory.(smb, ftp, sftp, webdav atd.) V případě, že opravdu "
-#~ "používáte funkce pro práci se vzdálenými soubory, proveďte prosím "
-#~ "aktualizaci na glib verze 2.18.0 nebo novější.</b>"
-
-#~ msgid "_Language:"
-#~ msgstr "_Jazyk:"
+msgstr "Do bloku značky zahrnout všechny atributy"
