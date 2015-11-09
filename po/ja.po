@@ -5,13 +5,12 @@
 # Timothy Joko-Veltman <tim-oss@indigopixel.com>, 2004
 # Takeshi HAMASAKI <hmatrjp@users.sourceforge.jp>, 2005-2014
 #
-#: ../src/xmlstrings.h:1
 msgid ""
 msgstr ""
-"Project-Id-Version: Bluefish 2.2.7\n"
+"Project-Id-Version: Bluefish 2.2.8\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
 "POT-Creation-Date: 2015-09-25 11:01+0200\n"
-"PO-Revision-Date: 2014-12-26 19:47+0900\n"
+"PO-Revision-Date: 2015-11-09 23:54+0900\n"
 "Last-Translator: Takeshi Hamasaki <hmatrjp@users.sourceforge.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -19,7 +18,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: /factory/ja-po/bluefish/bluefish/po\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: ../desktop-data/bluefish.appdata.xml.in.h:1
 msgid ""
@@ -1697,43 +1698,55 @@ msgstr "'%s' の中にある %%a を定義するために追加引数を入力�
 
 #: ../src/external_commands.c:749
 msgid "Internal error."
-msgstr ""
+msgstr "内部エラーです。"
 
 #: ../src/external_commands.c:752
 msgid ""
 "This command requires the current document to have a file name. Please save "
 "your document first."
 msgstr ""
+"このコマンドは、現在の文書にファイル名がないと実行できません。まず文書を保存"
+"してください。"
 
 #: ../src/external_commands.c:755
 msgid ""
 "This command requires the current document to be a local file. Please save "
 "your document to a loacal file."
 msgstr ""
+"このコマンドは、現在の文書がローカルファイルでないと実行できません。まず文書"
+"をローカルに保存してください。"
 
 #: ../src/external_commands.c:758
 msgid ""
 "External commands cannot have an output defined. Please fix this command in "
 "the preferences."
 msgstr ""
+"外部コマンドでは、出力を定義できません。設定からこのコマンドを修正してくださ"
+"い。"
 
 #: ../src/external_commands.c:761
 msgid ""
 "This command has multiple inputs. Please fix this command in the preferences."
 msgstr ""
+"このコマンドは複数の入力が設定されています。設定からこのコマンドを修正してく"
+"ださい。"
 
 #: ../src/external_commands.c:764
 msgid ""
 "This command has multiple outputs. Please fix this command in the "
 "preferences."
 msgstr ""
+"このコマンドは複数の出力が設定されています。設定からこのコマンドを修正してく"
+"ださい。"
 
 #: ../src/external_commands.c:768
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Failed to create a command for %s.\n"
 "%s"
-msgstr "コマンド行の生成に失敗しました: %s"
+msgstr ""
+"%s に対応するコマンドの生成に失敗しました。\n"
+"%s"
 
 #: ../src/external_commands.c:770
 msgid "Failed to create a command"
@@ -2688,11 +2701,11 @@ msgstr "登録しない"
 
 #: ../src/preferences.c:2433
 msgid "Periodically and during save"
-msgstr ""
+msgstr "定期的に、また保存する時に"
 
 #: ../src/preferences.c:2433
 msgid "Only during save"
-msgstr ""
+msgstr "保存する時のみ"
 
 #: ../src/preferences.c:2435
 msgid "Nothing"
@@ -2968,9 +2981,8 @@ msgid "Open commandline files in new _window"
 msgstr "新しいウィンドウでコマンドラインファイルを開く(_W)"
 
 #: ../src/preferences.c:2726
-#, fuzzy
 msgid "Check if file is modified on disk:"
-msgstr "ファイルがディスク上で変更されたか定期的にチェックする(_P)"
+msgstr "ファイルがディスク上で変更されたかチェックする:"
 
 #: ../src/preferences.c:2732
 msgid "File properties to check on dis_k for modifications:"
@@ -3359,9 +3371,8 @@ msgid "Javascript Minify with jsmin"
 msgstr "Javascript を圧縮する(jsmin)"
 
 #: ../src/rcfile.c:790 ../src/rcfile.c:797
-#, fuzzy
 msgid "Toggle CSS compression"
-msgstr "コメントを切替え"
+msgstr "CSS 圧縮を切り替え"
 
 #: ../src/rcfile.c:801
 msgid "CSS tidy"
@@ -3672,187 +3683,179 @@ msgstr "この変更には複数の文書が関係しています。"
 
 #: ../src/xmlstrings.h:2
 msgid "Allow folding of C style comments"
-msgstr ""
+msgstr "C形式のコメントを折り畳めるようにする"
 
 #: ../src/xmlstrings.h:3
 msgid "Allow folding of Curly brackets block"
-msgstr ""
+msgstr "{}ブロックを折り畳めるようにする"
 
 #: ../src/xmlstrings.h:4
 msgid "Allow folding of Javascript Curly brackets block"
-msgstr ""
+msgstr "Javascriptの {}ブロックを折り畳めるようにする"
 
 #: ../src/xmlstrings.h:5
 msgid "Allow folding of Javascript Parentheses block"
-msgstr ""
+msgstr "Javascriptの ()ブロックを折り畳めるようにする"
 
 #: ../src/xmlstrings.h:6
 msgid "Allow folding of Javascript Square brackets block"
-msgstr ""
+msgstr "Javascriptの []ブロックを折り畳めるようにする"
 
 #: ../src/xmlstrings.h:7
 msgid "Allow folding of Parentheses block"
-msgstr ""
+msgstr "()ブロックを折り畳めるようにする"
 
 #: ../src/xmlstrings.h:8
 msgid "Allow folding of PHP blocks"
-msgstr ""
+msgstr "PHPのブロックを折り畳めるようにする"
 
 #: ../src/xmlstrings.h:9
 msgid "Allow folding of Square brackets block"
-msgstr ""
+msgstr "[]ブロックを折り畳めるようにする"
 
 #: ../src/xmlstrings.h:10
 msgid "Allow folding of the Parentheses block"
-msgstr ""
+msgstr "()ブロックを折り畳めるようにする"
 
 #: ../src/xmlstrings.h:11
 msgid "Allow to fold the the root html tag"
-msgstr ""
+msgstr "一番外側のHTMLタグを折り畳めるようにする"
 
 #: ../src/xmlstrings.h:12
 msgid "All php functions"
-msgstr ""
+msgstr "すべての PHP 関数"
 
 #: ../src/xmlstrings.h:13
 msgid "All wordpress functions"
-msgstr ""
+msgstr "すべての Wordpress 関数"
 
 #: ../src/xmlstrings.h:14
 msgid "Autocomplete function names with semicolon"
-msgstr ""
+msgstr "セミコロンの入力で関数名を自動補完する"
 
 #: ../src/xmlstrings.h:15
-#, fuzzy
 msgid "Autocomplete HTML entities"
-msgstr "自動補完とリファレンス"
+msgstr "HTML実体参照を自動補完する"
 
 #: ../src/xmlstrings.h:16
 msgid "Autocomplete Javascript object methods"
-msgstr ""
+msgstr "JavaScript のオブジェクトメソッドを自動補完する"
 
 #: ../src/xmlstrings.h:17
 msgid "autocomplete javascript variables"
-msgstr ""
+msgstr "JavaScript 変数を自動補完する"
 
 #: ../src/xmlstrings.h:18
-#, fuzzy
 msgid "Auto-complete PHP functions"
-msgstr "自動補完とリファレンス"
+msgstr "PHP 関数を自動補完する"
 
 #: ../src/xmlstrings.h:19
 msgid "Auto-complete PHP variables"
-msgstr ""
+msgstr "PHP 変数を自動補完する"
 
 #: ../src/xmlstrings.h:20
-#, fuzzy
 msgid "Autocomplete tags"
-msgstr "完了"
+msgstr "タグを自動補完する"
 
 #: ../src/xmlstrings.h:21
 msgid "autocomplete with newlines"
-msgstr ""
+msgstr "改行で自動補完する"
 
 #: ../src/xmlstrings.h:22
 msgid "CSS properties"
-msgstr ""
+msgstr "CSSのプロパティ"
 
 #: ../src/xmlstrings.h:23
 msgid "Enable the PHP short open tag"
-msgstr ""
+msgstr "PHPタグの短縮形を有効にする"
 
 #: ../src/xmlstrings.h:24
 msgid "GNU Coreutils functions"
-msgstr ""
+msgstr "GNU Coreutils の関数"
 
 #: ../src/xmlstrings.h:25
 msgid "HTML entities"
-msgstr ""
+msgstr "HTMLの実体参照"
 
 #: ../src/xmlstrings.h:26
 msgid "include JQuery syntax"
-msgstr ""
+msgstr "JQuery の文法を含む"
 
 #: ../src/xmlstrings.h:27
-#, fuzzy
 msgid "Javascript CSS properties"
-msgstr "Javascript 整形ツール"
+msgstr "Javascript の CSSプロパティ"
 
 #: ../src/xmlstrings.h:28
 msgid "Load all php functions"
-msgstr ""
+msgstr "すべての PHP 関数を読み込む"
 
 #: ../src/xmlstrings.h:29
-#, fuzzy
 msgid "Load auto-completion information"
-msgstr "自動補完候補ウィンドウを表示する"
+msgstr "自動補完についての情報を読み込む"
 
 #: ../src/xmlstrings.h:30
-#, fuzzy
 msgid "Load completion data"
-msgstr "自動補完候補ウィンドウを表示する"
+msgstr "補完のデータを読み込む"
 
 #: ../src/xmlstrings.h:31
 msgid "Load glib types and functions"
-msgstr ""
+msgstr "glib の型と関数を読み込む"
 
 #: ../src/xmlstrings.h:32
 msgid "Load GObject functions"
-msgstr ""
+msgstr "GObject 関数を読み込む"
 
 #: ../src/xmlstrings.h:33
 msgid "Load GTK+ functions"
-msgstr ""
+msgstr "GTK+ 関数を読み込む"
 
 #: ../src/xmlstrings.h:34
-#, fuzzy
 msgid "Load reference data"
-msgstr "言語ファイルからリファレンスを読み込み(_L)"
+msgstr "リファレンスのデータを読み込む"
 
 #: ../src/xmlstrings.h:35
-#, fuzzy
 msgid "Load reference information"
-msgstr "<b>参考情報</b>"
+msgstr "リファレンスの情報を読み込む"
 
 #: ../src/xmlstrings.h:36
 msgid "Load standard C library functions "
-msgstr ""
+msgstr "Cの標準ライブラリ関数を読み込む"
 
 #: ../src/xmlstrings.h:37
 msgid "Load XSLT 2.0 support."
-msgstr ""
+msgstr "XSLT 2.0 サポートを読み込む"
 
 #: ../src/xmlstrings.h:38
 msgid "Methods in javadoc but not in references"
-msgstr ""
+msgstr "javadoc の中にはあるがリファレンスには含まれないメソッド"
 
 #: ../src/xmlstrings.h:39
 msgid "scan for sql in php strings"
-msgstr ""
+msgstr "PHP文字列をスキャンしてSQLを探す"
 
 #: ../src/xmlstrings.h:40
 msgid "Scan for sql in strings"
-msgstr ""
+msgstr "文字列をスキャンしてSQL を探す"
 
 #: ../src/xmlstrings.h:41
 msgid "Self-close tags such as br, hr, and img with /&gt;"
-msgstr ""
+msgstr "br,hr,imgなど自己完結型のタグを/&gt;で閉じる"
 
 #: ../src/xmlstrings.h:42
 msgid "Show a string as a block"
-msgstr ""
+msgstr "文字列をブロックとして表示"
 
 #: ../src/xmlstrings.h:43
 msgid "Show tag attributes as block"
-msgstr ""
+msgstr "タグの属性をブロックとして表示する"
 
 #: ../src/xmlstrings.h:44
 msgid "Show this language in the menu"
-msgstr ""
+msgstr "この言語をメニューに表示する"
 
 #: ../src/xmlstrings.h:45
 msgid "Tag block-start includes all attributes"
-msgstr ""
+msgstr "タグのブロック開始にすべての属性を含める"
 
 #~ msgid "CSS Minify with cssmin"
 #~ msgstr "CSS を最小化(cssmin)"
