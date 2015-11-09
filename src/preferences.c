@@ -848,7 +848,7 @@ set_fileassociation_strarr_in_list(GtkTreeIter *iter, gchar **strarr, Tprefdialo
 static void
 fileassociation_0_toggled_lcb(GtkCellRendererToggle *cellrenderertoggle, gchar *path, Tprefdialog *pd)
 {
-	gchar *val = g_strdup(cellrenderertoggle->active ? "0" : "1");
+	gchar *val = g_strdup(gtk_cell_renderer_toggle_get_active(cellrenderertoggle) ? "0" : "1");
 	pref_apply_change(pd->fad.lstore, 3, 2, path, val, 0);
 	g_free(val);
 }
