@@ -3649,7 +3649,6 @@ file_insert_doc(Tbfwin * bfwin)
 }
 
 GtkTextView *doc_get_active_view(Tdocument *doc) {
-	GtkTextView *activeview;
 	if (doc->slave && gtk_window_get_focus(GTK_WINDOW(BFWIN(doc->bfwin)->main_window)) == doc->slave) {
 		return GTK_TEXT_VIEW(doc->slave);
 	}
