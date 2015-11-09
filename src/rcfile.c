@@ -810,24 +810,6 @@ GList *update_commands(GList *current, gboolean overwrite)
 #ifdef WIN32
 	defaults =
 		g_list_prepend(defaults,
-					  array_from_arglist(_("Windows XP Firefox"),
-										 "\"C:\\Program Files\\Mozilla Firefox\\firefox.exe\" '%p'",
-										 "1", NULL));
-	defaults =
-		g_list_prepend(defaults,
-					  array_from_arglist(_("Windows XP Internet Explorer"),
-										 "\"C:\\Program Files\\Internet Explorer\\iexplore.exe\" '%p'",
-										 "0", NULL));
-	defaults =
-		g_list_prepend(defaults,
-					  array_from_arglist(_("Windows XP Opera"),
-										 "\"C:\\Program Files\\Opera\\opera.exe\" '%p'", "0", NULL));
-	defaults =
-		g_list_prepend(defaults,
-					  array_from_arglist(_("Windows XP Safari"),
-										 "\"C:\\Program Files\\Safari\\safari.exe\" '%p'", "0", NULL));
-	defaults =
-		g_list_prepend(defaults,
 					  array_from_arglist(_("Windows 7 Firefox 32-bit"),
 										 "\"C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe\" '%p'",
 										 "1", NULL));
@@ -863,8 +845,7 @@ GList *update_commands(GList *current, gboolean overwrite)
 #else
 	defaults =
 		g_list_prepend(defaults,
-					  array_from_arglist(_("Firefox"), "firefox -remote 'openURL(%p)' || firefox '%p'&",
-										 "1", NULL));
+					  array_from_arglist(_("Firefox"), "firefox '%p'&", "1", NULL));
 	defaults =
 		g_list_prepend(defaults,
 					  array_from_arglist(_("Opera"), "opera -remote 'openURL(%p)' || opera '%p'&", "0",
