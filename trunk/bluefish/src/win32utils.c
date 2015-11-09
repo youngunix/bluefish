@@ -25,7 +25,7 @@
 gboolean
 isadmin_win32()
 {
-	gboolean bRet;
+	BOOL bRet;
 	PACL pACL;
 	DWORD dwLen, dwStatus;
 	PSID psidAdmin;
@@ -75,7 +75,7 @@ isadmin_win32()
 		return FALSE;
 
 	dwLen = sizeof(PRIVILEGE_SET);
-	if (!AccessCheck(psdAdmin, hItok, ACCESS_READ, &gmap, &ps, &dwLen, &dwStatus, &(BOOL)bRet)) {
+	if (!AccessCheck(psdAdmin, hItok, ACCESS_READ, &gmap, &ps, &dwLen, &dwStatus, &bRet)) {
 		bRet = FALSE;
 		g_print("ERROR: %lu\n", GetLastError());
 	}
@@ -86,7 +86,7 @@ isadmin_win32()
 	if (hItok) CloseHandle(hItok);
 	if (hTok) CloseHandle(hTok);
 
-	return bRet;
+	return (gboolean)bRet;
 }
 
 gint
