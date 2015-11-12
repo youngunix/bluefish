@@ -5,7 +5,7 @@
 ;  The Bluefish Developers
 ;
 ;  Translators:
-;   flemming christensen <fc@stromata.dk>, 2012
+;   flemming christensen <fc@stilheden.net>, 2012
 ;----------------------------------------------
 
 ; Section Names
