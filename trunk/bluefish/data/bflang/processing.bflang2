@@ -61,7 +61,7 @@
  </context>
 </element>
 
-<element id="e.lbrace" pattern="{" starts_block="1" mayfold="1" highlight="brackets" />
+<element id="e.lbrace" pattern="{" starts_block="1" highlight="brackets" />
 <element pattern="}" ends_block="1" blockstartelement="e.lbrace" highlight="brackets" />
 <element id="e.lbracket" pattern="[" starts_block="1"  highlight="brackets" />
 <element pattern="]" ends_block="1" blockstartelement="e.lbracket" highlight="brackets" />
@@ -79,13 +79,13 @@
 
 <element id="e.blcomment" pattern="/*" starts_block="1" highlight="comment">
  <context symbols="*/" highlight="comment">
-  <element pattern="*/" ends_block="1" blockstartelement="e.blcomment" highlight="comment" mayfold="1" ends_context="1" />
+  <element pattern="*/" ends_block="1" blockstartelement="e.blcomment" highlight="comment" ends_context="1" />
  </context>
 </element>
 
 <element id="e.doccomment" pattern="/**" starts_block="1" highlight="comment">
  <context symbols="*/" highlight="value">
-  <element pattern="*/" ends_block="1" blockstartelement="e.doccomment" highlight="comment" mayfold="1" ends_context="1" />
+  <element pattern="*/" ends_block="1" blockstartelement="e.doccomment" highlight="comment" ends_context="1" />
  </context>
 </element>
 

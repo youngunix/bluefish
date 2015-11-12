@@ -58,7 +58,7 @@
 	</element>
 	<element id="e.xml.lcomment" pattern="&lt;!--" highlight="comment" starts_block="1">
 		<context symbols="-&gt; &#9;&#10;&#13;" highlight="comment">
-			<element pattern="--&gt;" ends_block="1" blockstartelement="e.xml.lcomment" highlight="comment" mayfold="1" ends_context="1" />
+			<element pattern="--&gt;" ends_block="1" blockstartelement="e.xml.lcomment" highlight="comment" ends_context="1" />
 		</context>
 	</element>
 	<element id="e.xml.tag.open" pattern="&lt;[_a-zA-Z0-9:-]+" is_regex="1" highlight="tag" starts_block="1" tagclose_from_blockstack="1">

@@ -63,7 +63,7 @@
 <element id="e.comment" pattern="&lt;!--" highlight="comment" starts_block="1">
    <context symbols="-&gt; &#9;&#10;&#13;" highlight="comment">
      <element pattern="--&gt;" ends_block="1" blockstartelement="e.comment" highlight="comment"
-     mayfold="1" ends_context="1" />
+     ends_context="1" />
    </context>
 </element>
 <!-- wiki -->
