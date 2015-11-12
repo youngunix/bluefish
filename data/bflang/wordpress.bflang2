@@ -113,15 +113,15 @@
 <context symbols="'&#34;(){}[];#:.,/?!$^*-+=&gt;&lt;&amp; &#9;&#10;&#13;">
 &all-wordpress;
 &all-php;
-<element id="e.php.short.lbrace" pattern="{" starts_block="1" mayfold="1" highlight="brackets" />
+<element id="e.php.short.lbrace" pattern="{" starts_block="1" highlight="brackets" />
 <element pattern="}" ends_block="1" blockstartelement="e.php.short.lbrace" highlight="brackets" />
-<element id="e.php.short.lbracket" pattern="[" starts_block="1" mayfold="1" highlight="brackets" />
+<element id="e.php.short.lbracket" pattern="[" starts_block="1" highlight="brackets" />
 <element pattern="]" ends_block="1" blockstartelement="e.php.short.lbracket" highlight="brackets" />
-<element id="e.php.short.lparen" pattern="(" starts_block="1" mayfold="1" highlight="brackets" block_name="Parentheses block" />
+<element id="e.php.short.lparen" pattern="(" starts_block="1" highlight="brackets" block_name="Parentheses block" />
 <element pattern=")" ends_block="1" blockstartelement="e.php.short.lparen" highlight="brackets" />
 <element id="e.php.short.lcomment" pattern="/*" starts_block="1" highlight="php-comment">
 	<context symbols="*/&#9;&#10;&#13;" highlight="php-comment">
-		<element pattern="*/" ends_block="1" blockstartelement="e.php.short.lcomment" highlight="php-comment" mayfold="1" ends_context="1" />
+		<element pattern="*/" ends_block="1" blockstartelement="e.php.short.lcomment" highlight="php-comment" ends_context="1" />
 	</context>
 </element>
 <element id="e.php.short.variable" pattern="$[a-zA-Z_][a-zA-Z0-9_]*" is_regex="1" case_insens="1" highlight="php-variable"/>
@@ -151,7 +151,7 @@
 	<context id="c.php.short.linecomment" symbols="?&gt;&#10;&#13;" highlight="php-comment">
 <!-- dos has \r\n -> we should never end a pattern between these two chars  -->
 		<element pattern="(&#10;|&#13;|&#13;&#10;)" is_regex="1" ends_context="1" />
-		<element pattern="?&gt;" ends_context="2" ends_block="1" blockstartelement="e.php.short.open" highlight="php-block-tag" mayfold="1" />
+		<element pattern="?&gt;" ends_context="2" ends_block="1" blockstartelement="e.php.short.open" highlight="php-block-tag" />
 	</context>
 </element>
 <!-- there is a bug in the scanning engine such that a regex style pattern like (#|//) won't work. The reason is that
@@ -160,7 +160,7 @@ for this pattern and both of them are a symbol. That's why we have a separate en
 <element pattern="#" highlight="php-comment">
 	<context idref="c.php.short.linecomment"/>
 </element>
-<element pattern="?&gt;" ends_block="1" blockstartelement="e.php.short.open" highlight="php-block-tag" mayfold="1" ends_context="1" />
+<element pattern="?&gt;" ends_block="1" blockstartelement="e.php.short.open" highlight="php-block-tag" ends_context="1" />
 </context></element>
 </group>
 <group notclass="php_short_open_tag">
@@ -170,15 +170,15 @@ for this pattern and both of them are a symbol. That's why we have a separate en
 was disabled, this whole section is not parsed by the language manager, so the context does not yet exist..  -->
 &all-wordpress;
 &all-php;
-<element id="e.php.lbrace" pattern="{" starts_block="1" mayfold="1" highlight="brackets" />
+<element id="e.php.lbrace" pattern="{" starts_block="1" highlight="brackets" />
 <element pattern="}" ends_block="1" blockstartelement="e.php.lbrace" highlight="brackets" />
-<element id="e.php.lbracket" pattern="[" starts_block="1" mayfold="1" highlight="brackets" />
+<element id="e.php.lbracket" pattern="[" starts_block="1" highlight="brackets" />
 <element pattern="]" ends_block="1" blockstartelement="e.php.lbracket" highlight="brackets" />
-<element id="e.php.lparen" pattern="(" starts_block="1" mayfold="1" highlight="brackets" />
+<element id="e.php.lparen" pattern="(" starts_block="1" highlight="brackets" />
 <element pattern=")" ends_block="1" blockstartelement="e.php.lparen" highlight="brackets" />
 <element id="e.php.lcomment" pattern="/*" starts_block="1" highlight="php-comment">
 	<context symbols="*/&#9;&#10;&#13;" highlight="php-comment">
-		<element pattern="*/" ends_block="1" blockstartelement="e.php.lcomment" highlight="php-comment" mayfold="1" ends_context="1" />
+		<element pattern="*/" ends_block="1" blockstartelement="e.php.lcomment" highlight="php-comment" ends_context="1" />
 	</context>
 </element>
 <element id="e.php.variable" pattern="$[a-zA-Z_][a-zA-Z0-9_]*" is_regex="1" case_insens="1" highlight="php-variable"/>
@@ -207,7 +207,7 @@ was disabled, this whole section is not parsed by the language manager, so the c
 <element pattern="//" highlight="php-comment">
 	<context id="c.php.linecomment" symbols="?&gt;&#10;&#13;" highlight="php-comment">
 		<element pattern="(&#10;|&#13;|&#13;&#10;)" is_regex="1" ends_context="1" />
-		<element pattern="?&gt;" ends_context="2" ends_block="1" blockstartelement="e.php.open" highlight="php-block-tag" mayfold="1" />
+		<element pattern="?&gt;" ends_context="2" ends_block="1" blockstartelement="e.php.open" highlight="php-block-tag" />
 	</context>
 </element>
 <!-- there is a bug in the scanning engine such that a regex style pattern like (#|//) won't work. The reason is that
@@ -216,7 +216,7 @@ for this pattern and both of them are a symbol. That's why we have a separate en
 <element pattern="#" highlight="php-comment">
 	<context idref="c.php.linecomment"/>
 </element>
-<element pattern="?&gt;" ends_block="1" blockstartelement="e.php.open" highlight="php-block-tag" mayfold="1" ends_context="1" />
+<element pattern="?&gt;" ends_block="1" blockstartelement="e.php.open" highlight="php-block-tag" ends_context="1" />
 </context></element>
 </group>
 

@@ -54,59 +54,59 @@
 	<element pattern="to" />
 	<element pattern="until" />
 	<element pattern="xor" />
-	<element pattern="exit[\ \t]+for" is_regex="1"  mayfold="1" >
+	<element pattern="exit[\ \t]+for" is_regex="1">
 		<autocomplete string="exit for" />
 	</element>
-	<element pattern="exit[\ \t]+do" is_regex="1"  mayfold="1" >
+	<element pattern="exit[\ \t]+do" is_regex="1">
 		<autocomplete string="exit do" />
 	</element>
-	<element pattern="exit[\ \t]+while" is_regex="1"  mayfold="1" >
+	<element pattern="exit[\ \t]+while" is_regex="1">
 		<autocomplete string="exit while" />
 	</element>
-	<element pattern="exit[\ \t]+sub" is_regex="1"  mayfold="1" >
+	<element pattern="exit[\ \t]+sub" is_regex="1">
 		<autocomplete string="exit sub" />
 	</element>
-	<element pattern="exit[\ \t]+function" is_regex="1"  mayfold="1" >
+	<element pattern="exit[\ \t]+function" is_regex="1">
 		<autocomplete string="exit function" />
 	</element>
-	<element id="e.vbs.for" pattern="for" starts_block="1" mayfold="1" />
-	<element pattern="next" ends_block="1" blockstartelement="e.vbs.for" mayfold="1" />
-	<element id="e.vbs.do" pattern="do" starts_block="1" mayfold="1" />
-	<element pattern="loop" ends_block="1" blockstartelement="e.vbs.do" mayfold="1" />
-	<element id="e.vbs.while" pattern="while" starts_block="1" mayfold="1" />
-	<element pattern="wend" ends_block="1" blockstartelement="e.vbs.while" mayfold="1" />
-	<element id="e.vbs.sub" pattern="sub" starts_block="1" mayfold="1" />
-	<element pattern="end[\ \t]+sub" is_regex="1" ends_block="1" blockstartelement="e.vbs.sub"  mayfold="1" >
+	<element id="e.vbs.for" pattern="for" starts_block="1" />
+	<element pattern="next" ends_block="1" blockstartelement="e.vbs.for" />
+	<element id="e.vbs.do" pattern="do" starts_block="1" />
+	<element pattern="loop" ends_block="1" blockstartelement="e.vbs.do" />
+	<element id="e.vbs.while" pattern="while" starts_block="1" />
+	<element pattern="wend" ends_block="1" blockstartelement="e.vbs.while" />
+	<element id="e.vbs.sub" pattern="sub" starts_block="1" />
+	<element pattern="end[\ \t]+sub" is_regex="1" ends_block="1" blockstartelement="e.vbs.sub">
 		<autocomplete string="end sub" />
 	</element>
-	<element id="e.vbs.function" pattern="function" starts_block="1" mayfold="1" />
-	<element pattern="end[\ \t]+function" is_regex="1" ends_block="1" blockstartelement="e.vbs.function" mayfold="1" >
+	<element id="e.vbs.function" pattern="function" starts_block="1" />
+	<element pattern="end[\ \t]+function" is_regex="1" ends_block="1" blockstartelement="e.vbs.function">
 		<autocomplete string="end function" />
 	</element>
-	<element id="e.vbs.property" pattern="property" starts_block="1" mayfold="1" />
-	<element pattern="end[\ \t]+property" is_regex="1" ends_block="1" blockstartelement="e.vbs.property" mayfold="1" >
+	<element id="e.vbs.property" pattern="property" starts_block="1" />
+	<element pattern="end[\ \t]+property" is_regex="1" ends_block="1" blockstartelement="e.vbs.property">
 		<autocomplete string="end property" />
 	</element>
 	
 	<element pattern="if" highlight="vbs-keyword" />
-	<element id="e.vbs.then" pattern="then[\ \t]*(&#10;|&#13;|&#13;&#10;)" is_regex="1" starts_block="1" mayfold="1"  highlight="vbs-keyword" >
+	<element id="e.vbs.then" pattern="then[\ \t]*(&#10;|&#13;|&#13;&#10;)" is_regex="1" starts_block="1" highlight="vbs-keyword">
 		<autocomplete string="then" />
 	</element>
-	<element pattern="end[\ \t]+if" is_regex="1" ends_block="1" mayfold="1"  highlight="vbs-keyword" blockstartelement="e.vbs.then" >
+	<element pattern="end[\ \t]+if" is_regex="1" ends_block="1" highlight="vbs-keyword" blockstartelement="e.vbs.then">
 		<autocomplete string="end if" />
 	</element>
 	<element pattern="then" highlight="vbs-keyword" />
 	
-	<element id="e.vbs.with" pattern="with" starts_block="1" mayfold="1" />
-	<element pattern="end[\ \t]+with" is_regex="1" ends_block="1" blockstartelement="e.vbs.with" mayfold="1" >
+	<element id="e.vbs.with" pattern="with" starts_block="1" />
+	<element pattern="end[\ \t]+with" is_regex="1" ends_block="1" blockstartelement="e.vbs.with">
 		<autocomplete string="end with" />
 	</element>
-	<element id="e.vbs.select" pattern="select" starts_block="1" mayfold="1" />
-	<element pattern="end[\ \t]+select" is_regex="1" ends_block="1" blockstartelement="e.vbs.select" mayfold="1" >
+	<element id="e.vbs.select" pattern="select" starts_block="1" />
+	<element pattern="end[\ \t]+select" is_regex="1" ends_block="1" blockstartelement="e.vbs.select">
 		<autocomplete string="end select" />
 	</element>
-	<element id="e.vbs.class" pattern="class" starts_block="1" mayfold="1" />
-	<element pattern="end[\ \t]+class" is_regex="1" ends_block="1" blockstartelement="e.vbs.class" mayfold="1" >
+	<element id="e.vbs.class" pattern="class" starts_block="1" />
+	<element pattern="end[\ \t]+class" is_regex="1" ends_block="1" blockstartelement="e.vbs.class">
 		<autocomplete string="end class" />
 	</element>
 </group>

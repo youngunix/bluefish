@@ -104,7 +104,7 @@
 
 <element id="e.html.comment" pattern="&lt;!--" highlight="html-comment" starts_block="1">
 	<context symbols="-&gt; &#9;&#10;&#13;" highlight="html-comment">
-		<element pattern="--&gt;" ends_block="1" blockstartelement="e.html.comment" highlight="html-comment" mayfold="1" ends_context="1" />
+		<element pattern="--&gt;" ends_block="1" blockstartelement="e.html.comment" highlight="html-comment" ends_context="1" />
 	</context>
 </element>
 <element id="e.html.entity" pattern="&amp;[a-z0-9#]+;" is_regex="1" highlight="entity" />
@@ -127,7 +127,7 @@
 	</element>
 	<element id="e.xhtml.js.blockcomment" pattern="/*" starts_block="1" highlight="js-comment">
 		<context symbols="*/&#9;&#10;&#13;&gt;&lt; " highlight="js-comment">
-			<element pattern="*/" ends_block="1" blockstartelement="e.xhtml.js.blockcomment" highlight="js-comment" mayfold="1" ends_context="1" />
+			<element pattern="*/" ends_block="1" blockstartelement="e.xhtml.js.blockcomment" highlight="js-comment" ends_context="1" />
 			<element pattern="&lt;/script&gt;" highlight="tag" ends_context="3" ends_block="1" blockstartelement="t.xhtml.script"/>
 		</context>
 	</element>
@@ -171,7 +171,7 @@
 			<context symbols=" &#9;&#10;&#13;{}.:&quot;';">
 				<element id="e.css.lcomment" pattern="/*" starts_block="1" highlight="css-comment">
 					<context symbols="*/&#9;&#10;&#13;" highlight="css-comment">
-						<element pattern="*/" ends_block="1" blockstartelement="e.css.lcomment" highlight="css-comment" mayfold="1" ends_context="1" />
+						<element pattern="*/" ends_block="1" blockstartelement="e.css.lcomment" highlight="css-comment" ends_context="1" />
 					</context>
 				</element>
 				&css-rules;

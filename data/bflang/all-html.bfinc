@@ -48,7 +48,7 @@
 
 <element id="e.html.lcomment" pattern="&lt;!--" highlight="html-comment" starts_block="1" block_name="HTML comment">
 	<context symbols="-&gt; &#9;&#10;&#13;" highlight="html-comment">
-		<element pattern="--&gt;" ends_block="1" blockstartelement="e.html.lcomment" highlight="html-comment" mayfold="1" ends_context="1" />
+		<element pattern="--&gt;" ends_block="1" blockstartelement="e.html.lcomment" highlight="html-comment" ends_context="1" />
 		<group class="is_ASP-VBS">
 			<element pattern="#include" highlight="asp-keyword" case_insens="1" />
 		</group>
@@ -101,7 +101,7 @@
 			<context id="c.css.about2include_css-rules" symbols=" &#9;&#10;&#13;{}.:&quot;';/*">
 				<element id="e.css.lcomment" pattern="/*" starts_block="1" highlight="css-comment">
 					<context symbols="*/&#9;&#10;&#13;" highlight="css-comment">
-						<element pattern="*/" ends_block="1" blockstartelement="e.css.lcomment" highlight="css-comment" mayfold="1" ends_context="1" />
+						<element pattern="*/" ends_block="1" blockstartelement="e.css.lcomment" highlight="css-comment" ends_context="1" />
 					</context>
 				</element>
 				&css-rules;
@@ -225,7 +225,7 @@ However, there are many extensions.
 		</element>
 		<element id="e.html.js.blockcomment" pattern="/*" starts_block="1" highlight="js-comment" block_name="Javascript block comment">
 			<context symbols="*/&#9;&#10;&#13;&gt;&lt; " highlight="js-comment">
-				<element pattern="*/" ends_block="1" blockstartelement="e.html.js.blockcomment" highlight="js-comment" mayfold="1" ends_context="1" />
+				<element pattern="*/" ends_block="1" blockstartelement="e.html.js.blockcomment" highlight="js-comment" ends_context="1" />
 				<element id="end-script-js-blockcomment" pattern="&lt;/script&gt;" highlight="html-tag" case_insens="1" ends_context="2" ends_block="1" blockstartelement="t.html.script"/>
 			</context>
 		</element>

@@ -38,7 +38,7 @@
 	<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;-" commentid_block="cm.htmlcomment" commentid_line="none">
 		<element id="e.html.lcomment" pattern="&lt;!--" highlight="html-comment" starts_block="1">
 			<context symbols="-&gt; &#9;&#10;&#13;" highlight="html-comment">
-				<element pattern="--&gt;" ends_block="1" blockstartelement="e.html.lcomment" highlight="html-comment" mayfold="1" ends_context="1" />
+				<element pattern="--&gt;" ends_block="1" blockstartelement="e.html.lcomment" highlight="html-comment" ends_context="1" />
 			</context>
 		</element>
 		<group highlight="tag"  attribhighlight="attribute"  attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1">
