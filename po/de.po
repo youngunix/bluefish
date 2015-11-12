@@ -3,21 +3,22 @@
 # Knud Franzkowiak <knud.franzkowiak@gmx.net>, 2000.
 # Roland Steinbach <roland@netzblick.de>, 2001-2004.
 # Daniel Leidert <daniel.leidert@wgdd.de>, 2007, 2009-2012, 2015.
+# Ralf Kestler <ralf.kestler@gmx.net>, 2015.
 #
 #: ../src/xmlstrings.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.4\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2015-09-25 11:01+0200\n"
-"PO-Revision-Date: 2015-01-23 14:55+0100\n"
-"Last-Translator: Daniel Leidert <daniel.leidert@wgdd.de>\n"
-"Language-Team: None\n"
+"POT-Creation-Date: 2015-11-05 23:22+0100\n"
+"PO-Revision-Date: 2015-11-09 15:19+0100\n"
+"Last-Translator: Ralf Kestler <ralf.kestler@gmx.net>\n"
+"Language-Team: Deutsch <>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8 bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Type: text/plain; charset=\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 "X-Generator: Gtranslator 2.91.6\n"
 
 #: ../desktop-data/bluefish.appdata.xml.in.h:1
@@ -93,10 +94,9 @@ msgid ""
 "or a heavy coder who dislikes heavy IDE's like eclipse or netbeans, Bluefish "
 "is your editor of choice!"
 msgstr ""
-"Für Gelegenheitsprogrammierer, die einen leicht zu erlernenden Editor "
-"benötigen, oder Vielprogrammierer, die schwergewichtige "
-"Entwicklungsumgebungen wie Eclipse oder Netbeans nicht mögen, ist Bluefish "
-"der Editor der Wahl!"
+"Für Gelegenheitsprogrammierer, die einen leicht zu erlernenden Editor benö"
+"tigen, oder Vielprogrammierer, die schwergewichtige Entwicklungsumgebungen "
+"wie Eclipse oder Netbeans nicht mögen, ist Bluefish der Editor der Wahl!"
 
 #: ../desktop-data/bluefish.desktop.in.h:1 ../src/bluefish.c:91
 msgid "Bluefish Editor"
@@ -474,587 +474,588 @@ msgstr "Auskommentieren"
 msgid "Select _Block"
 msgstr "_Block wählen"
 
-#: ../src/bfwin_uimanager.c:887
+#: ../src/bfwin_uimanager.c:888
 msgid "Select block, use multiple times to select parent blocks "
 msgstr "Block wählen; mehrfache Ausführung für die übergeordneten Blöcke"
 
 #
-#: ../src/bfwin_uimanager.c:889
+#: ../src/bfwin_uimanager.c:890
 msgid "D_uplicate Line"
 msgstr "Ko_pie der Zeile erzeugen"
 
 #
-#: ../src/bfwin_uimanager.c:889
+#: ../src/bfwin_uimanager.c:890
 msgid "Duplicate the current line"
 msgstr "Eine Kopie der aktuellen Zeile anfertigen"
 
-#: ../src/bfwin_uimanager.c:891
+#: ../src/bfwin_uimanager.c:892
 msgid "_Delete Line"
 msgstr "Zeile lös_chen"
 
 #
-#: ../src/bfwin_uimanager.c:891
+#: ../src/bfwin_uimanager.c:892
 msgid "Delete the current line"
 msgstr "Aktuelle Zeile löschen"
 
-#: ../src/bfwin_uimanager.c:893
+#: ../src/bfwin_uimanager.c:894
 msgid "_Word Count"
 msgstr "_Wörter zählen"
 
-#: ../src/bfwin_uimanager.c:893
+#: ../src/bfwin_uimanager.c:894
 msgid "Word count"
 msgstr "Wörter zählen"
 
-#: ../src/bfwin_uimanager.c:894 ../src/doc_extern_tools.c:47
+#: ../src/bfwin_uimanager.c:895 ../src/doc_extern_tools.c:47
 msgid "Lorem Ipsum generator"
 msgstr "Lorem Ipsum Generator"
 
-#: ../src/bfwin_uimanager.c:895
+#: ../src/bfwin_uimanager.c:897
 msgid "Insert Relative Filename"
 msgstr "Relativen Dateipfad einfügen"
 
-#: ../src/bfwin_uimanager.c:896
+#: ../src/bfwin_uimanager.c:899
 msgid "Insert Absolute Filename"
 msgstr "Absoluten Dateipfad einfügen"
 
-#: ../src/bfwin_uimanager.c:897
+#: ../src/bfwin_uimanager.c:901
 msgid "Indenting to S_paces"
 msgstr "Einrückung mit _Leerzeichen ersetzen"
 
-#: ../src/bfwin_uimanager.c:897
+#: ../src/bfwin_uimanager.c:901
 msgid "Indenting to spaces"
 msgstr "Einrückung mit Leerzeichen ersetzen"
 
-#: ../src/bfwin_uimanager.c:899
+#: ../src/bfwin_uimanager.c:903
 msgid "Indenting to T_abs"
 msgstr "Einrückung mit _Tabulatoren ersetzen"
 
-#: ../src/bfwin_uimanager.c:899
+#: ../src/bfwin_uimanager.c:903
 msgid "Indenting to tabs"
 msgstr "Einrückung mit Tabulatoren ersetzen"
 
-#: ../src/bfwin_uimanager.c:901
+#: ../src/bfwin_uimanager.c:905
 msgid "_Join Lines Together"
 msgstr "Zeilen zusa_mmenführen"
 
-#: ../src/bfwin_uimanager.c:901
+#: ../src/bfwin_uimanager.c:905
 msgid "Join lines together"
 msgstr "Zeilen zusammenführen"
 
-#: ../src/bfwin_uimanager.c:903
+#: ../src/bfwin_uimanager.c:907
 msgid "Split Lines on Right _Margin"
 msgstr "Zei_len am rechten Begrenzer teilen"
 
-#: ../src/bfwin_uimanager.c:903
+#: ../src/bfwin_uimanager.c:907
 msgid "Split lines on right margin"
 msgstr "Zeilen am rechten Begrenzer teilen"
 
-#: ../src/bfwin_uimanager.c:905
+#: ../src/bfwin_uimanager.c:909
 msgid "Merge Lines Into Col_umns"
 msgstr "Zeilen in Spalten a_ufteilen"
 
-#: ../src/bfwin_uimanager.c:905
+#: ../src/bfwin_uimanager.c:909
 msgid "Merge lines into columns"
 msgstr "Zeilen in Spalten aufteilen"
 
-#: ../src/bfwin_uimanager.c:907
+#: ../src/bfwin_uimanager.c:911
 msgid "Rewrap _Lines"
 msgstr "Zei_len neu umbrechen"
 
-#: ../src/bfwin_uimanager.c:907
+#: ../src/bfwin_uimanager.c:911
 msgid "Rewrap lines"
 msgstr "Zeilen neu umbrechen"
 
-#: ../src/bfwin_uimanager.c:908
+#: ../src/bfwin_uimanager.c:912
 msgid "Strip T_railing Whitespace"
 msgstr "Füh_rende Leerzeichen entfernen"
 
-#: ../src/bfwin_uimanager.c:908
+#: ../src/bfwin_uimanager.c:912
 msgid "Strip trailing whitespace"
 msgstr "Führende Leerzeichen entfernen"
 
-#: ../src/bfwin_uimanager.c:910
+#: ../src/bfwin_uimanager.c:914
 msgid "Javascript beautifier"
 msgstr "Javascript Beautifier"
 
-#: ../src/bfwin_uimanager.c:911
+#: ../src/bfwin_uimanager.c:916
 msgid "Preview in browser"
 msgstr "Vorschau im Browser"
 
-#: ../src/bfwin_uimanager.c:916
+#: ../src/bfwin_uimanager.c:921
 msgid "_Full Screen"
 msgstr "_Vollbild"
 
-#: ../src/bfwin_uimanager.c:916
+#: ../src/bfwin_uimanager.c:921
 msgid "Full screen"
 msgstr "In Vollbildmodus wechseln"
 
-#: ../src/bfwin_uimanager.c:918
+#: ../src/bfwin_uimanager.c:923
 msgid "_Main Toolbar"
 msgstr "_Hauptwerkzeugleiste"
 
-#: ../src/bfwin_uimanager.c:918
+#: ../src/bfwin_uimanager.c:923
 msgid "Show main toolbar"
 msgstr "Hauptwerkzeugleiste einblenden"
 
-#: ../src/bfwin_uimanager.c:920
+#: ../src/bfwin_uimanager.c:925
 msgid "_Side Pane"
 msgstr "_Seitenleiste"
 
-#: ../src/bfwin_uimanager.c:920
+#: ../src/bfwin_uimanager.c:925
 msgid "Show side pane"
 msgstr "Seitenleiste einblenden"
 
-#: ../src/bfwin_uimanager.c:921
+#: ../src/bfwin_uimanager.c:926
 msgid "_Output Pane"
 msgstr "A_usgabefenster"
 
-#: ../src/bfwin_uimanager.c:921
+#: ../src/bfwin_uimanager.c:926
 msgid "Show output pane"
 msgstr "Ausgabefenster einblenden"
 
-#: ../src/bfwin_uimanager.c:923
+#: ../src/bfwin_uimanager.c:928
 msgid "Status_bar"
 msgstr "Status_leiste"
 
-#: ../src/bfwin_uimanager.c:923
+#: ../src/bfwin_uimanager.c:928
 msgid "Show statusbar"
 msgstr "Statusleiste einblenden"
 
-#: ../src/bfwin_uimanager.c:925
+#: ../src/bfwin_uimanager.c:930
 msgid "Auto _Completion Popup"
 msgstr "Auto_vervollständigen Popup"
 
-#: ../src/bfwin_uimanager.c:925
+#: ../src/bfwin_uimanager.c:930
 msgid "Show auto completion popup"
 msgstr "Auto-Vervollständigen Popup-Fenster anzeigen"
 
-#: ../src/bfwin_uimanager.c:927
+#: ../src/bfwin_uimanager.c:932
 msgid "_Auto Indent"
 msgstr "_Automatisches Einrücken"
 
-#: ../src/bfwin_uimanager.c:927
+#: ../src/bfwin_uimanager.c:932
 msgid "Auto indent"
 msgstr "(Cleveres) Automatisches Einrücken"
 
 #
-#: ../src/bfwin_uimanager.c:928
+#: ../src/bfwin_uimanager.c:933
 msgid "Highlight Block _Delimiters"
 msgstr "Blockbegren_zer hervorheben"
 
 #
-#: ../src/bfwin_uimanager.c:929
+#: ../src/bfwin_uimanager.c:934
 msgid "Highlight block delimiters"
 msgstr "Blockbegrenzer hervorheben"
 
-#: ../src/bfwin_uimanager.c:930
+#: ../src/bfwin_uimanager.c:935
 msgid "_Highlight Syntax"
 msgstr "Syntax_hervorhebung"
 
-#: ../src/bfwin_uimanager.c:930
+#: ../src/bfwin_uimanager.c:935
 msgid "Highlight syntax"
 msgstr "Syntaxhervorhebung einschalten"
 
-#: ../src/bfwin_uimanager.c:932
+#: ../src/bfwin_uimanager.c:937
 msgid "Show _Blocks"
 msgstr "_Blockanzeige"
 
-#: ../src/bfwin_uimanager.c:932
+#: ../src/bfwin_uimanager.c:937
 msgid "Show blocks"
 msgstr "Blockanzeige einschalten"
 
-#: ../src/bfwin_uimanager.c:933
+#: ../src/bfwin_uimanager.c:938
 msgid "Show Line N_umbers"
 msgstr "Zeilenn_ummern"
 
-#: ../src/bfwin_uimanager.c:933
+#: ../src/bfwin_uimanager.c:938
 msgid "Show line numbers"
 msgstr "Anzeige der Zeilennummern einschalten"
 
-#: ../src/bfwin_uimanager.c:935
+#: ../src/bfwin_uimanager.c:940
 msgid "Show Right _Margin"
 msgstr "Rechten Begrenzer anzeigen"
 
-#: ../src/bfwin_uimanager.c:935
+#: ../src/bfwin_uimanager.c:940
 msgid "Show right margin"
 msgstr "Rechten Begrenzers anzeigen"
 
-#: ../src/bfwin_uimanager.c:937
+#: ../src/bfwin_uimanager.c:942
 msgid "Show Split _View"
 msgstr "_Fensterteilung"
 
-#: ../src/bfwin_uimanager.c:937
+#: ../src/bfwin_uimanager.c:942
 msgid "Show split view"
 msgstr "Fensterteilung einschalten"
 
-#: ../src/bfwin_uimanager.c:939
+#: ../src/bfwin_uimanager.c:944
 msgid "Show V_isible Spacing"
 msgstr "Sichtbare _Leerzeichen"
 
-#: ../src/bfwin_uimanager.c:939
+#: ../src/bfwin_uimanager.c:944
 msgid "Show visible spacing"
 msgstr "Sichtbare Leerzeichen einschalten"
 
-#: ../src/bfwin_uimanager.c:941
+#: ../src/bfwin_uimanager.c:946
 msgid "_Wrap Text"
 msgstr "Te_xt umbrechen"
 
-#: ../src/bfwin_uimanager.c:941
+#: ../src/bfwin_uimanager.c:946
 msgid "Wrap text"
 msgstr "Text umbrechen"
 
-#: ../src/bfwin_uimanager.c:945 ../src/document.c:2097 ../src/document.c:3493
+#: ../src/bfwin_uimanager.c:950 ../src/document.c:2097 ../src/document.c:3493
 msgid "_Close"
 msgstr "S_chliessen"
 
-#: ../src/bfwin_uimanager.c:945
+#: ../src/bfwin_uimanager.c:950
 msgid "Close current file"
 msgstr "Aktuelle Datei schließen"
 
-#: ../src/bfwin_uimanager.c:947
+#: ../src/bfwin_uimanager.c:952
 msgid "Close A_ll"
 msgstr "A_lle schließen"
 
-#: ../src/bfwin_uimanager.c:947
+#: ../src/bfwin_uimanager.c:952
 msgid "Close all files"
 msgstr "Alle Dateien schließen"
 
-#: ../src/bfwin_uimanager.c:949 ../src/bfwin_uimanager.c:1025
+#: ../src/bfwin_uimanager.c:954 ../src/bfwin_uimanager.c:1041
 #: ../src/file_dialogs.c:1455
 msgid "_Save"
 msgstr "_Speichern"
 
-#: ../src/bfwin_uimanager.c:949
+#: ../src/bfwin_uimanager.c:954
 msgid "Save current file"
 msgstr "Aktuelle Datei speichern"
 
-#: ../src/bfwin_uimanager.c:951 ../src/bfwin_uimanager.c:1026
+#: ../src/bfwin_uimanager.c:956 ../src/bfwin_uimanager.c:1042
 msgid "Save _as..."
 msgstr "Speichern _unter..."
 
-#: ../src/bfwin_uimanager.c:951
+#: ../src/bfwin_uimanager.c:956
 msgid "Save file as"
 msgstr "Datei speichern unter..."
 
-#: ../src/bfwin_uimanager.c:953
+#: ../src/bfwin_uimanager.c:958
 msgid "Sav_e All"
 msgstr "Al_le Speichern"
 
-#: ../src/bfwin_uimanager.c:953
+#: ../src/bfwin_uimanager.c:958
 msgid "Save all files"
 msgstr "Alle Dateien speichern"
 
-#: ../src/bfwin_uimanager.c:954
+#: ../src/bfwin_uimanager.c:960
 msgid "Rever_t to Saved"
 msgstr "Zur gespeicherten Version zu_rück"
 
-#: ../src/bfwin_uimanager.c:954
+#: ../src/bfwin_uimanager.c:960
 msgid "Reload current file"
 msgstr "Aktuelle Datei erneut laden"
 
-#: ../src/bfwin_uimanager.c:956
+#: ../src/bfwin_uimanager.c:962
 msgid "Save a cop_y..."
 msgstr "Kop_ie speichern..."
 
-#: ../src/bfwin_uimanager.c:956
+#: ../src/bfwin_uimanager.c:962
 msgid "Save a copy"
 msgstr "Eine Kopie speichern"
 
-#: ../src/bfwin_uimanager.c:957
+#: ../src/bfwin_uimanager.c:964
 msgid "_Insert..."
 msgstr "Datei_inhalt Einfügen..."
 
-#: ../src/bfwin_uimanager.c:957
+#: ../src/bfwin_uimanager.c:964
 msgid "Insert file"
 msgstr "Inhalt einer Datei einfügen"
 
 #. Required to move here to disable sensitivity on OSX
-#: ../src/bfwin_uimanager.c:958
+#: ../src/bfwin_uimanager.c:965
 msgid "Rena_me..."
 msgstr "U_mbenennen..."
 
-#: ../src/bfwin_uimanager.c:958
+#: ../src/bfwin_uimanager.c:965
 msgid "Rename file"
 msgstr "Datei umbenennen"
 
-#: ../src/bfwin_uimanager.c:959
+#: ../src/bfwin_uimanager.c:966
 msgid "_Indent"
 msgstr "E_inrücken"
 
-#: ../src/bfwin_uimanager.c:959
+#: ../src/bfwin_uimanager.c:966
 msgid "Indent"
 msgstr "Einrücken"
 
-#: ../src/bfwin_uimanager.c:960
+#: ../src/bfwin_uimanager.c:967
 msgid "Unin_dent"
 msgstr "_Ausrücken"
 
-#: ../src/bfwin_uimanager.c:960
+#: ../src/bfwin_uimanager.c:967
 msgid "Unindent"
 msgstr "Ausrücken"
 
-#: ../src/bfwin_uimanager.c:962
+#: ../src/bfwin_uimanager.c:969
 msgid "F_irst Bookmark"
 msgstr "Er_stes Lesezeichen"
 
-#: ../src/bfwin_uimanager.c:962
+#: ../src/bfwin_uimanager.c:969
 msgid "Goto first bookmark"
 msgstr "Zum ersten Lesezeichen wechseln"
 
-#: ../src/bfwin_uimanager.c:964
+#: ../src/bfwin_uimanager.c:971
 msgid "L_ast Bookmark"
 msgstr "_Letztes Lesezeichen"
 
-#: ../src/bfwin_uimanager.c:964
+#: ../src/bfwin_uimanager.c:971
 msgid "Goto last bookmark"
 msgstr "Zum letzten Lesezeichen wechseln"
 
-#: ../src/bfwin_uimanager.c:966
+#: ../src/bfwin_uimanager.c:973
 msgid "N_ext Bookmark"
 msgstr "Nä_chstes Lesezeichen"
 
-#: ../src/bfwin_uimanager.c:966
+#: ../src/bfwin_uimanager.c:973
 msgid "Goto next bookmark"
 msgstr "Zum nächsten Lesezeichen wechseln"
 
-#: ../src/bfwin_uimanager.c:968
+#: ../src/bfwin_uimanager.c:975
 msgid "P_revious Bookmark"
 msgstr "Vo_rheriges Lesezeichen"
 
-#: ../src/bfwin_uimanager.c:969 ../src/bfwin_uimanager.c:982
+#: ../src/bfwin_uimanager.c:976 ../src/bfwin_uimanager.c:992
 msgid "Goto previous document"
 msgstr "Gehe zu letztem Dokument"
 
-#: ../src/bfwin_uimanager.c:970
+#: ../src/bfwin_uimanager.c:977
 msgid "Move Tab _Left"
 msgstr "Tab nach _links"
 
-#: ../src/bfwin_uimanager.c:970
+#: ../src/bfwin_uimanager.c:977
 msgid "Move current tab left"
 msgstr "Tab nach links verschieben"
 
-#: ../src/bfwin_uimanager.c:972
+#: ../src/bfwin_uimanager.c:979
 msgid "Move Tab _Right"
 msgstr "Tab nach _rechts"
 
-#: ../src/bfwin_uimanager.c:972
+#: ../src/bfwin_uimanager.c:979
 msgid "Move current tab right"
 msgstr "Tab nach rechts verschieben"
 
-#: ../src/bfwin_uimanager.c:974
+#: ../src/bfwin_uimanager.c:981
 msgid "_Recent Document"
 msgstr "Z_uletzt geöffnetes Dokument"
 
-#: ../src/bfwin_uimanager.c:974
+#: ../src/bfwin_uimanager.c:981
 msgid "Goto most recent document"
 msgstr "Gehe zum zuletzt geöffneten Dokument"
 
-#: ../src/bfwin_uimanager.c:976
+#: ../src/bfwin_uimanager.c:983
 msgid "_First Document"
 msgstr "_Erstes Dokument"
 
-#: ../src/bfwin_uimanager.c:976
+#: ../src/bfwin_uimanager.c:984
 msgid "Goto first document"
 msgstr "Gehe zum ersten Dokument"
 
-#: ../src/bfwin_uimanager.c:978
+#: ../src/bfwin_uimanager.c:986
 msgid "_Last Document"
 msgstr "Le_tztes Dokument"
 
-#: ../src/bfwin_uimanager.c:978
+#: ../src/bfwin_uimanager.c:987
 msgid "Goto last document"
 msgstr "Gehe zum letzten Dokument"
 
-#: ../src/bfwin_uimanager.c:980
+#: ../src/bfwin_uimanager.c:989
 msgid "_Next Document"
 msgstr "_Nächstes Dokument"
 
-#: ../src/bfwin_uimanager.c:980
+#: ../src/bfwin_uimanager.c:989
 msgid "Goto next document"
 msgstr "Gehe zum nächsten Dokument"
 
-#: ../src/bfwin_uimanager.c:982
+#: ../src/bfwin_uimanager.c:991
 msgid "_Previous Document"
 msgstr "_Vorheriges Dokument"
 
-#: ../src/bfwin_uimanager.c:984
+#: ../src/bfwin_uimanager.c:994
 msgid "_Goto Line"
 msgstr "_Gehe zu Zeile"
 
-#: ../src/bfwin_uimanager.c:984
+#: ../src/bfwin_uimanager.c:994
 msgid "Goto line"
 msgstr "Zu Zeile gehen"
 
-#: ../src/bfwin_uimanager.c:985
+#: ../src/bfwin_uimanager.c:995
 msgid "Goto Line Number from _Clipboard"
 msgstr "Gehe zu Zeile aus Zwis_chenablage"
 
-#: ../src/bfwin_uimanager.c:986
+#: ../src/bfwin_uimanager.c:996
 msgid "Goto line number in clipboard or selection"
 msgstr "Gehe zu Zeile aus Zwischenablage oder Auswahl"
 
-#: ../src/bfwin_uimanager.c:987
+#: ../src/bfwin_uimanager.c:997
 msgid "_Jump to Reference"
 msgstr "Zu Bezugs_punkt springen"
 
-#: ../src/bfwin_uimanager.c:987
+#: ../src/bfwin_uimanager.c:997
 msgid "Jump to reference"
 msgstr "Zu einem Bezugspunkt springen"
 
-#: ../src/bfwin_uimanager.c:990 ../src/bfwin_uimanager.c:993
+#: ../src/bfwin_uimanager.c:1000 ../src/bfwin_uimanager.c:1001
+#: ../src/bfwin_uimanager.c:1004 ../src/bfwin_uimanager.c:1005
 msgid "Jump to Matching Block Boundary"
 msgstr "Springe zum Blockende"
 
-#: ../src/bfwin_uimanager.c:999
+#: ../src/bfwin_uimanager.c:1011
 msgid "Cu_t"
 msgstr "Ausschnei_den"
 
-#: ../src/bfwin_uimanager.c:999
+#: ../src/bfwin_uimanager.c:1011
 msgid "Cut"
 msgstr "Ausschneiden"
 
-#: ../src/bfwin_uimanager.c:1000
+#: ../src/bfwin_uimanager.c:1012
 msgid "_Copy"
 msgstr "_Kopieren"
 
-#: ../src/bfwin_uimanager.c:1000
+#: ../src/bfwin_uimanager.c:1012
 msgid "Copy"
 msgstr "Kopieren"
 
-#: ../src/bfwin_uimanager.c:1001
+#: ../src/bfwin_uimanager.c:1013
 msgid "_Paste"
 msgstr "Ein_fügen"
 
-#: ../src/bfwin_uimanager.c:1001
+#: ../src/bfwin_uimanager.c:1013
 msgid "Paste"
 msgstr "Einfügen"
 
-#: ../src/bfwin_uimanager.c:1002
+#: ../src/bfwin_uimanager.c:1014
 msgid "Paste Specia_l"
 msgstr "Einfügen Spezia_l"
 
-#: ../src/bfwin_uimanager.c:1002
+#: ../src/bfwin_uimanager.c:1014
 msgid "Paste Special"
 msgstr "Einfügen Spezial"
 
-#: ../src/bfwin_uimanager.c:1006
+#: ../src/bfwin_uimanager.c:1019
 msgid "_Find"
 msgstr "_Suchen"
 
-#: ../src/bfwin_uimanager.c:1006
+#: ../src/bfwin_uimanager.c:1019
 msgid "Show find bar"
 msgstr "Hauptwerkzeugleiste einblenden"
 
-#: ../src/bfwin_uimanager.c:1007
+#: ../src/bfwin_uimanager.c:1020
 msgid "Find A_gain"
 msgstr "Weitersuche_n"
 
-#: ../src/bfwin_uimanager.c:1007
+#: ../src/bfwin_uimanager.c:1020
 msgid "Find again"
 msgstr "Weitersuchen"
 
-#: ../src/bfwin_uimanager.c:1008
+#: ../src/bfwin_uimanager.c:1021
 msgid "Find from Clip_board"
 msgstr "In Zwischena_blage suchen"
 
-#: ../src/bfwin_uimanager.c:1008
+#: ../src/bfwin_uimanager.c:1022
 msgid "Find from clipboard or selection"
 msgstr "In Zwischenablage oder Auswahl suchen"
 
-#: ../src/bfwin_uimanager.c:1011 ../src/bfwin_uimanager.c:1014
+#: ../src/bfwin_uimanager.c:1025 ../src/bfwin_uimanager.c:1029
 msgid "Ad_vanced Find & Replace..."
 msgstr "Er_weitertes Finden und Ersetzen..."
 
-#: ../src/bfwin_uimanager.c:1011 ../src/bfwin_uimanager.c:1014
+#: ../src/bfwin_uimanager.c:1026 ../src/bfwin_uimanager.c:1030
 msgid "Advanced Find and Replace"
 msgstr "Erweitertes Finden und Ersetzen"
 
-#: ../src/bfwin_uimanager.c:1023
+#: ../src/bfwin_uimanager.c:1039
 msgid "Save & _close"
 msgstr "Speichern & S_chließen"
 
-#: ../src/bfwin_uimanager.c:1023
+#: ../src/bfwin_uimanager.c:1039
 msgid "Save & close project"
 msgstr "Projekt speichern und schließen"
 
-#: ../src/bfwin_uimanager.c:1025
+#: ../src/bfwin_uimanager.c:1041
 msgid "Save project"
 msgstr "Projekt speichern"
 
-#: ../src/bfwin_uimanager.c:1026
+#: ../src/bfwin_uimanager.c:1042
 msgid "Save project as"
 msgstr "Projekt speichern als"
 
-#: ../src/bfwin_uimanager.c:1027
+#: ../src/bfwin_uimanager.c:1043
 msgid "_Edit Project Options..."
 msgstr "Projekte_instellungen bearbeiten..."
 
-#: ../src/bfwin_uimanager.c:1027
+#: ../src/bfwin_uimanager.c:1043
 msgid "Edit project options"
 msgstr "Projekteinstellungen bearbeiten"
 
-#: ../src/bfwin_uimanager.c:1032
+#: ../src/bfwin_uimanager.c:1048
 msgid "_Undo"
 msgstr "Rück_gängig"
 
-#: ../src/bfwin_uimanager.c:1032
+#: ../src/bfwin_uimanager.c:1048
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: ../src/bfwin_uimanager.c:1033
+#: ../src/bfwin_uimanager.c:1049
 msgid "U_ndo All"
 msgstr "Alles Rückgä_ngig"
 
-#: ../src/bfwin_uimanager.c:1033
+#: ../src/bfwin_uimanager.c:1049
 msgid "Undo All"
 msgstr "Alle Änderungen rückgängig machen"
 
-#: ../src/bfwin_uimanager.c:1034
+#: ../src/bfwin_uimanager.c:1050
 msgid "_Redo"
 msgstr "Wiederherste_llen"
 
-#: ../src/bfwin_uimanager.c:1034
+#: ../src/bfwin_uimanager.c:1050
 msgid "Redo"
 msgstr "Wiederholen"
 
-#: ../src/bfwin_uimanager.c:1035
+#: ../src/bfwin_uimanager.c:1051
 msgid "R_edo All"
 msgstr "Alles Wi_ederholen"
 
-#: ../src/bfwin_uimanager.c:1035
+#: ../src/bfwin_uimanager.c:1051
 msgid "Redo All"
 msgstr "Alle Änderungen wiederherstellen"
 
-#: ../src/bfwin_uimanager.c:1060
+#: ../src/bfwin_uimanager.c:1078
 #, c-format
 msgid "Always use this syntax for files of type %s ?"
 msgstr "Soll immer diese Syntax für %s-Dateien verwendet werden?"
 
-#: ../src/bfwin_uimanager.c:1227
+#: ../src/bfwin_uimanager.c:1252
 msgid "Open _URL..."
 msgstr "_URL Öffnen..."
 
-#: ../src/bfwin_uimanager.c:1237
+#: ../src/bfwin_uimanager.c:1262
 msgid "Upload _/ Download..."
 msgstr "Hochladen _/ Herunterladen..."
 
-#: ../src/bfwin_uimanager.c:1250
+#: ../src/bfwin_uimanager.c:1275
 msgid "_Spell Check"
 msgstr "_Rechtschreibprüfung"
 
-#: ../src/bfwin_uimanager.c:1717
+#: ../src/bfwin_uimanager.c:1750
 msgid "Text area to filter"
 msgstr "Filterbereich"
 
-#: ../src/bfwin_uimanager.c:1718
+#: ../src/bfwin_uimanager.c:1751
 msgid "All text"
 msgstr "Gesamter Text"
 
-#: ../src/bfwin_uimanager.c:1719
+#: ../src/bfwin_uimanager.c:1752
 msgid "Selected text only"
 msgstr "Nur ausgewählter Text"
 
-#: ../src/bfwin_uimanager.c:1721
+#: ../src/bfwin_uimanager.c:1754
 msgid "Never ask again"
 msgstr "Nicht mehr nachfragen"
 
@@ -1090,8 +1091,8 @@ msgid ""
 "opened in this window.\n"
 "<b>Proceed?</b>"
 msgstr ""
-"Der Text zwischen <i>%s</i> und <i>%s</i> wird in allen Dokumenten im "
-"geöffneten Fenster ersetzt.\n"
+"Der Text zwischen <i>%s</i> und <i>%s</i> wird in allen Dokumenten im geö"
+"ffneten Fenster ersetzt.\n"
 "<b>Fortfahren?</b>"
 
 #: ../src/blocksync.c:225
@@ -1099,8 +1100,8 @@ msgid ""
 "<span foreground=\"red\" weight=\"bold\">Please select the block of text to "
 "synchronize.</span>"
 msgstr ""
-"<span foreground=\"red\" weight=\"bold\">Bitte wählen Sie den Textblock aus, "
-"der synchronisiert werden soll.</span>"
+"<span foreground=\"red\" weight=\"bold\">Bitte wählen Sie den Textblock "
+"aus, der synchronisiert werden soll.</span>"
 
 #: ../src/blocksync.c:239 ../src/blocksync.c:259
 msgid ""
@@ -1414,7 +1415,8 @@ msgstr "_Spaltenumbruch"
 #: ../src/document.c:2019
 msgid "File contains very long lines. Split these lines?"
 msgstr ""
-"Die Datei enthält sehr lange Zeilen. Sollen diese geteilt dargestellt werden?"
+"Die Datei enthält sehr lange Zeilen. Sollen diese geteilt dargestellt "
+"werden?"
 
 #: ../src/document.c:2021
 msgid ""
@@ -1425,8 +1427,8 @@ msgid ""
 msgstr ""
 "Die Zeilen in der Datei sind sehr lang. Das kann zu Perfomanceeinbußen bei "
 "der Nutzung von Bluefish führen. Die zur Verfügung gestellte Funktion zum "
-"Trennen der Zeilen kennt allerdings keinerlei Sprachsyntax und ersetzt "
-"möglicherweise Tabs oder Leerzeichen durch Zeilenumbrüche unabhängig von "
+"Trennen der Zeilen kennt allerdings keinerlei Sprachsyntax und ersetzt mö"
+"glicherweise Tabs oder Leerzeichen durch Zeilenumbrüche unabhängig von "
 "derem Vorkommen im Text oder ihrer Bedeutung und fügt auch Zeilenumbrüche "
 "ein, wo vorher weder Tabs noch Leerzeichen waren."
 
@@ -1718,43 +1720,55 @@ msgstr "Argumente bereitstellen um %%a in '%s' zu definieren"
 
 #: ../src/external_commands.c:749
 msgid "Internal error."
-msgstr ""
+msgstr "Interner Fehler."
 
 #: ../src/external_commands.c:752
 msgid ""
 "This command requires the current document to have a file name. Please save "
 "your document first."
 msgstr ""
+"Für diesen Befehl muss das aktuelle Dokument einen Dateinamen haben. Bitte "
+"Dokument erst speichern."
 
 #: ../src/external_commands.c:755
 msgid ""
 "This command requires the current document to be a local file. Please save "
 "your document to a loacal file."
 msgstr ""
+"Für diesen Befehl muss das aktuelle Dokument eine lokale Datei sein. Bitte "
+"Dokument erst als lokale Datei speichern."
 
 #: ../src/external_commands.c:758
 msgid ""
 "External commands cannot have an output defined. Please fix this command in "
 "the preferences."
 msgstr ""
+"Externe Befehle können keine Ausgabe wie definiert haben. Bitte den Befehl "
+"in den Eigenschaften ändern."
 
 #: ../src/external_commands.c:761
 msgid ""
 "This command has multiple inputs. Please fix this command in the preferences."
 msgstr ""
+"Dieser Befehl hat verschiedene Eingaben. Bitte diesen Befehl in den "
+"Eigenschaften ändern."
 
 #: ../src/external_commands.c:764
 msgid ""
 "This command has multiple outputs. Please fix this command in the "
 "preferences."
 msgstr ""
+"Dieser Befehl hat verschiedene Ausgaben. Bitte diesen Befehl in den "
+"Eigenschaften ändern."
 
 #: ../src/external_commands.c:768
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Failed to create a command for %s.\n"
 "%s"
-msgstr "Eine Befehlszeile für %s zu erzeugen, ist fehlgeschlagen."
+msgstr ""
+"Eine Befehlszeile für %s zu erzeugen ist fehlgeschlagen.\n"
+"%s"
 
 #: ../src/external_commands.c:770
 msgid "Failed to create a command"
@@ -1987,7 +2001,8 @@ msgstr[1] "Noch %d Dateien laden, %s fertig"
 msgid "All files loaded, finished %s, %d document open"
 msgid_plural "All files loaded, finished %s, %d documents open"
 msgstr[0] "Alle Dateien wurden geladen, %s fertig. %d Dokument ist geöffnet."
-msgstr[1] "Alle Dateien wurden geladen, %s fertig. %d Dokumente sind geöffnet."
+msgstr[1] ""
+"Alle Dateien wurden geladen, %s fertig. %d Dokumente sind geöffnet."
 
 #: ../src/file.c:1445
 #, c-format
@@ -2468,8 +2483,8 @@ msgid ""
 "priority. Use drag and drop to re-order the text styles.</small>"
 msgstr ""
 "<small>Textstile werden aufeinander angewendet. Falls mehrere Stile auf den "
-"selben Text angewendet werden, hat der oberste Stil Priorität. Stile können "
-"mittels Drag-and-Drop neu angeordnet werden.</small>"
+"selben Text angewendet werden, hat der oberste Stil Priorität. Stile kö"
+"nnen mittels Drag-and-Drop neu angeordnet werden.</small>"
 
 #: ../src/preferences.c:1142 ../src/preferences.c:1342
 #: ../src/preferences.c:1502
@@ -2598,8 +2613,8 @@ msgstr ""
 "<b>Ausgabe-Optionen</b>\n"
 "ein | am Ende liest die Ausgabe von der Standardausgabe (stdout)\n"
 "%o temporärer Dateiname\n"
-"%t temporärer Dateiname für Ein- und Ausgabe (für In-Place-Editing Filter, "
-"nicht auf Auswahl anwendbar)\n"
+"%t temporärer Dateiname für Ein- und Ausgabe (für In-Place-Editing "
+"Filter, nicht auf Auswahl anwendbar)\n"
 "<b>Andere Optionen</b>\n"
 "%a zusätzliche Argumente, die bei Aktivierung des Filters erfragt werden\n"
 "%c Lokales Verzeichnis der Datei (für lokale Dateien)\n"
@@ -2719,11 +2734,11 @@ msgstr "Niemals"
 
 #: ../src/preferences.c:2433
 msgid "Periodically and during save"
-msgstr ""
+msgstr "Regelmäßig und während des Speicherns"
 
 #: ../src/preferences.c:2433
 msgid "Only during save"
-msgstr ""
+msgstr "Nur während des Speicherns"
 
 #: ../src/preferences.c:2435
 msgid "Nothing"
@@ -3004,7 +3019,6 @@ msgstr "Dateien aus Kommandozeile in neuem _Fenster öffnen"
 
 #
 #: ../src/preferences.c:2726
-#, fuzzy
 msgid "Check if file is modified on disk:"
 msgstr "Datei regelmäßig auf Veränderungen auf dem Datenträger _prüfen"
 
@@ -3403,9 +3417,8 @@ msgid "Javascript Minify with jsmin"
 msgstr "Javascript Minify mit jsmin"
 
 #: ../src/rcfile.c:790 ../src/rcfile.c:797
-#, fuzzy
 msgid "Toggle CSS compression"
-msgstr "Auskommentieren"
+msgstr "CSS Komprimierung einschalten"
 
 #: ../src/rcfile.c:801
 msgid "CSS tidy"
@@ -3676,8 +3689,8 @@ msgstr "Suchmuster enthält Fluch_tzeichen"
 #: ../src/snr3.c:1672
 msgid "Pattern contains backslash escaped characters such as \\n \\t etc."
 msgstr ""
-"Das Suchmuster enthält mit dem Backslash-Fluchtzeichen versehene Zeichen wie "
-"\\n \\t etc."
+"Das Suchmuster enthält mit dem Backslash-Fluchtzeichen versehene Zeichen "
+"wie \\n \\t etc."
 
 #: ../src/snr3.c:1676
 msgid "Dot character in regex pattern matches newlines"
@@ -3726,187 +3739,179 @@ msgstr "Diese Änderung betrifft mehrere Dokumente"
 
 #: ../src/xmlstrings.h:2
 msgid "Allow folding of C style comments"
-msgstr ""
+msgstr "Aufklappen der Kommentaren in C"
 
 #: ../src/xmlstrings.h:3
 msgid "Allow folding of Curly brackets block"
-msgstr ""
+msgstr "Aufklappen geschweifter Klammern zulassen"
 
 #: ../src/xmlstrings.h:4
 msgid "Allow folding of Javascript Curly brackets block"
-msgstr ""
+msgstr "Aufklappen geschweifter Klammern in Javascript zulassen"
 
 #: ../src/xmlstrings.h:5
 msgid "Allow folding of Javascript Parentheses block"
-msgstr ""
+msgstr "Aufklappen runder Klammern in Javascript zulassen"
 
 #: ../src/xmlstrings.h:6
 msgid "Allow folding of Javascript Square brackets block"
-msgstr ""
+msgstr "Aufklappen eckiger klammern in Javascript zulassen"
 
 #: ../src/xmlstrings.h:7
 msgid "Allow folding of Parentheses block"
-msgstr ""
+msgstr "Aufklappen runder Klammern erlauben"
 
 #: ../src/xmlstrings.h:8
 msgid "Allow folding of PHP blocks"
-msgstr ""
+msgstr "Aufklappen der Blöcke in PHP zulassen"
 
 #: ../src/xmlstrings.h:9
 msgid "Allow folding of Square brackets block"
-msgstr ""
+msgstr "Aufklappen eckiger Klammern zulassen"
 
 #: ../src/xmlstrings.h:10
 msgid "Allow folding of the Parentheses block"
-msgstr ""
+msgstr "Aufklappen runder Klammern zulassen"
 
 #: ../src/xmlstrings.h:11
 msgid "Allow to fold the the root html tag"
-msgstr ""
+msgstr "Aufklappen des HTML-Wurzeltags zulassen"
 
 #: ../src/xmlstrings.h:12
 msgid "All php functions"
-msgstr ""
+msgstr "Alle PHP Funktionen"
 
 #: ../src/xmlstrings.h:13
 msgid "All wordpress functions"
-msgstr ""
+msgstr "Alle Wordpress Funktionen"
 
 #: ../src/xmlstrings.h:14
 msgid "Autocomplete function names with semicolon"
-msgstr ""
+msgstr "Autovervollständigen der Funktionsnamen samt Semikolon"
 
 #: ../src/xmlstrings.h:15
-#, fuzzy
 msgid "Autocomplete HTML entities"
-msgstr "Auto-Vervollständigen & Referenzen"
+msgstr "Autovervollständigen der HTML Entitäten"
 
 #: ../src/xmlstrings.h:16
 msgid "Autocomplete Javascript object methods"
-msgstr ""
+msgstr "Autovervollständigen der Javascript Objektmethoden"
 
 #: ../src/xmlstrings.h:17
 msgid "autocomplete javascript variables"
-msgstr ""
+msgstr "Autovervollständigen der Javascript Variablen"
 
 #: ../src/xmlstrings.h:18
-#, fuzzy
 msgid "Auto-complete PHP functions"
-msgstr "Auto-Vervollständigen & Referenzen"
+msgstr "Autovervollständigen der PHP Funktionen"
 
 #: ../src/xmlstrings.h:19
 msgid "Auto-complete PHP variables"
-msgstr ""
+msgstr "Autovervollständigen der PHP Variablen"
 
 #: ../src/xmlstrings.h:20
-#, fuzzy
 msgid "Autocomplete tags"
-msgstr "fertig"
+msgstr "Autovervollständigen der Tags"
 
 #: ../src/xmlstrings.h:21
 msgid "autocomplete with newlines"
-msgstr ""
+msgstr "Autovervollständigen mit Zeilenumbruch"
 
 #: ../src/xmlstrings.h:22
 msgid "CSS properties"
-msgstr ""
+msgstr "CSS Eigenschaften"
 
 #: ../src/xmlstrings.h:23
 msgid "Enable the PHP short open tag"
-msgstr ""
+msgstr "Ermögliche die Kurzform des Öffnungstag für PHP "
 
 #: ../src/xmlstrings.h:24
 msgid "GNU Coreutils functions"
-msgstr ""
+msgstr "GNU Coreutils Funktionen"
 
 #: ../src/xmlstrings.h:25
 msgid "HTML entities"
-msgstr ""
+msgstr "HTML Entitäten"
 
 #: ../src/xmlstrings.h:26
 msgid "include JQuery syntax"
-msgstr ""
+msgstr "Schließe JQuery Syntax mit ein"
 
 #: ../src/xmlstrings.h:27
-#, fuzzy
 msgid "Javascript CSS properties"
-msgstr "Javascript Beautifier"
+msgstr "Javascript CSS Eigenschaften"
 
 #: ../src/xmlstrings.h:28
 msgid "Load all php functions"
-msgstr ""
+msgstr "Lade alle PHP Funktionen"
 
 #: ../src/xmlstrings.h:29
-#, fuzzy
 msgid "Load auto-completion information"
-msgstr "Auto-Vervollständigen Popup-Fenster anzeigen"
+msgstr "Lade Informationen zur Autovervollständigung"
 
 #: ../src/xmlstrings.h:30
-#, fuzzy
 msgid "Load completion data"
-msgstr "Auto-Vervollständigen Popup-Fenster anzeigen"
+msgstr "Lade Daten für die Autovervollständigung"
 
 #: ../src/xmlstrings.h:31
 msgid "Load glib types and functions"
-msgstr ""
+msgstr "Lade Glib Typen und Funktionen"
 
 #: ../src/xmlstrings.h:32
 msgid "Load GObject functions"
-msgstr ""
+msgstr "Lade GObject Funktionen"
 
 #: ../src/xmlstrings.h:33
 msgid "Load GTK+ functions"
-msgstr ""
+msgstr "Lade GTK+ Funktionen"
 
 #: ../src/xmlstrings.h:34
-#, fuzzy
 msgid "Load reference data"
-msgstr "Referenzdaten aus Sprachdatei _laden"
+msgstr "Referenzdaten _laden"
 
 #: ../src/xmlstrings.h:35
-#, fuzzy
 msgid "Load reference information"
-msgstr "<b>Sprachreferenz</b>"
+msgstr "Lade Referenzinformationen"
 
 #: ../src/xmlstrings.h:36
 msgid "Load standard C library functions "
-msgstr ""
+msgstr "Lade Funktionen der C-Standardbibliothek"
 
 #: ../src/xmlstrings.h:37
 msgid "Load XSLT 2.0 support."
-msgstr ""
+msgstr "Lade XSLT 2.0 Support"
 
 #: ../src/xmlstrings.h:38
 msgid "Methods in javadoc but not in references"
-msgstr ""
+msgstr "Methoden im Javadoc aber nicht in den Referenzen"
 
 #: ../src/xmlstrings.h:39
 msgid "scan for sql in php strings"
-msgstr ""
+msgstr "Scane nach SQL in PHP Strings"
 
 #: ../src/xmlstrings.h:40
 msgid "Scan for sql in strings"
-msgstr ""
+msgstr "Scane nach SQL in Strings"
 
 #: ../src/xmlstrings.h:41
 msgid "Self-close tags such as br, hr, and img with /&gt;"
-msgstr ""
+msgstr "Alleinstehende Tags wie br, hr oder img mit /&gt;"
 
 #: ../src/xmlstrings.h:42
 msgid "Show a string as a block"
-msgstr ""
+msgstr "Zeige einen String als einem Block"
 
 #: ../src/xmlstrings.h:43
 msgid "Show tag attributes as block"
-msgstr ""
+msgstr "Zeige Tagattribute als Block"
 
 #: ../src/xmlstrings.h:44
 msgid "Show this language in the menu"
-msgstr ""
+msgstr "Zeige diese Sprache im Menü"
 
 #: ../src/xmlstrings.h:45
 msgid "Tag block-start includes all attributes"
-msgstr ""
+msgstr "Blockelemente enthalten alle Attribute"
 
 #~ msgid "CSS Minify with cssmin"
 #~ msgstr "CSS Minify mit cssmin"
@@ -4019,8 +4024,8 @@ msgstr ""
 #~ msgid ""
 #~ "_Format according to accessibility guidelines (e.g. <strong> for <b>)"
 #~ msgstr ""
-#~ "Tags gemäß _Zugangsrichtlinien für Webinhalte (WCAG) konvertieren (z.B. "
-#~ "<strong> für <b>)"
+#~ "Tags gemäß _Zugangsrichtlinien für Webinhalte (WCAG) konvertieren (z."
+#~ "B. <strong> für <b>)"
 
 #~ msgid "Use _XHTML style tags (<br />)"
 #~ msgstr "_XHTML Syntax benutzen (z.B. <br />)"
