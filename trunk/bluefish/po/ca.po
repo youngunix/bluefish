@@ -2,13 +2,12 @@
 # Copyright (C) 2012 Mònica Ramírez Arceda <monica@probeta.net>
 # This file is distributed under the same license as the bluefish package.
 #
-#: ../src/xmlstrings.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.4\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2015-09-25 11:01+0200\n"
-"PO-Revision-Date: 2015-01-02 22:56-0000\n"
+"POT-Creation-Date: 2015-11-05 23:22+0100\n"
+"PO-Revision-Date: 2015-11-14 14:27+0100\n"
 "Last-Translator: Mònica Ramírez Arceda <monica@probeta.net>\n"
 "Language-Team: Catalan\n"
 "Language: ca\n"
@@ -16,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.8.6\n"
 
 #: ../desktop-data/bluefish.appdata.xml.in.h:1
 msgid ""
@@ -467,584 +466,585 @@ msgstr "Commuta comentaris"
 msgid "Select _Block"
 msgstr "Selecciona el _bloc"
 
-#: ../src/bfwin_uimanager.c:887
+#: ../src/bfwin_uimanager.c:888
 msgid "Select block, use multiple times to select parent blocks "
 msgstr ""
 "Seleccioneu el bloc, feu-ho diverses vegades per seleccionar els blocs de "
 "nivell superior"
 
-#: ../src/bfwin_uimanager.c:889
+#: ../src/bfwin_uimanager.c:890
 msgid "D_uplicate Line"
 msgstr "D_uplica la línia"
 
-#: ../src/bfwin_uimanager.c:889
+#: ../src/bfwin_uimanager.c:890
 msgid "Duplicate the current line"
 msgstr "Duplica la línia actual"
 
-#: ../src/bfwin_uimanager.c:891
+#: ../src/bfwin_uimanager.c:892
 msgid "_Delete Line"
 msgstr "_Elimina la línia"
 
-#: ../src/bfwin_uimanager.c:891
+#: ../src/bfwin_uimanager.c:892
 msgid "Delete the current line"
 msgstr "Suprimeix la línia actual"
 
-#: ../src/bfwin_uimanager.c:893
+#: ../src/bfwin_uimanager.c:894
 msgid "_Word Count"
 msgstr "_Recompte de paraules"
 
-#: ../src/bfwin_uimanager.c:893
+#: ../src/bfwin_uimanager.c:894
 msgid "Word count"
 msgstr "Compta el nombre de paraules"
 
-#: ../src/bfwin_uimanager.c:894 ../src/doc_extern_tools.c:47
+#: ../src/bfwin_uimanager.c:895 ../src/doc_extern_tools.c:47
 msgid "Lorem Ipsum generator"
 msgstr "Generador Lorem Ipsum"
 
-#: ../src/bfwin_uimanager.c:895
+#: ../src/bfwin_uimanager.c:897
 msgid "Insert Relative Filename"
 msgstr "Insereix un nom de fitxer relatiu"
 
-#: ../src/bfwin_uimanager.c:896
+#: ../src/bfwin_uimanager.c:899
 msgid "Insert Absolute Filename"
 msgstr "Insereix un nom de fitxer absolut"
 
-#: ../src/bfwin_uimanager.c:897
+#: ../src/bfwin_uimanager.c:901
 msgid "Indenting to S_paces"
 msgstr "Sagna amb es_pais"
 
-#: ../src/bfwin_uimanager.c:897
+#: ../src/bfwin_uimanager.c:901
 msgid "Indenting to spaces"
 msgstr "Sagna amb espais"
 
-#: ../src/bfwin_uimanager.c:899
+#: ../src/bfwin_uimanager.c:903
 msgid "Indenting to T_abs"
 msgstr "Sa_gna amb tabulacions"
 
-#: ../src/bfwin_uimanager.c:899
+#: ../src/bfwin_uimanager.c:903
 msgid "Indenting to tabs"
 msgstr "Sagna amb tabulacions"
 
-#: ../src/bfwin_uimanager.c:901
+#: ../src/bfwin_uimanager.c:905
 msgid "_Join Lines Together"
 msgstr "Unei_x les línies"
 
-#: ../src/bfwin_uimanager.c:901
+#: ../src/bfwin_uimanager.c:905
 msgid "Join lines together"
 msgstr "Uneix les línies"
 
-#: ../src/bfwin_uimanager.c:903
+#: ../src/bfwin_uimanager.c:907
 msgid "Split Lines on Right _Margin"
 msgstr "_Talla les línies en el marge dret"
 
-#: ../src/bfwin_uimanager.c:903
+#: ../src/bfwin_uimanager.c:907
 msgid "Split lines on right margin"
 msgstr "Talla les línies en el marge dret"
 
-#: ../src/bfwin_uimanager.c:905
+#: ../src/bfwin_uimanager.c:909
 msgid "Merge Lines Into Col_umns"
 msgstr "_Fusiona les línies en columnes"
 
-#: ../src/bfwin_uimanager.c:905
+#: ../src/bfwin_uimanager.c:909
 msgid "Merge lines into columns"
 msgstr "Fusiona les línies en columnes"
 
-#: ../src/bfwin_uimanager.c:907
+#: ../src/bfwin_uimanager.c:911
 msgid "Rewrap _Lines"
 msgstr "Ajusta les _línies"
 
-#: ../src/bfwin_uimanager.c:907
+#: ../src/bfwin_uimanager.c:911
 msgid "Rewrap lines"
 msgstr "Ajusta les línies"
 
-#: ../src/bfwin_uimanager.c:908
+#: ../src/bfwin_uimanager.c:912
 msgid "Strip T_railing Whitespace"
 msgstr "_Elimina els espais en blanc sobrants"
 
-#: ../src/bfwin_uimanager.c:908
+#: ../src/bfwin_uimanager.c:912
 msgid "Strip trailing whitespace"
 msgstr "Elimina els espais en blanc del final"
 
-#: ../src/bfwin_uimanager.c:910
+#: ../src/bfwin_uimanager.c:914
 msgid "Javascript beautifier"
 msgstr "Embellidor de Javascript"
 
-#: ../src/bfwin_uimanager.c:911
+#: ../src/bfwin_uimanager.c:916
 msgid "Preview in browser"
 msgstr "Previsualitza en el navegador"
 
-#: ../src/bfwin_uimanager.c:916
+#: ../src/bfwin_uimanager.c:921
 msgid "_Full Screen"
 msgstr "_Pantalla completa"
 
-#: ../src/bfwin_uimanager.c:916
+#: ../src/bfwin_uimanager.c:921
 msgid "Full screen"
 msgstr "Pantalla completa"
 
-#: ../src/bfwin_uimanager.c:918
+#: ../src/bfwin_uimanager.c:923
 msgid "_Main Toolbar"
 msgstr "Barra d'_eines principal"
 
-#: ../src/bfwin_uimanager.c:918
+#: ../src/bfwin_uimanager.c:923
 msgid "Show main toolbar"
 msgstr "Visualitza la barra d'eines principal"
 
-#: ../src/bfwin_uimanager.c:920
+#: ../src/bfwin_uimanager.c:925
 msgid "_Side Pane"
 msgstr "_Subfinestra lateral"
 
-#: ../src/bfwin_uimanager.c:920
+#: ../src/bfwin_uimanager.c:925
 msgid "Show side pane"
 msgstr "Mostra la subfinestra lateral"
 
-#: ../src/bfwin_uimanager.c:921
+#: ../src/bfwin_uimanager.c:926
 msgid "_Output Pane"
 msgstr "Subfinestra de s_ortida"
 
-#: ../src/bfwin_uimanager.c:921
+#: ../src/bfwin_uimanager.c:926
 msgid "Show output pane"
 msgstr "Mostra la subfinestra de sortida"
 
-#: ../src/bfwin_uimanager.c:923
+#: ../src/bfwin_uimanager.c:928
 msgid "Status_bar"
 msgstr "_Barra d'estat"
 
-#: ../src/bfwin_uimanager.c:923
+#: ../src/bfwin_uimanager.c:928
 msgid "Show statusbar"
 msgstr "Mostra la barra d'estat"
 
-#: ../src/bfwin_uimanager.c:925
+#: ../src/bfwin_uimanager.c:930
 msgid "Auto _Completion Popup"
 msgstr "Finestra emergent de com_pleció automàtica"
 
-#: ../src/bfwin_uimanager.c:925
+#: ../src/bfwin_uimanager.c:930
 msgid "Show auto completion popup"
 msgstr "Mostra la finestra emergent de compleció automàtica"
 
-#: ../src/bfwin_uimanager.c:927
+#: ../src/bfwin_uimanager.c:932
 msgid "_Auto Indent"
 msgstr "Sa_gna automàticament"
 
-#: ../src/bfwin_uimanager.c:927
+#: ../src/bfwin_uimanager.c:932
 msgid "Auto indent"
 msgstr "Sagna automàticament"
 
-#: ../src/bfwin_uimanager.c:928
+#: ../src/bfwin_uimanager.c:933
 msgid "Highlight Block _Delimiters"
 msgstr "Ressalta els delimitadors de _bloc"
 
-#: ../src/bfwin_uimanager.c:929
+#: ../src/bfwin_uimanager.c:934
 msgid "Highlight block delimiters"
 msgstr "Ressalta els delimitadors de bloc"
 
-#: ../src/bfwin_uimanager.c:930
+#: ../src/bfwin_uimanager.c:935
 msgid "_Highlight Syntax"
 msgstr "_Ressalta la sintaxi"
 
-#: ../src/bfwin_uimanager.c:930
+#: ../src/bfwin_uimanager.c:935
 msgid "Highlight syntax"
 msgstr "Ressalta la sintaxi"
 
-#: ../src/bfwin_uimanager.c:932
+#: ../src/bfwin_uimanager.c:937
 msgid "Show _Blocks"
 msgstr "Mostr_a els blocs"
 
-#: ../src/bfwin_uimanager.c:932
+#: ../src/bfwin_uimanager.c:937
 msgid "Show blocks"
 msgstr "Mostra els blocs"
 
-#: ../src/bfwin_uimanager.c:933
+#: ../src/bfwin_uimanager.c:938
 msgid "Show Line N_umbers"
 msgstr "Mostra els _números de línia"
 
-#: ../src/bfwin_uimanager.c:933
+#: ../src/bfwin_uimanager.c:938
 msgid "Show line numbers"
 msgstr "Mostra els números de línia"
 
-#: ../src/bfwin_uimanager.c:935
+#: ../src/bfwin_uimanager.c:940
 msgid "Show Right _Margin"
 msgstr "Mostra el _marge dret"
 
-#: ../src/bfwin_uimanager.c:935
+#: ../src/bfwin_uimanager.c:940
 msgid "Show right margin"
 msgstr "Mostra el marge dret"
 
-#: ../src/bfwin_uimanager.c:937
+#: ../src/bfwin_uimanager.c:942
 msgid "Show Split _View"
 msgstr "Mostra la _vista dividida"
 
-#: ../src/bfwin_uimanager.c:937
+#: ../src/bfwin_uimanager.c:942
 msgid "Show split view"
 msgstr "Mostra la vista dividida"
 
-#: ../src/bfwin_uimanager.c:939
+#: ../src/bfwin_uimanager.c:944
 msgid "Show V_isible Spacing"
 msgstr "Mostra l'_espaiat"
 
-#: ../src/bfwin_uimanager.c:939
+#: ../src/bfwin_uimanager.c:944
 msgid "Show visible spacing"
 msgstr "Mostra l'espaiat"
 
-#: ../src/bfwin_uimanager.c:941
+#: ../src/bfwin_uimanager.c:946
 msgid "_Wrap Text"
 msgstr "A_justa el text"
 
-#: ../src/bfwin_uimanager.c:941
+#: ../src/bfwin_uimanager.c:946
 msgid "Wrap text"
 msgstr "Ajusta el text"
 
-#: ../src/bfwin_uimanager.c:945 ../src/document.c:2097 ../src/document.c:3493
+#: ../src/bfwin_uimanager.c:950 ../src/document.c:2097 ../src/document.c:3493
 msgid "_Close"
 msgstr "Tan_ca"
 
-#: ../src/bfwin_uimanager.c:945
+#: ../src/bfwin_uimanager.c:950
 msgid "Close current file"
 msgstr "Tanca el fitxer actual"
 
-#: ../src/bfwin_uimanager.c:947
+#: ../src/bfwin_uimanager.c:952
 msgid "Close A_ll"
 msgstr "Tanca-_ho tot"
 
-#: ../src/bfwin_uimanager.c:947
+#: ../src/bfwin_uimanager.c:952
 msgid "Close all files"
 msgstr "Tanca tots els fitxers"
 
-#: ../src/bfwin_uimanager.c:949 ../src/bfwin_uimanager.c:1025
+#: ../src/bfwin_uimanager.c:954 ../src/bfwin_uimanager.c:1041
 #: ../src/file_dialogs.c:1455
 msgid "_Save"
 msgstr "De_sa"
 
-#: ../src/bfwin_uimanager.c:949
+#: ../src/bfwin_uimanager.c:954
 msgid "Save current file"
 msgstr "Desa el fitxer actual"
 
-#: ../src/bfwin_uimanager.c:951 ../src/bfwin_uimanager.c:1026
+#: ../src/bfwin_uimanager.c:956 ../src/bfwin_uimanager.c:1042
 msgid "Save _as..."
 msgstr "_Anomena i desa..."
 
-#: ../src/bfwin_uimanager.c:951
+#: ../src/bfwin_uimanager.c:956
 msgid "Save file as"
 msgstr "Anomena i desa el fitxer"
 
-#: ../src/bfwin_uimanager.c:953
+#: ../src/bfwin_uimanager.c:958
 msgid "Sav_e All"
 msgstr "D_esa-ho tot"
 
-#: ../src/bfwin_uimanager.c:953
+#: ../src/bfwin_uimanager.c:958
 msgid "Save all files"
 msgstr "Desa tots els fitxers"
 
-#: ../src/bfwin_uimanager.c:954
+#: ../src/bfwin_uimanager.c:960
 msgid "Rever_t to Saved"
 msgstr "_Torna al desat"
 
-#: ../src/bfwin_uimanager.c:954
+#: ../src/bfwin_uimanager.c:960
 msgid "Reload current file"
 msgstr "Torna a carregar el fitxer actual"
 
-#: ../src/bfwin_uimanager.c:956
+#: ../src/bfwin_uimanager.c:962
 msgid "Save a cop_y..."
 msgstr "Desa una _còpia..."
 
-#: ../src/bfwin_uimanager.c:956
+#: ../src/bfwin_uimanager.c:962
 msgid "Save a copy"
 msgstr "Desa una còpia"
 
-#: ../src/bfwin_uimanager.c:957
+#: ../src/bfwin_uimanager.c:964
 msgid "_Insert..."
 msgstr "_Insereix..."
 
-#: ../src/bfwin_uimanager.c:957
+#: ../src/bfwin_uimanager.c:964
 msgid "Insert file"
 msgstr "Insereix un fitxer"
 
 #. Required to move here to disable sensitivity on OSX
-#: ../src/bfwin_uimanager.c:958
+#: ../src/bfwin_uimanager.c:965
 msgid "Rena_me..."
 msgstr "Canvia el no_m..."
 
-#: ../src/bfwin_uimanager.c:958
+#: ../src/bfwin_uimanager.c:965
 msgid "Rename file"
 msgstr "Canvia el nom del fitxer"
 
-#: ../src/bfwin_uimanager.c:959
+#: ../src/bfwin_uimanager.c:966
 msgid "_Indent"
 msgstr "_Sagna"
 
-#: ../src/bfwin_uimanager.c:959
+#: ../src/bfwin_uimanager.c:966
 msgid "Indent"
 msgstr "Sagna"
 
-#: ../src/bfwin_uimanager.c:960
+#: ../src/bfwin_uimanager.c:967
 msgid "Unin_dent"
 msgstr "Desfés el sa_gnat"
 
-#: ../src/bfwin_uimanager.c:960
+#: ../src/bfwin_uimanager.c:967
 msgid "Unindent"
 msgstr "Desfés el sagnat"
 
-#: ../src/bfwin_uimanager.c:962
+#: ../src/bfwin_uimanager.c:969
 msgid "F_irst Bookmark"
 msgstr "Pr_imer marcador"
 
-#: ../src/bfwin_uimanager.c:962
+#: ../src/bfwin_uimanager.c:969
 msgid "Goto first bookmark"
 msgstr "Vés al primer marcador"
 
-#: ../src/bfwin_uimanager.c:964
+#: ../src/bfwin_uimanager.c:971
 msgid "L_ast Bookmark"
 msgstr "Úl_tim marcador"
 
-#: ../src/bfwin_uimanager.c:964
+#: ../src/bfwin_uimanager.c:971
 msgid "Goto last bookmark"
 msgstr "Vés a l'últim marcador"
 
-#: ../src/bfwin_uimanager.c:966
+#: ../src/bfwin_uimanager.c:973
 msgid "N_ext Bookmark"
 msgstr "Marcador s_egüent"
 
-#: ../src/bfwin_uimanager.c:966
+#: ../src/bfwin_uimanager.c:973
 msgid "Goto next bookmark"
 msgstr "Vés al marcador següent"
 
-#: ../src/bfwin_uimanager.c:968
+#: ../src/bfwin_uimanager.c:975
 msgid "P_revious Bookmark"
 msgstr "Ma_rcador anterior"
 
-#: ../src/bfwin_uimanager.c:969 ../src/bfwin_uimanager.c:982
+#: ../src/bfwin_uimanager.c:976 ../src/bfwin_uimanager.c:992
 msgid "Goto previous document"
 msgstr "Vés al document anterior"
 
-#: ../src/bfwin_uimanager.c:970
+#: ../src/bfwin_uimanager.c:977
 msgid "Move Tab _Left"
 msgstr "Mou la pestanya a l'es_querra"
 
-#: ../src/bfwin_uimanager.c:970
+#: ../src/bfwin_uimanager.c:977
 msgid "Move current tab left"
 msgstr "Mou la pestanya actual a l'esquerra"
 
-#: ../src/bfwin_uimanager.c:972
+#: ../src/bfwin_uimanager.c:979
 msgid "Move Tab _Right"
 msgstr "Mou la pestanya a la _dreta"
 
-#: ../src/bfwin_uimanager.c:972
+#: ../src/bfwin_uimanager.c:979
 msgid "Move current tab right"
 msgstr "Mou la pestanya actual a la dreta"
 
-#: ../src/bfwin_uimanager.c:974
+#: ../src/bfwin_uimanager.c:981
 msgid "_Recent Document"
 msgstr "Document _recent"
 
-#: ../src/bfwin_uimanager.c:974
+#: ../src/bfwin_uimanager.c:981
 msgid "Goto most recent document"
 msgstr "Vés al document més recent"
 
-#: ../src/bfwin_uimanager.c:976
+#: ../src/bfwin_uimanager.c:983
 msgid "_First Document"
 msgstr "_Primer document"
 
-#: ../src/bfwin_uimanager.c:976
+#: ../src/bfwin_uimanager.c:984
 msgid "Goto first document"
 msgstr "Vés al primer document"
 
-#: ../src/bfwin_uimanager.c:978
+#: ../src/bfwin_uimanager.c:986
 msgid "_Last Document"
 msgstr "Últi_m document"
 
-#: ../src/bfwin_uimanager.c:978
+#: ../src/bfwin_uimanager.c:987
 msgid "Goto last document"
 msgstr "Vés a l'últim document"
 
-#: ../src/bfwin_uimanager.c:980
+#: ../src/bfwin_uimanager.c:989
 msgid "_Next Document"
 msgstr "Document següe_nt"
 
-#: ../src/bfwin_uimanager.c:980
+#: ../src/bfwin_uimanager.c:989
 msgid "Goto next document"
 msgstr "Vés al document següent"
 
-#: ../src/bfwin_uimanager.c:982
+#: ../src/bfwin_uimanager.c:991
 msgid "_Previous Document"
 msgstr "Document _anterior"
 
-#: ../src/bfwin_uimanager.c:984
+#: ../src/bfwin_uimanager.c:994
 msgid "_Goto Line"
 msgstr "_Vés a la línia"
 
-#: ../src/bfwin_uimanager.c:984
+#: ../src/bfwin_uimanager.c:994
 msgid "Goto line"
 msgstr "Vés a la línia"
 
-#: ../src/bfwin_uimanager.c:985
+#: ../src/bfwin_uimanager.c:995
 msgid "Goto Line Number from _Clipboard"
 msgstr "_Vés al número de línia del porta-retalls"
 
-#: ../src/bfwin_uimanager.c:986
+#: ../src/bfwin_uimanager.c:996
 msgid "Goto line number in clipboard or selection"
 msgstr "Vés al número de línia del porta-retalls o de la selecció"
 
-#: ../src/bfwin_uimanager.c:987
+#: ../src/bfwin_uimanager.c:997
 msgid "_Jump to Reference"
 msgstr "_Salta a la referència"
 
-#: ../src/bfwin_uimanager.c:987
+#: ../src/bfwin_uimanager.c:997
 msgid "Jump to reference"
 msgstr "Salta a la referència"
 
-#: ../src/bfwin_uimanager.c:990 ../src/bfwin_uimanager.c:993
+#: ../src/bfwin_uimanager.c:1000 ../src/bfwin_uimanager.c:1001
+#: ../src/bfwin_uimanager.c:1004 ../src/bfwin_uimanager.c:1005
 msgid "Jump to Matching Block Boundary"
 msgstr "Salta als límits del bloc coincident"
 
-#: ../src/bfwin_uimanager.c:999
+#: ../src/bfwin_uimanager.c:1011
 msgid "Cu_t"
 msgstr "Re_talla"
 
-#: ../src/bfwin_uimanager.c:999
+#: ../src/bfwin_uimanager.c:1011
 msgid "Cut"
 msgstr "Retalla"
 
-#: ../src/bfwin_uimanager.c:1000
+#: ../src/bfwin_uimanager.c:1012
 msgid "_Copy"
 msgstr "_Copia"
 
-#: ../src/bfwin_uimanager.c:1000
+#: ../src/bfwin_uimanager.c:1012
 msgid "Copy"
 msgstr "Copia"
 
-#: ../src/bfwin_uimanager.c:1001
+#: ../src/bfwin_uimanager.c:1013
 msgid "_Paste"
 msgstr "Engan_xa"
 
-#: ../src/bfwin_uimanager.c:1001
+#: ../src/bfwin_uimanager.c:1013
 msgid "Paste"
 msgstr "Enganxa"
 
-#: ../src/bfwin_uimanager.c:1002
+#: ../src/bfwin_uimanager.c:1014
 msgid "Paste Specia_l"
 msgstr "Enganxament especia_l"
 
-#: ../src/bfwin_uimanager.c:1002
+#: ../src/bfwin_uimanager.c:1014
 msgid "Paste Special"
 msgstr "Enganxament especia_l"
 
-#: ../src/bfwin_uimanager.c:1006
+#: ../src/bfwin_uimanager.c:1019
 msgid "_Find"
 msgstr "C_erca"
 
-#: ../src/bfwin_uimanager.c:1006
+#: ../src/bfwin_uimanager.c:1019
 msgid "Show find bar"
 msgstr "Mostra la barra de cerca"
 
-#: ../src/bfwin_uimanager.c:1007
+#: ../src/bfwin_uimanager.c:1020
 msgid "Find A_gain"
 msgstr "Cerca de no_u"
 
-#: ../src/bfwin_uimanager.c:1007
+#: ../src/bfwin_uimanager.c:1020
 msgid "Find again"
 msgstr "Cerca de nou"
 
-#: ../src/bfwin_uimanager.c:1008
+#: ../src/bfwin_uimanager.c:1021
 msgid "Find from Clip_board"
 msgstr "Cerca a partir del porta-reta_lls"
 
-#: ../src/bfwin_uimanager.c:1008
+#: ../src/bfwin_uimanager.c:1022
 msgid "Find from clipboard or selection"
 msgstr "Cerca a partir del porta-retalls o de la selecció"
 
-#: ../src/bfwin_uimanager.c:1011 ../src/bfwin_uimanager.c:1014
+#: ../src/bfwin_uimanager.c:1025 ../src/bfwin_uimanager.c:1029
 msgid "Ad_vanced Find & Replace..."
 msgstr "Cerca i _reemplaça avançat..."
 
-#: ../src/bfwin_uimanager.c:1011 ../src/bfwin_uimanager.c:1014
+#: ../src/bfwin_uimanager.c:1026 ../src/bfwin_uimanager.c:1030
 msgid "Advanced Find and Replace"
 msgstr "Cerca i reemplaça avançat..."
 
-#: ../src/bfwin_uimanager.c:1023
+#: ../src/bfwin_uimanager.c:1039
 msgid "Save & _close"
 msgstr "Desa i tan_ca"
 
-#: ../src/bfwin_uimanager.c:1023
+#: ../src/bfwin_uimanager.c:1039
 msgid "Save & close project"
 msgstr "Desa i tanca el projecte"
 
-#: ../src/bfwin_uimanager.c:1025
+#: ../src/bfwin_uimanager.c:1041
 msgid "Save project"
 msgstr "Desa el projecte"
 
-#: ../src/bfwin_uimanager.c:1026
+#: ../src/bfwin_uimanager.c:1042
 msgid "Save project as"
 msgstr "Desa el projecte com a"
 
-#: ../src/bfwin_uimanager.c:1027
+#: ../src/bfwin_uimanager.c:1043
 msgid "_Edit Project Options..."
 msgstr "_Edita les opcions del projecte"
 
-#: ../src/bfwin_uimanager.c:1027
+#: ../src/bfwin_uimanager.c:1043
 msgid "Edit project options"
 msgstr "Edita les opcions del projecte"
 
-#: ../src/bfwin_uimanager.c:1032
+#: ../src/bfwin_uimanager.c:1048
 msgid "_Undo"
 msgstr "_Desfés"
 
-#: ../src/bfwin_uimanager.c:1032
+#: ../src/bfwin_uimanager.c:1048
 msgid "Undo"
 msgstr "Desfés"
 
-#: ../src/bfwin_uimanager.c:1033
+#: ../src/bfwin_uimanager.c:1049
 msgid "U_ndo All"
 msgstr "Desfés-ho t_ot"
 
-#: ../src/bfwin_uimanager.c:1033
+#: ../src/bfwin_uimanager.c:1049
 msgid "Undo All"
 msgstr "Desfés-ho tot"
 
-#: ../src/bfwin_uimanager.c:1034
+#: ../src/bfwin_uimanager.c:1050
 msgid "_Redo"
 msgstr "_Refés"
 
-#: ../src/bfwin_uimanager.c:1034
+#: ../src/bfwin_uimanager.c:1050
 msgid "Redo"
 msgstr "Refés"
 
-#: ../src/bfwin_uimanager.c:1035
+#: ../src/bfwin_uimanager.c:1051
 msgid "R_edo All"
 msgstr "Re_fés-ho tot"
 
-#: ../src/bfwin_uimanager.c:1035
+#: ../src/bfwin_uimanager.c:1051
 msgid "Redo All"
 msgstr "Refés-ho tot"
 
-#: ../src/bfwin_uimanager.c:1060
+#: ../src/bfwin_uimanager.c:1078
 #, c-format
 msgid "Always use this syntax for files of type %s ?"
 msgstr "Voleu usar sempre aquesta sintaxi per a fitxers de tipus %s?"
 
-#: ../src/bfwin_uimanager.c:1227
+#: ../src/bfwin_uimanager.c:1252
 msgid "Open _URL..."
 msgstr "Obre un _URL..."
 
-#: ../src/bfwin_uimanager.c:1237
+#: ../src/bfwin_uimanager.c:1262
 msgid "Upload _/ Download..."
 msgstr "Penja _/ Baixa..."
 
-#: ../src/bfwin_uimanager.c:1250
+#: ../src/bfwin_uimanager.c:1275
 msgid "_Spell Check"
 msgstr "Revi_sa l'ortografia"
 
-#: ../src/bfwin_uimanager.c:1717
+#: ../src/bfwin_uimanager.c:1750
 msgid "Text area to filter"
 msgstr "Àrea de text a filtrar"
 
-#: ../src/bfwin_uimanager.c:1718
+#: ../src/bfwin_uimanager.c:1751
 msgid "All text"
 msgstr "Tot el text"
 
-#: ../src/bfwin_uimanager.c:1719
+#: ../src/bfwin_uimanager.c:1752
 msgid "Selected text only"
 msgstr "Només el text seleccionat"
 
-#: ../src/bfwin_uimanager.c:1721
+#: ../src/bfwin_uimanager.c:1754
 msgid "Never ask again"
 msgstr "No ho tornis a demanar"
 
@@ -1703,43 +1703,55 @@ msgstr "Doneu els arguments per definir %%a a '%s'"
 
 #: ../src/external_commands.c:749
 msgid "Internal error."
-msgstr ""
+msgstr "Error intern."
 
 #: ../src/external_commands.c:752
 msgid ""
 "This command requires the current document to have a file name. Please save "
 "your document first."
 msgstr ""
+"Aquesta ordre necessita que el document actual tingui un nom. Deseu el "
+"document primer."
 
 #: ../src/external_commands.c:755
 msgid ""
 "This command requires the current document to be a local file. Please save "
 "your document to a loacal file."
 msgstr ""
+"Aquesta ordre necessita que el document actual sigui un fitxer local. Deseu "
+"el document en un fitxer local."
 
 #: ../src/external_commands.c:758
 msgid ""
 "External commands cannot have an output defined. Please fix this command in "
 "the preferences."
 msgstr ""
+"Les ordres externes no poden tenir una sortida definida. Arregleu aquesta "
+"ordre a les preferències."
 
 #: ../src/external_commands.c:761
 msgid ""
 "This command has multiple inputs. Please fix this command in the preferences."
 msgstr ""
+"Aquesta ordre té múltiples entrades. Arregleu aquesta ordre a les "
+"preferències."
 
 #: ../src/external_commands.c:764
 msgid ""
 "This command has multiple outputs. Please fix this command in the "
 "preferences."
 msgstr ""
+"Aquesta ordre té múltiples sortides. Arregleu aquesta ordre a les "
+"preferències."
 
 #: ../src/external_commands.c:768
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Failed to create a command for %s.\n"
 "%s"
-msgstr "Error en crear una ordre per a %s."
+msgstr ""
+"Error en crear una ordre per a %s.\n"
+"%s"
 
 #: ../src/external_commands.c:770
 msgid "Failed to create a command"
@@ -2371,7 +2383,7 @@ msgstr "Habilita la compleció automàtica"
 
 #: ../src/preferences.c:548
 msgid "Enable _block folding"
-msgstr "Habilita l'expansió i reducció dels blocs"
+msgstr "Habilita l'expansió i reducció dels _blocs"
 
 #: ../src/preferences.c:550
 msgid "Display block stack in statusbar"
@@ -2425,8 +2437,7 @@ msgstr "_Amplada de la tabulació:"
 msgid "Insert _spaces instead of tabs"
 msgstr "Insereix e_spais en lloc de tabulacions"
 
-#: ../src/preferences.c:622 ../src/preferences.c:1341
-#: ../src/preferences.c:1500
+#: ../src/preferences.c:622 ../src/preferences.c:1341 ../src/preferences.c:1500
 msgid "Enabled"
 msgstr "Habilitat"
 
@@ -2703,11 +2714,11 @@ msgstr "Mai"
 
 #: ../src/preferences.c:2433
 msgid "Periodically and during save"
-msgstr ""
+msgstr "Periòdicament i mentre es desa"
 
 #: ../src/preferences.c:2433
 msgid "Only during save"
-msgstr ""
+msgstr "Només mentre es desa"
 
 #: ../src/preferences.c:2435
 msgid "Nothing"
@@ -2985,9 +2996,8 @@ msgid "Open commandline files in new _window"
 msgstr "Obre els fitxers de la línia d'ordres en una _finestra nova"
 
 #: ../src/preferences.c:2726
-#, fuzzy
 msgid "Check if file is modified on disk:"
-msgstr "Comprova _periòdicament si el fitxer s'ha modificat al disc"
+msgstr "Comprova si el fitxer s'ha modificat al disc:"
 
 #: ../src/preferences.c:2732
 msgid "File properties to check on dis_k for modifications:"
@@ -3379,9 +3389,8 @@ msgid "Javascript Minify with jsmin"
 msgstr "Minimitza el Javascript amb jsmin"
 
 #: ../src/rcfile.c:790 ../src/rcfile.c:797
-#, fuzzy
 msgid "Toggle CSS compression"
-msgstr "Commuta comentaris"
+msgstr "Activa/desactiva la compressió de CSS"
 
 #: ../src/rcfile.c:801
 msgid "CSS tidy"
@@ -3699,187 +3708,179 @@ msgstr "Aquest canvi afecta a múltiples documents."
 
 #: ../src/xmlstrings.h:2
 msgid "Allow folding of C style comments"
-msgstr ""
+msgstr "Permet l'expansió i reducció dels comentaris d'estil C"
 
 #: ../src/xmlstrings.h:3
 msgid "Allow folding of Curly brackets block"
-msgstr ""
+msgstr "Permet l'expansió i reducció dels blocs entre claus"
 
 #: ../src/xmlstrings.h:4
 msgid "Allow folding of Javascript Curly brackets block"
-msgstr ""
+msgstr "Permet l'expansió i reducció dels blocs Javascript entre claus"
 
 #: ../src/xmlstrings.h:5
 msgid "Allow folding of Javascript Parentheses block"
-msgstr ""
+msgstr "Permet l'expansió i reducció dels blocs Javascript entre parèntesi"
 
 #: ../src/xmlstrings.h:6
 msgid "Allow folding of Javascript Square brackets block"
-msgstr ""
+msgstr "Permet l'expansió i reducció dels blocs Javascript entre claudàtors"
 
 #: ../src/xmlstrings.h:7
 msgid "Allow folding of Parentheses block"
-msgstr ""
+msgstr "Habilita l'expansió i reducció dels blocs entre parèntesi"
 
 #: ../src/xmlstrings.h:8
 msgid "Allow folding of PHP blocks"
-msgstr ""
+msgstr "Permet l'expansió i reducció dels blocs PHP"
 
 #: ../src/xmlstrings.h:9
 msgid "Allow folding of Square brackets block"
-msgstr ""
+msgstr "Permet l'expansió i reducció dels blocs entre claudàtors"
 
 #: ../src/xmlstrings.h:10
 msgid "Allow folding of the Parentheses block"
-msgstr ""
+msgstr "Habilita l'expansió i reducció dels blocs entre parèntesi"
 
 #: ../src/xmlstrings.h:11
 msgid "Allow to fold the the root html tag"
-msgstr ""
+msgstr "Permet plegar l'etiqueta arrel html"
 
 #: ../src/xmlstrings.h:12
 msgid "All php functions"
-msgstr ""
+msgstr "Totes les funcions PHP"
 
 #: ../src/xmlstrings.h:13
 msgid "All wordpress functions"
-msgstr ""
+msgstr "Totes les funcions wordpress"
 
 #: ../src/xmlstrings.h:14
 msgid "Autocomplete function names with semicolon"
-msgstr ""
+msgstr "Autocompleta els noms de funció amb punt i coma"
 
 #: ../src/xmlstrings.h:15
-#, fuzzy
 msgid "Autocomplete HTML entities"
-msgstr "Compleció automàtica i Referència"
+msgstr "Autocompleta les entitats HTML"
 
 #: ../src/xmlstrings.h:16
 msgid "Autocomplete Javascript object methods"
-msgstr ""
+msgstr "Autocompleta els mètodes dels objectes Javascript"
 
 #: ../src/xmlstrings.h:17
 msgid "autocomplete javascript variables"
-msgstr ""
+msgstr "autocompleta les variables javascript"
 
 #: ../src/xmlstrings.h:18
-#, fuzzy
 msgid "Auto-complete PHP functions"
-msgstr "Compleció automàtica i Referència"
+msgstr "Autocompleta les funcions PHP"
 
 #: ../src/xmlstrings.h:19
 msgid "Auto-complete PHP variables"
-msgstr ""
+msgstr "Autocompleta les variables PHP"
 
 #: ../src/xmlstrings.h:20
-#, fuzzy
 msgid "Autocomplete tags"
-msgstr "complet"
+msgstr "Autocompleta les etiquetes"
 
 #: ../src/xmlstrings.h:21
 msgid "autocomplete with newlines"
-msgstr ""
+msgstr "autocompleta amb noves línies"
 
 #: ../src/xmlstrings.h:22
 msgid "CSS properties"
-msgstr ""
+msgstr "Propietats CSS"
 
 #: ../src/xmlstrings.h:23
 msgid "Enable the PHP short open tag"
-msgstr ""
+msgstr "Permet l'etiqueta d'inici curta de PHP"
 
 #: ../src/xmlstrings.h:24
 msgid "GNU Coreutils functions"
-msgstr ""
+msgstr "Funcions GNU Coreutils"
 
 #: ../src/xmlstrings.h:25
 msgid "HTML entities"
-msgstr ""
+msgstr "Entitats HTML"
 
 #: ../src/xmlstrings.h:26
 msgid "include JQuery syntax"
-msgstr ""
+msgstr "inclou la sintaxi JQuery"
 
 #: ../src/xmlstrings.h:27
-#, fuzzy
 msgid "Javascript CSS properties"
-msgstr "Embellidor de Javascript"
+msgstr "Propietats Javascript CSS"
 
 #: ../src/xmlstrings.h:28
 msgid "Load all php functions"
-msgstr ""
+msgstr "Carrega totes les funcions php"
 
 #: ../src/xmlstrings.h:29
-#, fuzzy
 msgid "Load auto-completion information"
-msgstr "Mostra la finestra emergent de compleció automàtica"
+msgstr "Carrega la informació d'autocompletar"
 
 #: ../src/xmlstrings.h:30
-#, fuzzy
 msgid "Load completion data"
-msgstr "Mostra la finestra emergent de compleció automàtica"
+msgstr "Carrega les dades de completar"
 
 #: ../src/xmlstrings.h:31
 msgid "Load glib types and functions"
-msgstr ""
+msgstr "Carrega les funcions i tipus glib"
 
 #: ../src/xmlstrings.h:32
 msgid "Load GObject functions"
-msgstr ""
+msgstr "Carrega les funcions GObject"
 
 #: ../src/xmlstrings.h:33
 msgid "Load GTK+ functions"
-msgstr ""
+msgstr "Carrega les funcions GTK+"
 
 #: ../src/xmlstrings.h:34
-#, fuzzy
 msgid "Load reference data"
-msgstr "_Carrega les dades de referència des dels fitxers del llenguatge"
+msgstr "Carrega les dades de referència"
 
 #: ../src/xmlstrings.h:35
-#, fuzzy
 msgid "Load reference information"
-msgstr "<b>Informació de referència</b>"
+msgstr "Carrega la informació de referència"
 
 #: ../src/xmlstrings.h:36
 msgid "Load standard C library functions "
-msgstr ""
+msgstr "Carrega les biblioteques de funcions de C estàndard"
 
 #: ../src/xmlstrings.h:37
 msgid "Load XSLT 2.0 support."
-msgstr ""
+msgstr "Carrega el suport de XSLT 2.0"
 
 #: ../src/xmlstrings.h:38
 msgid "Methods in javadoc but not in references"
-msgstr ""
+msgstr "Mètodes a javadoc però no a les referències"
 
 #: ../src/xmlstrings.h:39
 msgid "scan for sql in php strings"
-msgstr ""
+msgstr "cerca sql en cadenes php"
 
 #: ../src/xmlstrings.h:40
 msgid "Scan for sql in strings"
-msgstr ""
+msgstr "Cerca sql a cadenes"
 
 #: ../src/xmlstrings.h:41
 msgid "Self-close tags such as br, hr, and img with /&gt;"
-msgstr ""
+msgstr "Tanca automàticament etiquetes com br, hr, i img amb /&gt;"
 
 #: ../src/xmlstrings.h:42
 msgid "Show a string as a block"
-msgstr ""
+msgstr "Mostra les cadenes com un bloc"
 
 #: ../src/xmlstrings.h:43
 msgid "Show tag attributes as block"
-msgstr ""
+msgstr "Mostra els atributs d'etiquetes com un bloc"
 
 #: ../src/xmlstrings.h:44
 msgid "Show this language in the menu"
-msgstr ""
+msgstr "Mostra aquest llenguatge en el menú"
 
 #: ../src/xmlstrings.h:45
 msgid "Tag block-start includes all attributes"
-msgstr ""
+msgstr "L'etiqueta d'inici de bloc inclou tots els atributs"
 
 #~ msgid "CSS Minify with cssmin"
 #~ msgstr "Minimitza el CSS amb cssmin"
