@@ -60,8 +60,8 @@ ${StrRep}
 	!define GTK_MIN_VERSION	"3.6.0"
 	!define GTK_VERSION	"${BUILD}" 
 	!define GTK_URL		"http://www.muleslow.net/files/gtk+/packages"
-	!define GTK_FILENAME	"gtk+3.6.4_bin.tbz2"
-	!define GTK_SIZE	"44651" ; Install size in Kilobytes
+	!define GTK_FILENAME	"gtk+3.6.4-1_bin_full.tbz2"
+	!define GTK_SIZE	"51474" ; Install size in Kilobytes
 	OutFile		"${PRODUCT}-${VERSION}-gtk3-setup.exe"
 !else ; Default 2.24.8
 	!define GTK_MIN_VERSION	"2.22.0"
@@ -478,7 +478,11 @@ SectionGroup "$(SECT_PLUGINS)" SecPlugins
 	SetOverwrite on
 	Section "$(PLUG_CHARMAP)" SecPlCharmap
 		SetOutPath "$INSTDIR"
+!if ${GTK_VERSION} == 3.6.4
+		File "build\libgucharmap_2_90-7.dll"
+!else ; Default GTK+ 2
 		File "build\libgucharmap-7.dll"
+!endif
 		SetOutPath "$INSTDIR\lib\${PACKAGE}"
 		File "build\lib\${PACKAGE}\charmap.dll"
 		SetOutPath "$INSTDIR\share\locale"
