@@ -29,4 +29,8 @@
 </screenshots>
 <url type="homepage">http://bluefish.openoffice.nl/</url>
 <updatecontact>olivier(at)bluefish.openoffice.nl</updatecontact>
+ <kudos>
+<kudo>HiDpiIcon</kudo>
+<kudo>ModernToolkit</kudo>
+</kudos>
 </application>
