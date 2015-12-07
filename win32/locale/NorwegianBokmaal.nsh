@@ -10,7 +10,7 @@
 
 ; Section Names
 !define SECT_BLUEFISH "Bluefish Editor"
-!define SECT_PLUGINS "Programmtillegg"
+!define SECT_PLUGINS "Programtillegg"
 !define SECT_SHORTCUT "Snarvei på skrivebordet"
 !define SECT_DICT "Stavekontroll (Krever internettilkobling for å laste ned ordlister)"
 
@@ -25,9 +25,9 @@
 
 ; Aspell Strings
 !define DICT_INSTALLED "Siste versjon av denne ordboken er allerede installert. Laster ikke ned:"
-!define DICT_DOWNLOAD "Laster ned stavekontrollordlista ..."
-!define DICT_FAILED "Klarte ikke å laste ned ordlista:"
-!define DICT_EXTRACT "Pakker ut ordliste..."
+!define DICT_DOWNLOAD "Laster ned stavekontrollordlisten ..."
+!define DICT_FAILED "Klarte ikke å laste ned ordlisten:"
+!define DICT_EXTRACT "Pakker ut ordlisten..."
 
 ; GTK+ Strings
 !define GTK_DOWNLOAD "Laster ned GTK+..."
@@ -51,7 +51,7 @@
 !define FA_UNSELECT "Fjern alle"
 
 ; Misc
-!define FINISHPAGE_LINK "Besøk nettsiden for Bluefish."
+!define FINISHPAGE_LINK "Gå til nettsiden for Bluefish."
 !define UNINSTALL_SHORTCUT "Avinstaller ${PRODUCT}"
 !define FILETYPE_REGISTER "Registrerer filtypen:"
 !define UNSTABLE_UPGRADE "En eksperimentell utgave av ${PRODUCT} er allerede installert.$\nVil du fjerne denne utgaven? (Anbefales)"
