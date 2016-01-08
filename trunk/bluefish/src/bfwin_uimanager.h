@@ -50,8 +50,8 @@ void bfwin_outputbox_menu_create(Tbfwin * bfwin);
 void lang_mode_menu_create(Tbfwin * bfwin);
 
 /*void bfwin_recent_menu_add(Tbfwin * bfwin, GFile * file, GFileInfo * finfo, gboolean is_project);*/
-void bfwin_recent_menu_add(Tbfwin *bfwin, gboolean project, const gchar *curi);
-void bfwin_recent_menu_remove(Tbfwin *bfwin, gboolean project, const gchar *curi);
+void bfwin_recent_menu_add(Tbfwin *bfwin, gboolean project, const gchar *curi, GFile *uri);
+void bfwin_recent_menu_remove(Tbfwin *bfwin, gboolean project, const gchar *curi, GFile *uri);
 void bfwin_recent_menu_create(Tbfwin *bfwin, gboolean only_update_session);
 void bfwin_templates_menu_create(Tbfwin * bfwin);
 

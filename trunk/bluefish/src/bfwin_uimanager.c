@@ -1839,8 +1839,21 @@ bfwin_outputbox_menu_create(Tbfwin * bfwin)
 	}
 }
 
+static gchar *
+recent_menu_label(const gchar *curi, GFile *uri) 
+{
+	gchar *label = curi;
+	if (uri && g_file_is_native(uri)) {
+		label = g_file_get_path(uri);
+	} else if (uri && curi == NULL) {
+		label = g_file_get_uri(uri);
+	}
+	return label;
+}
+
+
 static void
-recent_menu_remove_backend(Tbfwin * bfwin, const gchar * menupath, const gchar * curi)
+recent_menu_remove_backend(Tbfwin * bfwin, const gchar * menupath, const gchar * label)
 {
 	GtkWidget *menuitem, *menu;
 	GList *list, *tmplist;
@@ -1849,7 +1862,7 @@ recent_menu_remove_backend(Tbfwin * bfwin, const gchar * menupath, const gchar *
 	menu = gtk_menu_item_get_submenu(GTK_MENU_ITEM(menuitem));
 	list = gtk_container_get_children(GTK_CONTAINER(menu));
 	for (tmplist = list; tmplist; tmplist = tmplist->next) {
-		if (g_strcmp0(gtk_menu_item_get_label(tmplist->data), curi) == 0) {
+		if (g_strcmp0(gtk_menu_item_get_label(tmplist->data), label) == 0) {
 			gtk_widget_destroy(tmplist->data);
 			break;
 		}
@@ -1858,9 +1871,12 @@ recent_menu_remove_backend(Tbfwin * bfwin, const gchar * menupath, const gchar *
 }
 
 void
-bfwin_recent_menu_remove(Tbfwin * bfwin, gboolean project, const gchar * curi)
+bfwin_recent_menu_remove(Tbfwin * bfwin, gboolean project, const gchar * curi, GFile *uri)
 {
 	GList *tmplist;
+	gchar *label;
+	
+	label = recent_menu_label(curi, uri);
 	if (!project && bfwin->session != main_v->session) {
 		recent_menu_remove_backend(bfwin, "/MainMenu/FileMenu/FileOpenRecent", curi);
 		return;
@@ -1871,6 +1887,9 @@ bfwin_recent_menu_remove(Tbfwin * bfwin, gboolean project, const gchar * curi)
 									   project ? "/MainMenu/ProjectMenu/ProjectOpenRecent" :
 									   "/MainMenu/FileMenu/FileOpenRecent", curi);
 		}
+	}
+	if (label != curi) {
+		g_free(label);
 	}
 }
 
@@ -1902,23 +1921,26 @@ recent_menu_activate(GtkMenuItem * menuitem, gpointer user_data)
 }
 
 static void
-recent_menu_add(Tbfwin * bfwin, GtkMenu * menu, const gchar * curi)
+recent_menu_add(Tbfwin * bfwin, GtkMenu * menu, const gchar * label)
 {
 	GtkWidget *menuitem;
-	menuitem = gtk_menu_item_new_with_label(curi);
+	menuitem = gtk_menu_item_new_with_label(label);
 	g_signal_connect(menuitem, "activate", G_CALLBACK(recent_menu_activate), bfwin);
 	gtk_menu_shell_insert(GTK_MENU_SHELL(menu), menuitem, 1);
 	gtk_widget_show(menuitem);
 }
 
 static void
-recent_menu_add_backend(Tbfwin * bfwin, const gchar * menupath, const gchar * curi)
+recent_menu_add_backend(Tbfwin * bfwin, const gchar * menupath, const gchar * curi, GFile *uri)
 {
 	GtkWidget *menuitem, *menu;
 	GList *tmplist, *list;
+	gchar *label=curi;
 	gint num = 0;
 	menuitem = gtk_ui_manager_get_widget(bfwin->uimanager, menupath);
 	menu = gtk_menu_item_get_submenu(GTK_MENU_ITEM(menuitem));
+	
+	label = recent_menu_label(curi, uri);
 
 	/* avoid duplicate entries,
 	   if recent_means_recently_closed==1 this is not essential, because
@@ -1927,9 +1949,9 @@ recent_menu_add_backend(Tbfwin * bfwin, const gchar * menupath, const gchar * cu
 
 	   if recent_means_recently_closed==0 this is essential because the file is
 	   actually added to the menu during opening */
-	recent_menu_remove_backend(bfwin, menupath, curi);
+	recent_menu_remove_backend(bfwin, menupath, label);
 
-	recent_menu_add(bfwin, GTK_MENU(menu), curi);
+	recent_menu_add(bfwin, GTK_MENU(menu), label);
 
 	list = gtk_container_get_children(GTK_CONTAINER(menu));
 	for (tmplist = list; tmplist; tmplist = tmplist->next) {
@@ -1940,21 +1962,24 @@ recent_menu_add_backend(Tbfwin * bfwin, const gchar * menupath, const gchar * cu
 	}
 	g_list_free(list);
 
+	if (curi != label) {
+		g_free(label);
+	}
 }
 
 void
-bfwin_recent_menu_add(Tbfwin * bfwin, gboolean project, const gchar * curi)
+bfwin_recent_menu_add(Tbfwin * bfwin, gboolean project, const gchar * curi, GFile *uri)
 {
 	GList *tmplist;
 	if (!project && bfwin->session != main_v->session) {
-		recent_menu_add_backend(bfwin, "/MainMenu/FileMenu/FileOpenRecent", curi);
+		recent_menu_add_backend(bfwin, "/MainMenu/FileMenu/FileOpenRecent", curi, uri);
 		return;
 	}
 	for (tmplist = g_list_first(main_v->bfwinlist); tmplist; tmplist = g_list_next(tmplist)) {
 		if (project || BFWIN(tmplist->data)->session == main_v->session) {
 			recent_menu_add_backend(tmplist->data,
 									project ? "/MainMenu/ProjectMenu/ProjectOpenRecent" :
-									"/MainMenu/FileMenu/FileOpenRecent", curi);
+									"/MainMenu/FileMenu/FileOpenRecent", curi, uri);
 		}
 	}
 
@@ -1982,8 +2007,20 @@ recent_create_backend(Tbfwin * bfwin, const gchar * menupath, GList * recentlist
 	if (!tmplist)
 		tmplist = g_list_last(recentlist);
 	for (; tmplist; tmplist = tmplist->prev) {
+		gchar *label = (gchar *) tmplist->data;
+		GFile *uri = NULL;
+		if (g_ascii_strncasecmp("file://", label, 7)==0) {
+			uri = g_file_new_for_uri(label);
+			label = recent_menu_label(label, uri);
+		}
 		/* recent_menu_add adds from the top, so the last item added will be on top */
-		recent_menu_add(bfwin, GTK_MENU(menu), (const gchar *) tmplist->data);
+		recent_menu_add(bfwin, GTK_MENU(menu), label);
+		if (label != tmplist->data) {
+			g_free(label);
+		}
+		if (uri) {
+			g_object_unref(uri);
+		}
 		num++;
 	}
 	gtk_widget_show_all(menuitem);
