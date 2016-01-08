@@ -1716,7 +1716,7 @@ msgstr ""
 #: ../src/external_commands.c:755
 msgid ""
 "This command requires the current document to be a local file. Please save "
-"your document to a loacal file."
+"your document to a local file."
 msgstr ""
 "Aquesta ordre necessita que el document actual sigui un fitxer local. Deseu "
 "el document en un fitxer local."

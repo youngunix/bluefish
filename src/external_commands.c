@@ -752,7 +752,7 @@ command_backend(Tbfwin * bfwin, gint begin, gint end,
 				tmp2 = _("This command requires the current document to have a file name. Please save your document first.");
 			break;
 			case cpe_no_local_file:
-				tmp2 = _("This command requires the current document to be a local file. Please save your document to a loacal file.");
+				tmp2 = _("This command requires the current document to be a local file. Please save your document to a local file.");
 			break;
 			case cpe_output_not_needed:
 				tmp2 = _("External commands cannot have an output defined. Please fix this command in the preferences.");

@@ -1711,7 +1711,7 @@ msgstr ""
 #: ../src/external_commands.c:755
 msgid ""
 "This command requires the current document to be a local file. Please save "
-"your document to a loacal file."
+"your document to a local file."
 msgstr ""
 "このコマンドは、現在の文書がローカルファイルでないと実行できません。まず文書"
 "をローカルに保存してください。"
