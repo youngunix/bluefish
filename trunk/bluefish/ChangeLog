@@ -2,6 +2,18 @@ The complete VCS changelog can be obtained from our subversion repository
 using the `svn2cl' utility. The release changelogs are also available from
 our homepage: http://bluefish.openoffice.nl.
 
+* 2.2.8 *
+
+Bluefish 2.2.8 is a bugfix release with some small improvements and more
+poloshed existing features.  It fixes a few serious but rarely occuring
+bugs.  Options defined in the language definition files are now translated. 
+Various default settings have been improved, most notably the command to
+launch Firefox for preview.  The looks on newer gtk versions have been
+restored.  CSS can now be compressed and decompressed.  The installers for
+Windows and OSX have improvements, and there have been some OSX and Windows
+specific fixes.  Character encoding detection has been improved. 
+Auto-completion for HTML attributes has been improved.
+
 * 2.2.7 *
 
 Bluefish 2.2.7 is mostly a bug fix release. It fixes rare crashes in the
