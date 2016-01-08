@@ -280,9 +280,9 @@ add_filename_to_recentlist(Tbfwin * bfwin, GFile * uri)
 	gchar *curi = g_file_get_uri(uri);
 	bfwin->session->recent_files = add_to_history_stringlist(bfwin->session->recent_files, curi, TRUE);
 	if (main_v->props.recent_means_recently_closed) {
-		bfwin_recent_menu_remove(bfwin, FALSE, curi);
+		bfwin_recent_menu_remove(bfwin, FALSE, curi, uri);
 	} else {
-		bfwin_recent_menu_add(bfwin, FALSE, curi);
+		bfwin_recent_menu_add(bfwin, FALSE, curi, uri);
 	}
 	if (main_v->props.register_recent_mode == 1) {
 		gtk_recent_manager_add_item(main_v->recentm, curi);
@@ -296,14 +296,14 @@ remove_filename_from_recentlist(Tbfwin * bfwin, gboolean project, GFile * uri)
 	gchar *curi = g_file_get_uri(uri);
 	if (!project) {
 		bfwin->session->recent_files = remove_from_stringlist(bfwin->session->recent_files, curi);
-		bfwin_recent_menu_remove(bfwin, FALSE, curi);
+		bfwin_recent_menu_remove(bfwin, FALSE, curi, uri);
 		if (main_v->props.register_recent_mode == 1) {
 			GError *gerror = NULL;
 			gtk_recent_manager_remove_item(main_v->recentm, curi, &gerror);
 		}
 	} else {
 		main_v->globses.recent_projects = remove_from_stringlist(main_v->globses.recent_projects, curi);
-		bfwin_recent_menu_remove(bfwin, TRUE, curi);
+		bfwin_recent_menu_remove(bfwin, TRUE, curi, uri);
 		if (main_v->props.register_recent_mode != 0) {
 			GError *gerror = NULL;
 			gtk_recent_manager_remove_item(main_v->recentm, curi, &gerror);
@@ -2617,7 +2617,7 @@ doc_destroy(Tdocument * doc, gboolean delay_activation)
 	bmark_clean_for_doc(doc);
 	if (doc->uri && bfwin->session && doc->status != DOC_STATUS_ERROR && main_v->props.recent_means_recently_closed) {	/* in a special situation the bfwin does not have a session: if a project window is closing; documents with errors should not be added to the menu */
 		gchar *curi = g_file_get_uri(doc->uri);
-		bfwin_recent_menu_add(doc->bfwin, FALSE, curi);
+		bfwin_recent_menu_add(doc->bfwin, FALSE, curi, doc->uri);
 		g_free(curi);
 	}
 	bfwin_notebook_block_signals(BFWIN(doc->bfwin));
