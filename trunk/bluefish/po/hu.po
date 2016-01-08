@@ -1719,7 +1719,7 @@ msgstr ""
 #: ../src/external_commands.c:755
 msgid ""
 "This command requires the current document to be a local file. Please save "
-"your document to a loacal file."
+"your document to a local file."
 msgstr ""
 "Ez a parancs azt igényli, hogy a jelenlegi dokumentum helyi fájl legyen. "
 "Mentse el a dokumentumot egy helyi fájlba."

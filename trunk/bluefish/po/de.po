@@ -1733,7 +1733,7 @@ msgstr ""
 #: ../src/external_commands.c:755
 msgid ""
 "This command requires the current document to be a local file. Please save "
-"your document to a loacal file."
+"your document to a local file."
 msgstr ""
 "Für diesen Befehl muss das aktuelle Dokument eine lokale Datei sein. Bitte "
 "Dokument erst als lokale Datei speichern."

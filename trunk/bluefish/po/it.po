@@ -1718,7 +1718,7 @@ msgstr ""
 #: ../src/external_commands.c:755
 msgid ""
 "This command requires the current document to be a local file. Please save "
-"your document to a loacal file."
+"your document to a local file."
 msgstr ""
 "Questo comando richiede che il documento corrente sia un file locale. Si "
 "prega di salvare il documento in un file locale."
