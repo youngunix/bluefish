@@ -33,6 +33,8 @@
 	<highlight name="sass-comment" style="comment" />
 	<highlight name="sass-flag" style="special-tag2" />
 	<highlight name="sass-variable" style="variable" />
+	<highlight name="sass-keyword" style="keyword" />
+	<highlight name="sass-brackets" style="brackets" />
 
 	<highlight name="css-brackets" style="brackets" />
 	<highlight name="css-comment" style="comment" />
@@ -53,7 +55,7 @@
 	<smartoutdent characters="}" />
 </properties>
 <definition>
-	<context id="c.html.css.main" symbols=" &#9;&#10;&#13;{}./*&lt;&gt;:$@+~[]()#,">
+	<context id="c.html.css.main" symbols=" &#9;&#10;&#13;{}./*&lt;&gt;:$@+~[]()#,@">
 
 		<element id="e.sass.variable" pattern="$[a-z0-9_-]+" is_regex="1" case_insens="1" highlight="sass-variable" />
 		
@@ -62,6 +64,15 @@
 		<element pattern="!default" />
 		</group>
 		
+		<group highlight="sass-keyword">
+		<autocomplete enable="1" />
+		<element pattern="@mixin" />
+		<element pattern="@if" />
+		<element pattern="@content" />
+		<element pattern="@include" />
+		<element pattern="@each" />
+		<element pattern="@media" />
+		</group>
 		
 		<element id="e.sass.comment" pattern="//" highlight="sass-comment">
 			<context symbols="&#10;&#13;&#9; " highlight="sass-comment">
@@ -77,38 +88,29 @@
 
 		&css-selectors;
 
-		<group highlight="css-html-media">
-			<element pattern="@media">
-			<context symbols=" &#9;&#10;&#13;{}.;,">
-				<group highlight="css-html-media" >
-					<autocomplete enable="1" />
-					<element pattern="all" />
-					<element pattern="aural" />
-					<element pattern="braille" />
-					<element pattern="embossed" />
-					<element pattern="handheld" />
-					<element pattern="print" />
-					<element pattern="projection" />
-					<element pattern="screen" />
-					<element pattern="tty" />
-					<element pattern="tv" />
-					<element id="e.css.media.lbrace" pattern="{" starts_block="1" highlight="css-brackets">
-						<context idref="c.html.css.main" />
-					</element>
-				</group>
-			</context>
-			</element>
-			<element pattern="}" ends_block="1" highlight="css-brackets" blockstartelement="e.css.media.lbrace" ends_context="2" />
+		<group highlight="css-html-media" >
+			<autocomplete enable="1" />
+			<element pattern="all" />
+			<element pattern="aural" />
+			<element pattern="braille" />
+			<element pattern="embossed" />
+			<element pattern="handheld" />
+			<element pattern="print" />
+			<element pattern="projection" />
+			<element pattern="screen" />
+			<element pattern="tty" />
+			<element pattern="tv" />
 		</group>
-		<element id="e.css.lbrace" pattern="{" starts_block="1" highlight="css-brackets" >
-			<context symbols=" &#9;&#10;&#13;{}.:&quot;';*/" id="c.css.rules">
-						<element idref="e.sass.variable" />
-						&css-rules;
+		
+		&css-rules;
+		
+		<element id="e.css.lbrace" pattern="{" starts_block="1" highlight="css-brackets" />
+		<element id="e.css.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" />
 
-						<element idref="e.css.lcomment" />
-						<element id="e.css.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="1" />
-					</context>
-		</element>
+		<element pattern="(" id="sass.lparen" starts_block="1" highlight="sass-brackets" />
+		<element pattern=")" highlight="sass-brackets" ends_block="1" blockstartelement="sass.lparen" />
+
+
 	</context>
 </definition>
 </bflang>
