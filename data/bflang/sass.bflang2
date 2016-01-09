@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!--
+	Bluefish HTML Editor
+	sass.bflang2 $Revision: 8559 $
+
+	Copyright 2016 Olivier Sessink
+
+    This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<!DOCTYPE bflang [
+	<!ENTITY css-selectors SYSTEM "css-selectors.bfinc">
+	<!ENTITY css-rules SYSTEM "css-rules.bfinc">
+]>
+<bflang name="Sass" version="2.0">
+<header>
+	<mime type="text/plain?sass" />
+	<mime type="application/octet-stream?sass" />
+	<option name="load_reference" default="1" />
+	<option name="load_completion" default="1" />
+	<option name="show_in_menu" default="0" />
+
+	<highlight name="sass-comment" style="comment" />
+	<highlight name="sass-flag" style="special-tag2" />
+	<highlight name="sass-variable" style="variable" />
+
+	<highlight name="css-brackets" style="brackets" />
+	<highlight name="css-comment" style="comment" />
+	<highlight name="css-html-tag" style="tag" />
+	<highlight name="css-html-classid" style="tag" />
+	<highlight name="css-html-media" style="special-tag" />
+	<highlight name="css-keyword" style="keyword" />
+	<highlight name="css-property" style="special-keyword" />
+	<highlight name="css-draft-property" style="special-tag3" />
+	<highlight name="css-string" style="string" />
+	<highlight name="css-value" style="value" />
+	<highlight name="css-operator" style="operator" />
+</header>
+<properties>
+	<comment type="block" start="/*" end="*/" />
+	<comment type="line" start="//" />
+	<smartindent characters="{" />
+	<smartoutdent characters="}" />
+</properties>
+<definition>
+	<context id="c.html.css.main" symbols=" &#9;&#10;&#13;{}./*&lt;&gt;:$@+~[]()#,">
+
+		<element id="e.sass.variable" pattern="$[a-z0-9_-]+" is_regex="1" case_insens="1" highlight="sass-variable" />
+		
+		<group highlight="sass-flag">
+		<element pattern="!global"  />
+		<element pattern="!default" />
+		</group>
+		
+		
+		<element id="e.sass.comment" pattern="//" highlight="sass-comment">
+			<context symbols="&#10;&#13;&#9; " highlight="sass-comment">
+				<element pattern="(&#10;|&#13;|&#13;&#10;)" is_regex="1" highlight="sass-comment" ends_context="1" />
+			</context>
+		</element>
+		
+		<element id="e.css.lcomment" pattern="/*" starts_block="1" highlight="css-comment">
+			<context symbols="*/&#9;&#10;&#13;@ " highlight="css-comment">
+				<element pattern="*/" ends_block="1" blockstartelement="e.css.lcomment" highlight="css-comment" ends_context="1" />
+			</context>
+		</element>
+
+		&css-selectors;
+
+		<group highlight="css-html-media">
+			<element pattern="@media">
+			<context symbols=" &#9;&#10;&#13;{}.;,">
+				<group highlight="css-html-media" >
+					<autocomplete enable="1" />
+					<element pattern="all" />
+					<element pattern="aural" />
+					<element pattern="braille" />
+					<element pattern="embossed" />
+					<element pattern="handheld" />
+					<element pattern="print" />
+					<element pattern="projection" />
+					<element pattern="screen" />
+					<element pattern="tty" />
+					<element pattern="tv" />
+					<element id="e.css.media.lbrace" pattern="{" starts_block="1" highlight="css-brackets">
+						<context idref="c.html.css.main" />
+					</element>
+				</group>
+			</context>
+			</element>
+			<element pattern="}" ends_block="1" highlight="css-brackets" blockstartelement="e.css.media.lbrace" ends_context="2" />
+		</group>
+		<element id="e.css.lbrace" pattern="{" starts_block="1" highlight="css-brackets" >
+			<context symbols=" &#9;&#10;&#13;{}.:&quot;';*/" id="c.css.rules">
+						<element idref="e.sass.variable" />
+						&css-rules;
+
+						<element idref="e.css.lcomment" />
+						<element id="e.css.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="1" />
+					</context>
+		</element>
+	</context>
+</definition>
+</bflang>
