@@ -1128,6 +1128,24 @@ lang_mode_menu_activate(GtkAction * action, gpointer user_data)
 	}
 }
 
+static void
+create_single_lang_mode_menu(Tbfwin *bfwin, Tbflang *bflang, gint value, gboolean set_active, GSList **group)
+{
+	GtkRadioAction *action;
+	action = gtk_radio_action_new(bflang->name, bflang->name, NULL, NULL, value);
+	DEBUG_MSG("bfwin_create_single_lang_mode_menu, create action %p for lang %p (%s)\n", action, bflang,bflang->name);
+	gtk_action_group_add_action(bfwin->lang_mode_group, GTK_ACTION(action));
+	gtk_radio_action_set_group(action, *group);
+	*group = gtk_radio_action_get_group(action);
+	g_object_set_data(G_OBJECT(action), "bflang", (gpointer) bflang);
+	gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(action), set_active);
+	g_signal_connect(G_OBJECT(action), "activate", G_CALLBACK(lang_mode_menu_activate), bfwin);
+	gtk_ui_manager_add_ui(bfwin->uimanager, bfwin->lang_mode_merge_id,
+								  "/MainMenu/DocumentMenu/DocumentLangMode/LangModePlaceholder", bflang->name,
+								  bflang->name, GTK_UI_MANAGER_MENUITEM, FALSE);
+	g_object_unref(action);
+}
+
 void
 lang_mode_menu_create(Tbfwin * bfwin)
 {
@@ -1155,28 +1173,15 @@ lang_mode_menu_create(Tbfwin * bfwin)
 	for (list = g_list_first(freelist); list; list = list->next) {
 		Tbflang *bflang = (Tbflang *) list->data;
 		if (bflang->in_menu) {
-			GtkRadioAction *action;
-			action = gtk_radio_action_new(bflang->name, bflang->name, NULL, NULL, value);
-			DEBUG_MSG("lang_mode_menu_create, create action %p for lang %p (%s)\n", action, bflang,
-					  bflang->name);
-			gtk_action_group_add_action(bfwin->lang_mode_group, GTK_ACTION(action));
-			gtk_radio_action_set_group(action, group);
-			group = gtk_radio_action_get_group(action);
-			g_object_set_data(G_OBJECT(action), "bflang", (gpointer) bflang);
-			if (bfwin->current_document
-				&& BLUEFISH_TEXT_VIEW(bfwin->current_document->view)->bflang == bflang) {
-				gtk_toggle_action_set_active(GTK_TOGGLE_ACTION(action), TRUE);
-			}
-			g_signal_connect(G_OBJECT(action), "activate", G_CALLBACK(lang_mode_menu_activate), bfwin);
-			gtk_ui_manager_add_ui(bfwin->uimanager, bfwin->lang_mode_merge_id,
-								  "/MainMenu/DocumentMenu/DocumentLangMode/LangModePlaceholder", bflang->name,
-								  bflang->name, GTK_UI_MANAGER_MENUITEM, FALSE);
-			g_object_unref(action);
+			create_single_lang_mode_menu(bfwin, bflang, value, bfwin->current_document
+				&& BLUEFISH_TEXT_VIEW(bfwin->current_document->view)->bflang == bflang, &group);
 			value++;
 		}
 	}
 	g_list_free(freelist);
 }
+
+
 
 void
 bfwin_main_ui_init(Tbfwin * bfwin, GtkWidget * vbox)
@@ -1571,8 +1576,13 @@ bfwin_lang_mode_set_wo_activate(Tbfwin * bfwin, Tbflang * bflang)
 	action = gtk_action_group_get_action(bfwin->lang_mode_group, bflang->name);
 	DEBUG_MSG("bfwin_lang_mode_set_wo_activate, got action %p for bflang=%s\n", action, bflang->name);
 	if (!action) {
+		GSList *group;
 		/* because we hide certain languages from the menu it is perfectly fine if we cannot find an
-		   action for a certain language file. */
+		action for a certain language file. In such a situation we have to create it. Text always exist,
+		so we take the group from Text */
+		action = gtk_action_group_get_action(bfwin->lang_mode_group,"Text");
+		group = gtk_radio_action_get_group(action);
+		create_single_lang_mode_menu(bfwin, bflang, -1, TRUE, &group);
 		return;
 	}
 
