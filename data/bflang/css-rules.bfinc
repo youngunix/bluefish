@@ -46,6 +46,7 @@ href="http://www.w3.org/TR/css3-flexbox/#align-content">www.w3.org</a></referenc
 </group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element id="e.sass.newline_end" idref="e.sass.newline_end" pattern="(&#9;|&#10;|&#13;)" is_regex="1" ends_context="1"/></group>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
@@ -76,6 +77,7 @@ href="http://www.w3.org/TR/css3-flexbox/#align-items">www.w3.org</a></reference>
 	<element pattern="stretch"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -108,6 +110,7 @@ href="http://www.w3.org/TR/css3-flexbox/#align-self">www.w3.org</a></reference>
 	<element pattern="stretch"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -132,6 +135,7 @@ Shorthand property combines six of the animation properties into a single proper
 href="http://www.w3.org/TR/css3-animations/#animation-shorthand-property">www.w3.org</a></reference>
 <context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -156,6 +160,7 @@ Defines what values are applied by the animation outside the time it is executin
 href="http://www.w3.org/TR/css3-animations/#animation-delay-property">www.w3.org</a></reference>
 <context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -187,6 +192,7 @@ href="http://www.w3.org/TR/css3-animations/#animation-direction-property">www.w3
 	<element pattern="alternate-reverse"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -211,6 +217,7 @@ Defines the length of time that an animation takes to complete one cycle.
 href="http://www.w3.org/TR/css3-animations/#animation-duration-property">www.w3.org</a></reference>
 <context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -242,6 +249,7 @@ href="http://www.w3.org/TR/css3-animations/#animation-fill-mode-property">www.w3
 	<element pattern="both"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -270,6 +278,7 @@ href="http://www.w3.org/TR/css3-animations/#animation-iteration-count-property">
 	<element pattern="infinite"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -298,6 +307,7 @@ href="http://www.w3.org/TR/css3-animations/#animation-name-property">www.w3.org<
 	<element pattern="none"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -327,6 +337,7 @@ href="http://www.w3.org/TR/css3-animations/#animation-play-state-property">www.w
 	<element pattern="paused"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -375,6 +386,7 @@ href="http://www.w3.org/TR/css3-animations/#animation-timing-function-property">
 	</context>
 </element>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -414,6 +426,7 @@ href="http://www.w3.org/TR/2007/CR-CSS21-20070719/aural.html#spatial-props">www.
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -442,6 +455,7 @@ href="http://www.w3.org/TR/css3-transforms/#backface-visibility-property">www.w3
 	<element pattern="hidden"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -660,6 +674,7 @@ href="http://www.w3.org/TR/css3-background/#the-background">www.w3.org</a></refe
 <element id="e.css.percent" pattern="[0-9]+\.?[0-9]*%" is_regex="1" highlight="css-value"/>
 <element id="e.css.length" pattern="[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px)" is_regex="1" highlight="css-value"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -687,6 +702,7 @@ href="http://www.w3.org/TR/css3-background/#the-background-attachment">www.w3.or
 	<element pattern="local"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -715,6 +731,7 @@ href="http://www.w3.org/TR/css3-background/#the-background-clip">www.w3.org</a><
 	<element pattern="content-box"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -741,6 +758,7 @@ href="http://www.w3.org/TR/css3-background/#the-background-color">www.w3.org</a>
 	<autocomplete append=";" />
 </element>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -771,6 +789,7 @@ href="http://www.w3.org/TR/css3-background/#the-background-image">www.w3.org</a>
 <element pattern="none"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -799,6 +818,7 @@ href="http://www.w3.org/TR/css3-background/#the-background-origin">www.w3.org</a
 	<element pattern="content-box"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -858,6 +878,7 @@ href="http://www.w3.org/TR/css3-background/#the-background-position">www.w3.org<
 <element idref="e.css.percent"/>
 <element idref="e.css.length"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -889,6 +910,7 @@ href="http://www.w3.org/TR/css3-background/#the-background-repeat">www.w3.org</a
 	<element pattern="space"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -917,6 +939,7 @@ href="http://www.w3.org/TR/css3-background/#the-background-size">www.w3.org</a><
 	<element pattern="contain"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -943,6 +966,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-shorthands">www.w3.org</a
 <element pattern="(rgb|hsl)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *\)" highlight="css-value" is_regex="1" case_insens="1"/>
 <element idref="e.css.length"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -996,6 +1020,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-radius">www.w3.org</a></r
 <context id="c.css.length_percentage" idref="c.css.length_percentage" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 	<element pattern="[0-9]+%" is_regex="1" highlight="css-value" />
 	<element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 	<element idref="e.css.lcomment"/>
 	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1045,6 +1070,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-style">www.w3.org</a></re
 	<element pattern="outset"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1073,6 +1099,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-style">www.w3.org</a></re
 	<element pattern="thick"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1101,6 +1128,7 @@ href="http://www.w3.org/TR/CSS2/tables.html#borders">www.w3.org</a></reference>
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1138,6 +1166,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-color">www.w3.org</a></re
 href="http://www.w3.org/TR/css3-background/#the-border-image">www.w3.org</a></reference>
 <context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1161,6 +1190,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-image-outset">www.w3.org<
 <context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <element idref="e.css.length"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1190,6 +1220,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-image-repeat">www.w3.org<
 	<element pattern="space"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1218,6 +1249,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-image-slice">www.w3.org</
 <element idref="e.css.length"/>
 <element idref="e.css.percent"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1248,6 +1280,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-image-source">www.w3.org<
 	<element pattern="none"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1276,6 +1309,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-image-width">www.w3.org</
 <element idref="e.css.length"/>
 <element idref="e.css.percent"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1437,7 +1471,8 @@ href="http://www.w3.org/TR/CSS2/tables.html#borders">www.w3.org</a></reference>
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.length"/>
-<element idref="e.css.end"/><element idref="e.css.lcomment"/>
+<element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group><element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
@@ -1585,6 +1620,7 @@ href="http://www.w3.org/TR/CSS2/visuren.html#position-props">www.w3.org</a></ref
 </group>
 <element id="e.css.length.neg" pattern="-?[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px|%)" is_regex="1" highlight="css-value"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1613,6 +1649,7 @@ href="http://www.w3.org/TR/css3-background/#the-box-shadow">www.w3.org</a></refe
 </group>
 <element id="e.css.length.neg" pattern="-?[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px|%)" is_regex="1" highlight="css-value"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1643,6 +1680,7 @@ href="http://www.w3.org/TR/CSS2/tables.html#propdef-caption-side">www.w3.org</a>
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1673,6 +1711,7 @@ href="http://www.w3.org/TR/CSS2/visuren.html#flow-control">www.w3.org</a></refer
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1713,6 +1752,7 @@ href="http://www.w3.org/TR/CSS21/visufx.html#clipping">www.w3.org</a></reference
 	</context>
 </element>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1790,6 +1830,7 @@ what to do now????
 </element>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1820,6 +1861,7 @@ href="http://www.w3.org/TR/css3-content/#counters">www.w3.org</a></reference>
 <element pattern="[a-z_][a-z0-9._-]+" is_regex="1" case_insens="1" highlight="css-value"/>
 <element pattern="[-][^0-9][a-z0-9._-]+" is_regex="1" case_insens="1" highlight="css-value"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1850,6 +1892,7 @@ href="http://www.w3.org/TR/css3-content/#counters">www.w3.org</a></reference>
 <element pattern="[a-z_][a-z0-9._-]+" is_regex="1" case_insens="1" highlight="css-value"/>
 <element pattern="[-][^0-9][a-z0-9._-]+" is_regex="1" case_insens="1" highlight="css-value"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1872,6 +1915,7 @@ href="http://www.w3.org/TR/css3-content/#counters">www.w3.org</a></reference>
 href="http://www.w3.org/TR/css3-speech/#cue-props-cue">www.w3.org</a></reference>
 <context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1894,6 +1938,7 @@ href="http://www.w3.org/TR/css3-speech/#cue-props-cue">www.w3.org</a></reference
 href="http://www.w3.org/TR/css3-speech/#cue-props-cue-before-after">www.w3.org</a></reference>
 <context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1916,6 +1961,7 @@ href="http://www.w3.org/TR/css3-speech/#cue-props-cue-before-after">www.w3.org</
 href="http://www.w3.org/TR/css3-speech/#cue-props-cue-before-after">www.w3.org</a></reference>
 <context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1979,6 +2025,7 @@ href="http://www.w3.org/TR/css3-ui/#cursor">www.w3.org</a></reference>
 	<context idref="c.css.uri"/>
 </element>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2007,6 +2054,7 @@ href="http://www.w3.org/TR/CSS2/visuren.html#propdef-direction">www.w3.org</a></
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2048,6 +2096,7 @@ href="http://www.w3.org/TR/CSS21/visuren.html#display-prop">www.w3.org</a></refe
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2076,6 +2125,7 @@ href="http://www.w3.org/TR/CSS2/tables.html#propdef-empty-cells">www.w3.org</a><
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2105,6 +2155,7 @@ href="http://www.w3.org/TR/CSS2/visuren.html#float-position">www.w3.org</a></ref
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2166,6 +2217,7 @@ href="http://www.w3.org/TR/CSS2/fonts.html#font-shorthand">www.w3.org</a></refer
 <element idref="e.css.length"/>
 <element idref="e.css.percent"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2200,6 +2252,7 @@ href="http://www.w3.org/TR/CSS2/fonts.html#font-family-prop">www.w3.org</a></ref
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2238,6 +2291,7 @@ href="http://www.w3.org/TR/CSS2/fonts.html#font-size-props">www.w3.org</a></refe
 <element idref="e.css.length"/>
 <element idref="e.css.percent"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2267,6 +2321,7 @@ href="http://www.w3.org/TR/CSS2/fonts.html#font-styling">www.w3.org</a></referen
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2295,6 +2350,7 @@ href="http://www.w3.org/TR/CSS2/fonts.html#small-caps">www.w3.org</a></reference
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2326,6 +2382,7 @@ href="http://www.w3.org/TR/CSS2/fonts.html#font-boldness">www.w3.org</a></refere
 </group>
 <element pattern="(100|200|300|400|500|600|700|800|900)" is_regex="1" highlight="css-value"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2351,6 +2408,7 @@ href="http://www.w3.org/TR/CSS21/visudet.html#the-height-property">www.w3.org</a
 <element idref="e.css.percent"/>
 <element idref="e.css.length"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2395,6 +2453,7 @@ href="http://www.w3.org/TR/CSS2/text.html#spacing-props">www.w3.org</a></referen
 </group>
 <element pattern="-?[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px)" is_regex="1" highlight="css-value"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2425,6 +2484,7 @@ href="http://www.w3.org/TR/CSS2/visudet.html#propdef-line-height">www.w3.org</a>
 <element idref="e.css.length"/>
 <element idref="e.css.percent"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2472,6 +2532,7 @@ href="http://www.w3.org/TR/CSS2/generate.html#propdef-list-style">www.w3.org</a>
 	<context idref="c.css.uri"/>
 </element>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2503,6 +2564,7 @@ href="http://www.w3.org/TR/CSS2/generate.html#propdef-list-style-image">www.w3.o
 	<context idref="c.css.uri"/>
 </element>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2531,6 +2593,7 @@ href="http://www.w3.org/TR/CSS2/generate.html#propdef-list-style-position">www.w
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2572,6 +2635,7 @@ href="http://www.w3.org/TR/CSS2/generate.html#propdef-list-style-type">www.w3.or
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2602,6 +2666,7 @@ href="http://www.w3.org/TR/CSS21/box.html#propdef-margin">www.w3.org</a></refere
 </group>
 <element idref="e.css.length.neg"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2632,6 +2697,7 @@ href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-bottom">www.w3.org</a><
 </group>
 <element idref="e.css.length.neg"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2662,6 +2728,7 @@ href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-left">www.w3.org</a></r
 </group>
 <element idref="e.css.length.neg"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2692,6 +2759,7 @@ href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-right">www.w3.org</a></
 </group>
 <element idref="e.css.length.neg"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2722,6 +2790,7 @@ href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-top">www.w3.org</a></re
 </group>
 <element idref="e.css.length.neg"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2752,6 +2821,7 @@ href="http://www.w3.org/TR/CSS21/visudet.html#propdef-max-height">www.w3.org</a>
 <element idref="e.css.length"/>
 <element idref="e.css.percent"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2782,6 +2852,7 @@ href="http://www.w3.org/TR/CSS21/visudet.html#propdef-max-width">www.w3.org</a><
 <element idref="e.css.length"/>
 <element idref="e.css.percent"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2812,6 +2883,7 @@ href="http://www.w3.org/TR/CSS21/visudet.html#propdef-min-height">www.w3.org</a>
 <element idref="e.css.length"/>
 <element idref="e.css.percent"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2842,6 +2914,7 @@ href="http://www.w3.org/TR/CSS21/visudet.html#propdef-min-width">www.w3.org</a><
 <element idref="e.css.length"/>
 <element idref="e.css.percent"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -2865,6 +2938,7 @@ href="http://www.w3.org/TR/css3-color/#transparency">www.w3.org</a></reference>
 <context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <element pattern="0|1|0.[0-9]" highlight="css-value" is_regex="1" />
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3058,6 +3132,7 @@ href="http://www.w3.org/TR/CSS2/ui.html#propdef-outline">www.w3.org</a></referen
 </group>
 <element idref="e.css.length"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3109,6 +3184,7 @@ href="http://www.w3.org/TR/CSS2/ui.html#propdef-outline-style">www.w3.org</a></r
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3139,6 +3215,7 @@ href="http://www.w3.org/TR/CSS2/ui.html#propdef-outline-width">www.w3.org</a></r
 </group>
 <element idref="e.css.length"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3169,6 +3246,7 @@ href="http://www.w3.org/TR/CSS21/visufx.html#overflow">www.w3.org</a></reference
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3199,6 +3277,7 @@ href="http://www.w3.org/TR/CSS21/visufx.html#overflow">www.w3.org</a></reference
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3229,6 +3308,7 @@ href="http://www.w3.org/TR/CSS21/visufx.html#overflow">www.w3.org</a></reference
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3346,6 +3426,7 @@ relative </reference>
 	<autocomplete append=";" />
 </element>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3385,6 +3466,7 @@ href="http://www.w3.org/TR/CSS21/generate.html#quotes-specify">www.w3.org</a></r
 </context>
 </element>-->
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3416,6 +3498,7 @@ href="http://www.w3.org/TR/css3-ui/#resize">www.w3.org</a></reference>
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3459,6 +3542,7 @@ href="http://www.w3.org/TR/CSS21/tables.html#width-layout">www.w3.org</a></refer
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3489,6 +3573,7 @@ href="http://www.w3.org/TR/CSS21/text.html#alignment-prop">www.w3.org</a></refer
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3522,6 +3607,7 @@ href="http://www.w3.org/TR/CSS21/text.html#lining-striking-props">www.w3.org</a>
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3552,6 +3638,7 @@ href="http://www.w3.org/TR/CSS21/text.html#indentation-prop">www.w3.org</a></ref
 <element idref="e.css.length"/>
 <element idref="e.css.percent"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3583,6 +3670,7 @@ href="http://www.w3.org/TR/css-text-decor-3/#text-shadow-property">www.w3.org</a
 <element idref="e.css.length"/>
 <element idref="e.css.percent"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3615,6 +3703,7 @@ href="http://www.w3.org/TR/CSS21/text.html#caps-prop">www.w3.org</a></reference>
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3653,6 +3742,7 @@ href="http://www.w3.org/TR/CSS2/visuren.html#position-props">www.w3.org</a></ref
 href="http://www.w3.org/TR/css3-transitions/#transition-shorthand-property">www.w3.org</a></reference>
 <context symbols=" &#9;&#10;&#13;{}.;:">
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3675,6 +3765,7 @@ href="http://www.w3.org/TR/css3-transitions/#transition-shorthand-property">www.
 href="http://www.w3.org/TR/css3-transitions/#transition-delay-property">www.w3.org</a></reference>
 <context symbols=" &#9;&#10;&#13;{}.;:">
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3697,6 +3788,7 @@ href="http://www.w3.org/TR/css3-transitions/#transition-delay-property">www.w3.o
 href="http://www.w3.org/TR/css3-transitions/#transition-duration-property">www.w3.org</a></reference>
 <context symbols=" &#9;&#10;&#13;{}.;:">
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3811,6 +3903,7 @@ Updated: 2014-03-10
 	<element pattern="z-index"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3857,6 +3950,7 @@ href="http://www.w3.org/TR/css3-transitions/#transition-timing-function-property
 	</context>
 </element>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3885,6 +3979,7 @@ href="http://www.w3.org/TR/CSS21/visuren.html#propdef-unicode-bidi">www.w3.org</
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3921,6 +4016,7 @@ href="http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align">www.w3.org
 </group>
 <element idref="e.css.length.neg"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3950,6 +4046,7 @@ href="http://www.w3.org/TR/CSS21/visufx.html#visibility">www.w3.org</a></referen
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -3981,6 +4078,7 @@ href="http://www.w3.org/TR/CSS21/text.html#white-space-prop">www.w3.org</a></ref
 	<element pattern="inherit"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -4006,6 +4104,7 @@ href="http://www.w3.org/TR/CSS21/visudet.html#the-width-property">www.w3.org</a>
 <element idref="e.css.percent"/>
 <element idref="e.css.length"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -4035,6 +4134,7 @@ href="http://www.w3.org/TR/CSS21/text.html#propdef-word-spacing">www.w3.org</a><
 </group>
 <element pattern="-?[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px)" is_regex="1" highlight="css-value"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -4062,6 +4162,7 @@ href="http://www.w3.org/TR/css3-text/#overflow-wrap-property">www.w3.org</a></re
 	<element pattern="break-word"/>
 </group>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -4091,6 +4192,7 @@ href="http://www.w3.org/TR/CSS21/visuren.html#z-index">www.w3.org</a></reference
 <element pattern="[0-9]+\.?[0-9]*" is_regex="1" highlight="css-value"/>
 <element idref="e.css.length"/>
 <element idref="e.css.end"/>
+<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
