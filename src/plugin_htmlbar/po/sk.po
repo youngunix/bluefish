@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 17-01-06_sk-2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2014-10-09 01:05-0700\n"
+"POT-Creation-Date: 2016-01-08 11:41+0100\n"
 "PO-Revision-Date: 2008-02-02 15:12+0100\n"
 "Last-Translator: Pavol Klacansky <pavolzetor@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -84,1343 +84,1343 @@ msgstr "Upraviť tag"
 msgid "Htmlbar"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar.c:267 src/plugin_htmlbar/prefs.c:81
+#: src/plugin_htmlbar/htmlbar.c:267 src/plugin_htmlbar/prefs.c:67
 msgid "HTML Features"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:970
+#: src/plugin_htmlbar/htmlbar_uimanager.c:955
 #, fuzzy
 msgid "T_ags"
 msgstr "/_Značky"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:971
+#: src/plugin_htmlbar/htmlbar_uimanager.c:956
 #, fuzzy
 msgid "_Headings"
 msgstr "Nadpis"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:972
+#: src/plugin_htmlbar/htmlbar_uimanager.c:957
 msgid "H_1"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:972
+#: src/plugin_htmlbar/htmlbar_uimanager.c:957
 #, fuzzy
 msgid "Insert H1 tag"
 msgstr "Vlož obrázok"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:974
+#: src/plugin_htmlbar/htmlbar_uimanager.c:959
 msgid "H_2"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:974
+#: src/plugin_htmlbar/htmlbar_uimanager.c:959
 #, fuzzy
 msgid "Insert H2 tag"
 msgstr "Vlož obrázok"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:976
+#: src/plugin_htmlbar/htmlbar_uimanager.c:961
 msgid "H_3"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:976
+#: src/plugin_htmlbar/htmlbar_uimanager.c:961
 #, fuzzy
 msgid "Insert H3 tag"
 msgstr "Vlož obrázok"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:978
+#: src/plugin_htmlbar/htmlbar_uimanager.c:963
 msgid "H_4"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:978
+#: src/plugin_htmlbar/htmlbar_uimanager.c:963
 #, fuzzy
 msgid "Insert H4 tag"
 msgstr "Vlož obrázok"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:980
+#: src/plugin_htmlbar/htmlbar_uimanager.c:965
 msgid "H_5"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:980
+#: src/plugin_htmlbar/htmlbar_uimanager.c:965
 #, fuzzy
 msgid "Insert H5 tag"
 msgstr "Vlož obrázok"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:982
+#: src/plugin_htmlbar/htmlbar_uimanager.c:967
 msgid "H_6"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:982
+#: src/plugin_htmlbar/htmlbar_uimanager.c:967
 #, fuzzy
 msgid "Insert H6 tag"
 msgstr "Vlož obrázok"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:984
+#: src/plugin_htmlbar/htmlbar_uimanager.c:969
 msgid "_Entities"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:985
+#: src/plugin_htmlbar/htmlbar_uimanager.c:970
 #, fuzzy
 msgid "_Non-breaking space"
 msgstr "Nedelitelná medzera"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:986
+#: src/plugin_htmlbar/htmlbar_uimanager.c:971
 msgid "_Broken bar ¦"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:987
+#: src/plugin_htmlbar/htmlbar_uimanager.c:972
 msgid "Soft _hyphen -"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:988
+#: src/plugin_htmlbar/htmlbar_uimanager.c:973
 #, fuzzy
 msgid "_Format by Context"
 msgstr "/Značky/Formát podľa obsahu"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:989
+#: src/plugin_htmlbar/htmlbar_uimanager.c:974
 #, fuzzy
 msgid "_Strong"
 msgstr "Silné"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:989
+#: src/plugin_htmlbar/htmlbar_uimanager.c:974
 msgid "Strong"
 msgstr "Silné"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:991
+#: src/plugin_htmlbar/htmlbar_uimanager.c:976
 #, fuzzy
 msgid "_Emphasis"
 msgstr "Zvýraznené"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:991
+#: src/plugin_htmlbar/htmlbar_uimanager.c:976
 msgid "Emphasis"
 msgstr "Zvýraznené"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:993
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1065
+#: src/plugin_htmlbar/htmlbar_uimanager.c:978
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1050
 #, fuzzy
 msgid "_Definition"
 msgstr "Definícia"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:993
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1065
+#: src/plugin_htmlbar/htmlbar_uimanager.c:978
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1050
 msgid "Definition"
 msgstr "Definícia"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:995
+#: src/plugin_htmlbar/htmlbar_uimanager.c:980
 #, fuzzy
 msgid "_Code"
 msgstr "Kód"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:995
+#: src/plugin_htmlbar/htmlbar_uimanager.c:980
 msgid "Code"
 msgstr "Kód"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:996
+#: src/plugin_htmlbar/htmlbar_uimanager.c:981
 #, fuzzy
 msgid "Sa_mple"
 msgstr "Ukážka"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:996
+#: src/plugin_htmlbar/htmlbar_uimanager.c:981
 msgid "Sample"
 msgstr "Ukážka"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:997
+#: src/plugin_htmlbar/htmlbar_uimanager.c:982
 #, fuzzy
 msgid "_Keyboard"
 msgstr "Klávesnica"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:997
+#: src/plugin_htmlbar/htmlbar_uimanager.c:982
 msgid "Keyboard"
 msgstr "Klávesnica"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:999
+#: src/plugin_htmlbar/htmlbar_uimanager.c:984
 #, fuzzy
 msgid "_Variable"
 msgstr "Premenná"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:999
+#: src/plugin_htmlbar/htmlbar_uimanager.c:984
 msgid "Variable"
 msgstr "Premenná"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1001
+#: src/plugin_htmlbar/htmlbar_uimanager.c:986
 #, fuzzy
 msgid "Ci_tation"
 msgstr "Citácia"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1001
+#: src/plugin_htmlbar/htmlbar_uimanager.c:986
 msgid "Citation"
 msgstr "Citácia"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1003
+#: src/plugin_htmlbar/htmlbar_uimanager.c:988
 #, fuzzy
 msgid "_Abbreviation"
 msgstr "Zkratka"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1003
+#: src/plugin_htmlbar/htmlbar_uimanager.c:988
 msgid "Abbreviation"
 msgstr "Zkratka"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1005
+#: src/plugin_htmlbar/htmlbar_uimanager.c:990
 #, fuzzy
 msgid "Ac_ronym"
 msgstr "Zástupný symbol"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1005
+#: src/plugin_htmlbar/htmlbar_uimanager.c:990
 msgid "Acronym"
 msgstr "Zástupný symbol"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1007
+#: src/plugin_htmlbar/htmlbar_uimanager.c:992
 #, fuzzy
 msgid "_Insert"
 msgstr "Vložiť čas"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1007
+#: src/plugin_htmlbar/htmlbar_uimanager.c:992
 #, fuzzy
 msgid "Insert"
 msgstr "Vložiť čas"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1008
+#: src/plugin_htmlbar/htmlbar_uimanager.c:993
 #, fuzzy
 msgid "De_lete"
 msgstr " _Zmazať "
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1008
+#: src/plugin_htmlbar/htmlbar_uimanager.c:993
 #, fuzzy
 msgid "Delete"
 msgstr " _Zmazať "
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1009
+#: src/plugin_htmlbar/htmlbar_uimanager.c:994
 #, fuzzy
 msgid "Format by L_ayout"
 msgstr "/Značky/_Formát podľa umiestnenia"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1010
+#: src/plugin_htmlbar/htmlbar_uimanager.c:995
 #, fuzzy
 msgid "_Bold"
 msgstr "Tučné"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1010
+#: src/plugin_htmlbar/htmlbar_uimanager.c:995
 msgid "Bold"
 msgstr "Tučné"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1012
+#: src/plugin_htmlbar/htmlbar_uimanager.c:997
 #, fuzzy
 msgid "_Italic"
 msgstr "Kurzivá"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1012
+#: src/plugin_htmlbar/htmlbar_uimanager.c:997
 msgid "Italic"
 msgstr "Kurzivá"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1014
+#: src/plugin_htmlbar/htmlbar_uimanager.c:999
 msgid "_Underline"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1014
+#: src/plugin_htmlbar/htmlbar_uimanager.c:999
 msgid "Underline"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1016
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1001
 #, fuzzy
 msgid "_Strikeout"
 msgstr "Skript"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1016
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1001
 #, fuzzy
 msgid "Strikeout"
 msgstr "Skript"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1018
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1003
 msgid "Sm_all"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1018
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1003
 msgid "Small"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1019
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1004
 msgid "Bi_g"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1019
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1004
 msgid "Big"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1020
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1005
 #, fuzzy
 msgid "Format _General"
 msgstr "/Značky/Formát obecný"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1021
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1006
 #, fuzzy
 msgid "_Paragraph"
 msgstr "Odstavec"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1021 src/plugin_htmlbar/html.c:878
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1006 src/plugin_htmlbar/html.c:880
 msgid "Paragraph"
 msgstr "Odstavec"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1023
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1008
 #, fuzzy
 msgid "_Break"
 msgstr "Konec riadku"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1023
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1008
 msgid "Break"
 msgstr "Konec riadku"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1025
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1010
 #, fuzzy
 msgid "Break clear _all"
 msgstr "Zalomenie a vymazanie"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1025
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1010
 msgid "Break and clear"
 msgstr "Zalomenie a vymazanie"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1027
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1012
 #, fuzzy
 msgid "_Non-Breaking Space"
 msgstr "Nedelitelná medzera"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1027
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1012
 msgid "Non-breaking space"
 msgstr "Nedelitelná medzera"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1029
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1014
 #, fuzzy
 msgid "Font Si_ze +1"
 msgstr "Veľkosť písma +1"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1029
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1014
 msgid "Font Size +1"
 msgstr "Veľkosť písma +1"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1031
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1016
 #, fuzzy
 msgid "Font _Size -1"
 msgstr "Veľkosť písma -1"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1031
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1016
 msgid "Font Size -1"
 msgstr "Veľkosť písma -1"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1033
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1018
 #, fuzzy
 msgid "Preformatted _Text"
 msgstr "Predformatovaný text"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1033
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1018
 msgid "Preformatted Text"
 msgstr "Predformatovaný text"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1035
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1020
 #, fuzzy
 msgid "Su_bscript"
 msgstr "Podprogram"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1035
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1020
 msgid "Subscript"
 msgstr "Podprogram"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1037
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1022
 #, fuzzy
 msgid "Su_perscript"
 msgstr "Superprogram"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1037
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1022
 msgid "Superscript"
 msgstr "Superprogram"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1039
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1024
 #, fuzzy
 msgid "_Center"
 msgstr "Nastred"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1039
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1024
 msgid "Center"
 msgstr "Nastred"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1041
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1026
 msgid "Align _right"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1041
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1026
 msgid "Right Justify"
 msgstr "Zarovnavať vpravo"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1043
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1044
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1126
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1028
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1029
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1111
 #, fuzzy
 msgid "_Table"
 msgstr "Tabuľka"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1044
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1029
 #: src/plugin_htmlbar/html_table.c:101
 msgid "Table"
 msgstr "Tabuľka"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1046
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1031
 #, fuzzy
 msgid "Table _Row"
 msgstr "Riadok tabuľky"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1046
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1031
 #: src/plugin_htmlbar/html_table.c:242
 msgid "Table Row"
 msgstr "Riadok tabuľky"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1048
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1033
 #, fuzzy
 msgid "Table _Header"
 msgstr "Hlavička tabuľky"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1048
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1033
 #: src/plugin_htmlbar/html_table.c:363
 msgid "Table Header"
 msgstr "Hlavička tabuľky"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1050
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1035
 #, fuzzy
 msgid "Table _Data"
 msgstr "Bunka tabuľky"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1050
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1035
 #: src/plugin_htmlbar/html_table.c:361
 msgid "Table Data"
 msgstr "Bunka tabuľky"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1052
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1037
 #, fuzzy
 msgid "Table _Caption"
 msgstr "Nadpis tabuľky"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1052
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1037
 msgid "Table Caption"
 msgstr "Nadpis tabuľky"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1054
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1039
 #, fuzzy
 msgid "_List"
 msgstr " Zoznam "
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1055
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1040
 #, fuzzy
 msgid "Unordered _List"
 msgstr "Nečíslovaný zoznam"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1055
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1040
 msgid "Unordered List"
 msgstr "Nečíslovaný zoznam"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1057
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1042
 #, fuzzy
 msgid "_Ordered List"
 msgstr "Číslovaný zoznam"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1057
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1042
 msgid "Ordered List"
 msgstr "Číslovaný zoznam"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1059
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1044
 #, fuzzy
 msgid "List Ite_m"
 msgstr "Položka zoznamu"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1059
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1044
 msgid "List Item"
 msgstr "Položka zoznamu"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1061
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1046
 #, fuzzy
 msgid "De_finition List"
 msgstr "Zoznam definícií"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1061
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1046
 msgid "Definition List"
 msgstr "Zoznam definícií"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1063
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1048
 #, fuzzy
 msgid "Definition _Term"
 msgstr "Definičný termín"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1063
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1048
 msgid "Definition Term"
 msgstr "Definičný termín"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1067
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1052
 msgid "Men_u"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1067
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1052
 msgid "Menu"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1068
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1069
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1157
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1053
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1054
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1142
 msgid "F_orm"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1069
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1054
 #: src/plugin_htmlbar/html_form.c:156
 msgid "Form"
 msgstr "Formulár"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1070
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1055
 msgid "_Fieldset"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1071
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1056
 msgid "_Legend"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1072
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1057
 #, fuzzy
 msgid "L_abel"
 msgstr "Štít_ok:"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1073
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1058
 #, fuzzy
 msgid "_Input"
 msgstr "Vstup"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1074
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1059
 #, fuzzy
 msgid "_Button"
 msgstr "Tlačítko"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1075
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1060
 #, fuzzy
 msgid "_Select"
 msgstr "Výber"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1076
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1061
 #, fuzzy
 msgid "_Datalist"
 msgstr "Kurzivá"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1077
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1062
 #, fuzzy
 msgid "Opt_group"
 msgstr "Skupina prvkov Option"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1078
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1063
 #, fuzzy
 msgid "Optio_n"
 msgstr "Vlastnosť"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1079
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1064
 #, fuzzy
 msgid "_Textarea"
 msgstr "Textové pole"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1080
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1065
 msgid "_Keygen"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1081
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1066
 #, fuzzy
 msgid "O_utput"
 msgstr "Vstup"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1082
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1067
 msgid "_Progress"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1083
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1068
 #, fuzzy
 msgid "_Meter"
 msgstr "Nastred"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1084
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1069
 #, fuzzy
 msgid "_Misc"
 msgstr "/Značky/_Rôzné"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1085
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1070
 #, fuzzy
 msgid "Insert Generator _META-Tag"
 msgstr "/Značky/Rôzné/Vložiť Generator _META-Tag"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1087
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1072
 #, fuzzy
 msgid "_Span"
 msgstr "Span"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1088
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1073
 msgid "_Div"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1089
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1074
 #, fuzzy
 msgid "_Link"
 msgstr "Odkaz"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1090
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1075
 #, fuzzy
 msgid "S_cript"
 msgstr "Skript"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1091
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1076
 #, fuzzy
 msgid "_Anchor"
 msgstr "Rýchly odkaz"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1092
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1077
 msgid "_Image"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1093
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1078
 #, fuzzy
 msgid "_Comment"
 msgstr "Komentár"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1093
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1078
 #, fuzzy
 msgid "HTML Comment"
 msgstr "Komentár"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1095
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1080
 #, fuzzy
 msgid "Dial_ogs"
 msgstr "/Dialógy/_CSS"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1096
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1081
 #, fuzzy
 msgid "_General"
 msgstr "/Dialógy/_Všeobecné"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1097
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1082
 #, fuzzy
 msgid "_Quickstart..."
 msgstr "Rýchle spúšťanie..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1097
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1082
 #, fuzzy
 msgid "Quickstart..."
 msgstr "Rýchle spúšťanie..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1099
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1084
 #, fuzzy
 msgid "_Link Header..."
 msgstr "Hlavička tabuľky..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1099
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1084
 #, fuzzy
 msgid "Link Header..."
 msgstr "Hlavička tabuľky..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1101
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1086
 #, fuzzy
 msgid "_Body..."
 msgstr "Telo..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1101
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1086
 msgid "Body..."
 msgstr "Telo..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1103
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1088
 #, fuzzy
 msgid "_Script..."
 msgstr "Skript"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1103
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1088
 #, fuzzy
 msgid "Script..."
 msgstr "Skript"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1105
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1090
 msgid "_Anchor..."
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1105
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1090
 #, fuzzy
 msgid "Anchor / Hyperlink..."
 msgstr "Odkaz..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1107
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1092
 #, fuzzy
 msgid "_E-mail..."
 msgstr "E-mail..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1107
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1092
 msgid "E-mail..."
 msgstr "E-mail..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1109
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1094
 #, fuzzy
 msgid "_Rule..."
 msgstr "Čiara..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1109
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1094
 #, fuzzy
 msgid "Horizontal Rule..."
 msgstr "Horizontálna čiara"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1111
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1096
 #, fuzzy
 msgid "_Font..."
 msgstr "Písmo..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1111
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1096
 msgid "Font..."
 msgstr "Písmo..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1113
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1098
 #, fuzzy
 msgid "Basef_ont..."
 msgstr "Veľkosť základného písma..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1113
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1098
 #, fuzzy
 msgid "Base font..."
 msgstr "Základni font"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1115
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1100
 #, fuzzy
 msgid "Quick_list..."
 msgstr "Rýchly zoznam..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1115
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1100
 msgid "Quick List..."
 msgstr "Rýchly zoznam..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1117
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1102
 #, fuzzy
 msgid "_Meta..."
 msgstr "Meta"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1118
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1103
 #, fuzzy
 msgid "Embe_d..."
 msgstr "Zapustený"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1119
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1104
 #, fuzzy
 msgid "Select _Color..."
 msgstr "Výber..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1120
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1105
 #, fuzzy
 msgid "Insert _Time..."
 msgstr "Vložiť obrázok..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1121
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1106
 #, fuzzy
 msgid "Insert _Image..."
 msgstr "Vložiť obrázok..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1121
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1106
 msgid "Insert image..."
 msgstr "Vložiť obrázok..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1123
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1108
 #, fuzzy
 msgid "Insert T_humbnail..."
 msgstr "Vlož obrázok ako náhľad..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1124
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1109
 msgid "Insert thumbnail..."
 msgstr "Vlož obrázok ako náhľad..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1127
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1112
 #, fuzzy
 msgid "Table _Wizard..."
 msgstr "Sprievodca tabuľkou..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1127
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1112
 msgid "Table Wizard..."
 msgstr "Sprievodca tabuľkou..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1129
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1114
 #, fuzzy
 msgid "_Table..."
 msgstr "Tabuľka..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1129
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1114
 msgid "Table..."
 msgstr "Tabuľka..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1131
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1116
 #, fuzzy
 msgid "Table _Row..."
 msgstr "Riadok tabuľky..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1131
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1116
 msgid "Table Row..."
 msgstr "Riadok tabuľky..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1133
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1118
 #, fuzzy
 msgid "Table _Head..."
 msgstr "Hlavička tabuľky..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1133
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1118
 #, fuzzy
 msgid "Table Head..."
 msgstr "Hlavička tabuľky..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1135
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1120
 #, fuzzy
 msgid "Table _Data..."
 msgstr "Bunka tabuľky..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1135
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1120
 msgid "Table Data..."
 msgstr "Bunka tabuľky..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1137
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1122
 msgid "_CSS"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1138
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1123
 #, fuzzy
 msgid "_Create Style..."
 msgstr "Vytvoriť zošit štylov..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1139
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1124
 msgid "Create stylesheet..."
 msgstr "Vytvoriť zošit štylov..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1141
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1126
 #, fuzzy
 msgid "S_pan..."
 msgstr "Span..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1141
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1126
 msgid "Span..."
 msgstr "Span..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1142
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1127
 #, fuzzy
 msgid "_Div..."
 msgstr "Div..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1142
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1127
 msgid "Div..."
 msgstr "Div..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1144
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1129
 #, fuzzy
 msgid "_Style"
 msgstr "Štyl:"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1144
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1129
 #: src/plugin_htmlbar/html_form.c:565
 msgid "Style"
 msgstr "Štýl"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1146
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1131
 #, fuzzy
 msgid "C_olumns..."
 msgstr "Písmo..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1146
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1131
 msgid "Columns..."
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1148
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1133
 #, fuzzy
 msgid "_Link to Stylesheet..."
 msgstr "Priradiť zošitu štýl..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1149
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1134
 #, fuzzy
 msgid "Link to Stylesheet..."
 msgstr "Priradiť zošitu štýl..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1151
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1136
 #, fuzzy
 msgid "_Frame"
 msgstr "_Rám:"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1152
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1137
 #, fuzzy
 msgid "Frame _Wizard..."
 msgstr "Sprievodca rámov..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1152
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1137
 msgid "Frame Wizard..."
 msgstr "Sprievodca rámov..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1154
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1139
 #, fuzzy
 msgid "Frame_set..."
 msgstr "Nastavenie rámov..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1154
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1139
 msgid "Frameset..."
 msgstr "Nastavenie rámov..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1156
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1141
 #, fuzzy
 msgid "_Frame..."
 msgstr "Rám..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1156
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1141
 msgid "Frame..."
 msgstr "Rám..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1158
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1143
 #, fuzzy
 msgid "F_orm..."
 msgstr "Formulár..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1158
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1143
 msgid "Form..."
 msgstr "Formulár..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1159
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1144
 #, fuzzy
 msgid "_Input..."
 msgstr "Text..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1160
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1145
 #, fuzzy
 msgid "Input B_uttons..."
 msgstr "Tlačítko typu submit, reset..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1160
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1145
 msgid "Input Button..."
 msgstr "Tlačítko typu submit, reset..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1162
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1147
 #, fuzzy
 msgid "Input T_ext..."
 msgstr "Text..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1162
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1147
 msgid "Input Text..."
 msgstr "Text..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1164
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1149
 #, fuzzy
 msgid "Text_area..."
 msgstr "Textové pole..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1164
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1149
 msgid "Textarea..."
 msgstr "Textové pole..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1166
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1151
 #, fuzzy
 msgid "_Select..."
 msgstr "Výber..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1166
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1151
 msgid "Select..."
 msgstr "Výber..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1168
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1153
 #, fuzzy
 msgid "O_ption..."
 msgstr "Rozbalovací zoznam..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1168
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1153
 msgid "Option..."
 msgstr "Rozbalovací zoznam..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1170
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1155
 #, fuzzy
 msgid "Option _Group..."
 msgstr "Skupina prvkov..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1170
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1155
 msgid "Option group..."
 msgstr "Skupina prvkov..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1172
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1157
 #, fuzzy
 msgid "_Button..."
 msgstr "Tlačidlo..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1172
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1157
 msgid "Button..."
 msgstr "Tlačidlo..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1174
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1159
 #, fuzzy
 msgid "_Edit tag under cursor..."
 msgstr "/Dialógy/_Upraviť značku pod kurzorom..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1176
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1161
 #, fuzzy
 msgid "_Multi Thumbnail..."
 msgstr "Viacnásobné náhľady..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1176
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1161
 msgid "Multi thumbnail..."
 msgstr "Viacnásobné náhľady..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1178 src/plugin_htmlbar/html.c:1790
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1163 src/plugin_htmlbar/html.c:1792
 msgid "Frame"
 msgstr "Rám"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1179 src/plugin_htmlbar/html.c:1701
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1164 src/plugin_htmlbar/html.c:1703
 msgid "Frameset"
 msgstr "Nastavenie rámov"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1181
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1166
 msgid "Noframes"
 msgstr "Bez rámov"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1183
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1168
 msgid "Target"
 msgstr "Cieľ"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1185
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1170
 msgid "Input Hidden..."
 msgstr "Skryté pole..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1186
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1171
 #, fuzzy
 msgid "Input Radio button..."
 msgstr "Prepínač..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1187
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1172
 msgid "Input Radio Button..."
 msgstr "Prepínač..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1188
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1173
 #, fuzzy
 msgid "Input Check box..."
 msgstr "Zaškrtávacie tlačidlo..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1189
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1174
 #, fuzzy
 msgid "Input Check Box..."
 msgstr "Zaškrtávacie tlačidlo..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1190
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1204
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1175
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1189
 msgid "HTML_5"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1191
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1176
 #, fuzzy
 msgid "_Article"
 msgstr "_Vertikálne"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1191
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1176
 #, fuzzy
 msgid "Article"
 msgstr "_Vertikálne"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1192
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1177
 msgid "As_ide"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1192
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1177
 msgid "Aside"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1193
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1178
 #, fuzzy
 msgid "Fig_caption"
 msgstr "Citácia"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1193
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1178
 #, fuzzy
 msgid "Figcaption"
 msgstr "Citácia"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1194
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1179
 msgid "Fig_ure"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1194
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1179
 msgid "Figure"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1195
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1180
 msgid "_Footer"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1195
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1180
 msgid "Footer"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1196
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1181
 #, fuzzy
 msgid "_Header"
 msgstr "_Hlavička:"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1196
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1181
 #, fuzzy
 msgid "Header"
 msgstr "Hlavička tabuľky"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1197
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1182
 msgid "H_group"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1197
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1182
 msgid "Hgroup"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1198
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1183
 msgid "_Mark"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1198
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1183
 msgid "Mark"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1199
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1184
 msgid "_Nav"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1199
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1184
 msgid "Nav"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1200
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1185
 msgid "R_p"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1200
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1185
 msgid "Ruby parenthesis"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1201
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1186
 msgid "R_t"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1201
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1186
 msgid "Ruby text"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1202
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1187
 msgid "_Ruby"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1202
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1187
 msgid "Ruby"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1203
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1188
 #, fuzzy
 msgid "_Section"
 msgstr "_Akcia:"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1203
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1188
 #, fuzzy
 msgid "Section"
 msgstr "_Akcia:"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1205
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1190
 msgid "Au_dio..."
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1205
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1190
 msgid "Audio..."
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1206
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1191
 msgid "_Video..."
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1206
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1191
 msgid "Video..."
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1207
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1192
 msgid "_Canvas..."
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1207
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1192
 msgid "Canvas..."
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1208
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1193
 #, fuzzy
 msgid "_Time..."
 msgstr "Rám..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1208
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1193
 #, fuzzy
 msgid "Time..."
 msgstr "Rám..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1209
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1194
 #, fuzzy
 msgid "Insert _Color"
 msgstr "Farba te_xtu:"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1209
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1194
 #, fuzzy
 msgid "Insert Color"
 msgstr "Vložiť čas"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1219
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1204
 #, fuzzy
 msgid "_HTML Toolbar"
 msgstr "/Zobraziť/_HTML panel nástrojov"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1350
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1335
 #, fuzzy
 msgid "Add to Quickbar"
 msgstr "Pridať do lišty Rýchleho spúšťania"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1350
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1335
 #, fuzzy
 msgid "Remove from Quickbar"
 msgstr "Odstrániť z lišty Rýchleho spúšťania"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1388
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1373
 msgid "Right click any html toolbar button to add it to the Quickbar."
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1479
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1464
 #, fuzzy
 msgid "Quickbar"
 msgstr " Rýchle spúšťanie "
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1482
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1467
 #, fuzzy
 msgid "Standard"
 msgstr " Štandartná lišta"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1487
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1481
 msgid "HTML 5"
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1490
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1484
 #, fuzzy
 msgid "Formatting"
 msgstr "Formátovanie obsahu"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1493
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1487
 #, fuzzy
 msgid "Tables"
 msgstr "Tabuľka"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1496
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1490
 #, fuzzy
 msgid "List"
 msgstr " Zoznam "
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1499
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1493
 #, fuzzy
 msgid "CSS"
 msgstr " CSS "
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1502
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1496
 #, fuzzy
 msgid "Forms"
 msgstr "Formulár"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1505
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1499
 #, fuzzy
 msgid "Fonts"
 msgstr "Font"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1508
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1502
 #, fuzzy
 msgid "Frames"
 msgstr "Rámy"
 
-#: src/plugin_htmlbar/html.c:402
+#: src/plugin_htmlbar/html.c:404
 msgid "Insert Time"
 msgstr "Vložiť čas"
 
-#: src/plugin_htmlbar/html.c:410
+#: src/plugin_htmlbar/html.c:412
 #, c-format
 msgid "  _Time (%i:%i:%i)"
 msgstr " _Čas  (%i.%i.%i)"
 
-#: src/plugin_htmlbar/html.c:415
+#: src/plugin_htmlbar/html.c:417
 msgid "  Day of the _week (Sunday)"
 msgstr "  Deň v týždni (Nedeľa)"
 
-#: src/plugin_htmlbar/html.c:418
+#: src/plugin_htmlbar/html.c:420
 msgid "  Day of the _week (Monday)"
 msgstr "  Deň v týždni (Pondelok)"
 
-#: src/plugin_htmlbar/html.c:421
+#: src/plugin_htmlbar/html.c:423
 msgid "  Day of the _week (Tuesday)"
 msgstr "  Deň v týždni (Utorok)"
 
-#: src/plugin_htmlbar/html.c:424
+#: src/plugin_htmlbar/html.c:426
 msgid "  Day of the _week (Wednesday)"
 msgstr "  Deň v týždni (Streda)"
 
-#: src/plugin_htmlbar/html.c:427
+#: src/plugin_htmlbar/html.c:429
 msgid "  Day of the _week (Thursday)"
 msgstr "  Deň v týždni (Štvrtok)"
 
-#: src/plugin_htmlbar/html.c:430
+#: src/plugin_htmlbar/html.c:432
 msgid "  Day of the _week (Friday)"
 msgstr "  Deň v týždni (Piatok)"
 
-#: src/plugin_htmlbar/html.c:433
+#: src/plugin_htmlbar/html.c:435
 msgid "  Day of the _week (Saturday)"
 msgstr "  Deň v týždni (Sobota)"
 
-#: src/plugin_htmlbar/html.c:436
+#: src/plugin_htmlbar/html.c:438
 msgid "You appear to have a non existant day!\n"
 msgstr "Zdž sa, že zkúšate neznámý deň!\n"
 
-#: src/plugin_htmlbar/html.c:445
+#: src/plugin_htmlbar/html.c:447
 #, c-format
 msgid "  _Date (%i/%i/%i)"
 msgstr " _Dátum  (%i.%i.%i)"
 
-#: src/plugin_htmlbar/html.c:448
+#: src/plugin_htmlbar/html.c:450
 #, c-format
 msgid "  _Unix Time (%i)"
 msgstr " _Unixový čas (%i)"
 
-#: src/plugin_htmlbar/html.c:453
+#: src/plugin_htmlbar/html.c:455
 #, c-format
 msgid "  Unix Date _String (%s)"
 msgstr " Reťazec unixového dátumu (%s)"
 
-#: src/plugin_htmlbar/html.c:461
+#: src/plugin_htmlbar/html.c:463
 #, fuzzy
 msgid "  ISO-8601 Ti_me "
 msgstr "  ISO-8601 Č_as (%s)"
 
-#: src/plugin_htmlbar/html.c:656
+#: src/plugin_htmlbar/html.c:658
 msgid "Quick Anchor"
 msgstr "Rýchly odkaz"
 
-#: src/plugin_htmlbar/html.c:662 src/plugin_htmlbar/html_form.c:520
+#: src/plugin_htmlbar/html.c:664 src/plugin_htmlbar/html_form.c:520
 msgid "Attributes"
 msgstr "Atribúty"
 
-#: src/plugin_htmlbar/html.c:683 src/plugin_htmlbar/html.c:2697
+#: src/plugin_htmlbar/html.c:685 src/plugin_htmlbar/html.c:2699
 msgid "_HREF:"
 msgstr "_HREF:"
 
-#: src/plugin_htmlbar/html.c:689 src/plugin_htmlbar/html_form.c:200
+#: src/plugin_htmlbar/html.c:691 src/plugin_htmlbar/html_form.c:200
 msgid "_Target:"
 msgstr "_Cieľ:"
 
-#: src/plugin_htmlbar/html.c:693 src/plugin_htmlbar/html.c:933
-#: src/plugin_htmlbar/html.c:1324 src/plugin_htmlbar/html.c:1802
+#: src/plugin_htmlbar/html.c:695 src/plugin_htmlbar/html.c:935
+#: src/plugin_htmlbar/html.c:1326 src/plugin_htmlbar/html.c:1804
 #: src/plugin_htmlbar/html_form.c:251 src/plugin_htmlbar/html_form.c:315
 #: src/plugin_htmlbar/html_form.c:538 src/plugin_htmlbar/html_form.c:633
 #: src/plugin_htmlbar/image.c:532
 msgid "_Name:"
 msgstr "_Názov:"
 
-#: src/plugin_htmlbar/html.c:696 src/plugin_htmlbar/quickstart.c:558
+#: src/plugin_htmlbar/html.c:698 src/plugin_htmlbar/quickstart.c:558
 msgid "Titl_e:"
 msgstr "_Titulok:"
 
-#: src/plugin_htmlbar/html.c:701 src/plugin_htmlbar/html.c:1198
-#: src/plugin_htmlbar/html.c:1341 src/plugin_htmlbar/html.c:2345
+#: src/plugin_htmlbar/html.c:703 src/plugin_htmlbar/html.c:1200
+#: src/plugin_htmlbar/html.c:1343 src/plugin_htmlbar/html.c:2347
 msgid "_Language:"
 msgstr "_Jazyk:"
 
-#: src/plugin_htmlbar/html.c:704 src/plugin_htmlbar/html.c:939
-#: src/plugin_htmlbar/html.c:1105 src/plugin_htmlbar/html.c:1201
-#: src/plugin_htmlbar/html.c:1347 src/plugin_htmlbar/html.c:1731
-#: src/plugin_htmlbar/html.c:1840 src/plugin_htmlbar/html.c:1939
-#: src/plugin_htmlbar/html.c:2008 src/plugin_htmlbar/html.c:2132
-#: src/plugin_htmlbar/html.c:2197 src/plugin_htmlbar/html.c:2281
-#: src/plugin_htmlbar/html.c:2368 src/plugin_htmlbar/html_form.c:204
+#: src/plugin_htmlbar/html.c:706 src/plugin_htmlbar/html.c:941
+#: src/plugin_htmlbar/html.c:1107 src/plugin_htmlbar/html.c:1203
+#: src/plugin_htmlbar/html.c:1349 src/plugin_htmlbar/html.c:1733
+#: src/plugin_htmlbar/html.c:1842 src/plugin_htmlbar/html.c:1941
+#: src/plugin_htmlbar/html.c:2010 src/plugin_htmlbar/html.c:2134
+#: src/plugin_htmlbar/html.c:2199 src/plugin_htmlbar/html.c:2283
+#: src/plugin_htmlbar/html.c:2370 src/plugin_htmlbar/html_form.c:204
 #: src/plugin_htmlbar/html_form.c:267 src/plugin_htmlbar/html_form.c:328
 #: src/plugin_htmlbar/html_form.c:645 src/plugin_htmlbar/html_table.c:136
 #: src/plugin_htmlbar/html_table.c:283 src/plugin_htmlbar/html_table.c:419
@@ -1428,366 +1428,366 @@ msgstr "_Jazyk:"
 msgid "Custo_m:"
 msgstr "Vlast_né:"
 
-#: src/plugin_htmlbar/html.c:706 src/plugin_htmlbar/html.c:1205
+#: src/plugin_htmlbar/html.c:708 src/plugin_htmlbar/html.c:1207
 #: src/plugin_htmlbar/html_form.c:569
 msgid "Events"
 msgstr "Udalosti"
 
-#: src/plugin_htmlbar/html.c:709
+#: src/plugin_htmlbar/html.c:711
 msgid "OnClic_k:"
 msgstr "OnClic_k:"
 
-#: src/plugin_htmlbar/html.c:712
+#: src/plugin_htmlbar/html.c:714
 msgid "OnD_blClick:"
 msgstr "OnD_blClick:"
 
-#: src/plugin_htmlbar/html.c:715
+#: src/plugin_htmlbar/html.c:717
 msgid "OnMouseO_ver:"
 msgstr "OnMouseO_ver:"
 
-#: src/plugin_htmlbar/html.c:718
+#: src/plugin_htmlbar/html.c:720
 msgid "OnMouse_Down:"
 msgstr "OnMouse_Down:"
 
-#: src/plugin_htmlbar/html.c:721
+#: src/plugin_htmlbar/html.c:723
 msgid "OnMouse_Move:"
 msgstr "OnMouse_Move:"
 
-#: src/plugin_htmlbar/html.c:724
+#: src/plugin_htmlbar/html.c:726
 msgid "OnMouseOu_t:"
 msgstr "OnMouseOu_t:"
 
-#: src/plugin_htmlbar/html.c:727
+#: src/plugin_htmlbar/html.c:729
 msgid "OnMouse_Up:"
 msgstr "OnMouse_Up:"
 
-#: src/plugin_htmlbar/html.c:730
+#: src/plugin_htmlbar/html.c:732
 msgid "OnKeyDo_wn:"
 msgstr "OnKeyDo_wn:"
 
-#: src/plugin_htmlbar/html.c:733
+#: src/plugin_htmlbar/html.c:735
 msgid "OnKey_Press:"
 msgstr "OnKey_Press:"
 
-#: src/plugin_htmlbar/html.c:736
+#: src/plugin_htmlbar/html.c:738
 msgid "OnKe_yUp:"
 msgstr "OnKe_yUp:"
 
-#: src/plugin_htmlbar/html.c:881
+#: src/plugin_htmlbar/html.c:883
 msgid "Div"
 msgstr "Div"
 
-#: src/plugin_htmlbar/html.c:884
+#: src/plugin_htmlbar/html.c:886
 msgid "Span"
 msgstr "Span"
 
-#: src/plugin_htmlbar/html.c:887
+#: src/plugin_htmlbar/html.c:889
 msgid "Heading 1"
 msgstr "Nadpis 1"
 
-#: src/plugin_htmlbar/html.c:890
+#: src/plugin_htmlbar/html.c:892
 msgid "Heading 2"
 msgstr "Nadpis 2"
 
-#: src/plugin_htmlbar/html.c:893
+#: src/plugin_htmlbar/html.c:895
 msgid "Heading 3"
 msgstr "Nadpis 3"
 
-#: src/plugin_htmlbar/html.c:896
+#: src/plugin_htmlbar/html.c:898
 msgid "Heading 4"
 msgstr "Nadpis 4"
 
-#: src/plugin_htmlbar/html.c:899
+#: src/plugin_htmlbar/html.c:901
 msgid "Heading 5"
 msgstr "Nadpis 5"
 
-#: src/plugin_htmlbar/html.c:902
+#: src/plugin_htmlbar/html.c:904
 msgid "Heading 6"
 msgstr "Nadpis 6"
 
-#: src/plugin_htmlbar/html.c:919
+#: src/plugin_htmlbar/html.c:921
 msgid "Ali_gn:"
 msgstr "Za_rovnanie:"
 
-#: src/plugin_htmlbar/html.c:923 src/plugin_htmlbar/html.c:1192
-#: src/plugin_htmlbar/html.c:1931 src/plugin_htmlbar/html.c:1990
-#: src/plugin_htmlbar/html.c:2117 src/plugin_htmlbar/html.c:2273
+#: src/plugin_htmlbar/html.c:925 src/plugin_htmlbar/html.c:1194
+#: src/plugin_htmlbar/html.c:1933 src/plugin_htmlbar/html.c:1992
+#: src/plugin_htmlbar/html.c:2119 src/plugin_htmlbar/html.c:2275
 #: src/plugin_htmlbar/html_diag.c:487 src/plugin_htmlbar/html_table.c:127
 #: src/plugin_htmlbar/html_table.c:268 src/plugin_htmlbar/html_table.c:392
 #: src/plugin_htmlbar/image_dialog.c:408
 msgid "Cl_ass:"
 msgstr "Trie_da:"
 
-#: src/plugin_htmlbar/html.c:927 src/plugin_htmlbar/html.c:1185
+#: src/plugin_htmlbar/html.c:929 src/plugin_htmlbar/html.c:1187
 #: src/plugin_htmlbar/html_diag.c:501 src/plugin_htmlbar/html_table.c:131
 #: src/plugin_htmlbar/html_table.c:278 src/plugin_htmlbar/html_table.c:414
 msgid "St_yle:"
 msgstr "Š_týl:"
 
-#: src/plugin_htmlbar/html.c:936 src/plugin_htmlbar/html.c:1195
+#: src/plugin_htmlbar/html.c:938 src/plugin_htmlbar/html.c:1197
 #: src/plugin_htmlbar/html_diag.c:495
 msgid "_ID:"
 msgstr "_ID:"
 
-#: src/plugin_htmlbar/html.c:1068
+#: src/plugin_htmlbar/html.c:1070
 msgid "Horizontal Rule"
 msgstr "Horizontálna čiara"
 
-#: src/plugin_htmlbar/html.c:1079 src/plugin_htmlbar/image.c:555
+#: src/plugin_htmlbar/html.c:1081 src/plugin_htmlbar/image.c:555
 #: src/plugin_htmlbar/image_dialog.c:451
 msgid "_Align:"
 msgstr "Za_rovnanie:"
 
-#: src/plugin_htmlbar/html.c:1086 src/plugin_htmlbar/html.c:2004
-#: src/plugin_htmlbar/html.c:2108 src/plugin_htmlbar/html.c:2265
+#: src/plugin_htmlbar/html.c:1088 src/plugin_htmlbar/html.c:2006
+#: src/plugin_htmlbar/html.c:2110 src/plugin_htmlbar/html.c:2267
 #: src/plugin_htmlbar/image_dialog.c:376
 msgid "_Height:"
 msgstr "_Výška:"
 
 #. gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spin2), 1);
-#: src/plugin_htmlbar/html.c:1092 src/plugin_htmlbar/html.c:1999
-#: src/plugin_htmlbar/html.c:2103 src/plugin_htmlbar/html.c:2261
+#: src/plugin_htmlbar/html.c:1094 src/plugin_htmlbar/html.c:2001
+#: src/plugin_htmlbar/html.c:2105 src/plugin_htmlbar/html.c:2263
 #: src/plugin_htmlbar/image.c:517 src/plugin_htmlbar/image_dialog.c:365
 msgid "_Width:"
 msgstr "Šír_ka:"
 
-#: src/plugin_htmlbar/html.c:1095
+#: src/plugin_htmlbar/html.c:1097
 msgid "Is _percent"
 msgstr "V _percentách"
 
-#: src/plugin_htmlbar/html.c:1100
+#: src/plugin_htmlbar/html.c:1102
 msgid "No _shading"
 msgstr "Bez _tieňa"
 
-#: src/plugin_htmlbar/html.c:1170
+#: src/plugin_htmlbar/html.c:1172
 msgid "Body"
 msgstr "Telo"
 
-#: src/plugin_htmlbar/html.c:1178
+#: src/plugin_htmlbar/html.c:1180
 msgid "Options"
 msgstr "Vlastnosti"
 
-#: src/plugin_htmlbar/html.c:1211
+#: src/plugin_htmlbar/html.c:1213
 #, fuzzy
 msgid "On _Load:"
 msgstr "On_Load:"
 
-#: src/plugin_htmlbar/html.c:1215
+#: src/plugin_htmlbar/html.c:1217
 #, fuzzy
 msgid "On _Unload:"
 msgstr "On_UnLoad:"
 
-#: src/plugin_htmlbar/html.c:1221
+#: src/plugin_htmlbar/html.c:1223
 msgid "Depreciated options"
 msgstr "Zastaralé voľby"
 
-#: src/plugin_htmlbar/html.c:1230
+#: src/plugin_htmlbar/html.c:1232
 msgid "Background _Image:"
 msgstr "Obrázok v _Pozadí:"
 
-#: src/plugin_htmlbar/html.c:1236
+#: src/plugin_htmlbar/html.c:1238
 msgid "Back_ground Color:"
 msgstr "_Farba pozadia:"
 
-#: src/plugin_htmlbar/html.c:1242
+#: src/plugin_htmlbar/html.c:1244
 msgid "_Text Color:"
 msgstr "Farba te_xtu:"
 
-#: src/plugin_htmlbar/html.c:1248
+#: src/plugin_htmlbar/html.c:1250
 msgid "_Link Color:"
 msgstr "Farba od_kazu:"
 
-#: src/plugin_htmlbar/html.c:1254
+#: src/plugin_htmlbar/html.c:1256
 msgid "_Visited Link Color:"
 msgstr "Farba navštivené_ho odkazu:"
 
-#: src/plugin_htmlbar/html.c:1260
+#: src/plugin_htmlbar/html.c:1262
 msgid "_Active Link Color:"
 msgstr "Farba ak_tivního odkazu:"
 
-#: src/plugin_htmlbar/html.c:1316
+#: src/plugin_htmlbar/html.c:1318
 msgid "Meta"
 msgstr "Meta"
 
-#: src/plugin_htmlbar/html.c:1333
+#: src/plugin_htmlbar/html.c:1335
 msgid "_HTTP-EQUIV:"
 msgstr "_HTTP-EQUIV:"
 
-#: src/plugin_htmlbar/html.c:1338
+#: src/plugin_htmlbar/html.c:1340
 msgid "Con_tent:"
 msgstr "Ob_sah:"
 
-#: src/plugin_htmlbar/html.c:1344
+#: src/plugin_htmlbar/html.c:1346
 msgid "_Scheme:"
 msgstr "S_chéma:"
 
-#: src/plugin_htmlbar/html.c:1428
+#: src/plugin_htmlbar/html.c:1430
 msgid "Font"
 msgstr "Font"
 
-#: src/plugin_htmlbar/html.c:1431
+#: src/plugin_htmlbar/html.c:1433
 msgid "Base Font"
 msgstr "Základni font"
 
-#: src/plugin_htmlbar/html.c:1446
+#: src/plugin_htmlbar/html.c:1448
 msgid "Size"
 msgstr "Veľkosť"
 
-#: src/plugin_htmlbar/html.c:1455
+#: src/plugin_htmlbar/html.c:1457
 msgid "Color"
 msgstr "Farba"
 
-#: src/plugin_htmlbar/html.c:1460
+#: src/plugin_htmlbar/html.c:1462
 msgid "Face"
 msgstr "Typ"
 
-#: src/plugin_htmlbar/html.c:1464
+#: src/plugin_htmlbar/html.c:1466
 msgid "Custom"
 msgstr "Vlastni"
 
-#: src/plugin_htmlbar/html.c:1554
+#: src/plugin_htmlbar/html.c:1556
 msgid "E-mail"
 msgstr "E-mail"
 
-#: src/plugin_htmlbar/html.c:1562
+#: src/plugin_htmlbar/html.c:1564
 msgid "_Mail to:"
 msgstr "Email pre:"
 
-#: src/plugin_htmlbar/html.c:1565
+#: src/plugin_htmlbar/html.c:1567
 msgid "_Copy to:"
 msgstr "Kopírovať do:"
 
-#: src/plugin_htmlbar/html.c:1568
+#: src/plugin_htmlbar/html.c:1570
 msgid "Blin_d copy to:"
 msgstr "Skrité kopírovať _do:"
 
-#: src/plugin_htmlbar/html.c:1571
+#: src/plugin_htmlbar/html.c:1573
 msgid "with _Subject:"
 msgstr "so _Subjektom:"
 
-#: src/plugin_htmlbar/html.c:1574
+#: src/plugin_htmlbar/html.c:1576
 msgid "with _Body:"
 msgstr "s _Body:"
 
-#: src/plugin_htmlbar/html.c:1620
+#: src/plugin_htmlbar/html.c:1622
 msgid "Quick List"
 msgstr "Rýchlz zoznam"
 
-#: src/plugin_htmlbar/html.c:1625 src/plugin_htmlbar/wizards.c:81
+#: src/plugin_htmlbar/html.c:1627 src/plugin_htmlbar/wizards.c:81
 msgid "Number of _rows:"
 msgstr "Počet ria_dkov:"
 
-#: src/plugin_htmlbar/html.c:1628
+#: src/plugin_htmlbar/html.c:1630
 msgid "Or_dered"
 msgstr "Čísl_ovaný"
 
-#: src/plugin_htmlbar/html.c:1629
+#: src/plugin_htmlbar/html.c:1631
 msgid "_Unordered"
 msgstr "N_ečíslovaný"
 
-#: src/plugin_htmlbar/html.c:1631 src/plugin_htmlbar/image_dialog.c:422
+#: src/plugin_htmlbar/html.c:1633 src/plugin_htmlbar/image_dialog.c:422
 msgid "Style:"
 msgstr "Štyl:"
 
-#: src/plugin_htmlbar/html.c:1707 src/plugin_htmlbar/html_form.c:259
+#: src/plugin_htmlbar/html.c:1709 src/plugin_htmlbar/html_form.c:259
 msgid "Co_ls:"
 msgstr "S_tĺpce:"
 
-#: src/plugin_htmlbar/html.c:1710 src/plugin_htmlbar/html_form.c:255
+#: src/plugin_htmlbar/html.c:1712 src/plugin_htmlbar/html_form.c:255
 msgid "_Rows:"
 msgstr "Riadk_y:"
 
-#: src/plugin_htmlbar/html.c:1714
+#: src/plugin_htmlbar/html.c:1716
 #, fuzzy
 msgid "_Add &lt;frame&gt; elements"
 msgstr "Prid_ať <frame> prvky "
 
-#: src/plugin_htmlbar/html.c:1798 src/plugin_htmlbar/html.c:1901
-#: src/plugin_htmlbar/html.c:2071 src/plugin_htmlbar/html.c:2254
-#: src/plugin_htmlbar/html.c:2341 src/plugin_htmlbar/image_dialog.c:326
+#: src/plugin_htmlbar/html.c:1800 src/plugin_htmlbar/html.c:1903
+#: src/plugin_htmlbar/html.c:2073 src/plugin_htmlbar/html.c:2256
+#: src/plugin_htmlbar/html.c:2343 src/plugin_htmlbar/image_dialog.c:326
 msgid "_Source:"
 msgstr "_Zdroj:"
 
-#: src/plugin_htmlbar/html.c:1806
+#: src/plugin_htmlbar/html.c:1808
 msgid "Margin _Width:"
 msgstr "Šířka _okraja:"
 
-#: src/plugin_htmlbar/html.c:1810
+#: src/plugin_htmlbar/html.c:1812
 msgid "Margin _Height:"
 msgstr "_Výška okraja:"
 
-#: src/plugin_htmlbar/html.c:1819
+#: src/plugin_htmlbar/html.c:1821
 msgid "Scrollin_g:"
 msgstr "_Rolovanie:"
 
-#: src/plugin_htmlbar/html.c:1823
+#: src/plugin_htmlbar/html.c:1825
 msgid "_Frameborder:"
 msgstr "O_kraje rámu:"
 
-#: src/plugin_htmlbar/html.c:1828
+#: src/plugin_htmlbar/html.c:1830
 msgid "No _Resize:"
 msgstr "Zakázať zmenu _veľkosti:"
 
 #. Dialog construction and settings
-#: src/plugin_htmlbar/html.c:1894
+#: src/plugin_htmlbar/html.c:1896
 msgid "Audio"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:1905 src/plugin_htmlbar/html.c:2083
+#: src/plugin_htmlbar/html.c:1907 src/plugin_htmlbar/html.c:2085
 msgid "_Autoplay:"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:1909 src/plugin_htmlbar/html.c:2088
+#: src/plugin_htmlbar/html.c:1911 src/plugin_htmlbar/html.c:2090
 #, fuzzy
 msgid "C_ontrols:"
 msgstr "S_tĺpce:"
 
-#: src/plugin_htmlbar/html.c:1913 src/plugin_htmlbar/html.c:2093
+#: src/plugin_htmlbar/html.c:1915 src/plugin_htmlbar/html.c:2095
 msgid "_Loop:"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:1917 src/plugin_htmlbar/html.c:2098
+#: src/plugin_htmlbar/html.c:1919 src/plugin_htmlbar/html.c:2100
 #, fuzzy
 msgid "M_ute:"
 msgstr "_Obnoviť"
 
-#: src/plugin_htmlbar/html.c:1922 src/plugin_htmlbar/html.c:2122
+#: src/plugin_htmlbar/html.c:1924 src/plugin_htmlbar/html.c:2124
 msgid "_Preload:"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:1927 src/plugin_htmlbar/html.c:1986
-#: src/plugin_htmlbar/html.c:2113 src/plugin_htmlbar/html.c:2269
+#: src/plugin_htmlbar/html.c:1929 src/plugin_htmlbar/html.c:1988
+#: src/plugin_htmlbar/html.c:2115 src/plugin_htmlbar/html.c:2271
 #: src/plugin_htmlbar/html_table.c:124
 #, fuzzy
 msgid "_Id:"
 msgstr "_ID:"
 
-#: src/plugin_htmlbar/html.c:1934 src/plugin_htmlbar/html.c:1993
-#: src/plugin_htmlbar/html.c:2127 src/plugin_htmlbar/html.c:2276
+#: src/plugin_htmlbar/html.c:1936 src/plugin_htmlbar/html.c:1995
+#: src/plugin_htmlbar/html.c:2129 src/plugin_htmlbar/html.c:2278
 #, fuzzy
 msgid "_Style:"
 msgstr "Štyl:"
 
 #. Dialog construction
-#: src/plugin_htmlbar/html.c:1981
+#: src/plugin_htmlbar/html.c:1983
 msgid "Canvas"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2063
+#: src/plugin_htmlbar/html.c:2065
 msgid "Video"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2078
+#: src/plugin_htmlbar/html.c:2080
 msgid "_Poster:"
 msgstr ""
 
 #. Dialog construction
-#: src/plugin_htmlbar/html.c:2177
+#: src/plugin_htmlbar/html.c:2179
 msgid "Time"
 msgstr ""
 
 #. Datetime help
-#: src/plugin_htmlbar/html.c:2182
+#: src/plugin_htmlbar/html.c:2184
 msgid ""
 "Datetime format (ex. YYYY-MM-DDThh:mm:ssTZD) :\n"
 "\n"
@@ -1802,46 +1802,46 @@ msgid ""
 "Time)\n"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2192
+#: src/plugin_htmlbar/html.c:2194
 msgid "_Datetime:"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2247
+#: src/plugin_htmlbar/html.c:2249
 msgid "Embed"
 msgstr "Zapustený"
 
-#: src/plugin_htmlbar/html.c:2258
+#: src/plugin_htmlbar/html.c:2260
 #, fuzzy
 msgid "_MIME Type:"
 msgstr "_Typ:"
 
-#: src/plugin_htmlbar/html.c:2323
+#: src/plugin_htmlbar/html.c:2325
 msgid "Script"
 msgstr "Skript"
 
-#: src/plugin_htmlbar/html.c:2347
+#: src/plugin_htmlbar/html.c:2349
 msgid "(HTML4 only)"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2350
+#: src/plugin_htmlbar/html.c:2352
 #, fuzzy
 msgid "MIME _Type:"
 msgstr "_Typ:"
 
-#: src/plugin_htmlbar/html.c:2354
+#: src/plugin_htmlbar/html.c:2356
 #, fuzzy
 msgid "_Charset:"
 msgstr "_Cieľ:"
 
-#: src/plugin_htmlbar/html.c:2356 src/plugin_htmlbar/html.c:2365
+#: src/plugin_htmlbar/html.c:2358 src/plugin_htmlbar/html.c:2367
 msgid "(HTML5)"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2359
+#: src/plugin_htmlbar/html.c:2361
 msgid "_Async:"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2363
+#: src/plugin_htmlbar/html.c:2365
 #, fuzzy
 msgid "_Defer:"
 msgstr "_ID:"
@@ -1851,103 +1851,103 @@ msgstr "_ID:"
 #. column-span: all (default none)
 #. column-fill: auto (default balance)
 #.
-#: src/plugin_htmlbar/html.c:2535
+#: src/plugin_htmlbar/html.c:2537
 msgid "CSS3 multi-column layout"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2542
+#: src/plugin_htmlbar/html.c:2544
 msgid "Auto (default) or number of columns"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2551
+#: src/plugin_htmlbar/html.c:2553
 msgid "Auto (default) or width"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2563
+#: src/plugin_htmlbar/html.c:2565
 msgid "Normal (default) or width of the gap between columns"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2581
+#: src/plugin_htmlbar/html.c:2583
 msgid "None (default) or style"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2587
+#: src/plugin_htmlbar/html.c:2589
 msgid "Medium (default) or width"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2600
+#: src/plugin_htmlbar/html.c:2602
 msgid "Use vendor-prefixed CSS property:"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2608
+#: src/plugin_htmlbar/html.c:2610
 #, fuzzy
 msgid "styles_heet"
 msgstr "Vytvoriť zošit štylov..."
 
-#: src/plugin_htmlbar/html.c:2609
+#: src/plugin_htmlbar/html.c:2611
 msgid "Add selector(s) to create a new rule"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2611
+#: src/plugin_htmlbar/html.c:2613
 #, fuzzy
 msgid "style a_ttribute"
 msgstr "Atribúty"
 
-#: src/plugin_htmlbar/html.c:2612
+#: src/plugin_htmlbar/html.c:2614
 msgid "Add a style attribute in tag"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2614
+#: src/plugin_htmlbar/html.c:2616
 msgid "style _values"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2615
+#: src/plugin_htmlbar/html.c:2617
 msgid "Add values in a style attribute"
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2625
+#: src/plugin_htmlbar/html.c:2627
 #, fuzzy
 msgid "Selecto_rs:"
 msgstr "_Prepínač:"
 
-#: src/plugin_htmlbar/html.c:2626
+#: src/plugin_htmlbar/html.c:2628
 msgid "Leave empty to insert declarations into an existing rule."
 msgstr ""
 
-#: src/plugin_htmlbar/html.c:2686
+#: src/plugin_htmlbar/html.c:2688
 msgid "Link"
 msgstr "Odkaz"
 
-#: src/plugin_htmlbar/html.c:2703
+#: src/plugin_htmlbar/html.c:2705
 msgid "HREF_LANG:"
 msgstr "_HREF jazyk:"
 
-#: src/plugin_htmlbar/html.c:2706
+#: src/plugin_htmlbar/html.c:2708
 msgid "T_itle:"
 msgstr "_Titulok:"
 
-#: src/plugin_htmlbar/html.c:2727 src/plugin_htmlbar/html_form.c:532
+#: src/plugin_htmlbar/html.c:2729 src/plugin_htmlbar/html_form.c:532
 #: src/plugin_htmlbar/html_form.c:641
 msgid "_Type:"
 msgstr "_Typ:"
 
-#: src/plugin_htmlbar/html.c:2749
+#: src/plugin_htmlbar/html.c:2751
 msgid "_Forward Relation:"
 msgstr "Relacia V_pred:"
 
-#: src/plugin_htmlbar/html.c:2753
+#: src/plugin_htmlbar/html.c:2755
 msgid "_Reverse Relation:"
 msgstr "Relacia V_zad:"
 
-#: src/plugin_htmlbar/html.c:2765
+#: src/plugin_htmlbar/html.c:2767
 msgid "Media:"
 msgstr "Média:"
 
-#: src/plugin_htmlbar/html.c:2769
+#: src/plugin_htmlbar/html.c:2771
 msgid "L_ang:"
 msgstr "J_azyk:"
 
-#: src/plugin_htmlbar/html.c:2772
+#: src/plugin_htmlbar/html.c:2774
 msgid "_Custom:"
 msgstr "V_lastni:"
 
@@ -2396,52 +2396,48 @@ msgstr "Zdroj:"
 msgid "Size:"
 msgstr "Velikosť:"
 
-#: src/plugin_htmlbar/prefs.c:84
+#: src/plugin_htmlbar/prefs.c:70
 #, fuzzy
 msgid "<b>HTML Toolbar</b>"
 msgstr "/Zobraziť/_HTML panel nástrojov"
 
-#: src/plugin_htmlbar/prefs.c:87
+#: src/plugin_htmlbar/prefs.c:73
 msgid "Show toolbar in sidepanel"
 msgstr ""
 
-#: src/plugin_htmlbar/prefs.c:88
+#: src/plugin_htmlbar/prefs.c:74
 msgid "Keep HTML dialogs always on top"
 msgstr ""
 
-#: src/plugin_htmlbar/prefs.c:93
+#: src/plugin_htmlbar/prefs.c:79
 msgid "<b>HTML options</b>"
 msgstr ""
 
-#: src/plugin_htmlbar/prefs.c:97
-msgid "Use _XHTML style tags (<br />)"
-msgstr ""
-
-#: src/plugin_htmlbar/prefs.c:99
+#: src/plugin_htmlbar/prefs.c:82
 msgid "Use lo_wercase HTML tags"
 msgstr ""
 
-#: src/plugin_htmlbar/prefs.c:101
+#: src/plugin_htmlbar/prefs.c:84
 msgid "Use de_precated tags (e.g. <font> and <nobr>)"
 msgstr ""
 
-#: src/plugin_htmlbar/prefs.c:105
+#: src/plugin_htmlbar/prefs.c:88
 msgid "_Format according to accessibility guidelines (e.g. <strong> for <b>)"
 msgstr ""
 
-#: src/plugin_htmlbar/prefs.c:110
+#: src/plugin_htmlbar/prefs.c:91
 msgid "<b>Auto Update Tag Options</b>"
 msgstr ""
 
-#: src/plugin_htmlbar/prefs.c:114
+#: src/plugin_htmlbar/prefs.c:95
 msgid "Automatically update a_uthor meta tag"
 msgstr ""
 
-#: src/plugin_htmlbar/prefs.c:117
+#: src/plugin_htmlbar/prefs.c:98
 msgid "Automatically update _date meta tag"
 msgstr ""
 
-#: src/plugin_htmlbar/prefs.c:120
+#: src/plugin_htmlbar/prefs.c:101
 msgid "Automatically update _generator meta tag"
 msgstr ""
 
