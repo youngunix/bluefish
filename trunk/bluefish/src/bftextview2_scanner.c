@@ -1636,7 +1636,7 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 	Tpattern *pat = &g_array_index(btv->bflang->st->matches, Tpattern, match->patternum);
 
 	if (pat->condition) {
-		g_print("test for condition: pat %d has condition=%d\n",match->patternum,pat->condition );
+		DBG_SCANNING("test for condition: pat %d has condition=%d\n",match->patternum,pat->condition );
 		/* lookup the condition, and see if it matches */
 		if (!match_conditions_satisfied(btv, scanning, pat)) {
 			return scanning->context;
