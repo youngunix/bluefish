@@ -359,6 +359,7 @@ lookup_user_option(const gchar * lang, const gchar * option)
 {
 	if (lang && option) {
 		const gchar *arr[] = { lang, option, NULL };
+		/*g_print("lookup_user_option, %s:%s\n",lang,option);*/
 		return g_hash_table_lookup(langmgr.bflang_options, arr);
 	}
 	return NULL;
@@ -690,15 +691,22 @@ do_parse(Tbflangparsing * bfparser, const gchar *class, const gchar *notclass)
 	if both haveclass and havenotclass are both set, the havenotclass overrules
 	if both class and notclass are both set, the notclass overrules (return FALSE)
 
-
+	if an option does not have any value, the default is to return TRUE, EXCEPT for an option that is 'is_*' because that
+	probably refers to a language as in is_PHP
 */
 	if (!class && !notclass)
 		return TRUE;
 
-	if (class)
+	if (class) {
 		haveclass = lookup_user_option(bfparser->bflang->name, class);
-	if (notclass)
+		/* the default for an option with is_ should be FALSE */
+		if (!haveclass && strncmp(class, "is_", 3)==0) {
+			haveclass="0";
+		}
+	}
+	if (notclass) {
 		havenotclass = lookup_user_option(bfparser->bflang->name, notclass);
+	}
 	DBG_PARSING("do_parse, class=%s, haveclass=%s, notclass=%s, havenotclass=%s\n",class, haveclass, notclass, havenotclass);
 	if (havenotclass)
 		return havenotclass[0] != '1';
