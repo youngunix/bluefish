@@ -1907,9 +1907,14 @@ static void
 recent_menu_activate(GtkMenuItem * menuitem, gpointer user_data)
 {
 	Tbfwin *bfwin = BFWIN(user_data);
+	GFile *uri;
 	const gchar *str = gtk_menu_item_get_label(menuitem);
 	gint len = strlen(str);
-	GFile *uri = g_file_new_for_uri(str);
+	if (str[0]=='/') {
+		uri = g_file_new_for_path(str);
+	} else {
+		uri = g_file_new_for_uri(str);
+	}
 	if (g_strcmp0(str + len - 10, ".bfproject") == 0) {
 		gint status = project_open_from_file(bfwin, uri);
 		if (status == 0) {
