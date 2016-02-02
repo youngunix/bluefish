@@ -90,7 +90,7 @@ Default is false which will reindex the chunk numerically
 <b>returns</b>  array a multidimensional numerically indexed array, starting with zero,
 with each dimension containing size elements.
 </reference></element>
-<element pattern="array_collumn" >
+<element pattern="array_column" >
 	<autocomplete append="();" backup_cursor="2" class="autocomplete_with_parentheses" />
 	<autocomplete append="(array $array , mixed $column_key [, mixed $index_key = null ]);" backup_cursor="2" class="autocomplete_with_arguments"/>
 <reference>array_column() returns the values from a single column of the array,

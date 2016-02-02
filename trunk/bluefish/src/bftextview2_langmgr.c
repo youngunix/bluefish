@@ -2076,6 +2076,7 @@ build_lang_thread(gpointer data)
 	xmlFreeTextReader(reader);
 	
 	if (bfparser->failed) {
+		g_print("Compiling language %s failed. Abort and cleanup.",bflang->name);
 		cleanup_scantable(bfparser->st);
 		bfparser->st = NULL;
 	}
