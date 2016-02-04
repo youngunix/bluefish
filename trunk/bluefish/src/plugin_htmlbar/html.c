@@ -435,7 +435,7 @@ insert_time_dialog(Tbfwin * bfwin)
 				temp = g_strdup(_("  Day of the _week (Saturday)"));
 				break;
 			default:
-				g_message(_("You appear to have a non existant day!\n"));
+				g_message(_("You appear to have a non existent day!\n"));
 				temp = g_strdup(" ** Error ** see stdout");
 				break;
 			}					/* end of switch day of week */
