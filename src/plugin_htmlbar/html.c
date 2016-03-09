@@ -1957,7 +1957,7 @@ canvasdialogok_lcb(GtkWidget * widget, Thtml_diag * dg)
 	finalstring = insert_string_if_combobox(GTK_COMBO_BOX(dg->combo[0]), cap("CLASS"), finalstring, NULL);
 	finalstring = insert_string_if_entry((GTK_ENTRY(dg->entry[2])), NULL, finalstring, NULL);
 	thestring = finalstring;
-	finalstring = g_strconcat(thestring, NULL);
+	finalstring = g_strconcat(thestring, ">", NULL);
 	g_free(thestring);
 	/* Insert tag in document */
 	if (dg->range.end == -1) {
