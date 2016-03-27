@@ -1626,7 +1626,15 @@ bluefish_text_view_key_press_event(GtkWidget * widget, GdkEventKey * kevent)
 			return TRUE;
 		}
 	}
-
+	/* following code marks the location if the 'menu' key is used as if it was a right click button event */
+	if ( kevent->keyval == GDK_KEY_Menu) {
+		GtkTextMark *imark = gtk_text_buffer_get_insert(master->buffer);
+		GtkTextIter tmpit;
+		gtk_text_buffer_get_iter_at_mark(master->buffer, &tmpit, imark);
+		main_v->bevent_doc = master->doc;
+		main_v->bevent_charoffset = gtk_text_iter_get_offset(&tmpit);
+	}
+	
 	retval = GTK_WIDGET_CLASS(bluefish_text_view_parent_class)->key_press_event(widget, kevent);
 	if (retval) {
 		DBG_SIGNALS("parent handled the event, set key_press_inserted_char to TRUE\n");
