@@ -67,9 +67,9 @@ ui_autocompletion_popup_show(GtkAction * action, gpointer user_data)
 }
 
 static void
-ui_bookmark_add(GtkAction * action, gpointer user_data)
+ui_bookmark_toggle(GtkAction * action, gpointer user_data)
 {
-	bmark_add(BFWIN(user_data));
+	bmark_toggle_at_cursor(BFWIN(user_data));
 }
 
 static void
@@ -853,8 +853,8 @@ static const GtkActionEntry global_actions[] = {
 	{"EditPreferences", GTK_STOCK_PREFERENCES, N_("Preference_s..."), NULL, N_("Edit Preferences"),
 	 G_CALLBACK(ui_preferences)},
 	{"EditSelectAll", NULL, N_("Select _All"), "<control>A", N_("Select all"), G_CALLBACK(ui_select_all)},
-	{"DocAddBookmark", NULL, N_("Add Boo_kmark"), "<control>k", N_("Add bookmark"),
-	 G_CALLBACK(ui_bookmark_add)},
+	{"DocAddBookmark", NULL, N_("Toggle Boo_kmark"), "<control>k", N_("Toggle bookmark"),
+	 G_CALLBACK(ui_bookmark_toggle)},
 	{"DocEncodingAddRemove", NULL, N_("_Add or Remove..."), NULL, N_("Add or remove character encoding"),
 	 G_CALLBACK(ui_encoding_add_remove)},
 	{"DocFloatingWindow", NULL, N_("Floati_ng Window"), NULL, N_("Open current document in floating window"),

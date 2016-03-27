@@ -2015,11 +2015,11 @@ bmark_toggle(Tdocument * doc, gint offset, const gchar * name, const gchar * tex
 }
 
 void
-bmark_add(Tbfwin * bfwin)
+bmark_toggle_at_cursor(Tbfwin * bfwin)
 {
 	GtkTextIter it, it2;
 	gint offset;
-	gboolean has_mark;
+	Tbmark *bmark;
 	/* if the left panel is disabled, we simply should add the bookmark to the list, and do nothing else */
 	gtk_text_buffer_get_iter_at_mark(DOCUMENT(bfwin->current_document)->buffer, &it,
 									 gtk_text_buffer_get_insert(DOCUMENT(bfwin->current_document)->buffer));
@@ -2029,15 +2029,14 @@ bmark_add(Tbfwin * bfwin)
 	gtk_text_iter_order(&it, &it2);
 	offset = gtk_text_iter_get_offset(&it);
 	/* check for existing bookmark in this place */
-	has_mark = (bmark_get_bmark_at_offset(DOCUMENT(bfwin->current_document), offset) != NULL);
-	if (has_mark) {
-		message_dialog_new(bfwin->main_window,
-						   GTK_MESSAGE_ERROR,
-						   GTK_BUTTONS_CLOSE,
-						   _("Can't add bookmark"), _("You already have a bookmark here!"));
-		return;
+	bmark = bmark_get_bmark_at_offset(DOCUMENT(bfwin->current_document), offset);
+	if (bmark) {
+		bmark_check_remove(bfwin, bmark);	/* check  if we should remove a filename too */
+		bmark_unstore(bfwin, bmark);
+		bmark_free(bmark);
+	} else {
+		bmark_add_current_doc_backend(bfwin, "", offset, !main_v->globses.bookmarks_default_store);
 	}
-	bmark_add_current_doc_backend(bfwin, "", offset, !main_v->globses.bookmarks_default_store);
 }
 
 gboolean

@@ -39,7 +39,7 @@ GHashTable *bmark_get_bookmarked_lines(Tdocument * doc, GtkTextIter * fromit, Gt
 gint bmark_margin_get_initial_bookmark(Tdocument * doc, GtkTextIter * fromit, gpointer * bmark);
 gint bmark_margin_get_next_bookmark(Tdocument * doc, gpointer * bmark);
 
-void bmark_add(Tbfwin * bfwin);
+void bmark_toggle_at_cursor(Tbfwin * bfwin);
 void bmark_add_extern(Tdocument * doc, gint offset, const gchar * name, const gchar * text, gboolean is_temp);
 void bmark_toggle(Tdocument * doc, gint offset, const gchar * name, const gchar * text);
 
