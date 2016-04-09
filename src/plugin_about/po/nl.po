@@ -68,8 +68,8 @@ msgid ""
 "supporting many programming and markup languages, but focusing on creating "
 "dynamic and interactive websites."
 msgstr ""
-"Een open-source editor voor ervaren web designers en programmeurs, "
-"ondersteund vele programmeer en opmaak talen, maar is gefocust op het "
+"Een opensource editor voor ervaren webdesigners en -programmeurs, ondersteunt vele programmeer- en opmaaktalen, "
+"maar is gefocust op het "
 "creëren van dynamische en interactieve websites."
 
 #. Translators: This is a special message that shouldn't be translated
