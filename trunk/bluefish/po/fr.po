@@ -5,15 +5,15 @@
 # romeo viuberges <apostledemencia@free.fr>, 2003.
 # Romeo VIU-BERGES <romda@free.fr>, 2003.
 # Michèle Garoche <michele.garoche@easyconnect.fr>, 2004.
-# Frédéric Falsetti <falsetti@clansco.org>,2009-2015.
+# Frédéric Falsetti <falsetti@clansco.org>,2009-2016.
 #
 #: ../src/xmlstrings.h:1
 msgid ""
 msgstr ""
-"Project-Id-Version: Bluefish 2.2.7\n"
+"Project-Id-Version: Bluefish 2.2.8\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-01-21 12:21+0100\n"
-"PO-Revision-Date: 2015-5-24 14:30+0200\n"
+"POT-Creation-Date: 2016-04-10 09:29+0200\n"
+"PO-Revision-Date: 2016-04-10 54:30+0200\n"
 "Last-Translator: Frédéric Falsetti <falsetti@clansco.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -118,20 +118,20 @@ msgstr "Fichier de projet Bluefish"
 msgid "Bluefish language definition file"
 msgstr "Fichier de définition de language Bluefish"
 
-#: ../src/bftextview2.c:1827
+#: ../src/bftextview2.c:1835
 msgid "Collapse all"
 msgstr "Tout replier"
 
-#: ../src/bftextview2.c:1830
+#: ../src/bftextview2.c:1838
 msgid "Expand all"
 msgstr "Tout Déplier"
 
-#: ../src/bftextview2.c:1838
+#: ../src/bftextview2.c:1846
 #, c-format
 msgid "Collapse %s"
 msgstr "Replier %s"
 
-#: ../src/bftextview2.c:1848
+#: ../src/bftextview2.c:1856
 #, c-format
 msgid "Expand %s"
 msgstr "Déplier %s"
@@ -363,12 +363,12 @@ msgid "Select all"
 msgstr "Tout sélectionner"
 
 #: ../src/bfwin_uimanager.c:856
-msgid "Add Boo_kmark"
-msgstr "Ajouter un _signet"
+msgid "Toggle Boo_kmark"
+msgstr "Basculer le _signet"
 
-#: ../src/bfwin_uimanager.c:856 ../src/document.c:2310
-msgid "Add bookmark"
-msgstr "Ajouter un signet"
+#: ../src/bfwin_uimanager.c:856
+msgid "Toggle bookmark"
+msgstr "Basculer le signet"
 
 #: ../src/bfwin_uimanager.c:858
 msgid "_Add or Remove..."
@@ -1278,14 +1278,6 @@ msgstr "Signet suivant"
 msgid "Last bookmark"
 msgstr "Dernier signet"
 
-#: ../src/bookmark.c:2037
-msgid "Can't add bookmark"
-msgstr "Impossible d'ajouter un signet"
-
-#: ../src/bookmark.c:2037
-msgid "You already have a bookmark here!"
-msgstr "Il existe déjà un signet à cet endroit !"
-
 #: ../src/document.c:518
 msgid "Name: "
 msgstr "Nom : "
@@ -1452,6 +1444,10 @@ msgstr ""
 #: ../src/document.c:2121
 msgid "Use 'Save As' to save it with different name and make editable"
 msgstr "Utiliser 'Enregistrer sous' pour le renommer et le rendre éditable"
+
+#: ../src/document.c:2310
+msgid "Add bookmark"
+msgstr "Ajouter un signet"
 
 #: ../src/document.c:2316
 msgid "Exit fullscreen"
@@ -3863,18 +3859,3 @@ msgstr "Afficher ce language dans le menu"
 #: ../src/xmlstrings.h:45
 msgid "Tag block-start includes all attributes"
 msgstr "Le bloc de balise ouvrante inclut tous les attributs"
-
-#~ msgid "Windows XP Firefox"
-#~ msgstr "Windows XP Firefox"
-
-#~ msgid "Windows XP Internet Explorer"
-#~ msgstr "Windows XP IInternet Explorer"
-
-#~ msgid "Windows XP Opera"
-#~ msgstr "Windows XP Opera"
-
-#~ msgid "Windows XP Safari"
-#~ msgstr "Windows XP Safari"
-
-#~ msgid "CSS Minify with cssmin"
-#~ msgstr "Compacter CSS avec cssmin"
