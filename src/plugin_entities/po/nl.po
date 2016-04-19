@@ -57,15 +57,15 @@ msgstr "Converteer speciale karakters"
 
 #: src/plugin_entities/entities.c:304
 msgid "Convert _symbol characters"
-msgstr "Converteer symbool karakters"
+msgstr "Converteer symboolkarakters"
 
 #: src/plugin_entities/entities.c:308
 msgid "Convert _XML characters < > & \" '"
-msgstr "Converteer XML karakters < > & \" '"
+msgstr "Converteer XML-karakters < > & \" '"
 
 #: src/plugin_entities/entities.c:314
 msgid "Work around missing &apos; entity on IE"
-msgstr "Werk om de missende &apos; entity van IE heen"
+msgstr "Werk om ontbrekende &apos; entity van IE heen"
 
 #: src/plugin_entities/entities.c:420
 msgid "C_haracters to Entities"
@@ -85,19 +85,19 @@ msgstr "Entiteiten naar karakters"
 
 #: src/plugin_entities/entities.c:424
 msgid "URL _Decode"
-msgstr "URL _Decodering"
+msgstr "URL-_Decodering"
 
 #: src/plugin_entities/entities.c:424
 msgid "URL decode"
-msgstr "URL _Decodering"
+msgstr "URL-_Decodering"
 
 #: src/plugin_entities/entities.c:425
 msgid "URL _Encode"
-msgstr "URL K_odering"
+msgstr "URL-C_odering"
 
 #: src/plugin_entities/entities.c:425
 msgid "URL encode"
-msgstr "URL K_odering"
+msgstr "URL-C_odering"
 
 #: src/plugin_entities/entities.c:426
 msgid "To Lo_wercase"

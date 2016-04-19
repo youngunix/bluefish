@@ -22,16 +22,16 @@ msgstr ""
 #: src/plugin_snippets/snippets_gui.c:424
 msgid "Click the right mouse button to add, edit or delete snippets."
 msgstr ""
-"Klik de rechter muis knop om snippets toe te voegen, te bewerken of te "
+"Klik met de rechter muisknop om snippets toe te voegen, te bewerken of te "
 "verwĳderen."
 
 #: src/plugin_snippets/snippets_gui.c:425
 msgid "Use drag and drop to re-order snippets"
-msgstr "Sleep snippets om ze te ordenen"
+msgstr "Versleep snippets om ze te ordenen"
 
 #: src/plugin_snippets/snippets_gui.c:426
 msgid "To exchange snippets with others use import or export"
-msgstr "Om snippets uit te wisselen gebruik importeren of exporteren"
+msgstr "Gebruik importeren of exporteren om snippets uit te wisselen"
 
 #: src/plugin_snippets/snippets_gui.c:646
 msgid "snippets"
@@ -39,19 +39,19 @@ msgstr "snippets"
 
 #: src/plugin_snippets/snippets_gui.c:709
 msgid "Snippet export filename"
-msgstr "Snippet export bestandsnaam"
+msgstr "Snippet export-bestandsnaam"
 
 #: src/plugin_snippets/snippets_gui.c:747
 msgid "Snippet import filename"
-msgstr "Snippet import bestandsnaam"
+msgstr "Snippet import-bestandsnaam"
 
 #: src/plugin_snippets/snippets_gui.c:765
 msgid "Set accelerator key"
-msgstr "Stel accelerator toets in"
+msgstr "Stel acceleratortoets in"
 
 #: src/plugin_snippets/snippets_gui.c:822
 msgid "Snippets menu"
-msgstr "Snippets menu"
+msgstr "Snippetsmenu"
 
 #: src/plugin_snippets/snippets_gui.c:823
 msgid "_New Snippet"
@@ -89,11 +89,11 @@ msgstr "Verwĳder Tak"
 
 #: src/plugin_snippets/snippets_gui.c:827
 msgid "Set Snippet _Accelerator"
-msgstr "Snippet _sneltoets instellen"
+msgstr "Snippet-_sneltoets instellen"
 
 #: src/plugin_snippets/snippets_gui.c:827
 msgid "Set snippet accelerator"
-msgstr "Snippet sneltoets instellen"
+msgstr "Snippet-sneltoets instellen"
 
 #: src/plugin_snippets/snippets_gui.c:829
 msgid "Ex_pand All"
@@ -141,7 +141,7 @@ msgstr "S_nippets Menu"
 
 #: src/plugin_snippets/snippets_leaf_insert.c:64
 msgid "[cursor position or selection]"
-msgstr "[cursor positie of selectie]"
+msgstr "[cursorpositie of selectie]"
 
 #: src/plugin_snippets/snippets_leaf_snr.c:153
 msgid "Search for: '"
@@ -182,10 +182,10 @@ msgid ""
 "placeholders an appropriate name on the right. (Please use %% if you need "
 "literal % in your string!)"
 msgstr ""
-"Specificeer een zoek en vervang patroon. U kunt gebruik maken van %0, %1, ..."
-"%5 als plaatshouders om naar waardes te vragen als u dit item activeerd. "
+"Specificeer een zoek- en vervangpatroon. U kunt gebruik maken van %0, %1, ..."
+"%5 als plaatshouders om naar waarden te vragen als u dit item activeert. "
 "Geef deze plaatshouders een toepasselijke naam aan de rechterkant (gebruik %"
-"%)als u een % wilt gebruiken)."
+"% als u een procentteken in de string wilt)."
 
 #: src/plugin_snippets/snippets_wizard.c:140
 msgid "_Search for: "
@@ -213,11 +213,11 @@ msgstr "Alleen als hoofdletters en kleine letters identiek zijn."
 
 #: src/plugin_snippets/snippets_wizard.c:165
 msgid "_Use escape chars"
-msgstr "gebruik escape karakters"
+msgstr "gebruik escape-karakters"
 
 #: src/plugin_snippets/snippets_wizard.c:166
 msgid "Unescape backslash escaped characters such as \\n, \\t etc."
-msgstr "Escape karakters omzetten in het geval van bijvoorbeeld \\n, \\t etc."
+msgstr "Escape-karakters omzetten in het geval van bijvoorbeeld \\n, \\t etc."
 
 #: src/plugin_snippets/snippets_wizard.c:335
 msgid ""
@@ -228,12 +228,12 @@ msgid ""
 "appropriate name on the right. (Please use %% if you need literal % in your "
 "string!)"
 msgstr ""
-"De <i>voorafgaande</i> tekst zal ingevoegd vóór de cursor positie of de "
-"huidige selectie, de <i>opvolgende</i> zal worden ingevoegd na de cursor "
-"positie of de huidige selectie. U kunt gebruik maken van %0, %1, ...%9 als "
-"plaatshouders om te vragen naar waarden als u dit item activeert. Geef deze "
-"plaatshouders een toepasselijke naam aan de rechterkant (gebruik %%)als u "
-"een % wilt gebruiken)."
+"De <i>voorafgaande</i> tekst zal worden ingevoegd vóór de cursorpositie of "
+"de huidige selectie, de <i>opvolgende</i> tekst zal worden ingevoegd na de "
+"cursorpositie of na de huidige selectie. U kunt gebruik maken van %0, %1, ..."
+"%9 als plaatshouders om te vragen naar waarden als u dit item activeert. "
+"Geef deze plaatshouders een toepasselijke naam aan de rechterkant (gebruik %"
+"% als u een procentteken wilt gebruiken)."
 
 #: src/plugin_snippets/snippets_wizard.c:344
 msgid "<i>Before</i> text"
@@ -281,7 +281,7 @@ msgstr "String invoegen"
 
 #: src/plugin_snippets/snippets_wizard.c:645
 msgid "Search and replace pattern"
-msgstr "Zoeken en vervang patroon"
+msgstr "Zoek- en vervangpatroon"
 
 #~ msgid "Entire word only"
 #~ msgstr "Alleen gehele woord"

@@ -9,10 +9,10 @@
 ;----------------------------------------------
 
 ; Section Names
-!define SECT_BLUEFISH "Bluefish Editor"
+!define SECT_BLUEFISH "Bluefish-editor"
 !define SECT_PLUGINS "Plugins"
-!define SECT_SHORTCUT "Bureaublad snelkoppeling"
-!define SECT_DICT "Spelling woordenboeken (Internet verbinding nodig voor de download)"
+!define SECT_SHORTCUT "Bureaubladsnelkoppeling"
+!define SECT_DICT "Woordenboeken voor spelling (internetverbinding nodig voor de download)"
 
 ; License Page
 !define LICENSEPAGE_BUTTON "Volgende"
@@ -24,42 +24,42 @@
 !define DOWN_CHKSUM_ERROR "Integriteitstest gefaald..."
 
 ; Aspell Strings
-!define DICT_INSTALLED "Laatste versie van dit woordenboek is geinstalleerd, nergeer download voor:"
-!define DICT_DOWNLOAD "Download spelling checker woordenboek..."
-!define DICT_FAILED "Woordenboek download mislukt:"
+!define DICT_INSTALLED "Laatste versie van dit woordenboek is geïnstalleerd, negeer download voor:"
+!define DICT_DOWNLOAD "Download woordenboek voor spelling-checker..."
+!define DICT_FAILED "Download van Woordenboek mislukt:"
 !define DICT_EXTRACT "Woordenboek uitpakken..."
 
 ; GTK+ Strings
 !define GTK_DOWNLOAD "Download GTK+ bibliotheek..."
-!define GTK_FAILED "GTK+ bibliotheek download mislukt:"
+!define GTK_FAILED "Download van GTK+ bibliotheek mislukt:"
 !define GTK_INSTALL "Installeer GTK+ bibliotheek..."
-!define GTK_UNINSTALL "GTK+ Deinstalleren..."
+!define GTK_UNINSTALL "GTK+ deïnstalleren..."
 !define GTK_REQUIRED "Installeer GTK+ ${GTK_MIN_VERSION} of hoger en maak deze beschikbaar in PATH voor het starten van Bluefish."
 
 ; Plugin Names
-!define PLUG_CHARMAP "Karacter map"
+!define PLUG_CHARMAP "Karaktermap"
 !define PLUG_ENTITIES "Entities"
-!define PLUG_HTMLBAR "HTML Balk"
-!define PLUG_INFBROWSER "Info Browser"
+!define PLUG_HTMLBAR "HTML-balk"
+!define PLUG_INFBROWSER "Info browser"
 !define PLUG_SNIPPETS "Snippers"
 !define PLUG_ZENCODING "Zencoding"
 
 ; File Associations Page
-!define FA_TITLE "Bestands koppeling"
+!define FA_TITLE "Bestandskoppeling"
 !define FA_HEADER "Selecteer de bestandstypen die met ${PRODUCT} geopend moeten worden."
 !define FA_SELECT "Alles selecteren"
 !define FA_UNSELECT "Alles deselecteren"
 
 ; Misc
-!define FINISHPAGE_LINK "Bezoek de Bluefish website"
+!define FINISHPAGE_LINK "Bezoek de Bluefish-website"
 !define UNINSTALL_SHORTCUT "Verwijder ${PRODUCT}"
-!define FILETYPE_REGISTER "Registreer Bestandstype:"
-!define UNSTABLE_UPGRADE "Een unstable versie van ${PRODUCT} is geinstalleerd.$\nOude versies eerst verwijderen (aangeraden)?"
+!define FILETYPE_REGISTER "Registreer bestandstype:"
+!define UNSTABLE_UPGRADE "Een niet-stabiele versie van ${PRODUCT} is geïnstalleerd.$\nOude versies eerst verwijderen (aangeraden)?"
 
 ; InetC Plugin Translations
 ;  /TRANSLATE downloading connecting second minute hour plural progress remaining
-!define INETC_DOWN "Downloading %s"
-!define INETC_CONN "Connecting ..."
+!define INETC_DOWN "Downloaden van %s"
+!define INETC_CONN "Verbinden ..."
 !define INETC_TSEC "seconde"
 !define INETC_TMIN "minuut"
 !define INETC_THOUR "uur"

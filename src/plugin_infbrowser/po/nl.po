@@ -45,11 +45,11 @@ msgstr "Niets gevonden"
 
 #: src/plugin_infbrowser/infb_gui.c:561
 msgid "Documentation index"
-msgstr "Documentatie index"
+msgstr "Documentatie-index"
 
 #: src/plugin_infbrowser/infb_gui.c:566
 msgid "Document index"
-msgstr "Document index"
+msgstr "Documentindex"
 
 #: src/plugin_infbrowser/infb_gui.c:571
 msgid "Upper level"
@@ -74,15 +74,15 @@ msgstr "Info browser"
 #: src/plugin_infbrowser/infb_load.c:41
 #, c-format
 msgid "Cannot load reference file %s\n"
-msgstr "Kan referentie bestand %s niet laden\n"
+msgstr "Kan referentiebestand %s niet laden\n"
 
 #: src/plugin_infbrowser/infb_load.c:164
 msgid "Documentation entries"
-msgstr "Document entry's"
+msgstr "Document-entry's"
 
 #: src/plugin_infbrowser/infb_load.c:168
 msgid "References"
-msgstr "Referentie's"
+msgstr "Referenties"
 
 #: src/plugin_infbrowser/infb_load.c:170
 msgid "DTD"
@@ -90,20 +90,20 @@ msgstr "DTD"
 
 #: src/plugin_infbrowser/infb_load.c:172
 msgid "Web pages"
-msgstr "Web pagina's"
+msgstr "Webpagina's"
 
 #: src/plugin_infbrowser/infb_text.c:808
 msgid "Unknown document type"
-msgstr "Onbekend document type"
+msgstr "Onbekend documenttype"
 
 #: src/plugin_infbrowser/infb_wizard.c:116
 #: src/plugin_infbrowser/infb_wizard.c:164
 msgid "Local DTD file"
-msgstr "Lokaal DTD bestand"
+msgstr "Lokaal DTD-bestand"
 
 #: src/plugin_infbrowser/infb_wizard.c:124
 msgid "Remote DTD file"
-msgstr "DTD bestand op afstand"
+msgstr "DTD-bestand op afstand"
 
 #: src/plugin_infbrowser/infb_wizard.c:161
 msgid "Choose file"
@@ -111,7 +111,7 @@ msgstr "Kies bestand"
 
 #: src/plugin_infbrowser/infb_wizard.c:213
 msgid "Entry name"
-msgstr "Entry naam"
+msgstr "Entry-naam"
 
 #: src/plugin_infbrowser/infb_wizard.c:222
 msgid "Description"
@@ -119,11 +119,11 @@ msgstr "Omschrijving"
 
 #: src/plugin_infbrowser/infb_wizard.c:258
 msgid "DTD file URI"
-msgstr "DTD bestand URI"
+msgstr "DTD-bestand URI"
 
 #: src/plugin_infbrowser/infb_wizard.c:348
 msgid "New info item"
-msgstr "Nieuw info item"
+msgstr "Nieuw info-item"
 
 #: src/plugin_infbrowser/infb_wizard.c:418
 msgid "Entries you can delete"

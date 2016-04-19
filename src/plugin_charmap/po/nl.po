@@ -15,7 +15,7 @@ msgstr ""
 
 #: src/plugin_charmap/charmap_gui.c:209
 msgid "Insert as HTML entity"
-msgstr "Invoegen als HTML entiteit"
+msgstr "Invoegen als HTML-entiteit"
 
 #: src/plugin_charmap/charmap_gui.c:219
 msgid "charmap"

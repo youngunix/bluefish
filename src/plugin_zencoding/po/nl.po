@@ -31,7 +31,7 @@ msgstr "Zen-code bij cursor activeren"
 
 #: src/plugin_zencoding/zencoding.c:179
 msgid "Select Tag _Content"
-msgstr "Selecteer Tag Inhoud"
+msgstr "Selecteer Taginhoud"
 
 #: src/plugin_zencoding/zencoding.c:180
 msgid "Select _Tag and Content"
@@ -47,11 +47,11 @@ msgstr "Tag _Splitsen of Samenvoegen"
 
 #: src/plugin_zencoding/zencoding.c:183
 msgid "_Previous Edit Point"
-msgstr "_Vorige Edit Positie"
+msgstr "_Vorige Edit-positie"
 
 #: src/plugin_zencoding/zencoding.c:184
 msgid "_Next Edit Point"
-msgstr "V_olgende Edit Positie"
+msgstr "V_olgende Edit-positie"
 
 #: src/plugin_zencoding/zencoding.c:185
 msgid "_Insert Formatted Newline"
@@ -71,4 +71,4 @@ msgstr "Ve_rwijder Tag"
 
 #: src/plugin_zencoding/zencoding.c:189
 msgid "_Evaluate Math Expression"
-msgstr "_Evalueer Wiskundige Vergelijking"
+msgstr "_Evalueer Wiskundige Uitdrukking"

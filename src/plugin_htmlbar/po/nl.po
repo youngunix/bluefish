@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.4\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-01-08 11:41+0100\n"
+"POT-Creation-Date: 2016-04-10 20:05+0200\n"
 "PO-Revision-Date: 2013-01-01 17:17+0100\n"
 "Last-Translator: Olivier Sessink <olivier@bluefish.openoffice.nl>\n"
 "Language-Team: Dutch; Flemish <>\n"
@@ -81,11 +81,11 @@ msgstr "Tag bewerken"
 
 #: src/plugin_htmlbar/htmlbar.c:96
 msgid "Htmlbar"
-msgstr "HtmlBalk"
+msgstr "HTML-balk"
 
 #: src/plugin_htmlbar/htmlbar.c:267 src/plugin_htmlbar/prefs.c:67
 msgid "HTML Features"
-msgstr "HTML mogelijkheden"
+msgstr "HTML-mogelijkheden"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:955
 msgid "T_ags"
@@ -101,7 +101,7 @@ msgstr "H_1"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:957
 msgid "Insert H1 tag"
-msgstr "H1 tag invoegen"
+msgstr "H1-tag invoegen"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:959
 msgid "H_2"
@@ -109,7 +109,7 @@ msgstr "H_2"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:959
 msgid "Insert H2 tag"
-msgstr "H2 tag invoegen"
+msgstr "H2-tag invoegen"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:961
 msgid "H_3"
@@ -117,7 +117,7 @@ msgstr "H_3"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:961
 msgid "Insert H3 tag"
-msgstr "H3 tag invoegen"
+msgstr "H3-tag invoegen"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:963
 msgid "H_4"
@@ -125,7 +125,7 @@ msgstr "H_4"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:963
 msgid "Insert H4 tag"
-msgstr "H4 tag invoegen"
+msgstr "H4-tag invoegen"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:965
 msgid "H_5"
@@ -133,7 +133,7 @@ msgstr "H_5"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:965
 msgid "Insert H5 tag"
-msgstr "H5 tag invoegen"
+msgstr "H5-tag invoegen"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:967
 msgid "H_6"
@@ -141,7 +141,7 @@ msgstr "H_6"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:967
 msgid "Insert H6 tag"
-msgstr "H6 tag invoegen"
+msgstr "H6-tag invoegen"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:969
 msgid "_Entities"
@@ -251,15 +251,15 @@ msgstr "_Insert"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:992
 msgid "Insert"
-msgstr "Insert"
+msgstr "Invoegen"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:993
 msgid "De_lete"
-msgstr "De_lete"
+msgstr "Verwijder"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:993
 msgid "Delete"
-msgstr "Delete"
+msgstr "Verwijder"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:994
 msgid "Format by L_ayout"
@@ -319,11 +319,11 @@ msgstr "Opmaak _Algemeen"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1006
 msgid "_Paragraph"
-msgstr "Paragraaf"
+msgstr "Alinea"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1006 src/plugin_htmlbar/html.c:880
 msgid "Paragraph"
-msgstr "Paragraaf"
+msgstr "Alinea"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1008
 msgid "_Break"
@@ -423,7 +423,7 @@ msgstr "Tabel_rĳ"
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1031
 #: src/plugin_htmlbar/html_table.c:242
 msgid "Table Row"
-msgstr "Tabel Rĳ"
+msgstr "Tabelrĳ"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1033
 msgid "Table _Header"
@@ -445,11 +445,11 @@ msgstr "Tabelgegevens"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1037
 msgid "Table _Caption"
-msgstr "Tabel _bĳschrift"
+msgstr "Tabel_bĳschrift"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1037
 msgid "Table Caption"
-msgstr "Tabel bĳschrift"
+msgstr "Tabelbĳschrift"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1039
 msgid "_List"
@@ -473,11 +473,11 @@ msgstr "Geordende lĳst"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1044
 msgid "List Ite_m"
-msgstr "Lĳst item"
+msgstr "Lĳstitem"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1044
 msgid "List Item"
-msgstr "Lĳst item"
+msgstr "Lĳstitem"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1046
 msgid "De_finition List"
@@ -544,7 +544,7 @@ msgstr "_Datalijst"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1062
 msgid "Opt_group"
-msgstr "Optie _groep"
+msgstr "Optie_groep"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1063
 msgid "Optio_n"
@@ -560,7 +560,7 @@ msgstr "_Sleutelgenerator"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1066
 msgid "O_utput"
-msgstr "O_utput"
+msgstr "_Uitvoer"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1067
 msgid "_Progress"
@@ -572,7 +572,7 @@ msgstr "_Meter"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1069
 msgid "_Misc"
-msgstr "_Diversen"
+msgstr "_Diverse"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1070
 msgid "Insert Generator _META-Tag"
@@ -608,7 +608,7 @@ msgstr "_Commentaar"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1078
 msgid "HTML Comment"
-msgstr "HTML Commentaar"
+msgstr "HTML-commentaar"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1080
 msgid "Dial_ogs"
@@ -628,11 +628,11 @@ msgstr "Snelstart..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1084
 msgid "_Link Header..."
-msgstr "_Link Hoofd..."
+msgstr "_Link Header..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1084
 msgid "Link Header..."
-msgstr "Link Hoofd..."
+msgstr "Link Header..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1086
 msgid "_Body..."
@@ -696,7 +696,7 @@ msgstr "Snellĳst..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1100
 msgid "Quick List..."
-msgstr "Snel lĳst aanmaken..."
+msgstr "Snellĳst aanmaken..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1102
 msgid "_Meta..."
@@ -732,11 +732,11 @@ msgstr "Voorbeeldafbeelding invoegen..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1112
 msgid "Table _Wizard..."
-msgstr "Tabel Wizard..."
+msgstr "Tabelwizard..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1112
 msgid "Table Wizard..."
-msgstr "Tabel Wizard..."
+msgstr "Tabelwizard..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1114
 msgid "_Table..."
@@ -752,15 +752,15 @@ msgstr "Tabelrĳ..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1116
 msgid "Table Row..."
-msgstr "Tabel Rĳ..."
+msgstr "Tabelrĳ..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1118
 msgid "Table _Head..."
-msgstr "Tabelhoofd..."
+msgstr "Tabelkop..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1118
 msgid "Table Head..."
-msgstr "Tabel Hoofd..."
+msgstr "Tabelkop..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1120
 msgid "Table _Data..."
@@ -829,11 +829,11 @@ msgstr "Frame"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1137
 msgid "Frame _Wizard..."
-msgstr "Frame Wizard..."
+msgstr "Frame-wizard..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1137
 msgid "Frame Wizard..."
-msgstr "Frame Wizard..."
+msgstr "Frame-wizard..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1139
 msgid "Frame_set..."
@@ -869,7 +869,7 @@ msgstr "Invoer_knop..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1145
 msgid "Input Button..."
-msgstr "Input Button..."
+msgstr "Invoerknop..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1147
 msgid "Input T_ext..."
@@ -905,7 +905,7 @@ msgstr "Optie..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1155
 msgid "Option _Group..."
-msgstr "Optie groep..."
+msgstr "Optiegroep..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1155
 msgid "Option group..."
@@ -953,7 +953,7 @@ msgstr "Verborgen Invoer..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1171
 msgid "Input Radio button..."
-msgstr "Radio knop..."
+msgstr "Radioknop..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1172
 msgid "Input Radio Button..."
@@ -961,7 +961,7 @@ msgstr "Aanklikrondje..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1173
 msgid "Input Check box..."
-msgstr "Aanvink knop..."
+msgstr "Aanvinkknop..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1174
 msgid "Input Check Box..."
@@ -1130,7 +1130,7 @@ msgstr "Verwijder van Snelbalk"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1373
 msgid "Right click any html toolbar button to add it to the Quickbar."
-msgstr "Klik rechts op een HTML balk knop om deze op de Snelbalk te zetten"
+msgstr "Klik rechts op een HTML-balkknop om deze op de Snelbalk te zetten"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1464
 msgid "Quickbar"
@@ -1210,7 +1210,8 @@ msgid "  Day of the _week (Saturday)"
 msgstr "  Dag van de week (zaterdag)"
 
 #: src/plugin_htmlbar/html.c:438
-msgid "You appear to have a non existant day!\n"
+#, fuzzy
+msgid "You appear to have a non existent day!\n"
 msgstr "Niet bestaande dag!\n"
 
 #: src/plugin_htmlbar/html.c:447
@@ -1226,7 +1227,7 @@ msgstr "  Unix tĳd (%i)"
 #: src/plugin_htmlbar/html.c:455
 #, c-format
 msgid "  Unix Date _String (%s)"
-msgstr "Unix datum string (%s)"
+msgstr "Unix datumstring (%s)"
 
 #: src/plugin_htmlbar/html.c:463
 msgid "  ISO-8601 Ti_me "
@@ -1234,7 +1235,7 @@ msgstr "  ISO-8601 Tĳd "
 
 #: src/plugin_htmlbar/html.c:658
 msgid "Quick Anchor"
-msgstr "Snel anker"
+msgstr "Snelanker"
 
 #: src/plugin_htmlbar/html.c:664 src/plugin_htmlbar/html_form.c:520
 msgid "Attributes"
@@ -1432,11 +1433,11 @@ msgstr "Verouderde opties"
 
 #: src/plugin_htmlbar/html.c:1232
 msgid "Background _Image:"
-msgstr "Achtergrond Afbeelding:"
+msgstr "Achtergrondafbeelding:"
 
 #: src/plugin_htmlbar/html.c:1238
 msgid "Back_ground Color:"
-msgstr "Achtergrond-kleur:"
+msgstr "Achtergrondkleur:"
 
 #: src/plugin_htmlbar/html.c:1244
 msgid "_Text Color:"
@@ -1476,7 +1477,7 @@ msgstr "Lettertype::"
 
 #: src/plugin_htmlbar/html.c:1433
 msgid "Base Font"
-msgstr "Basis lettergrootte"
+msgstr "Basislettergrootte"
 
 #: src/plugin_htmlbar/html.c:1448
 msgid "Size"
@@ -1504,7 +1505,7 @@ msgstr "Mailen naar:"
 
 #: src/plugin_htmlbar/html.c:1567
 msgid "_Copy to:"
-msgstr "Kopieëren naar:"
+msgstr "Kopiëren naar:"
 
 #: src/plugin_htmlbar/html.c:1570
 msgid "Blin_d copy to:"
@@ -1520,7 +1521,7 @@ msgstr "met Body:"
 
 #: src/plugin_htmlbar/html.c:1622
 msgid "Quick List"
-msgstr "Snel lĳst"
+msgstr "Snellĳst"
 
 #: src/plugin_htmlbar/html.c:1627 src/plugin_htmlbar/wizards.c:81
 msgid "Number of _rows:"
@@ -1558,11 +1559,11 @@ msgstr "Bron:"
 
 #: src/plugin_htmlbar/html.c:1808
 msgid "Margin _Width:"
-msgstr "Marge breedte:"
+msgstr "Margebreedte:"
 
 #: src/plugin_htmlbar/html.c:1812
 msgid "Margin _Height:"
-msgstr "Marge hoogte:"
+msgstr "Margehoogte:"
 
 #: src/plugin_htmlbar/html.c:1821
 msgid "Scrollin_g:"
@@ -1645,16 +1646,16 @@ msgid ""
 "TZD - Time Zone Designator (Z denotes Zulu, also known as Greenwich Mean "
 "Time)\n"
 msgstr ""
-"Datum en tijd formaat (bijv.. YYYY-MM-DDThh:mm:ssTZD) :\n"
+"Datum- en tijdformaat (bijv.. YYYY-MM-DDThh:mm:ssTZD) :\n"
 "\n"
 "YYYY - jaar (bijv. 2009)\n"
-"MM - maand (bijv. 01 for January)\n"
+"MM - maand (bijv. 01 for januari)\n"
 "DD - dag van de maand (bijv. 08)\n"
 "T - een vereist scheidingsteken\n"
 "hh - uur (bijv. 22 for 10.00pm)\n"
 "mm - minuten (bijv. 55)\n"
 "ss - seconden (bijv. 03)\n"
-"TZD - tijdzone afkorting (Z staat voor Zulu, ook wel Greenwich Mean Time)\n"
+"TZD - tijdzone-afkorting (Z staat voor Zulu, ook wel Greenwich Mean Time)\n"
 
 #: src/plugin_htmlbar/html.c:2194
 msgid "_Datetime:"
@@ -1678,7 +1679,7 @@ msgstr "(alleen HTML4)"
 
 #: src/plugin_htmlbar/html.c:2352
 msgid "MIME _Type:"
-msgstr "MIME _Type:"
+msgstr "MIME-_type:"
 
 #: src/plugin_htmlbar/html.c:2356
 msgid "_Charset:"
@@ -1703,7 +1704,7 @@ msgstr "_Defer:"
 #.
 #: src/plugin_htmlbar/html.c:2537
 msgid "CSS3 multi-column layout"
-msgstr "CSS3 multi-kolom layout"
+msgstr "CSS3 multi-kolomlayout"
 
 #: src/plugin_htmlbar/html.c:2544
 msgid "Auto (default) or number of columns"
@@ -1727,7 +1728,7 @@ msgstr "Breedte"
 
 #: src/plugin_htmlbar/html.c:2602
 msgid "Use vendor-prefixed CSS property:"
-msgstr "Gebruik vendox-prefix CSS properties:"
+msgstr "Gebruik vendor-prefix CSS-properties:"
 
 #: src/plugin_htmlbar/html.c:2610
 msgid "styles_heet"
@@ -1739,19 +1740,19 @@ msgstr "Voeg selector(s) toe om nieuwe regel te maken"
 
 #: src/plugin_htmlbar/html.c:2613
 msgid "style a_ttribute"
-msgstr "stijl attribuut"
+msgstr "stijlattribuut"
 
 #: src/plugin_htmlbar/html.c:2614
 msgid "Add a style attribute in tag"
-msgstr "Maak stijl attribuut in tag"
+msgstr "Maak stijlattribuut in tag"
 
 #: src/plugin_htmlbar/html.c:2616
 msgid "style _values"
-msgstr "stijl waarden"
+msgstr "stijlwaarden"
 
 #: src/plugin_htmlbar/html.c:2617
 msgid "Add values in a style attribute"
-msgstr "Voeg waarden toe aan stijl attribuut"
+msgstr "Voeg waarden toe aan stijlattribuut"
 
 #: src/plugin_htmlbar/html.c:2627
 msgid "Selecto_rs:"
@@ -1840,7 +1841,7 @@ msgstr "Geselecteerd:"
 
 #: src/plugin_htmlbar/html_form.c:419
 msgid "Option group"
-msgstr "Optie groep"
+msgstr "Optiegroep"
 
 #: src/plugin_htmlbar/html_form.c:515
 msgid "Input"
@@ -1938,8 +1939,9 @@ msgstr "<span color=\"#A36A00\">_Scope:</span>"
 
 #: src/plugin_htmlbar/html_table.c:410
 msgid "the header cell applies to cells in the same:"
-msgstr "de header cel bestaat uit alle cellen in de zelfde:"
+msgstr "de header-cel bestaat uit alle cellen in de zelfde:"
 
+# Wat wordt hier bedoeld?
 #: src/plugin_htmlbar/html_table.c:422
 msgid "Co_l Span:"
 msgstr "Aantal samen te voegen kolommen:"
@@ -2036,11 +2038,11 @@ msgstr "Met breedte, behoud verhoudingen"
 
 #: src/plugin_htmlbar/image.c:1065
 msgid "By height, keep aspect ratio"
-msgstr "Met hoogte,behoud verhoudingen"
+msgstr "Met hoogte, behoud verhoudingen"
 
 #: src/plugin_htmlbar/image.c:1068
 msgid "By width and height, ignore aspect ratio"
-msgstr "Met hoogte en breedte,negeer verhoudingen"
+msgstr "Met hoogte en breedte, negeer verhoudingen"
 
 #: src/plugin_htmlbar/image.c:1094
 msgid ""
@@ -2050,9 +2052,9 @@ msgid ""
 "%b: original size (bytes)"
 msgstr ""
 "%r: originele bestandsnaam %t: voorbeeldafbeelding bestandsnaam\n"
-"%w: originele breedte  %h: originele hoogte\n"
-"%x: voorbeeldafbeelding breedte  %y:voorbeeldafbeelding hoogte\n"
-"%b: originele  grootte (bytes)"
+"%w: originele breedte %h: originele hoogte\n"
+"%x: voorbeeldafbeelding breedte %y: voorbeeldafbeelding hoogte\n"
+"%b: originele grootte (bytes)"
 
 #: src/plugin_htmlbar/image_dialog.c:385
 msgid "Keep aspect ratio"
@@ -2076,7 +2078,7 @@ msgstr "ID:"
 
 #: src/plugin_htmlbar/image_dialog.c:440
 msgid "_Use Transitional options"
-msgstr "Gebruik 'transitional' opties"
+msgstr "Gebruik 'transitional'-opties"
 
 #: src/plugin_htmlbar/image_dialog.c:456
 msgid "_Border:"
@@ -2146,11 +2148,11 @@ msgstr "Media:"
 #.
 #: src/plugin_htmlbar/quickstart.c:565
 msgid "<b>Style Area</b>"
-msgstr "<b>Stĳl Gebied</b>"
+msgstr "<b>Stĳlgebied</b>"
 
 #: src/plugin_htmlbar/quickstart.c:569
 msgid "Cre_ate empty style area"
-msgstr "Maak een leeg stĳl gebied"
+msgstr "Maak een leeg stĳlgebied"
 
 #: src/plugin_htmlbar/quickstart.c:588
 msgid "<b>Attributes</b>"
@@ -2167,7 +2169,7 @@ msgstr "<b>Script Area</b>"
 
 #: src/plugin_htmlbar/quickstart.c:614
 msgid "Cre_ate empty script area"
-msgstr "Maak een leeg script gebied"
+msgstr "Maak een leeg scriptgebied"
 
 #: src/plugin_htmlbar/quickstart.c:641
 msgid "Quick Start"
@@ -2191,7 +2193,7 @@ msgstr "Open in nieuw document."
 
 #: src/plugin_htmlbar/wizards.c:73
 msgid "Table Wizard"
-msgstr "Tabel Wizard"
+msgstr "Tabelwizard"
 
 #: src/plugin_htmlbar/wizards.c:85
 msgid "Number of colu_mns:"
@@ -2203,11 +2205,11 @@ msgstr "Tabelrĳen op één regel:"
 
 #: src/plugin_htmlbar/wizards.c:94
 msgid "_Indent table code:"
-msgstr "Inspringen tabel-code:"
+msgstr "Inspringen tabelcode:"
 
 #: src/plugin_htmlbar/wizards.c:190
 msgid "Frame Wizard"
-msgstr "Frame Wizard"
+msgstr "Framewizard"
 
 #: src/plugin_htmlbar/wizards.c:204
 msgid "Use _DTD:"
@@ -2255,15 +2257,15 @@ msgstr "Geef balk weer in zijbalk"
 
 #: src/plugin_htmlbar/prefs.c:74
 msgid "Keep HTML dialogs always on top"
-msgstr "HTML vensters altijd bovenop"
+msgstr "HTML-vensters altijd bovenop"
 
 #: src/plugin_htmlbar/prefs.c:79
 msgid "<b>HTML options</b>"
-msgstr "<b>HTML opties</b>"
+msgstr "<b>HTML-opties</b>"
 
 #: src/plugin_htmlbar/prefs.c:82
 msgid "Use lo_wercase HTML tags"
-msgstr "HTML tags in kleine letters"
+msgstr "HTML-tags in kleine letters"
 
 #: src/plugin_htmlbar/prefs.c:84
 msgid "Use de_precated tags (e.g. <font> and <nobr>)"
@@ -2272,7 +2274,7 @@ msgstr "Gebruik verouderde tags (zoals <font> en <nobr>)"
 #: src/plugin_htmlbar/prefs.c:88
 msgid "_Format according to accessibility guidelines (e.g. <strong> for <b>)"
 msgstr ""
-"_Opmaak volgens toegankelijkheids richtlijnen (zoals <strong> i.p.v. <b>)"
+"_Opmaak volgens toegankelijkheidsrichtlijnen (zoals <strong> i.p.v. <b>)"
 
 #: src/plugin_htmlbar/prefs.c:91
 msgid "<b>Auto Update Tag Options</b>"
@@ -2280,15 +2282,15 @@ msgstr "<b>Automatisch tag bijwerken</b>"
 
 #: src/plugin_htmlbar/prefs.c:95
 msgid "Automatically update a_uthor meta tag"
-msgstr "A_uthor meta tag automatisch bijwerken"
+msgstr "A_uthor metatag automatisch bijwerken"
 
 #: src/plugin_htmlbar/prefs.c:98
 msgid "Automatically update _date meta tag"
-msgstr "_Date meta tag automatisch bijwerken"
+msgstr "_Date metatag automatisch bijwerken"
 
 #: src/plugin_htmlbar/prefs.c:101
 msgid "Automatically update _generator meta tag"
-msgstr "_Generator meta tag automatisch bijwerken"
+msgstr "_Generator metatag automatisch bijwerken"
 
 #~ msgid "Use _XHTML style tags (<br />)"
 #~ msgstr "Gebruik _XHTML tags (<br />)"
