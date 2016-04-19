@@ -420,7 +420,7 @@ msgstr "Vergroot tabgrootte"
 #: ../src/bfwin_uimanager.c:870
 msgid "Decrease document tab size"
 msgstr "Verklein tabgrootte"
-MOet edi
+
 #: ../src/bfwin_uimanager.c:872
 msgid "Reset document tab size"
 msgstr "Herstel tabgrootte"
