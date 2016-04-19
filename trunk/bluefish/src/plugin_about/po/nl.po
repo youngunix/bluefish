@@ -38,7 +38,7 @@ msgid ""
 "Package maintainers:"
 msgstr ""
 "\n"
-"Pakket onderhouders:"
+"Onderhoud van het pakket:"
 
 #: src/plugin_about/about.c:228
 msgid ""
@@ -47,8 +47,8 @@ msgid ""
 "please let us know at:"
 msgstr ""
 "\n"
-"Als u iemand hier mist,\n"
-"laat het ons graag weten via:"
+"Als u hier iemand mist,\n"
+"laat het ons svp weten "
 
 #: src/plugin_about/about.c:229
 msgid "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
@@ -68,8 +68,8 @@ msgid ""
 "supporting many programming and markup languages, but focusing on creating "
 "dynamic and interactive websites."
 msgstr ""
-"Een opensource editor voor ervaren webdesigners en -programmeurs, ondersteunt vele programmeer- en opmaaktalen, "
-"maar is gefocust op het "
+"Een opensource-editor voor ervaren webdesigners en -programmeurs, "
+"ondersteunt vele programmeer- en opmaaktalen, maar is gefocust op het "
 "creëren van dynamische en interactieve websites."
 
 #. Translators: This is a special message that shouldn't be translated
@@ -85,7 +85,8 @@ msgid "translator-credits"
 msgstr ""
 "Olav Sliekers <idunno@mysun.com>\n"
 "\"elve\" <elve@savage-elve.net>\n"
-"Olivier Sessink <olivier@bluefish.openoffice.nl>"
+"Olivier Sessink <olivier@bluefish.openoffice.nl>"\n
+"Gertjan Laan <gj@gertjanlaan.nl>"\n
 
 #: src/plugin_about/about.c:374
 msgid "_Help"
@@ -93,11 +94,11 @@ msgstr "_Help"
 
 #: src/plugin_about/about.c:375
 msgid "Bluefish _Homepage"
-msgstr "Bluefish Website"
+msgstr "Bluefish-Website"
 
 #: src/plugin_about/about.c:375
 msgid "Bluefish homepage"
-msgstr "Bluefish Website"
+msgstr "Bluefish-website"
 
 #: src/plugin_about/about.c:377
 msgid "Report a _Bug"
