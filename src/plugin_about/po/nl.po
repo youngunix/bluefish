@@ -48,7 +48,7 @@ msgid ""
 msgstr ""
 "\n"
 "Als u hier iemand mist,\n"
-"laat het ons svp weten "
+"laat het ons svp weten op:"
 
 #: src/plugin_about/about.c:229
 msgid "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
@@ -85,8 +85,8 @@ msgid "translator-credits"
 msgstr ""
 "Olav Sliekers <idunno@mysun.com>\n"
 "\"elve\" <elve@savage-elve.net>\n"
-"Olivier Sessink <olivier@bluefish.openoffice.nl>"\n
-"Gertjan Laan <gj@gertjanlaan.nl>"\n
+"Olivier Sessink <olivier@bluefish.openoffice.nl>\n"
+"Gertjan Laan <gj@gertjanlaan.nl>"
 
 #: src/plugin_about/about.c:374
 msgid "_Help"
