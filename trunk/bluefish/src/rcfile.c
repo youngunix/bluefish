@@ -804,10 +804,29 @@ GList *update_filters(GList *current, gboolean overwrite)
 	return retlist;
 }
 
+static GList *
+add_browser_if_exists(GList *list, const gchar *name, const gchar *path, const gchar isdefault)
+{
+	GFile *uri;
+	
+	uri = g_file_new_from_path(path);
+	if (g_file_query_exists(uri,NULL)) {
+		gchar *command = g_strconcat("\"", path, "\" '%p'", NULL);
+		list = g_list_prepend(list, array_from_arglist(name,command,isdefault, NULL));
+		g_free(command);
+	}
+	g_object_unref(uri);
+	return list;
+}
+
+
 GList *update_commands(GList *current, gboolean overwrite)
 {
 	GList *defaults=NULL, *retlist;
 #ifdef WIN32
+	defaults = add_browser_if_exists(defaults, _("Windows 7 Firefox 32-bit"), "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe", "1");
+	defaults = add_browser_if_exists(defaults, _("Windows 7 Firefox"), "C:\\Program Files\\Mozilla Firefox\\firefox.exe", "1");
+	
 	defaults =
 		g_list_prepend(defaults,
 					  array_from_arglist(_("Windows 7 Firefox 32-bit"),
