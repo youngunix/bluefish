@@ -787,14 +787,20 @@ GList *update_filters(GList *current, gboolean overwrite)
 					  array_from_arglist(_("Javascript Minify with jsmin"), "|python "PKGDATADIR"/jsmin.py|", NULL));
 	defaults =
 		g_list_append(defaults,
-					  array_from_arglist(_("Toggle CSS compression"), "|python "PKGDATADIR"/css_decompressor|", NULL));
+					  array_from_arglist(_("Decompress CSS"), "|python "PKGDATADIR"/css_decompressor|", NULL));
+	defaults =
+		g_list_append(defaults,
+					  array_from_arglist(_("Compress CSS"), "|python "PKGDATADIR"/cssmin.py|", NULL));
 #else
 	defaults =
 		g_list_append(defaults,
 					  array_from_arglist(_("Javascript Minify with jsmin"), "|"PKGDATADIR"/jsmin.py|", NULL));
 	defaults =
 		g_list_append(defaults,
-					  array_from_arglist(_("Toggle CSS compression"), "|"PKGDATADIR"/css_decompressor|", NULL));
+					  array_from_arglist(_("Decompress CSS"), "|"PKGDATADIR"/css_decompressor|", NULL));
+	defaults =
+		g_list_append(defaults,
+					  array_from_arglist(_("Compress CSS"), "|"PKGDATADIR"/cssmin.py|", NULL));
 #endif
 	defaults =
 		g_list_append(defaults,
