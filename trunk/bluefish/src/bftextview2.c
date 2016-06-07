@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * bftextview2.c
  *
- * Copyright (C) 2008-2015 Olivier Sessink
+ * Copyright (C) 2008-2016 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1185,6 +1185,52 @@ paint_spaces(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible, G
 	cairo_stroke(cr);
 }
 
+#if GTK_CHECK_VERSION(3,20,0)
+static void
+bluefish_text_view_draw_layer(GtkTextView * text_view, GtkTextViewLayer layer, cairo_t * cr)
+{
+	cairo_save(cr);
+
+	if (layer == GTK_TEXT_VIEW_LAYER_BELOW_TEXT)
+	{
+		BluefishTextView *btv = BLUEFISH_TEXT_VIEW(text_view);
+		BluefishTextView *master = BLUEFISH_TEXT_VIEW(btv->master);
+
+		if (gtk_widget_is_sensitive(GTK_WIDGET(btv))
+			&& (BFWIN(DOCUMENT(master->doc)->bfwin)->session->view_cline || main_v->props.highlight_cursor)) {
+			gint y, height;
+			GtkTextIter it;
+
+			DBG_SIGNALS("bluefish_text_view_draw_layer_event, current line highlighting\n");
+			gtk_text_buffer_get_iter_at_mark(master->buffer, &it, gtk_text_buffer_get_insert(master->buffer));
+			gtk_text_view_get_line_yrange(text_view, &it, &y, &height);
+
+			if (BFWIN(DOCUMENT(master->doc)->bfwin)->session->view_cline && !DOCUMENT(master->doc)->readonly) {
+				gdouble x1, y1, x2, y2;
+
+				cairo_clip_extents (cr, &x1, &y1, &x2, &y2);
+				gdk_cairo_set_source_rgba(cr, &st_cline_color);
+				cairo_rectangle (cr, x1 + .5, y + .5, x2 - x1 - 1, height - 1);
+				cairo_fill (cr);
+			}
+
+			if (main_v->props.highlight_cursor) {
+				GdkRectangle itrect;
+				gint width;
+
+				gtk_text_view_get_iter_location(text_view, &it, &itrect);
+				width = itrect.width > 5 ? itrect.width : master->margin_pixels_per_char;
+				gdk_cairo_set_source_rgba(cr, &st_cursor_highlight_color);
+				cairo_rectangle(cr, itrect.x, itrect.y, width, itrect.height);
+				cairo_fill(cr);
+			}
+		}
+	}
+
+	cairo_restore(cr);
+}
+#endif
+
 #if GTK_CHECK_VERSION(3,0,0)
 static gboolean
 bluefish_text_view_draw(GtkWidget * widget, cairo_t * cr)
@@ -1197,6 +1243,11 @@ bluefish_text_view_draw(GtkWidget * widget, cairo_t * cr)
 	gint rect2y, rect2x;
 	GtkTextIter startvisible, endvisible;
 
+#if GTK_CHECK_VERSION(3,20,0)
+	if (GTK_WIDGET_CLASS(bluefish_text_view_parent_class)->draw)
+		event_handled = GTK_WIDGET_CLASS(bluefish_text_view_parent_class)->draw(widget, cr);
+#endif
+
 	wleft = gtk_text_view_get_window(GTK_TEXT_VIEW(widget), GTK_TEXT_WINDOW_LEFT);
 	gtk_text_view_get_visible_rect(GTK_TEXT_VIEW(widget), &rect);
 	gtk_text_view_get_line_at_y(GTK_TEXT_VIEW(widget), &startvisible, rect.y, NULL);
@@ -1206,19 +1257,20 @@ bluefish_text_view_draw(GtkWidget * widget, cairo_t * cr)
 
 	if (wleft && gtk_cairo_should_draw_window(cr, wleft)) {
 	   /******** the painting in the MARGIN area of the widget *********/
-		DBG_SIGNALS("bluefish_text_view_expose_event, GTK_TEXT_WINDOW_LEFT\n");
+		DBG_SIGNALS("bluefish_text_view_draw_event, GTK_TEXT_WINDOW_LEFT\n");
 		paint_margin(btv, cr, &startvisible, &endvisible);
 		event_handled = TRUE;
 	}
 	wtext = gtk_text_view_get_window(GTK_TEXT_VIEW(widget), GTK_TEXT_WINDOW_TEXT);
 	if (wtext && gtk_cairo_should_draw_window(cr, wtext)) {
 	   /******** the painting in the TEXT area of the widget ********/
+#if !GTK_CHECK_VERSION(3,20,0)
 		if (gtk_widget_is_sensitive(GTK_WIDGET(btv))
 			&& (BFWIN(DOCUMENT(master->doc)->bfwin)->session->view_cline || main_v->props.highlight_cursor)) {
 			gint y2, x2;
 			GtkTextIter it;
 			GdkRectangle itrect;
-			DBG_SIGNALS("bluefish_text_view_expose_event, current line highlighting\n");
+			DBG_SIGNALS("bluefish_text_view_draw_event, current line highlighting\n");
 			gtk_text_buffer_get_iter_at_mark(master->buffer, &it, gtk_text_buffer_get_insert(master->buffer));
 			gtk_text_view_get_iter_location((GtkTextView *) widget, &it, &itrect);
 			gtk_text_view_buffer_to_window_coords(GTK_TEXT_VIEW(widget), GTK_TEXT_WINDOW_TEXT,
@@ -1245,9 +1297,9 @@ bluefish_text_view_draw(GtkWidget * widget, cairo_t * cr)
 
 		if (GTK_WIDGET_CLASS(bluefish_text_view_parent_class)->draw)
 			event_handled = GTK_WIDGET_CLASS(bluefish_text_view_parent_class)->draw(widget, cr);
-
+#endif
 		if (master->visible_spacing) {
-			DBG_SIGNALS("bluefish_text_view_expose_event, paint visible spacing\n");
+			DBG_SIGNALS("bluefish_text_view_draw_event, paint visible spacing\n");
 			paint_spaces(btv, cr, &startvisible, &endvisible);
 		}
 
@@ -1634,7 +1686,7 @@ bluefish_text_view_key_press_event(GtkWidget * widget, GdkEventKey * kevent)
 		main_v->bevent_doc = master->doc;
 		main_v->bevent_charoffset = gtk_text_iter_get_offset(&tmpit);
 	}
-	
+
 	retval = GTK_WIDGET_CLASS(bluefish_text_view_parent_class)->key_press_event(widget, kevent);
 	if (retval) {
 		DBG_SIGNALS("parent handled the event, set key_press_inserted_char to TRUE\n");
@@ -3005,6 +3057,9 @@ bluefish_text_view_class_init(BluefishTextViewClass * klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS(klass);
 	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS(klass);
+#if GTK_CHECK_VERSION(3,20,0)
+	GtkTextViewClass *textview_class = GTK_TEXT_VIEW_CLASS(klass);
+#endif
 
 /*	object_class->constructor = bluefish_text_view_create;*/
 	object_class->finalize = bluefish_text_view_finalize;
@@ -3012,7 +3067,7 @@ bluefish_text_view_class_init(BluefishTextViewClass * klass)
 	widget_class->button_press_event = bluefish_text_view_button_press_event;
 	widget_class->motion_notify_event = bluefish_text_view_motion_notify_event;
 	widget_class->button_release_event = bluefish_text_view_button_release_event;
-#if GTK_CHECK_VERSION(3, 0, 0)
+#if GTK_CHECK_VERSION(3,0,0)
 	widget_class->draw = bluefish_text_view_draw;
 #else
 	widget_class->expose_event = bluefish_text_view_expose_event;
@@ -3021,6 +3076,10 @@ bluefish_text_view_class_init(BluefishTextViewClass * klass)
 	widget_class->key_release_event = bluefish_text_view_key_release_event;
 	widget_class->query_tooltip = bluefish_text_view_query_tooltip;
 	widget_class->focus_out_event = bluefish_text_view_focus_out_event;
+
+#if GTK_CHECK_VERSION(3,20,0)
+	textview_class->draw_layer = bluefish_text_view_draw_layer;
+#endif
 }
 
 void
