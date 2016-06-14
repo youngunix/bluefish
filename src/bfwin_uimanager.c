@@ -1581,7 +1581,7 @@ bfwin_lang_mode_set_wo_activate(Tbfwin * bfwin, Tbflang * bflang)
 		action for a certain language file. In such a situation we have to create it. Text always exist,
 		so we take the group from Text */
 		action = gtk_action_group_get_action(bfwin->lang_mode_group,"Text");
-		group = gtk_radio_action_get_group(action);
+		group = gtk_radio_action_get_group(GTK_RADIO_ACTION(action));
 		create_single_lang_mode_menu(bfwin, bflang, -1, TRUE, &group);
 		return;
 	}

@@ -810,12 +810,13 @@ GList *update_filters(GList *current, gboolean overwrite)
 	return retlist;
 }
 
+#ifdef WIN32
 static GList *
 add_browser_if_exists(GList *list, const gchar *name, const gchar *path, const gchar isdefault)
 {
 	GFile *uri;
 	
-	uri = g_file_new_from_path(path);
+	uri = g_file_new_for_path(path);
 	if (g_file_query_exists(uri,NULL)) {
 		gchar *command = g_strconcat("\"", path, "\" '%p'", NULL);
 		list = g_list_prepend(list, array_from_arglist(name,command,isdefault, NULL));
@@ -824,7 +825,7 @@ add_browser_if_exists(GList *list, const gchar *name, const gchar *path, const g
 	g_object_unref(uri);
 	return list;
 }
-
+#endif
 
 GList *update_commands(GList *current, gboolean overwrite)
 {
