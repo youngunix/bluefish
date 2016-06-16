@@ -10,10 +10,10 @@
 #: ../src/xmlstrings.h:1
 msgid ""
 msgstr ""
-"Project-Id-Version: Bluefish 2.2.8\n"
+"Project-Id-Version: Bluefish 2.2.9\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-04-10 09:29+0200\n"
-"PO-Revision-Date: 2016-04-10 54:30+0200\n"
+"POT-Creation-Date: 2016-06-16 12:48+0200\n"
+"PO-Revision-Date: 2016-06-16 12:56+0200\n"
 "Last-Translator: Frédéric Falsetti <falsetti@clansco.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -31,8 +31,8 @@ msgid ""
 msgstr ""
 "Bluefish est un éditeur puissant destiné aux programmeurs et développeurs "
 "web,avec de nombreuses options pour écrire des pages web, des scripts et du "
-"code source.Bluefish supporte de nombreux langages de programmation et de "
-"balise, a de nombreuses fonctionnalités, mais il reste rapide et léger."
+"code source. Bluefish supporte de nombreux langages de programmation et de "
+"balise et possède de nombreuses fonctionnalités, mais il reste rapide et léger."
 
 #: ../desktop-data/bluefish.appdata.xml.in.h:2
 msgid "A selection of the features:"
@@ -118,20 +118,20 @@ msgstr "Fichier de projet Bluefish"
 msgid "Bluefish language definition file"
 msgstr "Fichier de définition de language Bluefish"
 
-#: ../src/bftextview2.c:1835
+#: ../src/bftextview2.c:1887
 msgid "Collapse all"
 msgstr "Tout replier"
 
-#: ../src/bftextview2.c:1838
+#: ../src/bftextview2.c:1890
 msgid "Expand all"
 msgstr "Tout Déplier"
 
-#: ../src/bftextview2.c:1846
+#: ../src/bftextview2.c:1898
 #, c-format
 msgid "Collapse %s"
 msgstr "Replier %s"
 
-#: ../src/bftextview2.c:1856
+#: ../src/bftextview2.c:1908
 #, c-format
 msgid "Expand %s"
 msgstr "Déplier %s"
@@ -3194,7 +3194,7 @@ msgstr "Documents, onglet modifié :"
 
 #. arr = array_from_arglist(_("Java programming"),"1", "java:image:jsp", NULL);
 #. main_v->globses.filefilters = g_list_append(main_v->globses.filefilters, arr);
-#: ../src/preferences.c:3025 ../src/rcfile.c:1419
+#: ../src/preferences.c:3025 ../src/rcfile.c:1445
 msgid "Images"
 msgstr "Images"
 
@@ -3378,111 +3378,119 @@ msgstr "Rendu HTML en texte"
 msgid "PHP Beautifier"
 msgstr "PHP Beautifier"
 
-#: ../src/rcfile.c:787 ../src/rcfile.c:794
+#: ../src/rcfile.c:787 ../src/rcfile.c:797
 msgid "Javascript Minify with jsmin"
 msgstr "Compacter javascript avec jsmin"
 
-#: ../src/rcfile.c:790 ../src/rcfile.c:797
-msgid "Toggle CSS compression"
-msgstr "Basculer la compression CSS"
+#: ../src/rcfile.c:790 ../src/rcfile.c:800
+msgid "Decompress CSS"
+msgstr "Décompresser CSS"
 
-#: ../src/rcfile.c:801
+#: ../src/rcfile.c:793 ../src/rcfile.c:803
+msgid "Compress CSS"
+msgstr "Compresser CSS"
+
+#: ../src/rcfile.c:807
 msgid "CSS tidy"
 msgstr "CSS tidy"
 
-#: ../src/rcfile.c:813
+#: ../src/rcfile.c:834 ../src/rcfile.c:839
 msgid "Windows 7 Firefox 32-bit"
 msgstr "Windows 7 Firefox 32-bit"
 
-#: ../src/rcfile.c:818
+#: ../src/rcfile.c:835
+msgid "Windows 7 Firefox"
+msgstr "Windows 7 Firefox"
+
+#: ../src/rcfile.c:844
 msgid "Windows 7 Internet Explorer 32-bit"
 msgstr "Windows 7 Internet Explorer 32-bitr"
 
-#: ../src/rcfile.c:823
+#: ../src/rcfile.c:849
 msgid "Windows 7 Internet Explorer 64-bit"
 msgstr "Windows 7 Internet Explorer 64-bit"
 
-#: ../src/rcfile.c:829
+#: ../src/rcfile.c:855
 msgid "Safari"
 msgstr "Safari"
 
-#: ../src/rcfile.c:832 ../src/rcfile.c:848
+#: ../src/rcfile.c:858 ../src/rcfile.c:874
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ../src/rcfile.c:835
+#: ../src/rcfile.c:861
 msgid "Google Chrome"
 msgstr "Google Chrome"
 
-#: ../src/rcfile.c:838 ../src/rcfile.c:855
+#: ../src/rcfile.c:864 ../src/rcfile.c:881
 msgid "Chromium"
 msgstr "Chromium"
 
-#: ../src/rcfile.c:841 ../src/rcfile.c:851
+#: ../src/rcfile.c:867 ../src/rcfile.c:877
 msgid "Opera"
 msgstr "Opera"
 
-#: ../src/rcfile.c:844 ../src/rcfile.c:870
+#: ../src/rcfile.c:870 ../src/rcfile.c:896
 msgid "chmod a+x"
 msgstr "chmod a+x"
 
-#: ../src/rcfile.c:858
+#: ../src/rcfile.c:884
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: ../src/rcfile.c:861
+#: ../src/rcfile.c:887
 msgid "Epiphany"
 msgstr "Epiphany"
 
-#: ../src/rcfile.c:864
+#: ../src/rcfile.c:890
 msgid "Kazehakase"
 msgstr "Kazehakase"
 
-#: ../src/rcfile.c:867
+#: ../src/rcfile.c:893
 msgid "Links2 (graphics)"
 msgstr "Links2 (graphics)"
 
-#: ../src/rcfile.c:919
+#: ../src/rcfile.c:945
 msgid "C Header"
 msgstr "En-tête C"
 
-#: ../src/rcfile.c:922
+#: ../src/rcfile.c:948
 msgid "C Header GPL"
 msgstr "En-tête C GPL"
 
-#: ../src/rcfile.c:925
+#: ../src/rcfile.c:951
 msgid "XHTML 1.0"
 msgstr "XHTML 1.0"
 
-#: ../src/rcfile.c:928
+#: ../src/rcfile.c:954
 msgid "HTML 5"
 msgstr "HTML 5"
 
-#: ../src/rcfile.c:931
+#: ../src/rcfile.c:957
 msgid "PHP"
 msgstr "PHP"
 
-#: ../src/rcfile.c:934
+#: ../src/rcfile.c:960
 msgid "LaTex Book"
 msgstr "LaTex Book"
 
-#: ../src/rcfile.c:937
+#: ../src/rcfile.c:963
 msgid "LaTex Presentation"
 msgstr "LaTex Présentation"
 
-#: ../src/rcfile.c:1304
+#: ../src/rcfile.c:1330
 msgid "Untitled Project"
 msgstr "Projet sans titre"
 
-#: ../src/rcfile.c:1411
+#: ../src/rcfile.c:1437
 msgid "C programming"
 msgstr "Programmation C"
 
-#: ../src/rcfile.c:1415
+#: ../src/rcfile.c:1441
 msgid "Web files"
 msgstr "fichiers de type web"
 
-#: ../src/rcfile.c:1422
+#: ../src/rcfile.c:1448
 msgid "Hide objectfiles"
 msgstr "Cacher les fichiers objets"
 
@@ -3859,3 +3867,6 @@ msgstr "Afficher ce language dans le menu"
 #: ../src/xmlstrings.h:45
 msgid "Tag block-start includes all attributes"
 msgstr "Le bloc de balise ouvrante inclut tous les attributs"
+
+#~ msgid "Toggle CSS compression"
+#~ msgstr "Basculer la compression CSS"
