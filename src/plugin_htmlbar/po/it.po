@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-01-08 11:41+0100\n"
+"POT-Creation-Date: 2016-06-16 09:51+0200\n"
 "PO-Revision-Date: 2013-12-02 08:30+0100\n"
 "Last-Translator: Roberto Bellingeri <bellingeri@netguru.it>\n"
 "Language-Team: \n"
@@ -1209,7 +1209,8 @@ msgid "  Day of the _week (Saturday)"
 msgstr "  Giorno della _settimana (Sabato)"
 
 #: src/plugin_htmlbar/html.c:438
-msgid "You appear to have a non existant day!\n"
+#, fuzzy
+msgid "You appear to have a non existent day!\n"
 msgstr "Sembra che abbiate un giorno che non esiste!\n"
 
 #: src/plugin_htmlbar/html.c:447

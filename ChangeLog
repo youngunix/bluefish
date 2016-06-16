@@ -2,6 +2,12 @@ The complete VCS changelog can be obtained from our subversion repository
 using the `svn2cl' utility. The release changelogs are also available from
 our homepage: http://bluefish.openoffice.nl.
 
+* 2.2.9 *
+
+Bluefish 2.2.9 is a maintenance release that most importantly fixes
+incompoatibility with Gtk 3.20. Next to that some small dialogs have
+been improved, and some user interface parts have been polished. 
+
 * 2.2.8 *
 
 Bluefish 2.2.8 is a bugfix release with some small improvements and more
