@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bluefish gtk2-port\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-01-08 11:41+0100\n"
+"POT-Creation-Date: 2016-06-16 09:51+0200\n"
 "PO-Revision-Date: 2004-11-27 21:02+0100\n"
 "Last-Translator: David Smeringe <david.smeringe@telia.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -1363,7 +1363,8 @@ msgid "  Day of the _week (Saturday)"
 msgstr "  _Veckodag (lördag)"
 
 #: src/plugin_htmlbar/html.c:438
-msgid "You appear to have a non existant day!\n"
+#, fuzzy
+msgid "You appear to have a non existent day!\n"
 msgstr "Den angivna dagen existerar inte!\n"
 
 #: src/plugin_htmlbar/html.c:447
