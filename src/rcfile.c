@@ -812,7 +812,7 @@ GList *update_filters(GList *current, gboolean overwrite)
 
 #ifdef WIN32
 static GList *
-add_browser_if_exists(GList *list, const gchar *name, const gchar *path, const gchar isdefault)
+add_browser_if_exists(GList *list, const gchar *name, const gchar *path, const gchar *isdefault)
 {
 	GFile *uri;
 	
