@@ -1185,14 +1185,16 @@ paint_spaces(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible, G
 	cairo_stroke(cr);
 }
 
-#if GTK_CHECK_VERSION(3,20,0)
+#if GTK_CHECK_VERSION(3,14,0)
 static void
 bluefish_text_view_draw_layer(GtkTextView * text_view, GtkTextViewLayer layer, cairo_t * cr)
 {
 	cairo_save(cr);
 
-	if (layer == GTK_TEXT_VIEW_LAYER_BELOW_TEXT)
+	if (layer == GTK_TEXT_VIEW_LAYER_BELOW)
 	{
+		/* in gtk 3.20 GTK_TEXT_VIEW_LAYER_BELOW_TEXT is added which works in buffer coordinates. 
+		In gtk 3.14 GTK_TEXT_VIEW_LAYER_BELOW is added which works in viewport coordinates */
 		BluefishTextView *btv = BLUEFISH_TEXT_VIEW(text_view);
 		BluefishTextView *master = BLUEFISH_TEXT_VIEW(btv->master);
 
@@ -1217,7 +1219,7 @@ bluefish_text_view_draw_layer(GtkTextView * text_view, GtkTextViewLayer layer, c
 			if (main_v->props.highlight_cursor) {
 				GdkRectangle itrect;
 				gint width;
-
+				g_print("bluefish_text_view_draw_event, GTK >= 3.14 draw highlight_cursor block\n");
 				gtk_text_view_get_iter_location(text_view, &it, &itrect);
 				width = itrect.width > 5 ? itrect.width : master->margin_pixels_per_char;
 				gdk_cairo_set_source_rgba(cr, &st_cursor_highlight_color);
@@ -1243,7 +1245,7 @@ bluefish_text_view_draw(GtkWidget * widget, cairo_t * cr)
 	gint rect2y, rect2x;
 	GtkTextIter startvisible, endvisible;
 
-#if GTK_CHECK_VERSION(3,20,0)
+#if GTK_CHECK_VERSION(3,14,0)
 	if (GTK_WIDGET_CLASS(bluefish_text_view_parent_class)->draw)
 		event_handled = GTK_WIDGET_CLASS(bluefish_text_view_parent_class)->draw(widget, cr);
 #endif
@@ -1264,13 +1266,13 @@ bluefish_text_view_draw(GtkWidget * widget, cairo_t * cr)
 	wtext = gtk_text_view_get_window(GTK_TEXT_VIEW(widget), GTK_TEXT_WINDOW_TEXT);
 	if (wtext && gtk_cairo_should_draw_window(cr, wtext)) {
 	   /******** the painting in the TEXT area of the widget ********/
-#if !GTK_CHECK_VERSION(3,20,0)
+#if !GTK_CHECK_VERSION(3,14,0)
 		if (gtk_widget_is_sensitive(GTK_WIDGET(btv))
 			&& (BFWIN(DOCUMENT(master->doc)->bfwin)->session->view_cline || main_v->props.highlight_cursor)) {
 			gint y2, x2;
 			GtkTextIter it;
 			GdkRectangle itrect;
-			DBG_SIGNALS("bluefish_text_view_draw_event, current line highlighting\n");
+			g_print("bluefish_text_view_draw_event, current line highlighting\n");
 			gtk_text_buffer_get_iter_at_mark(master->buffer, &it, gtk_text_buffer_get_insert(master->buffer));
 			gtk_text_view_get_iter_location((GtkTextView *) widget, &it, &itrect);
 			gtk_text_view_buffer_to_window_coords(GTK_TEXT_VIEW(widget), GTK_TEXT_WINDOW_TEXT,
@@ -1287,6 +1289,7 @@ bluefish_text_view_draw(GtkWidget * widget, cairo_t * cr)
 			if (main_v->props.highlight_cursor) {
 				gint width = itrect.width > 5 ? itrect.width : master->margin_pixels_per_char;
 				gdk_cairo_set_source_rgba(cr, &st_cursor_highlight_color);
+				g_print("bluefish_text_view_draw_event, GTK < 3.14 draw highlight_cursor block\n");
 				cairo_rectangle(cr,
 								(gfloat) x2 - width + master->margin_pixels_chars +
 								master->margin_pixels_block + master->margin_pixels_symbol, (gfloat) y2,
@@ -2556,15 +2559,15 @@ bluefish_text_view_set_colors(BluefishTextView * btv, gchar * const *colors)
 #if GTK_CHECK_VERSION(3,0,0)
 	GdkRGBA color;
 	GString *str = g_string_new("");
-	g_string_append_printf(str, "GtkTextView {-GtkWidget-cursor-aspect-ratio: %f;}",
+	g_string_append_printf(str, "BluefishTextView {-GtkWidget-cursor-aspect-ratio: %f;}",
 						   (gfloat) (main_v->props.cursor_size / 100.0));
 	if (!main_v->props.use_system_colors) {
 		if (colors[BTV_COLOR_ED_BG] && colors[BTV_COLOR_ED_BG][0] != '\0') {
-			g_string_append_printf(str, "GtkTextView.view {background-color: %s;}", colors[BTV_COLOR_ED_BG]);
+			g_string_append_printf(str, "BluefishTextView.view {background-color: %s;}", colors[BTV_COLOR_ED_BG]);
 		}
 		if (colors[BTV_COLOR_SELECTION] && colors[BTV_COLOR_SELECTION][0] != '\0') {
 			g_string_append_printf(str,
-								   "GtkTextView.view:selected {background-color: %s;} GtkTextView.view:selected:focused {background-color: %s;}",
+								   "BluefishTextView.view:selected {background-color: %s;} BluefishTextView.view:selected:focused {background-color: %s;}",
 								   colors[BTV_COLOR_SELECTION], colors[BTV_COLOR_SELECTION]);
 		}
 		if (colors[BTV_COLOR_ED_FG] && gdk_rgba_parse(&color, colors[BTV_COLOR_ED_FG])) {
@@ -2581,6 +2584,7 @@ bluefish_text_view_set_colors(BluefishTextView * btv, gchar * const *colors)
 	if (str->len > 0) {
 		GtkStyleContext *stc;
 		GtkCssProvider *cssp = gtk_css_provider_new();
+		g_print("gtk > 3.0.0, about to apply CSS %s\n",str->str);
 		gtk_css_provider_load_from_data(cssp, str->str, -1, NULL);
 		stc = gtk_widget_get_style_context(GTK_WIDGET(btv));
 		gtk_style_context_add_provider(stc, GTK_STYLE_PROVIDER(cssp),
@@ -3057,7 +3061,7 @@ bluefish_text_view_class_init(BluefishTextViewClass * klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS(klass);
 	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS(klass);
-#if GTK_CHECK_VERSION(3,20,0)
+#if GTK_CHECK_VERSION(3,14,0)
 	GtkTextViewClass *textview_class = GTK_TEXT_VIEW_CLASS(klass);
 #endif
 
@@ -3077,7 +3081,7 @@ bluefish_text_view_class_init(BluefishTextViewClass * klass)
 	widget_class->query_tooltip = bluefish_text_view_query_tooltip;
 	widget_class->focus_out_event = bluefish_text_view_focus_out_event;
 
-#if GTK_CHECK_VERSION(3,20,0)
+#if GTK_CHECK_VERSION(3,14,0)
 	textview_class->draw_layer = bluefish_text_view_draw_layer;
 #endif
 }
