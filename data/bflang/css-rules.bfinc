@@ -4172,7 +4172,7 @@ href="http://www.w3.org/TR/css3-text/#overflow-wrap-property">www.w3.org</a></re
 </element>
 <element pattern="z-index" highlight="css-property" >
 	<autocomplete append=": " />
-<reference>Specifies whether the UA may arbitrarily break within a word to prevent overflow when an otherwise-unbreakable string is too long to fit within the line box.
+<reference>The z-index property specifies the stack level of a positioned element in the current stacking context. An element with greater stack order is always in front of an element with a lower stack order. It also specifies whether the element establishes a stacking context.
 <b>Values:</b> auto | &lt;integer&gt; | inherit
 <b>Initial:</b> auto
 <b>Applies to:</b> positioned elements
