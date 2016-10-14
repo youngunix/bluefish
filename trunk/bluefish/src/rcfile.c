@@ -95,6 +95,9 @@ typedef struct {
 
 static GHashTable *main_configlist = NULL;
 
+static GHashTable *return_colorprofile_configlist(GHashTable *config_rc,  gboolean init_values);
+
+
 static void
 free_configlist(GHashTable * configlist)
 {
@@ -420,9 +423,6 @@ props_init_main(GHashTable * config_rc)
 	init_prop_integer(&config_rc, &main_v->props.use_system_tab_font, "use_system_tab_font:", 1, TRUE);
 	init_prop_integer(&config_rc, &main_v->props.max_shown_filename_len, "max_shown_filename_len:", 0, TRUE);
 	init_prop_string(&config_rc, &main_v->props.tab_font_string, "tab_font_string:", "");
-	init_prop_string(&config_rc, &main_v->props.tab_color_modified, "tab_color_modified:", "#0000FF");
-	init_prop_string(&config_rc, &main_v->props.tab_color_loading, "tab_color_loading:", "#C7C7C7");
-	init_prop_string(&config_rc, &main_v->props.tab_color_error, "tab_color_error:", "#FF0000");
 	init_prop_integer(&config_rc, &main_v->props.visible_ws_mode, "visible_ws_mode:", 3, TRUE);
 	init_prop_integer(&config_rc, &main_v->props.right_margin_pos, "right_margin_pos:", 80, TRUE);
 	init_prop_arraylist(&config_rc, &main_v->props.external_command, "external_command:", 0, TRUE);
@@ -489,6 +489,13 @@ props_init_main(GHashTable * config_rc)
 	init_prop_integer(&config_rc, &main_v->props.recent_means_recently_closed, "recent_means_recently_closed:", 1, TRUE);
 	init_prop_arraylist(&config_rc, &main_v->props.plugin_config, "plugin_config:", 3, TRUE);
 	init_prop_integer(&config_rc, &main_v->props.use_system_colors, "use_system_colors:", 1, TRUE);
+
+	config_rc = return_colorprofile_configlist(config_rc,  TRUE);
+/*
+	init_prop_string(&config_rc, &main_v->props.tab_color_modified, "tab_color_modified:", "#0000FF");
+	init_prop_string(&config_rc, &main_v->props.tab_color_loading, "tab_color_loading:", "#C7C7C7");
+	init_prop_string(&config_rc, &main_v->props.tab_color_error, "tab_color_error:", "#FF0000");
+
 	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_ED_FG], "editor_fg:", "");
 	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_ED_BG], "editor_bg:", "");
 	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_CURRENT_LINE], "cline_bg:",
@@ -501,7 +508,7 @@ props_init_main(GHashTable * config_rc)
 	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_SELECTION], "selection_color:", "");
 	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_CURSOR_HIGHLIGHT], "cursor_highlight_color:", "#ffff33");
 	init_prop_arraylist(&config_rc, &main_v->props.textstyles, "textstyles3:", 6, TRUE);
-	init_prop_integer(&config_rc, &main_v->props.block_folding_mode, "block_folding_mode:", 1, TRUE);
+*/	init_prop_integer(&config_rc, &main_v->props.block_folding_mode, "block_folding_mode:", 1, TRUE);
 	init_prop_arraylist(&config_rc, &main_v->props.highlight_styles, "highlight_styles:", 3, TRUE);
 	init_prop_arraylist(&config_rc, &main_v->props.bflang_options, "bflang_options:", 3, TRUE);
 	init_prop_string(&config_rc, &main_v->props.autocomp_accel_string, "autocomp_accel_string:",
@@ -1147,6 +1154,47 @@ rcfile_load_accelerators(gboolean defaultmap)
 	gtk_accel_map_load(shortcutfilename);
 	g_free(shortcutfilename);
 #endif
+}
+
+static GHashTable *
+return_colorprofile_configlist(GHashTable *config_rc,  gboolean init_values)
+{
+	init_prop_string(&config_rc, &main_v->props.tab_color_modified, "tab_color_modified:", init_values ?"#0000FF":NULL);
+	init_prop_string(&config_rc, &main_v->props.tab_color_loading, "tab_color_loading:", init_values ?"#C7C7C7":NULL );
+	init_prop_string(&config_rc, &main_v->props.tab_color_error, "tab_color_error:", init_values ?"#FF0000":NULL);
+	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_ED_FG], "editor_fg:", init_values ?"":NULL);
+	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_ED_BG], "editor_bg:", init_values ?"":NULL);
+	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_CURRENT_LINE], "cline_bg:",init_values ?"#E0E0E0":NULL);
+	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_WHITESPACE], "visible_ws:",init_values ? "#FF0000":NULL);
+	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_RIGHT_MARGIN], "right_margin:",init_values ? "#990000":NULL);
+	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_CURSOR], "cursor_color:", init_values ?"":NULL);
+	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_SELECTION], "selection_color:", init_values ?"":NULL);
+	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_CURSOR_HIGHLIGHT], "cursor_highlight_color:", init_values ?"#ffff33":NULL);
+	init_prop_arraylist(&config_rc, &main_v->props.textstyles, "textstyles3:", 6, TRUE);
+	return config_rc;
+}
+
+gboolean
+rcfile_parse_colorprofile(GFile * file)
+{
+	gboolean retval;
+	GHashTable *configlist = g_hash_table_new_full(g_str_hash, g_str_equal, NULL, free_config_list_item);
+	configlist = return_colorprofile_configlist(configlist, FALSE);
+	retval = parse_config_file(configlist, file);
+	free_configlist(configlist);
+	/*setup_colors_after_parse(project->session);*/
+	return retval;
+}
+
+gboolean
+rcfile_save_colorprofile(GFile * file)
+{
+	gboolean retval;
+	GHashTable *configlist = g_hash_table_new_full(g_str_hash, g_str_equal, NULL, free_config_list_item);
+	configlist = return_colorprofile_configlist(configlist, FALSE);
+	retval = save_config_file(configlist, file);
+	free_configlist(configlist);
+	return retval;
 }
 
 static GHashTable *
