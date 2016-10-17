@@ -2559,9 +2559,31 @@ bluefish_text_view_set_colors(BluefishTextView * btv, gchar * const *colors)
 #if GTK_CHECK_VERSION(3,0,0)
 	GdkRGBA color;
 	GString *str = g_string_new("");
-	g_string_append_printf(str, "BluefishTextView {-GtkWidget-cursor-aspect-ratio: %f;}",
+#if GTK_CHECK_VERSION(3,20,0)
+	g_string_append_printf(str, "BluefishTextView {-gtk-cursor-aspect-ratio: %f;}",
 						   (gfloat) (main_v->props.cursor_size / 100.0));
+#else /* GTK_CHECK_VERSION(3,20,0) */						   
+	g_string_append_printf(str, "bluefishtextview text {-GtkWidget-cursor-aspect-ratio: %f;}",
+						   (gfloat) (main_v->props.cursor_size / 100.0));
+#endif /* GTK_CHECK_VERSION(3,20,0) */						   
 	if (!main_v->props.use_system_colors) {
+#if GTK_CHECK_VERSION(3,20,0)
+		if (colors[BTV_COLOR_ED_BG] && colors[BTV_COLOR_ED_BG][0] != '\0') {
+			g_string_append_printf(str, "bluefishtextview text {background-color: %s;}", colors[BTV_COLOR_ED_BG]);
+		}
+		if (colors[BTV_COLOR_SELECTION] && colors[BTV_COLOR_SELECTION][0] != '\0') {
+			g_string_append_printf(str,
+								   "bluefishtextview selection {background-color: %s;} bluefishtextview selection:focus {background-color: %s;}",
+								   colors[BTV_COLOR_SELECTION], colors[BTV_COLOR_SELECTION]);
+		}
+		if (colors[BTV_COLOR_ED_FG] && gdk_rgba_parse(&color, colors[BTV_COLOR_ED_FG])) {
+			g_string_append_printf(str,"bluefishtextview text {color: %s;}",colors[BTV_COLOR_ED_FG]);
+		}
+		if (colors[BTV_COLOR_CURSOR] && gdk_rgba_parse(&color, colors[BTV_COLOR_CURSOR])) {
+			g_string_append_printf(str,"bluefishtextview text {caret-color: %s;}",colors[BTV_COLOR_CURSOR]);
+		}
+		g_print("gtk > 3.2.0, about to apply CSS %s\n",str->str);
+#else /* GTK_CHECK_VERSION(3,20,0) */
 		if (colors[BTV_COLOR_ED_BG] && colors[BTV_COLOR_ED_BG][0] != '\0') {
 			g_string_append_printf(str, "BluefishTextView.view {background-color: %s;}", colors[BTV_COLOR_ED_BG]);
 		}
@@ -2580,6 +2602,7 @@ bluefish_text_view_set_colors(BluefishTextView * btv, gchar * const *colors)
 			if (btv->slave)
 				gtk_widget_override_cursor(GTK_WIDGET(btv->slave), &color, &color);
 		}
+#endif /* GTK_CHECK_VERSION(3,20,0) */
 	}
 	if (str->len > 0) {
 		GtkStyleContext *stc;
@@ -3064,7 +3087,9 @@ bluefish_text_view_class_init(BluefishTextViewClass * klass)
 #if GTK_CHECK_VERSION(3,14,0)
 	GtkTextViewClass *textview_class = GTK_TEXT_VIEW_CLASS(klass);
 #endif
-
+#if GTK_CHECK_VERSION(3,20,0)
+	gtk_widget_class_set_css_name(widget_class,"bluefishtextview");
+#endif
 /*	object_class->constructor = bluefish_text_view_create;*/
 	object_class->finalize = bluefish_text_view_finalize;
 
