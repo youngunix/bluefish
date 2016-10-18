@@ -38,6 +38,8 @@ void rcfile_save_accelerators(void);
 void rcfile_load_accelerators(gboolean defaultmap);
 gint rcfile_save_main(void);
 
+gboolean rcfile_parse_colorprofile(GFile * file);
+gboolean rcfile_save_colorprofile(GFile * file);
 gboolean rcfile_parse_project(Tproject *project, GFile *file);
 gboolean rcfile_save_project(Tproject *project, GFile *file);
 gboolean rcfile_save_encodings(void);

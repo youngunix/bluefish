@@ -1474,6 +1474,35 @@ gchar *get_hostname_from_uri(GFile *uri) {
 	return retval;
 }
 
+GList *
+scan_dir_for_files(const gchar * dir, const gchar *patspec)
+{
+	GError *gerror = NULL;
+	GPatternSpec *ps=NULL;
+	GDir *gd;
+	GList *retlist=NULL;
+	if (!dir) return NULL;
+	if (patspec) {
+		ps = g_pattern_spec_new(patspec);
+	}
+	gd = g_dir_open(dir, 0, &gerror);
+	DEBUG_PATH("scan_dir_for_files, read dir %s\n", dir);
+	if (!gerror) {
+		const gchar *filename = g_dir_read_name(gd);
+		while (filename) {
+			if (!ps || (ps && g_pattern_match(ps, strlen(filename), filename, NULL))) {
+				retlist = g_list_prepend(retlist, g_strconcat(dir, "/", filename, NULL));
+			}
+			filename = g_dir_read_name(gd);
+		}
+		g_dir_close(gd);
+	}
+	if (ps) {
+		g_pattern_spec_free(ps);
+	}
+	return retlist;
+}
+
 void
 callback_register(GSList **slist, void (*func)(), gpointer data) {
 	Tcallback *cb;

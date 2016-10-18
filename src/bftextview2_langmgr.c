@@ -2449,26 +2449,12 @@ register_bflanguage(Tbflang * bflang)
 static void
 scan_dir_bflang2files(const gchar * dir)
 {
-	const gchar *filename;
-	GError *error = NULL;
-	GPatternSpec *ps = g_pattern_spec_new("*.bflang2");
-	GDir *gd = g_dir_open(dir, 0, &error);
-	DEBUG_PATH("load language files from %s\n", dir);
-	if (!error) {
-		filename = g_dir_read_name(gd);
-		while (filename) {
-			if (g_pattern_match(ps, strlen(filename), filename, NULL)) {
-				Tbflang *bflang;
-				gchar *path = g_strconcat(dir, "/", filename, NULL);
-				bflang = parse_bflang2_header(path);
-				register_bflanguage(bflang);
-				g_free(path);
-			}
-			filename = g_dir_read_name(gd);
-		}
-		g_dir_close(gd);
+	GList *tmplist, *langfiles = scan_dir_for_files(dir, "*.bflang2");
+	for (tmplist = g_list_first(langfiles);tmplist;tmplist=tmplist->next) {
+		Tbflang *bflang = parse_bflang2_header(tmplist->data);
+		register_bflanguage(bflang);
 	}
-	g_pattern_spec_free(ps);
+	free_stringlist(langfiles);
 }
 static gboolean
 bflang2scan_finished_lcb(gpointer data)

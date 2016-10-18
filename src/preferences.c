@@ -198,6 +198,7 @@ typedef struct {
 	Tsessionprefs sprefs;
 	GtkWidget *win;
 	GtkWidget *curchild;
+	GtkWidget *import_color_combo;
 	GSList *widgetfreelist;
 	GtkWidget *noteb;
 	GtkTreeStore *nstore;
@@ -2414,6 +2415,59 @@ static void reset_menu_accelerators(GObject *object, gpointer data)
 	rcfile_load_accelerators(TRUE);
 }
 
+static void
+export_color_profile_clicked(GtkWidget *widget, gpointer data)
+{
+	GFile *uri;
+	gchar *retstring = run_file_select_dialog(NULL, NULL, NULL, GTK_FILE_CHOOSER_ACTION_SAVE);
+	if (!retstring)
+		return;
+	uri = g_file_new_for_uri(retstring);
+	rcfile_save_colorprofile(uri);
+	g_object_unref(uri);
+	g_free(retstring);
+}
+
+static void
+import_color_profile_clicked(GtkWidget *widget, Tprefdialog * pd)
+{
+	gchar *tmpstr, *curi;
+	gint ret;
+	gchar *buttons[] = {N_("Continue and ignore changes"), N_("Cancel"), NULL};
+	ret = message_dialog_new_multi(NULL, GTK_MESSAGE_QUESTION, buttons,
+						 _("Importing colors will abort any preferences changes"), _("Importing colors will close the preferences dialog and cancel any changes you made. Do you want to continue?"));
+	if (ret == 1)
+		return;
+	
+	tmpstr = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT(pd->import_color_combo));
+	preferences_destroy_lcb(NULL, pd);
+	
+	
+	if (g_strcmp0(tmpstr, _("Choose file"))==0) {
+		curi = run_file_select_dialog(NULL, NULL, NULL, GTK_FILE_CHOOSER_ACTION_OPEN);
+		g_free(tmpstr);
+	} else {
+		curi = tmpstr;
+	}
+	if (curi) {
+		gboolean ret;
+		gchar *message;
+		GFile *uri = g_file_new_for_commandline_arg(curi);
+		g_print("import_color_profile_clicked, load from %s\n",curi);
+		ret = rcfile_parse_colorprofile(uri);
+		g_object_unref(uri);
+		if (ret) {
+			message = g_strdup(_("Import done"));
+		} else {
+			message = g_strdup_printf(_("Import %s failed"), curi);
+		}
+		message_dialog_new(NULL, ret?GTK_MESSAGE_INFO:GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
+						message, NULL);
+		g_free(curi);
+		g_free(message);
+	}
+}
+
 void
 preferences_dialog_new(Tbfwin *bfwin)
 {
@@ -2647,6 +2701,28 @@ preferences_dialog_new(Tbfwin *bfwin)
 	pd->prefs[visible_ws] = dialog_color_button_in_table(main_v->props.btv_color_str[BTV_COLOR_WHITESPACE],
 														 _("Visible whitespace color"), table, 3,4, 3,4);
 	dialog_mnemonic_label_in_table(_("_Visible whitespace color:"), pd->prefs[visible_ws], table, 2,3, 3,4);
+
+	vbox2 = dialog_vbox_labeled(_("<b>Import / export color profiles</b>"), vbox1);
+	label = dialog_label_new(_("Color profiles set colors for the editor, user interface and all textstyles."), 0, 0.5, vbox2, 0);
+	hbox = gtk_hbox_new(FALSE, 12);
+	gtk_box_pack_start(GTK_BOX(vbox2), hbox, FALSE, FALSE, 0);
+	gtk_box_pack_start(GTK_BOX(hbox), gtk_label_new(_("Export")), FALSE, FALSE, 0);
+	but = gtk_button_new_with_label(_("Choose file"));
+	g_signal_connect(G_OBJECT(but), "clicked", G_CALLBACK(export_color_profile_clicked), NULL);
+	gtk_box_pack_start(GTK_BOX(hbox), but, FALSE, FALSE, 0);
+
+	hbox = gtk_hbox_new(FALSE, 12);
+	gtk_box_pack_start(GTK_BOX(vbox2), hbox, FALSE, FALSE, 0);
+	gtk_box_pack_start(GTK_BOX(hbox), gtk_label_new(_("Import")), FALSE, FALSE, 0);
+
+	poplist = scan_dir_for_files(PKGDATADIR "/colorprofiles/", "*");
+	poplist = g_list_prepend(poplist, _("Choose file"));
+	pd->import_color_combo = combobox_with_popdown(NULL, poplist, FALSE);
+	g_list_free(poplist);
+	gtk_box_pack_start(GTK_BOX(hbox), pd->import_color_combo, FALSE, FALSE, 0);
+	but = gtk_button_new_with_label(_("Apply"));
+	g_signal_connect(G_OBJECT(but), "clicked", G_CALLBACK(import_color_profile_clicked), pd);
+	gtk_box_pack_start(GTK_BOX(hbox), but, FALSE, FALSE, 0);
 
 	/*
 	 *  Text Styles

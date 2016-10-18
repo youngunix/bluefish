@@ -1180,6 +1180,13 @@ rcfile_parse_colorprofile(GFile * file)
 	gboolean retval;
 	GHashTable *configlist = g_hash_table_new_full(g_str_hash, g_str_equal, NULL, free_config_list_item);
 	configlist = return_colorprofile_configlist(configlist, FALSE);
+	if (!configlist) {
+		return FALSE;
+	}
+	if (main_v->props.textstyles) {
+		free_arraylist(main_v->props.textstyles);
+		main_v->props.textstyles = NULL;
+	}
 	retval = parse_config_file(configlist, file);
 	free_configlist(configlist);
 	/*setup_colors_after_parse(project->session);*/
@@ -1193,6 +1200,7 @@ rcfile_save_colorprofile(GFile * file)
 	GHashTable *configlist = g_hash_table_new_full(g_str_hash, g_str_equal, NULL, free_config_list_item);
 	configlist = return_colorprofile_configlist(configlist, FALSE);
 	retval = save_config_file(configlist, file);
+	g_print("rcfile_save_colorprofile, retval=%d\n",retval);
 	free_configlist(configlist);
 	return retval;
 }
