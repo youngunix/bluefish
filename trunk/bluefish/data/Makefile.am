@@ -21,7 +21,9 @@ nobase_bfdata_DATA = \
 	jsbeautifier/unpackers/myobfuscate.py \
 	jsbeautifier/unpackers/__init__.py \
 	jsbeautifier/unpackers/evalbased.py \
-	jsbeautifier/unpackers/urlencode.py
+	jsbeautifier/unpackers/urlencode.py \
+	colorprofiles/Light_theme \
+	colorprofiles/Dark_theme
 
 bfdata_SCRIPTS = \
 	lorem-ipsum-generator \

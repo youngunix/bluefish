@@ -1162,13 +1162,13 @@ return_colorprofile_configlist(GHashTable *config_rc,  gboolean init_values)
 	init_prop_string(&config_rc, &main_v->props.tab_color_modified, "tab_color_modified:", init_values ?"#0000FF":NULL);
 	init_prop_string(&config_rc, &main_v->props.tab_color_loading, "tab_color_loading:", init_values ?"#C7C7C7":NULL );
 	init_prop_string(&config_rc, &main_v->props.tab_color_error, "tab_color_error:", init_values ?"#FF0000":NULL);
-	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_ED_FG], "editor_fg:", init_values ?"":NULL);
-	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_ED_BG], "editor_bg:", init_values ?"":NULL);
+	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_ED_FG], "editor_fg:", init_values ?"#000000":NULL);
+	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_ED_BG], "editor_bg:", init_values ?"#eeeeee":NULL);
 	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_CURRENT_LINE], "cline_bg:",init_values ?"#E0E0E0":NULL);
 	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_WHITESPACE], "visible_ws:",init_values ? "#FF0000":NULL);
 	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_RIGHT_MARGIN], "right_margin:",init_values ? "#990000":NULL);
-	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_CURSOR], "cursor_color:", init_values ?"":NULL);
-	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_SELECTION], "selection_color:", init_values ?"":NULL);
+	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_CURSOR], "cursor_color:", init_values ?"#000000":NULL);
+	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_SELECTION], "selection_color:", init_values ?"#000099":NULL);
 	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_CURSOR_HIGHLIGHT], "cursor_highlight_color:", init_values ?"#ffff33":NULL);
 	init_prop_arraylist(&config_rc, &main_v->props.textstyles, "textstyles3:", 6, TRUE);
 	return config_rc;
