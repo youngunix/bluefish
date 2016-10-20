@@ -2320,6 +2320,7 @@ fb2_two_pane_notify_position_lcb(GObject * object, GParamSpec * pspec, gpointer 
 	gint position;
 	g_object_get(object, pspec->name, &position, NULL);
 	if (main_v->props.restore_dimensions) {
+		DEBUG_MSG("fb2_two_pane_notify_position_lcb, save position %d (previous value was %d)\n",position, main_v->globses.two_pane_filebrowser_height);
 		main_v->globses.two_pane_filebrowser_height = position;
 	}
 }
@@ -2470,11 +2471,8 @@ fb2_set_viewmode_widgets(Tfilebrowser2 * fb2, gint viewmode)
 #else
 		fb2->vpaned = gtk_vpaned_new();
 #endif
-		gtk_paned_set_position(GTK_PANED(fb2->vpaned), main_v->globses.two_pane_filebrowser_height);
-		g_signal_connect(G_OBJECT(fb2->vpaned), "notify::position",
-						 G_CALLBACK(fb2_two_pane_notify_position_lcb), NULL);
 
-		gtk_paned_add1(GTK_PANED(fb2->vpaned), fb2->dirscrolwin);
+		gtk_paned_pack1(GTK_PANED(fb2->vpaned), fb2->dirscrolwin, FALSE, FALSE);
 
 		fb2->file_filter =
 			gtk_tree_model_filter_new(GTK_TREE_MODEL(FB2CONFIG(main_v->fb2config)->ftm), NULL);
@@ -2504,7 +2502,7 @@ fb2_set_viewmode_widgets(Tfilebrowser2 * fb2, gint viewmode)
 		gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scrolwin), GTK_POLICY_AUTOMATIC,
 									   GTK_POLICY_AUTOMATIC);
 		gtk_container_add(GTK_CONTAINER(scrolwin), fb2->file_v);
-		gtk_paned_add2(GTK_PANED(fb2->vpaned), scrolwin);
+		gtk_paned_pack2(GTK_PANED(fb2->vpaned), scrolwin, FALSE,FALSE);
 
 		gtk_box_pack_start(GTK_BOX(fb2->vbox), fb2->vpaned, TRUE, TRUE, 0);
 		g_signal_connect(G_OBJECT(fb2->file_v), "button_press_event",
@@ -2516,6 +2514,11 @@ fb2_set_viewmode_widgets(Tfilebrowser2 * fb2, gint viewmode)
 						 G_CALLBACK(fb2_file_v_drag_data_received), fb2);
 		g_object_set(fb2->file_v, "has-tooltip", TRUE, NULL);
 		g_signal_connect(fb2->file_v, "query-tooltip", G_CALLBACK(fb2_tooltip_lcb), fb2);
+		DEBUG_MSG("gtk_paned_set_position(%d)\n",main_v->globses.two_pane_filebrowser_height);
+		gtk_paned_set_position(GTK_PANED(fb2->vpaned), main_v->globses.two_pane_filebrowser_height);
+		g_signal_connect(G_OBJECT(fb2->vpaned), "notify::position",
+						 G_CALLBACK(fb2_two_pane_notify_position_lcb), NULL);
+
 	}
 
 	g_signal_connect(G_OBJECT(fb2->dir_v), "row-activated", G_CALLBACK(dir_v_row_activated_lcb), fb2);
@@ -2526,7 +2529,6 @@ fb2_set_viewmode_widgets(Tfilebrowser2 * fb2, gint viewmode)
 	g_object_set(fb2->dir_v, "has-tooltip", TRUE, NULL);
 	/*gtk_container_resize_children(GTK_CONTAINER(fb2->vbox)); */
 	gtk_widget_show_all(fb2->vbox);
-	DEBUG_MSG("fb2_set_viewmode_widgets, new GUI finished\n");
 }
 
 void
