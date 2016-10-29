@@ -97,12 +97,14 @@ static void
 apply_syntax(Tbluefishprint *bfprint, PangoLayout *layout, Tpage *page_s, Tpage *page_e)
 {
 	PangoAttrList *alist;
-	GList *tmplist;
+	GList *tmplist=NULL;
 	GtkTextIter iter;
 	
 	alist = pango_attr_list_new();
 	
-	tmplist = g_list_first(BLUEFISH_TEXT_VIEW(bfprint->doc->view)->bflang->tags);
+	if (BLUEFISH_TEXT_VIEW(bfprint->doc->view)->bflang) {
+		tmplist = g_list_first(BLUEFISH_TEXT_VIEW(bfprint->doc->view)->bflang->tags);
+	}
 	while (tmplist) {
 		GtkTextTag *tag = tmplist->data;
 		gboolean donewithtag = FALSE;
