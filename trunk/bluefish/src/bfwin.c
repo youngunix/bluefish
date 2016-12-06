@@ -1519,10 +1519,10 @@ bfwin_create_main(Tbfwin * bfwin)
 		window_full2(_("New Bluefish Window"), GTK_WIN_POS_CENTER, 0, G_CALLBACK(bfwin_destroy_event),
 					 bfwin, FALSE, NULL);
 	gtk_window_set_role(GTK_WINDOW(bfwin->main_window), "bluefish");
-#ifndef MAC_INTEGRATION
-	gtk_widget_realize(bfwin->main_window); /* Causes half baked window entry to appear on OSX WIndow menu. Probably this is not required also on other systems */
+/*#ifndef MAC_INTEGRATION
+	gtk_widget_realize(bfwin->main_window); / * Causes half baked window entry to appear on OSX WIndow menu. Probably this is not required also on other systems * /
 #endif
-	if (!main_v->props.leave_to_window_manager) {
+*/	if (!main_v->props.leave_to_window_manager) {
 		if (main_v->globses.main_window_w > 0) {
 			gtk_window_set_default_size(GTK_WINDOW(bfwin->main_window), main_v->globses.main_window_w,
 										main_v->globses.main_window_h);

@@ -1219,7 +1219,7 @@ bluefish_text_view_draw_layer(GtkTextView * text_view, GtkTextViewLayer layer, c
 			if (main_v->props.highlight_cursor) {
 				GdkRectangle itrect;
 				gint width;
-				g_print("bluefish_text_view_draw_event, GTK >= 3.14 draw highlight_cursor block\n");
+				DBG_SIGNALS("bluefish_text_view_draw_event, GTK >= 3.14 draw highlight_cursor block\n");
 				gtk_text_view_get_iter_location(text_view, &it, &itrect);
 				width = itrect.width > 5 ? itrect.width : master->margin_pixels_per_char;
 				gdk_cairo_set_source_rgba(cr, &st_cursor_highlight_color);
@@ -1272,7 +1272,7 @@ bluefish_text_view_draw(GtkWidget * widget, cairo_t * cr)
 			gint y2, x2;
 			GtkTextIter it;
 			GdkRectangle itrect;
-			g_print("bluefish_text_view_draw_event, current line highlighting\n");
+			DBG_SIGNALS("bluefish_text_view_draw_event, current line highlighting\n");
 			gtk_text_buffer_get_iter_at_mark(master->buffer, &it, gtk_text_buffer_get_insert(master->buffer));
 			gtk_text_view_get_iter_location((GtkTextView *) widget, &it, &itrect);
 			gtk_text_view_buffer_to_window_coords(GTK_TEXT_VIEW(widget), GTK_TEXT_WINDOW_TEXT,
@@ -1289,7 +1289,7 @@ bluefish_text_view_draw(GtkWidget * widget, cairo_t * cr)
 			if (main_v->props.highlight_cursor) {
 				gint width = itrect.width > 5 ? itrect.width : master->margin_pixels_per_char;
 				gdk_cairo_set_source_rgba(cr, &st_cursor_highlight_color);
-				g_print("bluefish_text_view_draw_event, GTK < 3.14 draw highlight_cursor block\n");
+				DBG_SIGNALS("bluefish_text_view_draw_event, GTK < 3.14 draw highlight_cursor block\n");
 				cairo_rectangle(cr,
 								(gfloat) x2 - width + master->margin_pixels_chars +
 								master->margin_pixels_block + master->margin_pixels_symbol, (gfloat) y2,
@@ -2607,7 +2607,7 @@ bluefish_text_view_set_colors(BluefishTextView * btv, gchar * const *colors)
 	if (str->len > 0) {
 		GtkStyleContext *stc;
 		GtkCssProvider *cssp = gtk_css_provider_new();
-		g_print("gtk > 3.0.0, about to apply CSS %s\n",str->str);
+		DBG_MSG("gtk > 3.0.0, about to apply CSS %s\n",str->str);
 		gtk_css_provider_load_from_data(cssp, str->str, -1, NULL);
 		stc = gtk_widget_get_style_context(GTK_WIDGET(btv));
 		gtk_style_context_add_provider(stc, GTK_STYLE_PROVIDER(cssp),
