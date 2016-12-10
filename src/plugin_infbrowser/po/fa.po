@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Bluefish Development Team.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bluefish 2.2.9\n"
+"Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
+"POT-Creation-Date: 2016-10-13 10:34+0200\n"
+"PO-Revision-Date: 2016-11-23 22:24+0000\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.11\n"
+
+#: src/plugin_infbrowser/infb_gui.c:139
+msgid "Loading..."
+msgstr "در حال بارگیری..."
+
+#: src/plugin_infbrowser/infb_gui.c:145 src/plugin_infbrowser/infb_gui.c:205
+msgid "Cannot load file from network"
+msgstr "فایل لود نمی شود از شبکه"
+
+#: src/plugin_infbrowser/infb_gui.c:159
+msgid "Cannot find file"
+msgstr "فایل را نمیتوان پیدا کرد"
+
+#: src/plugin_infbrowser/infb_gui.c:369
+msgid "Fragment saved"
+msgstr "قطعه ذخیره"
+
+#: src/plugin_infbrowser/infb_gui.c:373
+msgid "Cannot open file"
+msgstr "باز کردن فایل امکان پذیر نیست"
+
+#: src/plugin_infbrowser/infb_gui.c:457 src/plugin_infbrowser/infb_gui.c:495
+msgid "Nothing found"
+msgstr "چیزی پیدا نشد"
+
+#: src/plugin_infbrowser/infb_gui.c:561
+msgid "Documentation index"
+msgstr "مستندات شاخص"
+
+#: src/plugin_infbrowser/infb_gui.c:566
+msgid "Document index"
+msgstr "فهرست سند"
+
+#: src/plugin_infbrowser/infb_gui.c:571
+msgid "Upper level"
+msgstr "سطح فوقانی"
+
+#: src/plugin_infbrowser/infb_gui.c:577
+msgid "Save current view"
+msgstr "ذخیره آنچه می‌بینید"
+
+#: src/plugin_infbrowser/infb_gui.c:578
+msgid "Go to selected fragment"
+msgstr "رفتن به قطعه انتخاب شده"
+
+#: src/plugin_infbrowser/infb_gui.c:600
+msgid "Find"
+msgstr "بیاب"
+
+#: src/plugin_infbrowser/infb_gui.c:606
+msgid "Info Browser"
+msgstr "مرورگر"
+
+#: src/plugin_infbrowser/infb_load.c:41
+#, c-format
+msgid "Cannot load reference file %s\n"
+msgstr "مرجع پرونده %s را نمی توان بارگذاری"
+
+#: src/plugin_infbrowser/infb_load.c:164
+msgid "Documentation entries"
+msgstr "اسناد ها"
+
+#: src/plugin_infbrowser/infb_load.c:168
+msgid "References"
+msgstr "منابع"
+
+#: src/plugin_infbrowser/infb_load.c:170
+msgid "DTD"
+msgstr "DTD"
+
+#: src/plugin_infbrowser/infb_load.c:172
+msgid "Web pages"
+msgstr "صفحات وب"
+
+#: src/plugin_infbrowser/infb_text.c:808
+msgid "Unknown document type"
+msgstr "نوع نوشتار ناشناخته"
+
+#: src/plugin_infbrowser/infb_wizard.c:116
+#: src/plugin_infbrowser/infb_wizard.c:164
+msgid "Local DTD file"
+msgstr "DTD پرونده محلی"
+
+#: src/plugin_infbrowser/infb_wizard.c:124
+msgid "Remote DTD file"
+msgstr "از راه دور فایل DTD"
+
+#: src/plugin_infbrowser/infb_wizard.c:161
+msgid "Choose file"
+msgstr "انتخاب فایل"
+
+#: src/plugin_infbrowser/infb_wizard.c:213
+msgid "Entry name"
+msgstr "نام فونت ورودی"
+
+#: src/plugin_infbrowser/infb_wizard.c:222
+msgid "Description"
+msgstr "کالا"
+
+#: src/plugin_infbrowser/infb_wizard.c:258
+msgid "DTD file URI"
+msgstr "پرونده DTD URI"
+
+#: src/plugin_infbrowser/infb_wizard.c:348
+msgid "New info item"
+msgstr "اطلاعات ایتم"
+
+#: src/plugin_infbrowser/infb_wizard.c:418
+msgid "Entries you can delete"
+msgstr "نوشته های شما می توانید حذف کنید"

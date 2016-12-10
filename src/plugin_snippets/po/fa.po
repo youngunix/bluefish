@@ -1,0 +1,279 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR The Bluefish Development Team.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bluefish 2.2.9\n"
+"Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
+"POT-Creation-Date: 2016-10-13 10:34+0200\n"
+"PO-Revision-Date: 2016-11-23 22:29+0000\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.11\n"
+
+#: src/plugin_snippets/snippets_gui.c:424
+msgid "Click the right mouse button to add, edit or delete snippets."
+msgstr "راست موس را کلیک کنید برای اضافه کردن، ویرایش و یا حذف قطعه."
+
+#: src/plugin_snippets/snippets_gui.c:425
+msgid "Use drag and drop to re-order snippets"
+msgstr "استفاده از کشیدن و رها کردن قطعه به سفارش مجدد"
+
+#: src/plugin_snippets/snippets_gui.c:426
+msgid "To exchange snippets with others use import or export"
+msgstr "تبادل قطعه با دیگران استفاده از واردات و صادرات"
+
+#: src/plugin_snippets/snippets_gui.c:646
+msgid "snippets"
+msgstr "قطعه ها"
+
+#: src/plugin_snippets/snippets_gui.c:709
+msgid "Snippet export filename"
+msgstr "نام پرونده صادرات قطعه"
+
+#: src/plugin_snippets/snippets_gui.c:747
+msgid "Snippet import filename"
+msgstr "نام پرونده واردات قطعه"
+
+#: src/plugin_snippets/snippets_gui.c:765
+msgid "Set accelerator key"
+msgstr "کلید شتابدهنده ست"
+
+#: src/plugin_snippets/snippets_gui.c:822
+msgid "Snippets menu"
+msgstr "قطعه ها"
+
+#: src/plugin_snippets/snippets_gui.c:823
+msgid "_New Snippet"
+msgstr "قطعه _New"
+
+#: src/plugin_snippets/snippets_gui.c:823
+#: src/plugin_snippets/snippets_wizard.c:754
+msgid "New snippet"
+msgstr "قطعه جدید"
+
+#: src/plugin_snippets/snippets_gui.c:824
+msgid "_Edit Snippet"
+msgstr "ویرایش اسنیپت"
+
+#: src/plugin_snippets/snippets_gui.c:824
+#: src/plugin_snippets/snippets_wizard.c:754
+msgid "Edit snippet"
+msgstr "ویرایش اسنیپت"
+
+#: src/plugin_snippets/snippets_gui.c:825
+msgid "_Delete Snippet"
+msgstr "قطعه _Delete"
+
+#: src/plugin_snippets/snippets_gui.c:825
+msgid "Delete snippet"
+msgstr "حذف قطعه"
+
+#: src/plugin_snippets/snippets_gui.c:826
+msgid "Delete _Branch"
+msgstr "حذف _Branch"
+
+#: src/plugin_snippets/snippets_gui.c:826
+msgid "Delete branch"
+msgstr "حذف شعبه"
+
+#: src/plugin_snippets/snippets_gui.c:827
+msgid "Set Snippet _Accelerator"
+msgstr "تنظیم قطعه _Accelerator"
+
+#: src/plugin_snippets/snippets_gui.c:827
+msgid "Set snippet accelerator"
+msgstr "شتاب دهنده قطعه تنظیم"
+
+#: src/plugin_snippets/snippets_gui.c:829
+msgid "Ex_pand All"
+msgstr "Ex_pand همه"
+
+#: src/plugin_snippets/snippets_gui.c:829
+msgid "Expand all"
+msgstr "باز کردن همه"
+
+#: src/plugin_snippets/snippets_gui.c:830
+msgid "_Collapse All"
+msgstr "جمع شدن همه"
+
+#: src/plugin_snippets/snippets_gui.c:830
+msgid "Collapse all"
+msgstr "جمع شدن همه"
+
+#: src/plugin_snippets/snippets_gui.c:831
+msgid "E_xport"
+msgstr "E_xport"
+
+#: src/plugin_snippets/snippets_gui.c:831
+msgid "Export snippets"
+msgstr "صادرات قطعه"
+
+#: src/plugin_snippets/snippets_gui.c:832
+msgid "I_mport"
+msgstr "I_mport"
+
+#: src/plugin_snippets/snippets_gui.c:832
+msgid "Import snippets"
+msgstr "واردات قطعه"
+
+#: src/plugin_snippets/snippets_gui.c:836
+msgid "_Show as menu"
+msgstr "_Show به عنوان منو"
+
+#: src/plugin_snippets/snippets_gui.c:836
+msgid "Show snippets menu"
+msgstr "نمایش منوی قطعه"
+
+#: src/plugin_snippets/snippets_gui.c:838
+msgid "S_nippets Menu"
+msgstr "منو S_nippets"
+
+#: src/plugin_snippets/snippets_leaf_insert.c:64
+msgid "[cursor position or selection]"
+msgstr "[موقعیت مکان نما یا انتخاب]"
+
+#: src/plugin_snippets/snippets_leaf_snr.c:153
+msgid "Search for: '"
+msgstr "جستجو برای:"
+
+#: src/plugin_snippets/snippets_leaf_snr.c:153
+msgid "', replace with: '"
+msgstr "تعویض با"
+
+#: src/plugin_snippets/snippets_wizard.c:111
+msgid "Entire document"
+msgstr "کل نوشتار"
+
+#: src/plugin_snippets/snippets_wizard.c:112
+msgid "Forward from cursor position"
+msgstr "به جلو از موقعیت مکان نما"
+
+#: src/plugin_snippets/snippets_wizard.c:113
+msgid "Selection"
+msgstr "انتخاب کردن"
+
+#: src/plugin_snippets/snippets_wizard.c:114
+msgid "All open files"
+msgstr "همه پرونده های باز"
+
+#: src/plugin_snippets/snippets_wizard.c:118
+msgid "Normal"
+msgstr "عادی"
+
+#: src/plugin_snippets/snippets_wizard.c:119
+msgid "PERL"
+msgstr "پرل"
+
+#: src/plugin_snippets/snippets_wizard.c:130
+msgid ""
+"Specify a search and a replace pattern. You may use %0, %1, ...%5 "
+"placeholders to ask for values when you activate this item. Give these "
+"placeholders an appropriate name on the right. (Please use %% if you need "
+"literal % in your string!)"
+msgstr ""
+"جستجو و جایگزینی الگوی مشخص کنید. شما 0% %1 استفاده کنید... %5 نگه دارنده "
+"های مکان برای پرسیدن برای ارزش زمانی که شما این مورد فعال. این نگه دارنده "
+"های مکان دادن یک نام مناسب در سمت راست. (لطفا با استفاده از %% نیاز % ادبی "
+"در رشته خود را!)"
+
+#: src/plugin_snippets/snippets_wizard.c:140
+msgid "_Search for: "
+msgstr "جستجو برای:"
+
+#: src/plugin_snippets/snippets_wizard.c:144
+msgid "Replace _with: "
+msgstr "جایگزین با"
+
+#: src/plugin_snippets/snippets_wizard.c:151
+msgid "Sco_pe: "
+msgstr "Sco_pe:"
+
+#: src/plugin_snippets/snippets_wizard.c:158
+msgid "Match Patter_n: "
+msgstr "مسابقه Patter_n:"
+
+#: src/plugin_snippets/snippets_wizard.c:161
+msgid "Case sensitive _matching"
+msgstr "_Matching حساس"
+
+#: src/plugin_snippets/snippets_wizard.c:162
+msgid "Only match if case (upper/lower) is identical."
+msgstr "مسابقه تنها اگر مورد (بالا/پایین) یکسان است."
+
+#: src/plugin_snippets/snippets_wizard.c:165
+msgid "_Use escape chars"
+msgstr "کاراکتر _Use فرار"
+
+#: src/plugin_snippets/snippets_wizard.c:166
+msgid "Unescape backslash escaped characters such as \\n, \\t etc."
+msgstr "Unescape نویسه فرار ممیز وارونه مانند \\n، \\t و غیره."
+
+#: src/plugin_snippets/snippets_wizard.c:335
+msgid ""
+"The <i>before</i> text will be inserted before the cursor position or the "
+"current selection, the <i>after</i> text will be inserted after the cursor "
+"position or the current selection. You may use %0, %1, ...%9 placeholders to "
+"ask for values when you activate this item. Give these placeholders an "
+"appropriate name on the right. (Please use %% if you need literal % in your "
+"string!)"
+msgstr ""
+"متن <i>قبل از</i> قبل از موقعیت مکان نما یا مورد انتخابی فعلی درج خواهد شد، "
+"<i>پس از</i> متن پس از موقعیت مکان نما یا مورد انتخابی فعلی درج خواهد شد. "
+"شما 0% %1 استفاده کنید... %9 نگه دارنده های مکان برای پرسیدن برای ارزش زمانی "
+"که شما این مورد فعال. این نگه دارنده های مکان دادن یک نام مناسب در سمت راست. "
+"(لطفا با استفاده از %% نیاز % ادبی در رشته خود را!)"
+
+#: src/plugin_snippets/snippets_wizard.c:344
+msgid "<i>Before</i> text"
+msgstr "<i>قبل از</i> متن"
+
+#: src/plugin_snippets/snippets_wizard.c:354
+msgid "<i>After</i> text"
+msgstr "<i>پس از</i> متن"
+
+#: src/plugin_snippets/snippets_wizard.c:362
+msgid "Number"
+msgstr "شماره"
+
+#: src/plugin_snippets/snippets_wizard.c:364
+msgid "Name"
+msgstr "نام"
+
+#: src/plugin_snippets/snippets_wizard.c:366
+msgid "Is file path"
+msgstr "مسیر فایل"
+
+#: src/plugin_snippets/snippets_wizard.c:492
+msgid "Enter the name of the branch:"
+msgstr "نام شعبه را وارد کنید:"
+
+#: src/plugin_snippets/snippets_wizard.c:584
+msgid "Name of the new item:"
+msgstr "نام آیتم جدید:"
+
+#: src/plugin_snippets/snippets_wizard.c:589
+msgid "Description:"
+msgstr "توصیف:"
+
+#: src/plugin_snippets/snippets_wizard.c:639
+msgid "Select what you want to add"
+msgstr "انتخاب کنید اضافه کردن"
+
+#: src/plugin_snippets/snippets_wizard.c:641
+msgid "Branch"
+msgstr "مقصد"
+
+#: src/plugin_snippets/snippets_wizard.c:643
+msgid "Insert string"
+msgstr "درج رشته"
+
+#: src/plugin_snippets/snippets_wizard.c:645
+msgid "Search and replace pattern"
+msgstr "الگوی جستجو و جایگزینی"
