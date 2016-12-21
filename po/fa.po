@@ -1142,7 +1142,7 @@ msgid " [FILE(S)]"
 msgstr "[دریافت فایل (S)]"
 
 #: ../src/bluefish.c:412
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "Error parsing command line options. %s\n"
 "Please run: %s -?\n"
@@ -1284,25 +1284,28 @@ msgid "Name: "
 msgstr "نام:"
 
 #: ../src/document.c:545
+#, fuzzy
 msgid ""
 "\n"
 "Language mode: "
 msgstr "حالت زبان:"
 
 #: ../src/document.c:549
+#, fuzzy
 msgid ""
 "\n"
 "Encoding: "
 msgstr "رمزی کردن:"
 
 #: ../src/document.c:561
+#, fuzzy
 msgid ""
 "\n"
 "Mime type: "
 msgstr "نوع میمه"
 
 #: ../src/document.c:569
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "\n"
 "Permissions: %s\n"
@@ -1310,12 +1313,14 @@ msgid ""
 msgstr "مجوز: %s Uid: %u جنسي: %u"
 
 #: ../src/document.c:586
+#, fuzzy
 msgid ""
 "\n"
 "Size (on disk): "
 msgstr "حجم (روی دیسک):"
 
 #: ../src/document.c:595
+#, fuzzy
 msgid ""
 "\n"
 "Last modified: "
@@ -1507,6 +1512,7 @@ msgid " failed to load."
 msgstr "بارگیری نشد."
 
 #: ../src/document.c:3502
+#, fuzzy
 msgid "File failed to load\n"
 msgstr "پرونده بارگیری نشد"
 
@@ -1764,6 +1770,7 @@ msgid "Move/rename %s to"
 msgstr "انتقال/تغییر نام به %s"
 
 #: ../src/filebrowser2.c:799
+#, fuzzy
 msgid "Could not rename\n"
 msgstr "تغییر نام می تواند"
 
@@ -2052,6 +2059,7 @@ msgid "Could not save file "
 msgstr "نمیتوان فایل را ذخیره کرد"
 
 #: ../src/file_dialogs.c:509 ../src/file_dialogs.c:1496
+#, fuzzy
 msgid "File changed on disk\n"
 msgstr "پرونده تغییر یافته روی دیسک"
 
@@ -2221,6 +2229,7 @@ msgid "File name: %s"
 msgstr "نام : %s"
 
 #: ../src/file_dialogs.c:1460
+#, fuzzy
 msgid "File disappeared from disk\n"
 msgstr "فایل را از دیسک ناپدید شد"
 
@@ -2279,6 +2288,7 @@ msgid "<b>Keystroke choice</b>"
 msgstr "<b>ضربه زدن به کلید انتخاب</b>"
 
 #: ../src/gtk_easy.c:1518
+#, fuzzy
 msgid ""
 "\n"
 "Press requested key combination.\n"
