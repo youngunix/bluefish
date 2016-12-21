@@ -1184,7 +1184,7 @@ msgid "Insert Time"
 msgstr "درج _Time..."
 
 #: src/plugin_htmlbar/html.c:412
-#, c-format
+#, fuzzy, c-format
 msgid "  _Time (%i:%i:%i)"
 msgstr "_Time (% اول: % د %i)"
 
@@ -1217,11 +1217,12 @@ msgid "  Day of the _week (Saturday)"
 msgstr "روز _week (شنبه)"
 
 #: src/plugin_htmlbar/html.c:438
+#, fuzzy
 msgid "You appear to have a non existent day!\n"
 msgstr "شما به روز غیر موجود به نظر می رسد!"
 
 #: src/plugin_htmlbar/html.c:447
-#, c-format
+#, fuzzy, c-format
 msgid "  _Date (%i/%i/%i)"
 msgstr "<i>قبل از</i> متن"
 
@@ -1641,6 +1642,7 @@ msgstr "زمان"
 
 #. Datetime help
 #: src/plugin_htmlbar/html.c:2184
+#, fuzzy
 msgid ""
 "Datetime format (ex. YYYY-MM-DDThh:mm:ssTZD) :\n"
 "\n"
@@ -2086,20 +2088,21 @@ msgid "_Border:"
 msgstr "_Border:"
 
 #: src/plugin_htmlbar/image_dialog.c:779
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "\n"
 "%s"
 msgstr "%s"
 
 #: src/plugin_htmlbar/image_dialog.c:784
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "\n"
 "%d x %d pixels"
 msgstr "%d x %d پیکسل"
 
 #: src/plugin_htmlbar/image_dialog.c:882
+#, fuzzy
 msgid ""
 "\n"
 "\n"
