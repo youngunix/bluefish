@@ -482,7 +482,7 @@ Disclosure control for hiding details
 <b>Parents:</b> ol;ul;menu
 <b>Children:</b> flow
 <b>Interface:</b> HTMLLIElement</reference></tag>
-<tag name="link" highlight="html-tag" attribhighlight="html-attribute" attrib_autocomplete_append="=&#34;&#34;" attrib_autocomplete_backup_cursor="1" attributes="href,rel,media,hreflang,type,sizes,&globals;" sgml_shorttag="1" no_close="1">
+<tag name="link" highlight="html-tag" attribhighlight="html-attribute" attrib_autocomplete_append="=&#34;&#34; /&gt;" attrib_autocomplete_backup_cursor="1" attributes="href,rel,media,hreflang,type,sizes,&globals;" sgml_shorttag="1" no_close="1">
 <reference>Link metadata
 <b>Categories:</b> metadata, flow*, phrasing*
 <b>Parents:</b> head, noscript*, phrasing*
