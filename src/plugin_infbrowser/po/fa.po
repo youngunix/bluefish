@@ -70,7 +70,7 @@ msgid "Info Browser"
 msgstr "مرورگر"
 
 #: src/plugin_infbrowser/infb_load.c:41
-#, c-format
+#, fuzzy, c-format
 msgid "Cannot load reference file %s\n"
 msgstr "مرجع پرونده %s را نمی توان بارگذاری"
 

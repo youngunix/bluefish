@@ -22,18 +22,21 @@ msgid "This version of Bluefish was built with:\n"
 msgstr "این نسخه از blue fish یا ساخته شده است:‬\n"
 
 #: src/plugin_about/about.c:205
+#, fuzzy
 msgid ""
 "\n"
 "Developers of previous releases:"
 msgstr "توسعه دهندگان از نسخه های قبلی:"
 
 #: src/plugin_about/about.c:221
+#, fuzzy
 msgid ""
 "\n"
 "Package maintainers:"
 msgstr "نگهدارنده بسته بندی:"
 
 #: src/plugin_about/about.c:228
+#, fuzzy
 msgid ""
 "\n"
 "If you know of anyone missing from this list,\n"
@@ -47,6 +50,7 @@ msgid "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 msgstr "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 
 #: src/plugin_about/about.c:230
+#, fuzzy
 msgid ""
 "\n"
 "Thanks to all who helped make this software available.\n"
