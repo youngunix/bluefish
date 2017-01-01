@@ -1555,7 +1555,7 @@ msgstr "جای گذاری بعنوان متن ساده"
 #: ../src/document.c:3952
 #, c-format
 msgid "%d line"
-msgstr "خط %d”
+msgstr "خط %d"
 
 #: ../src/document.c:3953
 #, c-format
