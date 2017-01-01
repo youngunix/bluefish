@@ -2,14 +2,14 @@
 # Copyright (C) 2000 Free Software Foundation, Inc.
 # Knud Franzkowiak <knud.franzkowiak@gmx.net>, 2000.
 # Roland Steinbach <roland@netzblick.de>, 2001-2004.
-# Daniel Leidert <daniel.leidert@wgdd.de>, 2006, 2009-2012, 2015.
+# Daniel Leidert <daniel.leidert@wgdd.de>, 2006, 2009-2012, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.3\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-06-16 09:51+0200\n"
-"PO-Revision-Date: 2015-01-23 11:55+0100\n"
+"POT-Creation-Date: 2016-10-13 10:34+0200\n"
+"PO-Revision-Date: 2016-12-22 17:08+0100\n"
 "Last-Translator: Daniel Leidert <daniel.leidert@wgdd.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -1208,7 +1208,6 @@ msgid "  Day of the _week (Saturday)"
 msgstr "  _Wochentag (Samstag)"
 
 #: src/plugin_htmlbar/html.c:438
-#, fuzzy
 msgid "You appear to have a non existent day!\n"
 msgstr "Sie haben einen ungültigen Tag!\n"
 
