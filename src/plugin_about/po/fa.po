@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: bluefish 2.2.9\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
 "POT-Creation-Date: 2016-10-13 10:34+0200\n"
-"PO-Revision-Date: 2016-11-23 22:15+0000\n"
+"PO-Revision-Date: 2016-12-22 14:31+0000\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,39 +22,42 @@ msgid "This version of Bluefish was built with:\n"
 msgstr "این نسخه از blue fish یا ساخته شده است:‬\n"
 
 #: src/plugin_about/about.c:205
-#, fuzzy
 msgid ""
 "\n"
 "Developers of previous releases:"
-msgstr "توسعه دهندگان از نسخه های قبلی:"
+msgstr ""
+"\n"
+"\" \"توسعه دهندگان از نسخه های قبلی:"
 
 #: src/plugin_about/about.c:221
-#, fuzzy
 msgid ""
 "\n"
 "Package maintainers:"
-msgstr "نگهدارنده بسته بندی:"
+msgstr ""
+"\n"
+"\" \"نگهدارنده بسته بندی:"
 
 #: src/plugin_about/about.c:228
-#, fuzzy
 msgid ""
 "\n"
 "If you know of anyone missing from this list,\n"
 "please let us know at:"
 msgstr ""
-"اگر شما از هر کسی از دست رفته از این لیست می دانید، لطفا  ما را با اطلاع "
-"نگه دارید در:  ‬"
+"\n"
+"اگر شما از هر کسی از دست رفته از این لیست می دانید، لطفا  ما را با اطلاع نگه "
+"دارید در:  ‬"
 
 #: src/plugin_about/about.c:229
 msgid "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 msgstr "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 
 #: src/plugin_about/about.c:230
-#, fuzzy
 msgid ""
 "\n"
-"Thanks to all who helped make this software available.\n"
-msgstr "با تشکر از همه که کمک کنان که این نرم افزار در دسترس قرار دادند.‬\n"
+"Thanks to all who helped make this software available."
+msgstr ""
+"\n"
+"\" \"با تشکر از همه که کمک کنان که این نرم افزار در دسترس قرار دادند.‬"
 
 #: src/plugin_about/about.c:266
 msgid ""
@@ -76,7 +79,7 @@ msgstr ""
 #.
 #: src/plugin_about/about.c:276
 msgid "translator-credits"
-msgstr "ترجمه اعتبارات"
+msgstr "‫Paymon - pm835@live.mdx.ac.uk"
 
 #: src/plugin_about/about.c:374
 msgid "_Help"

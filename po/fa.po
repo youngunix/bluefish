@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
 "POT-Creation-Date: 2016-10-13 10:48+0200\n"
-"PO-Revision-Date: 2016-11-20 23:13+0000\n"
+"PO-Revision-Date: 2016-12-22 15:42+0000\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -124,12 +124,10 @@ msgid "Expand all"
 msgstr "باز کردن همه"
 
 #: ../src/bftextview2.c:1901
-#, c-format
 msgid "Collapse %s"
 msgstr "سقوط به٪ s"
 
 #: ../src/bftextview2.c:1911
-#, c-format
 msgid "Expand %s"
 msgstr "گسترش %s"
 
@@ -1104,8 +1102,8 @@ msgid ""
 "<span foreground=\"red\" weight=\"bold\">This marker exists more than once in "
 "the block.</span>"
 msgstr ""
-"<span foreground=\"red\" weight=\"bold\">این نشانگر بیش از یک بار در بلوک "
-"موجود می باشد.</span>"
+"<span foreground=\"red\" weight=\"bold\">این نشانگر بیش از یک بار در بلوک موجود "
+"می باشد.</span>"
 
 #: ../src/blocksync.c:245
 msgid ""
@@ -1142,11 +1140,11 @@ msgid " [FILE(S)]"
 msgstr "[دریافت فایل (S)]"
 
 #: ../src/bluefish.c:412
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Error parsing command line options. %s\n"
 "Please run: %s -?\n"
-msgstr "خطای تجزیه گزینه های خط فرمان. لطفا اجرا %s: %s-?"
+msgstr "خطای تجزیه گزینه های خط فرمان. لطفا اجرا %s: %s-?\n"
 
 #: ../src/bookmark.c:548 ../src/bookmark.c:569
 msgid "_Name:"
@@ -1167,7 +1165,7 @@ msgstr "موقتی"
 #: ../src/bookmark.c:748
 #, c-format
 msgid "Do you really want to delete %s?"
-msgstr "آیا واقعا قصد حذف کردن دارید؟"
+msgstr "آیا واقعا قصد حذف کردن دارید%s؟"
 
 #: ../src/bookmark.c:751
 msgid "Delete permanent bookmark."
@@ -1284,52 +1282,59 @@ msgid "Name: "
 msgstr "نام:"
 
 #: ../src/document.c:545
-#, fuzzy
 msgid ""
 "\n"
 "Language mode: "
-msgstr "حالت زبان:"
+msgstr ""
+"\n"
+"\" \"حالت زبان:"
 
 #: ../src/document.c:549
-#, fuzzy
 msgid ""
 "\n"
 "Encoding: "
-msgstr "رمزی کردن:"
+msgstr ""
+"\n"
+"\" \"رمزی کردن:"
 
 #: ../src/document.c:561
-#, fuzzy
 msgid ""
 "\n"
 "Mime type: "
-msgstr "نوع میمه"
+msgstr ""
+"\n"
+"\" \"نوع میمه"
 
 #: ../src/document.c:569
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "\n"
 "Permissions: %s\n"
 "Uid: %u Gid: %u"
-msgstr "مجوز: %s Uid: %u جنسي: %u"
+msgstr ""
+"\n"
+"\" \"مجوز: %s Uid: %u جنسي: %u"
 
 #: ../src/document.c:586
-#, fuzzy
 msgid ""
 "\n"
 "Size (on disk): "
-msgstr "حجم (روی دیسک):"
+msgstr ""
+"\n"
+"\" \"حجم (روی دیسک):"
 
 #: ../src/document.c:595
-#, fuzzy
 msgid ""
 "\n"
 "Last modified: "
-msgstr "آخرین اصلاح:"
+msgstr ""
+"\n"
+"\" \"آخرین اصلاح:"
 
 #: ../src/document.c:663
 #, c-format
 msgid "Untitled %d"
-msgstr "بدون عنوان"
+msgstr "بدون عنوان‫‫ ‬%d "
 
 #: ../src/document.c:846
 #, c-format
@@ -1512,9 +1517,8 @@ msgid " failed to load."
 msgstr "بارگیری نشد."
 
 #: ../src/document.c:3502
-#, fuzzy
 msgid "File failed to load\n"
-msgstr "پرونده بارگیری نشد"
+msgstr "پرونده بارگیری نشد\"\n"
 
 #: ../src/document.c:3629
 msgid "Select file to insert"
@@ -1551,8 +1555,7 @@ msgstr "جای گذاری بعنوان متن ساده"
 #: ../src/document.c:3952
 #, c-format
 msgid "%d line"
-msgid_plural "%d lines"
-msgstr[0] "خط D_uplicate"
+msgstr "خط %d”
 
 #: ../src/document.c:3953
 #, c-format
@@ -1695,16 +1698,16 @@ msgstr "این دستور نیاز به نوشتار کنونی به نام فا
 
 #: ../src/external_commands.c:755
 msgid ""
-"This command requires the current document to be a local file. Please save "
-"your document to a local file."
+"This command requires the current document to be a local file. Please save your "
+"document to a local file."
 msgstr ""
 "این فرمان سند فعلی را به یک فایل محلی را نیاز دارد. لطفاً سند خود را به یک فایل "
 "محلی ذخیره کنید."
 
 #: ../src/external_commands.c:758
 msgid ""
-"External commands cannot have an output defined. Please fix this command in "
-"the preferences."
+"External commands cannot have an output defined. Please fix this command in the "
+"preferences."
 msgstr ""
 "فرمان های خارجی وجود ندارد خروجی تعریف شده. لطفا این فرمان را در تنظیمات حل "
 "کنند."
@@ -1770,9 +1773,8 @@ msgid "Move/rename %s to"
 msgstr "انتقال/تغییر نام به %s"
 
 #: ../src/filebrowser2.c:799
-#, fuzzy
 msgid "Could not rename\n"
-msgstr "تغییر نام می تواند"
+msgstr "تغییر نام می تواند\n"
 
 #: ../src/filebrowser2.c:873 ../src/filebrowser2.c:1289
 msgid "New directory"
@@ -1950,8 +1952,7 @@ msgstr[0] "بارگذاری هنوز %d پرونده %s به پایان رسید
 #: ../src/file.c:883
 #, c-format
 msgid "All files loaded, finished %s, %d document open"
-msgid_plural "All files loaded, finished %s, %d documents open"
-msgstr[0] "تمام فایل های بارگذاری، s %%d سند باز به پایان رسید"
+msgstr "تمام فایل های بارگذاری، %s %d سند باز به پایان رسید"
 
 #: ../src/file.c:1445
 #, c-format
@@ -2047,8 +2048,8 @@ msgid ""
 "A backupfile for %s could not be created. If you continue, this file will be "
 "overwritten."
 msgstr ""
-"Backupfile برای %s را نمی توان ایجاد کرد. اگر ادامه دهید، این پرونده را "
-"رونویسی شده باشد."
+"Backupfile برای %s را نمی توان ایجاد کرد. اگر ادامه دهید، این پرونده را رونویسی "
+"شده باشد."
 
 #: ../src/file_dialogs.c:458
 msgid "File backup failure"
@@ -2059,9 +2060,10 @@ msgid "Could not save file "
 msgstr "نمیتوان فایل را ذخیره کرد"
 
 #: ../src/file_dialogs.c:509 ../src/file_dialogs.c:1496
-#, fuzzy
 msgid "File changed on disk\n"
-msgstr "پرونده تغییر یافته روی دیسک"
+msgstr ""
+"‫\n"
+"‬پرونده تغییر یافته روی دیسک\n"
 
 #: ../src/file_dialogs.c:624 ../src/file_dialogs.c:645 ../src/file_dialogs.c:964
 #: ../src/project.c:339
@@ -2107,7 +2109,7 @@ msgstr "ذخیره"
 #: ../src/file_dialogs.c:774
 #, c-format
 msgid "Save %s as"
-msgstr "ذخیره %d"
+msgstr "ذخیره %s"
 
 #: ../src/file_dialogs.c:778
 #, c-format
@@ -2229,9 +2231,8 @@ msgid "File name: %s"
 msgstr "نام : %s"
 
 #: ../src/file_dialogs.c:1460
-#, fuzzy
 msgid "File disappeared from disk\n"
-msgstr "فایل را از دیسک ناپدید شد"
+msgstr "فایل را از دیسک ناپدید شد\n"
 
 #: ../src/file_dialogs.c:1479
 msgid "_Ignore"
@@ -2287,19 +2288,7 @@ msgstr "تشخیص خودکار"
 msgid "<b>Keystroke choice</b>"
 msgstr "<b>ضربه زدن به کلید انتخاب</b>"
 
-#: ../src/gtk_easy.c:1518
-#, fuzzy
-msgid ""
-"\n"
-"Press requested key combination.\n"
-"Please use Ctrl, Shift, Alt key with any other key.\n"
-"<i>Esc to cancel, Delete to remove the accelerator.</i>"
-msgstr ""
-"ترکیب کلید درخواست شده را فشار دهید.\n"
-"لطفا Ctrl, Shift, کلید Alt را با هر کلید استفاده کنید.\n"
-"<i>Esc برای لغو حذف برای حذف شتاب دهنده.</i>"
-
-#: ../src/gtk_easy.c:1543
+#: ../src/gtk_easy.c:1518 ../src/gtk_easy.c:1543
 msgid "Press shortcut key combination"
 msgstr "ترکیب کلید میانبر را فشار دهید"
 
@@ -2422,8 +2411,8 @@ msgid ""
 "applied to the same text, the top-most style in this list has the highest "
 "priority. Use drag and drop to re-order the text styles.</small>"
 msgstr ""
-"<small>قادر به اعمال سبک متن بالای یکدیگر هستند. اگر سبک های مختلف می شود به "
-"یک متن، سبک بالا بیشتر در این لیست بالاترین اولویت است. استفاده از کشیدن و رها "
+"<small>قادر به اعمال سبک متن بالای یکدیگر هستند. اگر سبک های مختلف می شود به یک "
+"متن، سبک بالا بیشتر در این لیست بالاترین اولویت است. استفاده از کشیدن و رها "
 "کردن به سبک متن به سفارش دوباره.</small>"
 
 #: ../src/preferences.c:1142 ../src/preferences.c:1342 ../src/preferences.c:1502
@@ -2477,7 +2466,7 @@ msgid "Delete entry"
 msgstr "حذف ورودی"
 
 #: ../src/preferences.c:1318
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "<small><b>Input options</b>\n"
 "start with a | to send the input to the standard input\n"
@@ -2491,10 +2480,7 @@ msgid ""
 "%u URL (available for all titled files)\n"
 "%p preview URL if basedir and preview dir are set in project settings, else "
 "identical to %u</small>"
-msgstr ""
-" <کوچک> <b> انتخوابهای ورودی<b/> شروع با a ا فرستادن ؛ورودی؛ به همان ورودی "
-"استاندارد ٪f اسم  فایل مووقتی برای ورودی , برابر است با ٪f اگر که ان نسخه ورقه "
-"نزدیک  تعغیری نکرده  < b >  انتخواباته خروجیه  < b/> ‬"
+msgstr "ورقه نزدیک  تعغیری نکرده  < b >  انتخواباته خروجیه  < b/> "
 
 #: ../src/preferences.c:1344 ../src/preferences.c:1504 ../src/preferences.c:1698
 msgid "Command"
@@ -2536,7 +2522,7 @@ msgstr ""
 "نزدیک  تعغیری نکرده  < b >  انتخواباته خروجیه  < b/> "
 
 #: ../src/preferences.c:1660
-#, c-format
+#, fuzzy, c-format
 msgid ""
 "<small><b>Input options</b>\n"
 "start with a | to send the input to the standard input\n"
@@ -3181,8 +3167,7 @@ msgstr "ویرایش پروژه"
 #: ../src/project.c:683
 #, c-format
 msgid "This project contains %d file"
-msgid_plural "This project contains %d files"
-msgstr[0] "پرونده پروژه ؛ بلو فیش ؛‬"
+msgstr "%dپرونده پروژه ؛  بلو فیش  ؛‬"
 
 #: ../src/project.c:696
 msgid "Project _Name:"
@@ -3424,8 +3409,7 @@ msgstr "<span foreground=\"red\"><b>هیچ انتخاب، جستجو سقط</b><
 #. display warning that not all documents have yet finished loading
 #: ../src/snr3.c:710
 msgid ""
-"<span foreground=\"red\" weight=\"bold\">Some documents are still loading</"
-"span>"
+"<span foreground=\"red\" weight=\"bold\">Some documents are still loading</span>"
 msgstr ""
 "<span foreground=\"red\" weight=\"bold\">برخی از اسناد هنوز بارگذاری</span>"
 
@@ -3436,32 +3420,27 @@ msgstr "جستوجوی رشته خالی"
 #: ../src/snr3.c:894
 #, c-format
 msgid "<i>Replaced %d entry</i>"
-msgid_plural "<i>Replaced %d entries</i>"
-msgstr[0] "<i>ورود جایگزین %d</i>"
+msgstr "<i>ورود جایگزین %d</i>"
 
 #: ../src/snr3.c:896
 #, c-format
 msgid "<i>Found %d entry</i>"
-msgid_plural "<i>Found %d entries</i>"
-msgstr[0] "<i>%D مجموعه یافت</i>"
+msgstr "<i>%d مجموعه یافت</i>"
 
 #: ../src/snr3.c:1184
 #, c-format
 msgid "<i>Found %d result in %d of the %d searched documents</i>"
-msgid_plural "<i>Found %d results in %d of the %d searched documents</i>"
-msgstr[0] "<i>%D نتیجه در بر داشت در %d از %d جستجو اسناد</i>"
+msgstr "<i>%d نتیجه در بر داشت در %d از %d جستجو اسناد</i>"
 
 #: ../src/snr3.c:1188
 #, c-format
 msgid "<i>Found %d result from character %d to %d</i>"
-msgid_plural "<i>Found %d results from character %d to %d</i>"
-msgstr[0] "<i>%D نتیجه از شخصیت یافت %d و %d</i>"
+msgstr "<i>%d نتیجه از شخصیت یافت %d و %d</i>"
 
 #: ../src/snr3.c:1191
 #, c-format
 msgid "<i>Found %d result in the active document</i>"
-msgid_plural "<i>Found %d results in the active document</i>"
-msgstr[0] "<i>%D نتیجه در بر داشت در نوشتار فعال</i>"
+msgstr "<i>%d نتیجه در بر داشت در نوشتار فعال</i>"
 
 #: ../src/snr3.c:1419
 msgid "No (more) results"
