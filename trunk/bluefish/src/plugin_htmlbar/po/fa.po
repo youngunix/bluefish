@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: bluefish 2.2.9\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
 "POT-Creation-Date: 2016-10-13 10:34+0200\n"
-"PO-Revision-Date: 2016-12-07 23:47+0000\n"
+"PO-Revision-Date: 2016-12-22 14:42+0000\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -300,8 +300,8 @@ msgstr "Sm_all"
 msgid "Small"
 msgstr ""
 " <کوچک> <b> انتخوابهای ورودی<b/> شروع با a ا فرستادن ؛ورودی؛ به همان ورودی "
-"استاندارد ٪f اسم  فایل مووقتی برای ورودی , برابر است با ٪f اگر که ان نسخه "
-"ورقه نزدیک  تعغیری نکرده  < b >  انتخواباته خروجیه  < b/> ‬"
+"استاندارد ٪f اسم  فایل مووقتی برای ورودی , برابر است با ٪f اگر که ان نسخه ورقه "
+"نزدیک  تعغیری نکرده  < b >  انتخواباته خروجیه  < b/> ‬"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1004
 msgid "Bi_g"
@@ -409,8 +409,7 @@ msgstr "راست چین"
 msgid "_Table"
 msgstr "_Table"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1029
-#: src/plugin_htmlbar/html_table.c:101
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1029 src/plugin_htmlbar/html_table.c:101
 msgid "Table"
 msgstr "جدول"
 
@@ -418,8 +417,7 @@ msgstr "جدول"
 msgid "Table _Row"
 msgstr "جدول _Row"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1031
-#: src/plugin_htmlbar/html_table.c:242
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1031 src/plugin_htmlbar/html_table.c:242
 msgid "Table Row"
 msgstr "افزودن ردیف جدول"
 
@@ -427,8 +425,7 @@ msgstr "افزودن ردیف جدول"
 msgid "Table _Header"
 msgstr "جدول _Header"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1033
-#: src/plugin_htmlbar/html_table.c:363
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1033 src/plugin_htmlbar/html_table.c:363
 msgid "Table Header"
 msgstr "هدر جدول"
 
@@ -436,8 +433,7 @@ msgstr "هدر جدول"
 msgid "Table _Data"
 msgstr "داده های جدول"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1035
-#: src/plugin_htmlbar/html_table.c:361
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1035 src/plugin_htmlbar/html_table.c:361
 msgid "Table Data"
 msgstr "داده های جدول"
 
@@ -452,9 +448,9 @@ msgstr "عنوان جدول"
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1039
 msgid "_List"
 msgstr ""
-"<small>قادر به اعمال سبک متن بالای یکدیگر هستند. اگر سبک های مختلف می شود "
-"به یک متن، سبک بالا بیشتر در این لیست بالاترین اولویت است. استفاده از "
-"کشیدن و رها کردن به سبک متن به سفارش دوباره.</small>"
+"<small>قادر به اعمال سبک متن بالای یکدیگر هستند. اگر سبک های مختلف می شود به یک "
+"متن، سبک بالا بیشتر در این لیست بالاترین اولویت است. استفاده از کشیدن و رها کردن "
+"به سبک متن به سفارش دوباره.</small>"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1040
 msgid "Unordered _List"
@@ -510,8 +506,7 @@ msgstr "منو"
 msgid "F_orm"
 msgstr "F_orm"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1054
-#: src/plugin_htmlbar/html_form.c:156
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1054 src/plugin_htmlbar/html_form.c:156
 msgid "Form"
 msgstr "فرم"
 
@@ -531,8 +526,8 @@ msgstr "L_abel"
 msgid "_Input"
 msgstr ""
 " <کوچک> <b> انتخوابهای ورودی<b/> شروع با a ا فرستادن ؛ورودی؛ به همان ورودی "
-"استاندارد ٪f اسم  فایل مووقتی برای ورودی , برابر است با ٪f اگر که ان نسخه "
-"ورقه نزدیک  تعغیری نکرده  < b >  انتخواباته خروجیه  < b/> "
+"استاندارد ٪f اسم  فایل مووقتی برای ورودی , برابر است با ٪f اگر که ان نسخه ورقه "
+"نزدیک  تعغیری نکرده  < b >  انتخواباته خروجیه  < b/> "
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1059
 msgid "_Button"
@@ -806,8 +801,7 @@ msgstr "Div"
 msgid "_Style"
 msgstr "_Style"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1129
-#: src/plugin_htmlbar/html_form.c:565
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1129 src/plugin_htmlbar/html_form.c:565
 msgid "Style"
 msgstr "استایل"
 
@@ -867,8 +861,8 @@ msgstr "فرم"
 msgid "_Input..."
 msgstr ""
 " <کوچک> <b> انتخوابهای ورودی<b/> شروع با a ا فرستادن ؛ورودی؛ به همان ورودی "
-"استاندارد ٪f اسم  فایل مووقتی برای ورودی , برابر است با ٪f اگر که ان نسخه "
-"ورقه نزدیک  تعغیری نکرده  < b >  انتخواباته خروجیه  < b/> "
+"استاندارد ٪f اسم  فایل مووقتی برای ورودی , برابر است با ٪f اگر که ان نسخه ورقه "
+"نزدیک  تعغیری نکرده  < b >  انتخواباته خروجیه  < b/> "
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1145
 msgid "Input B_uttons..."
@@ -1184,9 +1178,9 @@ msgid "Insert Time"
 msgstr "درج _Time..."
 
 #: src/plugin_htmlbar/html.c:412
-#, fuzzy, c-format
+#, c-format
 msgid "  _Time (%i:%i:%i)"
-msgstr "_Time (% اول: % د %i)"
+msgstr "_Time (%i:%i:%i)"
 
 #: src/plugin_htmlbar/html.c:417
 msgid "  Day of the _week (Sunday)"
@@ -1217,14 +1211,13 @@ msgid "  Day of the _week (Saturday)"
 msgstr "روز _week (شنبه)"
 
 #: src/plugin_htmlbar/html.c:438
-#, fuzzy
 msgid "You appear to have a non existent day!\n"
-msgstr "شما به روز غیر موجود به نظر می رسد!"
+msgstr "شما به روز غیر موجود به نظر می رسد!\n"
 
 #: src/plugin_htmlbar/html.c:447
-#, fuzzy, c-format
+#, c-format
 msgid "  _Date (%i/%i/%i)"
-msgstr "<i>قبل از</i> متن"
+msgstr "  _Date (%i/%i/%i)"
 
 #: src/plugin_htmlbar/html.c:450
 #, c-format
@@ -1642,7 +1635,6 @@ msgstr "زمان"
 
 #. Datetime help
 #: src/plugin_htmlbar/html.c:2184
-#, fuzzy
 msgid ""
 "Datetime format (ex. YYYY-MM-DDThh:mm:ssTZD) :\n"
 "\n"
@@ -1653,14 +1645,15 @@ msgid ""
 "hh - hour (e.g. 22 for 10.00pm)\n"
 "mm - minutes (e.g. 55)\n"
 "ss - seconds (e.g. 03)\n"
-"TZD - Time Zone Designator (Z denotes Zulu, also known as Greenwich Mean "
-"Time)\n"
+"TZD - Time Zone Designator (Z denotes Zulu, also known as Greenwich Mean Time)\n"
+"\n"
 msgstr ""
-"فرمت Datetime (مثلا: YYYY-MM-DDThh:mm:ssTZD): YYYY - MM - ss دقیقه (به "
-"عنوان مثال 55) - روز از ماه (به عنوان مثال 08) T - hh جدا کننده مورد نیاز "
-"- ساعت (به عنوان مثال 22 برای 10 pm) mm - DD ماه (به عنوان مثال 01 دی) - "
-"سال (به عنوان مثال 2009) ثانیه (به عنوان مثال 03) TZD - Designator منطقه "
-"زمانی (Z نشان دهنده ایین به زمان گرینویچ)"
+"‫\n"
+"\" \"فرمت Datetime (مثلا: YYYY-MM-DDThh:mm:ssTZD): YYYY - MM - ss دقیقه (به عنوان "
+"مثال 55) - روز از ماه (به عنوان مثال 08) T - hh جدا کننده مورد نیاز - ساعت (به "
+"عنوان مثال 22 برای 10 pm) mm - DD ماه (به عنوان مثال 01 دی) - سال (به عنوان مثال "
+"2009) ثانیه (به عنوان مثال 03) TZD - Designator منطقه زمانی (Z نشان دهنده ایین به "
+"زمان گرینویچ)\n"
 
 #: src/plugin_htmlbar/html.c:2194
 msgid "_Datetime:"
@@ -2055,9 +2048,8 @@ msgid ""
 "%x: thumbnail width  %y: thumbnail height\n"
 "%b: original size (bytes)"
 msgstr ""
-"% تحقیق: نام پرونده % تی: نام پرونده تصویر بند % عرض: اصلی عرض % ح: اصلی "
-"ارتفاع % x: عرض تصویر بند % y: ارتفاع تصویر بند % ب: اصلی اندازه اصلی "
-"(بایت)"
+"% تحقیق: نام پرونده % تی: نام پرونده تصویر بند % عرض: اصلی عرض % ح: اصلی ارتفاع % "
+"x: عرض تصویر بند % y: ارتفاع تصویر بند % ب: اصلی اندازه اصلی (بایت)"
 
 #: src/plugin_htmlbar/image_dialog.c:385
 msgid "Keep aspect ratio"
@@ -2088,27 +2080,33 @@ msgid "_Border:"
 msgstr "_Border:"
 
 #: src/plugin_htmlbar/image_dialog.c:779
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "\n"
 "%s"
-msgstr "%s"
+msgstr ""
+"\n"
+"\"\"%s"
 
 #: src/plugin_htmlbar/image_dialog.c:784
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "\n"
 "%d x %d pixels"
-msgstr "%d x %d پیکسل"
+msgstr ""
+"\n"
+"\" \"%d x %d پیکسل"
 
 #: src/plugin_htmlbar/image_dialog.c:882
-#, fuzzy
 msgid ""
 "\n"
+"\" \"\t<b>Loading preview...</b>\t\n"
 "\n"
-"\t<b>Loading preview...</b>\t\n"
+msgstr ""
 "\n"
-msgstr "بارگذاری پیش نمایش ..."
+"‫‫\"بارگذاری پیش نمایش ...‬\n"
+"‬\n"
+"\n"
 
 #: src/plugin_htmlbar/image_dialog.c:984
 msgid "Select Image"
@@ -2118,8 +2116,7 @@ msgstr "انتخاب تصویر"
 msgid "All images"
 msgstr "همه تصاویر"
 
-#: src/plugin_htmlbar/image_dialog.c:1209
-#: src/plugin_htmlbar/image_dialog.c:1320
+#: src/plugin_htmlbar/image_dialog.c:1209 src/plugin_htmlbar/image_dialog.c:1320
 msgid "Insert Image"
 msgstr "افزودن عکس"
 
@@ -2265,14 +2262,12 @@ msgstr "استفاده از lo_wercase نسخه متنی برچسب ها"
 
 #: src/plugin_htmlbar/prefs.c:84
 msgid "Use de_precated tags (e.g. <font> and <nobr>)"
-msgstr ""
-"استفاده از تگ های de_precated (مانند در <font>و <nobr>)</nobr> </font>"
+msgstr "استفاده از تگ های de_precated (مانند در <font>و <nobr>)</nobr> </font>"
 
 #: src/plugin_htmlbar/prefs.c:88
 msgid "_Format according to accessibility guidelines (e.g. <strong> for <b>)"
 msgstr ""
-"_Format با توجه به دستورالعمل های دسترسی (مانند <strong>برای <b>)</b> </"
-"strong>"
+"_Format با توجه به دستورالعمل های دسترسی (مانند <strong>برای <b>)</b> </strong>"
 
 #: src/plugin_htmlbar/prefs.c:91
 msgid "<b>Auto Update Tag Options</b>"
