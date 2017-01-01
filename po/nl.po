@@ -5,6 +5,7 @@
 # Copyright (C) 2001, 2007 Free Software Foundation, Inc.
 # elve <elve@savage-elve.net>, 2007, 2009, 2010.
 # Olivier <olivier@bluefish.openoffice.nl>, 2011, 2012, 2002, 2013, 2014, 2015.
+# Olivier Sessink <olivier@bluefish.openoffice.nl>, 2017.
 #
 #: ../src/xmlstrings.h:1
 msgid ""
@@ -12,15 +13,15 @@ msgstr ""
 "Project-Id-Version: Bluefish 2.2.4\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
 "POT-Creation-Date: 2016-04-10 20:05+0200\n"
-"PO-Revision-Date: 2015-11-08 13:53+0100\n"
-"Last-Translator: Olivier <olivier@bluefish.openoffice.nl>\n"
+"PO-Revision-Date: 2017-01-01 21:33+0100\n"
+"Last-Translator: Olivier Sessink <olivier@bluefish.openoffice.nl>\n"
 "Language-Team: Dutch; Flemish <>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: ../desktop-data/bluefish.appdata.xml.in.h:1
 msgid ""
@@ -32,8 +33,7 @@ msgstr ""
 "Bluefish is een krachtige editor gericht op programmeurs en web-"
 "ontwikkelaars, met veel extra's om websites, scripts and code te schrijven. "
 "Bluefish ondersteunt vele programmeer- en opmaaktalen en heeft veel "
-"mogelijkheden, en is tegelijkertijd een snelle en lichtgewicht applicatie "
-"is."
+"mogelijkheden, en is tegelijkertijd een snelle en lichtgewicht applicatie is."
 
 #: ../desktop-data/bluefish.appdata.xml.in.h:2
 msgid "A selection of the features:"
@@ -44,8 +44,8 @@ msgid ""
 "Well done syntax highlighting which for example supports languages inside "
 "languages (e.g. Javascript inside HTML inside PHP)"
 msgstr ""
-"Goede syntax-highlighting die binnen in een taal een andere taal "
-"ondersteunt (bijv. JavaScript in HTML in PHP)"
+"Goede syntax-highlighting die binnen in een taal een andere taal ondersteunt "
+"(bijv. JavaScript in HTML in PHP)"
 
 #: ../desktop-data/bluefish.appdata.xml.in.h:4
 msgid ""
@@ -53,7 +53,8 @@ msgid ""
 "for many functions and libraries in many programming languages"
 msgstr ""
 "Allerlei krachtige editoropties zoals automatisch inspringen en automatisch "
-"aanvullen van namen van vele functies en uit bibliotheken van veel programmeertalen"
+"aanvullen van namen van vele functies en uit bibliotheken van veel "
+"programmeertalen"
 
 #: ../desktop-data/bluefish.appdata.xml.in.h:5
 msgid "Project support"
@@ -95,9 +96,10 @@ msgid ""
 "or a heavy coder who dislikes heavy IDE's like eclipse or netbeans, Bluefish "
 "is your editor of choice!"
 msgstr ""
-"Als je af en toe programmeert, en je zoekt een makkelijk te gebruiken editor, "
-"of je bent een professionele programmeur die niet van zwaar opgetuigde IDE's als "
-"Eclipse of Netbeans houdt, dan is Bluefish de editor voor jou!"
+"Als je af en toe programmeert, en je zoekt een makkelijk te gebruiken "
+"editor, of je bent een professionele programmeur die niet van zwaar "
+"opgetuigde IDE's als Eclipse of Netbeans houdt, dan is Bluefish de editor "
+"voor jou!"
 
 #: ../desktop-data/bluefish.desktop.in.h:1 ../src/bluefish.c:91
 msgid "Bluefish Editor"
@@ -431,7 +433,7 @@ msgstr "Synta_x en Spelling Verversen"
 
 #: ../src/bfwin_uimanager.c:875 ../src/bfwin_uimanager.c:878
 msgid "Rescan document highlighting"
-msgstr "Ververs syntaxherkenning"                      
+msgstr "Ververs syntaxherkenning"
 
 #: ../src/bfwin_uimanager.c:878
 msgid "Rescan Synta_x"
@@ -619,11 +621,11 @@ msgstr "Statusbalk"
 
 #: ../src/bfwin_uimanager.c:930
 msgid "Auto _Completion Popup"
-msgstr "Popup automatisch aanvullen"                    
+msgstr "Popup automatisch aanvullen"
 
 #: ../src/bfwin_uimanager.c:930
 msgid "Show auto completion popup"
-msgstr "Toon popup automatisch aanvullen"               
+msgstr "Toon popup automatisch aanvullen"
 
 #: ../src/bfwin_uimanager.c:932
 msgid "_Auto Indent"
@@ -781,7 +783,7 @@ msgstr "Inspringen"
 
 #: ../src/bfwin_uimanager.c:967
 msgid "Unin_dent"
-msgstr "_Terugspringen"                                
+msgstr "_Terugspringen"
 
 #: ../src/bfwin_uimanager.c:967
 msgid "Unindent"
@@ -829,7 +831,7 @@ msgstr "Verschuif Tabblad naar Rechts"
 
 #: ../src/bfwin_uimanager.c:979
 msgid "Move Tab _Right"
-msgstr "Verschuif Tabblad naar _Rechts"                    
+msgstr "Verschuif Tabblad naar _Rechts"
 
 #: ../src/bfwin_uimanager.c:979
 msgid "Move current tab right"
@@ -1058,8 +1060,8 @@ msgid ""
 "Select the block to sync to other pages. Include the start-of-block and end-"
 "of-block markers in your selection."
 msgstr ""
-"Selecteer het blok dat gesynchroniseerd moet worden, inclusief de begin- "
-"en eindemarkeringen van het blok"
+"Selecteer het blok dat gesynchroniseerd moet worden, inclusief de begin- en "
+"eindemarkeringen van het blok"
 
 #: ../src/blocksync.c:92
 msgid "To proceed with the current selection click forward."
@@ -1109,16 +1111,16 @@ msgid ""
 "<span foreground=\"red\" weight=\"bold\">Select the text that marks the "
 "start of the block.</span>"
 msgstr ""
-"<span foreground=\"red\" weight=\"bold\">Selecteer de tekst die het begin van "
-"het blok markeert.</span>"
+"<span foreground=\"red\" weight=\"bold\">Selecteer de tekst die het begin "
+"van het blok markeert.</span>"
 
 #: ../src/blocksync.c:265
 msgid ""
 "<span foreground=\"red\" weight=\"bold\">Select the text that marks the end "
 "of the block.</span>"
 msgstr ""
-"<span foreground=\"red\" weight=\"bold\">Selecteer de tekst die het einde van "
-"het blok markeert.</span>"
+"<span foreground=\"red\" weight=\"bold\">Selecteer de tekst die het einde "
+"van het blok markeert.</span>"
 
 #: ../src/bluefish.c:91
 msgid "Visit us at http://bluefish.openoffice.nl"
@@ -1409,8 +1411,8 @@ msgid ""
 "insert newlines if no spaces or tabs are found."
 msgstr ""
 "De regels in dit bestand zijn langer dan Bluefish kan verwerken met normale "
-"snelheid. De opsplitsfunctie houdt echter geen rekening met de syntax van de taal, "
-"en kan spaties en tabs op elke plek vervangen door regeleinden, of "
+"snelheid. De opsplitsfunctie houdt echter geen rekening met de syntax van de "
+"taal, en kan spaties en tabs op elke plek vervangen door regeleinden, of "
 "nieuwe regeleinden toevoegen als er geen spaties of tabs gevonden worden."
 
 #: ../src/document.c:2097
@@ -1715,7 +1717,8 @@ msgid ""
 "This command requires the current document to be a local file. Please save "
 "your document to a local file."
 msgstr ""
-"Het bestand moet lokaal opgeslagen zijn voor dit commando. Sla uw bestand lokaal op."
+"Het bestand moet lokaal opgeslagen zijn voor dit commando. Sla uw bestand "
+"lokaal op."
 
 #: ../src/external_commands.c:758
 msgid ""
@@ -1729,7 +1732,8 @@ msgstr ""
 msgid ""
 "This command has multiple inputs. Please fix this command in the preferences."
 msgstr ""
-"Dit commando heeft meer dan één invoer. Verbeter het commando in de voorkeuren."
+"Dit commando heeft meer dan één invoer. Verbeter het commando in de "
+"voorkeuren."
 
 #: ../src/external_commands.c:764
 msgid ""
@@ -2430,8 +2434,7 @@ msgstr "Tab_breedte"
 msgid "Insert _spaces instead of tabs"
 msgstr "Gebruik _spaties voor inspringen, geen tabs"
 
-#: ../src/preferences.c:622 ../src/preferences.c:1341
-#: ../src/preferences.c:1500
+#: ../src/preferences.c:622 ../src/preferences.c:1341 ../src/preferences.c:1500
 msgid "Enabled"
 msgstr "Ingeschakeld"
 
@@ -2765,12 +2768,14 @@ msgstr "Alle behalve spaties"
 
 #: ../src/preferences.c:2444
 msgid "All trailing"
-msgstr "Alle hangende"                           #?
+msgstr "Alle hangende"
 
+# ?
 #: ../src/preferences.c:2444
-msgid "All except non-trailing spaces"           
-msgstr "Alle behalve niet-hangende spaties"      #?
+msgid "All except non-trailing spaces"
+msgstr "Alle behalve niet-hangende spaties"
 
+# ?
 #: ../src/preferences.c:2447
 msgid "Always"
 msgstr "Altijd"
@@ -3386,9 +3391,8 @@ msgid "Windows 7 Firefox 32-bit"
 msgstr "Windows 7 Firefox 32-bit"
 
 #: ../src/rcfile.c:828
-#, fuzzy
 msgid "Windows 7 Firefox"
-msgstr "Windows XP Firefox"
+msgstr "Windows 7 Firefox"
 
 #: ../src/rcfile.c:837
 msgid "Windows 7 Internet Explorer 32-bit"
@@ -3641,8 +3645,8 @@ msgid ""
 "The . character will match everything including newlines, use for multiline "
 "matching."
 msgstr ""
-"Het . karakter komt overeen met alles, inclusies regeleinden, gebruik dit voor meer-"
-"regelige zoekopdrachten"
+"Het . karakter komt overeen met alles, inclusies regeleinden, gebruik dit "
+"voor meer-regelige zoekopdrachten"
 
 #: ../src/snr3.c:1701
 msgid "Replace _All"
@@ -3850,8 +3854,9 @@ msgstr "Toon deze taal in het menu"
 
 #: ../src/xmlstrings.h:45
 msgid "Tag block-start includes all attributes"
-msgstr "Tag blok-start bevat alle attributen"       #?
+msgstr "Tag blok-start bevat alle attributen"
 
+# ?
 #~ msgid "Can't add bookmark"
 #~ msgstr "Kan bladwĳzer niet toevoegen"
 
