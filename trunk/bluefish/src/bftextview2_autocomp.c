@@ -613,7 +613,7 @@ process_conditional_items(BluefishTextView * btv, Tfound *found, gint contextnum
 		guint pattern_id;
 		const gchar *string = tmplist->data;
 		GHashTable *hasht = g_array_index(master->bflang->st->contexts, Tcontext,contextnum).patternhash;
-		g_print("process_conditional_items, looking up %s in hashtable %p\n",string, hasht);
+		DBG_AUTOCOMP("process_conditional_items, looking up %s in hashtable %p\n",string, hasht);
 		pattern_id = GPOINTER_TO_INT(g_hash_table_lookup(hasht, string));
 		DBG_AUTOCOMP("process_conditional_items, got pattern_id=%d\n", pattern_id);
 		if (pattern_id && found) {
@@ -628,7 +628,7 @@ process_conditional_items(BluefishTextView * btv, Tfound *found, gint contextnum
 					
 					valid = test_condition(found->fcontext, found->fblock, pcond);
 					if (!valid) {
-						g_print("process_conditional_items, item %s is NOT VALID for autocompletion\n",string);
+						DBG_AUTOCOMP("process_conditional_items, item %s is NOT VALID for autocompletion\n",string);
 					}
 				}
 				tmpslist = g_slist_next(tmpslist);
