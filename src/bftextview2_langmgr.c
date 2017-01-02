@@ -1119,7 +1119,7 @@ add_attribute_to_tag(Tbflangparsing * bfparser, const gchar *attrstring, gint co
 		attrmatch = add_pattern_to_scanning_table(bfparser->st, attrstring, FALSE, TRUE, contexttag, &bfparser->ldb);
 		pattern_set_runtime_properties(bfparser->st, attrmatch,attribhighlight, 0, FALSE, FALSE,0, FALSE, FALSE);
 		match_add_autocomp_item(bfparser->st, attrmatch, NULL,attrib_autocomplete_append,attrib_autocomplete_backup_cursor, 0,NULL,0,0);
-		DBG_AUTOCOMP("add_attribute_to_tag:%d, call match_autocomplete_reference(%d,%d)\n",__LINE__,attrmatch, contexttag);
+		DBG_AUTOCOMP("%s:%d, add_attribute_to_tag, call match_autocomplete_reference(%d,%d)\n",__FILE__,__LINE__,attrmatch, contexttag);
 		match_autocomplete_reference(bfparser->st, attrmatch, contexttag);
 	} else {
 		/* contains a =, so split the attribute, and the context */
@@ -1136,7 +1136,9 @@ add_attribute_to_tag(Tbflangparsing * bfparser, const gchar *attrstring, gint co
 		attrmatch = add_pattern_to_scanning_table(bfparser->st, tmp, TRUE, TRUE, contexttag, &bfparser->ldb);
 		g_free(tmp);
 		pattern_set_runtime_properties(bfparser->st, attrmatch,attribhighlight,startscontext,FALSE,FALSE,0,FALSE,FALSE);
-		match_add_autocomp_item(bfparser->st, attrmatch, splitted[0],attrib_autocomplete_append,attrib_autocomplete_backup_cursor, 0,NULL,0,0);
+		tmp = g_strconcat(splitted[0],attrib_autocomplete_append,NULL);
+		match_add_autocomp_item(bfparser->st, attrmatch, tmp,NULL,attrib_autocomplete_backup_cursor, 0,NULL,0,0);
+		g_free(tmp);
 		DBG_AUTOCOMP("add_attribute_to_tag:%d, call match_autocomplete_reference(%d,%d)\n",__LINE__,attrmatch, contexttag);
 		match_autocomplete_reference(bfparser->st, attrmatch, contexttag);
 		g_strfreev(splitted);
