@@ -279,6 +279,7 @@ langmgr_reload_user_styles(void)
 	GtkTextTag *tag;
 	const gchar *defaultarr[][7] = {
 		/* name, foreground-color, background-color, bold, italics, spell-check */
+		{"context-background", "", "#dcf1ff", "0", "0", "0", NULL},
 		{"preprocessor", "#aaaa00", "", "0", "0", "0", NULL},
 		{"comment", "#555555", "", "0", "1", "1", NULL},
 		{"string", "#009900", "", "0", "0", "1", NULL},
