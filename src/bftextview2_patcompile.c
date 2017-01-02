@@ -77,8 +77,12 @@ bftextview2_scantable_rematch_highlights(Tscantable * st, const gchar * lang)
 		if (g_array_index(st->contexts, Tcontext, i).contexthighlight) {
 			g_array_index(st->contexts, Tcontext, i).contexttag =
 				langmrg_lookup_tag_highlight(lang, g_array_index(st->contexts, Tcontext, i).contexthighlight);
-			if (g_array_index(st->contexts, Tcontext, i).contexttag)
+			if (g_array_index(st->contexts, Tcontext, i).contexttag) {
 				retlist = g_list_prepend(retlist, g_array_index(st->contexts, Tcontext, i).contexttag);
+			} else {
+				g_print("Possible error in language file, no textstyle found for context highlight %s\n",
+						g_array_index(st->contexts, Tcontext, i).contexthighlight);
+			}
 		}
 	}
 	for (i = 0; i < (st->matches->len); i++) {
@@ -104,8 +108,12 @@ bftextview2_scantable_rematch_highlights(Tscantable * st, const gchar * lang)
 	for (i = 0; i < (st->blocks->len); i++) {
 		if (g_array_index(st->blocks, Tpattern_block, i).highlight) {
 			g_array_index(st->blocks, Tpattern_block, i).tag = langmrg_lookup_tag_highlight(lang, g_array_index(st->blocks, Tpattern_block, i).highlight);
-			if (g_array_index(st->blocks, Tpattern_block, i).tag)
+			if (g_array_index(st->blocks, Tpattern_block, i).tag) {
 				retlist = g_list_prepend(retlist, g_array_index(st->blocks, Tpattern_block, i).tag);
+			} else {
+				g_print("Possible error in language file, no textstyle found for block highlight %s\n",
+						g_array_index(st->blocks, Tpattern_block, i).highlight);
+			}
 		}
 	}
 
