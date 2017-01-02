@@ -2,14 +2,14 @@
 # Copyright (C) 2003 Free Software Foundation, Inc.
 # Rasmus Toftdahl Olesen <rto@pohldata.dk>, 2003.
 # Finn Gruwier Larsen <finngruwierlarsen@gmail.com>, 2010.
-# flemming christensen <fc@stilheden.net>, 2011, 2013, 2015.
+# flemming christensen <fc@stilheden.net>, 2011, 2012, 2013, 2015,2017, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-06-16 09:51+0200\n"
-"PO-Revision-Date: 2015-11-09 10:53+0100\n"
+"POT-Creation-Date: 2016-10-13 10:34+0200\n"
+"PO-Revision-Date: 2017-01-02 16:18+0100\n"
 "Last-Translator: flemming christensen <fc@stilheden.net>\n"
 "Language-Team: dansk <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: src/plugin_infbrowser/infb_gui.c:139
 msgid "Loading..."
