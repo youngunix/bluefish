@@ -3736,7 +3736,7 @@ image_received(GtkClipboard * clipboard, GdkPixbuf * pixbuf, gpointer data)
 	refbuf = refcpointer_new(buffer);
 	/* save the file and insert the image tag */
 	file_checkNsave_uri_async(uri, NULL, refbuf, buflen, FALSE, FALSE,
-							  (CheckNsaveAsyncCallback) paste_image_save_lcb, NULL);
+							  (CheckNsaveAsyncCallback) paste_image_save_lcb, NULL, BFWIN(data));
 
 
 	if (BFWIN(data)->current_document->uri) {

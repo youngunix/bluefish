@@ -328,6 +328,7 @@ file_checkmodified_uri_async(GFile * uri, GFileInfo * curinfo, CheckmodifiedAsyn
 /*************************** CHECK MODIFIED AND SAVE ASYNC ******************************/
 
 typedef struct {
+	Tbfwin *bfwin;
 	gsize buffer_size;
 	GFile *uri;
 	GFileInfo *finfo;
@@ -355,6 +356,13 @@ checkNsave_cleanup(TcheckNsave * cns)
 }
 
 static void
+checkNsave_mount_operation_ready_lcb(GObject *source_object,GAsyncResult *res,gpointer user_data) {
+	DEBUG_MSG("checkNsave_mount_operation_ready_lcb, cns=%p, abount to call file_checkNsave_run\n", user_data);
+	file_checkNsave_run(user_data);
+	gmo=NULL;
+}
+
+static void
 checkNsave_replace_async_lcb(GObject * source_object, GAsyncResult * res, gpointer user_data)
 {
 	TcheckNsave *cns = user_data;
@@ -362,7 +370,7 @@ checkNsave_replace_async_lcb(GObject * source_object, GAsyncResult * res, gpoint
 	GError *error = NULL;
 
 	g_file_replace_contents_finish(cns->uri, res, &etag, &error);
-	DEBUG_MSG("checkNsave_replace_async_lcb, finished savig to uri %p, error=%p\n", cns->uri, error);
+	DEBUG_MSG("checkNsave_replace_async_lcb, cns=%p, finished savig to uri %p, error=%p\n", cns, cns->uri, error);
 	if (error) {
 		DEBUG_MSG("checkNsave_replace_async_lcb,error %d: %s\n", error->code, error->message);
 		if (error->code == G_IO_ERROR_CANCELLED) {
@@ -383,6 +391,17 @@ checkNsave_replace_async_lcb(GObject * source_object, GAsyncResult * res, gpoint
 				g_error_free(error);
 				return;
 			}
+		} else if (error->code == G_IO_ERROR_NOT_MOUNTED) { 
+			g_warning("while save to disk, received error %d: %s\n", error->code, error->message);
+			/* now do something extra: remount the thing */
+			if (gmo == NULL) {
+				gmo = gtk_mount_operation_new(cns->bfwin ? (GtkWindow *) cns->bfwin->main_window : NULL);
+				DEBUG_MSG("checkNsave_replace_async_lcb, cns=%p, start remount operation\n",cns);
+				g_file_mount_enclosing_volume(cns->uri, G_MOUNT_MOUNT_NONE, gmo, cns->cancelab,
+											  checkNsave_mount_operation_ready_lcb, cns);
+				return;
+			}
+			cns->callback_func(CHECKANDSAVE_ERROR, error, cns->callback_data);
 		} else {
 			g_warning("while save to disk, received error %d: %s\n", error->code, error->message);
 			DEBUG_MSG("****************** checkNsave_replace_async_lcb() unhandled error %d: %s\n",
@@ -404,6 +423,7 @@ file_checkNsave_cancel(gpointer data)
 	TcheckNsave *cns = data;
 	if (!cns)
 		return;
+	DEBUG_MSG("file_checkNsave_cancel, called for cns=%p\n");
 	/* if the checkNsave is still on the queue, and not yet started, the cancellable is NULL
 	   and we should remove it from the queue  */
 	if (cns->cancelab) {
@@ -420,7 +440,10 @@ static void
 file_checkNsave_run(gpointer data)
 {
 	TcheckNsave *cns = data;
-	cns->cancelab = g_cancellable_new();
+	DEBUG_MSG("file_checkNsave_run, called for cns=%p\n",cns);
+	if (!cns->cancelab) {
+		cns->cancelab = g_cancellable_new();
+	}
 	g_file_replace_contents_async(cns->uri, cns->buffer->data, cns->buffer_size, cns->etag, cns->backup,
 								  G_FILE_CREATE_NONE, cns->cancelab, checkNsave_replace_async_lcb, cns);
 }
@@ -428,10 +451,11 @@ file_checkNsave_run(gpointer data)
 gpointer
 file_checkNsave_uri_async(GFile * uri, GFileInfo * info, Trefcpointer * buffer, gsize buffer_size,
 						  gboolean check_modified, gboolean backup, CheckNsaveAsyncCallback callback_func,
-						  gpointer callback_data)
+						  gpointer callback_data, Tbfwin *bfwin)
 {
 	TcheckNsave *cns;
 	cns = g_slice_new0(TcheckNsave);
+	cns->bfwin = bfwin;
 	/*cns->etag=NULL; */
 	cns->callback_data = callback_data;
 	cns->callback_func = callback_func;

@@ -96,7 +96,7 @@ GFile *backup_uri_from_orig_uri(GFile * origuri);
 void file_checkNsave_cancel(gpointer cns);
 gpointer file_checkNsave_uri_async(GFile * uri, GFileInfo * info, Trefcpointer * buffer, gsize buffer_size,
 								   gboolean check_modified, gboolean backup,
-								   CheckNsaveAsyncCallback callback_func, gpointer callback_data);
+								   CheckNsaveAsyncCallback callback_func, gpointer callback_data, Tbfwin *bfwin);
 
 typedef enum {
 	OPENFILE_ERROR,
