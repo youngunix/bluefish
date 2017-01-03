@@ -143,7 +143,7 @@ static gboolean osx_open_file_cb(GtkosxApplication *app, gchar *path, gpointer u
 		tmplist = g_list_next(tmplist);
 	}
 	g_print("osx_open_file_cb, open %s\n",path);
-	file_handle(uri, bfwin , NULL, TRUE, FALSE);
+	file_handle(uri, bfwin , NULL, TRUE, TRUE);
 	g_object_unref(uri);
 	return TRUE;
 }
