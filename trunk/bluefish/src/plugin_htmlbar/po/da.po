@@ -7,10 +7,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Bluefish 2.2.2\n"
+"Project-Id-Version: Bluefish 2.2.10\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-10-13 10:34+0200\n"
-"PO-Revision-Date: 2017-01-02 16:18+0100\n"
+"POT-Creation-Date: 2017-01-02 07:32+0100\n"
+"PO-Revision-Date: 2017-01-03 12:38+0100\n"
 "Last-Translator: flemming christensen <fc@stilheden.net>\n"
 "Language-Team: dansk <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -1211,7 +1211,7 @@ msgstr "  _Ugedag (lørdag)"
 
 #: src/plugin_htmlbar/html.c:438
 msgid "You appear to have a non existent day!\n"
-msgstr "Du har vist en ikke-eksisterende dag!"
+msgstr "Du har vist en ikke-eksisterende dag!\n"
 
 #: src/plugin_htmlbar/html.c:447
 #, c-format
