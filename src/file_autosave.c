@@ -268,7 +268,7 @@ autosave(Tdocument * doc, GHashTable * hasht)
 	buffer = refcpointer_new(data);
 	doc->autosave_action =
 		file_checkNsave_uri_async(doc->autosave_uri, NULL, buffer, strlen(buffer->data), FALSE, FALSE,
-								  (CheckNsaveAsyncCallback) autosave_complete_lcb, doc);
+								  (CheckNsaveAsyncCallback) autosave_complete_lcb, doc, BFWIN(doc->bfwin));
 	refcpointer_unref(buffer);
 }
 
