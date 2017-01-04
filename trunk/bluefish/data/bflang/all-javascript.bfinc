@@ -1692,8 +1692,8 @@
 	<element pattern="true" />
 </group>
 <!-- javascript regex patterns goes here, at the end of the file -->
-<element id="js.regex" pattern="(=|+|-)[ &#9;&#10;&#13;]*/" is_regex="1" starts_block="1" highlight="js-brackets">
-	<context symbols=".;/\ " highlight="js-string" >
+<element id="js.regex" pattern="(=|+|-|!)[ &#9;&#10;&#13;]*/" is_regex="1" starts_block="1" highlight="js-brackets">
+	<context symbols=".;,/\ #&#9;&#10;&#13;" highlight="js-string" >
 		<element pattern="\\." is_regex="1" highlight="js-string" />
 		<element pattern="/[gimyxu]*" is_regex="1" highlight="js-brackets" ends_block="1" blockstartelement="js.regex" ends_context="1"/>
 	</context>
