@@ -10,7 +10,7 @@
 
 ; Section Names
 !define SECT_BLUEFISH	"Éditeur Bluefish"
-; !define SECT_DEPENDS	"Dependencies"
+!define SECT_DEPENDS	"Dépendances"
 !define SECT_PLUGINS	"Plugins"
 !define SECT_SHORTCUT	"Raccourci de bureau"
 !define SECT_DICT	"Vérification de l'orthographe (connexion Internet requise pour le téléchargement)"
@@ -38,10 +38,10 @@
 !define GTK_REQUIRED	"S'il vous plaît installer GTK + 2.14.7 ou supérieur et assurez-vous qu'il est dans votre PATH avant d'exécuter Bluefish."
 
 ; Python Strings
-; !define PYTHON_DOWNLOAD	"Downloading Python..."
-; !define PYTHON_FAILED	"Python Download failed:"
-; !define PYTHON_INSTALL	"Installing Python..."
-; !define PYTHON_REQUIRED	"Please install Python ${PYTHON_MIN_VERSION} or higher before running Bluefish.$\nPython is required for the Zencoding plugin and other features."
+!define PYTHON_DOWNLOAD	"Téléchargement de Python..."
+!define PYTHON_FAILED	"Le téléchargement de Python a échoué :"
+!define PYTHON_INSTALL	"Installation de Python..."
+!define PYTHON_REQUIRED	"Veuillez installer Python ${PYTHON_MIN_VERSION} ou supérieur avant d'utiliser Bluefish.$\nPython est requis par le plugin Zencoding et d'autres fonctionnalités."
 
 ; Plugin Names
 !define PLUG_CHARMAP	"Table des caractères"
@@ -49,7 +49,7 @@
 !define PLUG_HTMLBAR	"Barre HTML"
 !define PLUG_INFBROWSER	"Navigateur de documentation"
 !define PLUG_SNIPPETS	"Snippets"
-; !define PLUG_VCS	"Version Control"
+!define PLUG_VCS	"Contrôle de Version"
 !define PLUG_ZENCODING	"Zencoding"
 
 ; File Associations Page
