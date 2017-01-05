@@ -9,76 +9,67 @@
 ;----------------------------------------------
 
 ; Section Names
-!define SECT_BLUEFISH	"Bluefish-editor"
-; !define SECT_DEPENDS	"Dependencies"
-!define SECT_PLUGINS	"Plugins"
-!define SECT_SHORTCUT	"Bureaubladsnelkoppeling"
-!define SECT_DICT	"Woordenboeken voor spelling (internetverbinding nodig voor de download)"
+!define SECT_BLUEFISH "Bluefish-editor"
+!define SECT_PLUGINS "Plugins"
+!define SECT_SHORTCUT "Bureaubladsnelkoppeling"
+!define SECT_DICT "Woordenboeken voor spelling (internetverbinding nodig voor de download)"
 
 ; License Page
-!define LICENSEPAGE_BUTTON	"Volgende"
-!define LICENSEPAGE_FOOTER	"${PRODUCT} wordt uitgebracht onder de GNU General Public License. De licentie is beschikbaar ter info. $_CLICK"
+!define LICENSEPAGE_BUTTON "Volgende"
+!define LICENSEPAGE_FOOTER "${PRODUCT} wordt uitgebracht onder de GNU General Public License. De licentie is beschikbaar ter info. $_CLICK"
 
 ; General Download Messages
-!define DOWN_LOCAL	"Lokale kopie van %s gevonden..."
-!define DOWN_CHKSUM	"Integriteitstest goed..."
-!define DOWN_CHKSUM_ERROR	"Integriteitstest gefaald..."
+!define DOWN_LOCAL "Lokale kopie van %s gevonden..."
+!define DOWN_CHKSUM "Integriteitstest goed..."
+!define DOWN_CHKSUM_ERROR "Integriteitstest gefaald..."
 
 ; Aspell Strings
-!define DICT_INSTALLED	"Laatste versie van dit woordenboek is geïnstalleerd, negeer download voor:"
-!define DICT_DOWNLOAD	"Download woordenboek voor spelling-checker..."
-!define DICT_FAILED	"Download van Woordenboek mislukt:"
-!define DICT_EXTRACT	"Woordenboek uitpakken..."
+!define DICT_INSTALLED "Laatste versie van dit woordenboek is geïnstalleerd, negeer download voor:"
+!define DICT_DOWNLOAD "Download woordenboek voor spelling-checker..."
+!define DICT_FAILED "Download van Woordenboek mislukt:"
+!define DICT_EXTRACT "Woordenboek uitpakken..."
 
 ; GTK+ Strings
-!define GTK_DOWNLOAD	"Download GTK+ bibliotheek..."
-!define GTK_FAILED	"Download van GTK+ bibliotheek mislukt:"
-!define GTK_INSTALL	"Installeer GTK+ bibliotheek..."
-!define GTK_UNINSTALL	"GTK+ deïnstalleren..."
-!define GTK_REQUIRED	"Installeer GTK+ ${GTK_MIN_VERSION} of hoger en maak deze beschikbaar in PATH voor het starten van Bluefish."
-
-; Python Strings
-; !define PYTHON_DOWNLOAD	"Downloading Python..."
-; !define PYTHON_FAILED	"Python Download failed:"
-; !define PYTHON_INSTALL	"Installing Python..."
-; !define PYTHON_REQUIRED	"Please install Python ${PYTHON_MIN_VERSION} or higher before running Bluefish.$
-Python is required for the Zencoding plugin and other features."
+!define GTK_DOWNLOAD "Download GTK+ bibliotheek..."
+!define GTK_FAILED "Download van GTK+ bibliotheek mislukt:"
+!define GTK_INSTALL "Installeer GTK+ bibliotheek..."
+!define GTK_UNINSTALL "GTK+ deïnstalleren..."
+!define GTK_REQUIRED "Installeer GTK+ ${GTK_MIN_VERSION} of hoger en maak deze beschikbaar in PATH voor het starten van Bluefish."
 
 ; Plugin Names
-!define PLUG_CHARMAP	"Karaktermap"
-!define PLUG_ENTITIES	"Entities"
-!define PLUG_HTMLBAR	"HTML-balk"
-!define PLUG_INFBROWSER	"Info browser"
-!define PLUG_SNIPPETS	"Snippers"
-; !define PLUG_VCS	"Version Control"
-!define PLUG_ZENCODING	"Zencoding"
+!define PLUG_CHARMAP "Karaktermap"
+!define PLUG_ENTITIES "Entities"
+!define PLUG_HTMLBAR "HTML-balk"
+!define PLUG_INFBROWSER "Info browser"
+!define PLUG_SNIPPETS "Snippers"
+!define PLUG_ZENCODING "Zencoding"
 
 ; File Associations Page
-!define FA_TITLE	"Bestandskoppeling"
-!define FA_HEADER	"Selecteer de bestandstypen die met ${PRODUCT} geopend moeten worden."
-!define FA_SELECT	"Alles selecteren"
-!define FA_UNSELECT	"Alles deselecteren"
+!define FA_TITLE "Bestandskoppeling"
+!define FA_HEADER "Selecteer de bestandstypen die met ${PRODUCT} geopend moeten worden."
+!define FA_SELECT "Alles selecteren"
+!define FA_UNSELECT "Alles deselecteren"
 
 ; Misc
-!define FINISHPAGE_LINK	"Bezoek de Bluefish-website"
-!define UNINSTALL_SHORTCUT	"Verwijder ${PRODUCT}"
-!define FILETYPE_REGISTER	"Registreer bestandstype:"
-!define UNSTABLE_UPGRADE	"Een niet-stabiele versie van ${PRODUCT} is geïnstalleerd.$\nOude versies eerst verwijderen (aangeraden)?"
+!define FINISHPAGE_LINK "Bezoek de Bluefish-website"
+!define UNINSTALL_SHORTCUT "Verwijder ${PRODUCT}"
+!define FILETYPE_REGISTER "Registreer bestandstype:"
+!define UNSTABLE_UPGRADE "Een niet-stabiele versie van ${PRODUCT} is geïnstalleerd.$\nOude versies eerst verwijderen (aangeraden)?"
 
 ; InetC Plugin Translations
 ;  /TRANSLATE downloading connecting second minute hour plural progress remaining
-!define INETC_DOWN	"Downloaden van %s"
-!define INETC_CONN	"Verbinden ..."
-!define INETC_TSEC	"seconde"
-!define INETC_TMIN	"minuut"
-!define INETC_THOUR	"uur"
-!define INETC_TPLUR	"s"
-!define INETC_PROGRESS	"%dkB (%d%%) of %dkB @ %d.%01dkB/s"
-!define INETC_REMAIN	" (%d %s%s te doen)"
+!define INETC_DOWN "Downloaden van %s"
+!define INETC_CONN "Verbinden ..."
+!define INETC_TSEC "seconde"
+!define INETC_TMIN "minuut"
+!define INETC_THOUR "uur"
+!define INETC_TPLUR "s"
+!define INETC_PROGRESS "%dkB (%d%%) of %dkB @ %d.%01dkB/s"
+!define INETC_REMAIN " (%d %s%s te doen)"
 
 ; Content Types
 !define CT_ADA	"Ada broncode"
-!define CT_ASP	"ActiveServer Page Script"
+!define CT_ASP "ActiveServer Page Script"
 !define CT_SH	"Bash Shell Script"
 !define CT_BFPROJECT	"Bluefish Project"
 !define CT_BFLANG2	"Bluefish Language Definition File Version 2"
@@ -86,11 +77,11 @@ Python is required for the Zencoding plugin and other features."
 !define CT_H	"C Header"
 !define CT_CPP	"C++ Broncode"
 !define CT_HPP	"C++ Header"
-!define CT_CSS	"Cascading Stylesheet"
+!define CT_CSS "Cascading Stylesheet"
 !define CT_D	"D Broncode"
-!define CT_DIFF	"Diff/Patch Bestand"
+!define CT_DIFF "Diff/Patch Bestand"
 !define CT_PO	"Gettext Translation"
-!define CT_JAVA	"Java Broncode"
+!define CT_JAVA	"Java Broncode"	
 !define CT_JS	"JavaScript Script"
 !define CT_JSP	"JavaServer Pages Script"
 !define CT_MW	"MediaWiki Bestand"
