@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.4\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-06-16 09:51+0200\n"
+"POT-Creation-Date: 2016-10-13 10:34+0200\n"
 "PO-Revision-Date: 2013-01-01 17:17+0100\n"
 "Last-Translator: Olivier Sessink <olivier@bluefish.openoffice.nl>\n"
 "Language-Team: Dutch; Flemish <>\n"
@@ -990,11 +990,11 @@ msgstr "Ernaast"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1178
 msgid "Fig_caption"
-msgstr "Fig_caption"
+msgstr "Fig_bijschrift"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1178
 msgid "Figcaption"
-msgstr "Figcaption"
+msgstr "Fig bijschrift"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1179
 msgid "Fig_ure"
@@ -1006,19 +1006,19 @@ msgstr "Figuur"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1180
 msgid "_Footer"
-msgstr "_Voet"
+msgstr "_Voettekst"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1180
 msgid "Footer"
-msgstr "Voet"
+msgstr "Voettekst"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1181
 msgid "_Header"
-msgstr "_Kop"
+msgstr "_Koptekst"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1181
 msgid "Header"
-msgstr "Kop"
+msgstr "Koptekst"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1182
 msgid "H_group"
@@ -1050,7 +1050,7 @@ msgstr "R_p"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1185
 msgid "Ruby parenthesis"
-msgstr "Ruby parenthesis"
+msgstr "Ruby haakjes"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1186
 msgid "R_t"
@@ -2611,13 +2611,13 @@ msgstr "_Generator metatag automatisch bijwerken"
 #~ msgstr "_Mannelijke ordinaal º"
 
 #~ msgid "_Pilcrow (paragraph sign) ¶"
-#~ msgstr "Paragraaf teken ¶"
+#~ msgstr "Alineateken ¶"
 
 #~ msgid "Spa_cing macron ¯"
 #~ msgstr "Spacing macron ¯"
 
 #~ msgid "Middle _dot ·"
-#~ msgstr "Midden stip ·"
+#~ msgstr "Middenstip ·"
 
 #~ msgid " Fonts "
 #~ msgstr " Lettertype "
@@ -2647,7 +2647,7 @@ msgstr "_Generator metatag automatisch bijwerken"
 #~ msgstr "Verticale uitlĳning:"
 
 #~ msgid "Backgrou_nd Color:"
-#~ msgstr "Achtergrond-kleur:"
+#~ msgstr "Achtergrondkleur:"
 
 #~ msgid "Bo_rder:"
 #~ msgstr "Rand:"
@@ -2697,7 +2697,7 @@ msgstr "_Generator metatag automatisch bijwerken"
 #~ msgstr "Fo_rmulier"
 
 #~ msgid "Figcaption "
-#~ msgstr "Figcaption "
+#~ msgstr "Fig bijschrift "
 
 #, fuzzy
 #~ msgid "_Figcaption"
