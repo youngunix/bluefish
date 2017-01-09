@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bluefish 2.2.2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-06-16 09:51+0200\n"
-"PO-Revision-Date: 2013-12-13 22:00+0100\n"
+"POT-Creation-Date: 2016-10-13 10:34+0200\n"
+"PO-Revision-Date: 2017-01-08 11:33+0100\n"
 "Last-Translator: Mònica Ramírez Arceda <monica@probeta.net>\n"
 "Language-Team: Catalan\n"
 "Language: ca\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: src/plugin_htmlbar/html2.c:634
 msgid "Cascading Style Sheet Builder"
@@ -1207,9 +1207,8 @@ msgid "  Day of the _week (Saturday)"
 msgstr "  Dia de la _setmana (dissabte)"
 
 #: src/plugin_htmlbar/html.c:438
-#, fuzzy
 msgid "You appear to have a non existent day!\n"
-msgstr "Aquest dia no existeix\n"
+msgstr "Sembla que teniu un dia que no existeix!\n"
 
 #: src/plugin_htmlbar/html.c:447
 #, c-format
