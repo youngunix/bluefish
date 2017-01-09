@@ -9,76 +9,67 @@
 ;----------------------------------------------
 
 ; Section Names
-!define SECT_BLUEFISH	"Bluefish skriveprogram"
-; !define SECT_DEPENDS	"Dependencies"
-!define SECT_PLUGINS	"Programtillegg"
-!define SECT_SHORTCUT	"Snarveg på skrivebordet"
-!define SECT_DICT	"Stavekontroll (krev internettilkopling for å lasta ned ordlister)"
+!define SECT_BLUEFISH "Bluefish skriveprogram"
+!define SECT_PLUGINS "Programtillegg"
+!define SECT_SHORTCUT "Snarveg på skrivebordet"
+!define SECT_DICT "Stavekontroll (krev internettilkopling for å lasta ned ordlister)"
 
 ; License Page
-!define LICENSEPAGE_BUTTON	"Neste"
-!define LICENSEPAGE_FOOTER	"${PRODUCT} er lisensiert etter GNU General Public-lisensen. Lisensen er tilgjengelig her for gjennomsyn. $_CLICK"
+!define LICENSEPAGE_BUTTON "Neste"
+!define LICENSEPAGE_FOOTER "${PRODUCT} er lisensiert etter GNU General Public-lisensen. Lisensen er tilgjengelig her for gjennomsyn. $_CLICK"
 
 ; General Download Messages
-!define DOWN_LOCAL	"Fann lokal kopi av %s …"
-!define DOWN_CHKSUM	"Sjekksummen er kontrollert …"
-!define DOWN_CHKSUM_ERROR	"Sjekksumfeil …"
+!define DOWN_LOCAL "Fann lokal kopi av %s …"
+!define DOWN_CHKSUM "Sjekksummen er kontrollert …"
+!define DOWN_CHKSUM_ERROR "Sjekksumfeil …"
 
 ; Aspell Strings
-!define DICT_INSTALLED	"Siste utgåva av denne ordlista er allereie installert. Lastar ikkje ned:"
-!define DICT_DOWNLOAD	"Lastar ned stavekontrollordlista …"
-!define DICT_FAILED	"Klarte ikkje å lasta ned ordlista:"
-!define DICT_EXTRACT	"Pakkar ut ordlista …"
+!define DICT_INSTALLED "Siste utgåva av denne ordlista er allereie installert. Lastar ikkje ned:"
+!define DICT_DOWNLOAD "Lastar ned stavekontrollordlista …"
+!define DICT_FAILED "Klarte ikkje å lasta ned ordlista:"
+!define DICT_EXTRACT "Pakkar ut ordlista …"
 
 ; GTK+ Strings
-!define GTK_DOWNLOAD	"Lastar ned GTK+ …"
-!define GTK_FAILED	"GTK+-nedlastinga feila:"
-!define GTK_INSTALL	"Installerer GTK+ …"
-!define GTK_UNINSTALL	"Avinstallerer GTK+ …"
-!define GTK_REQUIRED	"Installer GTK+ 2.14.7 eller nyare og sjå til at det er i systemfilbana (PATH) før du køyrer Bluefish."
-
-; Python Strings
-; !define PYTHON_DOWNLOAD	"Downloading Python..."
-; !define PYTHON_FAILED	"Python Download failed:"
-; !define PYTHON_INSTALL	"Installing Python..."
-; !define PYTHON_REQUIRED	"Please install Python ${PYTHON_MIN_VERSION} or higher before running Bluefish.$
-Python is required for the Zencoding plugin and other features."
+!define GTK_DOWNLOAD "Lastar ned GTK+ …"
+!define GTK_FAILED "GTK+-nedlastinga feila:"
+!define GTK_INSTALL "Installerer GTK+ …"
+!define GTK_UNINSTALL "Avinstallerer GTK+ …"
+!define GTK_REQUIRED "Installer GTK+ 2.14.7 eller nyare og sjå til at det er i systemfilbana (PATH) før du køyrer Bluefish."
 
 ; Plugin Names
-!define PLUG_CHARMAP	"Teiknkart"
-!define PLUG_ENTITIES	"Entitetar"
-!define PLUG_HTMLBAR	"HTML-verktøylinje"
-!define PLUG_INFBROWSER	"Info-browser"
-!define PLUG_SNIPPETS	"Utklipp"
-; !define PLUG_VCS	"Version Control"
-!define PLUG_ZENCODING	"Zencoding"
+!define PLUG_CHARMAP "Teiknkart"
+!define PLUG_ENTITIES "Entitetar"
+!define PLUG_HTMLBAR "HTML-verktøylinje"
+!define PLUG_INFBROWSER "Info-browser"
+!define PLUG_SNIPPETS "Utklipp"
+!define PLUG_ZENCODING "Zencoding"
 
 ; File Associations Page
-!define FA_TITLE	"Filtilknytingar"
-!define FA_HEADER	"Vel filtypane du vil at ${PRODUCT} skal handtera."
-!define FA_SELECT	"Vel alle"
-!define FA_UNSELECT	"Fjern alle"
+!define FA_TITLE "Filtilknytingar"
+!define FA_HEADER "Vel filtypane du vil at ${PRODUCT} skal handtera."
+!define FA_SELECT "Vel alle"
+!define FA_UNSELECT "Fjern alle"
 
 ; Misc
-!define FINISHPAGE_LINK	"Besøk Bluefish si heimeside"
-!define UNINSTALL_SHORTCUT	"Avinstaller ${PRODUCT}"
-!define FILETYPE_REGISTER	"Registrerer filtypen:"
-!define UNSTABLE_UPGRADE	"Ei ustabil utgåve av ${PRODUCT} er allereie installert.$\nVil du fjerna tidlegare utgåver før vi held fram (tilrådd)?"
+!define FINISHPAGE_LINK "Besøk Bluefish si heimeside"
+!define UNINSTALL_SHORTCUT "Avinstaller ${PRODUCT}"
+!define FILETYPE_REGISTER "Registrerer filtypen:"
+!define UNSTABLE_UPGRADE "Ei ustabil utgåve av ${PRODUCT} er allereie installert.$\nVil du fjerna tidlegare utgåver før vi held fram (tilrådd)?"
 
 ; InetC Plugin Translations
 ;  /TRANSLATE downloading connecting second minute hour plural progress remaining
-!define INETC_DOWN	"Lastar ned %s"
-!define INETC_CONN	"Koplar til …"
-!define INETC_TSEC	"sekund"
-!define INETC_TMIN	"minutt"
-!define INETC_THOUR	"time"
-!define INETC_TPLUR	"s"
-!define INETC_PROGRESS	"%dkB (%d%%) av %dkB @ %d.%01dkB/s"
-!define INETC_REMAIN	" (%d %s%s står att)"
+!define INETC_DOWN "Lastar ned %s"
+!define INETC_CONN "Koplar til …"
+!define INETC_TSEC "sekund"
+!define INETC_TMIN "minutt"
+!define INETC_THOUR "time"
+!define INETC_TPLUR "s"
+!define INETC_PROGRESS "%dkB (%d%%) av %dkB @ %d.%01dkB/s"
+!define INETC_REMAIN " (%d %s%s står att)"
 
 ; Content Types
 !define CT_ADA	"Ada-kjeldefil"
-!define CT_ASP	"ActiveServer Page-skript"
+!define CT_ASP "ActiveServer Page-skript"
 !define CT_SH	"Bash-skalskript"
 !define CT_BFPROJECT	"Bluefish-prosjekt"
 !define CT_BFLANG2	"Bluefish språkdefinisjonsfil utgåve 2"
@@ -86,11 +77,11 @@ Python is required for the Zencoding plugin and other features."
 !define CT_H	"C-hovud-fil"
 !define CT_CPP	"C++ kjeldefil"
 !define CT_HPP	"C++-hovud-fil"
-!define CT_CSS	"Stilark (CSS)"
+!define CT_CSS "Stilark (CSS)"
 !define CT_D	"D-kjeldefil"
-!define CT_DIFF	"Diff-/Patch-fil"
+!define CT_DIFF "Diff-/Patch-fil"
 !define CT_PO	"Gettext-omsetjing"
-!define CT_JAVA	"Java-kjeldefil"
+!define CT_JAVA	"Java-kjeldefil"	
 !define CT_JS	"JavaScript-skript"
 !define CT_JSP	"JavaServer Pages-skript"
 !define CT_MW	"MediaWiki-fil"
