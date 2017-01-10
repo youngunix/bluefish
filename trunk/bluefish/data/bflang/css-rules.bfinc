@@ -779,7 +779,7 @@ href="http://www.w3.org/TR/css3-background/#the-background-color">www.w3.org</a>
 <b>Animatable:</b> no
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/css3-background/#the-background-image">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;-{}.;:()">
+<context symbols=" &#9;&#10;&#13;-{}().;:'&quot;">
 <element pattern="url" highlight="css-value">
 	<autocomplete append="();" backup_cursor="2" />
 	<context idref="c.css.uri"/>
@@ -1270,7 +1270,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-image-slice">www.w3.org</
 <b>Animatable:</b> no
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/css3-background/#the-border-image-source">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;-{}.;:()">
+<context symbols=" &#9;&#10;&#13;-{}.;:'&quot;()">
 <element pattern="url" highlight="css-value">
 	<autocomplete append="();" backup_cursor="2" />
 	<context idref="c.css.uri"/>
@@ -1612,7 +1612,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-width">www.w3.org</a></re
 <b>Animatable:</b> yes
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/CSS2/visuren.html#position-props">www.w3.org</a></reference>
-<context id="c.css.box_offsets" idref="c.css.box_offsets" symbols=" &#9;&#10;&#13;-{}.;:">
+<context id="c.css.box_offsets" idref="c.css.box_offsets" symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="auto"/>
@@ -1641,7 +1641,7 @@ href="http://www.w3.org/TR/CSS2/visuren.html#position-props">www.w3.org</a></ref
 <b>Animatable:</b> as shadow list
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/css3-background/#the-box-shadow">www.w3.org</a></reference>
-<context id="c.css.box_offsets" idref="c.css.box_offsets" symbols=" &#9;&#10;&#13;-{}.;:">
+<context id="c.css.box_offsets" idref="c.css.box_offsets" symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="auto"/>
@@ -1732,7 +1732,7 @@ href="http://www.w3.org/TR/CSS2/visuren.html#flow-control">www.w3.org</a></refer
 <b>Animatable:</b> no
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/CSS21/visufx.html#clipping">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;-{}.;:,()">
+<context symbols=" &#9;&#10;&#13;-{},().;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="inherit"/>
@@ -1982,7 +1982,7 @@ href="http://www.w3.org/TR/css3-speech/#cue-props-cue-before-after">www.w3.org</
 <b>Animatable:</b> no
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/css3-ui/#cursor">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;-{}.;:()">
+<context symbols=" &#9;&#10;&#13;-{}.;:()'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="auto"/>
@@ -2146,7 +2146,7 @@ href="http://www.w3.org/TR/CSS2/tables.html#propdef-empty-cells">www.w3.org</a><
 <b>Animatable:</b> no
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/CSS2/visuren.html#float-position">www.w3.org</a></reference>
-<context id="c.css.float" idref="c.css.float" symbols=" &#9;&#10;&#13;-{}.:;">
+<context id="c.css.float" idref="c.css.float" symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="left"/>
@@ -2444,7 +2444,7 @@ href="http://www.w3.org/TR/CSS2/visuren.html#position-props">www.w3.org</a></ref
 <b>Animatable:</b> no
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/CSS2/text.html#spacing-props">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;-{}.;:">
+<context symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="normal"/>
@@ -2505,7 +2505,7 @@ href="http://www.w3.org/TR/CSS2/visudet.html#propdef-line-height">www.w3.org</a>
 <b>Animatable:</b> no
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/CSS2/generate.html#propdef-list-style">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;-{}.;:()">
+<context symbols=" &#9;&#10;&#13;-{}.;:'&quot;()">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="disc"/>
@@ -2553,7 +2553,7 @@ href="http://www.w3.org/TR/CSS2/generate.html#propdef-list-style">www.w3.org</a>
 <b>Animatable:</b> no
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/CSS2/generate.html#propdef-list-style-image">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;-{}.;:()">
+<context symbols=" &#9;&#10;&#13;-{}.;:'&quot;()">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="none"/>
@@ -2657,7 +2657,7 @@ href="http://www.w3.org/TR/CSS2/generate.html#propdef-list-style-type">www.w3.or
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/CSS21/box.html#propdef-margin">www.w3.org</a></reference>
 
-<context symbols=" &#9;&#10;&#13;-{}.;:">
+<context symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="0"/>
@@ -2688,7 +2688,7 @@ href="http://www.w3.org/TR/CSS21/box.html#propdef-margin">www.w3.org</a></refere
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-bottom">www.w3.org</a></reference>
 
-<context symbols=" &#9;&#10;&#13;-{}.;:">
+<context symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="0"/>
@@ -2719,7 +2719,7 @@ href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-bottom">www.w3.org</a><
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-left">www.w3.org</a></reference>
 
-<context symbols=" &#9;&#10;&#13;-{}.;:">
+<context symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="0"/>
@@ -2750,7 +2750,7 @@ href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-left">www.w3.org</a></r
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-right">www.w3.org</a></reference>
 
-<context symbols=" &#9;&#10;&#13;-{}.;:">
+<context symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="0"/>
@@ -2781,7 +2781,7 @@ href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-right">www.w3.org</a></
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-top">www.w3.org</a></reference>
 
-<context symbols=" &#9;&#10;&#13;-{}.;:">
+<context symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="0"/>
@@ -3740,7 +3740,7 @@ href="http://www.w3.org/TR/CSS2/visuren.html#position-props">www.w3.org</a></ref
 <b>Canonical order:</b> per grammar
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/css3-transitions/#transition-shorthand-property">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:">
+<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <element idref="e.css.end"/>
 <group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
@@ -3763,7 +3763,7 @@ href="http://www.w3.org/TR/css3-transitions/#transition-shorthand-property">www.
 <b>Canonical order:</b> per grammar
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/css3-transitions/#transition-delay-property">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:">
+<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <element idref="e.css.end"/>
 <group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
@@ -3786,7 +3786,7 @@ href="http://www.w3.org/TR/css3-transitions/#transition-delay-property">www.w3.o
 <b>Canonical order:</b> per grammar
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/css3-transitions/#transition-duration-property">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:">
+<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <element idref="e.css.end"/>
 <group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
@@ -3809,7 +3809,7 @@ href="http://www.w3.org/TR/css3-transitions/#transition-duration-property">www.w
 <b>Canonical order:</b> per grammar
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/css3-transitions/#transition-property-property">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:">
+<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <!--
 list of animatable properties:
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
@@ -3924,7 +3924,7 @@ Updated: 2014-03-10
 <b>Canonical order:</b> per grammar
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/css3-transitions/#transition-timing-function-property">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:">
+<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="ease"/>
@@ -4000,7 +4000,7 @@ href="http://www.w3.org/TR/CSS21/visuren.html#propdef-unicode-bidi">www.w3.org</
 <b>Animatable:</b> no
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/CSS21/visudet.html#propdef-vertical-align">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;-{}.;:">
+<context symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="baseline"/>
@@ -4125,7 +4125,7 @@ href="http://www.w3.org/TR/CSS21/visudet.html#the-width-property">www.w3.org</a>
 <b>Animatable:</b> no
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/CSS21/text.html#propdef-word-spacing">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;-{}.;:">
+<context symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
 	<element pattern="normal"/>
