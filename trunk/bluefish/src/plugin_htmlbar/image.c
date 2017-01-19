@@ -38,23 +38,24 @@ pbloader_from_filename(const gchar * filename)
 {
 	GdkPixbufLoader *pbloader;
 	GError *error = NULL;
-	gchar *ext = strrchr(filename, '.');
-	if (ext) {
-		gchar *tmp2 = g_utf8_strdown(ext + 1, -1);
-		if (strcmp(tmp2, "jpg") == 0) {
-			pbloader = gdk_pixbuf_loader_new_with_type("jpeg", &error);
-		} else {
-			pbloader = gdk_pixbuf_loader_new_with_type(tmp2, &error);
-		}
-		if (error) {
-			pbloader = gdk_pixbuf_loader_new();	/* try to guess from the data */
-			g_error_free(error);
-		}
-		g_free(tmp2);
-	} else {
-		pbloader = gdk_pixbuf_loader_new();
+	if (filename) {
+		gchar *ext = strrchr(filename, '.');
+		if (ext) {
+			gchar *tmp2 = g_utf8_strdown(ext + 1, -1);
+			if (strcmp(tmp2, "jpg") == 0) {
+				pbloader = gdk_pixbuf_loader_new_with_type("jpeg", &error);
+			} else {
+				pbloader = gdk_pixbuf_loader_new_with_type(tmp2, &error);
+			}
+			if (error) {
+				pbloader = gdk_pixbuf_loader_new();	/* try to guess from the data */
+				g_error_free(error);
+			}
+			g_free(tmp2);
+			return pbloader;
+		} 
 	}
-	return pbloader;
+	return gdk_pixbuf_loader_new();
 }
 
 static gchar *
@@ -401,7 +402,7 @@ image_filename_changed(GtkWidget * widget, Timage_diag * imdg)
 
 	if (fullfilename && g_file_query_exists(fullfilename, NULL)) {
 		gchar *name, *msg;
-		gchar *path = g_file_get_path(fullfilename);
+		gchar *path = g_file_get_basename(fullfilename);
 		DEBUG_MSG("path for fullfilename=%s\n", path);
 		imdg->pbloader = pbloader_from_filename(path);
 		g_free(path);
