@@ -381,7 +381,12 @@ acwin_create(BluefishTextView * btv)
 	gtk_window_set_resizable(GTK_WINDOW(acw->win), FALSE);
 	gtk_container_set_border_width(GTK_CONTAINER(acw->win), 1);
 	gtk_window_set_decorated(GTK_WINDOW(acw->win), FALSE);
-	gtk_window_set_type_hint(GTK_WINDOW(acw->win), GDK_WINDOW_TYPE_HINT_POPUP_MENU);
+
+	/* setting the type hint makes wayland *not* create a subsurface (I learned that on IRC), and we need a 
+	subsurface, otherwise the popup can't be moved. we also need to make the window transient for the parent
+	for the wayland backend to create a subsurface */
+	/*gtk_window_set_type_hint(GTK_WINDOW(acw->win), GDK_WINDOW_TYPE_HINT_POPUP_MENU);*/
+	gtk_window_set_transient_for(GTK_WINDOW(acw->win), BFWIN(DOCUMENT(acw->btv->doc)->bfwin)->main_window);
 
 	acw->store = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_STRING);
 	acw->tree = GTK_TREE_VIEW(gtk_tree_view_new_with_model(GTK_TREE_MODEL(acw->store)));
