@@ -403,7 +403,7 @@ doc_print(Tdocument *doc)
 	if(res == GTK_PRINT_OPERATION_RESULT_APPLY) {
 		if(printsettings != NULL)
 			g_object_unref(printsettings);
-			printsettings = g_object_ref(gtk_print_operation_get_print_settings(print));
+		printsettings = g_object_ref(gtk_print_operation_get_print_settings(print));
 	}
 	if (printsettings != NULL)
 		g_object_unref(printsettings);

@@ -2433,7 +2433,7 @@ import_color_profile_clicked(GtkWidget *widget, Tprefdialog * pd)
 {
 	gchar *tmpstr, *curi;
 	gint ret;
-	gchar *buttons[] = {N_("Continue and ignore changes"), N_("Cancel"), NULL};
+	const gchar *buttons[] = {N_("Continue and ignore changes"), N_("Cancel"), NULL};
 	ret = message_dialog_new_multi(NULL, GTK_MESSAGE_QUESTION, buttons,
 						 _("Importing colors will abort any preferences changes"), _("Importing colors will close the preferences dialog and cancel any changes you made. Do you want to continue?"));
 	if (ret == 1)
