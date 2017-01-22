@@ -27,5 +27,7 @@ src/plugin_snippets/snippets_gui.c
 src/plugin_snippets/snippets_leaf_insert.c
 src/plugin_snippets/snippets_leaf_snr.c
 src/plugin_snippets/snippets_wizard.c
+src/plugin_vcs/vcs.c
+src/plugin_vcs/vcs_gui.c
 src/plugin_zencoding/zencoding.c
 src/plugin_xmltools/xmltools.c
