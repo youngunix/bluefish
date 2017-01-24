@@ -105,7 +105,7 @@ msgstr "ویرایشگر ویراستار برای توسعه وب‬"
 
 #: ../desktop-data/bluefish.desktop.in.h:3
 msgid "programming;code;web;editor;development;html;php;python;"
-msgstr "برنامه نویسی; کد; وب; ویرایشگر; توسعه; اچ تی ام ال ; پی اچ پی; پایتون;‬"
+msgstr "برنامه نویسی; کد; وب; ویرایشگر; توسعه; اچ تی ام ال ; پی اچ پی; پایتون;"
 
 #: ../desktop-data/bluefish.xml.in.h:1
 msgid "Bluefish project file"
