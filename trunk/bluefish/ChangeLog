@@ -2,10 +2,14 @@ The complete VCS changelog can be obtained from our subversion repository
 using the `svn2cl' utility. The release changelogs are also available from
 our homepage: http://bluefish.openoffice.nl.
 
+* 2.2.10 *
+
+Bluefish 2.2.10 is a maintenance release. Various language files have been improved, most notably languages that include CSS. There are also various fixes for newer gtk versions and for gtk on wayland (which is now the default on Fedora Linux). A new feature in the 2.2.10 release is the possibility to import/export syntax color styles, included are styles for a light and a dark theme. Last there have been fixes for a few rare crashes.   
+
 * 2.2.9 *
 
 Bluefish 2.2.9 is a maintenance release that most importantly fixes
-incompoatibility with Gtk 3.20. Next to that some small dialogs have
+incompatibility with Gtk 3.20. Next to that some small dialogs have
 been improved, and some user interface parts have been polished. 
 
 * 2.2.8 *
