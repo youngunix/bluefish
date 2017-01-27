@@ -36,6 +36,12 @@
 !define GTK_UNINSTALL "Usuwanie GTK+..."
 !define GTK_REQUIRED "Zainstaluj proszę GTK+ w wersji ${GTK_MIN_VERSION} lub wyższej i upewnij się, że znajduje się w odpowiedniej lokalizacji zanim uruchomisz Bluefish."
 
+; Python Strings
+; !define PYTHON_DOWNLOAD	"Downloading Python..."
+; !define PYTHON_FAILED	"Python Download failed:"
+; !define PYTHON_INSTALL	"Installing Python..."
+; !define PYTHON_REQUIRED	"Please install Python ${PYTHON_MIN_VERSION} or higher before running Bluefish.$\nPython is required for the Zencoding plugin and other features."
+
 ; Plugin Names
 !define PLUG_CHARMAP "Mapa znaków"
 !define PLUG_ENTITIES "Podmioty"
