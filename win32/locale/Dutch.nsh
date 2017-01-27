@@ -37,10 +37,10 @@
 !define GTK_REQUIRED "Installeer GTK+ ${GTK_MIN_VERSION} of hoger en maak deze beschikbaar in PATH voor het starten van Bluefish."
 
 ; Python Strings
-; !define PYTHON_DOWNLOAD	"Downloading Python..."
-; !define PYTHON_FAILED	"Python Download failed:"
-; !define PYTHON_INSTALL	"Installing Python..."
-; !define PYTHON_REQUIRED	"Please install Python ${PYTHON_MIN_VERSION} or higher before running Bluefish.$\nPython is required for the Zencoding plugin and other features."
+!define PYTHON_DOWNLOAD	"Python aan het downloaden..."
+!define PYTHON_FAILED	"Python download mislukt:"
+!define PYTHON_INSTALL	"Python aan het installeren..."
+!define PYTHON_REQUIRED	"Installeer Python ${PYTHON_MIN_VERSION} of hoger.$\nPython is nodig voor de Zencoding plugin en andere mogelijkheden."
 
 ; Plugin Names
 !define PLUG_CHARMAP "Karaktermap"
