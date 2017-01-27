@@ -36,6 +36,12 @@
 !define GTK_UNINSTALL "GTK+ eltávolítása…"
 !define GTK_REQUIRED "Kérjük telepítse a GTK+ 2.14.7 vagy újabb verzióját és győződjön meg arról, hogy az a PATH változóhoz hozzá van adva, mielőtt a Bluefish-t futtatná."
 
+; Python Strings
+; !define PYTHON_DOWNLOAD	"Downloading Python..."
+; !define PYTHON_FAILED	"Python Download failed:"
+; !define PYTHON_INSTALL	"Installing Python..."
+; !define PYTHON_REQUIRED	"Please install Python ${PYTHON_MIN_VERSION} or higher before running Bluefish.$\nPython is required for the Zencoding plugin and other features."
+
 ; Plugin Names
 !define PLUG_CHARMAP "Karakter térkép"
 !define PLUG_ENTITIES "Entitások"

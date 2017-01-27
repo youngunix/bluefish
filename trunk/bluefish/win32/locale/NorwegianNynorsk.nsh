@@ -36,6 +36,12 @@
 !define GTK_UNINSTALL "Avinstallerer GTK+ …"
 !define GTK_REQUIRED "Installer GTK+ 2.14.7 eller nyare og sjå til at det er i systemfilbana (PATH) før du køyrer Bluefish."
 
+; Python Strings
+; !define PYTHON_DOWNLOAD	"Downloading Python..."
+; !define PYTHON_FAILED	"Python Download failed:"
+; !define PYTHON_INSTALL	"Installing Python..."
+; !define PYTHON_REQUIRED	"Please install Python ${PYTHON_MIN_VERSION} or higher before running Bluefish.$\nPython is required for the Zencoding plugin and other features."
+
 ; Plugin Names
 !define PLUG_CHARMAP "Teiknkart"
 !define PLUG_ENTITIES "Entitetar"
