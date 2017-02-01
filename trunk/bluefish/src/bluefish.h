@@ -290,7 +290,7 @@ typedef struct {
 	gint use_system_tab_font;
 	gint max_shown_filename_len; /* the maximum length for the filename shown in the tab */
 	gchar *tab_font_string;		/* notebook tabs font */
-	/*  gchar *tab_color_normal; *//* notebook tabs text color normal.  This is just NULL! */
+	gchar *tab_color_active; 
 	gchar *tab_color_modified;	/* tab text color when doc is modified and unsaved */
 	gchar *tab_color_loading;	/* tab text color when doc is loading */
 	gchar *tab_color_error;		/* tab text color when doc has errors */

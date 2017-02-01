@@ -1159,6 +1159,7 @@ rcfile_load_accelerators(gboolean defaultmap)
 static GHashTable *
 return_colorprofile_configlist(GHashTable *config_rc,  gboolean init_values)
 {
+	init_prop_string(&config_rc, &main_v->props.tab_color_active, "tab_color_active:", NULL);
 	init_prop_string(&config_rc, &main_v->props.tab_color_modified, "tab_color_modified:", init_values ?"#0000FF":NULL);
 	init_prop_string(&config_rc, &main_v->props.tab_color_loading, "tab_color_loading:", init_values ?"#C7C7C7":NULL );
 	init_prop_string(&config_rc, &main_v->props.tab_color_error, "tab_color_error:", init_values ?"#FF0000":NULL);

@@ -1056,29 +1056,37 @@ doc_set_label_color(Tdocument * doc, const gchar * color)
 	gtk_widget_modify_fg(doc->tab_label, GTK_STATE_ACTIVE, color_p);
 }
 
+static void
+doc_update_label_color(Tdocument *doc, gboolean isactive)
+{
+	if (!doc) return;
+
+	if (doc->readonly || doc->status == DOC_STATUS_LOADING) {
+		doc_set_label_color(doc, main_v->props.tab_color_loading);
+	} else if (doc->status == DOC_STATUS_ERROR) {
+		doc_set_label_color(doc, main_v->props.tab_color_error);
+	} else if (isactive) {
+		doc_set_label_color(doc, main_v->props.tab_color_active);
+	} else {
+		doc_set_label_color(doc, NULL);
+	}
+}
+
 void
 doc_set_status(Tdocument * doc, gint status)
 {
 	gchar *color = NULL;
+	
 	doc->status = status;
-	switch (status) {
-	case DOC_STATUS_COMPLETE:
+	if (status == DOC_STATUS_COMPLETE) {
 		g_object_set(G_OBJECT(doc->view), "editable", !doc->readonly, NULL);
 		doc->modified = FALSE;
-		if (doc->readonly) {
-			color = main_v->props.tab_color_loading;	/* make tab label color different if document is readonly */
-		}
-		break;
-	case DOC_STATUS_ERROR:
+	} else if (status == DOC_STATUS_ERROR) {
 		g_object_set(G_OBJECT(doc->view), "editable", !doc->readonly, NULL);
-		color = main_v->props.tab_color_error;
-		break;
-	case DOC_STATUS_LOADING:
+	} else if (status == DOC_STATUS_LOADING) {
 		g_object_set(G_OBJECT(doc->view), "editable", FALSE, NULL);
-		color = main_v->props.tab_color_loading;
-		break;
 	}
-	doc_set_label_color(doc, color);
+	doc_update_label_color(doc, (doc == BFWIN(doc->bfwin)->last_activated_doc));
 }
 
 /**
@@ -3470,6 +3478,7 @@ doc_close_from_activate(gpointer data)
 void
 doc_activate(Tdocument * doc)
 {
+	Tdocument *last_activated_doc;
 #ifdef DEBUG
 	if (!doc) {
 		DEBUG_MSG("doc_activate, doc=NULL!!! ABORTING!!\n");
@@ -3549,7 +3558,11 @@ doc_activate(Tdocument * doc)
 		DEBUG_MSG("doc_activate, call gtk_widget_show(doc->view) for doc %p\n",doc);
 		gtk_widget_show(doc->view);	/* This might be the first time this document is activated. */
 	}
+	last_activated_doc = BFWIN(doc->bfwin)->last_activated_doc;
 	BFWIN(doc->bfwin)->last_activated_doc = doc;
+	/* BUG: hmm if this document previously was in error state, it will now be set to normal !?!?! */
+	doc_update_label_color(last_activated_doc, FALSE);
+	doc_update_label_color(doc, TRUE);
 	if (BFWIN(doc->bfwin)->recentdoclist != doc->recentpos) {
 		/* put this document on top of the recentlist */
 		DEBUG_MSG("put this document %p with recentpos %p on top of the recentlist %p\n", doc, doc->recentpos,
@@ -3567,6 +3580,7 @@ doc_activate(Tdocument * doc)
 	doc_set_statusbar_lncol(doc);
 	doc_set_statusbar_insovr(doc);
 	doc_set_statusbar_lang_encoding(doc);
+	
 #ifdef MAC_INTEGRATION
 /*	ige_mac_menu_sync(GTK_MENU_SHELL(BFWIN(doc->bfwin)->menubar));*/
 	gtkosx_application_sync_menubar(g_object_new(GTKOSX_TYPE_APPLICATION, NULL));
