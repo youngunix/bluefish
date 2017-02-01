@@ -59,7 +59,7 @@ enum {
 	use_system_tab_font,
 	max_shown_filename_len,
 	tab_font_string,			/* notebook tabs font */
-	/*tab_color_normal, *//* notebook tabs text color normal.  This is just NULL! */
+	tab_color_active, /* notebook tabs text color normal. */
 	tab_color_modified,			/* tab text color when doc is modified and unsaved */
 	tab_color_loading,			/* tab text color when doc is loading */
 	tab_color_error,			/* tab text color when doc has errors */
@@ -2151,6 +2151,7 @@ preferences_apply(Tprefdialog * pd)
 	integer_apply(&main_v->props.use_system_tab_font, pd->prefs[use_system_tab_font], TRUE);
 	integer_apply(&main_v->props.max_shown_filename_len, pd->prefs[max_shown_filename_len], FALSE);
 	string_apply(&main_v->props.tab_font_string, pd->prefs[tab_font_string]);
+	string_apply(&main_v->props.tab_color_active, pd->prefs[tab_color_active]);
 	string_apply(&main_v->props.tab_color_modified, pd->prefs[tab_color_modified]);
 	string_apply(&main_v->props.tab_color_loading, pd->prefs[tab_color_loading]);
 	string_apply(&main_v->props.tab_color_error, pd->prefs[tab_color_error]);
@@ -3068,7 +3069,7 @@ preferences_dialog_new(Tbfwin *bfwin)
 					 G_CALLBACK(prefs_togglebutton_toggled_not_lcb), hbox);
 
 	vbox2 = dialog_vbox_labeled(_("<b>Colors</b>"), vbox1);
-	table = dialog_table_in_vbox_defaults(3, 2, 0, vbox2);
+	table = dialog_table_in_vbox_defaults(4, 2, 0, vbox2);
 
 	pd->prefs[tab_color_error] = dialog_color_button_in_table(main_v->props.tab_color_error,
 															  _("Document error tab color"), table, 1, 2, 0,
@@ -3087,6 +3088,13 @@ preferences_dialog_new(Tbfwin *bfwin)
 																 2, 2, 3);
 	dialog_mnemonic_label_in_table(_("Document tab _modified color:"), pd->prefs[tab_color_modified], table,
 								   0, 1, 2, 3);
+
+	pd->prefs[tab_color_active] = dialog_color_button_in_table(main_v->props.tab_color_active,
+																 _("Active document tab color"), table, 1,
+																 2, 3, 4);
+	dialog_mnemonic_label_in_table(_("Document tab _active color:"), pd->prefs[tab_color_active], table,
+								   0, 1, 3, 4);
+
 
 	/*
 	 *  Images
