@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * snr3_files.c - multi-threaded search and replace in files
  *
- * Copyright (C) 2011 Olivier Sessink
+ * Copyright (C) 2011-2017 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@ static guint calculate_line_in_buffer(Tlineinbuffer *lib, gchar *buffer, gsize p
 	char *newpos = buffer + pos;
 	guint line = lib->line;
 	gboolean prev_was_cr=FALSE;
-	DEBUG_MSG("calculate_line_in_buffer, called for position %d ",pos);
+	DEBUG_MSG("calculate_line_in_buffer, called for position %d\n",pos);
 	while (*tmp != '\0' && tmp != newpos) {
 		if (*tmp == '\n') {
 			if (!prev_was_cr)
@@ -57,37 +57,42 @@ static guint calculate_line_in_buffer(Tlineinbuffer *lib, gchar *buffer, gsize p
 	}
 	lib->pos = pos;
 	lib->line = line;
-	DEBUG_MSG("returned line %d ",line);
+	DEBUG_MSG("calculate_line_in_buffer, returned line %d\n",line);
 	return line;
 }
 
 static gchar *line_from_buffer(gchar *buffer, guint offset) {
 	gint i,j;
 	i=j=offset;
+	/*g_print("%s:%d line_from_buffer, buffer=%p, offset=%d\n",__FILE__,__LINE__, buffer, offset);*/
+	/* search backwards for a newline character if offset >0 */
+	i--;
 	while (i >=0 && i > (offset-40)) {
 		if (buffer[i] == '\n' || buffer[i] == '\r') {
+			/*g_print("found newline at %d\n",i);*/
+			i++;
 			break;
 		}
 		i--;
 	}
-	if (i <= offset-40) {
+	if (i == (offset-40)) {
 		gchar *tmp = g_utf8_find_next_char(buffer+i, NULL);
 		if (tmp)
 			i = tmp-buffer;
-	} else {
-		i++;
 	}
+	/* search forward to newline */
 	while (buffer[j] !='\0' && j < (offset+40)) {
 		if (buffer[j] == '\n' || buffer[j] == '\r') {
 			break;
 		}
 		j++;
 	}
-	if (j >= offset+40) {
-		gchar *tmp = g_utf8_find_prev_char(buffer, buffer+j);
+	if (j == offset+40) {
+		gchar *tmp = g_utf8_find_prev_char(buffer, buffer+j-1);
 		if (tmp)
 			j = tmp-buffer;
 	}
+	/*g_print("%s:%d line_from_buffer, i=%d, j=%d\n",__FILE__,__LINE__, i, j);*/
 	return g_strndup(buffer+i, j-i);
 }
 
