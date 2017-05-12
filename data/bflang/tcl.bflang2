@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!--
+		Bluefish HTML Editor
+		tcl.bflang2 $Revision:  $
+ 
+		Copyright (C) 2017 Olivier Sessink
+
+	    This program is free software: you can redistribute it and/or modify
+		it under the terms of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of the License, or
+		(at your option) any later version.
+
+		This program is distributed in the hope that it will be useful,
+		but WITHOUT ANY WARRANTY; without even the implied warranty of
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+		GNU General Public License for more details.
+
+		You should have received a copy of the GNU General Public License
+		along with this program.  If not, see <http://www.gnu.org/licenses/>.		
+-->
+
+<bflang name="TCL" version="3" contexts="5" matches="273">
+<header>
+	<mime type="application/x-tcl"/>
+	<mime type="text/x-tcl" />
+	<mime type="application/tcl" />
+	<option name="show_in_menu" default="0"/>
+	<highlight name="authorization" style="warning" />
+	<highlight name="brackets" style="brackets"  />
+	<highlight name="comment" style="comment" />
+	<highlight name="data_function" style="special-function" />
+	<highlight name="function" style="function" />
+	<highlight name="keyword" style="keyword" />
+	<highlight name="operator" style="operator" />
+	<highlight name="string" style="string" />
+	<highlight name="table" style="special-type" />
+	<highlight name="type" style="type" />
+	<highlight name="value" style="value" />
+	<highlight name="variable" style="variable" />
+</header>
+<properties>
+	
+	<comment type="line" start="#" /> 
+</properties>
+<definition>
+<context symbols=" $;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;.">
+
+<group highlight="keyword" >
+	<autocomplete enable="1" />
+	<element pattern="package" />
+	<element pattern="require" />
+	<element pattern="if" />
+	<element pattern="set" />
+	<element pattern="split" />
+	<element pattern="else" />
+	<element pattern="switch" />
+	<element pattern="foreach" />
+</group>
+
+<group  highlight="function">
+	<autocomplete enable="1" />
+	<element pattern="alias" />
+	
+</group>
+
+<element pattern="$[a-z0-9_]+" is_regex="1" case_insens="1" highlight="variable"  />
+
+<element pattern="'[^']*'" is_regex="1" highlight="string"/>
+<element pattern="&quot;" highlight="string">
+<context symbols="\&quot;${} " highlight="string">
+	<element pattern="\\." is_regex="1" highlight="string" />
+	<element pattern="\$+[!@?*#${a-zA-Z0-9_][}a-zA-Z0-9_]*" is_regex="1" case_insens="1" highlight="variable"/>
+	<element pattern="&quot;" highlight="string" ends_context="1"/>
+</context>
+</element>
+
+<element id="e.lbrace" pattern="{" starts_block="1" highlight="brackets" />
+<element pattern="}" ends_block="1" blockstartelement="e.lbrace" highlight="brackets" />
+<element id="e.lbracket" pattern="[" starts_block="1" highlight="brackets" />
+<element pattern="]" ends_block="1" blockstartelement="e.lbracket" highlight="brackets" />
+<element id="e.lparen" pattern="(" starts_block="1" highlight="brackets" block_name="Parentheses block" />
+<element pattern=")" ends_block="1" blockstartelement="e.lparen" highlight="brackets" />
+
+<element pattern="#" highlight="comment">
+<context symbols="&#10;&#13;" highlight="comment">
+	<element pattern="(&#10;|&#13;|&#13;&#10;)" is_regex="1" highlight="comment" ends_context="1"/>
+</context>
+</element>
+
+
+</context>
+</definition>
+</bflang>
