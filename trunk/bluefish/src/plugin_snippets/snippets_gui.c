@@ -315,7 +315,11 @@ popup_menu_create(Tsnippetswin * snw, xmlNodePtr cur, GdkEventButton * event)
 	bfwin_action_set_sensitive(bfwin->uimanager, "/SnippetsMenu/Export", (state != 0));
 
 	gtk_widget_show_all(menu);
+#if GTK_CHECK_VERSION(3,2,2)
+	gtk_menu_popup_at_pointer(GTK_MENU(menu), NULL);
+#else
 	gtk_menu_popup(GTK_MENU(menu), NULL, NULL, NULL, NULL, event->button, event->time);
+#endif
 }
 
 static gboolean
