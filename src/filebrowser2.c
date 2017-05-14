@@ -1419,9 +1419,12 @@ popup_menu_create(Tfilebrowser2 * fb2, gboolean is_directory, gboolean is_file, 
 	}
 
 	gtk_widget_show(menu);
+#if GTK_CHECK_VERSION(3,2,2)
+	gtk_menu_popup_at_pointer(GTK_MENU(menu), NULL);
+#else
 	gtk_menu_popup(GTK_MENU(menu), NULL, NULL, NULL, NULL, event->button, event->time);
+#endif
 }
-
 
 
 /*****************************************************************************************************************************/
