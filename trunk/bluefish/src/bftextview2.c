@@ -1988,7 +1988,7 @@ bluefish_text_view_button_press_event(GtkWidget * widget, GdkEventButton * event
 				btv->button_press_line = gtk_text_iter_get_line(&it);
 			}
 		} else if (event->button == 3 && btv->show_blocks && (event->x > master->margin_pixels_chars)) {
-#if GTK_CHECK_VERSION(3,2,2)
+#if GTK_CHECK_VERSION(3,22,0)
 			gtk_menu_popup_at_pointer(GTK_MENU(bftextview2_fold_menu(btv)), NULL);
 #else
 			gtk_menu_popup(GTK_MENU(bftextview2_fold_menu(btv)), NULL, NULL, NULL, NULL, event->button,

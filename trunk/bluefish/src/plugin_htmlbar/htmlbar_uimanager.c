@@ -1234,7 +1234,7 @@ quickbar_button_press_event_lcb(GtkWidget *widget,GdkEvent  *event,gpointer   us
 		if (!action)
 			return FALSE;
 		menu = quickbar_create_popup_menu(FALSE, gtk_action_get_name(action));
-#if GTK_CHECK_VERSION(3,2,2)
+#if GTK_CHECK_VERSION(3,22,0)
 		gtk_menu_popup_at_pointer(GTK_MENU(menu), NULL);
 #else
 		gtk_menu_popup(GTK_MENU(menu),NULL,NULL,NULL,NULL,3,event->button.time);
@@ -1360,7 +1360,7 @@ toolbar_button_press_event_lcb(GtkWidget *widget,GdkEvent  *event,gpointer   use
 		DEBUG_MSG("toolbar_button_press_event_lcb, add action %s \n", gtk_action_get_name(action));
 
 		menu = quickbar_create_popup_menu(TRUE, gtk_action_get_name(action));
-#if GTK_CHECK_VERSION(3,2,2)
+#if GTK_CHECK_VERSION(3,22,0)
 		gtk_menu_popup_at_pointer(GTK_MENU(menu), NULL);
 #else
 		gtk_menu_popup(GTK_MENU(menu),NULL,NULL,NULL,NULL,3,event->button.time);

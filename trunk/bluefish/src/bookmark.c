@@ -989,7 +989,7 @@ popup_menu(Tbfwin * bfwin, GdkEventButton * event, gboolean show_bmark_specific,
 																 "/BookmarkMenu/ShowBookmarkMenu/BookmarkName"),
 									   bfwin->session->bookmarks_show_mode);
 	gtk_widget_show(menu);
-#if GTK_CHECK_VERSION(3,2,2)
+#if GTK_CHECK_VERSION(3,22,0)
 	gtk_menu_popup_at_pointer(GTK_MENU(menu), NULL);
 #else
 	gtk_menu_popup(GTK_MENU(menu), NULL, NULL, NULL, NULL, event->button, event->time);
@@ -1003,7 +1003,7 @@ popup_search_menu(Tbfwin * bfwin, GdkEventButton * bevent)
 
 	if (menu) {
 		gtk_widget_show(menu);
-#if GTK_CHECK_VERSION(3,2,2)
+#if GTK_CHECK_VERSION(3,22,0)
 		gtk_menu_popup_at_pointer(GTK_MENU(menu), NULL);
 #else
 		gtk_menu_popup(GTK_MENU(menu), NULL, NULL, NULL, NULL, bevent->button, bevent->time);
