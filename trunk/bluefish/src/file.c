@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * file.c - file operations based on GIO
  *
- * Copyright (C) 2002-2015 Olivier Sessink
+ * Copyright (C) 2002-2017 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1157,7 +1157,7 @@ file_doc_from_uri(Tbfwin * bfwin, GFile * uri, GFile * recover_uri, GFileInfo * 
 {
 	Tfile2doc *f2d;
 	f2d = g_slice_new0(Tfile2doc);
-	DEBUG_MSG("file_doc_from_uri, open uri %p, f2d=%p\n", uri, f2d);
+	DEBUG_MSG("file_doc_from_uri, open uri %p, in bfwin=%p, f2d=%p\n", uri,bfwin, f2d);
 	f2d->bfwin = bfwin;
 	f2d->uri = g_object_ref(uri);
 	if (recover_uri) {

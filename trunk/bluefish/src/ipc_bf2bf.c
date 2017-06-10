@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * ipc_bf2bf.c - socket IPC communication, bluefish to bluefish
  *
- * Copyright (C) 2009-2012 Olivier Sessink
+ * Copyright (C) 2009-2017 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,6 +16,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+/*#define DEBUG*/
 
 #include <errno.h>
 #include <fcntl.h>
@@ -77,19 +79,23 @@ handle_message(const gchar * message, gsize len)
 	Tbfwin *bfwin;
 	if (!main_v->bfwinlist)
 		return;
-
-	bfwin = BFWIN(g_list_last(main_v->bfwinlist)->data);
+	
 	if (strcmp(message, "openwin") == 0) {
-		/* call open new window */
+		/* call open new window. on default settings, a new client will always start with a openwin message */
 		DEBUG_MSG("open new window\n");
 		bfwin = bfwin_window_new();
+		/*gtk_window_present(bfwin->main_window);*/
 	} else if (strncmp(message, "openuri", 7) == 0 && len > 12) {
 		GFile *file;
-		DEBUG_MSG("open URI %s\n", &message[8]);
+		/* use the last window created to pass handle the filename */
+		bfwin = BFWIN(g_list_last(main_v->bfwinlist)->data);
+		DEBUG_MSG("open URI %s, pass bfwin=%p\n", &message[8],bfwin);
 		file = g_file_new_for_uri(&message[8]);
-		file_handle(file, bfwin, NULL, TRUE, FALSE);
+		file_handle(file, bfwin, NULL, TRUE, TRUE);
 		g_object_unref(file);
-		gtk_window_present(GTK_WINDOW(bfwin->main_window));
+		if (!main_v->props.open_in_new_window) {
+			gtk_window_present(GTK_WINDOW(bfwin->main_window));
+		}
 	} else {
 		g_print("unknown message with len %" G_GSIZE_FORMAT " on socket...\n", len);
 		/*DEBUG_MSG("message: %s\n",message); */
