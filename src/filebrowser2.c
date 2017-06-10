@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * filebrowser2.c - the filebrowser v2
  *
- * Copyright (C) 2002-2013 Olivier Sessink
+ * Copyright (C) 2002-2017 Olivier Sessink
  * Copyright (C) 2011 James Hayward
  *
  * This program is free software; you can redistribute it and/or modify
@@ -69,6 +69,7 @@ alex: g_hash_table_new(gnome_vfs_uri_hash, gnome_vfs_uri_hequal) is what you're 
 #include "file.h"
 #include "filefilter.h"
 #include "file_dialogs.h"
+#include "snr3.h"
 #include "gtk_easy.h"
 #include "project.h"
 #include "pixmap.h"
@@ -1074,10 +1075,18 @@ popup_menu_open_advanced(GtkAction * action, gpointer user_data)
 {
 	Tfilebrowser2 *fb2 = FILEBROWSER2(user_data);
 	GFile *uri = fb2_uri_from_dir_selection(fb2);
-	gchar *curi;
-
-	curi = g_file_get_uri(uri);
+	gchar *curi = g_file_get_uri(uri);
 	files_advanced_win(fb2->bfwin, curi);
+	g_free(curi);
+}
+
+static void
+popup_menu_search_files(GtkAction * action, gpointer user_data)
+{
+	Tfilebrowser2 *fb2 = FILEBROWSER2(user_data);
+	GFile *uri = fb2_uri_from_dir_selection(fb2);
+	gchar *curi = g_file_get_uri(uri);
+	snr3_advanced_dialog_files(BFWIN(fb2->bfwin), curi);
 	g_free(curi);
 }
 
@@ -1248,6 +1257,7 @@ static const gchar *filebrowser_menu_ui =
 	"  <popup action='FileBrowserMenu'>"
 	"    <menuitem action='FB2Open'/>"
 	"    <menuitem action='FB2OpenAdvanced'/>"
+	"    <menuitem action='FB2SearchFiles'/>"
 	"    <menuitem action='FB2Rename'/>"
 	"    <menuitem action='FB2Delete'/>"
 	"    <separator/>"
@@ -1283,6 +1293,8 @@ static const GtkActionEntry filebrowser_actions[] = {
 	{"FB2Open", NULL, N_("_Open"), NULL, N_("Open"), G_CALLBACK(popup_menu_open)},
 	{"FB2OpenAdvanced", NULL, N_("Open _Advanced..."), NULL, N_("Open advanced"),
 	 G_CALLBACK(popup_menu_open_advanced)},
+	{"FB2SearchFiles", NULL, N_("Search files..."), NULL, N_("Search files"),
+	 G_CALLBACK(popup_menu_search_files)},
 	{"FB2Rename", NULL, N_("Rena_me"), NULL, N_("Rename"), G_CALLBACK(popup_menu_rename)},
 	{"FB2Delete", NULL, N_("_Delete"), NULL, N_("Delete"), G_CALLBACK(popup_menu_delete)},
 	{"FB2NewFile", NULL, N_("New _File"), NULL, N_("New file"), G_CALLBACK(popup_menu_new_file)},
@@ -1373,6 +1385,7 @@ popup_menu_create(Tfilebrowser2 * fb2, gboolean is_directory, gboolean is_file, 
 	bfwin_action_set_sensitive(bfwin->uimanager, "/FileBrowserMenu/FB2Rename", (is_directory || is_file));
 	bfwin_action_set_sensitive(bfwin->uimanager, "/FileBrowserMenu/FB2Delete", (is_directory || is_file));
 	bfwin_action_set_sensitive(bfwin->uimanager, "/FileBrowserMenu/FB2OpenAdvanced", is_directory);
+	bfwin_action_set_sensitive(bfwin->uimanager, "/FileBrowserMenu/FB2SearchFiles", is_directory);
 	bfwin_action_set_sensitive(bfwin->uimanager, "/FileBrowserMenu/FB2SetDocumentRoot", is_directory);
 	bfwin_action_set_sensitive(bfwin->uimanager, "/FileBrowserMenu/FB2SetBaseDir", is_directory);
 	bfwin_action_set_sensitive(bfwin->uimanager, "/FileBrowserMenu/FB2Open", is_file);

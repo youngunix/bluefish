@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * snr3.c - search and replace
  *
- * Copyright (C) 2011,2012,2013,2014 Olivier Sessink
+ * Copyright (C) 2011,2012,2013,2014,2017 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1505,7 +1505,7 @@ snr3win_destroy_cb(GtkWidget *widget, gpointer user_data)
 }
 
 static void
-snr3_advanced_dialog_backend(Tbfwin * bfwin, const gchar *findtext, Tsnr3scope s3scope)
+snr3_advanced_dialog_backend(Tbfwin * bfwin, const gchar *findtext, Tsnr3scope s3scope, const gchar *files_basedir)
 {
 	TSNRWin *snrwin;
 	GtkWidget *table, *vbox;
@@ -1641,7 +1641,9 @@ snr3_advanced_dialog_backend(Tbfwin * bfwin, const gchar *findtext, Tsnr3scope s
 
 	snrwin->basedir = gtk_entry_new();
 	snrwin->basedirL = dialog_mnemonic_label_in_table(_("Basedir: "), snrwin->basedir, table, 0, 1, currentrow, currentrow+1);
-	if (bfwin->session->snr3_basedir && bfwin->session->snr3_basedir[0]!='\0') {
+	if (files_basedir!=NULL) {
+		gtk_entry_set_text(GTK_ENTRY(snrwin->basedir), files_basedir);
+	} else if (bfwin->session->snr3_basedir && bfwin->session->snr3_basedir[0]!='\0') {
 		gtk_entry_set_text(GTK_ENTRY(snrwin->basedir), bfwin->session->snr3_basedir);
 	} else if (bfwin->current_document && bfwin->current_document->uri) {
 		GFile *parent = g_file_get_parent(bfwin->current_document->uri);
@@ -1764,15 +1766,22 @@ snr3_advanced_dialog(Tbfwin * bfwin, const gchar *findtext)
 		/* check if it is a multiline selection */
 		if (gtk_text_iter_get_line(&so)==gtk_text_iter_get_line(&eo)) {
 			gchar *tmp = gtk_text_buffer_get_text(GTK_TEXT_BUFFER(doc->buffer), &so, &eo, TRUE);
-			snr3_advanced_dialog_backend(bfwin, findtext?findtext:tmp, bfwin->session->snr3_scope);
+			snr3_advanced_dialog_backend(bfwin, findtext?findtext:tmp, bfwin->session->snr3_scope, NULL);
 			g_free(tmp);
 		} else {
-			snr3_advanced_dialog_backend(bfwin, findtext?findtext:"", snr3scope_selection);
+			snr3_advanced_dialog_backend(bfwin, findtext?findtext:"", snr3scope_selection, NULL);
 		}
 	} else {
-		snr3_advanced_dialog_backend(bfwin, findtext?findtext:"", bfwin->session->snr3_scope);
+		snr3_advanced_dialog_backend(bfwin, findtext?findtext:"", bfwin->session->snr3_scope, NULL);
 	}
 }
+
+void
+snr3_advanced_dialog_files(Tbfwin * bfwin, const gchar *curi)
+{
+	snr3_advanced_dialog_backend(bfwin, "", snr3scope_files, curi);
+} 
+
 
 static void
 extern_doc_backend(Tsnr3run * s3run, Tdocument *doc, guint so, guint eo)

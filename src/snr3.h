@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * snr3.h - search and replace
  *
- * Copyright (C) 2011 Olivier Sessink
+ * Copyright (C) 2011-2017 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -178,6 +178,7 @@ gpointer simple_search_run(Tbfwin *bfwin, const gchar *string, Tsnr3type type
 		, gboolean casesens, gboolean dotmatchall, gboolean unescape);
 void simple_search_next(Tbfwin *bfwin);
 void snr3_advanced_dialog(Tbfwin * bfwin, const gchar *searchstring);
+void snr3_advanced_dialog_files(Tbfwin * bfwin, const gchar *curi);
 
 void snr3_run_extern_replace(Tdocument * doc, const gchar * search_pattern, Tsnr3scope scope,
 							 Tsnr3type type, gboolean is_case_sens, const gchar * replace_pattern,
