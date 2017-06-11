@@ -1779,7 +1779,19 @@ snr3_advanced_dialog(Tbfwin * bfwin, const gchar *findtext)
 void
 snr3_advanced_dialog_files(Tbfwin * bfwin, const gchar *curi)
 {
-	snr3_advanced_dialog_backend(bfwin, "", snr3scope_files, curi);
+	gchar *searchstring=NULL;
+	Tdocument *doc = bfwin->current_document;
+	if (doc) {
+		GtkTextIter so, eo;
+		if (gtk_text_buffer_get_selection_bounds(GTK_TEXT_BUFFER(doc->buffer),&so,&eo) ) {
+			if (gtk_text_iter_get_line(&so)==gtk_text_iter_get_line(&eo)) {
+				searchstring = gtk_text_buffer_get_text(GTK_TEXT_BUFFER(doc->buffer), &so, &eo, TRUE);
+			}
+		}
+	}
+	snr3_advanced_dialog_backend(bfwin, searchstring, snr3scope_files, curi);
+	if (searchstring)
+		g_free(searchstring);
 } 
 
 
