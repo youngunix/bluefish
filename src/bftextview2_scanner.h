@@ -35,8 +35,8 @@ void scan_for_prefix_start(BluefishTextView * btv, guint16 contextnum, GtkTextIt
 						   GtkTextIter * cursor);
 void scan_for_autocomp_prefix(BluefishTextView * btv, GtkTextIter * mstart, GtkTextIter * cursorpos,
 						 gint * contextnum);
-guint scan_for_tooltip(BluefishTextView * btv, GtkTextIter * mstart, GtkTextIter * position,
-						  gint * contextnum);
+guint scan_for_identifier_at_position(BluefishTextView * btv, GtkTextIter * mstart, GtkTextIter * position,
+						  gint * contextnum, GtkTextIter *so, GtkTextIter *eo);
 void cleanup_scanner(BluefishTextView * btv);
 void scancache_destroy(BluefishTextView * btv);
 
