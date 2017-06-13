@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * bftextview2_scanner.c
  *
- * Copyright (C) 2008,2009,2010,2011,2012,2013,2014,2015 Olivier Sessink
+ * Copyright (C) 2008,2009,2010,2011,2012,2013,2014,2015,2017 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -2411,7 +2411,7 @@ scan_for_autocomp_prefix(BluefishTextView * btv, GtkTextIter * mstart, GtkTextIt
 }
 
 guint
-scan_for_tooltip(BluefishTextView * btv, GtkTextIter * mstart, GtkTextIter * position, gint * contextnum)
+scan_for_identifier_at_position(BluefishTextView * btv, GtkTextIter * mstart, GtkTextIter * position, gint * contextnum, GtkTextIter *so, GtkTextIter *eo)
 {
 	GtkTextIter iter, end;
 	guint16 pos, newpos;
@@ -2448,6 +2448,11 @@ scan_for_tooltip(BluefishTextView * btv, GtkTextIter * mstart, GtkTextIter * pos
 					g_queue_free(contextstack);
 					DBG_TOOLTIP("return TRUE, mstart %d position %d\n", gtk_text_iter_get_offset(mstart),
 								gtk_text_iter_get_offset(position));
+					if (so && eo) {
+						/* fill the start and end positions of the match */
+						*eo = iter;
+						*so = *mstart;
+					}
 					return match;
 				}
 				if (g_array_index(btv->bflang->st->matches, Tpattern,match).nextcontext < 0) {

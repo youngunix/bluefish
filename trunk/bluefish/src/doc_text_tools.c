@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * doc_text_tools.c - text tools
  *
- * Copyright (C) 2008-2013 Olivier Sessink
+ * Copyright (C) 2008-2017 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -427,6 +427,16 @@ convert_to_columns(Tdocument * doc)
 	dialog_mnemonic_label_in_table(_("Fill empty entries:"), cc->separator, table, 0, 1, 1, 2);
 
 	gtk_widget_show_all(cc->dialog);
+}
+
+void
+select_current_identifier(Tdocument *doc)
+{
+	GtkTextIter cursor, so, eo;
+	gtk_text_buffer_get_iter_at_mark(doc->buffer, &cursor, gtk_text_buffer_get_insert(doc->buffer));
+	if (bluefish_text_view_get_active_identifier(doc->view, &cursor, &so, &eo)) {
+		gtk_text_buffer_select_range(doc->buffer, &so, &eo);
+	}
 }
 
 void

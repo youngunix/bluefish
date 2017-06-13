@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * bftextview2.c
  *
- * Copyright (C) 2008-2016 Olivier Sessink
+ * Copyright (C) 2008-2017 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -483,6 +483,24 @@ bluefish_text_view_get_active_block_boundaries(BluefishTextView * btv, guint loc
 	else
 		bftextview2_get_iters_at_foundblock(btv->buffer, fblock, so, &it1, &it2, eo);
 	return TRUE;
+}
+
+gboolean
+bluefish_text_view_get_active_identifier(BluefishTextView *btv, GtkTextIter *currentlocation, GtkTextIter *so, GtkTextIter *eo)
+{
+	BluefishTextView *master = BLUEFISH_TEXT_VIEW(btv->master);
+	guint patnum;
+	gint contextnum;
+	GtkTextIter iter, mstart;
+	
+	mstart=*currentlocation;
+	gtk_text_iter_set_line_offset(&mstart, 0);
+	patnum = scan_for_identifier_at_position(master, &mstart, currentlocation,&contextnum, so, eo);
+	if (patnum != FALSE) {
+		/* we have a result! */
+		return TRUE;
+	}
+	
 }
 
 static gchar *
@@ -2951,7 +2969,7 @@ bluefish_text_view_query_tooltip(GtkWidget * widget, gint x, gint y, gboolean ke
 		gtk_text_iter_forward_char(&iter);
 		DBG_TOOLTIP("scan for tooltip: start at %d, position=%d...\n", gtk_text_iter_get_offset(&mstart),
 					gtk_text_iter_get_offset(&iter));
-		matchnum = scan_for_tooltip(master, &mstart, &iter, &contextnum);
+		matchnum = scan_for_identifier_at_position(master, &mstart, &iter, &contextnum, NULL, NULL);
 		if (matchnum) {
 			if (g_array_index(master->bflang->st->matches, Tpattern, matchnum).reference) {
 				gtk_tooltip_set_markup(tooltip,

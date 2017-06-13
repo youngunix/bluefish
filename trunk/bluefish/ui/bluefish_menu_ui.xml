@@ -194,6 +194,7 @@
 	<menuitem action="SynchTextBlock"/>
 	<menuitem action="ToggleComment"/>
 	<menuitem action="SelectBlock"/>
+	<menuitem action="SelectIdentifier"/>
 	<menuitem action="WordCount"/>
 	<separator/>
 	<menuitem action="DuplicateLine"/>
