@@ -2616,6 +2616,11 @@ doc_destroy(Tdocument * doc, gboolean delay_activation)
 		if (doc->uri && bfwin->session)
 			remove_filename_from_recentlist(bfwin, FALSE, doc->uri);	/* Remove inaccesible files from OpenRecent list */
 	}
+	
+	if (bfwin->last_activated_doc == doc) {
+		bfwin->last_activated_doc = NULL;
+	}
+	
 	for (tmpslist = bfwin->doc_destroy; tmpslist; tmpslist = g_slist_next(tmpslist)) {
 		Tcallback *cb = tmpslist->data;
 		((DocDestroyCallback) cb->func) (doc, cb->data);
@@ -3561,7 +3566,9 @@ doc_activate(Tdocument * doc)
 	last_activated_doc = BFWIN(doc->bfwin)->last_activated_doc;
 	BFWIN(doc->bfwin)->last_activated_doc = doc;
 	/* BUG: hmm if this document previously was in error state, it will now be set to normal !?!?! */
-	doc_update_label_color(last_activated_doc, FALSE);
+	if (last_activated_doc) {
+		doc_update_label_color(last_activated_doc, FALSE);
+	}
 	doc_update_label_color(doc, TRUE);
 	if (BFWIN(doc->bfwin)->recentdoclist != doc->recentpos) {
 		/* put this document on top of the recentlist */
