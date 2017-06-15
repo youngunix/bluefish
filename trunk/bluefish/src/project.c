@@ -440,11 +440,11 @@ project_open_from_file(Tbfwin * bfwin, GFile * fromuri)
 				uri = g_file_new_for_uri(tmparr[0]);
 			}*/
 
-			if (tmparr[1] && tmparr[1]!='\0') {
+			if (tmparr[1] && tmparr[1]!=NULL) {
 				cursor_offset = atoi(tmparr[1]);
-				if (tmparr[2] && tmparr[2]!='\0') {
+				if (tmparr[2] && tmparr[2]!=NULL) {
 					goto_offset = atoi(tmparr[2]);
-					if (tmparr[3] && tmparr[3]!='\0') {
+					if (tmparr[3] && tmparr[3]!=NULL) {
 						is_active = atoi(tmparr[3]);
 					}
 				}
