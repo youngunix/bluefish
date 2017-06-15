@@ -1218,12 +1218,16 @@ bluefish_text_view_draw_layer(GtkTextView * text_view, GtkTextViewLayer layer, c
 
 		if (gtk_widget_is_sensitive(GTK_WIDGET(btv))
 			&& (BFWIN(DOCUMENT(master->doc)->bfwin)->session->view_cline || main_v->props.highlight_cursor)) {
-			gint y, height;
+			gint y, y2, height;
 			GtkTextIter it;
 
 			DBG_SIGNALS("bluefish_text_view_draw_layer_event, current line highlighting\n");
 			gtk_text_buffer_get_iter_at_mark(master->buffer, &it, gtk_text_buffer_get_insert(master->buffer));
 			gtk_text_view_get_line_yrange(text_view, &it, &y, &height);
+			
+			/* weird, on my system with gtk 3.18.9 I have to convert to windows coords to make this work correctly ??? */
+			gtk_text_view_buffer_to_window_coords (text_view,GTK_TEXT_WINDOW_TEXT, 0, y, NULL, &y2);
+			y = y2;
 
 			if (BFWIN(DOCUMENT(master->doc)->bfwin)->session->view_cline && !DOCUMENT(master->doc)->readonly) {
 				gdouble x1, y1, x2, y2;
@@ -1241,7 +1245,8 @@ bluefish_text_view_draw_layer(GtkTextView * text_view, GtkTextViewLayer layer, c
 				gtk_text_view_get_iter_location(text_view, &it, &itrect);
 				width = itrect.width > 5 ? itrect.width : master->margin_pixels_per_char;
 				gdk_cairo_set_source_rgba(cr, &st_cursor_highlight_color);
-				cairo_rectangle(cr, itrect.x, itrect.y, width, itrect.height);
+				/* use y instead of itrect.y, because y is already converted to window coords */
+				cairo_rectangle(cr, itrect.x, y, width, itrect.height);
 				cairo_fill(cr);
 			}
 		}
