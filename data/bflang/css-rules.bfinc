@@ -2133,6 +2133,25 @@ href="http://www.w3.org/TR/CSS2/tables.html#propdef-empty-cells">www.w3.org</a><
 
 </context>
 </element>
+<element pattern="flex" highlight="css-property" >
+	<autocomplete append=": " />
+	<reference>Specifies the length of the item, relative to the rest of the flexible items inside the same container. 
+The flex property is a shorthand for the flex-grow, flex-shrink, and the flex-basis properties.</reference>
+<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+<group highlight="css-value" >
+	<autocomplete append=";" />
+	<element pattern="0"/>
+	<element pattern="1"/>
+	<element pattern="auto"/>
+	<element pattern="inherit"/>
+</group>
+<element idref="e.css.end"/>
+<element idref="e.css.lcomment"/>
+<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+</context>
+</element>
 <element pattern="float" highlight="css-property" >
 	<autocomplete append=": " />
 <reference>Specifies whether a box should float to the left, right, or not at all.
