@@ -572,7 +572,7 @@ msgstr "Füh_rende Leerzeichen entfernen"
 
 #: ../src/bfwin_uimanager.c:912
 msgid "Strip trailing whitespace"
-msgstr "Führende Leerzeichen entfernen"
+msgstr "Leerzeichen am Zeilenende entfernen"
 
 #: ../src/bfwin_uimanager.c:914
 msgid "Javascript beautifier"
