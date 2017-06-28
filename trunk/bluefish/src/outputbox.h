@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * outputbox.h - the output box
  *
- * Copyright (C) 2005-2009 Olivier Sessink
+ * Copyright (C) 2005-2017 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,6 +24,7 @@
 void outputbox_add_line(Tbfwin *bfwin, const gchar *uri, gint line, const gchar *message);
 void fill_output_box(gpointer data, gchar *string);
 void outputbox(Tbfwin *bfwin,gchar *pattern, gint file_subpat, gint line_subpat, gint output_subpat, gchar *command);
+void outputbox_clear(Tbfwin *bfwin);
 void outputbox_cleanup(Tbfwin *bfwin);
 
 #endif /* __OUTPUTBOX_H */

@@ -762,6 +762,9 @@ snr3run_resultcleanup(Tsnr3run *s3run)
 	s3run->curoffset=0;
 	s3run->resultnumdoc=0;
 	s3run->searchednumdoc=0;
+	if (s3run->showinoutputbox) {
+		outputbox_clear(s3run->bfwin);
+	}
 }
 
 /* called from bfwin.c for simplesearch */
@@ -1204,7 +1207,7 @@ static gint
 snr3run_init_from_gui(TSNRWin *snrwin, Tsnr3run *s3run)
 {
 	const gchar *query, *replace;
-	gint type, replacetype, scope, dotmatchall, escapechars, recursion_level;
+	gint type, replacetype, scope, dotmatchall, escapechars, recursion_level, showinoutputbox;
 	gboolean is_case_sens;
 	gint retval=0;
 	GFile *basedir;
@@ -1220,6 +1223,7 @@ snr3run_init_from_gui(TSNRWin *snrwin, Tsnr3run *s3run)
 	scope = gtk_combo_box_get_active(GTK_COMBO_BOX(snrwin->scope));
 	is_case_sens = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(snrwin->matchCase));
 	dotmatchall = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(snrwin->dotmatchall));
+	showinoutputbox = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(snrwin->showinoutputbox));
 	escapechars = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(snrwin->escapeChars));
 	recursion_level = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(snrwin->recursion_level));
 
@@ -1252,6 +1256,14 @@ snr3run_init_from_gui(TSNRWin *snrwin, Tsnr3run *s3run)
 		snr3_cancel_run(s3run);
 		DEBUG_MSG("set type %d\n",type);
 		s3run->type = type;
+		retval |= 1;
+	}
+	if (showinoutputbox != s3run->showinoutputbox) {
+		snr3_cancel_run(s3run);
+		if (!showinoutputbox) {
+			outputbox_cleanup(snrwin->bfwin);
+		}
+		s3run->showinoutputbox = showinoutputbox;
 		retval |= 1;
 	}
 	if (escapechars != s3run->escape_chars) {
@@ -1315,6 +1327,7 @@ snr3run_init_from_gui(TSNRWin *snrwin, Tsnr3run *s3run)
 		snrwin->bfwin->session->snr3_scope = scope;
 		snrwin->bfwin->session->snr3_casesens = is_case_sens;
 		snrwin->bfwin->session->snr3_escape_chars = escapechars;
+		snrwin->bfwin->session->snr3_showinoutputbox = showinoutputbox;
 		snrwin->bfwin->session->snr3_dotmatchall = dotmatchall;
 		snrwin->bfwin->session->snr3_recursion_level = recursion_level;
 		if (scope == snr3scope_files && s3run->basedir) {
@@ -1466,6 +1479,7 @@ static void snr_dialog_show_widgets(TSNRWin * snrwin) {
 	widget_set_visible(snrwin->replaceType, (searchtype == snr3type_pcre));
 	widget_set_visible(snrwin->replaceTypeL, (searchtype == snr3type_pcre));
 	widget_set_visible(snrwin->replace, (searchtype != snr3type_pcre || replacetype == snr3replace_string));
+	widget_set_visible(snrwin->showinoutputbox, (scope != snr3scope_files));
 	widget_set_visible(snrwin->escapeChars, (searchtype == snr3type_string));
 	widget_set_visible(snrwin->dotmatchall, (searchtype == snr3type_pcre));
 
@@ -1548,7 +1562,7 @@ snr3_advanced_dialog_backend(Tbfwin * bfwin, const gchar *findtext, Tsnr3scope s
 	vbox = gtk_dialog_get_content_area(GTK_DIALOG(snrwin->dialog));
 
 	table =
-		dialog_table_in_vbox(3, 4, 6/*borderwidth*/, vbox, TRUE,
+		dialog_table_in_vbox(3, 5, 6/*borderwidth*/, vbox, TRUE,
 							 TRUE, 0);
 	gtk_table_set_row_spacings(GTK_TABLE(table), 4);
 	currentrow=0;
@@ -1662,6 +1676,12 @@ snr3_advanced_dialog_backend(Tbfwin * bfwin, const gchar *findtext, Tsnr3scope s
 
 	currentrow++;
 
+	snrwin->showinoutputbox = dialog_check_button_in_table(_("Show results in Output Pane"), bfwin->session->snr3_showinoutputbox, table,
+										0, 4, currentrow, currentrow+1);
+	gtk_widget_set_tooltip_text(snrwin->showinoutputbox, _("Show all results in the Output Pane on the bottom of the document list"));
+
+	currentrow++;
+
 	snrwin->matchCase = dialog_check_button_in_table(_("Case sensitive _matching"), bfwin->session->snr3_casesens, table,
 										0, 4, currentrow, currentrow+1);
 	gtk_widget_set_tooltip_text(snrwin->matchCase, _("Only match if case (upper/lower) is identical."));
@@ -1738,8 +1758,8 @@ snr3_advanced_dialog_backend(Tbfwin * bfwin, const gchar *findtext, Tsnr3scope s
 	g_signal_connect(snrwin->scope, "changed", G_CALLBACK(snr_combobox_changed), snrwin);
 	g_signal_connect(snrwin->matchCase, "toggled", G_CALLBACK(snr_option_toggled), snrwin);
 	g_signal_connect(snrwin->escapeChars, "toggled", G_CALLBACK(snr_option_toggled), snrwin);
-	g_signal_connect(snrwin->escapeChars, "toggled", G_CALLBACK(snr_option_toggled), snrwin);
-
+	g_signal_connect(snrwin->showinoutputbox, "toggled", G_CALLBACK(snr_option_toggled), snrwin);
+	g_signal_connect(snrwin->dotmatchall, "toggled", G_CALLBACK(snr_option_toggled), snrwin);
 
 	snr_dialog_show_widgets(snrwin);
 

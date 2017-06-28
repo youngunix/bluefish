@@ -148,6 +148,7 @@ typedef struct {
 	GtkWidget *replaceTypeL;
 	GtkWidget *overlappingMatches;
 	GtkWidget *matchCase;
+	GtkWidget *showinoutputbox;
 	GtkWidget *escapeChars;
 	GtkWidget *dotmatchall;
 	GtkWidget *select_match;
