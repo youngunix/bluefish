@@ -2,7 +2,7 @@
  * bluefish.h - global prototypes
  *
  * Copyright (C) 1998 Olivier Sessink and Chris Mazuc
- * Copyright (C) 1999-2014 Olivier Sessink
+ * Copyright (C) 1999-2017 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -419,6 +419,7 @@ typedef struct {
 	gint snr3_replacetype;
 	gint snr3_scope;
 	gint snr3_casesens;
+	gint snr3_showinoutputbox;
 	gint snr3_escape_chars;
 	gint snr3_dotmatchall;
 	gint snr3_recursion_level;

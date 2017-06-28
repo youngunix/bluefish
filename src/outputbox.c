@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * outputbox.c - the output box
  *
- * Copyright (C) 2002-2012 Olivier Sessink
+ * Copyright (C) 2002-2017 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -441,6 +441,14 @@ outputbox_cleanup(Tbfwin * bfwin)
 		gtk_widget_destroy(OUTPUTBOX(bfwin->outputbox)->hbox);
 		g_free(bfwin->outputbox);
 		bfwin->outputbox = NULL;
+	}
+}
+
+void
+outputbox_clear(Tbfwin *bfwin)
+{
+	if (bfwin && bfwin->outputbox) {
+		gtk_list_store_clear(GTK_LIST_STORE(OUTPUTBOX(bfwin->outputbox)->lstore));
 	}
 }
 
