@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-06-16 09:51+0200\n"
+"POT-Creation-Date: 2017-06-21 09:22+0900\n"
 "PO-Revision-Date: 2012-06-06 18:38+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
@@ -1119,57 +1119,57 @@ msgstr "Txertatu kolorea"
 msgid "_HTML Toolbar"
 msgstr "_HTML tresna-barra"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1335
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1339
 msgid "Add to Quickbar"
 msgstr "Gehitu abiarazte bizkorra"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1335
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1339
 msgid "Remove from Quickbar"
 msgstr "Kendu abiarazte bizkorra"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1373
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1381
 msgid "Right click any html toolbar button to add it to the Quickbar."
 msgstr ""
 "Egin klik saguaren eskuineko botoiarekin HTML tresna-barrako edozein "
 "botoietan abiarazte bizkorrari gehitzeko."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1464
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1472
 msgid "Quickbar"
 msgstr "Abiarazte bizkorra"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1467
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1475
 msgid "Standard"
 msgstr "Arrunta"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1481
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1489
 msgid "HTML 5"
 msgstr "HTML 5"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1484
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1492
 msgid "Formatting"
 msgstr "Formatua ematen"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1487
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1495
 msgid "Tables"
 msgstr "Taulak"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1490
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1498
 msgid "List"
 msgstr "Zerrenda"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1493
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1501
 msgid "CSS"
 msgstr "CSS"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1496
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1504
 msgid "Forms"
 msgstr "Inprimakiak"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1499
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1507
 msgid "Fonts"
 msgstr "Letra-tipoak"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1502
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1510
 msgid "Frames"
 msgstr "Markoak"
 
@@ -1254,7 +1254,7 @@ msgstr "_Helburua:"
 #: src/plugin_htmlbar/html.c:1326 src/plugin_htmlbar/html.c:1804
 #: src/plugin_htmlbar/html_form.c:251 src/plugin_htmlbar/html_form.c:315
 #: src/plugin_htmlbar/html_form.c:538 src/plugin_htmlbar/html_form.c:633
-#: src/plugin_htmlbar/image.c:532
+#: src/plugin_htmlbar/image.c:533
 msgid "_Name:"
 msgstr "_Izena:"
 
@@ -1277,7 +1277,7 @@ msgstr "_Hizkuntza:"
 #: src/plugin_htmlbar/html_form.c:267 src/plugin_htmlbar/html_form.c:328
 #: src/plugin_htmlbar/html_form.c:645 src/plugin_htmlbar/html_table.c:136
 #: src/plugin_htmlbar/html_table.c:283 src/plugin_htmlbar/html_table.c:419
-#: src/plugin_htmlbar/image.c:538 src/plugin_htmlbar/image_dialog.c:428
+#: src/plugin_htmlbar/image.c:539 src/plugin_htmlbar/image_dialog.c:428
 msgid "Custo_m:"
 msgstr "_Pertsonalizatu:"
 
@@ -1386,7 +1386,7 @@ msgstr "_IDa:"
 msgid "Horizontal Rule"
 msgstr "Marra horizontala"
 
-#: src/plugin_htmlbar/html.c:1081 src/plugin_htmlbar/image.c:555
+#: src/plugin_htmlbar/html.c:1081 src/plugin_htmlbar/image.c:556
 #: src/plugin_htmlbar/image_dialog.c:451
 msgid "_Align:"
 msgstr "_Lerrokatu:"
@@ -1400,7 +1400,7 @@ msgstr "_Altuera:"
 #. gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spin2), 1);
 #: src/plugin_htmlbar/html.c:1094 src/plugin_htmlbar/html.c:2001
 #: src/plugin_htmlbar/html.c:2105 src/plugin_htmlbar/html.c:2263
-#: src/plugin_htmlbar/image.c:517 src/plugin_htmlbar/image_dialog.c:365
+#: src/plugin_htmlbar/image.c:518 src/plugin_htmlbar/image_dialog.c:365
 msgid "_Width:"
 msgstr "_Zabalera:"
 
@@ -1964,88 +1964,88 @@ msgid "<span color=\"red\">_Height:</span>"
 msgstr "<span color=\"red\">_Altuera:</span>"
 
 #. TODO: use error info in gerror
-#: src/plugin_htmlbar/image.c:334
+#: src/plugin_htmlbar/image.c:335
 msgid "Loading image failed..."
 msgstr "Huts egin du irudia kargatzean..."
 
-#: src/plugin_htmlbar/image.c:417
+#: src/plugin_htmlbar/image.c:418
 #, c-format
 msgid "Loading file %s..."
 msgstr "%s fitxategia kargatzen..."
 
-#: src/plugin_htmlbar/image.c:482
+#: src/plugin_htmlbar/image.c:483
 msgid "Insert thumbnail"
 msgstr "Txertatu koadro txikia"
 
-#: src/plugin_htmlbar/image.c:486 src/plugin_htmlbar/image_dialog.c:344
+#: src/plugin_htmlbar/image.c:487 src/plugin_htmlbar/image_dialog.c:344
 msgid "Preview"
 msgstr "Aurrebista"
 
-#: src/plugin_htmlbar/image.c:509
+#: src/plugin_htmlbar/image.c:510
 msgid "_Image location:"
 msgstr "_Irudiaren kokalekua:"
 
-#: src/plugin_htmlbar/image.c:524
+#: src/plugin_htmlbar/image.c:525
 msgid "Hei_ght:"
 msgstr "_Altuera:"
 
-#: src/plugin_htmlbar/image.c:529 src/plugin_htmlbar/image_dialog.c:417
+#: src/plugin_htmlbar/image.c:530 src/plugin_htmlbar/image_dialog.c:417
 msgid "_Usemap:"
 msgstr "_IrudiMapa:"
 
-#: src/plugin_htmlbar/image.c:535
+#: src/plugin_htmlbar/image.c:536
 msgid "Alternate _text:"
 msgstr "_Ordezko testua:"
 
-#: src/plugin_htmlbar/image.c:541 src/plugin_htmlbar/image_dialog.c:460
+#: src/plugin_htmlbar/image.c:542 src/plugin_htmlbar/image_dialog.c:460
 msgid "_Hspace:"
 msgstr "_Tarte horizontala:"
 
-#: src/plugin_htmlbar/image.c:545 src/plugin_htmlbar/image_dialog.c:464
+#: src/plugin_htmlbar/image.c:546 src/plugin_htmlbar/image_dialog.c:464
 msgid "_Vspace:"
 msgstr "T_arte bertikala:"
 
-#: src/plugin_htmlbar/image.c:559
+#: src/plugin_htmlbar/image.c:560
 msgid "Borde_r:"
 msgstr "_Ertza:"
 
-#: src/plugin_htmlbar/image.c:974
+#: src/plugin_htmlbar/image.c:975
 msgid "Select files for thumbnail creation"
 msgstr "Hautatu koadro txikiak sortzeko fitxategiak"
 
-#: src/plugin_htmlbar/image.c:1016
+#: src/plugin_htmlbar/image.c:1017
 msgid "Scaling (%)"
 msgstr "Eskala (%)"
 
-#: src/plugin_htmlbar/image.c:1020 src/plugin_htmlbar/image.c:1028
+#: src/plugin_htmlbar/image.c:1021 src/plugin_htmlbar/image.c:1029
 msgid "Width"
 msgstr "Zabalera"
 
-#: src/plugin_htmlbar/image.c:1024 src/plugin_htmlbar/image.c:1070
+#: src/plugin_htmlbar/image.c:1025 src/plugin_htmlbar/image.c:1071
 msgid "Height"
 msgstr "Altuera"
 
-#: src/plugin_htmlbar/image.c:1053
+#: src/plugin_htmlbar/image.c:1054
 msgid "Multi thumbnail"
 msgstr "Koadro txiki anitz"
 
-#: src/plugin_htmlbar/image.c:1059
+#: src/plugin_htmlbar/image.c:1060
 msgid "By scaling"
 msgstr "Eskalaren arabera"
 
-#: src/plugin_htmlbar/image.c:1062
+#: src/plugin_htmlbar/image.c:1063
 msgid "By width, keep aspect ratio"
 msgstr "Zabaleraren arabera; mantendu proportzioa"
 
-#: src/plugin_htmlbar/image.c:1065
+#: src/plugin_htmlbar/image.c:1066
 msgid "By height, keep aspect ratio"
 msgstr "Altueraren arabera; mantendu proportzioa"
 
-#: src/plugin_htmlbar/image.c:1068
+#: src/plugin_htmlbar/image.c:1069
 msgid "By width and height, ignore aspect ratio"
 msgstr "Zabaleraren eta altueraren arabera; ez mantendu proportzioa"
 
-#: src/plugin_htmlbar/image.c:1094
+#: src/plugin_htmlbar/image.c:1095
 msgid ""
 "%r: original filename  %t: thumbnail filename\n"
 "%w: original width  %h: original height\n"

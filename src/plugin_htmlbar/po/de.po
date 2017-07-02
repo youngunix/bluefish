@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.3\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-10-13 10:34+0200\n"
+"POT-Creation-Date: 2017-06-21 09:22+0900\n"
 "PO-Revision-Date: 2016-12-22 17:08+0100\n"
 "Last-Translator: Daniel Leidert <daniel.leidert@wgdd.de>\n"
 "Language-Team: none\n"
@@ -1116,57 +1116,57 @@ msgstr "Farbe einfügen"
 msgid "_HTML Toolbar"
 msgstr "_HTML Werkzeugleiste"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1335
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1339
 msgid "Add to Quickbar"
 msgstr "Zu Schnellstartleiste hinzufügen"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1335
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1339
 msgid "Remove from Quickbar"
 msgstr "Aus Schnellstartleiste entfernen"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1373
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1381
 msgid "Right click any html toolbar button to add it to the Quickbar."
 msgstr ""
 "Zum Hinzufügen zur Schnellstartleiste Rechtsklick auf beliebigen Eintrag in "
 "Werkzeugleiste"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1464
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1472
 msgid "Quickbar"
 msgstr " Schnellstartleiste "
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1467
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1475
 msgid "Standard"
 msgstr "Standard"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1481
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1489
 msgid "HTML 5"
 msgstr " HTML 5"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1484
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1492
 msgid "Formatting"
 msgstr "Formatierung"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1487
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1495
 msgid "Tables"
 msgstr "Tabellen"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1490
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1498
 msgid "List"
 msgstr "Liste"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1493
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1501
 msgid "CSS"
 msgstr "CSS"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1496
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1504
 msgid "Forms"
 msgstr "Formulare"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1499
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1507
 msgid "Fonts"
 msgstr "Schriftarten"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1502
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1510
 msgid "Frames"
 msgstr "Frames"
 
@@ -1250,7 +1250,7 @@ msgstr "_Ziel:"
 #: src/plugin_htmlbar/html.c:1326 src/plugin_htmlbar/html.c:1804
 #: src/plugin_htmlbar/html_form.c:251 src/plugin_htmlbar/html_form.c:315
 #: src/plugin_htmlbar/html_form.c:538 src/plugin_htmlbar/html_form.c:633
-#: src/plugin_htmlbar/image.c:532
+#: src/plugin_htmlbar/image.c:533
 msgid "_Name:"
 msgstr "_Name:"
 
@@ -1273,7 +1273,7 @@ msgstr "_Sprache:"
 #: src/plugin_htmlbar/html_form.c:267 src/plugin_htmlbar/html_form.c:328
 #: src/plugin_htmlbar/html_form.c:645 src/plugin_htmlbar/html_table.c:136
 #: src/plugin_htmlbar/html_table.c:283 src/plugin_htmlbar/html_table.c:419
-#: src/plugin_htmlbar/image.c:538 src/plugin_htmlbar/image_dialog.c:428
+#: src/plugin_htmlbar/image.c:539 src/plugin_htmlbar/image_dialog.c:428
 msgid "Custo_m:"
 msgstr "Be_nutzerdefiniert:"
 
@@ -1382,7 +1382,7 @@ msgstr "_ID:"
 msgid "Horizontal Rule"
 msgstr "Horizontale Linie"
 
-#: src/plugin_htmlbar/html.c:1081 src/plugin_htmlbar/image.c:555
+#: src/plugin_htmlbar/html.c:1081 src/plugin_htmlbar/image.c:556
 #: src/plugin_htmlbar/image_dialog.c:451
 msgid "_Align:"
 msgstr "_Ausrichtung:"
@@ -1396,7 +1396,7 @@ msgstr "_Höhe:"
 #. gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spin2), 1);
 #: src/plugin_htmlbar/html.c:1094 src/plugin_htmlbar/html.c:2001
 #: src/plugin_htmlbar/html.c:2105 src/plugin_htmlbar/html.c:2263
-#: src/plugin_htmlbar/image.c:517 src/plugin_htmlbar/image_dialog.c:365
+#: src/plugin_htmlbar/image.c:518 src/plugin_htmlbar/image_dialog.c:365
 msgid "_Width:"
 msgstr "_Breite:"
 
@@ -1962,88 +1962,88 @@ msgid "<span color=\"red\">_Height:</span>"
 msgstr "<span color=\"red\">_Höhe:</span>"
 
 #. TODO: use error info in gerror
-#: src/plugin_htmlbar/image.c:334
+#: src/plugin_htmlbar/image.c:335
 msgid "Loading image failed..."
 msgstr "Bild laden fehlgeschlagen..."
 
-#: src/plugin_htmlbar/image.c:417
+#: src/plugin_htmlbar/image.c:418
 #, c-format
 msgid "Loading file %s..."
 msgstr "Lade Datei %s..."
 
-#: src/plugin_htmlbar/image.c:482
+#: src/plugin_htmlbar/image.c:483
 msgid "Insert thumbnail"
 msgstr "Miniaturbild einfügen"
 
-#: src/plugin_htmlbar/image.c:486 src/plugin_htmlbar/image_dialog.c:344
+#: src/plugin_htmlbar/image.c:487 src/plugin_htmlbar/image_dialog.c:344
 msgid "Preview"
 msgstr "Vorschau"
 
-#: src/plugin_htmlbar/image.c:509
+#: src/plugin_htmlbar/image.c:510
 msgid "_Image location:"
 msgstr "B_ildquelle:"
 
-#: src/plugin_htmlbar/image.c:524
+#: src/plugin_htmlbar/image.c:525
 msgid "Hei_ght:"
 msgstr "Höhe:"
 
-#: src/plugin_htmlbar/image.c:529 src/plugin_htmlbar/image_dialog.c:417
+#: src/plugin_htmlbar/image.c:530 src/plugin_htmlbar/image_dialog.c:417
 msgid "_Usemap:"
 msgstr "_Imagemap:"
 
-#: src/plugin_htmlbar/image.c:535
+#: src/plugin_htmlbar/image.c:536
 msgid "Alternate _text:"
 msgstr "Alt-_Text:"
 
-#: src/plugin_htmlbar/image.c:541 src/plugin_htmlbar/image_dialog.c:460
+#: src/plugin_htmlbar/image.c:542 src/plugin_htmlbar/image_dialog.c:460
 msgid "_Hspace:"
 msgstr "_Horizontaler Abstand:"
 
-#: src/plugin_htmlbar/image.c:545 src/plugin_htmlbar/image_dialog.c:464
+#: src/plugin_htmlbar/image.c:546 src/plugin_htmlbar/image_dialog.c:464
 msgid "_Vspace:"
 msgstr "_Vertikaler Abstand:"
 
-#: src/plugin_htmlbar/image.c:559
+#: src/plugin_htmlbar/image.c:560
 msgid "Borde_r:"
 msgstr "_Rand:"
 
-#: src/plugin_htmlbar/image.c:974
+#: src/plugin_htmlbar/image.c:975
 msgid "Select files for thumbnail creation"
 msgstr "Wähle Dateien für Thumbnail-Erzeugung aus"
 
-#: src/plugin_htmlbar/image.c:1016
+#: src/plugin_htmlbar/image.c:1017
 msgid "Scaling (%)"
 msgstr "Skalieren (%)"
 
-#: src/plugin_htmlbar/image.c:1020 src/plugin_htmlbar/image.c:1028
+#: src/plugin_htmlbar/image.c:1021 src/plugin_htmlbar/image.c:1029
 msgid "Width"
 msgstr "Breite"
 
-#: src/plugin_htmlbar/image.c:1024 src/plugin_htmlbar/image.c:1070
+#: src/plugin_htmlbar/image.c:1025 src/plugin_htmlbar/image.c:1071
 msgid "Height"
 msgstr "Höhe"
 
-#: src/plugin_htmlbar/image.c:1053
+#: src/plugin_htmlbar/image.c:1054
 msgid "Multi thumbnail"
 msgstr "Mehrere Thumbnails"
 
-#: src/plugin_htmlbar/image.c:1059
+#: src/plugin_htmlbar/image.c:1060
 msgid "By scaling"
 msgstr "Durch Skalieren"
 
-#: src/plugin_htmlbar/image.c:1062
+#: src/plugin_htmlbar/image.c:1063
 msgid "By width, keep aspect ratio"
 msgstr "Mit Breite, Seitenverhältnis beibehalten"
 
-#: src/plugin_htmlbar/image.c:1065
+#: src/plugin_htmlbar/image.c:1066
 msgid "By height, keep aspect ratio"
 msgstr "Mit Höhe, Seitenverhältnis beibehalten"
 
-#: src/plugin_htmlbar/image.c:1068
+#: src/plugin_htmlbar/image.c:1069
 msgid "By width and height, ignore aspect ratio"
 msgstr "Mit Breite und Höhe, Seitenverhältnis anpassen"
 
-#: src/plugin_htmlbar/image.c:1094
+#: src/plugin_htmlbar/image.c:1095
 msgid ""
 "%r: original filename  %t: thumbnail filename\n"
 "%w: original width  %h: original height\n"

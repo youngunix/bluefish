@@ -2,6 +2,7 @@
 # Copyright (C) 2012 Mònica Ramírez Arceda <monica@probeta.net>
 # This file is distributed under the same license as the bluefish package.
 #
+#: ../src/xmlstrings.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.4\n"

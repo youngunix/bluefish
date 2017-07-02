@@ -7,131 +7,131 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bluefish 2.2.9\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-10-13 10:34+0200\n"
+"POT-Creation-Date: 2017-06-21 09:22+0900\n"
 "PO-Revision-Date: 2016-11-23 22:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 1.8.11\n"
 
-#: src/plugin_snippets/snippets_gui.c:424
+#: src/plugin_snippets/snippets_gui.c:428
 msgid "Click the right mouse button to add, edit or delete snippets."
 msgstr "راست موس را کلیک کنید برای اضافه کردن، ویرایش و یا حذف قطعه."
 
-#: src/plugin_snippets/snippets_gui.c:425
+#: src/plugin_snippets/snippets_gui.c:429
 msgid "Use drag and drop to re-order snippets"
 msgstr "استفاده از کشیدن و رها کردن قطعه به سفارش مجدد"
 
-#: src/plugin_snippets/snippets_gui.c:426
+#: src/plugin_snippets/snippets_gui.c:430
 msgid "To exchange snippets with others use import or export"
 msgstr "تبادل قطعه با دیگران استفاده از واردات و صادرات"
 
-#: src/plugin_snippets/snippets_gui.c:646
+#: src/plugin_snippets/snippets_gui.c:650
 msgid "snippets"
 msgstr "قطعه ها"
 
-#: src/plugin_snippets/snippets_gui.c:709
+#: src/plugin_snippets/snippets_gui.c:713
 msgid "Snippet export filename"
 msgstr "نام پرونده صادرات قطعه"
 
-#: src/plugin_snippets/snippets_gui.c:747
+#: src/plugin_snippets/snippets_gui.c:751
 msgid "Snippet import filename"
 msgstr "نام پرونده واردات قطعه"
 
-#: src/plugin_snippets/snippets_gui.c:765
+#: src/plugin_snippets/snippets_gui.c:769
 msgid "Set accelerator key"
 msgstr "کلید شتابدهنده ست"
 
-#: src/plugin_snippets/snippets_gui.c:822
+#: src/plugin_snippets/snippets_gui.c:826
 msgid "Snippets menu"
 msgstr "قطعه ها"
 
-#: src/plugin_snippets/snippets_gui.c:823
+#: src/plugin_snippets/snippets_gui.c:827
 msgid "_New Snippet"
 msgstr "قطعه _New"
 
-#: src/plugin_snippets/snippets_gui.c:823
+#: src/plugin_snippets/snippets_gui.c:827
 #: src/plugin_snippets/snippets_wizard.c:754
 msgid "New snippet"
 msgstr "قطعه جدید"
 
-#: src/plugin_snippets/snippets_gui.c:824
+#: src/plugin_snippets/snippets_gui.c:828
 msgid "_Edit Snippet"
 msgstr "ویرایش اسنیپت"
 
-#: src/plugin_snippets/snippets_gui.c:824
+#: src/plugin_snippets/snippets_gui.c:828
 #: src/plugin_snippets/snippets_wizard.c:754
 msgid "Edit snippet"
 msgstr "ویرایش اسنیپت"
 
-#: src/plugin_snippets/snippets_gui.c:825
+#: src/plugin_snippets/snippets_gui.c:829
 msgid "_Delete Snippet"
 msgstr "قطعه _Delete"
 
-#: src/plugin_snippets/snippets_gui.c:825
+#: src/plugin_snippets/snippets_gui.c:829
 msgid "Delete snippet"
 msgstr "حذف قطعه"
 
-#: src/plugin_snippets/snippets_gui.c:826
+#: src/plugin_snippets/snippets_gui.c:830
 msgid "Delete _Branch"
 msgstr "حذف _Branch"
 
-#: src/plugin_snippets/snippets_gui.c:826
+#: src/plugin_snippets/snippets_gui.c:830
 msgid "Delete branch"
 msgstr "حذف شعبه"
 
-#: src/plugin_snippets/snippets_gui.c:827
+#: src/plugin_snippets/snippets_gui.c:831
 msgid "Set Snippet _Accelerator"
 msgstr "تنظیم قطعه _Accelerator"
 
-#: src/plugin_snippets/snippets_gui.c:827
+#: src/plugin_snippets/snippets_gui.c:831
 msgid "Set snippet accelerator"
 msgstr "شتاب دهنده قطعه تنظیم"
 
-#: src/plugin_snippets/snippets_gui.c:829
+#: src/plugin_snippets/snippets_gui.c:833
 msgid "Ex_pand All"
 msgstr "Ex_pand همه"
 
-#: src/plugin_snippets/snippets_gui.c:829
+#: src/plugin_snippets/snippets_gui.c:833
 msgid "Expand all"
 msgstr "باز کردن همه"
 
-#: src/plugin_snippets/snippets_gui.c:830
+#: src/plugin_snippets/snippets_gui.c:834
 msgid "_Collapse All"
 msgstr "جمع شدن همه"
 
-#: src/plugin_snippets/snippets_gui.c:830
+#: src/plugin_snippets/snippets_gui.c:834
 msgid "Collapse all"
 msgstr "جمع شدن همه"
 
-#: src/plugin_snippets/snippets_gui.c:831
+#: src/plugin_snippets/snippets_gui.c:835
 msgid "E_xport"
 msgstr "E_xport"
 
-#: src/plugin_snippets/snippets_gui.c:831
+#: src/plugin_snippets/snippets_gui.c:835
 msgid "Export snippets"
 msgstr "صادرات قطعه"
 
-#: src/plugin_snippets/snippets_gui.c:832
+#: src/plugin_snippets/snippets_gui.c:836
 msgid "I_mport"
 msgstr "I_mport"
 
-#: src/plugin_snippets/snippets_gui.c:832
+#: src/plugin_snippets/snippets_gui.c:836
 msgid "Import snippets"
 msgstr "واردات قطعه"
 
-#: src/plugin_snippets/snippets_gui.c:836
+#: src/plugin_snippets/snippets_gui.c:840
 msgid "_Show as menu"
 msgstr "_Show به عنوان منو"
 
-#: src/plugin_snippets/snippets_gui.c:836
+#: src/plugin_snippets/snippets_gui.c:840
 msgid "Show snippets menu"
 msgstr "نمایش منوی قطعه"
 
-#: src/plugin_snippets/snippets_gui.c:838
+#: src/plugin_snippets/snippets_gui.c:842
 msgid "S_nippets Menu"
 msgstr "منو S_nippets"
 

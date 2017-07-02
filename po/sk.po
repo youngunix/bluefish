@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish SVN\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2015-09-25 11:01+0200\n"
+"POT-Creation-Date: 2016-12-22 22:06+0900\n"
 "PO-Revision-Date: 2008-01-14 18:32+0100\n"
 "Last-Translator: Peter Junos <petoju@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -97,7 +97,7 @@ msgid "Web Development Editor"
 msgstr "Editor pre vývoj webstránok (CVS)"
 
 #: ../desktop-data/bluefish.desktop.in.h:3
-msgid "programming;code;html;php;python;"
+msgid "programming;code;web;editor;development;html;php;python;"
 msgstr ""
 
 #: ../desktop-data/bluefish.xml.in.h:1
@@ -109,20 +109,20 @@ msgstr "Súbor Bluefish projektu"
 msgid "Bluefish language definition file"
 msgstr "Definicia"
 
-#: ../src/bftextview2.c:1827
+#: ../src/bftextview2.c:1890
 msgid "Collapse all"
 msgstr "Zbaliť všetko"
 
-#: ../src/bftextview2.c:1830
+#: ../src/bftextview2.c:1893
 msgid "Expand all"
 msgstr "Rozbaliť všetko"
 
-#: ../src/bftextview2.c:1838
+#: ../src/bftextview2.c:1901
 #, fuzzy, c-format
 msgid "Collapse %s"
 msgstr "Zbaliť všetko"
 
-#: ../src/bftextview2.c:1848
+#: ../src/bftextview2.c:1911
 #, fuzzy, c-format
 msgid "Expand %s"
 msgstr "Rozbaliť všetko"
@@ -401,12 +401,13 @@ msgstr "Vyberte súbor"
 
 #: ../src/bfwin_uimanager.c:856
 #, fuzzy
-msgid "Add Boo_kmark"
+msgid "Toggle Boo_kmark"
 msgstr "Pridať záložku"
 
-#: ../src/bfwin_uimanager.c:856 ../src/document.c:2310
-msgid "Add bookmark"
-msgstr "Pridať záložku"
+#: ../src/bfwin_uimanager.c:856
+#, fuzzy
+msgid "Toggle bookmark"
+msgstr "Zmazať záložku"
 
 #: ../src/bfwin_uimanager.c:858
 msgid "_Add or Remove..."
@@ -525,697 +526,698 @@ msgstr "/Dokument/Poč_et slov"
 msgid "Select _Block"
 msgstr "Vyberte súbor"
 
-#: ../src/bfwin_uimanager.c:887
+#: ../src/bfwin_uimanager.c:888
 msgid "Select block, use multiple times to select parent blocks "
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:889
+#: ../src/bfwin_uimanager.c:890
 #, fuzzy
 msgid "D_uplicate Line"
 msgstr "Zmazať filter"
 
-#: ../src/bfwin_uimanager.c:889
+#: ../src/bfwin_uimanager.c:890
 #, fuzzy
 msgid "Duplicate the current line"
 msgstr "Predvolene zvýraznovať aktuálny riadok"
 
-#: ../src/bfwin_uimanager.c:891
+#: ../src/bfwin_uimanager.c:892
 #, fuzzy
 msgid "_Delete Line"
 msgstr "Zmazať filter"
 
-#: ../src/bfwin_uimanager.c:891
+#: ../src/bfwin_uimanager.c:892
 #, fuzzy
 msgid "Delete the current line"
 msgstr "Predvolene zvýraznovať aktuálny riadok"
 
-#: ../src/bfwin_uimanager.c:893
+#: ../src/bfwin_uimanager.c:894
 #, fuzzy
 msgid "_Word Count"
 msgstr "/Dokument/Poč_et slov"
 
-#: ../src/bfwin_uimanager.c:893
+#: ../src/bfwin_uimanager.c:894
 #, fuzzy
 msgid "Word count"
 msgstr "/Dokument/Poč_et slov"
 
-#: ../src/bfwin_uimanager.c:894 ../src/doc_extern_tools.c:47
+#: ../src/bfwin_uimanager.c:895 ../src/doc_extern_tools.c:47
 msgid "Lorem Ipsum generator"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:895
+#: ../src/bfwin_uimanager.c:897
 msgid "Insert Relative Filename"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:896
+#: ../src/bfwin_uimanager.c:899
 msgid "Insert Absolute Filename"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:897
+#: ../src/bfwin_uimanager.c:901
 #, fuzzy
 msgid "Indenting to S_paces"
 msgstr "/Úpravy/Nahradiť špecil./_ASCII na HTML Entity"
 
-#: ../src/bfwin_uimanager.c:897
+#: ../src/bfwin_uimanager.c:901
 #, fuzzy
 msgid "Indenting to spaces"
 msgstr "/Úpravy/Nahradiť špecil./_ASCII na HTML Entity"
 
-#: ../src/bfwin_uimanager.c:899
+#: ../src/bfwin_uimanager.c:903
 #, fuzzy
 msgid "Indenting to T_abs"
 msgstr "/Úpravy/Nahradiť specil./O_ba typy na HTML Entity"
 
-#: ../src/bfwin_uimanager.c:899
+#: ../src/bfwin_uimanager.c:903
 #, fuzzy
 msgid "Indenting to tabs"
 msgstr "/Úpravy/Nahradiť specil./O_ba typy na HTML Entity"
 
-#: ../src/bfwin_uimanager.c:901
+#: ../src/bfwin_uimanager.c:905
 #, fuzzy
 msgid "_Join Lines Together"
 msgstr "/Externé/Filtre"
 
-#: ../src/bfwin_uimanager.c:901
+#: ../src/bfwin_uimanager.c:905
 #, fuzzy
 msgid "Join lines together"
 msgstr "/Externé/Filtre"
 
-#: ../src/bfwin_uimanager.c:903
+#: ../src/bfwin_uimanager.c:907
 #, fuzzy
 msgid "Split Lines on Right _Margin"
 msgstr "/Externé/Filtre"
 
-#: ../src/bfwin_uimanager.c:903
+#: ../src/bfwin_uimanager.c:907
 #, fuzzy
 msgid "Split lines on right margin"
 msgstr "/Externé/Filtre"
 
-#: ../src/bfwin_uimanager.c:905
+#: ../src/bfwin_uimanager.c:909
 msgid "Merge Lines Into Col_umns"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:905
+#: ../src/bfwin_uimanager.c:909
 msgid "Merge lines into columns"
-msgstr ""
-
-#: ../src/bfwin_uimanager.c:907
-#, fuzzy
-msgid "Rewrap _Lines"
-msgstr "/Externé/Filtre"
-
-#: ../src/bfwin_uimanager.c:907
-#, fuzzy
-msgid "Rewrap lines"
-msgstr "/Externé/Filtre"
-
-#: ../src/bfwin_uimanager.c:908
-#, fuzzy
-msgid "Strip T_railing Whitespace"
-msgstr "/Úpravy/Prepísať špeciálne/Na _Veľké písmena"
-
-#: ../src/bfwin_uimanager.c:908
-#, fuzzy
-msgid "Strip trailing whitespace"
-msgstr "/Úpravy/Prepísať špeciálne/Na _Veľké písmena"
-
-#: ../src/bfwin_uimanager.c:910
-msgid "Javascript beautifier"
 msgstr ""
 
 #: ../src/bfwin_uimanager.c:911
 #, fuzzy
+msgid "Rewrap _Lines"
+msgstr "/Externé/Filtre"
+
+#: ../src/bfwin_uimanager.c:911
+#, fuzzy
+msgid "Rewrap lines"
+msgstr "/Externé/Filtre"
+
+#: ../src/bfwin_uimanager.c:912
+#, fuzzy
+msgid "Strip T_railing Whitespace"
+msgstr "/Úpravy/Prepísať špeciálne/Na _Veľké písmena"
+
+#: ../src/bfwin_uimanager.c:912
+#, fuzzy
+msgid "Strip trailing whitespace"
+msgstr "/Úpravy/Prepísať špeciálne/Na _Veľké písmena"
+
+#: ../src/bfwin_uimanager.c:914
+msgid "Javascript beautifier"
+msgstr ""
+
+#: ../src/bfwin_uimanager.c:916
+#, fuzzy
 msgid "Preview in browser"
 msgstr "Zobraziť v prehliadači"
 
-#: ../src/bfwin_uimanager.c:916
+#: ../src/bfwin_uimanager.c:921
 msgid "_Full Screen"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:916
+#: ../src/bfwin_uimanager.c:921
 msgid "Full screen"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:918
+#: ../src/bfwin_uimanager.c:923
 #, fuzzy
 msgid "_Main Toolbar"
 msgstr "/Zobraziť/Hlav_ná lišta"
 
-#: ../src/bfwin_uimanager.c:918
+#: ../src/bfwin_uimanager.c:923
 #, fuzzy
 msgid "Show main toolbar"
 msgstr "/Zobraziť/Hlav_ná lišta"
 
-#: ../src/bfwin_uimanager.c:920
+#: ../src/bfwin_uimanager.c:925
 #, fuzzy
 msgid "_Side Pane"
 msgstr "/Zobraziť/Bočný _panel"
 
-#: ../src/bfwin_uimanager.c:920
+#: ../src/bfwin_uimanager.c:925
 #, fuzzy
 msgid "Show side pane"
 msgstr "Zobraziť skryté"
 
-#: ../src/bfwin_uimanager.c:921
+#: ../src/bfwin_uimanager.c:926
 #, fuzzy
 msgid "_Output Pane"
 msgstr "Výstup #"
 
-#: ../src/bfwin_uimanager.c:921
+#: ../src/bfwin_uimanager.c:926
 #, fuzzy
 msgid "Show output pane"
 msgstr "Zobraziť všetky výstupy"
 
-#: ../src/bfwin_uimanager.c:923
+#: ../src/bfwin_uimanager.c:928
 #, fuzzy
 msgid "Status_bar"
 msgstr "/Zobraziť/Bočný _panel"
 
-#: ../src/bfwin_uimanager.c:923
+#: ../src/bfwin_uimanager.c:928
 #, fuzzy
 msgid "Show statusbar"
 msgstr "/Zobraziť/Bočný _panel"
 
-#: ../src/bfwin_uimanager.c:925
+#: ../src/bfwin_uimanager.c:930
 #, fuzzy
 msgid "Auto _Completion Popup"
 msgstr "/Dokument/_Automaticky odsazovať"
 
-#: ../src/bfwin_uimanager.c:925
+#: ../src/bfwin_uimanager.c:930
 #, fuzzy
 msgid "Show auto completion popup"
 msgstr "/Dokument/_Automaticky odsazovať"
 
-#: ../src/bfwin_uimanager.c:927
+#: ../src/bfwin_uimanager.c:932
 #, fuzzy
 msgid "_Auto Indent"
 msgstr "/Dokument/_Automaticky odsazovať"
 
-#: ../src/bfwin_uimanager.c:927
+#: ../src/bfwin_uimanager.c:932
 #, fuzzy
 msgid "Auto indent"
 msgstr "Posunuť blok vľavo"
 
-#: ../src/bfwin_uimanager.c:928
+#: ../src/bfwin_uimanager.c:933
 #, fuzzy
 msgid "Highlight Block _Delimiters"
 msgstr "Zvýrazňovať # riadky"
 
-#: ../src/bfwin_uimanager.c:929
+#: ../src/bfwin_uimanager.c:934
 #, fuzzy
 msgid "Highlight block delimiters"
 msgstr "Zvýrazňovať # riadky"
 
-#: ../src/bfwin_uimanager.c:930
+#: ../src/bfwin_uimanager.c:935
 #, fuzzy
 msgid "_Highlight Syntax"
 msgstr "Zvýrazňovať syntax"
 
-#: ../src/bfwin_uimanager.c:930
+#: ../src/bfwin_uimanager.c:935
 #, fuzzy
 msgid "Highlight syntax"
 msgstr "Zvýrazňovať syntax"
 
-#: ../src/bfwin_uimanager.c:932
+#: ../src/bfwin_uimanager.c:937
 #, fuzzy
 msgid "Show _Blocks"
 msgstr "/Dokument/Zobraziť _symboly"
 
-#: ../src/bfwin_uimanager.c:932
+#: ../src/bfwin_uimanager.c:937
 #, fuzzy
 msgid "Show blocks"
 msgstr "Zobraziť záložné súbory"
 
-#: ../src/bfwin_uimanager.c:933
+#: ../src/bfwin_uimanager.c:938
 #, fuzzy
 msgid "Show Line N_umbers"
 msgstr "Číslo ria_dku:"
 
-#: ../src/bfwin_uimanager.c:933
+#: ../src/bfwin_uimanager.c:938
 #, fuzzy
 msgid "Show line numbers"
 msgstr "Číslo ria_dku:"
 
-#: ../src/bfwin_uimanager.c:935
+#: ../src/bfwin_uimanager.c:940
 #, fuzzy
 msgid "Show Right _Margin"
 msgstr "/Dokument/Posunúť doprava"
 
-#: ../src/bfwin_uimanager.c:935
+#: ../src/bfwin_uimanager.c:940
 #, fuzzy
 msgid "Show right margin"
 msgstr "Predvolene ukazovať pravý okraj"
 
-#: ../src/bfwin_uimanager.c:937
+#: ../src/bfwin_uimanager.c:942
 msgid "Show Split _View"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:937
+#: ../src/bfwin_uimanager.c:942
 msgid "Show split view"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:939
+#: ../src/bfwin_uimanager.c:944
 #, fuzzy
 msgid "Show V_isible Spacing"
 msgstr "/Dokument/Plávajúce ok_no"
 
-#: ../src/bfwin_uimanager.c:939
+#: ../src/bfwin_uimanager.c:944
 #, fuzzy
 msgid "Show visible spacing"
 msgstr "/Dokument/Plávajúce ok_no"
 
-#: ../src/bfwin_uimanager.c:941
+#: ../src/bfwin_uimanager.c:946
 msgid "_Wrap Text"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:941
+#: ../src/bfwin_uimanager.c:946
 msgid "Wrap text"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:945 ../src/document.c:2097 ../src/document.c:3493
+#: ../src/bfwin_uimanager.c:950 ../src/document.c:2097 ../src/document.c:3493
 msgid "_Close"
 msgstr "_Zavrieť"
 
-#: ../src/bfwin_uimanager.c:945
+#: ../src/bfwin_uimanager.c:950
 #, fuzzy
 msgid "Close current file"
 msgstr "Zavrieť všetky neúspešné"
 
-#: ../src/bfwin_uimanager.c:947
+#: ../src/bfwin_uimanager.c:952
 #, fuzzy
 msgid "Close A_ll"
 msgstr "Zavri_eť všetko"
 
-#: ../src/bfwin_uimanager.c:947
+#: ../src/bfwin_uimanager.c:952
 #, fuzzy
 msgid "Close all files"
 msgstr "Zavrieť všetky neúspešné"
 
-#: ../src/bfwin_uimanager.c:949 ../src/bfwin_uimanager.c:1025
+#: ../src/bfwin_uimanager.c:954 ../src/bfwin_uimanager.c:1041
 #: ../src/file_dialogs.c:1455
 msgid "_Save"
 msgstr "_Uložiť"
 
-#: ../src/bfwin_uimanager.c:949
+#: ../src/bfwin_uimanager.c:954
 #, fuzzy
 msgid "Save current file"
 msgstr "Uložiť súčasný projekt"
 
-#: ../src/bfwin_uimanager.c:951 ../src/bfwin_uimanager.c:1026
+#: ../src/bfwin_uimanager.c:956 ../src/bfwin_uimanager.c:1042
 #, fuzzy
 msgid "Save _as..."
 msgstr "Uložit ako..."
 
-#: ../src/bfwin_uimanager.c:951
+#: ../src/bfwin_uimanager.c:956
 #, fuzzy
 msgid "Save file as"
 msgstr "Uložiť %s ako"
 
-#: ../src/bfwin_uimanager.c:953
+#: ../src/bfwin_uimanager.c:958
 #, fuzzy
 msgid "Sav_e All"
 msgstr "Uložiť vš_etko"
 
-#: ../src/bfwin_uimanager.c:953
+#: ../src/bfwin_uimanager.c:958
 #, fuzzy
 msgid "Save all files"
 msgstr "Všetky súbory"
 
-#: ../src/bfwin_uimanager.c:954
+#: ../src/bfwin_uimanager.c:960
 #, fuzzy
 msgid "Rever_t to Saved"
 msgstr "/Súbor/Návrat k uloženému"
 
-#: ../src/bfwin_uimanager.c:954
+#: ../src/bfwin_uimanager.c:960
 msgid "Reload current file"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:956
+#: ../src/bfwin_uimanager.c:962
 #, fuzzy
 msgid "Save a cop_y..."
 msgstr "Uložit ako..."
 
-#: ../src/bfwin_uimanager.c:956
+#: ../src/bfwin_uimanager.c:962
 #, fuzzy
 msgid "Save a copy"
 msgstr "/Projekt/Uložiť a za_vrieť"
 
-#: ../src/bfwin_uimanager.c:957
+#: ../src/bfwin_uimanager.c:964
 #, fuzzy
 msgid "_Insert..."
 msgstr "/Súbor/V_ložiť..."
 
-#: ../src/bfwin_uimanager.c:957
+#: ../src/bfwin_uimanager.c:964
 #, fuzzy
 msgid "Insert file"
 msgstr "Inverzní filter"
 
 #. Required to move here to disable sensitivity on OSX
-#: ../src/bfwin_uimanager.c:958
+#: ../src/bfwin_uimanager.c:965
 #, fuzzy
 msgid "Rena_me..."
 msgstr "/Pre_menovať"
 
-#: ../src/bfwin_uimanager.c:958
+#: ../src/bfwin_uimanager.c:965
 #, fuzzy
 msgid "Rename file"
 msgstr "Nový _súbor"
 
-#: ../src/bfwin_uimanager.c:959
+#: ../src/bfwin_uimanager.c:966
 #, fuzzy
 msgid "_Indent"
 msgstr "Posunuť blok vpravo"
 
-#: ../src/bfwin_uimanager.c:959
+#: ../src/bfwin_uimanager.c:966
 msgid "Indent"
 msgstr "Posunuť blok vpravo"
 
-#: ../src/bfwin_uimanager.c:960
+#: ../src/bfwin_uimanager.c:967
 #, fuzzy
 msgid "Unin_dent"
 msgstr "Posunuť blok vľavo"
 
-#: ../src/bfwin_uimanager.c:960
+#: ../src/bfwin_uimanager.c:967
 msgid "Unindent"
 msgstr "Posunuť blok vľavo"
 
-#: ../src/bfwin_uimanager.c:962
+#: ../src/bfwin_uimanager.c:969
 #, fuzzy
 msgid "F_irst Bookmark"
 msgstr "Upraviť záložku"
 
-#: ../src/bfwin_uimanager.c:962
+#: ../src/bfwin_uimanager.c:969
 #, fuzzy
 msgid "Goto first bookmark"
 msgstr "Upraviť záložku"
 
-#: ../src/bfwin_uimanager.c:964
+#: ../src/bfwin_uimanager.c:971
 #, fuzzy
 msgid "L_ast Bookmark"
 msgstr "Upraviť záložku"
 
-#: ../src/bfwin_uimanager.c:964
+#: ../src/bfwin_uimanager.c:971
 #, fuzzy
 msgid "Goto last bookmark"
 msgstr "Upraviť záložku"
 
-#: ../src/bfwin_uimanager.c:966
+#: ../src/bfwin_uimanager.c:973
 #, fuzzy
 msgid "N_ext Bookmark"
 msgstr "Zmazať záložku"
 
-#: ../src/bfwin_uimanager.c:966
+#: ../src/bfwin_uimanager.c:973
 #, fuzzy
 msgid "Goto next bookmark"
 msgstr "Zmazať záložku"
 
-#: ../src/bfwin_uimanager.c:968
+#: ../src/bfwin_uimanager.c:975
 #, fuzzy
 msgid "P_revious Bookmark"
 msgstr "Upraviť záložku"
 
-#: ../src/bfwin_uimanager.c:969 ../src/bfwin_uimanager.c:982
+#: ../src/bfwin_uimanager.c:976 ../src/bfwin_uimanager.c:992
 #, fuzzy
 msgid "Goto previous document"
 msgstr "/Akcia/_Predchádzajúci dokument"
 
-#: ../src/bfwin_uimanager.c:970
+#: ../src/bfwin_uimanager.c:977
 #, fuzzy
 msgid "Move Tab _Left"
 msgstr "Posunúť Vľavo"
 
-#: ../src/bfwin_uimanager.c:970
+#: ../src/bfwin_uimanager.c:977
 #, fuzzy
 msgid "Move current tab left"
 msgstr "Výber farby"
 
-#: ../src/bfwin_uimanager.c:972
+#: ../src/bfwin_uimanager.c:979
 #, fuzzy
 msgid "Move Tab _Right"
 msgstr "Posunúť Vpravo"
 
-#: ../src/bfwin_uimanager.c:972
+#: ../src/bfwin_uimanager.c:979
 #, fuzzy
 msgid "Move current tab right"
 msgstr "Uložiť súčasný projekt"
 
-#: ../src/bfwin_uimanager.c:974
+#: ../src/bfwin_uimanager.c:981
 #, fuzzy
 msgid "_Recent Document"
 msgstr "/Akcia/_Nasledujúcí dokument"
 
-#: ../src/bfwin_uimanager.c:974
+#: ../src/bfwin_uimanager.c:981
 #, fuzzy
 msgid "Goto most recent document"
 msgstr "/Akcia/P_osledný dokument"
 
-#: ../src/bfwin_uimanager.c:976
+#: ../src/bfwin_uimanager.c:983
 #, fuzzy
 msgid "_First Document"
 msgstr "/Akcia/P_rvý dokument"
 
-#: ../src/bfwin_uimanager.c:976
+#: ../src/bfwin_uimanager.c:984
 #, fuzzy
 msgid "Goto first document"
 msgstr "/Akcia/P_rvý dokument"
 
-#: ../src/bfwin_uimanager.c:978
+#: ../src/bfwin_uimanager.c:986
 #, fuzzy
 msgid "_Last Document"
 msgstr "/Akcia/P_osledný dokument"
 
-#: ../src/bfwin_uimanager.c:978
+#: ../src/bfwin_uimanager.c:987
 #, fuzzy
 msgid "Goto last document"
 msgstr "/Akcia/P_osledný dokument"
 
-#: ../src/bfwin_uimanager.c:980
+#: ../src/bfwin_uimanager.c:989
 #, fuzzy
 msgid "_Next Document"
 msgstr "/Akcia/_Nasledujúcí dokument"
 
-#: ../src/bfwin_uimanager.c:980
+#: ../src/bfwin_uimanager.c:989
 #, fuzzy
 msgid "Goto next document"
 msgstr "/Akcia/_Nasledujúcí dokument"
 
-#: ../src/bfwin_uimanager.c:982
+#: ../src/bfwin_uimanager.c:991
 #, fuzzy
 msgid "_Previous Document"
 msgstr "/Akcia/_Predchádzajúci dokument"
 
-#: ../src/bfwin_uimanager.c:984
+#: ../src/bfwin_uimanager.c:994
 #, fuzzy
 msgid "_Goto Line"
 msgstr "Ísť na riadok"
 
-#: ../src/bfwin_uimanager.c:984
+#: ../src/bfwin_uimanager.c:994
 #, fuzzy
 msgid "Goto line"
 msgstr "Ísť na riadok"
 
-#: ../src/bfwin_uimanager.c:985
+#: ../src/bfwin_uimanager.c:995
 #, fuzzy
 msgid "Goto Line Number from _Clipboard"
 msgstr "/Akcia/Ísť na _výber"
 
-#: ../src/bfwin_uimanager.c:986
+#: ../src/bfwin_uimanager.c:996
 #, fuzzy
 msgid "Goto line number in clipboard or selection"
 msgstr "/Akcia/Ísť na _výber"
 
-#: ../src/bfwin_uimanager.c:987
+#: ../src/bfwin_uimanager.c:997
 #, fuzzy
 msgid "_Jump to Reference"
 msgstr "Referencie funkcií"
 
-#: ../src/bfwin_uimanager.c:987
+#: ../src/bfwin_uimanager.c:997
 #, fuzzy
 msgid "Jump to reference"
 msgstr "Referencie funkcií"
 
-#: ../src/bfwin_uimanager.c:990 ../src/bfwin_uimanager.c:993
+#: ../src/bfwin_uimanager.c:1000 ../src/bfwin_uimanager.c:1001
+#: ../src/bfwin_uimanager.c:1004 ../src/bfwin_uimanager.c:1005
 msgid "Jump to Matching Block Boundary"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:999
+#: ../src/bfwin_uimanager.c:1011
 msgid "Cu_t"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:999
+#: ../src/bfwin_uimanager.c:1011
 msgid "Cut"
 msgstr "Vystrihnúť"
 
-#: ../src/bfwin_uimanager.c:1000
+#: ../src/bfwin_uimanager.c:1012
 #, fuzzy
 msgid "_Copy"
 msgstr "Kopírovať"
 
-#: ../src/bfwin_uimanager.c:1000
+#: ../src/bfwin_uimanager.c:1012
 msgid "Copy"
 msgstr "Kopírovať"
 
-#: ../src/bfwin_uimanager.c:1001
+#: ../src/bfwin_uimanager.c:1013
 #, fuzzy
 msgid "_Paste"
 msgstr "Vložiť"
 
-#: ../src/bfwin_uimanager.c:1001
+#: ../src/bfwin_uimanager.c:1013
 msgid "Paste"
 msgstr "Vložiť"
 
-#: ../src/bfwin_uimanager.c:1002
+#: ../src/bfwin_uimanager.c:1014
 #, fuzzy
 msgid "Paste Specia_l"
 msgstr "/Tagy/Š_peciálne"
 
-#: ../src/bfwin_uimanager.c:1002
+#: ../src/bfwin_uimanager.c:1014
 #, fuzzy
 msgid "Paste Special"
 msgstr "/Tagy/Š_peciálne"
 
-#: ../src/bfwin_uimanager.c:1006
+#: ../src/bfwin_uimanager.c:1019
 #, fuzzy
 msgid "_Find"
 msgstr "Nájsť"
 
-#: ../src/bfwin_uimanager.c:1006
+#: ../src/bfwin_uimanager.c:1019
 #, fuzzy
 msgid "Show find bar"
 msgstr "/Zobraziť/Hlav_ná lišta"
 
-#: ../src/bfwin_uimanager.c:1007
+#: ../src/bfwin_uimanager.c:1020
 #, fuzzy
 msgid "Find A_gain"
 msgstr "/Upraviť/Nájsť znov_u"
 
-#: ../src/bfwin_uimanager.c:1007
+#: ../src/bfwin_uimanager.c:1020
 #, fuzzy
 msgid "Find again"
 msgstr "/Upraviť/Nájsť znov_u"
 
-#: ../src/bfwin_uimanager.c:1008
+#: ../src/bfwin_uimanager.c:1021
 #, fuzzy
 msgid "Find from Clip_board"
 msgstr "Z _výberu"
 
-#: ../src/bfwin_uimanager.c:1008
+#: ../src/bfwin_uimanager.c:1022
 #, fuzzy
 msgid "Find from clipboard or selection"
 msgstr "Z _výberu"
 
-#: ../src/bfwin_uimanager.c:1011 ../src/bfwin_uimanager.c:1014
+#: ../src/bfwin_uimanager.c:1025 ../src/bfwin_uimanager.c:1029
 #, fuzzy
 msgid "Ad_vanced Find & Replace..."
 msgstr "Nahradiť"
 
-#: ../src/bfwin_uimanager.c:1011 ../src/bfwin_uimanager.c:1014
+#: ../src/bfwin_uimanager.c:1026 ../src/bfwin_uimanager.c:1030
 #, fuzzy
 msgid "Advanced Find and Replace"
 msgstr "Nahradiť"
 
-#: ../src/bfwin_uimanager.c:1023
+#: ../src/bfwin_uimanager.c:1039
 #, fuzzy
 msgid "Save & _close"
 msgstr "/Projekt/Uložiť a za_vrieť"
 
-#: ../src/bfwin_uimanager.c:1023
+#: ../src/bfwin_uimanager.c:1039
 #, fuzzy
 msgid "Save & close project"
 msgstr "Uložiť súčasný projekt"
 
-#: ../src/bfwin_uimanager.c:1025
+#: ../src/bfwin_uimanager.c:1041
 #, fuzzy
 msgid "Save project"
 msgstr "Nový projekt"
 
-#: ../src/bfwin_uimanager.c:1026
+#: ../src/bfwin_uimanager.c:1042
 #, fuzzy
 msgid "Save project as"
 msgstr "Nový projekt"
 
-#: ../src/bfwin_uimanager.c:1027
+#: ../src/bfwin_uimanager.c:1043
 #, fuzzy
 msgid "_Edit Project Options..."
 msgstr "/Projekt/Upraviť pr_edvoľby projektu..."
 
-#: ../src/bfwin_uimanager.c:1027
+#: ../src/bfwin_uimanager.c:1043
 #, fuzzy
 msgid "Edit project options"
 msgstr "Upraviť projekt"
 
-#: ../src/bfwin_uimanager.c:1032
+#: ../src/bfwin_uimanager.c:1048
 #, fuzzy
 msgid "_Undo"
 msgstr "Späť"
 
-#: ../src/bfwin_uimanager.c:1032
+#: ../src/bfwin_uimanager.c:1048
 msgid "Undo"
 msgstr "Späť"
 
-#: ../src/bfwin_uimanager.c:1033
+#: ../src/bfwin_uimanager.c:1049
 #, fuzzy
 msgid "U_ndo All"
 msgstr "/Úpravy/Späť vš_etko"
 
-#: ../src/bfwin_uimanager.c:1033
+#: ../src/bfwin_uimanager.c:1049
 #, fuzzy
 msgid "Undo All"
 msgstr "/Úpravy/Späť vš_etko"
 
-#: ../src/bfwin_uimanager.c:1034
+#: ../src/bfwin_uimanager.c:1050
 #, fuzzy
 msgid "_Redo"
 msgstr "Opakovať"
 
-#: ../src/bfwin_uimanager.c:1034
+#: ../src/bfwin_uimanager.c:1050
 msgid "Redo"
 msgstr "Opakovať"
 
-#: ../src/bfwin_uimanager.c:1035
+#: ../src/bfwin_uimanager.c:1051
 #, fuzzy
 msgid "R_edo All"
 msgstr "/Úpravy/Opakovať v_šetko"
 
-#: ../src/bfwin_uimanager.c:1035
+#: ../src/bfwin_uimanager.c:1051
 #, fuzzy
 msgid "Redo All"
 msgstr "/Úpravy/Opakovať v_šetko"
 
-#: ../src/bfwin_uimanager.c:1060
+#: ../src/bfwin_uimanager.c:1078
 #, c-format
 msgid "Always use this syntax for files of type %s ?"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:1227
+#: ../src/bfwin_uimanager.c:1257
 #, fuzzy
 msgid "Open _URL..."
 msgstr "/Súbor/Otvoriť _URL..."
 
-#: ../src/bfwin_uimanager.c:1237
+#: ../src/bfwin_uimanager.c:1267
 msgid "Upload _/ Download..."
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:1250
+#: ../src/bfwin_uimanager.c:1280
 #, fuzzy
 msgid "_Spell Check"
 msgstr "Kontrola pravopisu..."
 
-#: ../src/bfwin_uimanager.c:1717
+#: ../src/bfwin_uimanager.c:1760
 #, fuzzy
 msgid "Text area to filter"
 msgstr "Externé filtre"
 
-#: ../src/bfwin_uimanager.c:1718
+#: ../src/bfwin_uimanager.c:1761
 msgid "All text"
 msgstr ""
 
-#: ../src/bfwin_uimanager.c:1719
+#: ../src/bfwin_uimanager.c:1762
 #, fuzzy
 msgid "Selected text only"
 msgstr "Výber písma"
 
-#: ../src/bfwin_uimanager.c:1721
+#: ../src/bfwin_uimanager.c:1764
 msgid "Never ask again"
 msgstr ""
 
@@ -1429,9 +1431,9 @@ msgstr ""
 msgid "Content"
 msgstr "Ob_sah:"
 
-#: ../src/bookmark.c:922 ../src/bookmark.c:928 ../src/preferences.c:621
-#: ../src/preferences.c:1686 ../src/preferences.c:1688
-#: ../src/preferences.c:1789
+#: ../src/bookmark.c:922 ../src/bookmark.c:928 ../src/preferences.c:622
+#: ../src/preferences.c:1687 ../src/preferences.c:1689
+#: ../src/preferences.c:1790
 msgid "Name"
 msgstr "Meno"
 
@@ -1459,14 +1461,6 @@ msgstr "Zmazať záložku"
 #, fuzzy
 msgid "Last bookmark"
 msgstr "Upraviť záložku"
-
-#: ../src/bookmark.c:2037
-msgid "Can't add bookmark"
-msgstr "Nemôžem pridať záložku"
-
-#: ../src/bookmark.c:2037
-msgid "You already have a bookmark here!"
-msgstr "Na tomto mieste už záložku máte!"
 
 #: ../src/document.c:518
 msgid "Name: "
@@ -1625,6 +1619,10 @@ msgstr ""
 msgid "Use 'Save As' to save it with different name and make editable"
 msgstr ""
 
+#: ../src/document.c:2310
+msgid "Add bookmark"
+msgstr "Pridať záložku"
+
 #: ../src/document.c:2316
 msgid "Exit fullscreen"
 msgstr ""
@@ -1709,33 +1707,33 @@ msgstr "Vyberte súbor na vloženie"
 msgid "No file to insert"
 msgstr "Žiadny súbor na vloženie"
 
-#: ../src/document.c:3730
+#: ../src/document.c:3729
 #, fuzzy
 msgid "Save pasted image as"
 msgstr "Uložiť %s ako"
 
-#: ../src/document.c:3832
+#: ../src/document.c:3831
 msgid "Paste special"
 msgstr ""
 
-#: ../src/document.c:3838
+#: ../src/document.c:3837
 msgid "No compatible clipboard data found"
 msgstr ""
 
-#: ../src/document.c:3843
+#: ../src/document.c:3842
 msgid "Paste as _HTML"
 msgstr ""
 
-#: ../src/document.c:3848
+#: ../src/document.c:3847
 msgid "Paste as HTML with _JPG"
 msgstr ""
 
-#: ../src/document.c:3858
+#: ../src/document.c:3857
 #, fuzzy
 msgid "Paste as plain text"
 msgstr "Vlož obrázok"
 
-#: ../src/document.c:3953
+#: ../src/document.c:3952
 #, c-format
 msgid "%d line"
 msgid_plural "%d lines"
@@ -1743,7 +1741,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: ../src/document.c:3954
+#: ../src/document.c:3953
 #, fuzzy, c-format
 msgid "%d word"
 msgid_plural "%d words"
@@ -1751,7 +1749,7 @@ msgstr[0] "%d z %d"
 msgstr[1] "%d z %d"
 msgstr[2] "%d z %d"
 
-#: ../src/document.c:3955
+#: ../src/document.c:3954
 #, c-format
 msgid "%d character"
 msgid_plural "%d characters"
@@ -1759,12 +1757,12 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: ../src/document.c:3957
+#: ../src/document.c:3956
 #, fuzzy
 msgid "Selection statistics: "
 msgstr "Kde začať:"
 
-#: ../src/document.c:3957
+#: ../src/document.c:3956
 #, fuzzy
 msgid "Statistics: "
 msgstr "Kde začať:"
@@ -2163,7 +2161,7 @@ msgstr ""
 msgid "Tree"
 msgstr ""
 
-#: ../src/filebrowser2.c:2359
+#: ../src/filebrowser2.c:2360
 #, c-format
 msgid ""
 "<b>%s</b>\n"
@@ -2502,7 +2500,7 @@ msgid "Check and reload all documents"
 msgstr "Späť vo všetkých dokumentoch"
 
 #. build a list of filters
-#: ../src/filefilter.c:250 ../src/gtk_easy.c:1351 ../src/preferences.c:2440
+#: ../src/filefilter.c:250 ../src/gtk_easy.c:1351 ../src/preferences.c:2494
 msgid "All files"
 msgstr "Všetky súbory"
 
@@ -2576,190 +2574,190 @@ msgstr "Výstup #"
 msgid "Failed to compile output parser pattern %s: %s"
 msgstr ""
 
-#: ../src/preferences.c:321
+#: ../src/preferences.c:322
 msgid "Untitled"
 msgstr "Nepomenovaný"
 
-#: ../src/preferences.c:523
+#: ../src/preferences.c:524
 #, fuzzy
 msgid "_Mime type:"
 msgstr "Mime typ"
 
-#: ../src/preferences.c:535 ../src/preferences.c:537
+#: ../src/preferences.c:536 ../src/preferences.c:538
 #, fuzzy
 msgid "None"
 msgstr "Poznámky"
 
-#: ../src/preferences.c:539
+#: ../src/preferences.c:540
 #, fuzzy
 msgid "_Template:"
 msgstr "Ša_blona:"
 
-#: ../src/preferences.c:542 ../src/snr3.c:1586
+#: ../src/preferences.c:543 ../src/snr3.c:1586
 #, fuzzy
 msgid "<b>Options</b>"
 msgstr "<b>Vlastn_osti</b>"
 
-#: ../src/preferences.c:546
+#: ../src/preferences.c:547
 #, fuzzy
 msgid "Enable a_uto-completion"
 msgstr "Klávesa na automatické dokončenie"
 
-#: ../src/preferences.c:548
+#: ../src/preferences.c:549
 msgid "Enable _block folding"
 msgstr ""
 
-#: ../src/preferences.c:550
+#: ../src/preferences.c:551
 msgid "Display block stack in statusbar"
 msgstr ""
 
-#: ../src/preferences.c:552
+#: ../src/preferences.c:553
 #, fuzzy
 msgid "Highlight block _delimiters"
 msgstr "Zvýrazňovať # riadky"
 
-#: ../src/preferences.c:554
+#: ../src/preferences.c:555
 #, fuzzy
 msgid "_Highlight current line"
 msgstr "Predvolene zvýraznovať aktuálny riadok"
 
-#: ../src/preferences.c:556
+#: ../src/preferences.c:557
 #, fuzzy
 msgid "Show line _numbers"
 msgstr "Číslo ria_dku:"
 
-#: ../src/preferences.c:560
+#: ../src/preferences.c:561
 #, fuzzy
 msgid "Show _right margin indicator"
 msgstr "Predvolene ukazovať pravý okraj"
 
-#: ../src/preferences.c:562 ../src/preferences.c:2504
+#: ../src/preferences.c:563 ../src/preferences.c:2558
 msgid "Smart auto indentin_g"
 msgstr ""
 
-#: ../src/preferences.c:564
+#: ../src/preferences.c:565
 msgid "Wra_p lines"
 msgstr ""
 
-#: ../src/preferences.c:566
+#: ../src/preferences.c:567
 #, fuzzy
 msgid "Enable syntax scanning"
 msgstr "Kontrola syntaxi"
 
-#: ../src/preferences.c:568
+#: ../src/preferences.c:569
 #, fuzzy
 msgid "Show _visible spacing"
 msgstr "/Dokument/Plávajúce ok_no"
 
-#: ../src/preferences.c:572
+#: ../src/preferences.c:573
 #, fuzzy
 msgid "_Enable spell check"
 msgstr "Kontrola pravopisu..."
 
-#: ../src/preferences.c:577
+#: ../src/preferences.c:578
 #, fuzzy
 msgid "<b>Tab Stops</b>"
 msgstr "<b>Vlastn_osti</b>"
 
-#: ../src/preferences.c:582
+#: ../src/preferences.c:583
 #, fuzzy
 msgid "Tab _width:"
 msgstr "Dĺžka tabulátoru"
 
-#: ../src/preferences.c:585
+#: ../src/preferences.c:586
 #, fuzzy
 msgid "Insert _spaces instead of tabs"
 msgstr "K odsadení používať medzery miesto tabelatoru"
 
-#: ../src/preferences.c:622 ../src/preferences.c:1341
-#: ../src/preferences.c:1500
+#: ../src/preferences.c:623 ../src/preferences.c:1342
+#: ../src/preferences.c:1501
 msgid "Enabled"
 msgstr "Zapnuté"
 
-#: ../src/preferences.c:624
+#: ../src/preferences.c:625
 msgid "Path to plugin"
 msgstr ""
 
-#: ../src/preferences.c:901
+#: ../src/preferences.c:902
 #, fuzzy
 msgid "Extension"
 msgstr "Koncovka"
 
-#: ../src/preferences.c:903
+#: ../src/preferences.c:904
 #, fuzzy
 msgid "Mime-Type"
 msgstr "Mime typ"
 
-#: ../src/preferences.c:1131
+#: ../src/preferences.c:1132
 msgid ""
 "<small>Text styles are applied on top of each other. If multiple styles are "
 "applied to the same text, the top-most style in this list has the highest "
 "priority. Use drag and drop to re-order the text styles.</small>"
 msgstr ""
 
-#: ../src/preferences.c:1142 ../src/preferences.c:1342
-#: ../src/preferences.c:1502
+#: ../src/preferences.c:1143 ../src/preferences.c:1343
+#: ../src/preferences.c:1503
 msgid "Label"
 msgstr "Popis"
 
-#: ../src/preferences.c:1157 ../src/preferences.c:2618
+#: ../src/preferences.c:1158 ../src/preferences.c:2672
 msgid "Foreground color"
 msgstr "Farba popredia"
 
-#: ../src/preferences.c:1158 ../src/preferences.c:2619
+#: ../src/preferences.c:1159 ../src/preferences.c:2673
 #, fuzzy
 msgid "_Foreground color:"
 msgstr "Farba popredia"
 
-#: ../src/preferences.c:1159 ../src/preferences.c:2622
+#: ../src/preferences.c:1160 ../src/preferences.c:2676
 msgid "Background color"
 msgstr "Farba pozadia"
 
-#: ../src/preferences.c:1160 ../src/preferences.c:2623
+#: ../src/preferences.c:1161 ../src/preferences.c:2677
 #, fuzzy
 msgid "_Background color:"
 msgstr "Farba pozadia"
 
-#: ../src/preferences.c:1164
+#: ../src/preferences.c:1165
 #, fuzzy
 msgid "_Normal weight"
 msgstr "vnútiť tučný font"
 
-#: ../src/preferences.c:1166
+#: ../src/preferences.c:1167
 #, fuzzy
 msgid "Bold _weight"
 msgstr "vnútiť tučný font"
 
-#: ../src/preferences.c:1168
+#: ../src/preferences.c:1169
 #, fuzzy
 msgid "Normal st_yle"
 msgstr "vynútiť kurzívu"
 
-#: ../src/preferences.c:1171
+#: ../src/preferences.c:1172
 #, fuzzy
 msgid "_Italic style"
 msgstr "vynútiť kurzívu"
 
-#: ../src/preferences.c:1173
+#: ../src/preferences.c:1174
 #, fuzzy
 msgid "_Spell check"
 msgstr "Kontrola pravopisu..."
 
-#: ../src/preferences.c:1215 ../src/preferences.c:1379
-#: ../src/preferences.c:1532 ../src/preferences.c:1724
-#: ../src/preferences.c:1820
+#: ../src/preferences.c:1216 ../src/preferences.c:1380
+#: ../src/preferences.c:1533 ../src/preferences.c:1725
+#: ../src/preferences.c:1821
 #, fuzzy
 msgid "Add entry"
 msgstr "Vlastnosť"
 
-#: ../src/preferences.c:1217 ../src/preferences.c:1381
-#: ../src/preferences.c:1534 ../src/preferences.c:1726
-#: ../src/preferences.c:1822
+#: ../src/preferences.c:1218 ../src/preferences.c:1382
+#: ../src/preferences.c:1535 ../src/preferences.c:1727
+#: ../src/preferences.c:1823
 #, fuzzy
 msgid "Delete entry"
 msgstr "Zmazať Položku"
 
-#: ../src/preferences.c:1318
+#: ../src/preferences.c:1319
 #, c-format
 msgid ""
 "<small><b>Input options</b>\n"
@@ -2776,28 +2774,28 @@ msgid ""
 "identical to %u</small>"
 msgstr ""
 
-#: ../src/preferences.c:1344 ../src/preferences.c:1504
-#: ../src/preferences.c:1698
+#: ../src/preferences.c:1345 ../src/preferences.c:1505
+#: ../src/preferences.c:1699
 msgid "Command"
 msgstr "Príkaz"
 
-#: ../src/preferences.c:1347
+#: ../src/preferences.c:1348
 msgid "Default browser"
 msgstr "Predvolený prehliadač"
 
-#: ../src/preferences.c:1383 ../src/preferences.c:1536
-#: ../src/preferences.c:1728
+#: ../src/preferences.c:1384 ../src/preferences.c:1537
+#: ../src/preferences.c:1729
 #, fuzzy
 msgid "Update defaults"
 msgstr "Nastaviť _ako predvolené"
 
-#: ../src/preferences.c:1385 ../src/preferences.c:1538
-#: ../src/preferences.c:1730
+#: ../src/preferences.c:1386 ../src/preferences.c:1539
+#: ../src/preferences.c:1731
 #, fuzzy
 msgid "Reset all"
 msgstr "Vyberte súbor"
 
-#: ../src/preferences.c:1475
+#: ../src/preferences.c:1476
 msgid ""
 "<small><b>Input options</b>\n"
 "start with a | to send the input to the standard input\n"
@@ -2817,7 +2815,7 @@ msgid ""
 "identical to %u</small>"
 msgstr ""
 
-#: ../src/preferences.c:1660
+#: ../src/preferences.c:1661
 #, c-format
 msgid ""
 "<small><b>Input options</b>\n"
@@ -2837,687 +2835,742 @@ msgid ""
 "identical to %u</small>"
 msgstr ""
 
-#: ../src/preferences.c:1690
+#: ../src/preferences.c:1691
 msgid "Pattern"
 msgstr "Vzorka"
 
-#: ../src/preferences.c:1692
+#: ../src/preferences.c:1693
 msgid "File #"
 msgstr "Súbor #"
 
-#: ../src/preferences.c:1694
+#: ../src/preferences.c:1695
 msgid "Line #"
 msgstr "Riadok #"
 
-#: ../src/preferences.c:1696
+#: ../src/preferences.c:1697
 msgid "Output #"
 msgstr "Výstup #"
 
-#: ../src/preferences.c:1791
+#: ../src/preferences.c:1792
 msgid "File"
 msgstr "Súbor"
 
-#: ../src/preferences.c:1969
+#: ../src/preferences.c:1970
 msgid "A restart is needed to see the effect of these options"
 msgstr ""
 
 #. 1=text
-#: ../src/preferences.c:1981
+#: ../src/preferences.c:1982
 #, fuzzy
 msgid "Option name"
 msgstr "Vlastnosť"
 
 #. 2=boolean
-#: ../src/preferences.c:1983
+#: ../src/preferences.c:1984
 #, fuzzy
 msgid "value"
 msgstr "Hodnota"
 
 #. 1=text
-#: ../src/preferences.c:2000
+#: ../src/preferences.c:2001
 #, fuzzy
 msgid "Highlight name"
 msgstr "Zvýrazňovať syntax"
 
-#: ../src/preferences.c:2005
+#: ../src/preferences.c:2006
 #, fuzzy
 msgid "Textstyle"
 msgstr "Štýl textu"
 
-#: ../src/preferences.c:2167 ../src/preferences.c:2862
+#: ../src/preferences.c:2168 ../src/preferences.c:2938
 #, fuzzy
 msgid "Auto"
 msgstr "Autori"
 
-#: ../src/preferences.c:2431
+#: ../src/preferences.c:2436
+msgid "Continue and ignore changes"
+msgstr ""
+
+#: ../src/preferences.c:2436
+#, fuzzy
+msgid "Cancel"
+msgstr "_Zrušiť"
+
+#: ../src/preferences.c:2438
+msgid "Importing colors will abort any preferences changes"
+msgstr ""
+
+#: ../src/preferences.c:2438
+msgid ""
+"Importing colors will close the preferences dialog and cancel any changes "
+"you made. Do you want to continue?"
+msgstr ""
+
+#: ../src/preferences.c:2446 ../src/preferences.c:2710
+#: ../src/preferences.c:2719
+#, fuzzy
+msgid "Choose file"
+msgstr "Vybrať _po súbore"
+
+#: ../src/preferences.c:2460
+msgid "Import done"
+msgstr ""
+
+#: ../src/preferences.c:2462
+#, c-format
+msgid "Import %s failed"
+msgstr ""
+
+#: ../src/preferences.c:2485
 #, fuzzy
 msgid "Delayed"
 msgstr "Zmazať"
 
-#: ../src/preferences.c:2431
+#: ../src/preferences.c:2485
 msgid "Immediately"
 msgstr ""
 
-#: ../src/preferences.c:2432
+#: ../src/preferences.c:2486
 msgid "Continue save"
 msgstr "P_okračovať v ukladaní"
 
-#: ../src/preferences.c:2432
+#: ../src/preferences.c:2486
 msgid "Abort save"
 msgstr "Prerušiť ukladanie"
 
-#: ../src/preferences.c:2432
+#: ../src/preferences.c:2486
 msgid "Ask what to do"
 msgstr "Opýtať sa, čo robiť"
 
-#: ../src/preferences.c:2433 ../src/preferences.c:2440
-#: ../src/preferences.c:2447
+#: ../src/preferences.c:2487 ../src/preferences.c:2494
+#: ../src/preferences.c:2501
 #, fuzzy
 msgid "Never"
 msgstr "Servery"
 
-#: ../src/preferences.c:2433
+#: ../src/preferences.c:2487
 msgid "Periodically and during save"
 msgstr ""
 
-#: ../src/preferences.c:2433
+#: ../src/preferences.c:2487
 msgid "Only during save"
 msgstr ""
 
-#: ../src/preferences.c:2435
+#: ../src/preferences.c:2489
 msgid "Nothing"
 msgstr "ničoho"
 
-#: ../src/preferences.c:2435
+#: ../src/preferences.c:2489
 msgid "Modified time and file size"
 msgstr "času úpravy a veľkosti súboru"
 
-#: ../src/preferences.c:2435
+#: ../src/preferences.c:2489
 msgid "Modified time"
 msgstr "času úpravy"
 
-#: ../src/preferences.c:2435
+#: ../src/preferences.c:2489
 msgid "File size"
 msgstr "veľkosti súboru"
 
-#: ../src/preferences.c:2436 ../src/preferences.c:2437
+#: ../src/preferences.c:2490 ../src/preferences.c:2491
 msgid "left"
 msgstr "vľavo"
 
-#: ../src/preferences.c:2436 ../src/preferences.c:2437
+#: ../src/preferences.c:2490 ../src/preferences.c:2491
 msgid "right"
 msgstr "vpravo"
 
-#: ../src/preferences.c:2436
+#: ../src/preferences.c:2490
 msgid "top"
 msgstr "hore"
 
-#: ../src/preferences.c:2436
+#: ../src/preferences.c:2490
 msgid "bottom"
 msgstr "dole"
 
-#: ../src/preferences.c:2438
+#: ../src/preferences.c:2492
 msgid "Recently opened"
 msgstr ""
 
-#: ../src/preferences.c:2438
+#: ../src/preferences.c:2492
 msgid "Recently closed"
 msgstr ""
 
-#: ../src/preferences.c:2440
+#: ../src/preferences.c:2494
 #, fuzzy
 msgid "Only project files"
 msgstr "Súbor Bluefish projektu"
 
-#: ../src/preferences.c:2444
+#: ../src/preferences.c:2498
 msgid "All"
 msgstr ""
 
-#: ../src/preferences.c:2444
+#: ../src/preferences.c:2498
 msgid "All except spaces"
 msgstr ""
 
-#: ../src/preferences.c:2444
+#: ../src/preferences.c:2498
 msgid "All trailing"
 msgstr ""
 
-#: ../src/preferences.c:2444
+#: ../src/preferences.c:2498
 msgid "All except non-trailing spaces"
 msgstr ""
 
-#: ../src/preferences.c:2447
+#: ../src/preferences.c:2501
 msgid "Always"
 msgstr ""
 
-#: ../src/preferences.c:2447
+#: ../src/preferences.c:2501
 msgid "Smart"
 msgstr ""
 
-#: ../src/preferences.c:2458
+#: ../src/preferences.c:2512
 msgid "Edit preferences"
 msgstr "Predvoľby"
 
 #.
 #. *  Initial document settings
 #.
-#: ../src/preferences.c:2482
+#: ../src/preferences.c:2536
 msgid "<b>Non Project Defaults</b>"
 msgstr ""
 
-#: ../src/preferences.c:2484
+#: ../src/preferences.c:2538
 #, fuzzy
 msgid "Initial document settings"
 msgstr "Počiatočná výška okna"
 
-#: ../src/preferences.c:2496
+#: ../src/preferences.c:2550
 #, fuzzy
 msgid "Editor settings"
 msgstr "Možnosti krokov späť"
 
-#: ../src/preferences.c:2499
+#: ../src/preferences.c:2553
 #, fuzzy
 msgid "<b>Editor settings</b>"
 msgstr "Možnosti krokov späť"
 
-#: ../src/preferences.c:2507
+#: ../src/preferences.c:2561
 #, fuzzy
 msgid "Smart Home/_End cursor positioning"
 msgstr "Za pozíciou kurzora"
 
-#: ../src/preferences.c:2511
+#: ../src/preferences.c:2565
 #, fuzzy
 msgid "_Tab key indents selection"
 msgstr "vo výbere"
 
-#: ../src/preferences.c:2517
+#: ../src/preferences.c:2571
 #, fuzzy
 msgid "Automatically insert closing brackets"
 msgstr "Režim Automatického uzatvárania tagov "
 
-#: ../src/preferences.c:2524
+#: ../src/preferences.c:2578
 #, fuzzy
 msgid "Right _margin/split line end position:"
 msgstr "Vzdialenosť pravého okraju"
 
-#: ../src/preferences.c:2527
+#: ../src/preferences.c:2581
 #, fuzzy
 msgid "Wrap lines on right margin indicator"
 msgstr "Predvolene ukazovať pravý okraj"
 
-#: ../src/preferences.c:2533
+#: ../src/preferences.c:2587
 #, fuzzy
 msgid "Visible _whitespace mode:"
 msgstr "Farba navštivené_ho odkazu:"
 
-#: ../src/preferences.c:2536
+#: ../src/preferences.c:2590
 #, fuzzy
 msgid "<b>Undo</b>"
 msgstr "<b>Obecné</b>"
 
-#: ../src/preferences.c:2541
+#: ../src/preferences.c:2595
 msgid "_Number of actions in history:"
 msgstr ""
 
-#: ../src/preferences.c:2544
+#: ../src/preferences.c:2598
 #, fuzzy
 msgid "Clear _history on save"
 msgstr "Zmazať históriu pri uložení"
 
-#: ../src/preferences.c:2549
+#: ../src/preferences.c:2603
 #, fuzzy
 msgid "Auto-completion & Reference"
 msgstr "Referencie funkcií"
 
-#: ../src/preferences.c:2555
+#: ../src/preferences.c:2609
 #, fuzzy
 msgid "<b>Auto-completion</b>"
 msgstr "Klávesa na automatické dokončenie"
 
-#: ../src/preferences.c:2561
+#: ../src/preferences.c:2615
 msgid "Show _pop-up window:"
 msgstr ""
 
-#: ../src/preferences.c:2565
+#: ../src/preferences.c:2619
 msgid "Minimum matching length for auto-completion:"
 msgstr ""
 
-#: ../src/preferences.c:2570
+#: ../src/preferences.c:2624
 msgid "Shortcut _key combination:"
 msgstr ""
 
-#: ../src/preferences.c:2573
+#: ../src/preferences.c:2627
 msgid "<b>Reference Information</b>"
 msgstr ""
 
-#: ../src/preferences.c:2576
+#: ../src/preferences.c:2630
 #, fuzzy
 msgid "_Load reference data from language files"
 msgstr "vytvára sa hlavné gui..."
 
-#: ../src/preferences.c:2579
+#: ../src/preferences.c:2633
 #, fuzzy
 msgid "Show references in auto-completion _pop-up window"
 msgstr "/Dokument/_Automaticky odsazovať"
 
-#: ../src/preferences.c:2582
+#: ../src/preferences.c:2636
 msgid "Show references if mouse is over text editor"
 msgstr ""
 
-#: ../src/preferences.c:2591 ../src/preferences.c:2968
+#: ../src/preferences.c:2645 ../src/preferences.c:3044
 msgid "Font & Colors"
 msgstr ""
 
-#: ../src/preferences.c:2597
+#: ../src/preferences.c:2651
 #, fuzzy
 msgid "<b>Font &amp; Cursor</b>"
 msgstr "<b>Obsahuje</b>"
 
-#: ../src/preferences.c:2601
+#: ../src/preferences.c:2655
 #, fuzzy
 msgid "_Editor font:"
 msgstr "Nastaviť _ako predvolené"
 
-#: ../src/preferences.c:2609
+#: ../src/preferences.c:2663
 msgid "Cursor / font size ratio (%):"
 msgstr ""
 
-#: ../src/preferences.c:2611 ../src/preferences.c:2994
+#: ../src/preferences.c:2665 ../src/preferences.c:3070
 #, fuzzy
 msgid "<b>Colors</b>"
 msgstr "<b>Atribúty</b>"
 
-#: ../src/preferences.c:2615
+#: ../src/preferences.c:2669
 msgid "Use system wide color settings"
 msgstr ""
 
-#: ../src/preferences.c:2626
+#: ../src/preferences.c:2680
 #, fuzzy
 msgid "Cursor color"
 msgstr "Výber farby"
 
-#: ../src/preferences.c:2627
+#: ../src/preferences.c:2681
 #, fuzzy
 msgid "C_ursor color:"
 msgstr "Výber farby"
 
-#: ../src/preferences.c:2630
+#: ../src/preferences.c:2684
 #, fuzzy
 msgid "Selection background color"
 msgstr "Farba pozadia"
 
-#: ../src/preferences.c:2631
+#: ../src/preferences.c:2685
 #, fuzzy
 msgid "_Selection background color:"
 msgstr "Farba pozadia"
 
-#: ../src/preferences.c:2636
+#: ../src/preferences.c:2690
 #, fuzzy
 msgid "Highlight cursor position"
 msgstr "Predvolene zvýraznovať aktuálny riadok"
 
-#: ../src/preferences.c:2638
+#: ../src/preferences.c:2692
 #, fuzzy
 msgid "Cursor highlight color"
 msgstr "Výber farby"
 
-#: ../src/preferences.c:2639
+#: ../src/preferences.c:2693
 #, fuzzy
 msgid "_Cursor highlight color:"
 msgstr "Výber farby"
 
-#: ../src/preferences.c:2644
+#: ../src/preferences.c:2698
 #, fuzzy
 msgid "Current line color"
 msgstr "Výber farby"
 
-#: ../src/preferences.c:2645
+#: ../src/preferences.c:2699
 #, fuzzy
 msgid "Cu_rrent line color:"
 msgstr "Výber farby"
 
-#: ../src/preferences.c:2648
+#: ../src/preferences.c:2702
 msgid "Visible whitespace color"
 msgstr ""
 
-#: ../src/preferences.c:2649
+#: ../src/preferences.c:2703
 #, fuzzy
 msgid "_Visible whitespace color:"
 msgstr "Farba navštivené_ho odkazu:"
 
-#: ../src/preferences.c:2661
+#: ../src/preferences.c:2705
+msgid "<b>Import / export color profiles</b>"
+msgstr ""
+
+#: ../src/preferences.c:2706
+msgid ""
+"Color profiles set colors for the editor, user interface and all textstyles."
+msgstr ""
+
+#: ../src/preferences.c:2709
+msgid "Export"
+msgstr ""
+
+#: ../src/preferences.c:2716
+msgid "Import"
+msgstr ""
+
+#: ../src/preferences.c:2723
+msgid "Apply"
+msgstr ""
+
+#: ../src/preferences.c:2737
 msgid "Text styles"
 msgstr "Štýl textu"
 
-#: ../src/preferences.c:2663
+#: ../src/preferences.c:2739
 #, fuzzy
 msgid "<b>Text Styles</b>"
 msgstr "<b>Vlastn_osti</b>"
 
-#: ../src/preferences.c:2676
+#: ../src/preferences.c:2752
 msgid "Files"
 msgstr "Súbory"
 
-#: ../src/preferences.c:2679
+#: ../src/preferences.c:2755
 #, fuzzy
 msgid "<b>Encoding</b>"
 msgstr "Kódovanie"
 
-#: ../src/preferences.c:2695
+#: ../src/preferences.c:2771
 #, fuzzy
 msgid "_Default character set for new files:"
 msgstr "Predvolené kódovanie nových súborov"
 
-#: ../src/preferences.c:2701
+#: ../src/preferences.c:2777
 #, fuzzy
 msgid "Auto set <meta> _HTML tag on encoding change"
 msgstr "Automaticky aktualizovať <meta> HTML tag pri zmene kódovania"
 
-#: ../src/preferences.c:2705 ../src/preferences.c:2851
+#: ../src/preferences.c:2781 ../src/preferences.c:2927
 #, fuzzy
 msgid "<b>Misc</b>"
 msgstr "<b>Atribúty</b>"
 
-#: ../src/preferences.c:2708
+#: ../src/preferences.c:2784
 #, fuzzy
 msgid "Strip trailing spaces on save"
 msgstr "/Úpravy/Prepísať špeciálne/Na _Veľké písmena"
 
-#: ../src/preferences.c:2714
+#: ../src/preferences.c:2790
 #, fuzzy
 msgid "Open co_mmandline files in running bluefish process"
 msgstr "Otvárať súbory v už bežiacom Bluefishi"
 
-#: ../src/preferences.c:2719
+#: ../src/preferences.c:2795
 #, fuzzy
 msgid "Open commandline files in new _window"
 msgstr "Otvárať súbory v už bežiacom Bluefishi"
 
-#: ../src/preferences.c:2726
+#: ../src/preferences.c:2802
 #, fuzzy
 msgid "Check if file is modified on disk:"
 msgstr "Pravidelne kontrolovať, či sa súbor na disku neupravil"
 
-#: ../src/preferences.c:2732
+#: ../src/preferences.c:2808
 #, fuzzy
 msgid "File properties to check on dis_k for modifications:"
 msgstr "Zmenu súboru zistiť podľa"
 
-#: ../src/preferences.c:2736
+#: ../src/preferences.c:2812
 msgid "Show warning for files with very long lines"
 msgstr ""
 
-#: ../src/preferences.c:2746
+#: ../src/preferences.c:2822
 msgid "Backup & Recovery"
 msgstr ""
 
-#: ../src/preferences.c:2749
+#: ../src/preferences.c:2825
 #, fuzzy
 msgid "<b>Backup</b>"
 msgstr "Zálohy"
 
-#: ../src/preferences.c:2751
+#: ../src/preferences.c:2827
 #, fuzzy
 msgid "Create _backup file during file save"
 msgstr "Vytvárať zálohu pri ukladaní"
 
-#: ../src/preferences.c:2756
+#: ../src/preferences.c:2832
 #, fuzzy
 msgid "_Remove backup file on close"
 msgstr "Odstraňovať záložné súbory pri uzavrení"
 
-#: ../src/preferences.c:2761
+#: ../src/preferences.c:2837
 #, fuzzy
 msgid "If back_up fails:"
 msgstr "Ak sa nepodarí zálohovať"
 
-#: ../src/preferences.c:2768
+#: ../src/preferences.c:2844
 msgid "<b>Document Recovery</b>"
 msgstr ""
 
-#: ../src/preferences.c:2770
+#: ../src/preferences.c:2846
 msgid "_Enable recovery of modified documents"
 msgstr ""
 
-#: ../src/preferences.c:2774
+#: ../src/preferences.c:2850
 msgid "_Frequency to store changes (seconds):"
 msgstr ""
 
-#: ../src/preferences.c:2788 ../src/preferences.c:2789
+#: ../src/preferences.c:2864 ../src/preferences.c:2865
 msgid "File Associations"
 msgstr ""
 
-#: ../src/preferences.c:2807
+#: ../src/preferences.c:2883
 #, fuzzy
 msgid "Templates"
 msgstr "Ša_blona:"
 
-#: ../src/preferences.c:2810
+#: ../src/preferences.c:2886
 #, fuzzy
 msgid "<b>Templates</b>"
 msgstr "Ša_blona:"
 
-#: ../src/preferences.c:2823
+#: ../src/preferences.c:2899
 msgid "User interface"
 msgstr "Rozhranie"
 
-#: ../src/preferences.c:2826
+#: ../src/preferences.c:2902
 #, fuzzy
 msgid "<b>Layout</b>"
 msgstr "<b>Obsahuje</b>"
 
-#: ../src/preferences.c:2832
+#: ../src/preferences.c:2908
 #, fuzzy
 msgid "Document _tab position:"
 msgstr "Výber farby"
 
-#: ../src/preferences.c:2837
+#: ../src/preferences.c:2913
 msgid "Maximum filename length shown in tab (0 is no limit)"
 msgstr ""
 
-#: ../src/preferences.c:2843
+#: ../src/preferences.c:2919
 #, fuzzy
 msgid "_Sidebar position:"
 msgstr "Umíestnenie postranného panelu"
 
-#: ../src/preferences.c:2849
+#: ../src/preferences.c:2925
 #, fuzzy
 msgid "Sidebar tab _position:"
 msgstr "Pozicia tabu postranného panelu"
 
-#: ../src/preferences.c:2853
+#: ../src/preferences.c:2929
 msgid "Hide toolbars on full-screen"
 msgstr ""
 
-#: ../src/preferences.c:2862
+#: ../src/preferences.c:2938
 #, fuzzy
 msgid "User interface _language:"
 msgstr "Rozhranie"
 
-#: ../src/preferences.c:2865
+#: ../src/preferences.c:2941
 #, fuzzy
 msgid "<b>Recent Files</b>"
 msgstr "<b>Atribúty</b>"
 
-#: ../src/preferences.c:2870
+#: ../src/preferences.c:2946
 msgid "Recent files _shows:"
 msgstr ""
 
-#: ../src/preferences.c:2875
+#: ../src/preferences.c:2951
 #, fuzzy
 msgid "_Number of files in 'Open recent' menu:"
 msgstr "Počet súborov v 'Otvoriť nedávne'"
 
-#: ../src/preferences.c:2880
+#: ../src/preferences.c:2956
 msgid "_Register recent files with your desktop:"
 msgstr ""
 
-#: ../src/preferences.c:2891
+#: ../src/preferences.c:2967
 #, fuzzy
 msgid "Shortcut keys"
 msgstr "/Úpravy/Uložiť klávesové sk_ratky"
 
-#: ../src/preferences.c:2896
+#: ../src/preferences.c:2972
 #, fuzzy
 msgid "<b>Shortcut keys</b>"
 msgstr "<b>Obsahuje</b>"
 
-#: ../src/preferences.c:2900
+#: ../src/preferences.c:2976
 msgid "_Switch between tabs with <Alt>+0..9"
 msgstr ""
 
-#: ../src/preferences.c:2903
+#: ../src/preferences.c:2979
 msgid "_Switch between tabs with <Command>+0..9"
 msgstr ""
 
-#: ../src/preferences.c:2908
+#: ../src/preferences.c:2984
 msgid "Save menu accelerators on exit"
 msgstr ""
 
-#: ../src/preferences.c:2911
+#: ../src/preferences.c:2987
 msgid "Save user customised menu accelerators now"
 msgstr ""
 
-#: ../src/preferences.c:2915
+#: ../src/preferences.c:2991
 msgid "Reset menu accelerators to application defaults"
 msgstr ""
 
-#: ../src/preferences.c:2927
+#: ../src/preferences.c:3003
 msgid "Dimensions"
 msgstr "Dimenzia"
 
-#: ../src/preferences.c:2930
+#: ../src/preferences.c:3006
 #, fuzzy
 msgid "<b>Dimensions</b>"
 msgstr "Dimenzia"
 
-#: ../src/preferences.c:2932
+#: ../src/preferences.c:3008
 msgid "_Leave dimensions to window manager"
 msgstr ""
 
-#: ../src/preferences.c:2939
+#: ../src/preferences.c:3015
 #, fuzzy
 msgid "_Restore last used dimensions"
 msgstr "Obnoviť naposledy použité dimenzie"
 
-#: ../src/preferences.c:2947
+#: ../src/preferences.c:3023
 #, fuzzy
 msgid "Initial _sidebar width:"
 msgstr "Počiatočná šírka postranného panelu"
 
-#: ../src/preferences.c:2951
+#: ../src/preferences.c:3027
 #, fuzzy
 msgid "Initial window _height:"
 msgstr "Počiatočná výška okna"
 
-#: ../src/preferences.c:2954
+#: ../src/preferences.c:3030
 #, fuzzy
 msgid "Initial window _width:"
 msgstr "Počiatočná šířka okna"
 
-#: ../src/preferences.c:2961
+#: ../src/preferences.c:3037
 msgid "_Limit window title length"
 msgstr ""
 
-#: ../src/preferences.c:2974
+#: ../src/preferences.c:3050
 #, fuzzy
 msgid "<b>Document tab</b>"
 msgstr "<b>Obsahuje</b>"
 
-#: ../src/preferences.c:2979
+#: ../src/preferences.c:3055
 msgid "_Use system document tab font"
 msgstr ""
 
-#: ../src/preferences.c:2984
+#: ../src/preferences.c:3060
 #, fuzzy
 msgid "_Document tab font:"
 msgstr "Výber farby"
 
-#: ../src/preferences.c:2998
+#: ../src/preferences.c:3074
 #, fuzzy
 msgid "Document error tab color"
 msgstr "Pozicia tabu editoru"
 
-#: ../src/preferences.c:3000
+#: ../src/preferences.c:3076
 msgid "Document tab _error color:"
 msgstr ""
 
-#: ../src/preferences.c:3004
+#: ../src/preferences.c:3080
 #, fuzzy
 msgid "Document loading tab color"
 msgstr "Výber farby"
 
-#: ../src/preferences.c:3006
+#: ../src/preferences.c:3082
 #, fuzzy
 msgid "Document tab loadin_g color:"
 msgstr "Výber farby"
 
-#: ../src/preferences.c:3010
+#: ../src/preferences.c:3086
 #, fuzzy
 msgid "Document modified tab color"
 msgstr "Pozicia tabu editoru"
 
-#: ../src/preferences.c:3012
+#: ../src/preferences.c:3088
 msgid "Document tab _modified color:"
 msgstr ""
 
 #. arr = array_from_arglist(_("Java programming"),"1", "java:image:jsp", NULL);
 #. main_v->globses.filefilters = g_list_append(main_v->globses.filefilters, arr);
-#: ../src/preferences.c:3025 ../src/rcfile.c:1438
+#: ../src/preferences.c:3101 ../src/rcfile.c:1501
 msgid "Images"
 msgstr "Obrázky"
 
-#: ../src/preferences.c:3028
+#: ../src/preferences.c:3104
 #, fuzzy
 msgid "<b>Thumbnails</b>"
 msgstr "Náhľady"
 
-#: ../src/preferences.c:3034
+#: ../src/preferences.c:3110
 #, fuzzy
 msgid "Thumbnail _filetype:"
 msgstr "Typ súboru náhľadu"
 
-#: ../src/preferences.c:3038
+#: ../src/preferences.c:3114
 #, fuzzy
 msgid "Thumbnail _suffix:"
 msgstr "Prípona náhľadu"
 
-#: ../src/preferences.c:3051
+#: ../src/preferences.c:3127
 msgid "External commands"
 msgstr "Externé príkazy"
 
-#: ../src/preferences.c:3053
+#: ../src/preferences.c:3129
 #, fuzzy
 msgid "<b>External Commands</b>"
 msgstr "Externé príkazy"
 
-#: ../src/preferences.c:3066
+#: ../src/preferences.c:3142
 msgid "External filters"
 msgstr "Externé filtre"
 
-#: ../src/preferences.c:3069
+#: ../src/preferences.c:3145
 #, fuzzy
 msgid "<b>External Filters</b>"
 msgstr "Externé filtre"
 
-#: ../src/preferences.c:3082
+#: ../src/preferences.c:3158
 msgid "Output parsers"
 msgstr "Výstupné parsery"
 
-#: ../src/preferences.c:3084
+#: ../src/preferences.c:3160
 #, fuzzy
 msgid "<b>Output Parsers</b>"
 msgstr "Výstupné parsery"
 
-#: ../src/preferences.c:3097
+#: ../src/preferences.c:3173
 msgid "Plugins"
 msgstr "Zásuvné moduly"
 
-#: ../src/preferences.c:3099
+#: ../src/preferences.c:3175
 #, fuzzy
 msgid "<b>Plugins</b>"
 msgstr "<b>Atribúty</b>"
 
-#: ../src/preferences.c:3121
+#: ../src/preferences.c:3197
 #, fuzzy
 msgid "Language support"
 msgstr "Jazyk:"
@@ -3530,15 +3583,15 @@ msgstr "Zadajte meno súboru projektu Bluefish"
 msgid "Select Bluefish project filename"
 msgstr "Vyberte súbor projektu Bluefish"
 
-#: ../src/project.c:657
+#: ../src/project.c:655
 msgid "Create New Project"
 msgstr "Vytvoriť nový projekt"
 
-#: ../src/project.c:660
+#: ../src/project.c:658
 msgid "Edit Project"
 msgstr "Upraviť projekt"
 
-#: ../src/project.c:685
+#: ../src/project.c:683
 #, fuzzy, c-format
 msgid "This project contains %d file"
 msgid_plural "This project contains %d files"
@@ -3546,7 +3599,7 @@ msgstr[0] "Projekt obsahuje %d súborov"
 msgstr[1] "Projekt obsahuje %d súborov"
 msgstr[2] "Projekt obsahuje %d súborov"
 
-#: ../src/project.c:698
+#: ../src/project.c:696
 msgid "Project _Name:"
 msgstr "Názov projektu:"
 
@@ -3555,242 +3608,233 @@ msgstr "Názov projektu:"
 #. but = file_but_new(pred->entries[template], 1, NULL);
 #. gtk_table_attach_defaults(GTK_TABLE(table), pred->entries[template], 2, 3, 3, 4);
 #. gtk_table_attach_defaults(GTK_TABLE(table), but, 3, 4, 3, 4);
-#: ../src/project.c:706
+#: ../src/project.c:704
 msgid "<b>Project Defaults</b>"
 msgstr ""
 
-#: ../src/project.c:720
+#: ../src/project.c:718
 msgid "Create _Project"
 msgstr "Vytvoriť _projekt"
 
-#: ../src/project.c:769
+#: ../src/project.c:767
 msgid "Create project"
 msgstr "Vytvoriť projekt"
 
-#: ../src/project.c:774
+#: ../src/project.c:772
 msgid "Create project with currently opened documents"
 msgstr "Vytvoriť projekt s práve otvorenými dokumentami"
 
-#: ../src/project.c:776
+#: ../src/project.c:774
 msgid "Create empty project"
 msgstr "Vytvoriť prázdný projekt"
 
-#: ../src/rcfile.c:701 ../src/rcfile.c:729
+#: ../src/rcfile.c:708 ../src/rcfile.c:736
 msgid "php"
 msgstr "php"
 
-#: ../src/rcfile.c:707
+#: ../src/rcfile.c:714
 msgid "make"
 msgstr "make"
 
-#: ../src/rcfile.c:711
+#: ../src/rcfile.c:718
 msgid "weblint HTML checker"
 msgstr "weblint HTML parser"
 
-#: ../src/rcfile.c:716
+#: ../src/rcfile.c:723
 msgid "tidy HTML validator"
 msgstr "tidy HTML validátor"
 
-#: ../src/rcfile.c:720
+#: ../src/rcfile.c:727
 msgid "javac"
 msgstr "javac"
 
-#: ../src/rcfile.c:724
+#: ../src/rcfile.c:731
 msgid "xmllint XML checker"
 msgstr "xmllint XML parser"
 
-#: ../src/rcfile.c:733
+#: ../src/rcfile.c:740
 msgid "php syntax check"
 msgstr ""
 
-#: ../src/rcfile.c:737
+#: ../src/rcfile.c:744
 #, fuzzy
 msgid "perl syntax check"
 msgstr "Kontrola pravopisu..."
 
-#: ../src/rcfile.c:741
+#: ../src/rcfile.c:748
 msgid "php codesniffer"
 msgstr ""
 
-#: ../src/rcfile.c:745
+#: ../src/rcfile.c:752
 msgid "pylint"
 msgstr ""
 
-#: ../src/rcfile.c:758
+#: ../src/rcfile.c:765
 #, fuzzy
 msgid "Sort"
 msgstr " Triediť "
 
-#: ../src/rcfile.c:761
+#: ../src/rcfile.c:768
 msgid "Sort / Uniq"
 msgstr ""
 
-#: ../src/rcfile.c:764
+#: ../src/rcfile.c:771
 #, fuzzy
 msgid "Reverse lines"
 msgstr "Relacia V_zad:"
 
-#: ../src/rcfile.c:767
+#: ../src/rcfile.c:774
 #, fuzzy
 msgid "Dos2unix"
 msgstr "Dos2Unix filtr"
 
-#: ../src/rcfile.c:769
+#: ../src/rcfile.c:776
 #, fuzzy
 msgid "Tidy HTML"
 msgstr "HTML"
 
-#: ../src/rcfile.c:771
+#: ../src/rcfile.c:778
 #, fuzzy
 msgid "Tidy convert to XHTML"
 msgstr "HTML"
 
-#: ../src/rcfile.c:774
+#: ../src/rcfile.c:781
 #, fuzzy
 msgid "Tidy HTML (perltidy)"
 msgstr "HTML"
 
-#: ../src/rcfile.c:777
+#: ../src/rcfile.c:784
 msgid "Strip empty lines"
 msgstr ""
 
-#: ../src/rcfile.c:780
+#: ../src/rcfile.c:787
 #, fuzzy
 msgid "Render HTML to text"
 msgstr "Vložiť čas"
 
-#: ../src/rcfile.c:783
+#: ../src/rcfile.c:790
 msgid "PHP Beautifier"
 msgstr ""
 
-#: ../src/rcfile.c:787 ../src/rcfile.c:794
+#: ../src/rcfile.c:794 ../src/rcfile.c:804
 msgid "Javascript Minify with jsmin"
 msgstr ""
 
-#: ../src/rcfile.c:790 ../src/rcfile.c:797
-#, fuzzy
-msgid "Toggle CSS compression"
-msgstr "/Dokument/Poč_et slov"
+#: ../src/rcfile.c:797 ../src/rcfile.c:807
+msgid "Decompress CSS"
+msgstr ""
 
-#: ../src/rcfile.c:801
+#: ../src/rcfile.c:800 ../src/rcfile.c:810
+msgid "Compress CSS"
+msgstr ""
+
+#: ../src/rcfile.c:814
 #, fuzzy
 msgid "CSS tidy"
 msgstr " CSS "
 
-#: ../src/rcfile.c:813
-msgid "Windows XP Firefox"
-msgstr ""
-
-#: ../src/rcfile.c:818
-msgid "Windows XP Internet Explorer"
-msgstr ""
-
-#: ../src/rcfile.c:823
-msgid "Windows XP Opera"
-msgstr ""
-
-#: ../src/rcfile.c:827
-msgid "Windows XP Safari"
-msgstr ""
-
-#: ../src/rcfile.c:831
+#: ../src/rcfile.c:841 ../src/rcfile.c:846
 msgid "Windows 7 Firefox 32-bit"
 msgstr ""
 
-#: ../src/rcfile.c:836
+#: ../src/rcfile.c:842
+msgid "Windows 7 Firefox"
+msgstr ""
+
+#: ../src/rcfile.c:851
 msgid "Windows 7 Internet Explorer 32-bit"
 msgstr ""
 
-#: ../src/rcfile.c:841
+#: ../src/rcfile.c:856
 msgid "Windows 7 Internet Explorer 64-bit"
 msgstr ""
 
-#: ../src/rcfile.c:847
+#: ../src/rcfile.c:862
 msgid "Safari"
 msgstr ""
 
-#: ../src/rcfile.c:850 ../src/rcfile.c:866
+#: ../src/rcfile.c:865 ../src/rcfile.c:881
 msgid "Firefox"
 msgstr ""
 
-#: ../src/rcfile.c:853
+#: ../src/rcfile.c:868
 #, fuzzy
 msgid "Google Chrome"
 msgstr "/Dokument/Poč_et slov"
 
-#: ../src/rcfile.c:856 ../src/rcfile.c:874
+#: ../src/rcfile.c:871 ../src/rcfile.c:888
 msgid "Chromium"
 msgstr ""
 
-#: ../src/rcfile.c:859 ../src/rcfile.c:870
+#: ../src/rcfile.c:874 ../src/rcfile.c:884
 msgid "Opera"
 msgstr "Opera"
 
-#: ../src/rcfile.c:862 ../src/rcfile.c:889
+#: ../src/rcfile.c:877 ../src/rcfile.c:903
 msgid "chmod a+x"
 msgstr ""
 
-#: ../src/rcfile.c:877
+#: ../src/rcfile.c:891
 msgid "Konqueror"
 msgstr ""
 
-#: ../src/rcfile.c:880
+#: ../src/rcfile.c:894
 msgid "Epiphany"
 msgstr ""
 
-#: ../src/rcfile.c:883
+#: ../src/rcfile.c:897
 msgid "Kazehakase"
 msgstr ""
 
-#: ../src/rcfile.c:886
+#: ../src/rcfile.c:900
 msgid "Links2 (graphics)"
 msgstr ""
 
-#: ../src/rcfile.c:938
+#: ../src/rcfile.c:952
 #, fuzzy
 msgid "C Header"
 msgstr "Hlavička tabuľky"
 
-#: ../src/rcfile.c:941
+#: ../src/rcfile.c:955
 msgid "C Header GPL"
 msgstr ""
 
-#: ../src/rcfile.c:944
+#: ../src/rcfile.c:958
 #, fuzzy
 msgid "XHTML 1.0"
 msgstr "HTML"
 
-#: ../src/rcfile.c:947
+#: ../src/rcfile.c:961
 #, fuzzy
 msgid "HTML 5"
 msgstr "HTML"
 
-#: ../src/rcfile.c:950
+#: ../src/rcfile.c:964
 msgid "PHP"
 msgstr ""
 
-#: ../src/rcfile.c:953
+#: ../src/rcfile.c:967
 msgid "LaTex Book"
 msgstr ""
 
-#: ../src/rcfile.c:956
+#: ../src/rcfile.c:970
 #, fuzzy
 msgid "LaTex Presentation"
 msgstr "Orientácia:"
 
-#: ../src/rcfile.c:1323
+#: ../src/rcfile.c:1386
 msgid "Untitled Project"
 msgstr "Nepomenovaný Projekt"
 
-#: ../src/rcfile.c:1430
+#: ../src/rcfile.c:1493
 msgid "C programming"
 msgstr "Programovanie v C"
 
-#: ../src/rcfile.c:1434
+#: ../src/rcfile.c:1497
 msgid "Web files"
 msgstr "Webové súbory"
 
-#: ../src/rcfile.c:1441
+#: ../src/rcfile.c:1504
 msgid "Hide objectfiles"
 msgstr "Skrýť objektové súbory"
 
@@ -4192,6 +4236,16 @@ msgstr ""
 #: ../src/xmlstrings.h:45
 msgid "Tag block-start includes all attributes"
 msgstr ""
+
+#~ msgid "Can't add bookmark"
+#~ msgstr "Nemôžem pridať záložku"
+
+#~ msgid "You already have a bookmark here!"
+#~ msgstr "Na tomto mieste už záložku máte!"
+
+#, fuzzy
+#~ msgid "Toggle CSS compression"
+#~ msgstr "/Dokument/Poč_et slov"
 
 #, fuzzy
 #~ msgid "_Outputbox"
