@@ -5,6 +5,7 @@
 # Stefano Canepa <sc@linux.it> 2003, 2004
 # Roberto Bellingeri <bellingeri@netguru.it> 2010-2012
 #
+#: ../src/xmlstrings.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.4\n"

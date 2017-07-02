@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.10\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-10-13 10:34+0200\n"
+"POT-Creation-Date: 2017-06-21 09:22+0900\n"
 "PO-Revision-Date: 2017-01-26 23:26+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1116,57 +1116,57 @@ msgstr "Szín beszúrása"
 msgid "_HTML Toolbar"
 msgstr "_HTML eszköztár"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1335
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1339
 msgid "Add to Quickbar"
 msgstr "Hozzáadás a gyorsmenühöz"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1335
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1339
 msgid "Remove from Quickbar"
 msgstr "Eltávolítás a gyorsmenüből"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1373
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1381
 msgid "Right click any html toolbar button to add it to the Quickbar."
 msgstr ""
 "Bármely HTML eszköztár gombra jobb egérgombbal kattintva hozzáadható a "
 "gyorsmenühöz."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1464
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1472
 msgid "Quickbar"
 msgstr "Gyorsmenü"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1467
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1475
 msgid "Standard"
 msgstr "Alap eszköztár"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1481
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1489
 msgid "HTML 5"
 msgstr " HTML 5"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1484
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1492
 msgid "Formatting"
 msgstr " Formázás"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1487
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1495
 msgid "Tables"
 msgstr "Táblázatok"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1490
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1498
 msgid "List"
 msgstr "Lista"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1493
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1501
 msgid "CSS"
 msgstr "CSS"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1496
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1504
 msgid "Forms"
 msgstr "Űrlapok"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1499
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1507
 msgid "Fonts"
 msgstr "Betűk"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1502
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1510
 msgid "Frames"
 msgstr "Keretek"
 
@@ -1250,7 +1250,7 @@ msgstr "_Cél:"
 #: src/plugin_htmlbar/html.c:1326 src/plugin_htmlbar/html.c:1804
 #: src/plugin_htmlbar/html_form.c:251 src/plugin_htmlbar/html_form.c:315
 #: src/plugin_htmlbar/html_form.c:538 src/plugin_htmlbar/html_form.c:633
-#: src/plugin_htmlbar/image.c:532
+#: src/plugin_htmlbar/image.c:533
 msgid "_Name:"
 msgstr "_Név:"
 
@@ -1273,7 +1273,7 @@ msgstr "Nye_lv:"
 #: src/plugin_htmlbar/html_form.c:267 src/plugin_htmlbar/html_form.c:328
 #: src/plugin_htmlbar/html_form.c:645 src/plugin_htmlbar/html_table.c:136
 #: src/plugin_htmlbar/html_table.c:283 src/plugin_htmlbar/html_table.c:419
-#: src/plugin_htmlbar/image.c:538 src/plugin_htmlbar/image_dialog.c:428
+#: src/plugin_htmlbar/image.c:539 src/plugin_htmlbar/image_dialog.c:428
 msgid "Custo_m:"
 msgstr "_Egyéb:"
 
@@ -1382,7 +1382,7 @@ msgstr "_Azonosító:"
 msgid "Horizontal Rule"
 msgstr "Vízszintes vonal"
 
-#: src/plugin_htmlbar/html.c:1081 src/plugin_htmlbar/image.c:555
+#: src/plugin_htmlbar/html.c:1081 src/plugin_htmlbar/image.c:556
 #: src/plugin_htmlbar/image_dialog.c:451
 msgid "_Align:"
 msgstr "Ig_azítás:"
@@ -1396,7 +1396,7 @@ msgstr "_Magasság:"
 #. gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spin2), 1);
 #: src/plugin_htmlbar/html.c:1094 src/plugin_htmlbar/html.c:2001
 #: src/plugin_htmlbar/html.c:2105 src/plugin_htmlbar/html.c:2263
-#: src/plugin_htmlbar/image.c:517 src/plugin_htmlbar/image_dialog.c:365
+#: src/plugin_htmlbar/image.c:518 src/plugin_htmlbar/image_dialog.c:365
 msgid "_Width:"
 msgstr "_Szélesség:"
 
@@ -1960,88 +1960,88 @@ msgid "<span color=\"red\">_Height:</span>"
 msgstr "<span color=\"red\">_Magasság:</span>"
 
 #. TODO: use error info in gerror
-#: src/plugin_htmlbar/image.c:334
+#: src/plugin_htmlbar/image.c:335
 msgid "Loading image failed..."
 msgstr "Kép betöltése sikertelen…"
 
-#: src/plugin_htmlbar/image.c:417
+#: src/plugin_htmlbar/image.c:418
 #, c-format
 msgid "Loading file %s..."
 msgstr "%s betöltése…"
 
-#: src/plugin_htmlbar/image.c:482
+#: src/plugin_htmlbar/image.c:483
 msgid "Insert thumbnail"
 msgstr "Bélyegkép beszúrása"
 
-#: src/plugin_htmlbar/image.c:486 src/plugin_htmlbar/image_dialog.c:344
+#: src/plugin_htmlbar/image.c:487 src/plugin_htmlbar/image_dialog.c:344
 msgid "Preview"
 msgstr "Előnézet"
 
-#: src/plugin_htmlbar/image.c:509
+#: src/plugin_htmlbar/image.c:510
 msgid "_Image location:"
 msgstr "_Kép helye:"
 
-#: src/plugin_htmlbar/image.c:524
+#: src/plugin_htmlbar/image.c:525
 msgid "Hei_ght:"
 msgstr "Ma_gasság:"
 
-#: src/plugin_htmlbar/image.c:529 src/plugin_htmlbar/image_dialog.c:417
+#: src/plugin_htmlbar/image.c:530 src/plugin_htmlbar/image_dialog.c:417
 msgid "_Usemap:"
 msgstr "_Usemap:"
 
-#: src/plugin_htmlbar/image.c:535
+#: src/plugin_htmlbar/image.c:536
 msgid "Alternate _text:"
 msgstr "Helye_ttesítő szöveg:"
 
-#: src/plugin_htmlbar/image.c:541 src/plugin_htmlbar/image_dialog.c:460
+#: src/plugin_htmlbar/image.c:542 src/plugin_htmlbar/image_dialog.c:460
 msgid "_Hspace:"
 msgstr "_Hspace:"
 
-#: src/plugin_htmlbar/image.c:545 src/plugin_htmlbar/image_dialog.c:464
+#: src/plugin_htmlbar/image.c:546 src/plugin_htmlbar/image_dialog.c:464
 msgid "_Vspace:"
 msgstr "_Vspace:"
 
-#: src/plugin_htmlbar/image.c:559
+#: src/plugin_htmlbar/image.c:560
 msgid "Borde_r:"
 msgstr "S_zegély:"
 
-#: src/plugin_htmlbar/image.c:974
+#: src/plugin_htmlbar/image.c:975
 msgid "Select files for thumbnail creation"
 msgstr "Fájlok kiválasztása bélyegkép készítéséhez"
 
-#: src/plugin_htmlbar/image.c:1016
+#: src/plugin_htmlbar/image.c:1017
 msgid "Scaling (%)"
 msgstr "Átméretezés (%)"
 
-#: src/plugin_htmlbar/image.c:1020 src/plugin_htmlbar/image.c:1028
+#: src/plugin_htmlbar/image.c:1021 src/plugin_htmlbar/image.c:1029
 msgid "Width"
 msgstr "Szélesség"
 
-#: src/plugin_htmlbar/image.c:1024 src/plugin_htmlbar/image.c:1070
+#: src/plugin_htmlbar/image.c:1025 src/plugin_htmlbar/image.c:1071
 msgid "Height"
 msgstr "Magasság"
 
-#: src/plugin_htmlbar/image.c:1053
+#: src/plugin_htmlbar/image.c:1054
 msgid "Multi thumbnail"
 msgstr "Több bélyegkép"
 
-#: src/plugin_htmlbar/image.c:1059
+#: src/plugin_htmlbar/image.c:1060
 msgid "By scaling"
 msgstr "Méretezéssel"
 
-#: src/plugin_htmlbar/image.c:1062
+#: src/plugin_htmlbar/image.c:1063
 msgid "By width, keep aspect ratio"
 msgstr "Szélesség szerint, aránytartással"
 
-#: src/plugin_htmlbar/image.c:1065
+#: src/plugin_htmlbar/image.c:1066
 msgid "By height, keep aspect ratio"
 msgstr "Magasság szerint, aránytartással"
 
-#: src/plugin_htmlbar/image.c:1068
+#: src/plugin_htmlbar/image.c:1069
 msgid "By width and height, ignore aspect ratio"
 msgstr "Szélesség és magasság szerint, arány figyelmen kívül hagyásával"
 
-#: src/plugin_htmlbar/image.c:1094
+#: src/plugin_htmlbar/image.c:1095
 msgid ""
 "%r: original filename  %t: thumbnail filename\n"
 "%w: original width  %h: original height\n"
@@ -2289,4 +2289,3 @@ msgstr "Automatikusan frissítse a _date metaelemet"
 #: src/plugin_htmlbar/prefs.c:101
 msgid "Automatically update _generator meta tag"
 msgstr "Automatikusan frissítse a _generator metaelemet"
-

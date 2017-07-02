@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.10\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-06-16 09:51+0200\n"
+"POT-Creation-Date: 2017-06-21 09:22+0900\n"
 "PO-Revision-Date: 2016-12-22 22:37+0900\n"
 "Last-Translator: Takeshi Hamasaki <hmatrjp@users.sourceforge.jp>\n"
 "Language-Team: \n"
@@ -929,13 +929,11 @@ msgstr "複数のサムネイル(_M)..."
 msgid "Multi thumbnail..."
 msgstr "複数のサムネイル..."
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1163
-#: src/plugin_htmlbar/html.c:1792
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1163 src/plugin_htmlbar/html.c:1792
 msgid "Frame"
 msgstr "フレーム"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1164
-#: src/plugin_htmlbar/html.c:1703
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1164 src/plugin_htmlbar/html.c:1703
 msgid "Frameset"
 msgstr "フレームセット"
 
@@ -1120,55 +1118,55 @@ msgstr "色を挿入"
 msgid "_HTML Toolbar"
 msgstr "_HTMLツールバー"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1335
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1339
 msgid "Add to Quickbar"
 msgstr "クイックバーに追加"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1335
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1339
 msgid "Remove from Quickbar"
 msgstr "クイックバーから削除"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1373
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1381
 msgid "Right click any html toolbar button to add it to the Quickbar."
 msgstr "HTMLバーのボタンは、右クリックするとクイックバーに追加されます"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1464
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1472
 msgid "Quickbar"
 msgstr "クイックバー"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1467
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1475
 msgid "Standard"
 msgstr "標準"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1481
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1489
 msgid "HTML 5"
 msgstr "HTML 5"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1484
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1492
 msgid "Formatting"
 msgstr "書式指定"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1487
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1495
 msgid "Tables"
 msgstr "表"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1490
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1498
 msgid "List"
 msgstr "リスト"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1493
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1501
 msgid "CSS"
 msgstr "CSS"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1496
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1504
 msgid "Forms"
 msgstr "フォーム"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1499
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1507
 msgid "Fonts"
 msgstr "フォント"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1502
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1510
 msgid "Frames"
 msgstr "フレーム"
 
@@ -1252,7 +1250,7 @@ msgstr "ターゲット(_T):"
 #: src/plugin_htmlbar/html.c:1326 src/plugin_htmlbar/html.c:1804
 #: src/plugin_htmlbar/html_form.c:251 src/plugin_htmlbar/html_form.c:315
 #: src/plugin_htmlbar/html_form.c:538 src/plugin_htmlbar/html_form.c:633
-#: src/plugin_htmlbar/image.c:532
+#: src/plugin_htmlbar/image.c:533
 msgid "_Name:"
 msgstr "名前(_N):"
 
@@ -1275,7 +1273,7 @@ msgstr "言語(_L):"
 #: src/plugin_htmlbar/html_form.c:267 src/plugin_htmlbar/html_form.c:328
 #: src/plugin_htmlbar/html_form.c:645 src/plugin_htmlbar/html_table.c:136
 #: src/plugin_htmlbar/html_table.c:283 src/plugin_htmlbar/html_table.c:419
-#: src/plugin_htmlbar/image.c:538 src/plugin_htmlbar/image_dialog.c:428
+#: src/plugin_htmlbar/image.c:539 src/plugin_htmlbar/image_dialog.c:428
 msgid "Custo_m:"
 msgstr "カスタム(_M):"
 
@@ -1384,7 +1382,7 @@ msgstr "_ID:"
 msgid "Horizontal Rule"
 msgstr "水平線"
 
-#: src/plugin_htmlbar/html.c:1081 src/plugin_htmlbar/image.c:555
+#: src/plugin_htmlbar/html.c:1081 src/plugin_htmlbar/image.c:556
 #: src/plugin_htmlbar/image_dialog.c:451
 msgid "_Align:"
 msgstr "配置(_A):"
@@ -1398,7 +1396,7 @@ msgstr "高さ(_H):"
 #. gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spin2), 1);
 #: src/plugin_htmlbar/html.c:1094 src/plugin_htmlbar/html.c:2001
 #: src/plugin_htmlbar/html.c:2105 src/plugin_htmlbar/html.c:2263
-#: src/plugin_htmlbar/image.c:517 src/plugin_htmlbar/image_dialog.c:365
+#: src/plugin_htmlbar/image.c:518 src/plugin_htmlbar/image_dialog.c:365
 msgid "_Width:"
 msgstr "幅(_W):"
 
@@ -1654,8 +1652,8 @@ msgstr ""
 "hh - 時(24時間制) (例 10.00pm なら 22)\n"
 "mm - 分 (例 55)\n"
 "ss -　秒 (例 03)\n"
-"TZD - タイムゾーン (Z は ズールー時間, より一般的には グリニッジ標準時 とし"
-"て知られている時間帯を表します)\n"
+"TZD - タイムゾーン (Z は ズールー時間, より一般的には グリニッジ標準時 として"
+"知られている時間帯を表します)\n"
 
 #: src/plugin_htmlbar/html.c:2194
 msgid "_Datetime:"
@@ -1962,88 +1960,88 @@ msgid "<span color=\"red\">_Height:</span>"
 msgstr "<span color=\"red\">高さ(_Height):</span>"
 
 #. TODO: use error info in gerror
-#: src/plugin_htmlbar/image.c:334
+#: src/plugin_htmlbar/image.c:335
 msgid "Loading image failed..."
 msgstr "画像の読み込みに失敗しました..."
 
-#: src/plugin_htmlbar/image.c:417
+#: src/plugin_htmlbar/image.c:418
 #, c-format
 msgid "Loading file %s..."
 msgstr "ファイル %s を読み込み中..."
 
-#: src/plugin_htmlbar/image.c:482
+#: src/plugin_htmlbar/image.c:483
 msgid "Insert thumbnail"
 msgstr "サムネイルでイメージを挿入"
 
-#: src/plugin_htmlbar/image.c:486 src/plugin_htmlbar/image_dialog.c:344
+#: src/plugin_htmlbar/image.c:487 src/plugin_htmlbar/image_dialog.c:344
 msgid "Preview"
 msgstr "プレビュー"
 
-#: src/plugin_htmlbar/image.c:509
+#: src/plugin_htmlbar/image.c:510
 msgid "_Image location:"
 msgstr "画像のある場所(_I):"
 
-#: src/plugin_htmlbar/image.c:524
+#: src/plugin_htmlbar/image.c:525
 msgid "Hei_ght:"
 msgstr "高さ(_G):"
 
-#: src/plugin_htmlbar/image.c:529 src/plugin_htmlbar/image_dialog.c:417
+#: src/plugin_htmlbar/image.c:530 src/plugin_htmlbar/image_dialog.c:417
 msgid "_Usemap:"
 msgstr "map利用(_U):"
 
-#: src/plugin_htmlbar/image.c:535
+#: src/plugin_htmlbar/image.c:536
 msgid "Alternate _text:"
 msgstr "代替テキスト(_T):"
 
-#: src/plugin_htmlbar/image.c:541 src/plugin_htmlbar/image_dialog.c:460
+#: src/plugin_htmlbar/image.c:542 src/plugin_htmlbar/image_dialog.c:460
 msgid "_Hspace:"
 msgstr "横方向スペース(_H):"
 
-#: src/plugin_htmlbar/image.c:545 src/plugin_htmlbar/image_dialog.c:464
+#: src/plugin_htmlbar/image.c:546 src/plugin_htmlbar/image_dialog.c:464
 msgid "_Vspace:"
 msgstr "縦方向スペース(_V):"
 
-#: src/plugin_htmlbar/image.c:559
+#: src/plugin_htmlbar/image.c:560
 msgid "Borde_r:"
 msgstr "ボーダー(_R):"
 
-#: src/plugin_htmlbar/image.c:974
+#: src/plugin_htmlbar/image.c:975
 msgid "Select files for thumbnail creation"
 msgstr "サムネイルを作成するファイルの選択"
 
-#: src/plugin_htmlbar/image.c:1016
+#: src/plugin_htmlbar/image.c:1017
 msgid "Scaling (%)"
 msgstr "倍率 (%)"
 
-#: src/plugin_htmlbar/image.c:1020 src/plugin_htmlbar/image.c:1028
+#: src/plugin_htmlbar/image.c:1021 src/plugin_htmlbar/image.c:1029
 msgid "Width"
 msgstr "幅"
 
-#: src/plugin_htmlbar/image.c:1024 src/plugin_htmlbar/image.c:1070
+#: src/plugin_htmlbar/image.c:1025 src/plugin_htmlbar/image.c:1071
 msgid "Height"
 msgstr "高さ"
 
-#: src/plugin_htmlbar/image.c:1053
+#: src/plugin_htmlbar/image.c:1054
 msgid "Multi thumbnail"
 msgstr "複数のサムネイル"
 
-#: src/plugin_htmlbar/image.c:1059
+#: src/plugin_htmlbar/image.c:1060
 msgid "By scaling"
 msgstr "倍率を指定する"
 
-#: src/plugin_htmlbar/image.c:1062
+#: src/plugin_htmlbar/image.c:1063
 msgid "By width, keep aspect ratio"
 msgstr "幅を指定して縦横比を保持する"
 
-#: src/plugin_htmlbar/image.c:1065
+#: src/plugin_htmlbar/image.c:1066
 msgid "By height, keep aspect ratio"
 msgstr "高さを指定して縦横比を保持する"
 
-#: src/plugin_htmlbar/image.c:1068
+#: src/plugin_htmlbar/image.c:1069
 msgid "By width and height, ignore aspect ratio"
 msgstr "幅と高さを指定して縦横比を無視する"
 
-#: src/plugin_htmlbar/image.c:1094
+#: src/plugin_htmlbar/image.c:1095
 msgid ""
 "%r: original filename  %t: thumbnail filename\n"
 "%w: original width  %h: original height\n"

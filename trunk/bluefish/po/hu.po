@@ -2,9 +2,9 @@
 # Copyright (C) 2000-2017 Free Software Foundation, Inc.
 # This file is distributed under the same license as the Bluefish package.
 #
-#: ../src/xmlstrings.h:1
 # Péter Sáska <sasek@acolyte.hu>, 2000, 2001, 2002, 2003.
 # Balázs Úr <urbalazs@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2017.
+#: ../src/xmlstrings.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.10\n"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 17-01-06_sk-2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-06-16 09:51+0200\n"
+"POT-Creation-Date: 2017-06-21 09:22+0900\n"
 "PO-Revision-Date: 2006-01-18 14:51+0100\n"
 "Last-Translator: Vladimir VASIL <vvasil@post.sk>\n"
 "Language-Team:  <sk@li.org>\n"
@@ -19,134 +19,134 @@ msgstr ""
 "First-Translator: Vladimir VASIL <vvasil@post.sk>\n"
 "X-Generator: KBabel 1.10\n"
 
-#: src/plugin_snippets/snippets_gui.c:424
+#: src/plugin_snippets/snippets_gui.c:428
 msgid "Click the right mouse button to add, edit or delete snippets."
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:425
+#: src/plugin_snippets/snippets_gui.c:429
 msgid "Use drag and drop to re-order snippets"
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:426
+#: src/plugin_snippets/snippets_gui.c:430
 msgid "To exchange snippets with others use import or export"
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:646
+#: src/plugin_snippets/snippets_gui.c:650
 msgid "snippets"
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:709
+#: src/plugin_snippets/snippets_gui.c:713
 msgid "Snippet export filename"
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:747
+#: src/plugin_snippets/snippets_gui.c:751
 msgid "Snippet import filename"
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:765
+#: src/plugin_snippets/snippets_gui.c:769
 msgid "Set accelerator key"
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:822
+#: src/plugin_snippets/snippets_gui.c:826
 msgid "Snippets menu"
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:823
+#: src/plugin_snippets/snippets_gui.c:827
 #, fuzzy
 msgid "_New Snippet"
 msgstr "/_Vytvoriť adresár"
 
-#: src/plugin_snippets/snippets_gui.c:823
+#: src/plugin_snippets/snippets_gui.c:827
 #: src/plugin_snippets/snippets_wizard.c:754
 #, fuzzy
 msgid "New snippet"
 msgstr "Nový projekt"
 
-#: src/plugin_snippets/snippets_gui.c:824
+#: src/plugin_snippets/snippets_gui.c:828
 #, fuzzy
 msgid "_Edit Snippet"
 msgstr "/_Zmazať"
 
-#: src/plugin_snippets/snippets_gui.c:824
+#: src/plugin_snippets/snippets_gui.c:828
 #: src/plugin_snippets/snippets_wizard.c:754
 #, fuzzy
 msgid "Edit snippet"
 msgstr "Nový projekt"
 
-#: src/plugin_snippets/snippets_gui.c:825
+#: src/plugin_snippets/snippets_gui.c:829
 #, fuzzy
 msgid "_Delete Snippet"
 msgstr "/_Zmazať"
 
-#: src/plugin_snippets/snippets_gui.c:825
+#: src/plugin_snippets/snippets_gui.c:829
 #, fuzzy
 msgid "Delete snippet"
 msgstr "/_Zmazať"
 
-#: src/plugin_snippets/snippets_gui.c:826
+#: src/plugin_snippets/snippets_gui.c:830
 #, fuzzy
 msgid "Delete _Branch"
 msgstr "Zmazať všetko"
 
-#: src/plugin_snippets/snippets_gui.c:826
+#: src/plugin_snippets/snippets_gui.c:830
 #, fuzzy
 msgid "Delete branch"
 msgstr "Zmazať všetko"
 
-#: src/plugin_snippets/snippets_gui.c:827
+#: src/plugin_snippets/snippets_gui.c:831
 msgid "Set Snippet _Accelerator"
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:827
+#: src/plugin_snippets/snippets_gui.c:831
 msgid "Set snippet accelerator"
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:829
+#: src/plugin_snippets/snippets_gui.c:833
 msgid "Ex_pand All"
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:829
+#: src/plugin_snippets/snippets_gui.c:833
 msgid "Expand all"
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:830
+#: src/plugin_snippets/snippets_gui.c:834
 #, fuzzy
 msgid "_Collapse All"
 msgstr "Zavri_eť všetko"
 
-#: src/plugin_snippets/snippets_gui.c:830
+#: src/plugin_snippets/snippets_gui.c:834
 #, fuzzy
 msgid "Collapse all"
 msgstr "Zavri_eť všetko"
 
-#: src/plugin_snippets/snippets_gui.c:831
+#: src/plugin_snippets/snippets_gui.c:835
 msgid "E_xport"
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:831
+#: src/plugin_snippets/snippets_gui.c:835
 #, fuzzy
 msgid "Export snippets"
 msgstr "Nový projekt"
 
-#: src/plugin_snippets/snippets_gui.c:832
+#: src/plugin_snippets/snippets_gui.c:836
 msgid "I_mport"
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:832
+#: src/plugin_snippets/snippets_gui.c:836
 #, fuzzy
 msgid "Import snippets"
 msgstr "Nový projekt"
 
-#: src/plugin_snippets/snippets_gui.c:836
+#: src/plugin_snippets/snippets_gui.c:840
 msgid "_Show as menu"
 msgstr ""
 
-#: src/plugin_snippets/snippets_gui.c:836
+#: src/plugin_snippets/snippets_gui.c:840
 #, fuzzy
 msgid "Show snippets menu"
 msgstr "Nový projekt"
 
-#: src/plugin_snippets/snippets_gui.c:838
+#: src/plugin_snippets/snippets_gui.c:842
 #, fuzzy
 msgid "S_nippets Menu"
 msgstr "Nový projekt"

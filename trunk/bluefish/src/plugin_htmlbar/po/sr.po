@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: last_sr\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-06-16 09:51+0200\n"
+"POT-Creation-Date: 2017-06-21 09:22+0900\n"
 "PO-Revision-Date: 2004-11-27 11:08+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <en@li.org>\n"
@@ -1263,66 +1263,66 @@ msgstr "Ubaci"
 msgid "_HTML Toolbar"
 msgstr "/Pogledaj/Pogledaj glavni meni"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1335
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1339
 #, fuzzy
 msgid "Add to Quickbar"
 msgstr "Dodaj u quickbar"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1335
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1339
 #, fuzzy
 msgid "Remove from Quickbar"
 msgstr "Premesti iz quickbar-a"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1373
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1381
 msgid "Right click any html toolbar button to add it to the Quickbar."
 msgstr ""
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1464
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1472
 #, fuzzy
 msgid "Quickbar"
 msgstr "Quick-bar "
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1467
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1475
 #, fuzzy
 msgid "Standard"
 msgstr "Standardni meni "
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1481
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1489
 #, fuzzy
 msgid "HTML 5"
 msgstr "HTML"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1484
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1492
 #, fuzzy
 msgid "Formatting"
 msgstr "Uredi niz posle"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1487
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1495
 #, fuzzy
 msgid "Tables"
 msgstr "Tabela"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1490
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1498
 #, fuzzy
 msgid "List"
 msgstr " Lista "
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1493
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1501
 #, fuzzy
 msgid "CSS"
 msgstr " CSS "
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1496
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1504
 #, fuzzy
 msgid "Forms"
 msgstr "Obrazac"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1499
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1507
 #, fuzzy
 msgid "Fonts"
 msgstr "Slova"
 
-#: src/plugin_htmlbar/htmlbar_uimanager.c:1502
+#: src/plugin_htmlbar/htmlbar_uimanager.c:1510
 #, fuzzy
 msgid "Frames"
 msgstr "Okviri"
@@ -1408,7 +1408,7 @@ msgstr "_Meta:"
 #: src/plugin_htmlbar/html.c:1326 src/plugin_htmlbar/html.c:1804
 #: src/plugin_htmlbar/html_form.c:251 src/plugin_htmlbar/html_form.c:315
 #: src/plugin_htmlbar/html_form.c:538 src/plugin_htmlbar/html_form.c:633
-#: src/plugin_htmlbar/image.c:532
+#: src/plugin_htmlbar/image.c:533
 msgid "_Name:"
 msgstr "_Ime:"
 
@@ -1432,7 +1432,7 @@ msgstr "_Jezik:"
 #: src/plugin_htmlbar/html_form.c:267 src/plugin_htmlbar/html_form.c:328
 #: src/plugin_htmlbar/html_form.c:645 src/plugin_htmlbar/html_table.c:136
 #: src/plugin_htmlbar/html_table.c:283 src/plugin_htmlbar/html_table.c:419
-#: src/plugin_htmlbar/image.c:538 src/plugin_htmlbar/image_dialog.c:428
+#: src/plugin_htmlbar/image.c:539 src/plugin_htmlbar/image_dialog.c:428
 msgid "Custo_m:"
 msgstr "Lični:"
 
@@ -1541,7 +1541,7 @@ msgstr "_ID:"
 msgid "Horizontal Rule"
 msgstr "Horizontalno pravilo"
 
-#: src/plugin_htmlbar/html.c:1081 src/plugin_htmlbar/image.c:555
+#: src/plugin_htmlbar/html.c:1081 src/plugin_htmlbar/image.c:556
 #: src/plugin_htmlbar/image_dialog.c:451
 msgid "_Align:"
 msgstr "_Poravnjaj:"
@@ -1555,7 +1555,7 @@ msgstr "_Visina:"
 #. gtk_spin_button_set_numeric (GTK_SPIN_BUTTON (spin2), 1);
 #: src/plugin_htmlbar/html.c:1094 src/plugin_htmlbar/html.c:2001
 #: src/plugin_htmlbar/html.c:2105 src/plugin_htmlbar/html.c:2263
-#: src/plugin_htmlbar/image.c:517 src/plugin_htmlbar/image_dialog.c:365
+#: src/plugin_htmlbar/image.c:518 src/plugin_htmlbar/image_dialog.c:365
 msgid "_Width:"
 msgstr "_Širina:"
 
@@ -2128,89 +2128,89 @@ msgid "<span color=\"red\">_Height:</span>"
 msgstr ""
 
 #. TODO: use error info in gerror
-#: src/plugin_htmlbar/image.c:334
+#: src/plugin_htmlbar/image.c:335
 #, fuzzy
 msgid "Loading image failed..."
 msgstr "Učitavam datoteke"
 
-#: src/plugin_htmlbar/image.c:417
+#: src/plugin_htmlbar/image.c:418
 #, fuzzy, c-format
 msgid "Loading file %s..."
 msgstr "Učitavam datoteke"
 
-#: src/plugin_htmlbar/image.c:482
+#: src/plugin_htmlbar/image.c:483
 msgid "Insert thumbnail"
 msgstr "Ubaci umanjen prikaz:"
 
-#: src/plugin_htmlbar/image.c:486 src/plugin_htmlbar/image_dialog.c:344
+#: src/plugin_htmlbar/image.c:487 src/plugin_htmlbar/image_dialog.c:344
 msgid "Preview"
 msgstr "Pregled"
 
-#: src/plugin_htmlbar/image.c:509
+#: src/plugin_htmlbar/image.c:510
 msgid "_Image location:"
 msgstr "_Lokacija slike:"
 
-#: src/plugin_htmlbar/image.c:524
+#: src/plugin_htmlbar/image.c:525
 msgid "Hei_ght:"
 msgstr "Visina:"
 
-#: src/plugin_htmlbar/image.c:529 src/plugin_htmlbar/image_dialog.c:417
+#: src/plugin_htmlbar/image.c:530 src/plugin_htmlbar/image_dialog.c:417
 msgid "_Usemap:"
 msgstr "_Usemap:"
 
-#: src/plugin_htmlbar/image.c:535
+#: src/plugin_htmlbar/image.c:536
 msgid "Alternate _text:"
 msgstr "Promenljivi _tekst:"
 
-#: src/plugin_htmlbar/image.c:541 src/plugin_htmlbar/image_dialog.c:460
+#: src/plugin_htmlbar/image.c:542 src/plugin_htmlbar/image_dialog.c:460
 msgid "_Hspace:"
 msgstr "_Hprostor:"
 
-#: src/plugin_htmlbar/image.c:545 src/plugin_htmlbar/image_dialog.c:464
+#: src/plugin_htmlbar/image.c:546 src/plugin_htmlbar/image_dialog.c:464
 msgid "_Vspace:"
 msgstr "_Vprostor:"
 
-#: src/plugin_htmlbar/image.c:559
+#: src/plugin_htmlbar/image.c:560
 msgid "Borde_r:"
 msgstr "Ivica:"
 
-#: src/plugin_htmlbar/image.c:974
+#: src/plugin_htmlbar/image.c:975
 msgid "Select files for thumbnail creation"
 msgstr "Izaberite datoteke za umanjen prikaz"
 
-#: src/plugin_htmlbar/image.c:1016
+#: src/plugin_htmlbar/image.c:1017
 msgid "Scaling (%)"
 msgstr "Srazmera(%)"
 
-#: src/plugin_htmlbar/image.c:1020 src/plugin_htmlbar/image.c:1028
+#: src/plugin_htmlbar/image.c:1021 src/plugin_htmlbar/image.c:1029
 msgid "Width"
 msgstr "Širina"
 
-#: src/plugin_htmlbar/image.c:1024 src/plugin_htmlbar/image.c:1070
+#: src/plugin_htmlbar/image.c:1025 src/plugin_htmlbar/image.c:1071
 msgid "Height"
 msgstr "Visina"
 
-#: src/plugin_htmlbar/image.c:1053
+#: src/plugin_htmlbar/image.c:1054
 msgid "Multi thumbnail"
 msgstr "Više umanjenih prikaza"
 
-#: src/plugin_htmlbar/image.c:1059
+#: src/plugin_htmlbar/image.c:1060
 msgid "By scaling"
 msgstr "Po srazmeri"
 
-#: src/plugin_htmlbar/image.c:1062
+#: src/plugin_htmlbar/image.c:1063
 msgid "By width, keep aspect ratio"
 msgstr "Po širini zadrži srazmeru"
 
-#: src/plugin_htmlbar/image.c:1065
+#: src/plugin_htmlbar/image.c:1066
 msgid "By height, keep aspect ratio"
 msgstr "Po visini, zadrži srazmeru"
 
-#: src/plugin_htmlbar/image.c:1068
+#: src/plugin_htmlbar/image.c:1069
 msgid "By width and height, ignore aspect ratio"
 msgstr "Po širini i visini, ignoriši srazmernost"
 
-#: src/plugin_htmlbar/image.c:1094
+#: src/plugin_htmlbar/image.c:1095
 msgid ""
 "%r: original filename  %t: thumbnail filename\n"
 "%w: original width  %h: original height\n"
