@@ -44,6 +44,8 @@
 
 /*#undef DEBUG_MSG
 #define DEBUG_MSG g_print*/
+/*#undef DBG_SIGNALS
+#define DBG_SIGNALS g_print*/
 /*#undef DBG_SCANCACHE
 #define DBG_SCANCACHE g_print
 #undef DBG_SCANNING
@@ -1960,6 +1962,18 @@ bftextview2_get_iter_at_bevent(BluefishTextView * btv, GdkEventButton * bevent, 
 	gtk_text_view_get_iter_at_location(GTK_TEXT_VIEW(btv), iter, xpos, ypos);
 }
 
+static void
+select_from_line_to_eventy(BluefishTextView * btv, gint line, guint eventy)
+{
+	GtkTextIter so, eo;
+	gint x, y;
+	gtk_text_buffer_get_iter_at_line(btv->buffer, &so, line);
+	gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(btv), GTK_TEXT_WINDOW_TEXT, 0, eventy, &x, &y);
+	gtk_text_view_get_line_at_y(GTK_TEXT_VIEW(btv), &eo, y, &x);
+	gtk_text_iter_forward_to_line_end(&eo);
+	DEBUG_MSG("select_from_line_to_eventy, line=%d, eventy=%d,select from so=%d to eo=%d\n",line,eventy,gtk_text_iter_get_offset(&so), gtk_text_iter_get_offset(&eo));
+	gtk_text_buffer_select_range(btv->buffer, &so, &eo);
+}
 
 static gboolean
 bluefish_text_view_button_press_event(GtkWidget * widget, GdkEventButton * event)
@@ -2051,23 +2065,12 @@ bluefish_text_view_button_press_event(GtkWidget * widget, GdkEventButton * event
 	return GTK_WIDGET_CLASS(bluefish_text_view_parent_class)->button_press_event(widget, event);
 }
 
-static void
-select_from_line_to_eventy(BluefishTextView * btv, gint line, guint eventy)
-{
-	GtkTextIter so, eo;
-	gint x, y;
-	gtk_text_buffer_get_iter_at_line(btv->buffer, &so, line);
-	gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(btv), GTK_TEXT_WINDOW_TEXT, 0, eventy, &x, &y);
-	gtk_text_view_get_line_at_y(GTK_TEXT_VIEW(btv), &eo, y, &x);
-	gtk_text_iter_forward_to_line_end(&eo);
-	gtk_text_buffer_select_range(btv->buffer, &so, &eo);
-}
-
 static gboolean
 bluefish_text_view_motion_notify_event(GtkWidget * widget, GdkEventMotion * event)
 {
 	if (((BluefishTextView *) widget)->button_press_line != -1
 		&& event->x < ((BluefishTextView *) ((BluefishTextView *) widget)->master)->margin_pixels_chars) {
+		DBG_SIGNALS("bluefish_text_view_motion_notify_event, event->x=%d, event->y=%d\n",event->x,event->y);
 		select_from_line_to_eventy((BluefishTextView *) widget,
 								   ((BluefishTextView *) widget)->button_press_line, event->y);
 		return TRUE;
@@ -2082,8 +2085,11 @@ bluefish_text_view_button_release_event(GtkWidget * widget, GdkEventButton * eve
 		&& event->x < ((BluefishTextView *) ((BluefishTextView *) widget)->master)->margin_pixels_chars
 		&& event->button == 1) {
 		if (!gtk_text_buffer_get_has_selection(((BluefishTextView *) widget)->buffer)) {
+			DBG_SIGNALS("bluefish_text_view_button_release_event, event->x=%d, event->y=%d\n",event->x,event->y);
 			select_from_line_to_eventy((BluefishTextView *) widget,
 									   ((BluefishTextView *) widget)->button_press_line, event->y);
+			((BluefishTextView *) widget)->button_press_line = -1;
+			return TRUE;
 		}
 		((BluefishTextView *) widget)->button_press_line = -1;
 	}

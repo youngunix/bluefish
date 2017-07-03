@@ -750,7 +750,7 @@ snr3_cancel_run(Tsnr3run *s3run) {
 }
 
 static void
-snr3run_resultcleanup(Tsnr3run *s3run)
+snr3run_resultcleanup(Tsnr3run *s3run, gboolean clear_outputbox)
 {
 	GList *tmplist;
 	for (tmplist=g_list_first(s3run->results.head);tmplist;tmplist=g_list_next(tmplist)) {
@@ -762,14 +762,14 @@ snr3run_resultcleanup(Tsnr3run *s3run)
 	s3run->curoffset=0;
 	s3run->resultnumdoc=0;
 	s3run->searchednumdoc=0;
-	if (s3run->showinoutputbox) {
+	if (clear_outputbox && s3run->showinoutputbox) {
 		outputbox_clear(s3run->bfwin);
 	}
 }
 
 /* called from bfwin.c for simplesearch */
 void
-snr3run_free(Tsnr3run *s3run, gboolean remove_highlights) {
+snr3run_free(Tsnr3run *s3run, gboolean remove_highlights, gboolean clear_outputbox) {
 	DEBUG_MSG("snr3run_free, started for %p\n",s3run);
 	snr3_cancel_run(s3run);
 	if (s3run->curbuf)
@@ -795,7 +795,7 @@ snr3run_free(Tsnr3run *s3run, gboolean remove_highlights) {
 		remove_all_highlights_in_doc(s3run->bfwin->current_document);
 	}
 	DEBUG_MSG("snr3run_free, resultcleanup\n");
-	snr3run_resultcleanup(s3run);
+	snr3run_resultcleanup(s3run, clear_outputbox);
 	g_slice_free(Tsnr3run, s3run);
 }
 static gboolean compile_regex(Tsnr3run *s3run) {
@@ -923,7 +923,7 @@ snr3_curdocchanged_cb(Tbfwin *bfwin, Tdocument *olddoc, Tdocument *newdoc, gpoin
 		if (s3run->dialog) {
 			highlight_run_in_doc(s3run, newdoc);
 		} else { /* simple search */
-			snr3run_resultcleanup(s3run);
+			snr3run_resultcleanup(s3run, TRUE);
 			snr3_run(s3run, NULL, newdoc, highlight_simple_search);
 		}
 	}
@@ -1104,7 +1104,7 @@ snr3run_multiset(Tsnr3run *s3run,
 	s3run->type = type;
 	s3run->replacetype = replacetype;
 	s3run->scope = scope;
-	snr3run_resultcleanup(s3run);
+	snr3run_resultcleanup(s3run, TRUE);
 	g_queue_init(&s3run->results);
 
 }
@@ -1316,7 +1316,7 @@ snr3run_init_from_gui(TSNRWin *snrwin, Tsnr3run *s3run)
 
 	if ((retval & 1) != 0) {
 		remove_all_highlights_in_doc(snrwin->bfwin->current_document);
-		snr3run_resultcleanup(s3run);
+		snr3run_resultcleanup(s3run, TRUE);
 	}
 	/*gtk_widget_hide(snrwin->searchfeedback);*/
 
@@ -1381,7 +1381,7 @@ snr3_advanced_response(GtkDialog * dialog, gint response, TSNRWin * snrwin)
 							&& snrwin->s3run->results.head
 							&& S3RESULT(snrwin->s3run->results.head->data)->doc != snrwin->bfwin->current_document) {
 		DEBUG_MSG("restart the search on the new active document\n");
-		snr3run_resultcleanup(snrwin->s3run);
+		snr3run_resultcleanup(snrwin->s3run, TRUE);
 		snr3_run(snrwin->s3run, snrwin, snrwin->s3run->bfwin->current_document, dialog_changed_run_ready_cb);
 		return;
 	}
@@ -1439,7 +1439,7 @@ snr3_advanced_response(GtkDialog * dialog, gint response, TSNRWin * snrwin)
 		case SNR_RESPONSE_REPLACE_ALL:
 			snr3_cancel_run(s3run);
 			s3run->replaceall=TRUE;
-			snr3run_resultcleanup(s3run);
+			snr3run_resultcleanup(s3run, TRUE);
 			s3run->unre_action_id = new_unre_action_id();
 
 			replace_all_buttons(s3run, FALSE);
@@ -1448,7 +1448,7 @@ snr3_advanced_response(GtkDialog * dialog, gint response, TSNRWin * snrwin)
 		break;
 		case SNR_RESPONSE_FIND_ALL:
 			snr3_cancel_run(s3run);
-			snr3run_resultcleanup(s3run);
+			snr3run_resultcleanup(s3run, TRUE);
 			replace_all_buttons(s3run, FALSE);
 			s3run->findall=TRUE;
 			snr3_run(s3run, snrwin, s3run->bfwin->current_document, threaded_all_ready);
@@ -1514,7 +1514,7 @@ snr3win_destroy_cb(GtkWidget *widget, gpointer user_data)
 {
 	TSNRWin *snrwin=user_data;
 	DEBUG_MSG("snr3win_destroy_cb, user_data=%p\n",user_data);
-	snr3run_free(snrwin->s3run, TRUE);
+	snr3run_free(snrwin->s3run, TRUE, FALSE);
 	g_slice_free(TSNRWin, snrwin);
 }
 
@@ -1877,6 +1877,6 @@ snr3_run_extern_replace(Tdocument * doc, const gchar * search_pattern, Tsnr3scop
 			g_warning("snr3_run_extern_replace does not support replace in files\n");
 		break;
 	}
-	snr3run_free(s3run, FALSE); /* We do not need to remove hightlights in current_document, so we pass FALSE */
+	snr3run_free(s3run, FALSE, FALSE); /* We do not need to remove hightlights in current_document, so we pass FALSE */
 }
 
