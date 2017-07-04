@@ -75,7 +75,6 @@ ln -sf ${DEB_TAR} ${DEB_TAR_ORIG}
 
 tar xzf ${DEB_TAR_ORIG}
 cd ${DEB_SRC_DIR}
-cp ../../autogen.sh .
 
 svn export ${SVN_URL}/packages/debian/${DEB_NAME}/trunk/debian
 
