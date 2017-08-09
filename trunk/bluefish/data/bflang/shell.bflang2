@@ -44,20 +44,29 @@
 <context symbols=" $;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;.">
 <group highlight="keyword" >
 	<autocomplete enable="1" />
+	<element pattern="case" />
 	<element pattern="do" />
 	<element pattern="done" />
 	<element pattern="elif" />
 	<element pattern="else" />
+	<element pattern="esac" />
+	<element pattern="exit" />
 	<element pattern="fi" />
 	<element pattern="for" />
+	<element pattern="function" />
 	<element pattern="if" />
 	<element pattern="in" />
+	<element pattern="local" />
+	<element pattern="print" />
+	<element pattern="return" />
 	<element pattern="select" />
+	<element pattern="set" />
+	<element pattern="setopt" />
+	<element pattern="then" />
+	<element pattern="time" />
+	<element pattern="typeset" />
 	<element pattern="until" />
 	<element pattern="while" />
-	<element pattern="case" />
-	<element pattern="esac" />
-	<element pattern="time" />
 </group>
 <group  highlight="function">
 	<autocomplete enable="1" />
@@ -434,6 +443,12 @@
 </context>
 </element>
 
+<!-- heredoc workaround -->
+<element pattern="<<EOF" highlight="string">
+<context symbols="&#10;&#13;&#9; ET" highlight="string">
+	<element pattern="EOF" highlight="string" ends_context="1"/>
+</context>
+</element>
 </context>
 </definition>
 </bflang>
