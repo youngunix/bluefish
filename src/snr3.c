@@ -1095,7 +1095,7 @@ static void
 snr3run_multiset(Tsnr3run *s3run,
 				const gchar *query, const gchar *replace,
 				Tsnr3type type, Tsnr3replace replacetype,
-				Tsnr3scope scope) {
+				Tsnr3scope scope, gboolean showinoutputbox) {
 	g_free(s3run->query);
 	s3run->query = g_strdup(query);
 	g_free(s3run->replace);
@@ -1104,6 +1104,7 @@ snr3run_multiset(Tsnr3run *s3run,
 	s3run->type = type;
 	s3run->replacetype = replacetype;
 	s3run->scope = scope;
+	s3run->showinoutputbox = showinoutputbox;
 	snr3run_resultcleanup(s3run, TRUE);
 	g_queue_init(&s3run->results);
 
@@ -1151,7 +1152,7 @@ gpointer simple_search_run(Tbfwin *bfwin, const gchar *string, Tsnr3type type
 	Tsnr3run *s3run;
 
 	s3run = snr3run_new(bfwin, NULL);
-	snr3run_multiset(s3run, string, NULL, type,snr3replace_string,snr3scope_doc);
+	snr3run_multiset(s3run, string, NULL, type,snr3replace_string,snr3scope_doc, FALSE);
 	simple_search_add_to_history(bfwin, string);
 	s3run->dotmatchall = dotmatchall;
 	s3run->is_case_sens = casesens;
@@ -1842,7 +1843,7 @@ snr3_run_extern_replace(Tdocument * doc, const gchar * search_pattern, Tsnr3scop
 	gint so,eo;
 	GList *tmplist;
 	Tsnr3run * s3run = snr3run_new(doc->bfwin, NULL);
-	snr3run_multiset(s3run, search_pattern, NULL, type,snr3replace_string,scope);
+	snr3run_multiset(s3run, search_pattern, NULL, type,snr3replace_string,scope,FALSE);
 	s3run->dotmatchall = dotmatchall;
 	s3run->replace = g_strdup(replace_pattern);
 	update_snr3run(s3run);
