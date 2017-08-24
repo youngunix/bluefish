@@ -90,11 +90,9 @@
    <element pattern="enable" />
    <element pattern="eval" />
    <element pattern="exec" />
-   <element pattern="exit" />
    <element pattern="export" />
    <element pattern="fc" />
    <element pattern="fg" />
-   <element pattern="function" />
    <element pattern="getopts" />
    <element pattern="hash" />
    <element pattern="help" />
@@ -102,7 +100,6 @@
    <element pattern="jobs" />
    <element pattern="kill" />
    <element pattern="let" />
-   <element pattern="local" />
    <element pattern="logout" />
    <element pattern="mapfile" />
    <element pattern="popd" />
@@ -112,18 +109,14 @@
    <element pattern="read" />
    <element pattern="readarray" />
    <element pattern="readonly" />
-   <element pattern="return" />
-   <element pattern="set" />
    <element pattern="shift" />
    <element pattern="shopt" />
    <element pattern="source" />
    <element pattern="suspend" />
    <element pattern="test" />
-   <element pattern="then" />
    <element pattern="times" />
    <element pattern="trap" />
    <element pattern="type" />
-   <element pattern="typeset" />
    <element pattern="ulimit" />
    <element pattern="umask" />
    <element pattern="unalias" />
@@ -429,6 +422,7 @@
 <element pattern="}" highlight="variable" ends_context="1"/>
 </context>
 </element>
+<element pattern="=" highlight="brackets"/>
 
 <element pattern="#" highlight="comment">
 <context symbols="&#10;&#13;" highlight="comment">
@@ -446,6 +440,7 @@
 
 <!-- heredoc workaround -->
 <element pattern="&lt;&lt;EOF" highlight="string">
+<reference>bluefish does not support syntax highlighting of HERE DOC with any variable string, the workaround is to use EOF as delimiter, which is supported.</reference>
 <context symbols="&#10;&#13;&#9; ET" highlight="string">
 	<element pattern="EOF" highlight="string" ends_context="1"/>
 </context>

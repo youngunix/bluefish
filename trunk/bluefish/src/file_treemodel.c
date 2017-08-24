@@ -797,7 +797,13 @@ static void add_multiple_uris(Turi_in_refresh *uir, GList * finfolist)
 		UriRecord **tmp;
 		GFileInfo *finfo = tmplist->data;
 		/* don't allocate new memory for 'name', if it already exists we don't need it */
-		newrecord->name = (gchar *) g_file_info_get_name(finfo);
+		newrecord->name = (gchar *) g_file_info_get_display_name(finfo);
+#ifdef DEVELOPMENT
+		if (g_strcmp0(g_file_info_get_name(finfo),g_file_info_get_display_name(finfo))!=0) {
+			g_print("name=%s\n",g_file_info_get_name(finfo));
+			g_print("displayname=%s\n",g_file_info_get_display_name(finfo));
+		}
+#endif
 		newrecord->isdir = (g_file_info_get_file_type(finfo) == G_FILE_TYPE_DIRECTORY);
 		DEBUG_MSG("bsearch for name %s\n", newrecord->name);
 		tmp = bsearch(&newrecord, *rows, old_num_rows, sizeof(UriRecord *), compare_records);
@@ -814,7 +820,7 @@ static void add_multiple_uris(Turi_in_refresh *uir, GList * finfolist)
 			DEBUG_MSG("%s does not yet exist\n", newrecord->name);
 			/* this file does not exist */
 			uir->dir_changed = TRUE;
-			child = g_file_get_child(precord->uri, newrecord->name);
+			child = g_file_get_child(precord->uri, g_file_info_get_name(finfo));
 			fill_uri(newrecord, child, finfo);
 			g_object_unref(child);
 #ifdef DEVELOPMENT
