@@ -1171,6 +1171,8 @@ return_colorprofile_configlist(GHashTable *config_rc,  gboolean init_values)
 	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_CURSOR], "cursor_color:", init_values ?"#000000":NULL);
 	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_SELECTION], "selection_color:", init_values ?"#000099":NULL);
 	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_CURSOR_HIGHLIGHT], "cursor_highlight_color:", init_values ?"#ffff33":NULL);
+	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_MARGIN_FG], "margin_fg:", init_values ?"#000000":NULL);
+	init_prop_string(&config_rc, &main_v->props.btv_color_str[BTV_COLOR_MARGIN_BG], "margin_bg:", init_values ?"#dddddd":NULL);
 	init_prop_arraylist(&config_rc, &main_v->props.textstyles, "textstyles3:", 6, init_values);
 	return config_rc;
 }

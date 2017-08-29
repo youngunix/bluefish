@@ -57,9 +57,9 @@
 
 G_DEFINE_TYPE(BluefishTextView, bluefish_text_view, GTK_TYPE_TEXT_VIEW)
 #if GTK_CHECK_VERSION(3,0,0)
-static GdkRGBA st_whitespace_color, st_cline_color, st_cursor_highlight_color;
+static GdkRGBA st_whitespace_color, st_cline_color, st_cursor_highlight_color, st_margin_fg_color, st_margin_bg_color;
 #else
-static GdkColor st_whitespace_color, st_cline_color, st_cursor_highlight_color;
+static GdkColor st_whitespace_color, st_cline_color, st_cursor_highlight_color, st_margin_fg_color, st_margin_bg_color;
 #endif
 
 /****************************** utility functions ******************************/
@@ -814,6 +814,8 @@ bftextview2_insert_text_after_lcb(GtkTextBuffer * buffer, GtkTextIter * iter, gc
 static inline void
 paint_margin_expand(BluefishTextView * btv, cairo_t * cr, gint w, gint height)
 {
+/* assume that the correct color is set by the calling function */
+/*
 #if GTK_CHECK_VERSION(3,0,0)
 	GtkStyleContext *cntxt;
 	GdkRGBA rgba;
@@ -827,9 +829,10 @@ paint_margin_expand(BluefishTextView * btv, cairo_t * cr, gint w, gint height)
 							   &gtk_widget_get_style(GTK_WIDGET(btv))->base[gtk_widget_get_state
 																			(GTK_WIDGET(btv))]);
 #endif
+*/
 	cairo_rectangle(cr, btv->margin_pixels_chars + btv->margin_pixels_symbol + 2, w + (height / 2) - 3, 7, 7);
 	cairo_fill(cr);
-
+/*
 #if GTK_CHECK_VERSION(3,0,0)
 	gtk_style_context_get_color(cntxt, gtk_widget_get_state_flags(GTK_WIDGET(btv)), &rgba);
 	gdk_cairo_set_source_rgba(cr, &rgba);
@@ -838,6 +841,7 @@ paint_margin_expand(BluefishTextView * btv, cairo_t * cr, gint w, gint height)
 							   &gtk_widget_get_style(GTK_WIDGET(btv))->fg[gtk_widget_get_state
 																		  (GTK_WIDGET(btv))]);
 #endif
+*/
 	cairo_rectangle(cr, btv->margin_pixels_chars + btv->margin_pixels_symbol + 1.5, w + (height / 2) - 3.5, 8,
 					8);
 	cairo_move_to(cr, btv->margin_pixels_chars + btv->margin_pixels_symbol + 5.5, w + (height / 2) + 5);
@@ -850,6 +854,8 @@ paint_margin_expand(BluefishTextView * btv, cairo_t * cr, gint w, gint height)
 static inline void
 paint_margin_collapse(BluefishTextView * btv, cairo_t * cr, gint w, gint height)
 {
+/* assume that the correct color is set by the calling function */
+/*
 #if GTK_CHECK_VERSION(3,0,0)
 	GtkStyleContext *cntxt;
 	GdkRGBA rgba;
@@ -863,9 +869,10 @@ paint_margin_collapse(BluefishTextView * btv, cairo_t * cr, gint w, gint height)
 							   &gtk_widget_get_style(GTK_WIDGET(btv))->base[gtk_widget_get_state
 																			(GTK_WIDGET(btv))]);
 #endif
+*/
 	cairo_rectangle(cr, btv->margin_pixels_chars + btv->margin_pixels_symbol + 2, w + (height / 2) - 3, 7, 7);
 	cairo_fill(cr);
-
+/*
 #if GTK_CHECK_VERSION(3,0,0)
 	gtk_style_context_get_color(cntxt, gtk_widget_get_state_flags(GTK_WIDGET(btv)), &rgba);
 	gdk_cairo_set_source_rgba(cr, &rgba);
@@ -874,6 +881,7 @@ paint_margin_collapse(BluefishTextView * btv, cairo_t * cr, gint w, gint height)
 							   &gtk_widget_get_style(GTK_WIDGET(btv))->fg[gtk_widget_get_state
 																		  (GTK_WIDGET(btv))]);
 #endif
+*/
 	cairo_rectangle(cr, btv->margin_pixels_chars + btv->margin_pixels_symbol + 1.5, w + (height / 2) - 3.5, 8,
 					8);
 	cairo_move_to(cr, btv->margin_pixels_chars + btv->margin_pixels_symbol + 5.5, w + (height / 2) - 2);
@@ -955,16 +963,23 @@ paint_margin(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible, G
 	DBG_MSG("paint_margin called for %p\n", btv);
 
 	cairo_set_line_width(cr, 1);
+	if (main_v->props.use_system_colors) {
 #if GTK_CHECK_VERSION(3,0,0)
-	cntxt = gtk_widget_get_style_context(GTK_WIDGET(btv));
-	gtk_style_context_get_color(cntxt, gtk_widget_get_state_flags(GTK_WIDGET(btv)), &rgba);
-	gdk_cairo_set_source_rgba(cr, &rgba);
+		cntxt = gtk_widget_get_style_context(GTK_WIDGET(btv));
+		gtk_style_context_get_color(cntxt, gtk_widget_get_state_flags(GTK_WIDGET(btv)), &rgba);
+		gdk_cairo_set_source_rgba(cr, &rgba);
 #else
-	gdk_cairo_set_source_color(cr,
+		gdk_cairo_set_source_color(cr,
 							   &gtk_widget_get_style(GTK_WIDGET(btv))->fg[gtk_widget_get_state
 																		  (GTK_WIDGET(btv))]);
 #endif
-
+	} else {
+#if GTK_CHECK_VERSION(3,0,0)
+		gdk_cairo_set_source_rgba(cr,&st_margin_fg_color);
+#else
+		gdk_cairo_set_source_color(cr,&st_margin_fg_color);
+#endif
+	}
 	if (master->show_line_numbers) {
 		GtkTextIter cursorit;
 		gtk_text_buffer_get_iter_at_mark(buffer, &cursorit, gtk_text_buffer_get_insert(buffer));
@@ -2537,6 +2552,16 @@ bftextview2_parse_static_colors(void)
 							main_v->props.btv_color_str[BTV_COLOR_CURSOR_HIGHLIGHT]))) {
 		gdk_rgba_parse(&st_cursor_highlight_color, "#ffff33");
 	}
+	if (!(main_v->props.btv_color_str[BTV_COLOR_MARGIN_FG]
+		  && gdk_rgba_parse(&st_margin_fg_color,
+							main_v->props.btv_color_str[BTV_COLOR_MARGIN_FG]))) {
+		gdk_rgba_parse(&st_margin_fg_color, "#000000");
+	}
+	if (!(main_v->props.btv_color_str[BTV_COLOR_MARGIN_BG]
+		  && gdk_rgba_parse(&st_margin_bg_color,
+							main_v->props.btv_color_str[BTV_COLOR_MARGIN_BG]))) {
+		gdk_rgba_parse(&st_margin_bg_color, "#dddddd");
+	}
 #else
 	GString *str;
 
@@ -2552,6 +2577,16 @@ bftextview2_parse_static_colors(void)
 		  && gdk_color_parse(main_v->props.btv_color_str[BTV_COLOR_CURSOR_HIGHLIGHT],
 							 &st_cursor_highlight_color))) {
 		gdk_color_parse("#ffff33", &st_cursor_highlight_color);
+	}
+	if (!(main_v->props.btv_color_str[BTV_COLOR_MARGIN_FG]
+		  && gdk_color_parse(main_v->props.btv_color_str[BTV_COLOR_MARGIN_FG],
+							 &st_margin_fg_color))) {
+		gdk_color_parse("#000000", &st_margin_fg_color);
+	}
+	if (!(main_v->props.btv_color_str[BTV_COLOR_MARGIN_BG]
+		  && gdk_color_parse(main_v->props.btv_color_str[BTV_COLOR_MARGIN_BG],
+							 &st_margin_bg_color))) {
+		gdk_color_parse("#000000", &st_margin_bg_color);
 	}
 
 	str = g_string_new("style \"bluefish-cursor\" {");

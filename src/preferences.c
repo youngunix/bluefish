@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define DEBUG
+/*#define DEBUG*/
 
 #include <gtk/gtk.h>
 #include <string.h>				/* strcmp() */
@@ -112,6 +112,8 @@ enum {
 	cursor_color,
 	selected_color,
 	cursor_highlight_color,
+	margin_fg,
+	margin_bg,
 	/* now the entries in globses */
 	left_panel_width,
 	main_window_h,
@@ -2098,6 +2100,8 @@ preferences_apply(Tprefdialog * pd)
 	string_apply(&main_v->props.btv_color_str[BTV_COLOR_CURSOR], pd->prefs[cursor_color]);
 	string_apply(&main_v->props.btv_color_str[BTV_COLOR_SELECTION], pd->prefs[selected_color]);
 	string_apply(&main_v->props.btv_color_str[BTV_COLOR_CURSOR_HIGHLIGHT], pd->prefs[cursor_highlight_color]);
+	string_apply(&main_v->props.btv_color_str[BTV_COLOR_MARGIN_FG], pd->prefs[margin_fg]);
+	string_apply(&main_v->props.btv_color_str[BTV_COLOR_MARGIN_BG], pd->prefs[margin_bg]);
 	integer_apply(&main_v->props.right_margin_pos, pd->prefs[right_margin_pos], FALSE);
 	integer_apply(&main_v->props.wrap_on_right_margin, pd->prefs[wrap_on_right_margin], TRUE);
 
@@ -2379,6 +2383,8 @@ use_system_colors_toggled_lcb(GtkWidget * widget, Tprefdialog * pd)
 	gtk_widget_set_sensitive(pd->prefs[editor_bg], !active);
 	gtk_widget_set_sensitive(pd->prefs[cursor_color], !active);
 	gtk_widget_set_sensitive(pd->prefs[selected_color], !active);
+	gtk_widget_set_sensitive(pd->prefs[margin_fg], !active);
+	gtk_widget_set_sensitive(pd->prefs[margin_bg], !active);	
 }
 
 static void
@@ -2664,7 +2670,7 @@ preferences_dialog_new(Tbfwin *bfwin)
 								   _("Cursor / font size ratio (%):"), hbox, 0);
 
 	vbox2 = dialog_vbox_labeled(_("<b>Colors</b>"), vbox1);
-	table = dialog_table_in_vbox_defaults(5, 4, 0, vbox2);
+	table = dialog_table_in_vbox_defaults(7, 4, 0, vbox2);
 
 	pd->prefs[use_system_colors] =
 		dialog_check_button_in_table(_("Use system wide color settings"), main_v->props.use_system_colors, table, 0,2, 0,1);
@@ -2684,6 +2690,14 @@ preferences_dialog_new(Tbfwin *bfwin)
 	pd->prefs[selected_color] = dialog_color_button_in_table(main_v->props.btv_color_str[BTV_COLOR_SELECTION],
 														_("Selection background color"), table, 1, 2, 4,5);
 	dialog_mnemonic_label_in_table(_("_Selection background color:"), pd->prefs[selected_color], table, 0, 1, 4,5);
+
+	pd->prefs[margin_fg] = dialog_color_button_in_table(main_v->props.btv_color_str[BTV_COLOR_MARGIN_FG],
+														_("Margin foreground color"), table, 1, 2, 5,6);
+	dialog_mnemonic_label_in_table(_("_Margin foreground color:"), pd->prefs[margin_fg], table, 0, 1, 5,6);
+
+	pd->prefs[margin_bg] = dialog_color_button_in_table(main_v->props.btv_color_str[BTV_COLOR_MARGIN_BG],
+														_("Margin background color"), table, 1, 2, 6,7);
+	dialog_mnemonic_label_in_table(_("_Margin background color:"), pd->prefs[margin_bg], table, 0, 1, 6,7);
 
 	g_signal_connect(G_OBJECT(pd->prefs[use_system_colors]), "toggled", G_CALLBACK(use_system_colors_toggled_lcb), pd);
 	use_system_colors_toggled_lcb(pd->prefs[use_system_colors], pd);
