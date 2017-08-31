@@ -840,22 +840,8 @@ GList *update_commands(GList *current, gboolean overwrite)
 #ifdef WIN32
 	defaults = add_browser_if_exists(defaults, _("Windows 7 Firefox 32-bit"), "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe", "1");
 	defaults = add_browser_if_exists(defaults, _("Windows 7 Firefox"), "C:\\Program Files\\Mozilla Firefox\\firefox.exe", "1");
-	
-	defaults =
-		g_list_prepend(defaults,
-					  array_from_arglist(_("Windows 7 Firefox 32-bit"),
-										 "\"C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe\" '%p'",
-										 "1", NULL));
-	defaults =
-		g_list_prepend(defaults,
-					  array_from_arglist(_("Windows 7 Internet Explorer 32-bit"),
-										 "\"C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe\" '%p'",
-										 "0", NULL));
-	defaults =
-		g_list_prepend(defaults,
-					  array_from_arglist(_("Windows 7 Internet Explorer 64-bit"),
-										 "\"C:\\Program Files\\Internet Explorer\\iexplore.exe\" '%p'",
-										 "0", NULL));
+	defaults = add_browser_if_exists(defaults, _("Windows 7 Internet Explorer 32-bit"), "C:\\Program Files (x86)\\Internet Explorer\\iexplore.exe", "0");
+	defaults = add_browser_if_exists(defaults, _("Windows 7 Internet Explorer 64-bit"), "C:\\Program Files\\Internet Explorer\\iexplore.exe", "0");
 #elif PLATFORM_DARWIN
 	defaults =
 		g_list_prepend(defaults,
@@ -937,7 +923,7 @@ rcfile_parse_main(void)
 
 	/* do some default configuration for the lists */
 	DEBUG_MSG("config_version=%s\n",main_v->props.config_version);
-	if (main_v->props.config_version && (strlen(main_v->props.config_version)<5 ||main_v->props.config_version[0] < '2' || main_v->props.config_version[2] < '2' || main_v->props.config_version[4] < '4')) {
+	if (main_v->props.config_version && (strlen(main_v->props.config_version)<5 ||main_v->props.config_version[0] < '2' || main_v->props.config_version[2] < '2' || (main_v->props.config_version[4] < '4' && main_v->props.config_version[5] == '\0') )) {
 		main_v->props.rcfile_from_old_version = 1; /* We got old version after migration */
 	}
 	if (!main_v->props.config_version || (main_v->props.rcfile_from_old_version == 1)) {
