@@ -797,7 +797,7 @@ static void add_multiple_uris(Turi_in_refresh *uir, GList * finfolist)
 		UriRecord **tmp;
 		GFileInfo *finfo = tmplist->data;
 		/* don't allocate new memory for 'name', if it already exists we don't need it */
-		newrecord->name = (gchar *) g_file_info_get_display_name(finfo);
+		newrecord->name = (gchar *) g_file_info_get_name(finfo);
 #ifdef DEVELOPMENT
 		if (g_strcmp0(g_file_info_get_name(finfo),g_file_info_get_display_name(finfo))!=0) {
 			g_print("name=%s\n",g_file_info_get_name(finfo));
