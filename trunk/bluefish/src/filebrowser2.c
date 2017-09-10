@@ -1152,7 +1152,34 @@ popup_menu_rename(GtkAction * action, gpointer user_data)
 	}
 }
 
+static void
+popup_menu_insert_link(GtkAction * action, gpointer user_data)
+{
+	Tfilebrowser2 *fb2 = FILEBROWSER2(user_data);
+	GFile *uri;
+	gchar *curi, *docuri, *rlink;
+	
+	if (!fb2->bfwin->current_document || !fb2->bfwin->current_document->uri) {
+		return;
+	}
 
+	if (fb2->last_popup_on_dir) {
+		uri = fb2_uri_from_dir_selection(fb2);
+	} else {
+		uri = fb2_uri_from_file_selection(fb2, NULL);
+	}
+	if (!uri) {
+		return;
+	}
+	curi = g_file_get_uri(uri);
+	docuri = g_file_get_uri(fb2->bfwin->current_document->uri);
+	rlink = create_relative_link_to(docuri, curi);
+
+	doc_insert_two_strings(DOCUMENT(BFWIN(fb2->bfwin)->current_document), rlink, NULL);
+	g_free(curi);
+	g_free(docuri);
+	g_free(rlink);
+}
 static void
 popup_menu_set_basedir(GtkAction * action, gpointer user_data)
 {
@@ -1264,6 +1291,8 @@ static const gchar *filebrowser_menu_ui =
 	"    <menuitem action='FB2NewFile'/>"
 	"    <menuitem action='FB2NewDirectory'/>"
 	"    <separator/>"
+	"    <menuitem action='FB2InsertLink'/>"
+	"    <separator/>"
 	"    <menuitem action='FB2Refresh'/>"
 	"    <menuitem action='FB2FollowActiveDoc'/>"
 	"    <menuitem action='FB2SetBaseDir'/>"
@@ -1300,6 +1329,7 @@ static const GtkActionEntry filebrowser_actions[] = {
 	{"FB2NewFile", NULL, N_("New _File"), NULL, N_("New file"), G_CALLBACK(popup_menu_new_file)},
 	{"FB2NewDirectory", NULL, N_("_New Directory"), NULL, N_("New directory"),
 	 G_CALLBACK(popup_menu_new_directory)},
+	{"FB2InsertLink", NULL, N_("Insert _link"), NULL, N_("Insert link"), G_CALLBACK(popup_menu_insert_link)},
 	{"FB2Refresh", NULL, N_("_Refresh"), NULL, N_("Refresh"), G_CALLBACK(popup_menu_refresh)},
 	{"FB2SetBaseDir", NULL, N_("_Set as base dir"), NULL, N_("Set as base directory"),
 	 G_CALLBACK(popup_menu_set_basedir)},
@@ -1381,7 +1411,7 @@ popup_menu_create(Tfilebrowser2 * fb2, gboolean is_directory, gboolean is_file, 
 										 fb2->filebrowser_show_backup_files);
 	bfwin_set_menu_toggle_item_from_path(bfwin->uimanager, "/FileBrowserMenu/FB2ShowHiddenFiles",
 										 fb2->filebrowser_show_hidden_files);
-
+	bfwin_action_set_sensitive(bfwin->uimanager, "/FileBrowserMenu/FB2InsertLink", is_file);
 	bfwin_action_set_sensitive(bfwin->uimanager, "/FileBrowserMenu/FB2Rename", (is_directory || is_file));
 	bfwin_action_set_sensitive(bfwin->uimanager, "/FileBrowserMenu/FB2Delete", (is_directory || is_file));
 	bfwin_action_set_sensitive(bfwin->uimanager, "/FileBrowserMenu/FB2OpenAdvanced", is_directory);
