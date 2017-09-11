@@ -282,6 +282,18 @@ create_new_project(Tbfwin * bfwin)
 	return prj;
 }
 
+static void
+set_last_project_dir_from_file_uri(GFile *file)
+{
+	GFile *dir = g_file_get_parent(file);
+	if (dir) {
+		g_free(main_v->globses.last_project_dir);
+		main_v->globses.last_project_dir = g_file_get_uri(dir);
+		g_object_unref(dir);
+	}
+}
+
+
 gboolean
 project_save(Tbfwin * bfwin, gboolean save_as)
 {
@@ -313,6 +325,7 @@ project_save(Tbfwin * bfwin, gboolean save_as)
 		if (gtk_dialog_run(GTK_DIALOG(dialog)) == GTK_RESPONSE_ACCEPT) {
 			gchar *filename;
 			newuri = gtk_file_chooser_get_file(GTK_FILE_CHOOSER(dialog));
+			set_last_project_dir_from_file_uri(newuri);
 			filename = g_file_get_parse_name(newuri);
 			suflen = strlen(main_v->props.project_suffix);
 			filen = strlen(filename);
@@ -481,12 +494,7 @@ project_open_response_lcb(GtkDialog * dialog, gint response, Tbfwin * bfwin)
 		GFile *file, *dir;
 		file = gtk_file_chooser_get_file(GTK_FILE_CHOOSER(dialog));
 		project_open_from_file(bfwin, file);
-		dir = g_file_get_parent(file);
-		if (dir) {
-			g_free(main_v->globses.last_project_dir);
-			main_v->globses.last_project_dir = g_file_get_uri(dir);
-			g_object_unref(dir);
-		}
+		set_last_project_dir_from_file_uri(file);
 		g_object_unref(file);
 	}
 	gtk_widget_destroy(GTK_WIDGET(dialog));
