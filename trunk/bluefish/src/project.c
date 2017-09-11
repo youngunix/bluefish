@@ -478,9 +478,15 @@ static void
 project_open_response_lcb(GtkDialog * dialog, gint response, Tbfwin * bfwin)
 {
 	if (response == GTK_RESPONSE_ACCEPT) {
-		GFile *file;
+		GFile *file, *dir;
 		file = gtk_file_chooser_get_file(GTK_FILE_CHOOSER(dialog));
 		project_open_from_file(bfwin, file);
+		dir = g_file_get_parent(file);
+		if (dir) {
+			g_free(main_v->globses.last_project_dir);
+			main_v->globses.last_project_dir = g_file_get_uri(dir);
+			g_object_unref(dir);
+		}
 		g_object_unref(file);
 	}
 	gtk_widget_destroy(GTK_WIDGET(dialog));
@@ -493,6 +499,8 @@ project_open(Tbfwin * bfwin)
 	dialog =
 		file_chooser_dialog(bfwin, _("Select Bluefish project filename"), GTK_FILE_CHOOSER_ACTION_OPEN, NULL,
 							TRUE, FALSE, "bfproject", FALSE);
+	gtk_file_chooser_set_current_folder_uri(GTK_FILE_CHOOSER(dialog), main_v->globses.last_project_dir);
+	
 	g_signal_connect(dialog, "response", G_CALLBACK(project_open_response_lcb), bfwin);
 	gtk_widget_show_all(dialog);
 }
@@ -593,7 +601,6 @@ project_edit_destroy_lcb(GtkWidget * widget, Tprojecteditor * pred)
 static void
 project_edit_cancel_clicked_lcb(GtkWidget * widget, Tprojecteditor * pred)
 {
-
 	gtk_widget_destroy(pred->win);
 }
 

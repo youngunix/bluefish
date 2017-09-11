@@ -1297,7 +1297,7 @@ file_chooser_dialog(Tbfwin * bfwin, const gchar * title, GtkFileChooserAction ac
 		} else {
 			gtk_file_chooser_set_current_name(GTK_FILE_CHOOSER(dialog), set);
 		}
-	} else if (!localonly && bfwin) {	/* localonly is used for the project files */
+	} else if (!localonly && bfwin) {	/* localonly is used for the project files, import/export snippets, etc. */
 		if (action == GTK_FILE_CHOOSER_ACTION_SAVE) {
 			DEBUG_MSG("file_chooser_dialog, opendir=%s, savedir=%s\n", bfwin->session->opendir,
 					  bfwin->session->savedir);

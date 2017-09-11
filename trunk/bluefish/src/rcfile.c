@@ -1220,6 +1220,7 @@ return_globalsession_configlist(gboolean init_values)
 					  "<a href=\"%r\"><img src=\"%t\" width=\"%x\" height=\"%y\" border=\"0\"></a>" : NULL));
 	init_prop_integer(&config_rc, &main_v->globses.filter_on_selection_mode,
 					  "filter_on_selection_mode:", 0, init_values);
+	init_prop_string_with_escape(&config_rc, &main_v->globses.last_project_dir, "last_project_dir:", NULL);
 	init_prop_arraylist(&config_rc, &main_v->globses.filefilters, "filefilters:", 4, init_values);
 	init_prop_arraylist(&config_rc, &main_v->globses.reference_files, "reference_files:", 2, init_values);
 	init_prop_limitedstringlist(&config_rc, &main_v->globses.recent_projects, "recent_projects:",
