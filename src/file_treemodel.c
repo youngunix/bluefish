@@ -448,7 +448,8 @@ gchar *gfile_display_name(GFile * uri, GFileInfo * finfo)
 static void fill_uri(UriRecord * newrecord, GFile * uri, GFileInfo * finfo)
 {
 	GIcon *icon;
-	newrecord->name = g_strdup(g_file_info_get_display_name(finfo));
+	/* as pango string we want the g_file_info_get_display_name(), but in the store we want g_file_info_get_name() */
+	newrecord->name = g_strdup(g_file_info_get_name(finfo));
 	newrecord->fast_content_type = g_strdup(g_file_info_get_attribute_string(finfo, G_FILE_ATTRIBUTE_STANDARD_FAST_CONTENT_TYPE));
 	/*newrecord->name_collate_key = g_utf8_collate_key(newrecord->name, -1); *//* for fast sorting, used later */
 	newrecord->uri = uri;
