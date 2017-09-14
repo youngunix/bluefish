@@ -1281,7 +1281,7 @@ return_session_configlist(GHashTable * configlist, Tsessionvars * session)
 	init_prop_string_with_escape(&configlist, &session->documentroot, "documentroot:", NULL);
 	init_prop_limitedstringlist(&configlist, &session->searchlist, "searchlist:", 15, FALSE);
 	init_prop_limitedstringlist(&configlist, &session->replacelist, "replacelist:", 15, FALSE);
-	init_prop_limitedstringlist(&configlist, &session->filegloblist, "filegloblist:", 15, FALSE);
+	init_prop_limitedstringlist(&configlist, &session->filegloblist, "filegloblist:", 30, FALSE);
 	init_prop_stringlist(&configlist, &session->classlist, "classlist:", FALSE);
 	init_prop_stringlist(&configlist, &session->colorlist, "colorlist:", FALSE);
 	init_prop_stringlist(&configlist, &session->targetlist, "targetlist:", FALSE);
