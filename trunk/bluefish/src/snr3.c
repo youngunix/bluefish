@@ -1211,6 +1211,7 @@ snr3run_init_from_gui(TSNRWin *snrwin, Tsnr3run *s3run)
 	gint type, replacetype, scope, dotmatchall, escapechars, recursion_level, showinoutputbox;
 	gboolean is_case_sens;
 	gint retval=0;
+	gchar *cbasedir;
 	GFile *basedir;
 	const gchar *filepattern;
 	DEBUG_MSG("s3run->in_replace=%d\n",s3run->in_replace);
@@ -1228,7 +1229,8 @@ snr3run_init_from_gui(TSNRWin *snrwin, Tsnr3run *s3run)
 	escapechars = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(snrwin->escapeChars));
 	recursion_level = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(snrwin->recursion_level));
 
-	basedir = g_file_new_for_commandline_arg(gtk_entry_get_text(GTK_ENTRY(snrwin->basedir)));
+	cbasedir = gtk_entry_get_text(GTK_ENTRY(gtk_bin_get_child(snrwin->basedir)));
+	basedir = g_file_new_for_commandline_arg(cbasedir);
 	filepattern = gtk_entry_get_text(GTK_ENTRY(gtk_bin_get_child(GTK_BIN(snrwin->filepattern))));
 
 	if (is_case_sens != s3run->is_case_sens) {
@@ -1336,7 +1338,14 @@ snr3run_init_from_gui(TSNRWin *snrwin, Tsnr3run *s3run)
 			snrwin->bfwin->session->snr3_filepattern = g_strdup(s3run->filepattern);
 			g_free(snrwin->bfwin->session->snr3_basedir);
 			snrwin->bfwin->session->snr3_basedir = g_file_get_uri(s3run->basedir);
+			if (s3run->filepattern && s3run->filepattern[0] != '\0')
+				snrwin->bfwin->session->filegloblist = add_to_history_stringlist(snrwin->bfwin->session->filegloblist, s3run->filepattern,TRUE);
+			if (cbasedir && cbasedir[0] != '\0')
+				snrwin->bfwin->session->snr3_basedir_history = add_to_history_stringlist(snrwin->bfwin->session->snr3_basedir_history, cbasedir,TRUE);
 		}
+		snrwin->bfwin->session->searchlist = add_to_history_stringlist(snrwin->bfwin->session->searchlist, s3run->query, TRUE);
+		if (s3run->replace && s3run->replace[0] != '\0')
+			snrwin->bfwin->session->replacelist = add_to_history_stringlist(snrwin->bfwin->session->replacelist, s3run->replace,TRUE);
 	}
 	DEBUG_MSG("snr3run_init_from_gui, return %d\n", retval);
 	return retval;
@@ -1395,12 +1404,6 @@ snr3_advanced_response(GtkDialog * dialog, gint response, TSNRWin * snrwin)
 	DEBUG_MSG("snr3_advanced_response, response=%d, guichange=%d\n",response,guichange);
 	if (guichange == -1)
 		return;
-
-	snrwin->bfwin->session->searchlist = add_to_history_stringlist(snrwin->bfwin->session->searchlist, s3run->query, TRUE);
-	if (s3run->replace && s3run->replace[0] != '\0')
-		snrwin->bfwin->session->replacelist = add_to_history_stringlist(snrwin->bfwin->session->replacelist, s3run->replace,TRUE);
-	if (s3run->scope == snr3scope_files && s3run->filepattern && s3run->filepattern[0] != '\0')
-		snrwin->bfwin->session->filegloblist = add_to_history_stringlist(snrwin->bfwin->session->filegloblist, s3run->filepattern,TRUE);
 
 	switch(response) {
 		case SNR_RESPONSE_FIND:
@@ -1524,6 +1527,8 @@ snr3_advanced_dialog_backend(Tbfwin * bfwin, const gchar *findtext, Tsnr3scope s
 {
 	TSNRWin *snrwin;
 	GtkWidget *table, *vbox;
+	gchar *set_basedir=NULL;
+	gboolean free_set_basedir=FALSE;
 	gint currentrow=0;
 	/*GtkTextIter start, end; */
 	unsigned int i = 0;
@@ -1654,25 +1659,31 @@ snr3_advanced_dialog_backend(Tbfwin * bfwin, const gchar *findtext, Tsnr3scope s
 
 	currentrow++;
 
-	snrwin->basedir = gtk_entry_new();
-	snrwin->basedirL = dialog_mnemonic_label_in_table(_("Basedir: "), snrwin->basedir, table, 0, 1, currentrow, currentrow+1);
 	if (files_basedir!=NULL) {
-		gtk_entry_set_text(GTK_ENTRY(snrwin->basedir), files_basedir);
+		set_basedir = files_basedir;
 	} else if (bfwin->session->snr3_basedir && bfwin->session->snr3_basedir[0]!='\0') {
-		gtk_entry_set_text(GTK_ENTRY(snrwin->basedir), bfwin->session->snr3_basedir);
+		set_basedir = bfwin->session->snr3_basedir;
 	} else if (bfwin->current_document && bfwin->current_document->uri) {
 		GFile *parent = g_file_get_parent(bfwin->current_document->uri);
 		gchar *tmp = g_file_get_uri(parent);
-		gtk_entry_set_text(GTK_ENTRY(snrwin->basedir), tmp);
+		set_basedir = g_file_get_uri(parent);
+		free_set_basedir=TRUE;
 		g_object_unref(parent);
-		g_free(tmp);
 	} else if (bfwin->session->recent_dirs) {
 		GList *tmplist = g_list_last(bfwin->session->recent_dirs);
 		if (tmplist && tmplist->data)
-			gtk_entry_set_text(GTK_ENTRY(snrwin->basedir), tmplist->data);
+			set_basedir = tmplist->data;
 	}
+	snrwin->basedir = combobox_with_popdown(set_basedir, bfwin->session->snr3_basedir_history, TRUE);
+	if (free_set_basedir) {
+		g_free(set_basedir);
+	}
+	snrwin->basedirL = dialog_mnemonic_label_in_table(_("Basedir: "), snrwin->basedir, table, 0, 1, currentrow, currentrow+1);
+	
 	gtk_table_attach(GTK_TABLE(table), snrwin->basedir, 1, 3, currentrow, currentrow+1,GTK_EXPAND | GTK_FILL, GTK_SHRINK, 0, 0);
-	snrwin->basedirB = file_but_new2(snrwin->basedir, 1, bfwin, GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
+	
+	/* The entry itself can be accessed by calling gtk_bin_get_child() on the combo box. */
+	snrwin->basedirB = file_but_new2(gtk_bin_get_child(snrwin->basedir), 1, bfwin, GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
 	gtk_table_attach(GTK_TABLE(table), snrwin->basedirB, 3, 4, currentrow, currentrow+1,GTK_FILL, GTK_SHRINK, 0, 0);
 
 	currentrow++;
