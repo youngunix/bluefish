@@ -814,8 +814,6 @@ bftextview2_insert_text_after_lcb(GtkTextBuffer * buffer, GtkTextIter * iter, gc
 static inline void
 paint_margin_expand(BluefishTextView * btv, cairo_t * cr, gint w, gint height)
 {
-/* assume that the correct color is set by the calling function */
-/*
 #if GTK_CHECK_VERSION(3,0,0)
 	GtkStyleContext *cntxt;
 	GdkRGBA rgba;
@@ -829,10 +827,10 @@ paint_margin_expand(BluefishTextView * btv, cairo_t * cr, gint w, gint height)
 							   &gtk_widget_get_style(GTK_WIDGET(btv))->base[gtk_widget_get_state
 																			(GTK_WIDGET(btv))]);
 #endif
-*/
+
 	cairo_rectangle(cr, btv->margin_pixels_chars + btv->margin_pixels_symbol + 2, w + (height / 2) - 3, 7, 7);
 	cairo_fill(cr);
-/*
+
 #if GTK_CHECK_VERSION(3,0,0)
 	gtk_style_context_get_color(cntxt, gtk_widget_get_state_flags(GTK_WIDGET(btv)), &rgba);
 	gdk_cairo_set_source_rgba(cr, &rgba);
@@ -841,7 +839,7 @@ paint_margin_expand(BluefishTextView * btv, cairo_t * cr, gint w, gint height)
 							   &gtk_widget_get_style(GTK_WIDGET(btv))->fg[gtk_widget_get_state
 																		  (GTK_WIDGET(btv))]);
 #endif
-*/
+
 	cairo_rectangle(cr, btv->margin_pixels_chars + btv->margin_pixels_symbol + 1.5, w + (height / 2) - 3.5, 8,
 					8);
 	cairo_move_to(cr, btv->margin_pixels_chars + btv->margin_pixels_symbol + 5.5, w + (height / 2) + 5);
@@ -854,8 +852,6 @@ paint_margin_expand(BluefishTextView * btv, cairo_t * cr, gint w, gint height)
 static inline void
 paint_margin_collapse(BluefishTextView * btv, cairo_t * cr, gint w, gint height)
 {
-/* assume that the correct color is set by the calling function */
-/*
 #if GTK_CHECK_VERSION(3,0,0)
 	GtkStyleContext *cntxt;
 	GdkRGBA rgba;
@@ -869,10 +865,10 @@ paint_margin_collapse(BluefishTextView * btv, cairo_t * cr, gint w, gint height)
 							   &gtk_widget_get_style(GTK_WIDGET(btv))->base[gtk_widget_get_state
 																			(GTK_WIDGET(btv))]);
 #endif
-*/
+
 	cairo_rectangle(cr, btv->margin_pixels_chars + btv->margin_pixels_symbol + 2, w + (height / 2) - 3, 7, 7);
 	cairo_fill(cr);
-/*
+
 #if GTK_CHECK_VERSION(3,0,0)
 	gtk_style_context_get_color(cntxt, gtk_widget_get_state_flags(GTK_WIDGET(btv)), &rgba);
 	gdk_cairo_set_source_rgba(cr, &rgba);
@@ -881,7 +877,7 @@ paint_margin_collapse(BluefishTextView * btv, cairo_t * cr, gint w, gint height)
 							   &gtk_widget_get_style(GTK_WIDGET(btv))->fg[gtk_widget_get_state
 																		  (GTK_WIDGET(btv))]);
 #endif
-*/
+
 	cairo_rectangle(cr, btv->margin_pixels_chars + btv->margin_pixels_symbol + 1.5, w + (height / 2) - 3.5, 8,
 					8);
 	cairo_move_to(cr, btv->margin_pixels_chars + btv->margin_pixels_symbol + 5.5, w + (height / 2) - 2);
