@@ -498,11 +498,7 @@ bluefish_text_view_get_active_identifier(BluefishTextView *btv, GtkTextIter *cur
 	mstart=*currentlocation;
 	gtk_text_iter_set_line_offset(&mstart, 0);
 	patnum = scan_for_identifier_at_position(master, &mstart, currentlocation,&contextnum, so, eo);
-	if (patnum != FALSE) {
-		/* we have a result! */
-		return TRUE;
-	}
-	
+	return (patnum != FALSE);
 }
 
 static gchar *
