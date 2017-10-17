@@ -404,6 +404,20 @@ static void filematch_cb(Tsnr3run *s3run, GFile *uri, GFileInfo *finfo) {
 		DEBUG_MSG("filematch_cb, cancelled, do nothing\n");
 		return;
 	}
+	/* check if this URI is a backup file */
+	if (s3run->ignorebackupfiles) {
+		gchar *path;
+		gboolean isbackup=FALSE;
+		gint len;
+		path = g_file_get_path(uri);
+		len = strlen(path);
+		if (len > 1 && (path[len - 1] == '~')) {
+			isbackup = TRUE;
+		}
+		g_free(path);
+		if (isbackup) return;
+	}
+	
 	/* TODO: first check if we have this file open, in that case we have to run the
 	function that replaces in the document */
 	doc = documentlist_return_document_from_uri(s3run->bfwin->documentlist, uri);

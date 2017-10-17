@@ -104,6 +104,7 @@ static void init_default_session(Tsessionvars *session) {
 			= session->view_blockstack
 			= session->autocomplete
 			= session->show_mbhl
+			= session->snr3_ignorebackupfiles
 			= 1;
 #ifdef HAVE_LIBENCHANT
 	session->spell_check_default = 1;

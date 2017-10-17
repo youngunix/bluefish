@@ -421,6 +421,7 @@ typedef struct {
 	gint snr3_scope;
 	gint snr3_casesens;
 	gint snr3_showinoutputbox;
+	gint snr3_ignorebackupfiles;
 	gint snr3_escape_chars;
 	gint snr3_dotmatchall;
 	gint snr3_recursion_level;
@@ -453,7 +454,7 @@ typedef struct {
 	gint convertcolumn_horizontally;
 	gint display_right_margin;
 	gint show_visible_spacing;
-	/* 45 * sizeof(gint) */
+	/* 47 * sizeof(gint) */
 	/* IF YOU EDIT THIS STRUCTURE PLEASE EDIT THE CODE IN PROJECT.C THAT COPIES
 	   A Tsessionvar INTO A NEW Tsessionvar AND ADJUST THE SIZES!!!!!!!!!!!!!!!!!!!!!! */
 #ifdef HAVE_LIBENCHANT
