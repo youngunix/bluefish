@@ -71,6 +71,7 @@ typedef struct {
 	gboolean select_matches;
 	gboolean bookmark_matches;
 	gboolean showinoutputbox;
+	gboolean ignorebackupfiles;
 
 	/* the resultss of a search run */
 	gboolean in_replace; /* TRUE if the code is in a replace, so the doc_insert and doc_delete signals do not need to do anything */
@@ -149,6 +150,7 @@ typedef struct {
 	GtkWidget *overlappingMatches;
 	GtkWidget *matchCase;
 	GtkWidget *showinoutputbox;
+	GtkWidget *ignorebackupfiles;
 	GtkWidget *escapeChars;
 	GtkWidget *dotmatchall;
 	GtkWidget *select_match;
