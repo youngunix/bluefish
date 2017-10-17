@@ -1107,6 +1107,10 @@ file_but_clicked_lcb(GtkWidget * widget, Tfilebut * fb)
 			setfile = g_file_get_uri(newsetfile);
 			g_object_unref(newsetfile);
 		}
+	} else {
+		GFile *uri = g_file_new_for_commandline_arg(setfile);
+		g_free(setfile);
+		setfile = g_file_get_uri(uri);
 	}
 
 	if (!fb->fullpath && fb->bfwin && fb->bfwin->current_document && fb->bfwin->current_document->uri) {
