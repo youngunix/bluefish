@@ -29,6 +29,7 @@
 #include "bf_lib.h"
 #include "bookmark.h"
 #include "document.h"
+#include "undo_redo.h"
 #include "doc_text_tools.h"
 #include "bfwin.h"
 #include "bftextview2_scanner.h"
@@ -61,6 +62,8 @@ static GdkRGBA st_whitespace_color, st_cline_color, st_cursor_highlight_color, s
 #else
 static GdkColor st_whitespace_color, st_cline_color, st_cursor_highlight_color, st_margin_fg_color, st_margin_bg_color;
 #endif
+
+static gboolean bluefish_text_view_remove_spacingtoclick(BluefishTextView * btv);
 
 /****************************** utility functions ******************************/
 
@@ -493,7 +496,7 @@ bluefish_text_view_get_active_identifier(BluefishTextView *btv, GtkTextIter *cur
 	BluefishTextView *master = BLUEFISH_TEXT_VIEW(btv->master);
 	guint patnum;
 	gint contextnum;
-	GtkTextIter iter, mstart;
+	GtkTextIter mstart;
 	
 	mstart=*currentlocation;
 	gtk_text_iter_set_line_offset(&mstart, 0);
@@ -1577,6 +1580,11 @@ bluefish_text_view_key_press_event(GtkWidget * widget, GdkEventKey * kevent)
 		DBG_AUTOCOMP("bluefish_text_view_key_press_event, keyval=%d, state=%d, set needs_autocomp to TRUE\n",
 					 kevent->keyval, kevent->state);
 		btv->needs_autocomp = TRUE;
+	} else {
+		if (main_v->props.editor_spacingtoclick) {
+			/*g_print("bluefish_text_view_key_press_event, removing spacingtoclick\n");*/
+			bluefish_text_view_remove_spacingtoclick(master);
+		}
 	}
 	/* following code does smart cursor placement */
 	if (main_v->props.editor_smart_cursor && !(kevent->state & GDK_CONTROL_MASK)
@@ -1983,12 +1991,30 @@ select_from_line_to_eventy(BluefishTextView * btv, gint line, guint eventy)
 }
 
 static gboolean
+bluefish_text_view_remove_spacingtoclick(BluefishTextView * btv)
+{
+	if (btv->spacingtoclickstart != -1 && btv->spacingtoclickend != -1) {
+		if (doc_unre_test_last_entry(btv->doc, UndoInsert, btv->spacingtoclickstart, btv->spacingtoclickend)) {
+			/*g_print("bluefish_text_view_remove_spacingtoclick -> undo last spacing from %d to %d\n",btv->spacingtoclickstart, btv->spacingtoclickend);*/
+			/* last text action in the document was a spacingtoclick, so undo it */
+			undo_doc(btv->doc);
+		}
+		btv->spacingtoclickstart = -1;
+		btv->spacingtoclickend = -1;
+	}
+}
+
+static gboolean
 bluefish_text_view_button_press_event(GtkWidget * widget, GdkEventButton * event)
 {
 	BluefishTextView *btv = BLUEFISH_TEXT_VIEW(widget);
 	BluefishTextView *master = BLUEFISH_TEXT_VIEW(btv->master);
+	
+	if (main_v->props.editor_spacingtoclick) {
+		bluefish_text_view_remove_spacingtoclick(master);
+	}
 
-	DBG_SIGNALS("bluefish_text_view_button_press_event, widget=%p, btv=%p, master=%p\n", widget, btv, master);
+	DBG_SIGNALS("bluefish_text_view_button_press_event, widget=%p, btv=%p, master=%p, x=%d, y=%d\n", widget, btv, master, event->x, event->y);
 	btv->button_press_line = -1;
 	if (event->window == gtk_text_view_get_window(GTK_TEXT_VIEW(btv), GTK_TEXT_WINDOW_LEFT)) {
 
@@ -2029,9 +2055,9 @@ bluefish_text_view_button_press_event(GtkWidget * widget, GdkEventButton * event
 				return TRUE;
 			}
 			if (event->x < master->margin_pixels_chars) {
-				btv->button_press_line = gtk_text_iter_get_line(&it);
+				master->button_press_line = gtk_text_iter_get_line(&it);
 			}
-		} else if (event->button == 3 && btv->show_blocks && (event->x > master->margin_pixels_chars)) {
+		} else if (event->button == 3 && master->show_blocks && (event->x > master->margin_pixels_chars)) {
 #if GTK_CHECK_VERSION(3,22,0)
 			gtk_menu_popup_at_pointer(GTK_MENU(bftextview2_fold_menu(btv)), NULL);
 #else
@@ -2047,6 +2073,13 @@ bluefish_text_view_button_press_event(GtkWidget * widget, GdkEventButton * event
 			if (!btv->mark_set_idle)
 				btv->mark_set_idle = g_idle_add_full(G_PRIORITY_HIGH_IDLE, mark_set_idle_lcb, btv, NULL);
 		}
+		
+		if (main_v->props.editor_spacingtoclick) {
+			gint bufx,bufy;
+			gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(btv),GTK_TEXT_WINDOW_TEXT,event->x,event->y,&bufx,&bufy);
+			master->spacingtoclickend = bufx;
+		}
+		
 	} else if (event->button == 3) {
 		GtkTextIter iter;
 		/* store the location of the right mouse button click for menu items like 'edit tag'
@@ -2088,6 +2121,8 @@ bluefish_text_view_motion_notify_event(GtkWidget * widget, GdkEventMotion * even
 static gboolean
 bluefish_text_view_button_release_event(GtkWidget * widget, GdkEventButton * event)
 {
+	BluefishTextView *master = BLUEFISH_TEXT_VIEW(widget)->master;
+	BluefishTextView *btv = BLUEFISH_TEXT_VIEW(widget);
 	if (((BluefishTextView *) widget)->button_press_line != -1
 		&& event->x < ((BluefishTextView *) ((BluefishTextView *) widget)->master)->margin_pixels_chars
 		&& event->button == 1) {
@@ -2100,6 +2135,29 @@ bluefish_text_view_button_release_event(GtkWidget * widget, GdkEventButton * eve
 		}
 		((BluefishTextView *) widget)->button_press_line = -1;
 	}
+
+	if (event->button == 1 && main_v->props.editor_spacingtoclick) {
+		gint bufx,bufy, numchars;
+		GtkTextIter iter;
+		gchar *tmpstr;
+		gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(btv),GTK_TEXT_WINDOW_TEXT,event->x,event->y,&bufx,&bufy);
+		if (master->spacingtoclickend == bufx) {
+			
+			/*g_print("bufx=%d,bufy=%d\n",bufx,bufy);*/
+			gtk_text_view_get_iter_at_location(GTK_TEXT_VIEW(btv),&iter,bufx, bufy);
+			if (gtk_text_iter_ends_line(&iter)) {
+				/*g_print("iter at line %d, line offset=%d\n",gtk_text_iter_get_line(&iter),gtk_text_iter_get_line_offset(&iter));*/
+				numchars = (bufx/master->margin_pixels_per_char)-gtk_text_iter_get_line_offset(&iter);
+				if (numchars > 0) {
+					tmpstr = bf_str_repeat(" ", numchars);
+					master->spacingtoclickstart = gtk_text_iter_get_offset(&iter);
+					master->spacingtoclickend = master->spacingtoclickstart + numchars;
+					gtk_text_buffer_insert(master->buffer,&iter,tmpstr,-1);
+				}
+			}
+		}
+	}
+
 	return GTK_WIDGET_CLASS(bluefish_text_view_parent_class)->button_release_event(widget, event);
 }
 

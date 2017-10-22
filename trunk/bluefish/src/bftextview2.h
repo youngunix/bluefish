@@ -416,6 +416,9 @@ struct _BluefishTextView {
 	guint needremovetags;	/* after we have removed all old highlighting, we set this to G_MAXUINT32, or to the
 									offset up to the point where we removed the old highlighting. but after a change that
 									needs highlighting we set this to the offset of the change. */
+	gint spacingtoclickstart;
+	gint spacingtoclickend;
+	
 	/* next three are used for margin painting */
 	gint margin_pixels_per_char;
 	gint margin_pixels_chars;

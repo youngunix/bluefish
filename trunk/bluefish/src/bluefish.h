@@ -287,6 +287,7 @@ typedef struct {
 	gint editor_tab_indent_sel; /* tab key will indent a selected block */
 	gint editor_auto_close_brackets;
 	gint editor_replace_unicode_quotes;
+	gint editor_spacingtoclick;
 	gint use_system_tab_font;
 	gint max_shown_filename_len; /* the maximum length for the filename shown in the tab */
 	gchar *tab_font_string;		/* notebook tabs font */
