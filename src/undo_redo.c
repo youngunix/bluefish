@@ -686,36 +686,41 @@ redo(Tbfwin * bfwin)
 	}
 }
 
+void undo_doc(Tdocument *doc)
+{
+	gint lastpos;
+	if (have_current_action_id(&doc->unre)) {
+		gint ret;
+		const gchar *buttons[] = { _("Undo in _all documents"), _("Undo only _this document"), NULL };
+		/* there might be more douments that can be undone in the current unre group */
+		ret = message_dialog_new_multi(BFWIN(doc->bfwin)->main_window, GTK_MESSAGE_QUESTION, buttons,
+									   _("Undo this change in all documents?"),
+									   _("This change concerns multiple documents."));
+		if (ret == 0) {
+			GList *tmplist = g_list_first(BFWIN(doc->bfwin)->documentlist);
+			while (tmplist) {
+				if (have_current_action_id(&DOCUMENT(tmplist->data)->unre)) {
+					doc_unre_start(DOCUMENT(tmplist->data));
+					lastpos = doc_undo(DOCUMENT(tmplist->data));
+					doc_unre_finish(DOCUMENT(tmplist->data), lastpos);
+				}
+				tmplist = g_list_next(tmplist);
+			}
+			DEBUG_MSG("undo in all finished!\n");
+			return;
+		}
+	}
+	doc_unre_start(doc);
+	lastpos = doc_undo(doc);
+	doc_unre_finish(doc, lastpos);
+}
+
 void
 undo(Tbfwin * bfwin)
 {
 	DEBUG_MSG("undo_cb, started\n");
 	if (bfwin->current_document) {
-		gint lastpos;
-		if (have_current_action_id(&bfwin->current_document->unre)) {
-			gint ret;
-			const gchar *buttons[] = { _("Undo in _all documents"), _("Undo only _this document"), NULL };
-			/* there might be more douments that can be undone in the current unre group */
-			ret = message_dialog_new_multi(bfwin->main_window, GTK_MESSAGE_QUESTION, buttons,
-										   _("Undo this change in all documents?"),
-										   _("This change concerns multiple documents."));
-			if (ret == 0) {
-				GList *tmplist = g_list_first(bfwin->documentlist);
-				while (tmplist) {
-					if (have_current_action_id(&DOCUMENT(tmplist->data)->unre)) {
-						doc_unre_start(DOCUMENT(tmplist->data));
-						lastpos = doc_undo(DOCUMENT(tmplist->data));
-						doc_unre_finish(DOCUMENT(tmplist->data), lastpos);
-					}
-					tmplist = g_list_next(tmplist);
-				}
-				DEBUG_MSG("undo in all finished!\n");
-				return;
-			}
-		}
-		doc_unre_start(bfwin->current_document);
-		lastpos = doc_undo(bfwin->current_document);
-		doc_unre_finish(bfwin->current_document, lastpos);
+		undo_doc(bfwin->current_document);
 	}
 }
 

@@ -56,6 +56,8 @@ enum {
 	editor_smart_cursor,
 	editor_tab_indent_sel,
 	editor_auto_close_brackets,
+	editor_replace_unicode_quotes,
+	editor_spacingtoclick,
 	use_system_tab_font,
 	max_shown_filename_len,
 	tab_font_string,			/* notebook tabs font */
@@ -2090,6 +2092,8 @@ preferences_apply(Tprefdialog * pd)
 	integer_apply(&main_v->props.highlight_cursor, pd->prefs[highlight_cursor], TRUE);
 	integer_apply(&main_v->props.editor_smart_cursor, pd->prefs[editor_smart_cursor], TRUE);
 	main_v->props.editor_auto_close_brackets = gtk_combo_box_get_active(GTK_COMBO_BOX(pd->prefs[editor_auto_close_brackets]));
+	integer_apply(&main_v->props.editor_replace_unicode_quotes, pd->prefs[editor_replace_unicode_quotes], TRUE);
+	integer_apply(&main_v->props.editor_spacingtoclick, pd->prefs[editor_spacingtoclick], TRUE);
 	integer_apply(&main_v->props.editor_tab_indent_sel, pd->prefs[editor_tab_indent_sel], TRUE);
 	integer_apply(&main_v->props.smartindent, pd->prefs[smartindent], TRUE);
 	integer_apply(&main_v->props.use_system_colors, pd->prefs[use_system_colors], TRUE);
@@ -2479,7 +2483,7 @@ void
 preferences_dialog_new(Tbfwin *bfwin)
 {
 	Tprefdialog *pd;
-	gint index;
+	gint index, num;
 	GList *tmplist, *poplist, *freelist;
 	GSList *tmpslist;
 	GtkWidget *dvbox, *frame, *hbox, *label, *table, *vbox1, *vbox2, *vbox3;
@@ -2559,25 +2563,33 @@ preferences_dialog_new(Tbfwin *bfwin)
 
 	vbox2 = dialog_vbox_labeled(_("<b>Editor settings</b>"), vbox1);
 
-	table = dialog_table_in_vbox_defaults(5, 2, 0, vbox2);
-
+	table = dialog_table_in_vbox_defaults(6, 2, 0, vbox2);
+	num = 0;
 	pd->prefs[smartindent] =
-		dialog_check_button_in_table(_("Smart auto indentin_g"), main_v->props.smartindent, table, 0, 1, 0,
-									 1);
+		dialog_check_button_in_table(_("Smart auto indentin_g"), main_v->props.smartindent, table, 0, 1, num,num+1);
+	num++;
 	pd->prefs[editor_smart_cursor] =
 		dialog_check_button_in_table(_("Smart Home/_End cursor positioning"),
-									 main_v->props.editor_smart_cursor, table, 0, 1, 1, 2);
-
+									 main_v->props.editor_smart_cursor, table, 0, 1, num,num+1);
+	num++;
 	pd->prefs[editor_tab_indent_sel] =
 		dialog_check_button_in_table(_("_Tab key indents selection"), main_v->props.editor_tab_indent_sel,
-									 table, 0, 1, 2, 3);
-
+									 table, 0, 1, num,num+1);
+	num++;
+	pd->prefs[editor_replace_unicode_quotes] =
+		dialog_check_button_in_table(_("Replace unicode quotes with ascii quotes"), main_v->props.editor_replace_unicode_quotes, 
+									table, 0, 1, num,num+1);
+	num++;
+	pd->prefs[editor_spacingtoclick] =
+		dialog_check_button_in_table(_("Insert spaces to mouse click"), main_v->props.editor_spacingtoclick, 
+									table, 0, 1, num,num+1);
+	num++;
 	pd->prefs[editor_auto_close_brackets] = dialog_combo_box_text_in_table(autobracketclosemodes,
 																	main_v->props.editor_auto_close_brackets, table,
-																	1, 2, 3, 4);
-	dialog_mnemonic_label_in_table(_("Automatically insert closing brackets"), pd->prefs[editor_auto_close_brackets], table, 0, 1, 3,
-								   4);
-
+																	1, 2, num, num+1);
+	dialog_mnemonic_label_in_table(_("Automatically insert closing brackets"), pd->prefs[editor_auto_close_brackets], table, 0, 1, num,
+								   num+1);
+	num++;
 	hbox = gtk_hbox_new(FALSE, 12);
 	gtk_box_pack_start(GTK_BOX(vbox2), hbox, FALSE, FALSE, 0);
 	pd->prefs[right_margin_pos] =
