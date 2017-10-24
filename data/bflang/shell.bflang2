@@ -414,26 +414,30 @@
 <element id="e.lparen" pattern="(" starts_block="1" highlight="brackets" block_name="Parentheses block" />
 <element pattern=")" ends_block="1" blockstartelement="e.lparen" highlight="brackets" />
 
-<element pattern="[0-9.]+" is_regex="1" highlight="value"/>
-<element pattern="\$+[!@?*#\$a-zA-Z0-9_][a-zA-Z0-9_]*" is_regex="1" case_insens="1" highlight="variable"/>
-<element pattern="\${[!@?*#\$a-zA-Z0-9_][a-zA-Z0-9_]*" is_regex="1" highlight="variable">
-<context symbols="&quot;}:-+=?">
-<element pattern=":?[-+=?]" is_regex="1" highlight="keyword"/>
-<element pattern="}" highlight="variable" ends_context="1"/>
-</context>
-</element>
 <element pattern="=" highlight="brackets"/>
-
+<element pattern="[0-9.]+" is_regex="1" highlight="value"/>
 <element pattern="#" highlight="comment">
 <context symbols="&#10;&#13;" highlight="comment">
 	<element pattern="(&#10;|&#13;|&#13;&#10;)" is_regex="1" highlight="comment" ends_context="1"/>
 </context>
 </element>
+
+<element pattern="$+[!@?*#\$a-zA-Z0-9_][a-zA-Z0-9_]*" is_regex="1" case_insens="1" highlight="variable" id="shell.variable" />
+<element pattern="${[!@?*#\$a-zA-Z0-9_][a-zA-Z0-9_]*" is_regex="1" highlight="variable" id="shell.cbvariable" >
+<context symbols="&quot;}:-+=?" highlight="variable">
+<element pattern=":?[-+=?]" is_regex="1" highlight="keyword"/>
+<element pattern="}" highlight="variable" ends_context="1"/>
+</context>
+</element>
+
+
 <element pattern="'[^']*'" is_regex="1" highlight="string"/>
 <element pattern="&quot;" highlight="string">
-<context symbols="\&quot;${} " highlight="string">
+<context symbols="\&quot;,/._${} " highlight="string">
 	<element pattern="\\." is_regex="1" highlight="string" />
-	<element pattern="\$+[!@?*#${a-zA-Z0-9_][}a-zA-Z0-9_]*" is_regex="1" case_insens="1" highlight="variable"/>
+	<element idref="shell.variable" />
+	<!--<element pattern="$+[!@?*#$a-zA-Z0-9_][}a-zA-Z0-9_]*" is_regex="1" case_insens="1" highlight="variable"/>-->
+	<element idref="shell.cbvariable" />
 	<element pattern="&quot;" highlight="string" ends_context="1"/>
 </context>
 </element>
