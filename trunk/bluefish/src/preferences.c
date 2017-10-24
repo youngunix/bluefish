@@ -964,7 +964,7 @@ set_textstyle_strarr_in_list(GtkTreeIter * iter, gchar ** strarr, Tprefdialog * 
 	if (arrcount == 6) {
 		gtk_list_store_set(GTK_LIST_STORE(pd->tsd.lstore), iter, 0, strarr[0], 1, strarr, -1);
 	} else {
-		DEBUG_MSG("ERROR: set_textstyle_strarr_in_list, arraycount != 5 !!!!!!\n");
+		DEBUG_MSG("ERROR: set_textstyle_strarr_in_list, %s arraycount != 6 !!!!!!\n", arrcount>1?strarr[0]:"[empty]");
 	}
 }
 
@@ -1188,7 +1188,7 @@ create_textstyle_gui(Tprefdialog * pd, GtkWidget * vbox1)
 				gtk_list_store_append(GTK_LIST_STORE(pd->tsd.lstore), &iter);
 				set_textstyle_strarr_in_list(&iter, strarr, pd);
 			} else {
-				g_print("invalid/outdated textstyle with length %d\n", g_strv_length(strarr));
+				g_print("invalid/outdated textstyle %s with length %d (should be 6)\n", count>1?strarr[0]:"[empty]",count);
 			}
 			tmplist = g_list_next(tmplist);
 		}
