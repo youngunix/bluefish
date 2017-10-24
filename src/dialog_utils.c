@@ -240,11 +240,11 @@ dialog_color_button_in_table(const gchar * color, const gchar * title, GtkWidget
 		button = gtk_color_button_new_with_color(&gdkcolor);
 	} else {
 		button = gtk_color_button_new();
-		gtk_color_button_set_alpha(GTK_COLOR_BUTTON(button), 0);
+		/*gtk_color_button_set_alpha(GTK_COLOR_BUTTON(button), 0);*/
 	}
 
 	gtk_color_button_set_title(GTK_COLOR_BUTTON(button), title);
-	gtk_color_button_set_use_alpha(GTK_COLOR_BUTTON(button), TRUE);
+	gtk_color_button_set_use_alpha(GTK_COLOR_BUTTON(button), FALSE);
 	gtk_table_attach(GTK_TABLE(table), button, left_attach, right_attach, top_attach, bottom_attach, GTK_FILL,
 					 GTK_SHRINK, 0, 0);
 
