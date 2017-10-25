@@ -1990,6 +1990,10 @@ select_from_line_to_eventy(BluefishTextView * btv, gint line, guint eventy)
 	gtk_text_buffer_select_range(btv->buffer, &so, &eo);
 }
 
+gboolean last_undo_is_spacingtoclick(BluefishTextView * btv) {
+	return (btv->spacingtoclickstart != -1 && btv->spacingtoclickend != -1 && doc_unre_test_last_entry(btv->doc, UndoInsert, btv->spacingtoclickstart, btv->spacingtoclickend));
+}
+
 static gboolean
 bluefish_text_view_remove_spacingtoclick(BluefishTextView * btv)
 {

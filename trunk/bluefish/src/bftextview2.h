@@ -479,6 +479,8 @@ void bftextview2_schedule_scanning(BluefishTextView * btv);
 gboolean bluefish_text_view_in_comment(BluefishTextView * btv, GtkTextIter * its, GtkTextIter * ite);
 Tcomment *bluefish_text_view_get_comment(BluefishTextView * btv, GtkTextIter * it,
 										 Tcomment_type preferred_type);
+
+gboolean last_undo_is_spacingtoclick(BluefishTextView * btv);
 void bluefish_text_view_multiset(BluefishTextView * btv, gpointer doc, gint view_line_numbers,
 							gint view_blocks, gint autoindent, gint autocomplete, gint show_mbhl, gint enable_scanner);
 
