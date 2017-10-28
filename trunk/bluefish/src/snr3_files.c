@@ -67,7 +67,7 @@ static gchar *line_from_buffer(gchar *buffer, guint offset) {
 	/*g_print("%s:%d line_from_buffer, buffer=%p, offset=%d\n",__FILE__,__LINE__, buffer, offset);*/
 	/* search backwards for a newline character if offset >0 */
 	i--;
-	while (i >=0 && i > (offset-40)) {
+	while (i >=0 && i > (offset-80)) {
 		if (buffer[i] == '\n' || buffer[i] == '\r') {
 			/*g_print("found newline at %d\n",i);*/
 			i++;
@@ -75,7 +75,7 @@ static gchar *line_from_buffer(gchar *buffer, guint offset) {
 		}
 		i--;
 	}
-	if (i == (offset-40)) {
+	if (i == (offset-80)) {
 		gchar *tmp = g_utf8_find_next_char(buffer+i, NULL);
 		if (tmp)
 			i = tmp-buffer;
@@ -87,7 +87,7 @@ static gchar *line_from_buffer(gchar *buffer, guint offset) {
 		}
 		j++;
 	}
-	if (j == offset+40) {
+	if (j == offset+80) {
 		gchar *tmp = g_utf8_find_prev_char(buffer, buffer+j-1);
 		if (tmp)
 			j = tmp-buffer;
