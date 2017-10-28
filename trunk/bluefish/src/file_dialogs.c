@@ -691,7 +691,7 @@ doc_save_backend(Tdocument * doc, Tdocsave_mode savemode, gboolean close_doc,
 	dsb = g_new0(Tdocsavebackend, 1);
 	dsb->doc = doc;
 	dsb->savemode = savemode;
-	if (main_v->props.spacingtoclick) {
+	if (main_v->props.editor_spacingtoclick) {
 		bluefish_text_view_remove_spacingtoclick(doc->view);
 	}
 	

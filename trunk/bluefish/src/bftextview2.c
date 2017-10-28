@@ -63,8 +63,6 @@ static GdkRGBA st_whitespace_color, st_cline_color, st_cursor_highlight_color, s
 static GdkColor st_whitespace_color, st_cline_color, st_cursor_highlight_color, st_margin_fg_color, st_margin_bg_color;
 #endif
 
-static gboolean bluefish_text_view_remove_spacingtoclick(BluefishTextView * btv);
-
 /****************************** utility functions ******************************/
 
 const gchar *
@@ -1545,7 +1543,7 @@ gboolean last_undo_is_spacingtoclick(BluefishTextView * btv) {
 	return (btv->spacingtoclickstart != -1 && btv->spacingtoclickend != -1 && doc_unre_test_last_entry(btv->doc, UndoInsert, btv->spacingtoclickstart, btv->spacingtoclickend));
 }
 
-static gboolean
+gboolean
 bluefish_text_view_remove_spacingtoclick(BluefishTextView * btv)
 {
 	if (btv->spacingtoclickstart != -1 && btv->spacingtoclickend != -1) {
