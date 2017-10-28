@@ -1541,6 +1541,135 @@ bftextview2_delete_range_after_lcb(GtkTextBuffer * buffer, GtkTextIter * obegin,
 #endif
 }
 
+gboolean last_undo_is_spacingtoclick(BluefishTextView * btv) {
+	return (btv->spacingtoclickstart != -1 && btv->spacingtoclickend != -1 && doc_unre_test_last_entry(btv->doc, UndoInsert, btv->spacingtoclickstart, btv->spacingtoclickend));
+}
+
+static gboolean
+bluefish_text_view_remove_spacingtoclick(BluefishTextView * btv)
+{
+	if (btv->spacingtoclickstart != -1 && btv->spacingtoclickend != -1) {
+		if (doc_unre_test_last_entry(btv->doc, UndoInsert, btv->spacingtoclickstart, btv->spacingtoclickend)) {
+			/*g_print("bluefish_text_view_remove_spacingtoclick -> undo last spacing from %d to %d\n",btv->spacingtoclickstart, btv->spacingtoclickend);*/
+			/* last text action in the document was a spacingtoclick, so undo it */
+			undo_doc(btv->doc);
+		}
+		btv->spacingtoclickstart = -1;
+		btv->spacingtoclickend = -1;
+	}
+}
+      
+static void spacingtoclick_insert_spacing(BluefishTextView *master, gint numchars, GtkTextIter *iter)
+{
+	if (numchars > 0) {
+		gchar *tmpstr;
+		/*g_print("inserting numchars=%d spaces\n",numchars);*/
+		tmpstr = bf_str_repeat(" ", numchars);
+		master->spacingtoclickstart = gtk_text_iter_get_offset(iter);
+		master->spacingtoclickend = master->spacingtoclickstart + numchars;
+		gtk_text_buffer_insert(master->buffer,iter,tmpstr,-1);
+		g_free(tmpstr);
+	}	
+}
+
+     
+static gboolean
+spacingtoclick_handle_keypress(BluefishTextView *master, GdkEventKey * kevent )
+{
+	GtkTextMark *imark;
+	GtkTextIter iter;
+	imark = gtk_text_buffer_get_insert(master->buffer);
+	gtk_text_buffer_get_iter_at_mark(master->buffer, &iter, imark);
+	
+	if (kevent->keyval == GDK_Right) {
+		g_print("spacingtoclick_handle_keypress, GDK_Right\n");
+		if (gtk_text_iter_ends_line(&iter)) {
+			gint curoffset = gtk_text_iter_get_offset(&iter);
+			gint requested = curoffset+1;
+			gint oldstart = master->spacingtoclickstart;
+			gint oldend = master->spacingtoclickend;
+			g_print("oldstart=%d, oldend=%d, curoffset=%d\n",oldstart,oldend,curoffset);
+			bluefish_text_view_remove_spacingtoclick(master);
+			if (oldend == curoffset && oldstart > 0) {
+				gtk_text_buffer_get_iter_at_offset(master->buffer, &iter, oldstart);
+				/* increase current spacing with 1 character */
+				spacingtoclick_insert_spacing(master, requested - oldstart,&iter);
+				g_print("increased existing spacing at %d to %d\n",oldstart,requested - oldstart);
+			} else {
+				gtk_text_buffer_get_iter_at_offset(master->buffer, &iter, curoffset);
+				/* new spacing */
+				spacingtoclick_insert_spacing(master, requested - curoffset,&iter);
+				g_print("added new spacing at %d to %d\n", curoffset, requested - curoffset);
+			}
+			return TRUE;
+		}
+	} else if (kevent->keyval == GDK_Left) {
+		/* reduce spacing one character */
+		g_print("spacingtoclick_handle_keypress, GDK_Left\n");
+		if (gtk_text_iter_ends_line(&iter)) {
+			gint curoffset = gtk_text_iter_get_offset(&iter);
+			gint requested = curoffset-1;
+			gint oldstart = master->spacingtoclickstart;
+			gint oldend = master->spacingtoclickend;
+			g_print("oldstart=%d, oldend=%d, curoffset=%d\n",oldstart,oldend,curoffset);
+			bluefish_text_view_remove_spacingtoclick(master);
+			if (oldend == curoffset && oldstart > 0 && oldstart < requested) {
+				gtk_text_buffer_get_iter_at_offset(master->buffer, &iter, oldstart);
+				/* decrease current spacing with 1 character */
+				spacingtoclick_insert_spacing(master, requested - oldstart,&iter);
+				g_print("decreased existing spacing at %d to %d\n",oldstart,requested - oldstart);
+				return TRUE;
+			}
+		}
+	} else if (kevent->keyval == GDK_Up || kevent->keyval == GDK_Down) {
+		GdkRectangle loc,loc2;
+		gboolean ret, endsline;
+		g_print("spacingtoclick_handle_keypress, GDK_Up or GDK_Down, gtk_text_iter_get_line()=%d\n",gtk_text_iter_get_line(&iter));
+		/* see if line above has same amount of characters */
+		gtk_text_view_get_iter_location(GTK_TEXT_VIEW(master),&iter,&loc);
+		endsline = gtk_text_iter_ends_line(&iter);
+		if (kevent->keyval == GDK_Up) {
+			ret = gtk_text_iter_backward_line(&iter);
+		} else {
+			ret = gtk_text_iter_forward_line(&iter);
+		}
+		if (ret) {
+			gint offset;
+			g_print("after line forward/backward, line is %d\n",gtk_text_iter_get_line(&iter));     
+			if (!gtk_text_iter_ends_line(&iter)) {
+				g_print("iter at line %d and offset %d does not end line, forward to line end\n",gtk_text_iter_get_line(&iter),gtk_text_iter_get_offset(&iter));
+				gtk_text_iter_forward_to_line_end(&iter);
+			}
+			offset = gtk_text_iter_get_offset(&iter);
+			gtk_text_view_get_iter_location(GTK_TEXT_VIEW(master),&iter,&loc2);
+			g_print("loc.x=%d, loc2.x=%d (line=%d, offset=%d)\n",loc.x,loc2.x,gtk_text_iter_get_line(&iter),gtk_text_iter_get_offset(&iter));
+			if (master->spacingtoclickstart < offset && master->spacingtoclickend <= offset) {
+				/* removing the spacing will change the offset */
+				offset -= (master->spacingtoclickend - master->spacingtoclickstart);
+			}
+			bluefish_text_view_remove_spacingtoclick(master);
+			if (loc.x > loc2.x) {
+				gint numchars;
+				numchars = (loc.x-loc2.x)/master->margin_pixels_per_char;
+				gtk_text_buffer_get_iter_at_offset(master->buffer, &iter, offset);
+				g_print("insert %d spacing at offset %d (line %d)\n",numchars,offset,gtk_text_iter_get_line(&iter));
+				spacingtoclick_insert_spacing(master, numchars,&iter);
+				gtk_text_buffer_get_iter_at_offset(master->buffer, &iter, offset+numchars);
+				gtk_text_buffer_place_cursor(master->buffer, &iter);
+				return TRUE;
+			} else {
+				gtk_text_view_get_iter_at_location(GTK_TEXT_VIEW(master),&iter,loc.x,loc2.y);
+				gtk_text_buffer_place_cursor(master->buffer, &iter);
+				return TRUE;
+			}
+		}
+		bluefish_text_view_remove_spacingtoclick(master);
+	} else {
+		bluefish_text_view_remove_spacingtoclick(master);
+	}
+	return FALSE;
+}    
+
 static gboolean
 bluefish_text_view_key_press_event(GtkWidget * widget, GdkEventKey * kevent)
 {
@@ -1583,8 +1712,12 @@ bluefish_text_view_key_press_event(GtkWidget * widget, GdkEventKey * kevent)
 	} else {
 		if (main_v->props.editor_spacingtoclick) {
 			/*g_print("bluefish_text_view_key_press_event, removing spacingtoclick\n");*/
-			bluefish_text_view_remove_spacingtoclick(master);
+			/*bluefish_text_view_remove_spacingtoclick(master);*/
+			if (spacingtoclick_handle_keypress(master, kevent)) {
+				return TRUE;
+			}
 		}
+
 	}
 	/* following code does smart cursor placement */
 	if (main_v->props.editor_smart_cursor && !(kevent->state & GDK_CONTROL_MASK)
@@ -1990,24 +2123,6 @@ select_from_line_to_eventy(BluefishTextView * btv, gint line, guint eventy)
 	gtk_text_buffer_select_range(btv->buffer, &so, &eo);
 }
 
-gboolean last_undo_is_spacingtoclick(BluefishTextView * btv) {
-	return (btv->spacingtoclickstart != -1 && btv->spacingtoclickend != -1 && doc_unre_test_last_entry(btv->doc, UndoInsert, btv->spacingtoclickstart, btv->spacingtoclickend));
-}
-
-static gboolean
-bluefish_text_view_remove_spacingtoclick(BluefishTextView * btv)
-{
-	if (btv->spacingtoclickstart != -1 && btv->spacingtoclickend != -1) {
-		if (doc_unre_test_last_entry(btv->doc, UndoInsert, btv->spacingtoclickstart, btv->spacingtoclickend)) {
-			/*g_print("bluefish_text_view_remove_spacingtoclick -> undo last spacing from %d to %d\n",btv->spacingtoclickstart, btv->spacingtoclickend);*/
-			/* last text action in the document was a spacingtoclick, so undo it */
-			undo_doc(btv->doc);
-		}
-		btv->spacingtoclickstart = -1;
-		btv->spacingtoclickend = -1;
-	}
-}
-
 static gboolean
 bluefish_text_view_button_press_event(GtkWidget * widget, GdkEventButton * event)
 {
@@ -2150,13 +2265,19 @@ bluefish_text_view_button_release_event(GtkWidget * widget, GdkEventButton * eve
 			/*g_print("bufx=%d,bufy=%d\n",bufx,bufy);*/
 			gtk_text_view_get_iter_at_location(GTK_TEXT_VIEW(btv),&iter,bufx, bufy);
 			if (gtk_text_iter_ends_line(&iter)) {
+				GdkRectangle loc;
+				/* the difference between the location of the iter and the requested locations defines the number of characters
+				that need to be inserted */
+				gtk_text_view_get_iter_location (GTK_TEXT_VIEW(btv),&iter,&loc);
 				/*g_print("iter at line %d, line offset=%d\n",gtk_text_iter_get_line(&iter),gtk_text_iter_get_line_offset(&iter));*/
-				numchars = (bufx/master->margin_pixels_per_char)-gtk_text_iter_get_line_offset(&iter);
+				numchars = ((bufx - loc.x)/master->margin_pixels_per_char);
 				if (numchars > 0) {
+					/*g_print("inserting numchars=%d spaces\n",numchars);*/
 					tmpstr = bf_str_repeat(" ", numchars);
 					master->spacingtoclickstart = gtk_text_iter_get_offset(&iter);
 					master->spacingtoclickend = master->spacingtoclickstart + numchars;
 					gtk_text_buffer_insert(master->buffer,&iter,tmpstr,-1);
+					g_free(tmpstr);
 				}
 			}
 		}
