@@ -1656,12 +1656,11 @@ spacingtoclick_handle_keypress(BluefishTextView *master, GdkEventKey * kevent )
 				spacingtoclick_insert_spacing(master, numchars,&iter);
 				gtk_text_buffer_get_iter_at_offset(master->buffer, &iter, offset+numchars);
 				gtk_text_buffer_place_cursor(master->buffer, &iter);
-				return TRUE;
-			} else {
-				gtk_text_view_get_iter_at_location(GTK_TEXT_VIEW(master),&iter,loc.x,loc2.y);
-				gtk_text_buffer_place_cursor(master->buffer, &iter);
-				return TRUE;
 			}
+			gtk_text_view_get_iter_at_location(GTK_TEXT_VIEW(master),&iter,loc.x,loc2.y);
+			gtk_text_buffer_place_cursor(master->buffer, &iter);
+			gtk_text_view_scroll_mark_onscreen(GTK_TEXT_VIEW(master),imark);
+			return TRUE;
 		}
 		bluefish_text_view_remove_spacingtoclick(master);
 	} else {
