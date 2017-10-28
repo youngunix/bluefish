@@ -1191,6 +1191,7 @@ void filetreemodel_add_file(FileTreemodel * ftm, GFile * uri, const gchar *conte
 	bname = g_file_get_basename(uri);
 	if (!content_type) {
 		guesstype = g_content_type_guess(bname, NULL, 0, NULL);
+		g_print("guesstype=%s for bname=%s\n",guesstype,bname);
 	}
 	if (content_type || guesstype) {
 		GIcon *icon;
@@ -1198,7 +1199,7 @@ void filetreemodel_add_file(FileTreemodel * ftm, GFile * uri, const gchar *conte
 		icon_name = icon_name_from_icon(icon);
 		g_object_unref(icon);
 	}
-	add_single_uri(ftm, precord, uri, bname, content_type, icon_name, FALSE, weight);
+	add_single_uri(ftm, precord, uri, bname, content_type?content_type:guesstype, icon_name, FALSE, weight);
 	g_free(bname);
 	g_free(icon_name);
 	g_object_unref(puri);
