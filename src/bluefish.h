@@ -266,6 +266,7 @@ typedef struct {
 	GtkWidget *view;
 	GtkWidget *slave; /* used in split view for the bottom view */
 	GtkWidget *vsplit; /* used for split view */
+	GtkWidget *tab_modlabel;	
 	GtkWidget *tab_label;
 	GtkWidget *tab_eventbox;
 	GtkWidget *tab_menu;

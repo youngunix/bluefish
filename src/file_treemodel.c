@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * file_treemodel.c - non-GUI general functions
  *
- * Copyright (C) 2013 Olivier Sessink
+ * Copyright (C) 2013-2017 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1191,7 +1191,7 @@ void filetreemodel_add_file(FileTreemodel * ftm, GFile * uri, const gchar *conte
 	bname = g_file_get_basename(uri);
 	if (!content_type) {
 		guesstype = g_content_type_guess(bname, NULL, 0, NULL);
-		g_print("guesstype=%s for bname=%s\n",guesstype,bname);
+		/*g_print("guesstype=%s for bname=%s\n",guesstype,bname);*/
 	}
 	if (content_type || guesstype) {
 		GIcon *icon;
