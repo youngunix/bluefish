@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * document.c - the document
  *
- * Copyright (C) 1998-2015 Olivier Sessink
+ * Copyright (C) 1998-2017 Olivier Sessink
  * Copyright (C) 1998 Chris Mazuc
  * some additions Copyright (C) 2004 Eugene Morenko(More)
  *
@@ -1122,6 +1122,7 @@ doc_set_modified(Tdocument * doc, gboolean value)
 		if (doc->modified)
 			color = main_v->props.tab_color_modified;
 		doc_set_label_color(doc, color);
+		gtk_label_set_text(GTK_LABEL(doc->tab_modlabel),value?"*":"");
 		bfwin_set_title(BFWIN(doc->bfwin), BFWIN(doc->bfwin)->current_document, change);
 	}
 #ifdef DEBUG
@@ -3062,7 +3063,9 @@ doc_new_backend(Tbfwin * bfwin, gboolean force_new, gboolean readonly, gboolean 
 
 	DEBUG_MSG("doc_new_backend, appending doc to notebook\n");
 
-	hbox = gtk_hbox_new(FALSE, 4);
+	hbox = gtk_hbox_new(FALSE, 0); 
+	newdoc->tab_modlabel = gtk_label_new("");
+	gtk_box_pack_start(GTK_BOX(hbox),newdoc->tab_modlabel, FALSE, FALSE, 0);
 	button = bluefish_small_close_button_new();
 #if GTK_CHECK_VERSION(3,0,0)	/* Restores tab scrolling feature for gtk+3 builds */
 	gtk_widget_add_events(hbox, GDK_SCROLL_MASK);

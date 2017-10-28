@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * preferences.c - the preferences code
  *
- * Copyright (C) 2002-2012 Olivier Sessink
+ * Copyright (C) 2002-2017 Olivier Sessink
  * Copyright (C) 2010-2011 James Hayward
  *
  * This program is free software; you can redistribute it and/or modify
@@ -2581,7 +2581,7 @@ preferences_dialog_new(Tbfwin *bfwin)
 									table, 0, 1, num,num+1);
 	num++;
 	pd->prefs[editor_spacingtoclick] =
-		dialog_check_button_in_table(_("Insert spaces to mouse click"), main_v->props.editor_spacingtoclick, 
+		dialog_check_button_in_table(_("Insert spaces to cursor position"), main_v->props.editor_spacingtoclick, 
 									table, 0, 1, num,num+1);
 	num++;
 	pd->prefs[editor_auto_close_brackets] = dialog_combo_box_text_in_table(autobracketclosemodes,
