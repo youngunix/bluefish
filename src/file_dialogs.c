@@ -691,6 +691,10 @@ doc_save_backend(Tdocument * doc, Tdocsave_mode savemode, gboolean close_doc,
 	dsb = g_new0(Tdocsavebackend, 1);
 	dsb->doc = doc;
 	dsb->savemode = savemode;
+	if (main_v->props.spacingtoclick) {
+		bluefish_text_view_remove_spacingtoclick(doc->view);
+	}
+	
 	/* should be moved to a plugin interface, because this is HTML specific */
 	/* update author meta tag */
 	if (main_v->props.auto_update_meta_author) {
