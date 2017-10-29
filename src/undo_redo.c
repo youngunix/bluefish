@@ -124,7 +124,7 @@ doc_unre_destroy_last_group(Tdocument * doc)
 }
 
 static gint
-unregroup_activate(unregroup_t * curgroup, Tdocument * doc, gint is_redo, gboolean newmodified)
+unregroup_activate(unregroup_t * curgroup, Tdocument * doc, gint is_redo, gboolean newmodified, gboolean noscroll)
 {
 	unreentry_t *entry, *nextentry;
 	gint lastpos = -1;
@@ -141,7 +141,7 @@ unregroup_activate(unregroup_t * curgroup, Tdocument * doc, gint is_redo, gboole
 			nextentry = (unreentry_t *)bf_elist_next((unreentry_t *)entry);
 		}
 		gtk_text_buffer_get_iter_at_offset(doc->buffer, &itstart, entry->start);
-		if (!nextentry) {
+		if (!noscroll && !nextentry) {
 			gtk_text_view_scroll_to_iter(doc_get_active_view(doc), &itstart, 0.05, FALSE, 0.0, 0.0);
 		}
 		if ((entry->op == UndoInsert && !is_redo) || (entry->op == UndoDelete && is_redo)) {
@@ -195,7 +195,7 @@ unre_list_cleanup(unregroup_t ** groups)
 }
 
 static gint
-doc_undo(Tdocument * doc)
+doc_undo(Tdocument * doc, gboolean noscroll)
 {
 	unregroup_t *curgroup = NULL;
 	if (doc->unre.current->entries != NULL) {
@@ -230,7 +230,7 @@ doc_undo(Tdocument * doc)
 		   the undo/redo widgets, the lenght of the redolist should be > 0 _before_
 		   activate is called */
 		DEBUG_MSG("doc_undo, calling unregroup_activate\n");
-		return unregroup_activate(curgroup, doc, 0, curgroup->changed);
+		return unregroup_activate(curgroup, doc, 0, curgroup->changed, noscroll);
 	}
 	return -1;
 }
@@ -251,7 +251,7 @@ doc_redo(Tdocument * doc)
 		}
 		doc->unre.num_groups++;
 		DEBUG_MSG("doc_redo, added a group, num_groups =%d\n", doc->unre.num_groups);
-		return unregroup_activate(curgroup, doc, 1,  doc->unre.redofirst ? ((unregroup_t *)doc->unre.redofirst)->changed : 1);
+		return unregroup_activate(curgroup, doc, 1,  doc->unre.redofirst ? ((unregroup_t *)doc->unre.redofirst)->changed : 1, FALSE);
 	}
 	return -1;
 }
@@ -562,7 +562,7 @@ undo_cb(GtkWidget * widget, Tbfwin * bfwin)
 				while (tmplist) {
 					if (have_current_action_id(&DOCUMENT(tmplist->data)->unre)) {
 						doc_unre_start(DOCUMENT(tmplist->data));
-						lastpos = doc_undo(DOCUMENT(tmplist->data));
+						lastpos = doc_undo(DOCUMENT(tmplist->data), FALSE);
 						doc_unre_finish(DOCUMENT(tmplist->data), lastpos);
 					}
 					tmplist = g_list_next(tmplist);
@@ -572,7 +572,7 @@ undo_cb(GtkWidget * widget, Tbfwin * bfwin)
 			}
 		}
 		doc_unre_start(bfwin->current_document);
-		lastpos = doc_undo(bfwin->current_document);
+		lastpos = doc_undo(bfwin->current_document, FALSE);
 		doc_unre_finish(bfwin->current_document, lastpos);
 	}
 }
@@ -613,7 +613,7 @@ undo_all_cb(GtkWidget * widget, Tbfwin * bfwin)
 		gint lastpos = -1;
 		doc_unre_start(bfwin->current_document);
 		while (bfwin->current_document->unre.first) {
-			lastpos = doc_undo(bfwin->current_document);
+			lastpos = doc_undo(bfwin->current_document, FALSE);
 		}
 		doc_unre_finish(bfwin->current_document, lastpos);
 	}
@@ -685,8 +685,9 @@ redo(Tbfwin * bfwin)
 		doc_unre_finish(bfwin->current_document, lastpos);
 	}
 }
-
-void undo_doc(Tdocument *doc)
+                              
+/* noscroll is used when this is called for spacingtoclick, which handles the scrolling itself */
+void undo_doc(Tdocument *doc, gboolean noscroll)
 {
 	gint lastpos;
 	if (have_current_action_id(&doc->unre)) {
@@ -701,7 +702,7 @@ void undo_doc(Tdocument *doc)
 			while (tmplist) {
 				if (have_current_action_id(&DOCUMENT(tmplist->data)->unre)) {
 					doc_unre_start(DOCUMENT(tmplist->data));
-					lastpos = doc_undo(DOCUMENT(tmplist->data));
+					lastpos = doc_undo(DOCUMENT(tmplist->data), noscroll);
 					doc_unre_finish(DOCUMENT(tmplist->data), lastpos);
 				}
 				tmplist = g_list_next(tmplist);
@@ -711,7 +712,7 @@ void undo_doc(Tdocument *doc)
 		}
 	}
 	doc_unre_start(doc);
-	lastpos = doc_undo(doc);
+	lastpos = doc_undo(doc, noscroll);
 	doc_unre_finish(doc, lastpos);
 }
 
@@ -720,7 +721,7 @@ undo(Tbfwin * bfwin)
 {
 	DEBUG_MSG("undo_cb, started\n");
 	if (bfwin->current_document) {
-		undo_doc(bfwin->current_document);
+		undo_doc(bfwin->current_document, FALSE);
 	}
 }
 
@@ -744,7 +745,7 @@ undo_all(Tbfwin * bfwin)
 		gint lastpos = -1;
 		doc_unre_start(bfwin->current_document);
 		while (bfwin->current_document->unre.first) {
-			lastpos = doc_undo(bfwin->current_document);
+			lastpos = doc_undo(bfwin->current_document, FALSE);
 		}
 		doc_unre_finish(bfwin->current_document, lastpos);
 	}

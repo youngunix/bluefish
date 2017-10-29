@@ -1543,14 +1543,14 @@ gboolean last_undo_is_spacingtoclick(BluefishTextView * btv) {
 	return (btv->spacingtoclickstart != -1 && btv->spacingtoclickend != -1 && doc_unre_test_last_entry(btv->doc, UndoInsert, btv->spacingtoclickstart, btv->spacingtoclickend));
 }
 
-gboolean
+void
 bluefish_text_view_remove_spacingtoclick(BluefishTextView * btv)
 {
 	if (btv->spacingtoclickstart != -1 && btv->spacingtoclickend != -1) {
 		if (doc_unre_test_last_entry(btv->doc, UndoInsert, btv->spacingtoclickstart, btv->spacingtoclickend)) {
 			/*g_print("bluefish_text_view_remove_spacingtoclick -> undo last spacing from %d to %d\n",btv->spacingtoclickstart, btv->spacingtoclickend);*/
 			/* last text action in the document was a spacingtoclick, so undo it */
-			undo_doc(btv->doc);
+			undo_doc(btv->doc, TRUE);
 		}
 		btv->spacingtoclickstart = -1;
 		btv->spacingtoclickend = -1;
@@ -1634,6 +1634,7 @@ spacingtoclick_handle_keypress(BluefishTextView *master, GdkEventKey * kevent )
 		}
 		if (ret) {
 			gint offset;
+			GdkRectangle vrect;
 			g_print("after line forward/backward, line is %d\n",gtk_text_iter_get_line(&iter));     
 			if (!gtk_text_iter_ends_line(&iter)) {
 				g_print("iter at line %d and offset %d does not end line, forward to line end\n",gtk_text_iter_get_line(&iter),gtk_text_iter_get_offset(&iter));
@@ -1653,9 +1654,8 @@ spacingtoclick_handle_keypress(BluefishTextView *master, GdkEventKey * kevent )
 				gtk_text_buffer_get_iter_at_offset(master->buffer, &iter, offset);
 				g_print("insert %d spacing at offset %d (line %d)\n",numchars,offset,gtk_text_iter_get_line(&iter));
 				spacingtoclick_insert_spacing(master, numchars,&iter);
-				gtk_text_buffer_get_iter_at_offset(master->buffer, &iter, offset+numchars);
-				gtk_text_buffer_place_cursor(master->buffer, &iter);
 			}
+			g_print("place cursor at x=%d,y=%d\n",loc.x,loc2.y);
 			gtk_text_view_get_iter_at_location(GTK_TEXT_VIEW(master),&iter,loc.x,loc2.y);
 			gtk_text_buffer_place_cursor(master->buffer, &iter);
 			gtk_text_view_scroll_mark_onscreen(GTK_TEXT_VIEW(master),imark);
