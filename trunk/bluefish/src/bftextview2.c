@@ -1557,7 +1557,8 @@ bluefish_text_view_remove_spacingtoclick(BluefishTextView * btv)
 	}
 }
       
-static void spacingtoclick_insert_spacing(BluefishTextView *master, gint numchars, GtkTextIter *iter)
+static void 
+spacingtoclick_insert_spacing(BluefishTextView *master, gint numchars, GtkTextIter *iter)
 {
 	if (numchars > 0) {
 		gchar *tmpstr;
@@ -1707,9 +1708,8 @@ bluefish_text_view_key_press_event(GtkWidget * widget, GdkEventKey * kevent)
 					 kevent->keyval, kevent->state);
 		btv->needs_autocomp = TRUE;
 	} else {
-		if (main_v->props.editor_spacingtoclick) {
-			/*g_print("bluefish_text_view_key_press_event, removing spacingtoclick\n");*/
-			/*bluefish_text_view_remove_spacingtoclick(master);*/
+		if (main_v->props.editor_spacingtoclick && !(kevent->state & GDK_CONTROL_MASK) && !(kevent->state & GDK_MOD1_MASK) && !(kevent->state & GDK_SHIFT_MASK) ) {
+			g_print("bluefish_text_view_key_press_event, handling spacingtoclick keypress, kevent->state=%d\n",kevent->state);
 			if (spacingtoclick_handle_keypress(master, kevent)) {
 				return TRUE;
 			}
@@ -2268,14 +2268,7 @@ bluefish_text_view_button_release_event(GtkWidget * widget, GdkEventButton * eve
 				gtk_text_view_get_iter_location (GTK_TEXT_VIEW(btv),&iter,&loc);
 				/*g_print("iter at line %d, line offset=%d\n",gtk_text_iter_get_line(&iter),gtk_text_iter_get_line_offset(&iter));*/
 				numchars = ((bufx - loc.x)/master->margin_pixels_per_char);
-				if (numchars > 0) {
-					/*g_print("inserting numchars=%d spaces\n",numchars);*/
-					tmpstr = bf_str_repeat(" ", numchars);
-					master->spacingtoclickstart = gtk_text_iter_get_offset(&iter);
-					master->spacingtoclickend = master->spacingtoclickstart + numchars;
-					gtk_text_buffer_insert(master->buffer,&iter,tmpstr,-1);
-					g_free(tmpstr);
-				}
+				spacingtoclick_insert_spacing(master, numchars, &iter);
 			}
 		}
 	}
