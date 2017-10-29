@@ -1623,9 +1623,10 @@ spacingtoclick_handle_keypress(BluefishTextView *master, GdkEventKey * kevent )
 	} else if (kevent->keyval == GDK_Up || kevent->keyval == GDK_Down) {
 		GdkRectangle loc,loc2;
 		gboolean ret, endsline;
-		g_print("spacingtoclick_handle_keypress, GDK_Up or GDK_Down, gtk_text_iter_get_line()=%d\n",gtk_text_iter_get_line(&iter));
+		g_print("spacingtoclick_handle_keypress, GDK_Up or GDK_Down, iter is at cursor, gtk_text_iter_get_line()=%d, offset=%d\n",gtk_text_iter_get_line(&iter),gtk_text_iter_get_offset(&iter));
 		/* see if line above has same amount of characters */
 		gtk_text_view_get_iter_location(GTK_TEXT_VIEW(master),&iter,&loc);
+		g_print("iter (at cursor) location, loc.x=%d, loc.y=%d\n",loc.x,loc.y);
 		endsline = gtk_text_iter_ends_line(&iter);
 		if (kevent->keyval == GDK_Up) {
 			ret = gtk_text_iter_backward_line(&iter);
@@ -1643,8 +1644,9 @@ spacingtoclick_handle_keypress(BluefishTextView *master, GdkEventKey * kevent )
 			offset = gtk_text_iter_get_offset(&iter);
 			gtk_text_view_get_iter_location(GTK_TEXT_VIEW(master),&iter,&loc2);
 			g_print("loc.x=%d, loc2.x=%d (line=%d, offset=%d)\n",loc.x,loc2.x,gtk_text_iter_get_line(&iter),gtk_text_iter_get_offset(&iter));
-			if (master->spacingtoclickstart < offset && master->spacingtoclickend <= offset) {
+			if (master->spacingtoclickstart != -1 && master->spacingtoclickstart < offset && master->spacingtoclickend <= offset) {
 				/* removing the spacing will change the offset */
+				g_print("there is already spacing before our current offset (start=%d, end=%d) which will be removed, so reduce offset by %d\n",master->spacingtoclickstart,master->spacingtoclickend, master->spacingtoclickend - master->spacingtoclickstart);
 				offset -= (master->spacingtoclickend - master->spacingtoclickstart);
 			}
 			bluefish_text_view_remove_spacingtoclick(master);
@@ -2269,7 +2271,11 @@ bluefish_text_view_button_release_event(GtkWidget * widget, GdkEventButton * eve
 				/*g_print("iter at line %d, line offset=%d\n",gtk_text_iter_get_line(&iter),gtk_text_iter_get_line_offset(&iter));*/
 				numchars = ((bufx - loc.x)/master->margin_pixels_per_char);
 				spacingtoclick_insert_spacing(master, numchars, &iter);
+			} else {
+				master->spacingtoclickend = -1;
 			}
+		} else {
+			master->spacingtoclickend = -1;
 		}
 	}
 
