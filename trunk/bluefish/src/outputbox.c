@@ -253,7 +253,7 @@ init_output_box(Tbfwin * bfwin)
 	gtk_tree_view_append_column(GTK_TREE_VIEW(ob->lview), column);
 	column = gtk_tree_view_column_new_with_attributes(_("Line"), renderer, "text", 1, NULL);
 	gtk_tree_view_append_column(GTK_TREE_VIEW(ob->lview), column);
-	column = gtk_tree_view_column_new_with_attributes(_("Output"), renderer, "text", 2, NULL);
+	column = gtk_tree_view_column_new_with_attributes(_("Output"), renderer, "markup", 2, NULL);
 	gtk_tree_view_append_column(GTK_TREE_VIEW(ob->lview), column);
 
 	scrolwin = gtk_scrolled_window_new(NULL, NULL);
@@ -303,20 +303,28 @@ scroll_to_lstore_path_idle_lcb(gpointer data)
 	return FALSE;
 }
 
+static void
+list_store_set_markup_escaped(GtkListStore *store, GtkTreeIter *iter, gint column, gchar *text)
+{
+	gchar *tmp = g_markup_escape_text(text,-1);
+	gtk_list_store_set(GTK_LIST_STORE(store), iter, column, tmp, -1);
+	g_free(tmp);
+}
+
 void
-outputbox_add_line(Tbfwin *bfwin, const gchar *uri, gint line, const gchar *message)
+outputbox_add_line_markup(Tbfwin *bfwin, const gchar *uri, gint line, const gchar *markup)
 {
 	GtkTreeIter iter;
 	Toutputbox *ob;
 	gchar *tmp;
-	DEBUG_MSG("outputbox_add_line append %s : %d : %s\n",uri,line,message);
-	if (uri || line > 0 || (message && strlen(message))) {
+	DEBUG_MSG("outputbox_add_line_markup append %s : %d : %s\n",uri,line,markup);
+	if (uri || line > 0 || (markup && strlen(markup))) {
 		if (bfwin->outputbox) {
 			ob = OUTPUTBOX(bfwin->outputbox);
 		} else {
 			ob = init_output_box(bfwin);
 		}
-		DEBUG_MSG("add_line to outputbox, message='%s'\n",message);
+		DEBUG_MSG("add_line_markup to outputbox, markup='%s'\n",markup);
 		gtk_list_store_append(GTK_LIST_STORE(ob->lstore), &iter);
 		if (uri)
 			gtk_list_store_set(GTK_LIST_STORE(ob->lstore), &iter, 0, uri, -1);
@@ -327,9 +335,20 @@ outputbox_add_line(Tbfwin *bfwin, const gchar *uri, gint line, const gchar *mess
 			g_free(tmp);
 		}
 
-		if (message)
-			gtk_list_store_set(GTK_LIST_STORE(ob->lstore), &iter, 2, message, -1);
+		if (markup) {
+			gtk_list_store_set(GTK_LIST_STORE(ob->lstore), &iter, 2, markup, -1);
+		}
 	}
+}
+
+void outputbox_add_line(Tbfwin *bfwin, const gchar *uri, gint line, const gchar *message)
+{                 
+	gchar *tmp = NULL;
+	if (message) {
+		tmp = g_markup_escape_text(message,-1);
+	}
+	outputbox_add_line_markup(bfwin, uri, line, tmp);
+	g_free(tmp);
 }
 
 void
@@ -393,13 +412,12 @@ fill_output_box(gpointer data, gchar * string)
 			}
 		}
 		if (output) {
-			gtk_list_store_set(GTK_LIST_STORE(ob->lstore), &iter, 2, output, -1);
-			g_free((gchar *) output);
+			list_store_set_markup_escaped(GTK_LIST_STORE(ob->lstore), &iter, 2, output);    
 		}
 	} else {
 		DEBUG_MSG("fill_output_box, no match, append string %s to list\n", string);
 		gtk_list_store_append(GTK_LIST_STORE(ob->lstore), &iter);
-		gtk_list_store_set(GTK_LIST_STORE(ob->lstore), &iter, 2, string, -1);
+		list_store_set_markup_escaped(GTK_LIST_STORE(ob->lstore), &iter, 2, string);
 	}
 	g_match_info_free(match_info);
 	if (ob->bfwin->session->outputb_scroll_mode == 2) {
