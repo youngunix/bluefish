@@ -34,7 +34,7 @@
 
 typedef struct {
 	gint line;
-	gchar *text;
+	gchar *text;   /* text displayed to user, with pango markup */
 } Tfileresult;
 
 static guint calculate_line_in_buffer(Tlineinbuffer *lib, gchar *buffer, gsize pos) {
@@ -61,10 +61,11 @@ static guint calculate_line_in_buffer(Tlineinbuffer *lib, gchar *buffer, gsize p
 	return line;
 }
 
-static gchar *line_from_buffer(gchar *buffer, guint offset) {
+static gchar *markup_line_from_buffer(gchar *buffer, guint offset, guint eo) {
 	gint i,j;
 	i=j=offset;
-	/*g_print("%s:%d line_from_buffer, buffer=%p, offset=%d\n",__FILE__,__LINE__, buffer, offset);*/
+	gchar *retval, *prefix=NULL, *match=NULL, *suffix=NULL;
+	/*g_print("%s:%d markup_line_from_buffer, buffer=%p, offset=%d, eo=%d\n",__FILE__,__LINE__, buffer, offset, eo);*/
 	/* search backwards for a newline character if offset >0 */
 	i--;
 	while (i >=0 && i > (offset-80)) {
@@ -93,15 +94,30 @@ static gchar *line_from_buffer(gchar *buffer, guint offset) {
 			j = tmp-buffer;
 	}
 	/*g_print("%s:%d line_from_buffer, i=%d, j=%d\n",__FILE__,__LINE__, i, j);*/
-	return g_strndup(buffer+i, j-i);
+	if (i < offset) {
+		prefix = g_markup_escape_text(buffer+i, offset-i);
+	}
+	if (eo > offset) {
+		match = g_markup_escape_text(buffer+offset, eo-offset);
+	}
+	if (j > eo) {
+		suffix = g_markup_escape_text(buffer+eo, j-eo);
+	}                                              
+	retval = g_strconcat(prefix?prefix:"", "<b>", match?match:"","</b>", suffix?suffix:"", NULL);
+	g_free(prefix);
+	g_free(match);
+	g_free(suffix);
+	/*g_print("retval=%s\n",retval);*/
+	return retval;
 }
 
-static Tfileresult *new_result(guint line, gchar *buffer, guint offset) {
+static Tfileresult *new_result(guint line, gchar *buffer, guint so, guint eo) {
 	Tfileresult *fr;
 
 	fr = g_slice_new(Tfileresult);
-	fr->line = line;
-	fr->text = line_from_buffer(buffer, offset);
+	fr->line = line; 
+	/*g_print("new_result, line=%d, so=%d,eo=%d calling markup_line_from_buffer\n", line,so,eo);*/
+	fr->text = markup_line_from_buffer(buffer, so, eo);
 	return fr;
 }
 
@@ -116,7 +132,7 @@ static GList *snr3_find_pcre(Tsnr3run *s3run, gchar *buffer) {
 		guint line;
 		g_match_info_fetch_pos(match_info,0,&so,&eo);
 		line = calculate_line_in_buffer(&lib, buffer, so);
-		results = g_list_prepend(results, new_result(line, buffer, so));
+		results = g_list_prepend(results, new_result(line, buffer, so, eo));
 		g_match_info_next(match_info, NULL);
 	}
 	g_match_info_free(match_info);
@@ -157,7 +173,7 @@ static GList *snr3_replace_pcre(Tsnr3run *s3run, gchar *buffer, gchar **replaced
 		prevpos = eo;
 
 		line = calculate_line_in_buffer(&lib, newbuf, (newbufpos-newbuf));
-		results = g_list_prepend(results, new_result(line, newbuf, (newbufpos-newbuf)));
+		results = g_list_prepend(results, new_result(line, newbuf, (newbufpos-newbuf),(newbufpos-newbuf+eo-so) ));
 
 		replacestring = g_match_info_expand_references(match_info, s3run->replace, &gerror);
 		if (gerror) {
@@ -208,7 +224,7 @@ static GList *snr3_find_string(Tsnr3run *s3run, gchar *buffer) {
 		DEBUG_MSG("snr3_find_string, result=%p\n",result);
 		if (result) {
 			guint line = calculate_line_in_buffer(&lib, buffer, (result-buffer));
-			results = g_list_prepend(results, new_result(line, buffer, result-buffer));
+			results = g_list_prepend(results, new_result(line, buffer, result-buffer, result-buffer+querylen));
 			result += querylen;
 		}
 	} while (result);
@@ -260,7 +276,7 @@ static GList *snr3_replace_string(Tsnr3run *s3run, gchar *buffer, gchar **replac
 			result += querylen;
 			bufferpos = result;
 
-			results = g_list_prepend(results, new_result(line, newbuf, newbufpos-newbuf));
+			results = g_list_prepend(results, new_result(line, newbuf, newbufpos-newbuf,newbufpos-newbuf+querylen));
 
 			if (alloced <= (1+replacelen+(newbufpos-newbuf)+replacelen+(buflen-(bufferpos-buffer)))) {
 				gchar *tmp;
@@ -293,7 +309,7 @@ static gboolean replace_files_in_thread_finished(gpointer data) {
 		curi = g_file_get_uri(rit->uri);
 		for (tmplist=g_list_first(rit->results);tmplist;tmplist=g_list_next(tmplist)) {
 			Tfileresult *fr = tmplist->data;
-			outputbox_add_line(rit->s3run->bfwin, curi, fr->line, fr->text);
+			outputbox_add_line_markup(rit->s3run->bfwin, curi, fr->line, fr->text);
 			g_free(fr->text);
 			g_slice_free(Tfileresult, fr);
 			rit->s3run->files_resultcount++;
@@ -460,7 +476,7 @@ void snr3_run_in_files(Tsnr3run *s3run) {
 	DEBUG_MSG("snr3_run_in_files, started for s3run=%p\n",s3run);
 	g_atomic_int_set(&s3run->cancelled, 0);
 	queue_init_full(&s3run->threadqueue, 4, TRUE, TRUE, (QueueFunc)files_replace_run);
-	g_print("filepattern=%s\n",s3run->filepattern);
+	/*g_print("filepattern=%s\n",s3run->filepattern);*/
 	g_atomic_int_set(&s3run->runcount, 1); /* start with one reference for the findfiles() call */
 	s3run->files_resultcount = 0;
 	s3run->findfiles = findfiles(s3run->basedir, (s3run->recursion_level > 0), s3run->recursion_level, TRUE,s3run->filepattern, G_CALLBACK(filematch_cb), G_CALLBACK(finished_finding_files_cb), s3run);

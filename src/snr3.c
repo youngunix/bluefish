@@ -368,31 +368,41 @@ static Tsnr3result * sn3run_add_result(Tsnr3run *s3run, gulong so, gulong eo, gp
 	s3result->doc = doc;
 	g_queue_push_tail(&s3run->results, s3result);
 	if (s3run->showinoutputbox && doc && DOCUMENT(doc)->uri) {
-		GtkTextIter it1, it2, tmpit;
-		gchar *curi, *text;
+		GtkTextIter it1, it2, it3, it4, tmpit;
+		gchar *curi, *text, *prefix, *match, *suffix;
 		guint line;
 		curi = g_file_get_uri(DOCUMENT(doc)->uri);
-		gtk_text_buffer_get_iter_at_offset(DOCUMENT(doc)->buffer, &it1, so);
-		line = gtk_text_iter_get_line(&it1)+1;
-		gtk_text_buffer_get_iter_at_offset(DOCUMENT(doc)->buffer, &it2, eo);
+		gtk_text_buffer_get_iter_at_offset(DOCUMENT(doc)->buffer, &it2, so);
+		line = gtk_text_iter_get_line(&it2)+1;
+		gtk_text_buffer_get_iter_at_offset(DOCUMENT(doc)->buffer, &it3, eo);
+		it4 = it3;
+		it1 = it2;
+		/* it2 is at so, it3 at eo */
 		if (!gtk_text_iter_starts_line(&it1)) {
 			if (gtk_text_iter_get_line_offset(&it1) <= 40)
 				gtk_text_iter_set_line_offset(&it1, 0);
 			else
 				gtk_text_iter_backward_chars(&it1, 40);
 		}
-		if (!gtk_text_iter_ends_line(&it2)) {
-			tmpit = it2;
-			gtk_text_iter_forward_to_line_end(&it2);
-			if (gtk_text_iter_get_offset(&it2) > (gtk_text_iter_get_offset(&tmpit)+40)) {
-				it2 = tmpit;
-				gtk_text_iter_forward_chars(&it2, 40);
+		if (!gtk_text_iter_ends_line(&it4)) {
+			tmpit = it4;
+			gtk_text_iter_forward_to_line_end(&it4);
+			if (gtk_text_iter_get_offset(&it4) > (gtk_text_iter_get_offset(&tmpit)+40)) {
+				it4 = tmpit;
+				gtk_text_iter_forward_chars(&it4, 40);
 			}
 		}
-		text = gtk_text_buffer_get_text(DOCUMENT(doc)->buffer, &it1, &it2, TRUE);
-		outputbox_add_line(s3run->bfwin, curi, line, text);
+		/*text = gtk_text_buffer_get_text(DOCUMENT(doc)->buffer, &it1, &it2, TRUE);*/
+		prefix = gtk_text_buffer_get_text(DOCUMENT(doc)->buffer, &it1, &it2, TRUE);
+		match = gtk_text_buffer_get_text(DOCUMENT(doc)->buffer, &it2, &it3, TRUE);
+		suffix = gtk_text_buffer_get_text(DOCUMENT(doc)->buffer, &it3, &it4, TRUE);
+		text = g_strconcat(prefix?prefix:"", "<b>", match?match:"","</b>", suffix?suffix:"", NULL);
+		outputbox_add_line_markup(s3run->bfwin, curi, line, text);
 		g_free(curi);
 		g_free(text);
+		g_free(prefix);
+		g_free(suffix);
+		g_free(match);
 	}
 	return s3result;
 }
