@@ -3371,9 +3371,12 @@ static gboolean
 doc_split_scroll(gpointer data)
 {
 	Tdocument *doc = data;
+	GtkAdjustment *prim_adjust = gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(gtk_widget_get_parent(doc->view)));
 	GtkAdjustment *adjust =
 		gtk_scrolled_window_get_vadjustment(GTK_SCROLLED_WINDOW(gtk_widget_get_parent(doc->slave)));
-	gtk_adjustment_set_value(adjust, gtk_adjustment_get_lower(adjust) + gtk_adjustment_get_page_size(adjust));
+	/* get the scrollbar for the primary textview, and set this one lower */ 
+	
+	gtk_adjustment_set_value(adjust, gtk_adjustment_get_value(prim_adjust) + gtk_adjustment_get_page_size(adjust));
 	return FALSE;
 }
 
