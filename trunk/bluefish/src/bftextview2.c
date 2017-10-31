@@ -655,6 +655,16 @@ bftextview2_mark_set_lcb(GtkTextBuffer * buffer, GtkTextIter * location, GtkText
 }
 
 static void
+calc_pixels_per_char(BluefishTextView *btv)
+{
+	PangoLayout *panlay;
+	panlay = gtk_widget_create_pango_layout(GTK_WIDGET(btv), "");
+	pango_layout_set_text(panlay, "W", -1);
+	pango_layout_get_pixel_size(panlay, &btv->margin_pixels_per_char, NULL);
+	g_object_unref(G_OBJECT(panlay));	
+}
+
+static void
 bftextview2_set_margin_size(BluefishTextView * btv)
 {
 	gint lines, count, newsize;
@@ -663,11 +673,7 @@ bftextview2_set_margin_size(BluefishTextView * btv)
 
 	DBG_MSG("bftextview2_set_margin_size, called for %p\n", btv);
 	if (BLUEFISH_TEXT_VIEW(btv->master)->margin_pixels_per_char == 0) {
-		PangoLayout *panlay;
-		panlay = gtk_widget_create_pango_layout(GTK_WIDGET(btv), "");
-		pango_layout_set_text(panlay, "4", -1);
-		pango_layout_get_pixel_size(panlay, &btv->margin_pixels_per_char, NULL);
-		g_object_unref(G_OBJECT(panlay));
+		calc_pixels_per_char(btv->master);
 	}
 	if (BLUEFISH_TEXT_VIEW(btv->master)->show_line_numbers) {
 		lines = gtk_text_buffer_get_line_count(gtk_text_view_get_buffer(GTK_TEXT_VIEW(btv)));
@@ -1546,20 +1552,22 @@ gboolean last_undo_is_spacingtoclick(BluefishTextView * btv) {
 void
 bluefish_text_view_remove_spacingtoclick(BluefishTextView * btv)
 {
-	if (btv->spacingtoclickstart != -1 && btv->spacingtoclickend != -1) {
-		if (doc_unre_test_last_entry(btv->doc, UndoInsert, btv->spacingtoclickstart, btv->spacingtoclickend)) {
-			/*g_print("bluefish_text_view_remove_spacingtoclick -> undo last spacing from %d to %d\n",btv->spacingtoclickstart, btv->spacingtoclickend);*/
+	BluefishTextView *master = BLUEFISH_TEXT_VIEW(btv->master);
+	if (master->spacingtoclickstart != -1 && master->spacingtoclickend != -1) {
+		if (doc_unre_test_last_entry(master->doc, UndoInsert, master->spacingtoclickstart, master->spacingtoclickend)) {
+			/*g_print("bluefish_text_view_remove_spacingtoclick -> undo last spacing from %d to %d\n",master->spacingtoclickstart, master->spacingtoclickend);*/
 			/* last text action in the document was a spacingtoclick, so undo it */
-			undo_doc(btv->doc, TRUE);
+			undo_doc(master->doc, TRUE);
 		}
-		btv->spacingtoclickstart = -1;
-		btv->spacingtoclickend = -1;
+		master->spacingtoclickstart = -1;
+		master->spacingtoclickend = -1;
 	}
 }
       
 static void 
-spacingtoclick_insert_spacing(BluefishTextView *master, gint numchars, GtkTextIter *iter)
+spacingtoclick_insert_spacing(BluefishTextView *btv, gint numchars, GtkTextIter *iter)
 {
+	BluefishTextView *master = BLUEFISH_TEXT_VIEW(btv->master);	
 	if (numchars > 0) {
 		gchar *tmpstr;
 		/*g_print("inserting numchars=%d spaces\n",numchars);*/
@@ -1573,8 +1581,9 @@ spacingtoclick_insert_spacing(BluefishTextView *master, gint numchars, GtkTextIt
 
      
 static gboolean
-spacingtoclick_handle_keypress(BluefishTextView *master, GdkEventKey * kevent )
+spacingtoclick_handle_keypress(BluefishTextView *btv, GdkEventKey * kevent )
 {
+	BluefishTextView *master = BLUEFISH_TEXT_VIEW(btv->master);
 	GtkTextMark *imark;
 	GtkTextIter iter;
 	imark = gtk_text_buffer_get_insert(master->buffer);
@@ -1616,16 +1625,21 @@ spacingtoclick_handle_keypress(BluefishTextView *master, GdkEventKey * kevent )
 				gtk_text_buffer_get_iter_at_offset(master->buffer, &iter, oldstart);
 				/* decrease current spacing with 1 character */
 				spacingtoclick_insert_spacing(master, requested - oldstart,&iter);
-				g_print("decreased existing spacing at %d to %d\n",oldstart,requested - oldstart);
+				g_print("re-inserted spacing at %d to %d\n",oldstart,requested - oldstart);
 				return TRUE;
 			}
+			if (requested == oldstart) {
+				/*removing will put the cursor in the requested spot*/
+				return TRUE;
+			}
+			g_print("GDK_Left, only removed existing spacing, no new spacing, oldend=%d, oldstart=%d, curoffset=%d, requested=%d\n",oldend,oldstart,curoffset,requested);
 		}
 	} else if (kevent->keyval == GDK_Up || kevent->keyval == GDK_Down) {
 		GdkRectangle loc,loc2;
 		gboolean ret, endsline;
 		g_print("spacingtoclick_handle_keypress, GDK_Up or GDK_Down, iter is at cursor, gtk_text_iter_get_line()=%d, offset=%d\n",gtk_text_iter_get_line(&iter),gtk_text_iter_get_offset(&iter));
 		/* see if line above has same amount of characters */
-		gtk_text_view_get_iter_location(GTK_TEXT_VIEW(master),&iter,&loc);
+		gtk_text_view_get_iter_location(GTK_TEXT_VIEW(btv),&iter,&loc);
 		g_print("iter (at cursor) location, loc.x=%d, loc.y=%d\n",loc.x,loc.y);
 		endsline = gtk_text_iter_ends_line(&iter);
 		if (kevent->keyval == GDK_Up) {
@@ -1642,7 +1656,7 @@ spacingtoclick_handle_keypress(BluefishTextView *master, GdkEventKey * kevent )
 				gtk_text_iter_forward_to_line_end(&iter);
 			}
 			offset = gtk_text_iter_get_offset(&iter);
-			gtk_text_view_get_iter_location(GTK_TEXT_VIEW(master),&iter,&loc2);
+			gtk_text_view_get_iter_location(GTK_TEXT_VIEW(btv),&iter,&loc2);
 			g_print("loc.x=%d, loc2.x=%d (line=%d, offset=%d)\n",loc.x,loc2.x,gtk_text_iter_get_line(&iter),gtk_text_iter_get_offset(&iter));
 			if (master->spacingtoclickstart != -1 && master->spacingtoclickstart < offset && master->spacingtoclickend <= offset) {
 				/* removing the spacing will change the offset */
@@ -1658,10 +1672,12 @@ spacingtoclick_handle_keypress(BluefishTextView *master, GdkEventKey * kevent )
 				spacingtoclick_insert_spacing(master, numchars,&iter);
 			}
 			g_print("place cursor at x=%d,y=%d\n",loc.x,loc2.y);
-			gtk_text_view_get_iter_at_location(GTK_TEXT_VIEW(master),&iter,loc.x,loc2.y);
+			gtk_text_view_get_iter_at_location(GTK_TEXT_VIEW(btv),&iter,loc.x,loc2.y);
 			gtk_text_buffer_place_cursor(master->buffer, &iter);
-			gtk_text_view_scroll_mark_onscreen(GTK_TEXT_VIEW(master),imark);
+			gtk_text_view_scroll_mark_onscreen(GTK_TEXT_VIEW(btv),imark);
 			return TRUE;
+		} else {
+			g_print("failed to forward/backward line\n");
 		}
 		bluefish_text_view_remove_spacingtoclick(master);
 	} else {
@@ -1677,6 +1693,10 @@ bluefish_text_view_key_press_event(GtkWidget * widget, GdkEventKey * kevent)
 	BluefishTextView *btv = BLUEFISH_TEXT_VIEW(widget);
 	BluefishTextView *master = btv->master;
 	DBG_SIGNALS("bluefish_text_view_key_press_event, keyval=%d\n", kevent->keyval);
+
+	if (master->margin_pixels_per_char <= 0) {
+		calc_pixels_per_char(master);
+	}
 	/* following code handles key press events on the autocompletion popup */
 	if (btv->autocomp) {
 		if (acwin_check_keypress(btv, kevent)) {
@@ -1712,7 +1732,7 @@ bluefish_text_view_key_press_event(GtkWidget * widget, GdkEventKey * kevent)
 	} else {
 		if (main_v->props.editor_spacingtoclick && !(kevent->state & GDK_CONTROL_MASK) && !(kevent->state & GDK_MOD1_MASK) && !(kevent->state & GDK_SHIFT_MASK) ) {
 			g_print("bluefish_text_view_key_press_event, handling spacingtoclick keypress, kevent->state=%d\n",kevent->state);
-			if (spacingtoclick_handle_keypress(master, kevent)) {
+			if (spacingtoclick_handle_keypress(btv, kevent)) {
 				return TRUE;
 			}
 		}
@@ -2130,6 +2150,9 @@ bluefish_text_view_button_press_event(GtkWidget * widget, GdkEventButton * event
 	
 	if (main_v->props.editor_spacingtoclick) {
 		bluefish_text_view_remove_spacingtoclick(master);
+	}
+	if (master->margin_pixels_per_char <= 0) {
+		calc_pixels_per_char(master);
 	}
 
 	DBG_SIGNALS("bluefish_text_view_button_press_event, widget=%p, btv=%p, master=%p, x=%d, y=%d\n", widget, btv, master, event->x, event->y);
