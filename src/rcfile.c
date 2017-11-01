@@ -812,7 +812,7 @@ GList *update_filters(GList *current, gboolean overwrite)
 #endif
 	defaults =
 		g_list_append(defaults,
-					  array_from_arglist(_("CSS tidy"), "|csstidy --preserve_css=true -|", NULL));
+					  array_from_arglist(_("CSS tidy"), "|csstidy - --preserve_css=true --silent=true |", NULL));
 	retlist = update_externals(current, defaults, overwrite, 3, 2);
 	free_arraylist(defaults);
 	return retlist;
