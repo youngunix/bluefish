@@ -2818,14 +2818,17 @@ bftextview2_init_globals(void)
 void
 bluefish_text_view_set_colors(BluefishTextView * btv, gchar * const *colors)
 {
+	gchar *curlocale = g_strdup(setlocale(LC_NUMERIC, NULL));
+	setlocale(LC_NUMERIC, "C");
 #if GTK_CHECK_VERSION(3,0,0)
 	GdkRGBA color;
 	GString *str = g_string_new("");
 #if GTK_CHECK_VERSION(3,20,0)
 	g_string_append_printf(str, "BluefishTextView {-gtk-cursor-aspect-ratio: %f;}",
 						   (gfloat) (main_v->props.cursor_size / 100.0));
-#else /* GTK_CHECK_VERSION(3,20,0) */						   
-	g_string_append_printf(str, "bluefishtextview text {-GtkWidget-cursor-aspect-ratio: %f;}",
+#else /* GTK_CHECK_VERSION(3,20,0) */
+  /* in 3.18 I found that this works: "BluefishTextView {-GtkWidget-cursor-aspect-ratio: 0.4;}" */						   
+	g_string_append_printf(str, "BluefishTextView {-GtkWidget-cursor-aspect-ratio: %f;}",
 						   (gfloat) (main_v->props.cursor_size / 100.0));
 #endif /* GTK_CHECK_VERSION(3,20,0) */						   
 	if (!main_v->props.use_system_colors) {
@@ -2844,7 +2847,6 @@ bluefish_text_view_set_colors(BluefishTextView * btv, gchar * const *colors)
 		if (colors[BTV_COLOR_CURSOR] && gdk_rgba_parse(&color, colors[BTV_COLOR_CURSOR])) {
 			g_string_append_printf(str,"bluefishtextview text {caret-color: %s;}",colors[BTV_COLOR_CURSOR]);
 		}
-		g_print("gtk > 3.2.0, about to apply CSS %s\n",str->str);
 #else /* GTK_CHECK_VERSION(3,20,0) */
 		if (colors[BTV_COLOR_ED_BG] && colors[BTV_COLOR_ED_BG][0] != '\0') {
 			g_string_append_printf(str, "BluefishTextView.view {background-color: %s;}", colors[BTV_COLOR_ED_BG]);
@@ -2869,7 +2871,7 @@ bluefish_text_view_set_colors(BluefishTextView * btv, gchar * const *colors)
 	if (str->len > 0) {
 		GtkStyleContext *stc;
 		GtkCssProvider *cssp = gtk_css_provider_new();
-		DBG_MSG("gtk > 3.0.0, about to apply CSS %s\n",str->str);
+		DBG_MSG("gtk >= 3.0.0, about to apply CSS %s\n",str->str);
 		gtk_css_provider_load_from_data(cssp, str->str, -1, NULL);
 		stc = gtk_widget_get_style_context(GTK_WIDGET(btv));
 		gtk_style_context_add_provider(stc, GTK_STYLE_PROVIDER(cssp),
@@ -2905,6 +2907,8 @@ bluefish_text_view_set_colors(BluefishTextView * btv, gchar * const *colors)
 		}
 	}
 #endif
+	setlocale(LC_NUMERIC, curlocale);
+	g_free(curlocale);
 }
 
 void
