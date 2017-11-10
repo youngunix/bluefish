@@ -1879,6 +1879,7 @@ recent_menu_remove_backend(Tbfwin * bfwin, const gchar * menupath, const gchar *
 	menuitem = gtk_ui_manager_get_widget(bfwin->uimanager, menupath);
 	menu = gtk_menu_item_get_submenu(GTK_MENU_ITEM(menuitem));
 	list = gtk_container_get_children(GTK_CONTAINER(menu));
+	DEBUG_MSG("recent_menu_remove_backend, remove item with label %s from menupath %s\n",label,menupath);
 	for (tmplist = list; tmplist; tmplist = tmplist->next) {
 		if (g_strcmp0(gtk_menu_item_get_label(tmplist->data), label) == 0) {
 			gtk_widget_destroy(tmplist->data);
@@ -1893,17 +1894,17 @@ bfwin_recent_menu_remove(Tbfwin * bfwin, gboolean project, const gchar * curi, G
 {
 	GList *tmplist;
 	gchar *label;
-	
+	DEBUG_MSG("bfwin_recent_menu_remove curi=%s\n",curi);
 	label = recent_menu_label(curi, uri);
 	if (!project && bfwin->session != main_v->session) {
-		recent_menu_remove_backend(bfwin, "/MainMenu/FileMenu/FileOpenRecent", curi);
+		recent_menu_remove_backend(bfwin, "/MainMenu/FileMenu/FileOpenRecent", label);
 		return;
 	}
 	for (tmplist = g_list_first(main_v->bfwinlist); tmplist; tmplist = g_list_next(tmplist)) {
 		if (project || BFWIN(tmplist->data)->session == main_v->session) {
 			recent_menu_remove_backend(bfwin,
 									   project ? "/MainMenu/ProjectMenu/ProjectOpenRecent" :
-									   "/MainMenu/FileMenu/FileOpenRecent", curi);
+									   "/MainMenu/FileMenu/FileOpenRecent", label);
 		}
 	}
 	if (label != curi) {
