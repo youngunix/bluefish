@@ -129,6 +129,11 @@ static void handle_signals(void) {
 }
 #endif
 
+#ifdef WINLOGFILE
+#include <glib/gstdio.h>
+FILE *winlogfile = NULL;
+#endif
+
 #ifdef MAC_INTEGRATION
 static gboolean osx_open_file_cb(GtkosxApplication *app, gchar *path, gpointer user_data) {
 	GList *tmplist;
@@ -306,6 +311,29 @@ int main(int argc, char *argv[])
 #ifdef MAC_INTEGRATION
 	GPollFunc orig_poll_func;
 	GPollFunc gdk_poll_func;
+#endif
+
+#ifdef WINLOGFILE
+	// Create logfile
+	gchar *winlogpath = g_strconcat(g_get_home_dir(), "/."PACKAGE"/bluefish.log", NULL);
+    winlogfile = g_fopen(winlogpath, "w");
+	g_free(winlogpath);
+
+	void LogPrint(const gchar *message) {
+		g_fprintf(winlogfile, "%s", message);
+		fflush(winlogfile);
+	}
+
+	void LogDebug(const gchar *log_domain, GLogLevelFlags log_level, const gchar *message, gpointer user_data) {
+		g_fprintf(winlogfile, "%s", message);
+		fflush(winlogfile);
+	}
+
+	// If the logfile was created successfully, redirect output to the log
+	if (winlogfile) {
+		g_set_print_handler(LogPrint);
+		g_log_set_handler(NULL, G_LOG_LEVEL_MASK | G_LOG_FLAG_FATAL | G_LOG_FLAG_RECURSION, LogDebug, NULL);
+	}
 #endif
 
 #ifndef WIN32
@@ -560,6 +588,14 @@ int main(int argc, char *argv[])
 #else
 	exit(0);
 #endif
+
+#ifdef WINLOGFILE
+	// Close logfile
+	if (winlogfile) {
+		fclose(winlogfile);
+	}
+#endif
+
 	return 0;
 }
 
