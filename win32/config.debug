@@ -10,11 +10,11 @@ with_icon_path='${datarootdir}/pixmaps'
 with_theme_path=no
 with_freedesktop_org_menu=no
 with_freedesktop_org_mime=no
-enable_debugging_output=no
+enable_debugging_output=yes
 enable_static=no
 enable_xml_catalog_update=no
 enable_update_databases=no
 enable_maintainer_mode=yes
 LDFLAGS="-Wl,--as-needed -Wl,-O1 -L/lib -L/local/lib"
-CFLAGS="-g -Wall -O2 -I/include -I/local/include -mwindows -DNSIS -DWINLOGFILE -DRELPLUGINPATH=\\\".\\\""
-CPPFLAGS="-g -Wall -O2 -I/include -I/local/include"
+CFLAGS="-g -Wall -I/include -I/local/include -DNSIS -DWINLOGFILE -DRELPLUGINPATH=\\\".\\\""
+CPPFLAGS="-g -Wall -I/include -I/local/include"
