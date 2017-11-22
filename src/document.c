@@ -1065,6 +1065,8 @@ doc_update_label_color(Tdocument *doc, gboolean isactive)
 		doc_set_label_color(doc, main_v->props.tab_color_loading);
 	} else if (doc->status == DOC_STATUS_ERROR) {
 		doc_set_label_color(doc, main_v->props.tab_color_error);
+	} else if (doc->modified) {
+		doc_set_label_color(doc, main_v->props.tab_color_modified);
 	} else if (isactive) {
 		doc_set_label_color(doc, main_v->props.tab_color_active);
 	} else {
@@ -1075,8 +1077,6 @@ doc_update_label_color(Tdocument *doc, gboolean isactive)
 void
 doc_set_status(Tdocument * doc, gint status)
 {
-	gchar *color = NULL;
-	
 	doc->status = status;
 	if (status == DOC_STATUS_COMPLETE) {
 		g_object_set(G_OBJECT(doc->view), "editable", !doc->readonly, NULL);
