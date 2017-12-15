@@ -45,6 +45,10 @@ typedef struct {
 	gint numlinecount;
 	gint marginsize;
 	gint headersize;
+	
+	GtkWidget *printheaders;
+	GtkWidget *printlinenumbers;
+	GtkWidget *printfontstring;
 } Tbluefishprint;
 
 static GtkPrintSettings *printsettings=NULL;
@@ -156,7 +160,7 @@ set_pango_defaults(Tbluefishprint *bfprint, GtkPrintContext *context,PangoLayout
 	
 	width = pango_units_from_double(gtk_print_context_get_width(context));
 	
-	desc = pango_font_description_from_string(main_v->props.editor_font_string);
+	desc = pango_font_description_from_string(main_v->globses.print_fontstring);
 	pango_layout_set_font_description(layout, desc);
 	pango_font_description_free(desc);
 	pango_layout_set_wrap(layout, PANGO_WRAP_WORD_CHAR);
@@ -170,6 +174,12 @@ set_pango_defaults(Tbluefishprint *bfprint, GtkPrintContext *context,PangoLayout
 		DEBUG_MSG("width=%d, height=%d\n",bfprint->singlecharwidth, lineheight);
 		bfprint->marginsize = (1.5 + log10(bfprint->numlinecount)) * bfprint->singlecharwidth;
 		bfprint->headersize = 1.5*lineheight;
+	}
+	if (!main_v->globses.print_headers) {
+		bfprint->headersize = 0;
+	}
+	if (!main_v->globses.print_linenumbers) {
+		bfprint->marginsize = 0;
 	}
 	
 	pango_layout_set_width(layout, width - bfprint->marginsize);	
@@ -192,7 +202,7 @@ draw_line_numbers(Tbluefishprint *bfprint, GtkPrintContext *context, PangoLayout
 	PangoFontDescription *desc;
 	
 	numberlayout = gtk_print_context_create_pango_layout(context);
-	desc = pango_font_description_from_string(main_v->props.editor_font_string);
+	desc = pango_font_description_from_string(main_v->globses.print_fontstring);
 	pango_layout_set_font_description(numberlayout, desc);
 	pango_font_description_free(desc);
 	
@@ -243,7 +253,7 @@ draw_header(Tbluefishprint *bfprint, GtkPrintContext *context, cairo_t *cr, guin
 	gdouble width;
 	
 	headerlayout = gtk_print_context_create_pango_layout(context);
-	desc = pango_font_description_from_string(main_v->props.editor_font_string);
+	desc = pango_font_description_from_string(main_v->globses.print_fontstring);
 	pango_layout_set_font_description(headerlayout, desc);
 	pango_font_description_free(desc);
 	
@@ -270,8 +280,9 @@ draw_page(GtkPrintOperation *operation,GtkPrintContext *context,gint page_nr,Tbl
 	Tpage *page_s, *page_e;
 	DEBUG_MSG("draw page %d\n",page_nr);
 	cr = gtk_print_context_get_cairo_context(context);
-
-	draw_header(bfprint, context, cr, page_nr);
+	if (main_v->globses.print_headers) {
+		draw_header(bfprint, context, cr, page_nr);
+	}
 
 	layout = gtk_print_context_create_pango_layout(context);
 	set_pango_defaults(bfprint,context,layout);
@@ -286,8 +297,9 @@ draw_page(GtkPrintOperation *operation,GtkPrintContext *context,gint page_nr,Tbl
 
 	pango_layout_set_text(layout, bfprint->buffer+page_s->byte_o, page_e->byte_o - page_s->byte_o);
 	apply_syntax(bfprint, layout, page_s, page_e);
-	
-	draw_line_numbers(bfprint, context, layout, cr, page_s);
+	if (main_v->globses.print_linenumbers) {
+		draw_line_numbers(bfprint, context, layout, cr, page_s);
+	}
 	DEBUG_MSG("marginsize=%d, headersize=%d\n",bfprint->marginsize,bfprint->headersize);
 	cairo_move_to(cr, pango_units_to_double(bfprint->marginsize) ,	pango_units_to_double(bfprint->headersize) );
 	pango_cairo_show_layout(cr, layout);
@@ -358,7 +370,33 @@ begin_print(GtkPrintOperation *print,GtkPrintContext *context,Tbluefishprint *bf
 	g_object_unref(layout);
 }
 
-
+GtkWidget *
+create_custom_widget(GtkPrintOperation *print, gpointer data)
+{
+	GtkWidget *vbox1,*vbox2,*table;
+	Tbluefishprint *bfprint = data;
+	vbox1 = gtk_vbox_new(FALSE, 8);
+	vbox2 = dialog_vbox_labeled(_("<b>What to print</b>"),vbox1);
+	table = dialog_table_in_vbox(3, 2, 8, vbox2, FALSE, FALSE, 8);
+	bfprint->printheaders = dialog_check_button_in_table(_("Print header"), main_v->globses.print_headers, table,0, 2, 0,1);
+	bfprint->printlinenumbers = dialog_check_button_in_table(_("Print line numbers"), main_v->globses.print_linenumbers, table,0, 2, 1,2);
+	if (main_v->globses.print_fontstring == NULL||main_v->globses.print_fontstring[0]=='\0') {
+		g_free(main_v->globses.print_fontstring);
+		main_v->globses.print_fontstring = g_strdup(main_v->props.editor_font_string);
+	}
+	bfprint->printfontstring = gtk_font_button_new_with_font(main_v->globses.print_fontstring);
+	gtk_table_attach_defaults(GTK_TABLE(table), bfprint->printfontstring, 0,2,2,3);
+	gtk_widget_show_all(vbox1);
+	return vbox1;
+}
+static void 
+custom_widget_apply(GtkPrintOperation *print, GtkWidget *widget, gpointer data)
+{
+	Tbluefishprint *bfprint = data;
+	main_v->globses.print_headers = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(bfprint->printheaders));
+	main_v->globses.print_linenumbers = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(bfprint->printlinenumbers));
+	string_apply(&main_v->globses.print_fontstring, bfprint->printfontstring);
+}
 void
 doc_print(Tdocument *doc)
 {
@@ -389,10 +427,12 @@ doc_print(Tdocument *doc)
 	jobname = g_strconcat("Bluefish ", gtk_label_get_text(GTK_LABEL(doc->tab_label)), NULL);
 	gtk_print_operation_set_job_name(print, jobname);
 	g_free(jobname);
-	
 	g_signal_connect(print, "begin_print", G_CALLBACK(begin_print), &bfprint);
 	g_signal_connect(print, "draw_page", G_CALLBACK(draw_page), &bfprint);
-
+	
+		gtk_print_operation_set_custom_tab_label(print,_("What to print"));
+	g_signal_connect(print, "create_custom_widget", G_CALLBACK(create_custom_widget), &bfprint);
+	g_signal_connect(print, "custom-widget-apply", G_CALLBACK(custom_widget_apply), &bfprint);
 	res = gtk_print_operation_run(print, GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG,
 					GTK_WINDOW(BFWIN(doc->bfwin)->main_window), &gerror);
 	if (gerror) {
@@ -412,4 +452,5 @@ doc_print(Tdocument *doc)
 	for (tmpslist=bfprint.pages;tmpslist;tmpslist=g_slist_next(tmpslist)) {
 		g_slice_free(Tpage, tmpslist->data);
 	}
+	
 }

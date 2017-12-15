@@ -1206,6 +1206,11 @@ return_globalsession_configlist(gboolean init_values)
 	init_prop_integer(&config_rc, &main_v->globses.left_panel_width, "left_panel_width:", 250, init_values);
 	/*init_prop_integer   (&config_rc, &main_v->globses.lasttime_filetypes, "lasttime_filetypes:", 0, init_values);
 	   init_prop_integer   (&config_rc, &main_v->globses.lasttime_encodings, "lasttime_encodings:", 0, init_values); */
+	init_prop_integer(&config_rc, &main_v->globses.print_headers, "print_headers:", 1,
+					  init_values);
+	init_prop_integer(&config_rc, &main_v->globses.print_linenumbers, "print_linenumbers:", 1,
+					  init_values);
+	init_prop_string_with_escape(&config_rc, &main_v->globses.print_fontstring, "print_fontstring:", NULL);
 	init_prop_integer(&config_rc, &main_v->globses.bookmarks_default_store, "bookmarks_default_store:", 1,
 					  init_values);
 	init_prop_integer(&config_rc, &main_v->globses.image_thumbnail_refresh_quality,
