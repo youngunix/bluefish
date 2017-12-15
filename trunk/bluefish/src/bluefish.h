@@ -386,6 +386,9 @@ typedef struct {
 	gint main_window_w;			/* main window width */
 	gint two_pane_filebrowser_height;	/* position of the pane separater on the two paned file browser */
 	gint left_panel_width;		/* width of filelist */
+	gint print_headers;
+	gint print_linenumbers;
+	gchar *print_fontstring;
 	gint bookmarks_default_store;	/* 0= temporary by default, 1= permanent by default */
 	gint image_thumbnail_refresh_quality;	/* 1=GDK_INTERP_BILINEAR, 0=GDK_INTERP_NEAREST */
 	gint image_thumbnailsizing_type;	/* scaling ratio=0, fixed width=1, height=2, width+height (discard aspect ratio)=3 */
