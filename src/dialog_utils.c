@@ -517,14 +517,19 @@ dialog_label_new(const gchar * labeltext, gfloat xalign, gfloat yalign, GtkWidge
 GtkWidget *
 dialog_vbox_new(GtkWidget * box)
 {
-	GtkWidget *alignment, *vbox;
-
-	alignment = gtk_alignment_new(0, 0, 1, 1);
+	GtkWidget *vbox;
+	vbox = gtk_vbox_new(FALSE, 8);
+#if GTK_CHECK_VERSION(3,14,0)
+	gtk_widget_set_halign(vbox,GTK_ALIGN_FILL);
+	gtk_widget_set_valign(vbox,GTK_ALIGN_FILL);
+	gtk_box_pack_start(GTK_BOX(box), vbox, FALSE, FALSE, 8);
+#else
+	GtkWidget *alignment;
+	alignment = gtk_alignment_new(0/* left */, 0/*top*/, 1/*x expand */, 1/* y expand */);
 	gtk_alignment_set_padding(GTK_ALIGNMENT(alignment), 0, 0, 8, 4);
 	gtk_box_pack_start(GTK_BOX(box), alignment, FALSE, FALSE, 0);
-	vbox = gtk_vbox_new(FALSE, 8);
 	gtk_container_add(GTK_CONTAINER(alignment), vbox);
-
+#endif
 	return vbox;
 }
 
