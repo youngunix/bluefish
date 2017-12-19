@@ -26,6 +26,7 @@
 #include "document.h"
 #include "bf_lib.h"
 #include "print.h"
+#include "dialog_utils.h"
 
 typedef struct {
 	guint byte_o; /* byte offset in the bfprint->buffer */ 
@@ -373,11 +374,12 @@ begin_print(GtkPrintOperation *print,GtkPrintContext *context,Tbluefishprint *bf
 GtkWidget *
 create_custom_widget(GtkPrintOperation *print, gpointer data)
 {
-	GtkWidget *vbox1,*vbox2,*table;
+	GtkWidget *vbox1,*table;
 	Tbluefishprint *bfprint = data;
 	vbox1 = gtk_vbox_new(FALSE, 8);
-	vbox2 = dialog_vbox_labeled(_("<b>What to print</b>"),vbox1);
-	table = dialog_table_in_vbox(3, 2, 8, vbox2, FALSE, FALSE, 8);
+	gtk_widget_set_valign(vbox1, GTK_ALIGN_START);
+	dialog_label_new(_("<b>What to print</b>"), 0, 0, vbox1, 8);
+	table = dialog_table_in_vbox(3, 2, 8, vbox1, FALSE, FALSE, 8);
 	bfprint->printheaders = dialog_check_button_in_table(_("Print header"), main_v->globses.print_headers, table,0, 2, 0,1);
 	bfprint->printlinenumbers = dialog_check_button_in_table(_("Print line numbers"), main_v->globses.print_linenumbers, table,0, 2, 1,2);
 	if (main_v->globses.print_fontstring == NULL||main_v->globses.print_fontstring[0]=='\0') {
@@ -430,7 +432,7 @@ doc_print(Tdocument *doc)
 	g_signal_connect(print, "begin_print", G_CALLBACK(begin_print), &bfprint);
 	g_signal_connect(print, "draw_page", G_CALLBACK(draw_page), &bfprint);
 	
-		gtk_print_operation_set_custom_tab_label(print,_("What to print"));
+	gtk_print_operation_set_custom_tab_label(print,_("What to print"));
 	g_signal_connect(print, "create_custom_widget", G_CALLBACK(create_custom_widget), &bfprint);
 	g_signal_connect(print, "custom-widget-apply", G_CALLBACK(custom_widget_apply), &bfprint);
 	res = gtk_print_operation_run(print, GTK_PRINT_OPERATION_ACTION_PRINT_DIALOG,
