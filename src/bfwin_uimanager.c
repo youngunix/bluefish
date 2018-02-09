@@ -142,6 +142,17 @@ ui_move_tab_right(GtkAction * action, gpointer user_data)
 }
 
 static void
+ui_reorder_tab_byfilename(GtkAction * action, gpointer user_data)
+{
+	bfwin_notebook_switch(BFWIN(user_data), 8);
+}
+static void
+ui_reorder_tab_byfullpath(GtkAction * action, gpointer user_data)
+{
+	bfwin_notebook_switch(BFWIN(user_data), 9);
+}
+
+static void
 ui_set_autoindent(GtkAction * action, gpointer user_data)
 {
 	Tbfwin *bfwin = BFWIN(user_data);
@@ -832,6 +843,7 @@ static const GtkActionEntry top_level_menus[] = {
 	{"DocumentFontSize", NULL, N_("_Font Size")},
 	{"DocumentLangMode", NULL, N_("Language M_ode")},
 	{"DocumentEncoding", NULL, N_("Character _Encoding")},
+	{"DocReorder", NULL, N_("Reorder documents")},
 	{"GoMenu", NULL, N_("_Go")},
 	{"ProjectMenu", NULL, N_("_Project")},
 	{"ProjectOpenRecent", NULL, N_("Open _Recent")},
@@ -986,6 +998,10 @@ static const GtkActionEntry document_actions[] = {
 	 G_CALLBACK(ui_move_tab_left)},
 	{"DocMoveRight", NULL, N_("Move Tab _Right"), NULL, N_("Move current tab right"),
 	 G_CALLBACK(ui_move_tab_right)},
+	 {"DocReorderByfilename", NULL, N_("Sort by filename"), NULL, N_("Sort by filename"),
+	 G_CALLBACK(ui_reorder_tab_byfilename)},
+	 {"DocReorderByfullpath", NULL, N_("Sort by full path"), NULL, N_("Sort by full path"),
+	 G_CALLBACK(ui_reorder_tab_byfullpath)},
 	{"DocRecent", NULL, N_("_Recent Document"), "<control>Tab", N_("Goto most recent document"),
 	 G_CALLBACK(ui_doc_recent)},
 	{"DocFirst", GTK_STOCK_GOTO_FIRST, N_("_First Document"), "<shift><control>Page_Up",
