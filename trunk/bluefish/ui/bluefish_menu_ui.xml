@@ -127,6 +127,10 @@
 		<separator/>
 		<menuitem action="DocMoveLeft"/>
 		<menuitem action="DocMoveRight"/>
+		<menu action="DocReorder">
+			<menuitem action="DocReorderByfilename"/>
+			<menuitem action="DocReorderByfullpath"/>
+		</menu>
 	</menu>
 	<menu action="GoMenu">
 	<menuitem action="DocRecent"/>

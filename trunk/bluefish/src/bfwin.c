@@ -67,6 +67,52 @@ bfwin_fullscreen_toggle(Tbfwin * bfwin, gboolean active)
 	}
 }
 
+typedef enum {
+	order_byfullpath,
+	order_byfilename
+}Tordering_mode;
+
+static gint
+sort_doc_by_filename(gconstpointer a,gconstpointer b)
+{
+	gint retval=0;
+	if (!a || !b)
+		return 0;
+	return g_strcmp0(gtk_label_get_text(GTK_LABEL(DOCUMENT(a)->tab_label)) , gtk_label_get_text(GTK_LABEL(DOCUMENT(b)->tab_label)));
+}
+
+static gint
+sort_doc_by_fullpath(gconstpointer a,gconstpointer b)
+{
+	if (!a || !b)
+		return 0;
+	return g_strcmp0(gtk_label_get_text(GTK_LABEL(DOCUMENT(a)->tab_menu)) , gtk_label_get_text(GTK_LABEL(DOCUMENT(b)->tab_menu)));
+}
+
+
+static void
+notebooks_reorder(Tbfwin *bfwin, Tordering_mode mode)
+{
+	GList *tmplist, *copylist;
+	gint i=0;
+	copylist = g_list_copy(bfwin->documentlist);
+	switch(mode) {
+		case order_byfullpath:
+			copylist = g_list_sort(copylist, sort_doc_by_fullpath);
+		break;
+		case order_byfilename:
+			copylist = g_list_sort(copylist, sort_doc_by_filename);
+		break;
+	}
+	/* now sort according to the order in the copylist */
+	for (tmplist=g_list_first(copylist);tmplist;tmplist=tmplist->next) {
+		DEBUG_MSG("notebooks_reorder, move document %s to position %d\n",gtk_label_get_text(GTK_LABEL(DOCUMENT(tmplist->data)->tab_menu)), i);
+		gtk_notebook_reorder_child(GTK_NOTEBOOK(bfwin->notebook), DOCUMENT(tmplist->data)->vsplit,i);
+		i++;
+	}
+	g_list_free(copylist);
+}
+
 static void
 notebook_move(Tbfwin * bfwin, gboolean move_left)
 {
@@ -118,6 +164,12 @@ bfwin_notebook_switch(Tbfwin * bfwin, guint action)
 		break;
 	case 7:
 		g_print("bfwin_notebook_switch, should not be called for 'recent'\n");
+		break;
+	case 8:
+		notebooks_reorder(bfwin, order_byfilename);
+		break;
+	case 9:
+		notebooks_reorder(bfwin, order_byfullpath);
 		break;
 	}
 }
