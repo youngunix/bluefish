@@ -1108,6 +1108,9 @@ remove_all_highlighting_in_area(BluefishTextView * btv, GtkTextIter * start, Gtk
 		gtk_text_buffer_remove_tag(btv->buffer, (GtkTextTag *) tmplist->data, start, end);
 		tmplist = g_list_next(tmplist);
 	}
+#ifdef HAVE_LIBENCHANT	
+	gtk_text_buffer_remove_tag_by_name(btv->buffer,"_spellerror_",start,end);
+#endif
 	btv->needremovetags = endoffset;
 }
 

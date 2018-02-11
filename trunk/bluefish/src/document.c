@@ -2181,7 +2181,7 @@ doc_buffer_insert_text_lcb(GtkTextBuffer * textbuffer, GtkTextIter * iter, gchar
 			doc_unre_new_group(doc);
 		}
 		doc_unre_add(doc, string, pos, pos + clen, UndoInsert);
-		g_print("doc_buffer_insert_text_lcb, about to call doc_set_modified(%p,1)\n",doc);
+		DEBUG_MSG("doc_buffer_insert_text_lcb, about to call doc_set_modified(%p,1)\n",doc);
 		if (!last_undo_is_spacingtoclick(doc->view)) {
 			doc_set_modified(doc, 1);
 		}
