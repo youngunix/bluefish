@@ -716,7 +716,7 @@ project_edit(Tbfwin * bfwin)
 	gtk_table_attach_defaults(GTK_TABLE(table), pred->entries[template], 2, 3, 3, 4);
 	gtk_table_attach_defaults(GTK_TABLE(table), but, 3, 4, 3, 4);*/
 
-	sessionprefs(_("<b>Project Defaults</b>"), &pred->sprefs, pred->project->session);
+	sessionprefs(_("<b>Default settings for this project</b>"), &pred->sprefs, pred->project->session);
 	gtk_box_pack_start(GTK_BOX(vbox), pred->sprefs.frame, FALSE, FALSE, 6);
 
 #if GTK_CHECK_VERSION(3,0,0)

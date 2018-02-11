@@ -2544,7 +2544,7 @@ preferences_dialog_new(Tbfwin *bfwin)
 	/*
 	 *  Initial document settings
 	 */
-	sessionprefs(_("<b>Non Project Defaults</b>"), &pd->sprefs, main_v->session);
+	sessionprefs(_("<b>Default settings (overridden by project settings)</b>"), &pd->sprefs, main_v->session);
 	gtk_tree_store_append(pd->nstore, &auxit, NULL);
 	gtk_tree_store_set(pd->nstore, &auxit, NAMECOL, _("Initial document settings"), WIDGETCOL, /*vbox1*/pd->sprefs.frame, -1);
 	pd->widgetfreelist = g_slist_prepend(pd->widgetfreelist, /*vbox1*/pd->sprefs.frame);
