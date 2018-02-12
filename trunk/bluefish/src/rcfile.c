@@ -818,7 +818,6 @@ GList *update_filters(GList *current, gboolean overwrite)
 	return retlist;
 }
 
-#ifdef WIN32
 static GList *
 add_browser_if_exists(GList *list, const gchar *name, const gchar *path, const gchar *isdefault)
 {
@@ -826,14 +825,17 @@ add_browser_if_exists(GList *list, const gchar *name, const gchar *path, const g
 	
 	uri = g_file_new_for_path(path);
 	if (g_file_query_exists(uri,NULL)) {
+#ifdef WIN32
 		gchar *command = g_strconcat("\"", path, "\" '%p'", NULL);
+#else
+		gchar *command = g_strconcat(path, " '%p'&", NULL);
+#endif
 		list = g_list_prepend(list, array_from_arglist(name,command,isdefault, NULL));
 		g_free(command);
 	}
 	g_object_unref(uri);
 	return list;
 }
-#endif
 
 GList *update_commands(GList *current, gboolean overwrite)
 {
@@ -863,6 +865,7 @@ GList *update_commands(GList *current, gboolean overwrite)
 		g_list_prepend(defaults,
 					  array_from_arglist(_("chmod a+x"), "chmod a+x %f", "0", NULL));
 #else
+	defaults = add_browser_if_exists(defaults, _("Default browser"), "/usr/bin/x-www-browser", "1");
 	defaults =
 		g_list_prepend(defaults,
 					  array_from_arglist(_("Firefox"), "firefox '%p'&", "1", NULL));
@@ -873,15 +876,11 @@ GList *update_commands(GList *current, gboolean overwrite)
 	defaults =
 		g_list_prepend(defaults,
 					  array_from_arglist(_("Chromium"), "chromium '%p' || chromium-browser '%p' &", "0", NULL));
-	defaults =
-		g_list_prepend(defaults,
-					  array_from_arglist(_("Konqueror"), "konqueror '%p'&", "0", NULL));
+	defaults = add_browser_if_exists(defaults, _("Konqueror"), "/usr/bin/konqueror", "0");
 	defaults =
 		g_list_prepend(defaults,
 					  array_from_arglist(_("Epiphany"), "epiphany-browser -n '%p'&", "0", NULL));
-	defaults =
-		g_list_prepend(defaults,
-					  array_from_arglist(_("Kazehakase"), "kazehakase '%p'&", "0", NULL));
+	defaults = add_browser_if_exists(defaults, _("Kazehakase"), "/usr/bin/kazehakase", "0");
 	defaults =
 		g_list_prepend(defaults,
 					  array_from_arglist(_("Links2 (graphics)"), "links2 -g '%p'&", "0", NULL));
