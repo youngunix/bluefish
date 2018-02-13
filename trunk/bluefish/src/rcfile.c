@@ -868,14 +868,14 @@ GList *update_commands(GList *current, gboolean overwrite)
 	defaults = add_browser_if_exists(defaults, _("Default browser"), "/usr/bin/x-www-browser", "1");
 	defaults =
 		g_list_prepend(defaults,
-					  array_from_arglist(_("Firefox"), "firefox '%p'&", "1", NULL));
+					  array_from_arglist(_("Firefox"), "firefox '%p'&", defaults?"0":"1", NULL));
+	defaults =
+		g_list_prepend(defaults,
+					  array_from_arglist(_("Chromium"), "chromium '%p' || chromium-browser '%p' &", "0", NULL));
 	defaults =
 		g_list_prepend(defaults,
 					  array_from_arglist(_("Opera"), "opera -remote 'openURL(%p)' || opera '%p'&", "0",
 										 NULL));
-	defaults =
-		g_list_prepend(defaults,
-					  array_from_arglist(_("Chromium"), "chromium '%p' || chromium-browser '%p' &", "0", NULL));
 	defaults = add_browser_if_exists(defaults, _("Konqueror"), "/usr/bin/konqueror", "0");
 	defaults =
 		g_list_prepend(defaults,
