@@ -215,7 +215,7 @@ child_watch_lcb(GPid pid, gint status, gpointer data)
 			g_error_free(gerror);
 		}
 	} else if (ep->inplace) {
-		ep->channel_out = g_io_channel_new_file(ep->inplace, "r", NULL);
+		ep->channel_out = g_io_channel_new_file(ep->inplace, "r", &gerror);
 		DEBUG_MSG("child_watch_lcb, created channel_out from file %s\n", ep->inplace);
 		if (gerror) {
 			g_warning("failed to read data from external program, %d: %s\n", gerror->code, gerror->message);
