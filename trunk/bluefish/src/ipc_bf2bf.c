@@ -240,7 +240,10 @@ become_server(void)
 		return FALSE;
 	}
 
-	listen(ibf.fd, 10);
+	if (listen(ibf.fd, 10) == -1) {
+		g_warning("become_server failed: listen() returned error\n");
+		return FALSE;
+	}
 	ibf.chan = g_io_channel_win32_new_socket(ibf.fd);
 #else
 	struct sockaddr_un uaddr;
@@ -255,7 +258,10 @@ become_server(void)
 	}
 	chmod(ibf.path, 0600);
 
-	listen(ibf.fd, 10);
+	if (listen(ibf.fd, 10) == -1) {
+		g_warning("become_server failed: listen() returned error\n");
+		return FALSE;
+	}
 	ibf.chan = g_io_channel_unix_new(ibf.fd);
 	/*g_io_channel_set_line_term(ibf.chan, "\n", 1); */
 #endif

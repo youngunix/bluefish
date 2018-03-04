@@ -123,6 +123,10 @@ void infb_rescan_dir(const gchar * dir)
 	GPatternSpec *ps = g_pattern_spec_new("bflib_*.xml"); 
 	GPatternSpec *ps2 = g_pattern_spec_new("bflib_*.xml.gz"); /* also xml.gz files */
 	GDir *gd = g_dir_open(dir, 0, &error);
+	if (gd == NULL) {
+		g_warning("Can not open dir: %s.", dir);
+		return;
+	}
 	filename = g_dir_read_name(gd);
 	while (filename) {
 		if (g_pattern_match(ps, strlen(filename), filename, NULL) ||
@@ -255,6 +259,10 @@ void infb_load_fragments(Tinfbwin *win) {
 	if ( menu ) gtk_widget_destroy(menu);
 	menu = gtk_menu_new();	
 	gd = g_dir_open(userdir, 0, &error);
+	if (gd == NULL) {
+		g_warning("Can not open dir: %s.", userdir);
+		return;
+	}
 	filename = g_dir_read_name(gd);
 	while (filename) {
 		if (g_pattern_match(ps, strlen(filename), filename, NULL) ) {
