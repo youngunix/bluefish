@@ -425,7 +425,7 @@ doc_print(Tdocument *doc)
 		bfprint.so = 0;
 		bfprint.eo = -1;
 	}
-	
+	gtk_print_operation_set_embed_page_setup(print, TRUE);
 	jobname = g_strconcat("Bluefish ", gtk_label_get_text(GTK_LABEL(doc->tab_label)), NULL);
 	gtk_print_operation_set_job_name(print, jobname);
 	g_free(jobname);
