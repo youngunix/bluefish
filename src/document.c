@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * document.c - the document
  *
- * Copyright (C) 1998-2017 Olivier Sessink
+ * Copyright (C) 1998-2018 Olivier Sessink
  * Copyright (C) 1998 Chris Mazuc
  * some additions Copyright (C) 2004 Eugene Morenko(More)
  *
@@ -24,7 +24,7 @@
 #include <string.h>				/* strchr() */
 #include <stdlib.h>				/* system() */
 
-/*#define DEBUG*/
+#define DEBUG
 
 #include "bluefish.h"
 
@@ -2519,8 +2519,8 @@ doc_get_buffer_in_encoding(Tdocument * doc, gsize * newbuflen)
 		DEBUG_MSG("doc_get_buffer_in_encoding, converting from UTF-8 to %s\n", doc->encoding);
 		newbuf = g_convert(buffer, -1, doc->encoding, "UTF-8", &bytes_read, &bytes_written, &gerror);
 		if (gerror) {
-			g_print("doc_get_buffer_in_encoding in encoding %s, got error %d: %s\n", doc->encoding,
-					gerror->code, gerror->message);
+			g_print("doc_get_buffer_in_encoding in encoding %s, got error %d: %s, newbuf=%p\n", doc->encoding,
+					gerror->code, gerror->message, newbuf);
 			g_error_free(gerror);
 		}
 		if (newbuf) {
@@ -2550,6 +2550,7 @@ doc_get_buffer_in_encoding(Tdocument * doc, gsize * newbuflen)
 			g_free(tmpstr);
 			if (retval == 0) {
 				DEBUG_MSG("doc_get_buffer_in_encoding, character set conversion failed, user aborted!\n");
+				*newbuflen = 0;
 				return NULL;
 			} else {
 				/* continue in UTF-8 */
@@ -2557,11 +2558,14 @@ doc_get_buffer_in_encoding(Tdocument * doc, gsize * newbuflen)
 				g_free(buffer);
 				gtk_text_buffer_get_bounds(doc->buffer, &itstart, &itend);
 				buffer = gtk_text_buffer_get_text(doc->buffer, &itstart, &itend, TRUE);
+				*newbuflen = strlen(buffer);
+				DEBUG_MSG("doc_get_buffer_in_encoding, using UTF8 encoding, have %d bytes\n", *newbuflen);
 			}
 		}
 	} else {
 		*newbuflen = strlen(buffer);
 	}
+	DEBUG_MSG("doc_get_buffer_in_encoding, returning %p with %d bytes\n", buffer, *newbuflen);
 	return buffer;
 }
 

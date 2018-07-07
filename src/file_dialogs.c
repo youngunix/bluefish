@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * file_dialogs.c - file dialogs
  *
- * Copyright (C) 2005-2015 Olivier Sessink
+ * Copyright (C) 2005-2018 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -819,6 +819,8 @@ doc_save_backend(Tdocument * doc, Tdocsave_mode savemode, gboolean close_doc,
 
 	tmp = doc_get_buffer_in_encoding(doc, &numbytes);
 	if (!tmp) {
+		DEBUG_MSG("doc_save_backend, got NULL after encoding, ABORT\n");
+		g_warning("got NULL buffer after encoding, abort save\n");
 		g_free(dsb);
 		return;
 	}
