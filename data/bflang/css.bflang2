@@ -114,13 +114,10 @@
 			</element>
 			<element pattern="}" ends_block="1" highlight="css-brackets" blockstartelement="e.css.media.lbrace" ends_context="2" />
 		</group>
-		<element id="e.css.lbrace" pattern="{" starts_block="1" highlight="css-brackets" >
-			<context symbols=" &#9;&#10;&#13;{}.:&quot;';*/" id="c.css.rules">
-						&css-rules;
-						<element idref="e.css.lcomment" />
-						<element id="e.css.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="1" />
-					</context>
-		</element>
+		
+		<!-- next is the most important pattern, it is defined in css-selectors.bfinc -->
+		<element idref="e.css.lbrace" />
+
 	</context>
 </definition>
 </bflang>
