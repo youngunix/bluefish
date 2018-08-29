@@ -1647,7 +1647,7 @@ href="http://www.w3.org/TR/css3-background/#the-box-shadow">www.w3.org</a></refe
 	<element pattern="auto"/>
 	<element pattern="inherit"/>
 </group>
-<element id="e.css.length.neg" pattern="-?[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px|%)" is_regex="1" highlight="css-value"/>
+<element idref="e.css.length.neg" />
 <element idref="e.css.end"/>
 <group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 <element idref="e.css.lcomment"/>
@@ -2679,7 +2679,6 @@ href="http://www.w3.org/TR/CSS21/box.html#propdef-margin">www.w3.org</a></refere
 <context symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
-	<element pattern="0"/>
 	<element pattern="auto"/>
 	<element pattern="inherit"/>
 </group>
@@ -2710,7 +2709,6 @@ href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-bottom">www.w3.org</a><
 <context symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
-	<element pattern="0"/>
 	<element pattern="auto"/>
 	<element pattern="inherit"/>
 </group>
@@ -2741,7 +2739,6 @@ href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-left">www.w3.org</a></r
 <context symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
-	<element pattern="0"/>
 	<element pattern="auto"/>
 	<element pattern="inherit"/>
 </group>
@@ -2772,7 +2769,6 @@ href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-right">www.w3.org</a></
 <context symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
-	<element pattern="0"/>
 	<element pattern="auto"/>
 	<element pattern="inherit"/>
 </group>
@@ -2803,7 +2799,6 @@ href="http://www.w3.org/TR/CSS21/box.html#propdef-margin-top">www.w3.org</a></re
 <context symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
-	<element pattern="0"/>
 	<element pattern="auto"/>
 	<element pattern="inherit"/>
 </group>

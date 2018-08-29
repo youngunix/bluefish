@@ -238,10 +238,10 @@
 				<element pattern="}" ends_context="2" ends_block="1" highlight="css-brackets" blockstartelement="e.css.keyframes.lbrace" />
 			</context>
 		</element>
-		
 	</context>
-
 </element>
+
+<element pattern="@import" highlight="css-html-tag" />
 
 	
 </bfinc>
