@@ -37,10 +37,10 @@
 !define GTK_REQUIRED "Installer GTK+ 2.14.7 eller nyere og sikre at biblioteket finnes i systemfilbanen (PATH) før du starter Bluefish."
 
 ; Python Strings
-; !define PYTHON_DOWNLOAD	"Downloading Python..."
-; !define PYTHON_FAILED	"Python Download failed:"
-; !define PYTHON_INSTALL	"Installing Python..."
-; !define PYTHON_REQUIRED	"Please install Python ${PYTHON_MIN_VERSION} or higher before running Bluefish.$\nPython is required for the Zencoding plugin and other features."
+!define PYTHON_DOWNLOAD	"Laster ned Python..."
+!define PYTHON_FAILED	"Kunne ikke laste ned Python:"
+!define PYTHON_INSTALL	"Installerer Python..."
+!define PYTHON_REQUIRED	"Vennligst installer Python ${PYTHON_MIN_VERSION} eller nyere før du bruker Bluefish.$\nPython kreves for å bruke Zencoding plugin og enkelte andre tjenester."
 
 ; Plugin Names
 !define PLUG_CHARMAP "Tegnkart"
