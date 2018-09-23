@@ -127,6 +127,7 @@
 	<element pattern="header"><reference><b>HTML 5</b> header</reference></element>
 	<element pattern="hgroup"><reference><b>HTML 5</b> heading group</reference></element>
 	<element pattern="keygen"><reference><b>HTML 5</b> key-pair generator/input control</reference></element>
+	<element pattern="main"><reference><b>HTML 5</b> main</reference></element>
 	<element pattern="mark"><reference><b>HTML 5</b> marked (highlighted) text</reference></element>
 	<element pattern="meter"><reference><b>HTML 5</b> scalar gauge</reference></element>
 	<element pattern="nav"><reference><b>HTML 5</b> group of navigational links</reference></element>
