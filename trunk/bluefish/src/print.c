@@ -27,6 +27,7 @@
 #include "bf_lib.h"
 #include "print.h"
 #include "dialog_utils.h"
+#include "gtk_easy.h"
 
 typedef struct {
 	guint byte_o; /* byte offset in the bfprint->buffer */ 
@@ -377,7 +378,9 @@ create_custom_widget(GtkPrintOperation *print, gpointer data)
 	GtkWidget *vbox1,*table;
 	Tbluefishprint *bfprint = data;
 	vbox1 = gtk_vbox_new(FALSE, 8);
+#if GTK_CHECK_VERSION(3,14,0)
 	gtk_widget_set_valign(vbox1, GTK_ALIGN_START);
+#endif
 	dialog_label_new(_("<b>What to print</b>"), 0, 0, vbox1, 8);
 	table = dialog_table_in_vbox(3, 2, 8, vbox1, FALSE, FALSE, 8);
 	bfprint->printheaders = dialog_check_button_in_table(_("Print header"), main_v->globses.print_headers, table,0, 2, 0,1);
