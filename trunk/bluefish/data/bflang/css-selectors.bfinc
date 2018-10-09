@@ -20,6 +20,11 @@
 -->
 
 <bfinc>
+<element id="e.css.lcomment" idref="e.css.lcomment" pattern="/*" starts_block="1" highlight="css-comment">
+	<context symbols="*/&#9;&#10;&#13;@ " highlight="css-comment">
+		<element pattern="*/" ends_block="1" blockstartelement="e.css.lcomment" highlight="css-comment" ends_context="1" />
+	</context>
+</element>
 
 <group highlight="css-html-tag" >
 	<autocomplete enable="1" />
