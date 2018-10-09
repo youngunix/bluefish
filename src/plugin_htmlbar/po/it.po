@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2017-06-21 09:22+0900\n"
-"PO-Revision-Date: 2016-12-23 12:34+0100\n"
+"POT-Creation-Date: 2018-08-18 16:58+0200\n"
+"PO-Revision-Date: 2018-08-18 17:29+0200\n"
 "Last-Translator: Roberto Bellingeri <bellingeri@netguru.it>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n!=1;\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: src/plugin_htmlbar/html2.c:634
 msgid "Cascading Style Sheet Builder"
@@ -1048,7 +1048,7 @@ msgstr "R_p"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1185
 msgid "Ruby parenthesis"
-msgstr "Alternativa ai caratteri Ruby"
+msgstr "Parentesi Ruby"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1186
 msgid "R_t"
@@ -1056,15 +1056,15 @@ msgstr "R_t"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1186
 msgid "Ruby text"
-msgstr "rt"
+msgstr "Testo Ruby"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1187
 msgid "_Ruby"
-msgstr "Caratteri_Ruby"
+msgstr "_Ruby"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1187
 msgid "Ruby"
-msgstr "Caratteri Ruby"
+msgstr "Ruby"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1188
 msgid "_Section"
@@ -1133,15 +1133,15 @@ msgstr ""
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1472
 msgid "Quickbar"
-msgstr "Quickbar "
+msgstr "Quickbar"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1475
 msgid "Standard"
-msgstr "Standard "
+msgstr "Standard"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1489
 msgid "HTML 5"
-msgstr "HTML 5 "
+msgstr "HTML 5"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1492
 msgid "Formatting"
@@ -1731,7 +1731,7 @@ msgstr "Utilizza proprietà CSS specifiche per browser:"
 
 #: src/plugin_htmlbar/html.c:2610
 msgid "styles_heet"
-msgstr "fo_glio di stile..."
+msgstr "fo_glio di stile"
 
 #: src/plugin_htmlbar/html.c:2611
 msgid "Add selector(s) to create a new rule"
