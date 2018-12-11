@@ -864,6 +864,9 @@ GList *update_commands(GList *current, gboolean overwrite)
 	defaults =
 		g_list_prepend(defaults,
 					  array_from_arglist(_("chmod a+x"), "chmod a+x %f", "0", NULL));
+	defaults =
+		g_list_prepend(defaults,
+					  array_from_arglist(_("Insert date"), "date|", "0", NULL));
 #else
 	defaults = add_browser_if_exists(defaults, _("Default browser"), "/usr/bin/x-www-browser", "1");
 	defaults =
@@ -887,6 +890,9 @@ GList *update_commands(GList *current, gboolean overwrite)
 	defaults =
 		g_list_prepend(defaults,
 					  array_from_arglist(_("chmod a+x"), "chmod a+x %f", "0", NULL));
+	defaults =
+		g_list_prepend(defaults,
+					  array_from_arglist(_("Insert date"), "date|", "0", NULL));
 #endif
 	retlist = update_externals(current, defaults, overwrite, 4, 2);
 	free_arraylist(defaults);
