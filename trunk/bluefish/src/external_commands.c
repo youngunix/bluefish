@@ -238,6 +238,7 @@ static gboolean
 start_command_idle(gpointer data)
 {
 	Texternalp *ep = data;
+	DEBUG_MSG("start_command_idle, ep->pipe_out=%d, ep->channel_out_lcb=%p\n",ep->pipe_out,ep->channel_out_lcb);
 	if (ep->pipe_in) {
 		DEBUG_MSG("start_command_idle, creating channel_in from pipe\n");
 #ifdef WIN32
@@ -317,7 +318,16 @@ start_command_backend(Texternalp * ep)
 		externalp_unref(ep);
 		return;
 	}
-	ep->start_command_idle_id = g_idle_add(start_command_idle, ep);
+	
+	/* I can't recall why we call this in an idle callback. But that does not work if the command that we call 
+	does not have input, and does have output (in that case the command has finished before we create the pipes)
+	so I'll skip to call it in idle and call it rightaway	*/
+	if (!ep->pipe_in && ep->pipe_out) {
+		start_command_idle(ep);
+	} else {
+		DEBUG_MSG("add idle callback start_command_backend()\n");
+		ep->start_command_idle_id = g_idle_add(start_command_idle, ep);
+	}
 }
 
 static void
@@ -383,7 +393,7 @@ create_commandstring(Texternalp * ep, const gchar * formatstr, gboolean discard_
 		need_inplace = FALSE, need_preview_uri = FALSE, need_filename = FALSE, need_arguments = FALSE;
 	gint items = 2, cur = 0;
 	*cperror=cpe_no_error;
-
+	DEBUG_MSG("create_commandstring, formatstring=%s, discard_output=%d\n",formatstr,discard_output);
 	if (!ep->bfwin->current_document) {
 		*cperror=cpe_unknown;
 		return NULL;
@@ -859,10 +869,17 @@ filter_command(Tbfwin * bfwin, const gchar * formatstring, gint begin, gint end)
 					filter_custom_lcb, NULL);
 }
 
+static void
+external_custom_lcb(const gchar * str_return, gpointer bfwin, gpointer data)
+{
+	DEBUG_MSG("external_custom_lcb, called with string '%s'\n",str_return);
+	if (str_return && strlen(str_return)>0) 
+		doc_insert_two_strings(BFWIN(bfwin)->current_document, str_return, NULL);
+}
 void
 external_command(Tbfwin * bfwin, const gchar * formatstring)
 {
-	command_backend(bfwin, 0, -1, formatstring, NULL, FALSE, filter_statuscode_lcb, NULL, NULL);
+	command_backend(bfwin, 0, -1, formatstring, full_data_io_watch_lcb, FALSE, filter_statuscode_lcb, external_custom_lcb, NULL);
 }
 
 void
