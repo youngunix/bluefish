@@ -1234,35 +1234,31 @@ bluefish_text_view_draw_layer(GtkTextView * text_view, GtkTextViewLayer layer, c
 
 		if (gtk_widget_is_sensitive(GTK_WIDGET(btv))
 			&& (BFWIN(DOCUMENT(master->doc)->bfwin)->session->view_cline || main_v->props.highlight_cursor)) {
-			gint y, y2, height;
+			gint y_wincoord, x_wincoord;
 			GtkTextIter it;
-
-			DBG_SIGNALS("bluefish_text_view_draw_layer_event, current line highlighting\n");
-			gtk_text_buffer_get_iter_at_mark(master->buffer, &it, gtk_text_buffer_get_insert(master->buffer));
-			gtk_text_view_get_line_yrange(text_view, &it, &y, &height);
+			GdkRectangle itrect;
 			
-			/* weird, on my system with gtk 3.18.9 I have to convert to windows coords to make this work correctly ??? */
-			gtk_text_view_buffer_to_window_coords (text_view,GTK_TEXT_WINDOW_TEXT, 0, y, NULL, &y2);
-			y = y2;
 
+			DBG_SIGNALS("bluefish_text_view_draw_layer_event, current line highlighting, code for gtk >= 3.14\n");
+			gtk_text_buffer_get_iter_at_mark(master->buffer, &it, gtk_text_buffer_get_insert(master->buffer));
+			gtk_text_view_get_iter_location(text_view, &it, &itrect);
+			gtk_text_view_buffer_to_window_coords (text_view,GTK_TEXT_WINDOW_TEXT, itrect.x, itrect.y, &x_wincoord, &y_wincoord);
 			if (BFWIN(DOCUMENT(master->doc)->bfwin)->session->view_cline && !DOCUMENT(master->doc)->readonly) {
 				gdouble x1, y1, x2, y2;
 
 				cairo_clip_extents (cr, &x1, &y1, &x2, &y2);
 				gdk_cairo_set_source_rgba(cr, &st_cline_color);
-				cairo_rectangle (cr, x1 + .5, y + .5, x2 - x1 - 1, height - 1);
+				DBG_SIGNALS("bluefish_text_view_draw_event, GTK >= 3.14 draw current line at x=%d,y=%d,width=%d,height=%d\n",x1 + .5, itrect.y + .5, x2 - x1 - 1, itrect.height - 1 );
+				cairo_rectangle (cr, x1 + .5, y_wincoord + .5, x2 - x1 - 1, itrect.height - 1);
 				cairo_fill (cr);
 			}
-
 			if (main_v->props.highlight_cursor) {
-				GdkRectangle itrect;
 				gint width;
-				DBG_SIGNALS("bluefish_text_view_draw_event, GTK >= 3.14 draw highlight_cursor block\n");
-				gtk_text_view_get_iter_location(text_view, &it, &itrect);
 				width = itrect.width > 5 ? itrect.width : master->margin_pixels_per_char;
 				gdk_cairo_set_source_rgba(cr, &st_cursor_highlight_color);
 				/* use y instead of itrect.y, because y is already converted to window coords */
-				cairo_rectangle(cr, itrect.x, y, width, itrect.height);
+				DBG_SIGNALS("bluefish_text_view_draw_event, GTK >= 3.14 draw highlight_cursor block, draw at x=%d\n", itrect.x);
+				cairo_rectangle(cr, x_wincoord, y_wincoord, width, itrect.height);
 				cairo_fill(cr);
 			}
 		}
@@ -1311,7 +1307,7 @@ bluefish_text_view_draw(GtkWidget * widget, cairo_t * cr)
 			gint y2, x2;
 			GtkTextIter it;
 			GdkRectangle itrect;
-			DBG_SIGNALS("bluefish_text_view_draw_event, current line highlighting\n");
+			DBG_SIGNALS("bluefish_text_view_draw_event, gtk < 3.14 current line highlighting\n");
 			gtk_text_buffer_get_iter_at_mark(master->buffer, &it, gtk_text_buffer_get_insert(master->buffer));
 			gtk_text_view_get_iter_location((GtkTextView *) widget, &it, &itrect);
 			gtk_text_view_buffer_to_window_coords(GTK_TEXT_VIEW(widget), GTK_TEXT_WINDOW_TEXT,
