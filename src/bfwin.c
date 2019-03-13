@@ -1568,7 +1568,7 @@ bfwin_create_main(Tbfwin * bfwin)
 
 	bftextview2_identifier_hash_init(bfwin);
 	bfwin->main_window =
-		window_full2(_("New Bluefish Window"), GTK_WIN_POS_CENTER, 0, G_CALLBACK(bfwin_destroy_event),
+		window_full2(_("New Bluefish Window"), 0, 0, G_CALLBACK(bfwin_destroy_event),
 					 bfwin, FALSE, NULL);
 	gtk_window_set_role(GTK_WINDOW(bfwin->main_window), "bluefish");
 /*#ifndef MAC_INTEGRATION
