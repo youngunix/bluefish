@@ -678,7 +678,7 @@ project_edit(Tbfwin * bfwin)
 	pred->bfwin = bfwin;
 	pred->project->editor = pred;
 	pred->win =
-		window_full2(wintitle, GTK_WIN_POS_CENTER, 5, G_CALLBACK(project_edit_destroy_lcb), pred, TRUE,
+		window_full2(wintitle, 0, 5, G_CALLBACK(project_edit_destroy_lcb), pred, TRUE,
 					parent_window);
 	vbox = gtk_vbox_new(FALSE, 0);
 	gtk_container_add(GTK_CONTAINER(pred->win), vbox);

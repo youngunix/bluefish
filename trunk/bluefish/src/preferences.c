@@ -2520,7 +2520,7 @@ preferences_dialog_new(Tbfwin *bfwin)
 
 	main_v->prefdialog = pd = g_new0(Tprefdialog, 1);
 	pd->win =
-		window_full2(_("Edit preferences"), GTK_WIN_POS_CENTER, 6, G_CALLBACK(preferences_destroy_lcb), pd,
+		window_full2(_("Edit preferences"), 0, 0, G_CALLBACK(preferences_destroy_lcb), pd,
 					TRUE, bfwin->main_window);
 
 	dvbox = gtk_vbox_new(FALSE, 5);
