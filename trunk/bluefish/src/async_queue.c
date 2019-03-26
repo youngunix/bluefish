@@ -29,6 +29,7 @@ extern void g_none(char *first, ...);
  /**/
 
 #define DBG_THREAD DBG_NONE
+#define DBG_MUTEX DBG_NONE
 
 #include "bluefish.h"
 #include "async_queue.h"
@@ -49,23 +50,28 @@ queue_init_full(Tasyncqueue * queue, guint max_worknum, gboolean lockmutex, gboo
 	queue->startinthread=startinthread;
 	queue->threads=NULL;
 	queue->lockmutex = lockmutex;
-	if (lockmutex)
+	queue->cancelled = FALSE;
+	if (lockmutex) {
+		DBG_MUTEX("queue_init_full, queue=%p, init queue->lockmutex %p\n",queue,queue->lockmutex);
 #if GLIB_CHECK_VERSION(2, 32, 0)
 		g_mutex_init(&queue->mutex);
 #else
 		g_static_mutex_init(&queue->mutex);
 #endif
+	}
 }
 
 void
 queue_cleanup(Tasyncqueue * queue)
 {
-	if (queue->lockmutex)
+	if (queue->lockmutex) {
+		DBG_MUTEX("queue_cleanup, queue=%p, clear queue->lockmutex %p\n",queue,queue->lockmutex);
 #if GLIB_CHECK_VERSION(2, 32, 0)
 		g_mutex_clear(&queue->mutex);
 #else
 		g_static_mutex_free(&queue->mutex);
 #endif
+	}
 }
 
 static gboolean
@@ -98,6 +104,7 @@ queue_run(Tasyncqueue * queue)
 			if (queue->lockmutex) {
 #if GLIB_CHECK_VERSION(2, 32, 0)
 				DBG_THREAD("unlock queue %p\n",queue);
+				DBG_MUTEX("queue_run, unlock queue=%p, lockmutex=%p\n",queue,queue->lockmutex);
 				g_mutex_unlock(&queue->mutex);
 #else
 				g_static_mutex_unlock(&queue->mutex);
@@ -109,6 +116,7 @@ queue_run(Tasyncqueue * queue)
 #if GLIB_CHECK_VERSION(2, 32, 0)
 				g_mutex_lock(&queue->mutex);
 				DBG_THREAD("lock queue %p\n",queue);
+				DBG_MUTEX("queue_run, lock queue=%p, lockmutex=%p\n",queue,queue->lockmutex);
 #else
 				g_static_mutex_lock(&queue->mutex);
 #endif
@@ -122,8 +130,9 @@ queue_run(Tasyncqueue * queue)
 gboolean
 queue_worker_ready(Tasyncqueue * queue)
 {
-	gboolean startednew;
+	gboolean startednew = FALSE;
 	if (queue->lockmutex) {
+		DBG_MUTEX("queue_worker_ready, lock queue=%p, lockmutex=%p\n",queue,queue->lockmutex);
 #if GLIB_CHECK_VERSION(2, 32, 0)
 		g_mutex_lock(&queue->mutex);
 		DBG_THREAD("lock queue %p\n",queue);
@@ -133,8 +142,11 @@ queue_worker_ready(Tasyncqueue * queue)
 	}
 	queue->worknum--;
 	DEBUG_MSG("queue_worker_ready %p, len=%d, worknum=%d\n",queue,queue->q.length, queue->worknum);
-	startednew = queue_run(queue);
+	if (!queue->cancelled) {
+		startednew = queue_run(queue);
+	}
 	if (queue->lockmutex) {
+		DBG_MUTEX("queue_worker_ready, unlock queue=%p, lockmutex=%p\n",queue,queue->lockmutex);
 #if GLIB_CHECK_VERSION(2, 32, 0)
 		DBG_THREAD("unlock queue %p\n",queue);
 		g_mutex_unlock(&queue->mutex);
@@ -150,22 +162,29 @@ queue_worker_ready_inthread(Tasyncqueue *queue)
 {
 	gpointer item;
 
+	DBG_MUTEX("queue_worker_ready_inthread, lock queue=%p, lockmutex=%p\n",queue,queue->lockmutex);
 #if GLIB_CHECK_VERSION(2, 32, 0)
 	g_mutex_lock(&queue->mutex);
 	DBG_THREAD("lock queue %p\n",queue);
 #else
 	g_static_mutex_lock(&queue->mutex);
 #endif
-	
-	if (!queue->q.tail) {
+	if (queue->cancelled || !queue->q.tail) {
 		gpointer thisthread = g_thread_self();
 		queue->worknum--;
-		DEBUG_MSG("queue_worker_ready_inthread queue=%p, queue length %d, just return (end thread, worknum=%d)\n",queue,g_queue_get_length(&queue->q),queue->worknum);
-		queue->threads = g_slist_remove(queue->threads, thisthread);
-		DBG_THREAD("removed thread self %p, have %d threads on queue->threads, will unref it\n",thisthread,g_slist_length(queue->threads));
+		DEBUG_MSG("queue_worker_ready_inthread queue=%p, queue length %d, cancelled=%d, just return (end thread %p, worknum=%d)\n",queue,g_queue_get_length(&queue->q),queue->cancelled,thisthread, queue->worknum);
+		if (!queue->cancelled) {
+			queue->threads = g_slist_remove(queue->threads, thisthread);
+			DBG_THREAD("removed thread self %p, have %d threads on queue->threads\n",thisthread,g_slist_length(queue->threads));
 #if GLIB_CHECK_VERSION(2, 32, 0)
-		g_thread_unref(thisthread);
-		DBG_THREAD("unlock queue %p\n",queue);
+			/* when cancelled the cancel function will call _join, and thus needs the reference, if not cancelled we free ourselves because nobody will wait for us */
+			DEBUG_MSG("queue_worker_ready_inthread, unref thread %p\n",thisthread);
+			g_thread_unref(thisthread);
+#endif
+		}
+		DBG_MUTEX("queue_worker_ready_inthread, unlock queue=%p, lockmutex=%p\n",queue,queue->lockmutex);
+#if GLIB_CHECK_VERSION(2, 32, 0)
+		DBG_THREAD("queue_worker_ready_inthread, unlock queue %p\n",queue);
 		g_mutex_unlock(&queue->mutex);
 #else
 		g_static_mutex_unlock(&queue->mutex);
@@ -174,6 +193,7 @@ queue_worker_ready_inthread(Tasyncqueue *queue)
 	}
 	item = g_queue_pop_tail(&queue->q);
 	DEBUG_MSG("queue_worker_ready_inthread queue=%p, queue length=%d, worknum=%d\n",queue,g_queue_get_length(&queue->q), queue->worknum);
+	DBG_MUTEX("queue_worker_ready_inthread, unlock queue=%p, lockmutex=%p\n",queue,queue->lockmutex);
 #if GLIB_CHECK_VERSION(2, 32, 0)
 	DBG_THREAD("unlock queue %p\n",queue);
 	g_mutex_unlock(&queue->mutex);
@@ -187,6 +207,7 @@ void
 queue_push(Tasyncqueue * queue, gpointer item)
 {
 	if (queue->lockmutex) {
+		DBG_MUTEX("queue_push, lock queue=%p, lockmutex=%p\n",queue,queue->lockmutex);
 #if GLIB_CHECK_VERSION(2, 32, 0)
 		g_mutex_lock(&queue->mutex);
 		DBG_THREAD("lock queue %p\n",queue);
@@ -198,6 +219,7 @@ queue_push(Tasyncqueue * queue, gpointer item)
 	DEBUG_MSG("queue_push %p, new queue length=%d, worknum=%d\n",queue,queue->q.length, queue->worknum);
 	queue_run(queue);
 	if (queue->lockmutex) {
+		DBG_MUTEX("queue_push, unlock queue=%p, lockmutex=%p\n",queue,queue->lockmutex);
 #if GLIB_CHECK_VERSION(2, 32, 0)
 		DBG_THREAD("unlock queue %p\n",queue);
 		g_mutex_unlock(&queue->mutex);
@@ -214,6 +236,7 @@ queue_remove(Tasyncqueue * queue, gpointer item)
 	gboolean retval;
 	gint len;
 	if (queue->lockmutex) {
+		DBG_MUTEX("queue_remove, lock queue=%p, lockmutex=%p\n",queue,queue->lockmutex);
 #if GLIB_CHECK_VERSION(2, 32, 0)
 		g_mutex_lock(&queue->mutex);
 		DBG_THREAD("lock queue %p\n",queue);
@@ -225,6 +248,7 @@ queue_remove(Tasyncqueue * queue, gpointer item)
 	g_queue_remove(&queue->q, item);
 	retval = (len<queue->q.length);
 	if (queue->lockmutex) {
+		DBG_MUTEX("queue_remove, unlock queue=%p, lockmutex=%p\n",queue,queue->lockmutex);
 #if GLIB_CHECK_VERSION(2, 32, 0)
 		DBG_THREAD("unlock queue %p\n",queue);
 		g_mutex_unlock(&queue->mutex);
@@ -239,6 +263,7 @@ void
 queue_cancel(Tasyncqueue *queue, GFunc freefunc, gpointer user_data)
 {
 	if (queue->lockmutex) {
+		DBG_MUTEX("queue_cancel, lock queue=%p, lockmutex=%p\n",queue,queue->lockmutex);
 #if GLIB_CHECK_VERSION(2, 32, 0)
 		g_mutex_lock(&queue->mutex);
 		DBG_THREAD("lock queue %p\n",queue);
@@ -246,9 +271,11 @@ queue_cancel(Tasyncqueue *queue, GFunc freefunc, gpointer user_data)
 		g_static_mutex_lock(&queue->mutex);
 #endif
 	}
+	queue->cancelled=TRUE;
 	g_queue_foreach(&queue->q, freefunc, user_data);
 	g_queue_clear(&queue->q);
 	if (queue->lockmutex) {
+		DBG_MUTEX("queue_cancel, unlock queue=%p, lockmutex=%p\n",queue,queue->lockmutex);
 #if GLIB_CHECK_VERSION(2, 32, 0)
 		DBG_THREAD("unlock queue %p\n",queue);
 		g_mutex_unlock(&queue->mutex);
@@ -260,10 +287,16 @@ queue_cancel(Tasyncqueue *queue, GFunc freefunc, gpointer user_data)
 		GSList *tmpslist;
 		DBG_THREAD("queue_cancel, have %d threads in queue->threads\n",g_slist_length(queue->threads));
 		for (tmpslist = queue->threads;tmpslist;tmpslist=g_slist_next(tmpslist)) {
-			DBG_THREAD("joining thread %p\n",tmpslist->data);
+			DBG_THREAD("queue_cancel, joining thread %p\n",tmpslist->data);
 			g_thread_join(tmpslist->data); /* will unref the thread autyomatically */
 		}
+		
+		/* there should be no more threads running now, so we can change these without need of a lock */
+		DEBUG_MSG("after joining all threads, queue->threads=%p\n",queue->threads);
 		g_slist_free(queue->threads);
 		queue->threads = NULL;
 	}
+	
+	
+	DEBUG_MSG("queue_cancel, finished\n");
 }

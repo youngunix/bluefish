@@ -33,6 +33,7 @@ typedef struct {
 #else
 	GStaticMutex mutex;
 #endif
+	gboolean cancelled; /* whether all threads should stop because the function is cancelled, only to be used inside the lock */
 	gboolean lockmutex; /* whether or not to lock the mutex (if used from threads) */
 	gboolean startinthread;
 	guint worknum;				/* number of elements that are being worked on */

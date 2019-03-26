@@ -301,11 +301,11 @@ typedef struct {
 
 static gboolean replace_files_in_thread_finished(gpointer data) {
 	Treplaceinthread *rit = data;
-	gchar *curi;
-	GList *tmplist;
 
-	DEBUG_MSG("replace_files_in_thread_finished, add %d results to outputbox\n",g_list_length(rit->results));
 	if (g_atomic_int_get(&rit->s3run->cancelled)==0) {
+		gchar *curi;
+		GList *tmplist;
+		DEBUG_MSG("replace_files_in_thread_finished, add %d results to outputbox\n",g_list_length(rit->results));
 		curi = g_file_get_uri(rit->uri);
 		for (tmplist=g_list_first(rit->results);tmplist;tmplist=g_list_next(tmplist)) {
 			Tfileresult *fr = tmplist->data;
@@ -315,8 +315,10 @@ static gboolean replace_files_in_thread_finished(gpointer data) {
 			rit->s3run->files_resultcount++;
 		}
 		g_free(curi);
+	} else {
+		DEBUG_MSG("replace_files_in_thread_finished, cancelled, just quit\n");
 	}
-	DEBUG_MSG("replace_files_in_thread_finished, finished rit %p\n", rit);
+	DEBUG_MSG("replace_files_in_thread_finished, finished, call unrun() and then free rit %p\n", rit);
 	snr3run_unrun(rit->s3run);
 	/* cleanup */
 	g_object_unref(rit->uri);
@@ -399,7 +401,7 @@ static gpointer files_replace_run(gpointer data) {
 		g_idle_add(replace_files_in_thread_finished, rit);
 	}
 
-	DEBUG_MSG("thread %p: calling queue_worker_ready_inthread\n",g_thread_self());
+	DEBUG_MSG("thread %p: after registering idle callback 'replace_files_in_thread_finished', we call queue_worker_ready_inthread\n",g_thread_self());
 	queue_worker_ready_inthread(tmpqueue);
 	/* we don't need to start a new thread by calling _inthread() inside the thread */
 	return NULL;
@@ -456,6 +458,10 @@ queue_cancel_freefunc(gpointer data, gpointer user_data)
 {
 	Treplaceinthread *rit=data;
 	g_object_unref(rit->uri);
+#ifdef DEVELOPMENT
+	if (rit->results)
+		g_warning("queue_cancel_freefunc, BUG, a rit on queue has results ????\n");
+#endif
 	snr3run_unrun(rit->s3run);
 	g_slice_free(Treplaceinthread, rit);
 }
@@ -467,7 +473,7 @@ void snr3_run_in_files_cancel(Tsnr3run *s3run) {
 		findfiles_cancel(s3run->findfiles);
 	}
 	queue_cancel(&s3run->threadqueue, queue_cancel_freefunc, NULL);
-	/* hmm but what if there are still idle callbacks registered ???
+	/* hmm but what if there are still idle callbacks registered like replace_files_in_thread_finished() ???
 	the s3run structure can only be free'd after the fw refcount
 	is 0 */
 }
