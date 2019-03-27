@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * snr3.c - search and replace
  *
- * Copyright (C) 2011,2012,2013,2014,2017 Olivier Sessink
+ * Copyright (C) 2011,2012,2013,2014,2017,2019 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -781,7 +781,6 @@ snr3run_resultcleanup(Tsnr3run *s3run, gboolean clear_outputbox)
 void
 snr3run_free(Tsnr3run *s3run, gboolean remove_highlights, gboolean clear_outputbox) {
 	DEBUG_MSG("snr3run_free, started for %p\n",s3run);
-	snr3_cancel_run(s3run);
 	if (s3run->curbuf)
 		g_free(s3run->curbuf);
 	bfwin_current_document_change_remove_by_data(s3run->bfwin, s3run);
@@ -897,6 +896,7 @@ void snr3run_bookmark_all(Tsnr3run *s3run) {
 static void
 threaded_all_ready(void *data) {
 	Tsnr3run *s3run=data;
+	DEBUG_MSG("threaded_all_ready, s3run=%p\n",s3run);
 	s3run->unre_action_id = 0;
 	s3run->curdoc = NULL;
 	if (s3run->dialog) {
@@ -914,6 +914,9 @@ threaded_all_ready(void *data) {
 	}
 	s3run->replaceall=FALSE;
 	s3run->findall=FALSE;
+	if (g_atomic_int_get(&s3run->cancelled)==1 && s3run->dialog==NULL) {
+		snr3run_free(s3run,TRUE,FALSE);
+	} 
 }
 
 static void
@@ -1097,7 +1100,7 @@ void snr3run_unrun(Tsnr3run *s3run) {
 	DEBUG_MSG("snr3run_unrun, before decrement runcount=%d\n",s3run->runcount);
 	if (g_atomic_int_dec_and_test(&s3run->runcount)) {
 		s3run->callback(s3run);
-		DEBUG_MSG("runcount 0, after the callback\n");
+		DEBUG_MSG("runcount 0, after the callback (possibly s3run has been free'ed now)\n");
 	}
 }
 
@@ -1536,7 +1539,11 @@ snr3win_destroy_cb(GtkWidget *widget, gpointer user_data)
 {
 	TSNRWin *snrwin=user_data;
 	DEBUG_MSG("snr3win_destroy_cb, user_data=%p\n",user_data);
-	snr3run_free(snrwin->s3run, TRUE, FALSE);
+	snr3_cancel_run(snrwin->s3run);
+	snrwin->s3run->dialog = NULL;
+	if (g_atomic_int_get(&snrwin->s3run->runcount)==0) {
+		snr3run_free(snrwin->s3run, TRUE, FALSE);
+	}
 	g_slice_free(TSNRWin, snrwin);
 }
 

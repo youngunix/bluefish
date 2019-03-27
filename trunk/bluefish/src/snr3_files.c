@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * snr3_files.c - multi-threaded search and replace in files
  *
- * Copyright (C) 2011-2017 Olivier Sessink
+ * Copyright (C) 2011-2019 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -397,9 +397,7 @@ static gpointer files_replace_run(gpointer data) {
 	}
 	rit->results = g_list_reverse(rit->results);
 	tmpqueue = &rit->s3run->threadqueue;
-	if (g_atomic_int_get(&rit->s3run->cancelled)==0) {
-		g_idle_add(replace_files_in_thread_finished, rit);
-	}
+	g_idle_add(replace_files_in_thread_finished, rit);
 
 	DEBUG_MSG("thread %p: after registering idle callback 'replace_files_in_thread_finished', we call queue_worker_ready_inthread\n",g_thread_self());
 	queue_worker_ready_inthread(tmpqueue);
