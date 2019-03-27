@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * async_queue.c - asynchronous function execution queue 
  *
- * Copyright (C) 2009-2013 Olivier Sessink
+ * Copyright (C) 2009-2019 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
