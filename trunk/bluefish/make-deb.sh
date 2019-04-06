@@ -44,8 +44,7 @@ EOF
 DEB_NAME=bluefish
 
 SVN_DIR=${SVN_DIR:-.}
-SVN_URL=https://bluefish.svn.sourceforge.net/svnroot/bluefish/
-
+SVN_URL=https://svn.code.sf.net/p/bluefish/code/
 make ${MAKEFLAGS} -C ${SVN_DIR} maintainer-clean || true
 
 UPSTREAM_RELEASE=`grep AC_INIT ${SVN_DIR}/configure.ac | grep ${DEB_NAME} | cut -d, -f2 | sed -e 's/[][]//g'`
