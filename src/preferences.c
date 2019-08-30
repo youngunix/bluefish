@@ -564,7 +564,7 @@ sessionprefs(const gchar * label, Tsessionprefs * sprefs, Tsessionvars * session
 	sprefs->prefs[display_right_margin] =
 		dialog_check_button_in_table(_("Show _right margin indicator"), sessionvars->display_right_margin,table, 1,2,0,1);
 	sprefs->prefs[autoindent] =
-		dialog_check_button_in_table(_("Smart auto indentin_g"), sessionvars->autoindent, table, 1,2,1,2);
+		dialog_check_button_in_table(_("Auto indentin_g"), sessionvars->autoindent, table, 1,2,1,2);
 	sprefs->prefs[session_wrap_text] =
 		dialog_check_button_in_table(_("Wra_p lines"), sessionvars->wrap_text_default, table, 1,2,2,3);
 	sprefs->prefs[enable_syntax_scan] =
@@ -2566,7 +2566,7 @@ preferences_dialog_new(Tbfwin *bfwin)
 	table = dialog_table_in_vbox_defaults(6, 2, 0, vbox2);
 	num = 0;
 	pd->prefs[smartindent] =
-		dialog_check_button_in_table(_("Smart auto indentin_g"), main_v->props.smartindent, table, 0, 1, num,num+1);
+		dialog_check_button_in_table(_("Smart auto indentin_g on brackets"), main_v->props.smartindent, table, 0, 1, num,num+1);
 	num++;
 	pd->prefs[editor_smart_cursor] =
 		dialog_check_button_in_table(_("Smart Home/_End cursor positioning"),
