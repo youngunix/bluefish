@@ -1095,4 +1095,9 @@ mysql_free_result($%0);
 <param num="3" name="Compare Against (w\/o quotes)"/>
 </leaf>
 </branch>
+<branch title="python 2 to 3">
+<leaf type="snr" title="Convert print statements" tooltip="" region="b" matchtype="perl" casesens="0" escapechars="0">
+<searchpat>print ([^\n\r]+)\n</searchpat><replacepat>print(\1)\n</replacepat>
+</leaf>
+</branch>
 </snippets>
