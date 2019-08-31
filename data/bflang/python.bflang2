@@ -23,6 +23,7 @@
 <header>
 	<mime type="application/x-python"/>
 	<mime type="text/x-python" />
+	<mime type="text/x-python3" />
 	<mime type="text/plain?py"/>
 	<option name="show_in_menu" default="1"/>
 	<option name="string_is_block" default="0" description="Show a string as a block"/>
