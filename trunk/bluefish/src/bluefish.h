@@ -60,6 +60,10 @@
 #endif
 #endif
 
+#ifdef HAVE_LOCALE_H
+#include <locale.h>
+#endif
+
 #ifdef DEBUG
 #define DEBUG_MSG g_print
 #define DEBUG_MSG_C g_critical
