@@ -560,66 +560,28 @@ AC_ARG_ENABLE(
 )
 
 if test "x$enable_python" = "xyes" ; then
-	AC_ARG_VAR(
-		[PYTHON],
-		[The 'python' binary with path. Use it to define or override the location of 'python'.]
-	)
-	AC_PATH_PROGS([PYTHON], [python python2.6 python2.5 python2.4 python2])
-	if test -n "$PYTHON" ; then
-		# The following was inspired by Andrew Collier's AC_PYTHON_MODULE macro.
-		for python_module in "sys" "distutils.sysconfig" ; do
-			AC_MSG_CHECKING([for python module '$python_module'])
-			$PYTHON -c "import $python_module" 2>/dev/null
-			if test "$?" -ne "0" ; then
-				AC_MSG_RESULT([no])
-				AC_MSG_NOTICE([This could mean, that the module '$python_module' is not available
-or not shipped with the python runtime (like e.g. on SuSE systems,
-where the necessary modules are in the python-devel package) or that
-the python binary '$PYTHON' does not exist.])
-				enable_python="no"
-				break
-			else
-				AC_MSG_RESULT([yes])
-			fi
-		done
-		if test "x$enable_python" != "xno" ; then
-			AC_MSG_CHECKING([for Python version])
-			PY_VER=`$PYTHON -c 'import distutils.sysconfig; print distutils.sysconfig.get_python_version();'`
-			PY_LIB=`$PYTHON -c 'import distutils.sysconfig; print distutils.sysconfig.get_python_lib(standard_lib=1);'`
-			PY_INC=`$PYTHON -c 'import distutils.sysconfig; print distutils.sysconfig.get_python_inc();'`
-			AC_MSG_RESULT([$PY_VER])
-			changequote([<<, >>])
-			$PYTHON -c "import sys; map(int,sys.version[:3].split('.'))>= [2,4] or sys.exit(1)"
-			changequote([, ])
-			if test "$?" -ne "1" ; then
-				AC_MSG_CHECKING([for Python $PY_VER compile flags])
-				PY_PREFIX=`$PYTHON -c 'import sys; print sys.prefix'`
-				PY_EXEC_PREFIX=`$PYTHON -c 'import sys; print sys.exec_prefix'`
-				if test -f "$PY_INC/Python.h" ; then
-					AC_MSG_RESULT([-I$PY_INC])
-					AC_MSG_CHECKING([for Python $PY_VER link flags])
-					PYSHARED=`$PYTHON -c 'import distutils.sysconfig; print distutils.sysconfig.get_config_var("LIBS")'`
-					if test "$PYSHARED" != "None" ; then
-						AC_MSG_RESULT([-L$PY_LIB/config -lpython$PY_VER $PYSHARED])
-						LIBS="$LIBS -L$PY_LIB/config -lpython$PY_VER $PYSHARED"
-					else
-						AC_MSG_RESULT([-L$PY_LIB/config -lpython$PY_VER])
-						LIBS="$LIBS -L$PY_LIB/config -lpython$PY_VER"
-					fi
-					CFLAGS="$CFLAGS -I$PY_INC"
-				else
-					enable_python="no"
-					AC_MSG_RESULT([Can't find Python.h])
-				fi
-			else
-				AC_MSG_WARN([Python too old. Only 2.4 or above is supported.])
-				enable_python="no"
-			fi
-		fi
-	else
-		enable_python="no"
-	fi
+	AM_PATH_PYTHON(,[
+		AC_ARG_VAR([PYTHON_INCLUDE], [Include flags for python, bypassing python-config])
+		AC_ARG_VAR([PYTHON_CONFIG], [Path to python-config])
+		AS_IF([test -z "$PYTHON_INCLUDE"], [
+		  AS_IF([test -z "$PYTHON_CONFIG"], [
+		    AC_PATH_PROGS([PYTHON_CONFIG],
+		                  [python$PYTHON_VERSION-config python-config],
+		                  [no],
+		                  [`dirname $PYTHON`])
+		    AS_IF([test "$PYTHON_CONFIG" = no], [AC_MSG_ERROR([cannot find python-config for $PYTHON.])])
+		  ])
+		  AC_MSG_CHECKING([python include flags])
+		  PYTHON_INCLUDE=`$PYTHON_CONFIG --includes`
+		  AC_MSG_RESULT([$PYTHON_INCLUDE])
+		  CFLAGS="$LIBS $PYTHON_INCLUDE"
+		  AC_MSG_CHECKING([python libs])
+		  PYTHON_LDFLAGS=`$PYTHON_CONFIG --ldflags`
+		  AC_MSG_RESULT([$PYTHON_LDFLAGS])
+		  LDFLAGS="$LDFLAGS $PYTHON_LDFLAGS"
+		])],[enable_python=no])
 fi
+	
 if test "x$enable_python" = "xyes"; then
 	AC_DEFINE([HAVE_PYTHON], [1], [Define to 1 if you have python installed.])
 	build_zencoding_plugin=yes
