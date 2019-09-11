@@ -27,6 +27,9 @@ for the description of the zen-editor interface
 #include "zencoding.h"
 #include "../document.h"
 
+#if PY_MAJOR_VERSION >= 3
+#define IS_PY3K
+#endif
 
 typedef struct {
 	PyObject_HEAD
@@ -165,7 +168,13 @@ get_caret_placeholder(PyObject *mod) {
 		DEBUG_MSG("failed to get placeholder\n");
 		return "{%::zen-caret::%}";
 	}
+#ifdef IS_PY3K
+	PyObject* pyStr = PyUnicode_AsEncodedString(pcaret_placeholder, "utf-8","Error ~");
+	retval = PyBytes_AS_STRING(pyStr);
+	Py_DECREF(pyStr);
+#else
 	retval = (const gchar *)PyString_AsString(pcaret_placeholder);
+#endif
 	Py_DECREF(pcaret_placeholder);
 	return retval;
 }
@@ -240,7 +249,11 @@ zeneditor_get_content(Tzeneditor *self, PyObject *args)
 	PyObject *result;
 	gchar *text;
 	text = doc_get_chars(self->context, 0, -1);
+#ifdef IS_PY3K
+	result = PyUnicode_Decode(text, strlen(text), "utf-8", NULL);
+#else
 	result = PyString_FromString(text);
+#endif
 	DEBUG_MSG("zeneditor_get_content\n");
 	g_free(text);
 	return result;
@@ -251,17 +264,28 @@ zeneditor_get_syntax(Tzeneditor *self, PyObject *args)
 {
 	DEBUG_MSG("zeneditor_get_syntax\n");
 	/* TODO: which syntaxes does zeneditor support ?? */
+#ifdef IS_PY3K
+	return PyUnicode_Decode("html", 4, "utf-8", NULL);
+#else
 	return PyString_FromString("html");
+#endif
 }
 
 static PyObject *
 zeneditor_get_profile_name(Tzeneditor *self, PyObject *args)
 {
 	DEBUG_MSG("zeneditor_get_profile_name\n");
+#ifdef IS_PY3K
+	if (self->profile) {
+		return PyUnicode_Decode(self->profile, strlen(self->profile), "utf-8", NULL);
+	}
+	return PyUnicode_Decode("html", 4, "utf-8", NULL);
+#else
 	if (self->profile) {
 		return PyString_FromString(self->profile);
 	}
 	return PyString_FromString("html");
+#endif
 }
 static PyObject *
 zeneditor_prompt(Tzeneditor *self, PyObject *args)
@@ -289,7 +313,11 @@ zeneditor_prompt(Tzeneditor *self, PyObject *args)
 			gtk_widget_destroy(dialog);
 			Py_RETURN_NONE;
 		}
+#ifdef IS_PY3K
+		result = PyUnicode_Decode(retval, strlen(retval), "utf-8", NULL);
+#else
 		result = PyString_FromString(retval);
+#endif
 		gtk_widget_destroy(dialog);
 		return result;
 	}
@@ -374,7 +402,11 @@ zeneditor_init(Tzeneditor *self, PyObject *args, PyObject *kwds)
 			self->context = PyLong_AsVoidPtr(context);
 		}
 		if (profile) {
+#ifdef IS_PY3K
+			self->profile = PyUnicode_AsEncodedString(profile, "utf-8","Error ~");
+#else
 			self->profile = PyString_AsString(profile);
+#endif
 		}
 	}
 
@@ -414,7 +446,7 @@ static PyMethodDef zeneditor_methods[] = {
 };
 
 static PyTypeObject zeneditorType = {
-	PyObject_HEAD_INIT(NULL)
+	PyVarObject_HEAD_INIT(NULL, 0)
     0,                         /*ob_size*/
     "bluefish.zeneditor",         /*tp_name*/
     sizeof(Tzeneditor),         /*tp_basicsize*/
@@ -458,15 +490,18 @@ static PyTypeObject zeneditorType = {
 
 PyMethodDef Module_methods[] = { { NULL } };
 
-
 PyObject *zeneditor_module_init(void) {
 	PyObject *m;
 
 	zeneditorType.tp_new = PyType_GenericNew;
 	if (PyType_Ready(&zeneditorType) < 0)
 		return NULL;
-
+#ifdef IS_PY3K
+	static struct PyModuleDef moduledef = {PyModuleDef_HEAD_INIT,"bluefish_zeneditor","zeneditor module",-1,Module_methods,};
+	m = PyModule_Create(&moduledef);
+#else
 	m = Py_InitModule3("bluefish_zeneditor", Module_methods, "Bluefish zeneditor interface");
+#endif
 	if (!m)
 		return NULL;
 	Py_INCREF(&zeneditorType);
