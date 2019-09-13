@@ -123,6 +123,7 @@
 	<comment id="cm.scriptcomment" type="line" start="#" />
 	<smartindent characters="{" />
 	<smartoutdent characters="}" />
+	<smartselection characters="$_" />
 	<default_spellcheck enabled="1" spell_decode_entities="1" />
 	<auto_re_use_attributes enabled="1" />
 </properties>

@@ -49,6 +49,7 @@ typedef struct {
 	GHashTable *commentid_table;	/* a hash table with a comment ID string as key and an integer position in the GArray as value */
 	gchar *smartindentchars;
 	gchar *smartoutdentchars;
+	gchar *smartselectionchars;
 	Tbflang *bflang;
 	gboolean failed;
 	gboolean load_completion;
@@ -489,6 +490,7 @@ build_lang_finished_lcb(gpointer data)
 	}
 	bfparser->bflang->smartindentchars = bfparser->smartindentchars;
 	bfparser->bflang->smartoutdentchars = bfparser->smartoutdentchars;
+	bfparser->bflang->smartselectionchars = bfparser->smartselectionchars?bfparser->smartselectionchars:"";
 #ifdef HAVE_LIBENCHANT
 	bfparser->bflang->default_spellcheck = bfparser->default_spellcheck;
 	bfparser->bflang->spell_decode_entities = bfparser->spell_decode_entities;
@@ -2057,6 +2059,9 @@ build_lang_thread(gpointer data)
 					parse_attributes(bflang,reader, attribs, sizeof(attribs)/sizeof(Tattrib));
 				} else if (xmlStrEqual(name2, (xmlChar *) "smartoutdent")) {
 					Tattrib attribs[] = {{"characters", &bfparser->smartoutdentchars, attribtype_string}};
+					parse_attributes(bflang,reader, attribs, sizeof(attribs)/sizeof(Tattrib));
+				} else if (xmlStrEqual(name2, (xmlChar *) "smartselection")) {
+					Tattrib attribs[] = {{"characters", &bfparser->smartselectionchars, attribtype_string}};
 					parse_attributes(bflang,reader, attribs, sizeof(attribs)/sizeof(Tattrib));
 				} else if (xmlStrEqual(name2, (xmlChar *) "auto_re_use_attributes")) {
 					Tattrib attribs[] = {{"enabled", &bfparser->auto_re_use_attributes, attribtype_boolean}};
