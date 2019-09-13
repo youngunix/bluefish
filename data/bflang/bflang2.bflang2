@@ -37,6 +37,7 @@
 <properties>
 	<comment type="block" start="&lt;!--" end="--&gt;" />
 	<default_spellcheck enabled="1" />
+	<smartselection characters="&gt;&lt;" />
 </properties>
 <definition>
 <context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;">
@@ -84,6 +85,7 @@ The default value defines the behavior if the user previously did not have this 
 			</tag>
 			<tag name="smartindent" highlight="tag" attributes="characters" autocomplete_append=" characters=&quot;&quot; /&gt;" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;"/>
 			<tag name="smartoutdent" highlight="tag" attributes="characters" autocomplete_append=" characters=&quot;&quot; /&gt;" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;"/>
+			<tag name="smartselection" highlight="tag" attributes="characters" autocomplete_append=" characters=&quot;&quot; /&gt;" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;"/>
 			<tag name="default_spellcheck" highlight="tag" attributes="enabled,spell_decode_entities" attribhighlight="attribute" attrib_autocomplete_append="=&quot;1&quot;">
 				<autocomplete append=" enabled=&quot;1&quot; /&gt;" />
 			</tag>

@@ -322,6 +322,7 @@ typedef struct {
 	Tscantable *st;				/* NULL or complete */
 	gchar *smartindentchars;
 	gchar *smartoutdentchars;
+	gchar *smartselectionchars;
 #ifdef HAVE_LIBENCHANT
 	gboolean default_spellcheck;
 	gboolean spell_decode_entities;
