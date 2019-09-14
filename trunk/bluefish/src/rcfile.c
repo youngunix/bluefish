@@ -275,7 +275,7 @@ save_config_file(GHashTable * config_list, GFile * file)
 			break;
 		case 'a':
 			DEBUG_MSG("save_config_file, tmpitem(%p), &tmpitem=%p\n", tmpitem, &tmpitem);
-			tmplist2 = g_list_last((GList *) * (void **) tmpitem->pointer);
+			tmplist2 = g_list_first((GList *) * (void **) tmpitem->pointer);
 			DEBUG_MSG("save_config_file, the tmplist2(%p)\n", tmplist2);
 			while (tmplist2 != NULL) {
 				tmpstring2 = array_to_string((char **) tmplist2->data);
@@ -285,7 +285,7 @@ save_config_file(GHashTable * config_list, GFile * file)
 					tmpstring = g_strdup_printf("%s", tmpstring2);
 				DEBUG_MSG("save_config_file, tmpstring(%p)=%s\n", tmpstring, tmpstring);
 				rclist = g_list_prepend(rclist, tmpstring);
-				tmplist2 = g_list_previous(tmplist2);
+				tmplist2 = g_list_next(tmplist2);
 				g_free(tmpstring2);
 			}
 			break;
@@ -1184,6 +1184,7 @@ rcfile_parse_colorprofile(GFile * file)
 	}
 	retval = parse_config_file(configlist, file);
 	free_configlist(configlist);
+
 	/*setup_colors_after_parse(project->session);*/
 	return retval;
 }
