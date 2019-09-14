@@ -311,6 +311,16 @@ langmgr_reload_user_styles(void)
 	};
 	/* because the order of the styles is important (last added GtkTextTag is most important)
 	   we begin with the last style in the list */
+
+
+	/* show the top of textstyles */
+/*	if (main_v->props.textstyles) {
+		gchar **arr = (gchar **) g_list_first(main_v->props.textstyles)->data;
+		g_print("first entry for textstyles is %s:%s\n",arr[0],arr[1]);
+		arr = (gchar **) g_list_last(main_v->props.textstyles)->data;
+		g_print("last entry for textstyles is %s\n",arr[0],arr[1]);
+	}*/
+
 	for (tmplist = g_list_last(main_v->props.textstyles); tmplist; tmplist = tmplist->prev) {
 		gchar **arr = (gchar **) tmplist->data;
 		if (g_strv_length(arr) == 6) {

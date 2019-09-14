@@ -1642,7 +1642,7 @@ bfwin_commands_menu_create(Tbfwin * bfwin)
 		dynamic_menu_empty(bfwin->uimanager, bfwin->commands_merge_id, bfwin->commands_group);
 	}
 	bfwin->commands_merge_id = gtk_ui_manager_new_merge_id(bfwin->uimanager);
-	for (list = g_list_first(main_v->props.external_command); list; list = list->next) {
+	for (list = g_list_last(main_v->props.external_command); list; list = list->prev) {
 		gchar **arr = list->data;
 		/*  arr[0] = state
 		 *  arr[1] = name
@@ -1811,7 +1811,7 @@ bfwin_filters_menu_create(Tbfwin * bfwin)
 
 	bfwin->filters_merge_id = gtk_ui_manager_new_merge_id(bfwin->uimanager);
 
-	for (list = g_list_first(main_v->props.external_filter); list; list = list->next) {
+	for (list = g_list_last(main_v->props.external_filter); list; list = list->prev) {
 		gchar **arr = list->data;
 		/* arr[0] = state
 		 * arr[1] = name
@@ -1851,7 +1851,7 @@ bfwin_outputbox_menu_create(Tbfwin * bfwin)
 
 	bfwin->outputbox_merge_id = gtk_ui_manager_new_merge_id(bfwin->uimanager);
 
-	for (list = g_list_first(main_v->props.external_outputbox); list; list = list->next) {
+	for (list = g_list_last(main_v->props.external_outputbox); list; list = list->prev) {
 		gchar **arr = list->data;
 		/* arr[0] = state
 		 * arr[1] = name
