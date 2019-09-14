@@ -36,6 +36,7 @@
 	<smartindent characters="{[" />
 	<smartoutdent characters="]}" />
 	<default_spellcheck enabled="0" />
+	<smartselection characters="_" />
 </properties>
 
 <definition>

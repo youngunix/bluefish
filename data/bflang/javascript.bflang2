@@ -51,6 +51,7 @@
 	<comment id="cm.cpplinecomment" type="line" start="//" />
 	<smartindent characters="{" />
 	<smartoutdent characters="}" />
+	<smartselection characters="_" />
 </properties>
 
 <definition>

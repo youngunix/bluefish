@@ -91,6 +91,7 @@
 	<comment id="cm.cblockcomment" type="block" start="/*" end="*/" />
 	<comment id="cm.cpplinecomment" type="line" start="//" />
 	<comment id="cm.scriptcomment" type="line" start="#" />
+	<!--<smartselection characters="&gt;&lt;" />-->
 	<default_spellcheck enabled="1" spell_decode_entities="1" />
 </properties>
 

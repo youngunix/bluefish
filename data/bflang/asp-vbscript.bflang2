@@ -98,6 +98,7 @@
 	<comment id="cm.vbcomment" type="line" start="'" />
 	<comment id="cm.vbremcomment" type="line" start="rem " />
 	<default_spellcheck spell_decode_entities="1" />
+	<smartselection characters="_" />
 </properties>
 <definition>
 <context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;%@=/">

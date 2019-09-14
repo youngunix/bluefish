@@ -39,6 +39,7 @@
  <comment id="cm.percentcomment" type="line" start="%" />
  <smartindent characters="{" />
  <smartoutdent characters="}" />
+ <smartselection characters="_" />
 </properties>
 
 <definition>
