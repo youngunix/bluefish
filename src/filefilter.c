@@ -248,12 +248,12 @@ filters_rebuild(void)
 
 	/* build a list of filters */
 	main_v->filefilters = g_list_prepend(NULL, new_filter(_("All files"), "0", NULL, NULL));
-	tmplist = g_list_first(main_v->globses.filefilters);
+	tmplist = g_list_last(main_v->globses.filefilters);
 	while (tmplist) {
 		gchar **strarr = (gchar **) tmplist->data;
 		Tfilter *filter = new_filter(strarr[0], strarr[1], strarr[2], strarr[3]);
 		main_v->filefilters = g_list_prepend(main_v->filefilters, filter);
-		tmplist = g_list_next(tmplist);
+		tmplist = g_list_previous(tmplist);
 	}
 }
 
