@@ -3232,50 +3232,58 @@ static gboolean bf_gtk_text_iter_forward_visible_word_end(GtkTextIter * iter, co
 	}
 	return ret;
 }
-
-static gboolean bf_gtk_text_iter_backward_visible_word_start(GtkTextIter * iter, const gchar *smartselectionchars)
-{
-	gboolean cont = TRUE, ret;
-	GtkTextIter before;
-	while (cont) {
-		ret = gtk_text_iter_backward_visible_word_start(iter);
-		before = *iter;
-		g_print("backward: iter at %c\n", gtk_text_iter_get_char(iter));
-		if (gtk_text_iter_backward_char(&before) && bf_text_iter_char_in_string(&before, smartselectionchars)) {
-			g_print("backward: found _, backward 1 chars\n");
-			ret = gtk_text_iter_backward_char(iter);
-			g_print("backward: ret=%d\n", ret);
-		} else {
-			cont = FALSE;
-		}
-	}
-	return ret;
-}
-
 static gboolean bf_gtk_text_iter_starts_word(GtkTextIter * iter, const gchar *smartselectionchars)
 {
 	GtkTextIter before = *iter;
 	if (bf_text_iter_char_in_string(iter, smartselectionchars)
 		|| (gtk_text_iter_backward_char(&before) && bf_text_iter_char_in_string(&before, smartselectionchars))) {
-		g_print("starts: before has %c\n", gtk_text_iter_get_char(&before));
+		g_print("starts: before has %c, return FALSE\n", gtk_text_iter_get_char(&before));
 		return FALSE;
 	}
 	return gtk_text_iter_starts_word(iter);
 }
 
+static gboolean bf_gtk_text_iter_backward_visible_word_start(GtkTextIter * iter, const gchar *smartselectionchars)
+{
+	gboolean cont = TRUE, ret;
+	GtkTextIter before;
+	g_print("bf_gtk_text_iter_backward_visible_word_start, iter=%c ends_word=%d\n",gtk_text_iter_get_char(iter),gtk_text_iter_starts_word(iter));
+	if (!gtk_text_iter_starts_word(iter) && gtk_text_iter_inside_word(iter)) {
+		ret = gtk_text_iter_backward_visible_word_start(iter);
+		g_print("bf_gtk_text_iter_backward_visible_word_start, iter=%c\n",gtk_text_iter_get_char(iter));
+	}
+	while (!gtk_text_iter_is_start(iter)) {
+		before = *iter;
+		gtk_text_iter_backward_char(&before);
+		g_print("bf_gtk_text_iter_backward_visible_word_start, in loop, iter=%c, before=%c\n",gtk_text_iter_get_char(iter),gtk_text_iter_get_char(&before));
+		if (bf_text_iter_char_in_string(&before, smartselectionchars)) {
+			/* one step back */
+			*iter = before;
+		} else if (gtk_text_iter_ends_word(iter)) {
+			ret = gtk_text_iter_backward_visible_word_start(iter);
+		} else {
+			break;
+		}
+	}
+	return ret;
+}
+
+
 static gboolean bf_gtk_text_iter_ends_word(GtkTextIter * iter, const gchar *smartselectionchars)
 {
-	g_print("ends: iter has %c\n", gtk_text_iter_get_char(iter));
-	if (bf_text_iter_char_in_string(iter, smartselectionchars))
+	if (bf_text_iter_char_in_string(iter, smartselectionchars)) {
+		g_print("ends: iter has %c, return FALSE\n", gtk_text_iter_get_char(iter));
 		return FALSE;
+	}
 	return gtk_text_iter_ends_word(iter);
 }
 
 static gboolean bf_gtk_text_iter_inside_word(GtkTextIter * iter, const gchar *smartselectionchars)
 {
-	g_print("inside: iter has %c\n", gtk_text_iter_get_char(iter));
-	if (bf_text_iter_char_in_string(iter, smartselectionchars))
+	if (bf_text_iter_char_in_string(iter, smartselectionchars)) {
+		g_print("inside: iter has %c, return TRUE\n", gtk_text_iter_get_char(iter));
 		return TRUE;
+	}
 	return gtk_text_iter_inside_word(iter);
 }
 
@@ -3290,23 +3298,24 @@ bluefish_text_view_extend_selection(GtkTextView * widget, GtkTextExtendSelection
 	BluefishTextView *btv = BLUEFISH_TEXT_VIEW(widget);
 	BluefishTextView *master = BLUEFISH_TEXT_VIEW(btv->master);
 	gchar *smartselectionchars;
-	DBG_SIGNALS("bluefish_text_view_extend_selection, started\, location at %d\n",
+	g_print("\n\nbluefish_text_view_extend_selection, started, location at %d\n",
 			gtk_text_iter_get_offset(location));
 	smartselectionchars = master->bflang ? master->bflang->smartselectionchars:NULL;
 
 	*start = *end = *location;
 	if (bf_gtk_text_iter_inside_word(start, smartselectionchars)) {
-		/*g_print("inside word\n");*/
+		g_print("inside word\n");
 		if (!bf_gtk_text_iter_starts_word(start, smartselectionchars))
 			bf_gtk_text_iter_backward_visible_word_start(start, smartselectionchars);
-
+		g_print("bluefish_text_view_extend_selection, started, start is at %d\n",gtk_text_iter_get_offset(start));
 		if (!bf_gtk_text_iter_ends_word(end, smartselectionchars)) {
 			if (!bf_gtk_text_iter_forward_visible_word_end(end, smartselectionchars))
 				gtk_text_iter_forward_to_end(end);
+		g_print("bluefish_text_view_extend_selection, started, end is at %d\n",gtk_text_iter_get_offset(end));
 		}
 	} else {
 		GtkTextIter tmp;
-		/*g_print("not inside word\n");*/
+		g_print("not inside word\n");
 		tmp = *start;
 		if (bf_gtk_text_iter_backward_visible_word_start(&tmp, smartselectionchars))
 			bf_gtk_text_iter_forward_visible_word_end(&tmp, smartselectionchars);
