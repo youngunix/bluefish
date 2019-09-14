@@ -40,6 +40,7 @@
 <properties>
 	<comment id="cm.vbcomment" type="line" start="'" />
 	<comment id="cm.vbremcomment" type="line" start="rem " />
+	<smartselection characters="_" />
 </properties>
 
 <definition>

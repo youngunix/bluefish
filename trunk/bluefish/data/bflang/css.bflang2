@@ -45,6 +45,7 @@
 	<!--<comment type="line" start="//" />-->
 	<smartindent characters="{" />
 	<smartoutdent characters="}" />
+	<smartselection characters="_" />
 </properties>
 <definition>
 	<context id="c.html.css.main" symbols=" &#9;&#10;&#13;{}./*&lt;&gt;:+~[]()#,">

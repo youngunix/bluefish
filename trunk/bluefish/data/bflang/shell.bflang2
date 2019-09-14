@@ -38,6 +38,7 @@
 </header>
 <properties>
 	<comment type="line" start="#" />
+	<smartselection characters="$_" />
 </properties>
 
 <definition>

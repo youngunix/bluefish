@@ -41,6 +41,7 @@
 <properties>
 	<comment type="line" start="#" />
 	<smartindent characters=":" />
+	<smartselection characters="_" />
 </properties>
 
 <definition>

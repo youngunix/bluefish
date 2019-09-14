@@ -43,7 +43,8 @@
 </header>
 <properties>
 	<comment type="block" start="/*" end="*/" />
-	<comment type="line" start="--" /> 
+	<comment type="line" start="--" />
+	<smartselection characters="_" /> 
 </properties>
 <definition>
 <context symbols=" ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;">

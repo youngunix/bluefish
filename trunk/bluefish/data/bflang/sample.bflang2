@@ -85,6 +85,10 @@ The '_foldable' suffix is hardcoded in bluefish -->
 	<smartindent characters="{" />
 	<smartoutdent characters="}" />
 
+	<!-- smartselection chcracters specify which character should be considered part of the word when selecting 
+	with double click	-->
+	<smartselection characters="_" />
+
 	<!-- default_spellcheck defines if regions that are not highlighted will be checked by the spell checker.
 	This is typically enabled for HTML/XML like languages, and disabled (or ignored, because the default=0)
 	for all programming languages

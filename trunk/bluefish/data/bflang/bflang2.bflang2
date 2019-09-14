@@ -37,7 +37,7 @@
 <properties>
 	<comment type="block" start="&lt;!--" end="--&gt;" />
 	<default_spellcheck enabled="1" />
-	<smartselection characters="&gt;&lt;" />
+	<!--<smartselection characters="&gt;&lt;" />-->
 </properties>
 <definition>
 <context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;">

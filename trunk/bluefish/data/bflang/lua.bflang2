@@ -43,6 +43,7 @@
 	<comment id="cm.linecomment" type="line" start="-- " />
 	<smartindent characters="{" />
 	<smartoutdent characters="}" />
+	<smartselection characters="_" />
 </properties>
 <definition>
 <context symbols=" ;(){}[]:\&#34;\\',*&amp;^%!+=-|/?#&#9;&#10;&#13;" commentid_block="cm.blockcomment" commentid_line="cm.linecomment">
