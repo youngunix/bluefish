@@ -574,7 +574,7 @@ if test "x$enable_python" = "xyes" ; then
 		  AC_MSG_CHECKING([python include flags])
 		  PYTHON_INCLUDE=`$PYTHON_CONFIG --includes`
 		  AC_MSG_RESULT([$PYTHON_INCLUDE])
-		  CFLAGS="$LIBS $PYTHON_INCLUDE"
+		  CFLAGS="$CFLAGS $PYTHON_INCLUDE"
 		  AC_MSG_CHECKING([python libs])
 		  PYTHON_LDFLAGS=`$PYTHON_CONFIG --ldflags`
 		  AC_MSG_RESULT([$PYTHON_LDFLAGS])
