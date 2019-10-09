@@ -75,20 +75,25 @@ about_options_dialog_create(GtkAction * action, gpointer user_data)
 	gchar *sec_text;
 
 	dialog =
-		gtk_message_dialog_new(GTK_WINDOW(BFWIN(user_data)->main_window), GTK_DIALOG_DESTROY_WITH_PARENT,
-							   GTK_MESSAGE_INFO, GTK_BUTTONS_CLOSE,
+		gtk_message_dialog_new(GTK_WINDOW(BFWIN(user_data)->main_window), 
+        GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+        GTK_MESSAGE_INFO, GTK_BUTTONS_CLOSE,
 #ifdef SVN_REVISION
-							   PACKAGE_STRING " rev" SVN_REVISION);
+        PACKAGE_STRING " rev" SVN_REVISION);
 #else	/* SVN_REVISION */
-							   PACKAGE_STRING);
+        PACKAGE_STRING);
 #endif	/* SVN_REVISION */
-	sec_text = g_strconcat(_("This version of Bluefish was built with:\n"), CONFIGURE_OPTIONS, NULL);
+	sec_text = g_strconcat(_("This version of Bluefish was built with:\n\n"), CONFIGURE_OPTIONS, NULL);
 
 	gtk_message_dialog_format_secondary_text(GTK_MESSAGE_DIALOG(dialog),
-			"%s\ngtk %d.%d.%d (runtime gtk %d.%d.%d)\nglib %d.%d.%d (runtime %d.%d.%d)\n"
+			"%s\n\ngtk %d.%d.%d (runtime gtk %d.%d.%d)\nglib %d.%d.%d (runtime %d.%d.%d)\n\n"
 			"with libenchant... %s\nwith libenchant >= 1.4... %s\n"
 			"with libgucharmap... %s\nwith libgucharmap_2... %s\n"
-			"with python... %s"
+#ifdef HAVE_PYTHON
+			"with python version... %s"
+#else
+      "with python... %s"
+#endif
 			, sec_text
 			, GTK_MAJOR_VERSION, GTK_MINOR_VERSION, GTK_MICRO_VERSION
 			, gtk_major_version, gtk_minor_version, gtk_micro_version
@@ -115,7 +120,7 @@ about_options_dialog_create(GtkAction * action, gpointer user_data)
 			, "no"
 #endif
 #ifdef HAVE_PYTHON
-			, "yes"
+			, HAVE_PYTHON_VERSION
 #else
 			, "no"
 #endif
@@ -130,33 +135,7 @@ about_options_dialog_create(GtkAction * action, gpointer user_data)
 static void
 about_report_bug(GtkAction * action, gpointer user_data)
 {
-	GString *string;
-	gchar *options;
-
-	string = g_string_new("http://bugzilla.gnome.org/enter_bug.cgi?product=bluefish");
-#ifdef WIN32
-	string = g_string_append(string, ";op_sys=Windows");
-#elif PLATFORM_DARWIN
-	string = g_string_append(string, ";op_sys=Mac%20OS");
-#endif	/* WIN32 */
-	string = g_string_append(string, ";version=");
-#ifdef SVN_REVISION
-	string = g_string_append_uri_escaped(string, "development (SVN TRUNK)",NULL,FALSE);
-#else	/* SVN_REVISION */
-	string = g_string_append(string, PACKAGE_VERSION);
-#endif	/* SVN_REVISION */
-	string = g_string_append(string, ";comment=");
-	options = g_strconcat(
-#ifdef SVN_REVISION
-						  "SVN revision ", SVN_REVISION, "\n",
-#endif	/* SVN_REVISION */
-						  "Bluefish was configured with: ", CONFIGURE_OPTIONS, "\n", NULL);
-
-	string = g_string_append_uri_escaped(string, options, NULL, FALSE);
-	g_free(options);
-
-	bluefish_url_show(string->str);
-	g_string_free(string, TRUE);
+	bluefish_url_show("https://sourceforge.net/p/bluefish/tickets/");
 }
 
 static void
