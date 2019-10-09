@@ -586,6 +586,7 @@ fi
 	
 if test "x$enable_python" = "xyes"; then
 	AC_DEFINE([HAVE_PYTHON], [1], [Define to 1 if you have python installed.])
+	AC_DEFINE_UNQUOTED([HAVE_PYTHON_VERSION], ["$PYTHON_VERSION"], [Define to python version.])
 	build_zencoding_plugin=yes
 else
 	build_zencoding_plugin=no
