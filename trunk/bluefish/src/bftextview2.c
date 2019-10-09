@@ -1619,14 +1619,13 @@ static gboolean spacingtoclick_handle_keypress(BluefishTextView * btv, GdkEventK
 		}
 	} else if (kevent->keyval == GDK_Up || kevent->keyval == GDK_Down) {
 		GdkRectangle loc, loc2;
-		gboolean ret, endsline;
+		gboolean ret;
 		g_print
 			("spacingtoclick_handle_keypress, GDK_Up or GDK_Down, iter is at cursor, gtk_text_iter_get_line()=%d, offset=%d\n",
 			 gtk_text_iter_get_line(&iter), gtk_text_iter_get_offset(&iter));
 		/* see if line above has same amount of characters */
 		gtk_text_view_get_iter_location(GTK_TEXT_VIEW(btv), &iter, &loc);
 		g_print("iter (at cursor) location, loc.x=%d, loc.y=%d\n", loc.x, loc.y);
-		endsline = gtk_text_iter_ends_line(&iter);
 		if (kevent->keyval == GDK_Up) {
 			ret = gtk_text_iter_backward_line(&iter);
 		} else {
@@ -1634,7 +1633,6 @@ static gboolean spacingtoclick_handle_keypress(BluefishTextView * btv, GdkEventK
 		}
 		if (ret) {
 			gint offset;
-			GdkRectangle vrect;
 			g_print("after line forward/backward, line is %d\n", gtk_text_iter_get_line(&iter));
 			if (!gtk_text_iter_ends_line(&iter)) {
 				g_print("iter at line %d and offset %d does not end line, forward to line end\n",
@@ -2263,11 +2261,10 @@ static gboolean bluefish_text_view_button_release_event(GtkWidget * widget, GdkE
 	if (event->button == 1 && main_v->props.editor_spacingtoclick) {
 		gint bufx, bufy, numchars;
 		GtkTextIter iter;
-		gchar *tmpstr;
+		
 		gtk_text_view_window_to_buffer_coords(GTK_TEXT_VIEW(btv), GTK_TEXT_WINDOW_TEXT, event->x, event->y,
 											  &bufx, &bufy);
 		if (master->spacingtoclickend == bufx) {
-
 			/*g_print("bufx=%d,bufy=%d\n",bufx,bufy); */
 			gtk_text_view_get_iter_at_location(GTK_TEXT_VIEW(btv), &iter, bufx, bufy);
 			if (gtk_text_iter_ends_line(&iter)) {
@@ -3293,7 +3290,7 @@ static gboolean bf_gtk_text_iter_inside_word(GtkTextIter * iter, const gchar *sm
 
 static gboolean
 bluefish_text_view_extend_selection(GtkTextView * widget, GtkTextExtendSelection granularity,
-									GtkTextIter * location, GtkTextIter * start, GtkTextIter * end)
+									const GtkTextIter * location, GtkTextIter * start, GtkTextIter * end)
 {
 	if (granularity != GTK_TEXT_EXTEND_SELECTION_WORD) {
 		/* ignore line or character selection */
