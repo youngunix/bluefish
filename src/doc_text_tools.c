@@ -434,7 +434,7 @@ select_current_identifier(Tdocument *doc)
 {
 	GtkTextIter cursor, so, eo;
 	gtk_text_buffer_get_iter_at_mark(doc->buffer, &cursor, gtk_text_buffer_get_insert(doc->buffer));
-	if (bluefish_text_view_get_active_identifier(doc->view, &cursor, &so, &eo)) {
+	if (bluefish_text_view_get_active_identifier(BLUEFISH_TEXT_VIEW(doc->view), &cursor, &so, &eo)) {
 		gtk_text_buffer_select_range(doc->buffer, &so, &eo);
 	}
 }

@@ -1243,7 +1243,7 @@ snr3run_init_from_gui(TSNRWin *snrwin, Tsnr3run *s3run)
 	escapechars = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(snrwin->escapeChars));
 	recursion_level = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(snrwin->recursion_level));
 
-	cbasedir = gtk_entry_get_text(GTK_ENTRY(gtk_bin_get_child(snrwin->basedir)));
+	cbasedir = gtk_entry_get_text(GTK_ENTRY(gtk_bin_get_child(GTK_BIN(snrwin->basedir))));
 	basedir = g_file_new_for_commandline_arg(cbasedir);
 	filepattern = gtk_entry_get_text(GTK_ENTRY(gtk_bin_get_child(GTK_BIN(snrwin->filepattern))));
 
@@ -1708,7 +1708,7 @@ snr3_advanced_dialog_backend(Tbfwin * bfwin, const gchar *findtext, Tsnr3scope s
 	gtk_table_attach(GTK_TABLE(table), snrwin->basedir, 1, 3, currentrow, currentrow+1,GTK_EXPAND | GTK_FILL, GTK_SHRINK, 0, 0);
 	
 	/* The entry itself can be accessed by calling gtk_bin_get_child() on the combo box. */
-	snrwin->basedirB = file_but_new2(gtk_bin_get_child(snrwin->basedir), 1, bfwin, GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
+	snrwin->basedirB = file_but_new2(gtk_bin_get_child(GTK_BIN(snrwin->basedir)), 1, bfwin, GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
 	gtk_table_attach(GTK_TABLE(table), snrwin->basedirB, 3, 4, currentrow, currentrow+1,GTK_FILL, GTK_SHRINK, 0, 0);
 
 	currentrow++;
