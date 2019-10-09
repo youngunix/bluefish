@@ -692,7 +692,7 @@ doc_save_backend(Tdocument * doc, Tdocsave_mode savemode, gboolean close_doc,
 	dsb->doc = doc;
 	dsb->savemode = savemode;
 	if (main_v->props.editor_spacingtoclick) {
-		bluefish_text_view_remove_spacingtoclick(doc->view);
+		bluefish_text_view_remove_spacingtoclick(BLUEFISH_TEXT_VIEW(doc->view));
 	}
 	
 	/* should be moved to a plugin interface, because this is HTML specific */

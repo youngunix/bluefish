@@ -2182,7 +2182,7 @@ doc_buffer_insert_text_lcb(GtkTextBuffer * textbuffer, GtkTextIter * iter, gchar
 		}
 		doc_unre_add(doc, string, pos, pos + clen, UndoInsert);
 		DEBUG_MSG("doc_buffer_insert_text_lcb, about to call doc_set_modified(%p,1)\n",doc);
-		if (!last_undo_is_spacingtoclick(doc->view)) {
+		if (!last_undo_is_spacingtoclick(BLUEFISH_TEXT_VIEW(doc->view))) {
 			doc_set_modified(doc, 1);
 		}
 	}
