@@ -18,15 +18,15 @@ Installation:
   
 Starting Bluefish:
   
-  run from the command line: `bluefish-unstable'
-  run `bluefish-unstable -h' for more startup options
+  run from the command line: `bluefish'
+  run `bluefish -h' for more startup options
 
   Several features are only available if you install some other programs too.
   This is necessary for the browser preview, checkers like weblint or tidy, ...
 
 More information:
   
-  http://bluefish.openoffice.nl/manual/
+  http://bluefish.openoffice.nl/
 
 Written by:
   
@@ -34,9 +34,8 @@ Written by:
 
 Reporting Bugs:
   
-  Please report bugs to our mailing list or our bugtracker:
-    bluefish-dev@lists.ems.ru
-    http://bugzilla.gnome.org/enter_bug.cgi?product=bluefish
+  Please report bugs to our bugtracker:
+    https://sourceforge.net/p/bluefish/tickets/
 
   Include in the report:
     - version of Bluefish you are using
@@ -46,6 +45,5 @@ Reporting Bugs:
 Contacting us:
   
   http://bluefish.openoffice.nl (homepage)
-  bluefish-dev@lists.ems.ru (developers list)
-  bluefish-users@lists.ems.ru (users mailing list)
-  see http://bluefish.openoffice.nl/development.html#ml
+  https://sourceforge.net/projects/bluefish/lists/bluefish-community (mailinglist)
+
