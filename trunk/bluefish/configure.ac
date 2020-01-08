@@ -21,7 +21,7 @@ else
 fi
 
 dnl The "-Wno-portability" value will suppress the GNU make warnings. Add it if necessary.
-AM_INIT_AUTOMAKE([1.8 -Wall])
+AM_INIT_AUTOMAKE([foreign 1.8 -Wall])
 AC_CONFIG_SRCDIR(src/bluefish.c)
 AC_CONFIG_HEADERS(src/config.h)
 AC_CANONICAL_HOST
