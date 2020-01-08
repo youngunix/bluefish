@@ -25,6 +25,7 @@ src/msg_queue.c
 src/outputbox.c
 src/pixmap.c
 src/plugins.c
+src/print.c
 src/preferences.c
 src/project.c
 src/rcfile.c
