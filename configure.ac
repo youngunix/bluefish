@@ -2,7 +2,7 @@ dnl ************************
 dnl configure.ac
 dnl $Id$
 dnl
-dnl Copyright (C) 2002-2011 Olivier Sessink
+dnl Copyright (C) 2002-2020 Olivier Sessink
 dnl Copyright (C) 2006-2012 Daniel Leidert
 dnl
 dnl This file is free software. The copyright owner gives unlimited
@@ -11,7 +11,7 @@ dnl ************************
 
 AC_PREREQ([2.59])
 
-AC_INIT([bluefish],[2.2.10],[http://bugzilla.gnome.org/buglist.cgi?product=bluefish])
+AC_INIT([bluefish],[2.2.11],[https://sourceforge.net/p/bluefish/tickets/])
 
 dnl Have to save them here!
 if test "${ac_configure_args+set}" != "set" ; then
@@ -710,12 +710,3 @@ AC_OUTPUT
 # 	src/plugin_xmltools/po/Makefile.in
 # 	src/plugin_xmltools/Makefile
 
-dnl *******************************
-dnl   Feedback
-dnl *******************************
-#AC_MSG_NOTICE([
-#-----------
-#If you like this program, please let me know and send me
-#a postcard and tell me what city/country you're from
-#-----------])
-#
