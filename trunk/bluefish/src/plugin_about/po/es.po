@@ -3,28 +3,32 @@
 # <pdenapo@dm.uba.ar> .
 # Copyright (C) 2002 Walter Echarri
 # <wecharri@yahoo.com>
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2009, 2011, 2014.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2009-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2017-06-21 09:22+0900\n"
-"PO-Revision-Date: 2014-04-02 18:01+0200\n"
+"POT-Creation-Date: 2020-01-08 20:14+0100\n"
+"PO-Revision-Date: 2020-01-09 08:34+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español <gnome-es-list@gnome.org>\n"
-"Language: es\n"
+"Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Gtranslator 2.91.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 3.34.0\n"
 
-#: src/plugin_about/about.c:85
-msgid "This version of Bluefish was built with:\n"
-msgstr "Esta versión de Bluefish se construyó con:\n"
+#: src/plugin_about/about.c:86
+msgid ""
+"This version of Bluefish was built with:\n"
+"\n"
+msgstr ""
+"Esta versión de Bluefish se construyó con:\n"
+"\n"
 
-#: src/plugin_about/about.c:205
+#: src/plugin_about/about.c:184
 msgid ""
 "\n"
 "Developers of previous releases:"
@@ -32,7 +36,7 @@ msgstr ""
 "\n"
 "Desarrolladores de versiones anteriores:"
 
-#: src/plugin_about/about.c:221
+#: src/plugin_about/about.c:200
 msgid ""
 "\n"
 "Package maintainers:"
@@ -40,7 +44,7 @@ msgstr ""
 "\n"
 "Mantenedores del paquete:"
 
-#: src/plugin_about/about.c:228
+#: src/plugin_about/about.c:207
 msgid ""
 "\n"
 "If you know of anyone missing from this list,\n"
@@ -50,11 +54,11 @@ msgstr ""
 "Si conoce a alguien que falta en esta lista,\n"
 "háganoslo saber a través de:"
 
-#: src/plugin_about/about.c:229
+#: src/plugin_about/about.c:208
 msgid "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 msgstr "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 
-#: src/plugin_about/about.c:230
+#: src/plugin_about/about.c:209
 msgid ""
 "\n"
 "Thanks to all who helped make this software available.\n"
@@ -62,7 +66,7 @@ msgstr ""
 "\n"
 "Gracias a todos aquellos que han hecho que este software esté disponible.\n"
 
-#: src/plugin_about/about.c:266
+#: src/plugin_about/about.c:245
 msgid ""
 "An open-source editor for experienced web designers and programmers, "
 "supporting many programming and markup languages, but focusing on creating "
@@ -80,45 +84,45 @@ msgstr ""
 #. * to this translation (in general: this special locale). Please
 #. * use a separate line for every translator ending with a newlines (\n).
 #.
-#: src/plugin_about/about.c:276
+#: src/plugin_about/about.c:255
 msgid "translator-credits"
 msgstr ""
 "Pablo De Napoli <pdenapo@dm.uba.ar>\n"
 "Walter Echarri <wecharri@yahoo.com>\n"
 "Daniel Mustieles <daniel.mustieles@gmail.com>"
 
-#: src/plugin_about/about.c:374
+#: src/plugin_about/about.c:353
 msgid "_Help"
 msgstr "Ay_uda"
 
-#: src/plugin_about/about.c:375
+#: src/plugin_about/about.c:354
 msgid "Bluefish _Homepage"
 msgstr "_Página principal de Bluefish"
 
-#: src/plugin_about/about.c:375
+#: src/plugin_about/about.c:354
 msgid "Bluefish homepage"
 msgstr "Página principal de Bluefish"
 
-#: src/plugin_about/about.c:377
+#: src/plugin_about/about.c:356
 msgid "Report a _Bug"
 msgstr "Informar de un _error"
 
-#: src/plugin_about/about.c:377
+#: src/plugin_about/about.c:356
 msgid "Report a bug"
 msgstr "Informar de un error"
 
-#: src/plugin_about/about.c:378
+#: src/plugin_about/about.c:357
 msgid "_About"
 msgstr "_Acerca de"
 
-#: src/plugin_about/about.c:378
+#: src/plugin_about/about.c:357
 msgid "About Bluefish"
 msgstr "Sobre Bluefish"
 
-#: src/plugin_about/about.c:380
+#: src/plugin_about/about.c:359
 msgid "Build _Info"
 msgstr "_Información de construcción"
 
-#: src/plugin_about/about.c:380
+#: src/plugin_about/about.c:359
 msgid "Build info"
 msgstr "Información de la versión"
