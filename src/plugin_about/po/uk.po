@@ -1,28 +1,32 @@
 # Copyright (C) YEAR The Bluefish Development Team.
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2010, 2011, 2014.
+# Yuri Chornoivan <yurchor@ukr.net>, 2010, 2011, 2014, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2017-06-21 09:22+0900\n"
-"PO-Revision-Date: 2014-04-02 19:00+0300\n"
+"POT-Creation-Date: 2020-01-08 20:14+0100\n"
+"PO-Revision-Date: 2020-01-09 10:20+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 20.03.70\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: src/plugin_about/about.c:85
-msgid "This version of Bluefish was built with:\n"
-msgstr "Цю версію Bluefish було зібрано за допомогою:\n"
+#: src/plugin_about/about.c:86
+msgid ""
+"This version of Bluefish was built with:\n"
+"\n"
+msgstr ""
+"Цю версію Bluefish було зібрано за допомогою:\n"
+"\n"
 
-#: src/plugin_about/about.c:205
+#: src/plugin_about/about.c:184
 msgid ""
 "\n"
 "Developers of previous releases:"
@@ -30,7 +34,7 @@ msgstr ""
 "\n"
 "Розробники попередніх випусків:"
 
-#: src/plugin_about/about.c:221
+#: src/plugin_about/about.c:200
 msgid ""
 "\n"
 "Package maintainers:"
@@ -38,7 +42,7 @@ msgstr ""
 "\n"
 "Супровідники пакунків:"
 
-#: src/plugin_about/about.c:228
+#: src/plugin_about/about.c:207
 msgid ""
 "\n"
 "If you know of anyone missing from this list,\n"
@@ -48,11 +52,11 @@ msgstr ""
 "Якщо автори пропустили когось у цьому списку,\n"
 "будь ласка, напишіть про це на таку адресу:"
 
-#: src/plugin_about/about.c:229
+#: src/plugin_about/about.c:208
 msgid "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 msgstr "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 
-#: src/plugin_about/about.c:230
+#: src/plugin_about/about.c:209
 msgid ""
 "\n"
 "Thanks to all who helped make this software available.\n"
@@ -61,7 +65,7 @@ msgstr ""
 "Дякуємо усім, чиї зусилля зробили можливим створення цього програмного "
 "забезпечення.\n"
 
-#: src/plugin_about/about.c:266
+#: src/plugin_about/about.c:245
 msgid ""
 "An open-source editor for experienced web designers and programmers, "
 "supporting many programming and markup languages, but focusing on creating "
@@ -79,42 +83,42 @@ msgstr ""
 #. * to this translation (in general: this special locale). Please
 #. * use a separate line for every translator ending with a newlines (\n).
 #.
-#: src/plugin_about/about.c:276
+#: src/plugin_about/about.c:255
 msgid "translator-credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>"
 
-#: src/plugin_about/about.c:374
+#: src/plugin_about/about.c:353
 msgid "_Help"
 msgstr "_Довідка"
 
-#: src/plugin_about/about.c:375
+#: src/plugin_about/about.c:354
 msgid "Bluefish _Homepage"
 msgstr "_Домашня сторінка Bluefish"
 
-#: src/plugin_about/about.c:375
+#: src/plugin_about/about.c:354
 msgid "Bluefish homepage"
 msgstr "Домашня сторінка Bluefish"
 
-#: src/plugin_about/about.c:377
+#: src/plugin_about/about.c:356
 msgid "Report a _Bug"
 msgstr "П_овідомити про ваду"
 
-#: src/plugin_about/about.c:377
+#: src/plugin_about/about.c:356
 msgid "Report a bug"
 msgstr "Повідомити про ваду"
 
-#: src/plugin_about/about.c:378
+#: src/plugin_about/about.c:357
 msgid "_About"
 msgstr "_Про програму"
 
-#: src/plugin_about/about.c:378
+#: src/plugin_about/about.c:357
 msgid "About Bluefish"
 msgstr "Про Bluefish"
 
-#: src/plugin_about/about.c:380
+#: src/plugin_about/about.c:359
 msgid "Build _Info"
 msgstr "Від_омості щодо збирання"
 
-#: src/plugin_about/about.c:380
+#: src/plugin_about/about.c:359
 msgid "Build info"
 msgstr "Відомості щодо збирання"

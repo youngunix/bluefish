@@ -79,7 +79,7 @@
 !define CT_ADA	"Файл кодів Ada"
 !define CT_ASP	"Скрипт сторінки ActiveServer"
 !define CT_SH	"Скрипт оболонки Bash"
-!define CT_BFPROJECT	"Проект Bluefish"
+!define CT_BFPROJECT	"Проєкт Bluefish"
 !define CT_BFLANG2	"Файл визначення мов Bluefish версії 2"
 !define CT_C	"Файл кодів мовою C"
 !define CT_H	"Файл заголовків мовою C"
