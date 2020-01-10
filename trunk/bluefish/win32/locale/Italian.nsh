@@ -41,7 +41,7 @@
 !define PYTHON_DOWNLOAD		"Download di Python..."
 !define PYTHON_FAILED		"Impossibile scaricare Python:"
 !define PYTHON_INSTALL		"Instalazione di Python..."
-!define PYTHON_REQUIRED		"Si prega di installare Python ${PYTHON_MIN_VERSION} or superiore prima di eseguire Bluefish.$\nPython è necessario per il plugin Zencoding ed altre caratteristiche."
+!define PYTHON_REQUIRED		"Si prega di installare Python ${PYTHON_MIN_VERSION} o superiore prima di eseguire Bluefish.$\nPython è necessario per il plugin Zencoding ed altre caratteristiche."
 
 ; Plugin Names
 !define PLUG_CHARMAP		"Mappa Caratteri"
