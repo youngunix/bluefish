@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2017-06-21 09:22+0900\n"
+"POT-Creation-Date: 2020-01-08 20:14+0100\n"
 "PO-Revision-Date: 2010-12-30 12:50+0100\n"
 "Last-Translator: Yngve Spjeld Landro <l10n@landro.net>\n"
 "Language-Team: Norwegian Nynorsk <l10n@landro.net>\n"
@@ -73,19 +73,19 @@ msgstr "Info-lesar"
 msgid "Cannot load reference file %s\n"
 msgstr "Klarer ikkje å lasta referansefila %s\n"
 
-#: src/plugin_infbrowser/infb_load.c:164
+#: src/plugin_infbrowser/infb_load.c:168
 msgid "Documentation entries"
 msgstr "Dokumentasjonsoppføringar"
 
-#: src/plugin_infbrowser/infb_load.c:168
+#: src/plugin_infbrowser/infb_load.c:172
 msgid "References"
 msgstr "Referansar"
 
-#: src/plugin_infbrowser/infb_load.c:170
+#: src/plugin_infbrowser/infb_load.c:174
 msgid "DTD"
 msgstr "DTD"
 
-#: src/plugin_infbrowser/infb_load.c:172
+#: src/plugin_infbrowser/infb_load.c:176
 msgid "Web pages"
 msgstr "Nettsider"
 
