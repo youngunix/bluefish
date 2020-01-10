@@ -5,11 +5,12 @@
 # Stefano Canepa <sc@linux.it> 2003, 2004
 # Roberto Bellingeri <bellingeri@netguru.it> 2010-2012
 #
+#: ../src/xmlstrings.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.4\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2018-08-18 16:58+0200\n"
+"POT-Creation-Date: 2020-01-08 20:24+0100\n"
 "PO-Revision-Date: 2018-08-18 17:43+0200\n"
 "Last-Translator: Roberto Bellingeri <bellingeri@netguru.it>\n"
 "Language-Team: \n"
@@ -117,20 +118,20 @@ msgstr "File di progetto di Bluefish"
 msgid "Bluefish language definition file"
 msgstr "File di definizione linguaggio di Bluefish"
 
-#: ../src/bftextview2.c:2082
+#: ../src/bftextview2.c:2063
 msgid "Collapse all"
 msgstr "Riduci tutti"
 
-#: ../src/bftextview2.c:2085
+#: ../src/bftextview2.c:2066
 msgid "Expand all"
 msgstr "Espandi tutti"
 
-#: ../src/bftextview2.c:2093
+#: ../src/bftextview2.c:2074
 #, c-format
 msgid "Collapse %s"
 msgstr "Riduci %s"
 
-#: ../src/bftextview2.c:2103
+#: ../src/bftextview2.c:2084
 #, c-format
 msgid "Expand %s"
 msgstr "Espandi %s"
@@ -167,7 +168,7 @@ msgstr "Vai alla riga:"
 msgid "Find:"
 msgstr "Trova:"
 
-#: ../src/bfwin.c:1076 ../src/snr3.c:1564
+#: ../src/bfwin.c:1076 ../src/snr3.c:1571
 msgid "Regular expression (pcre)"
 msgstr "Espressione regolare (pcre)"
 
@@ -1710,20 +1711,20 @@ msgstr "Codifiche nel _menu:"
 msgid "Add or remove document encodings"
 msgstr "Aggiungi o rimuovi codifiche dei documenti"
 
-#: ../src/external_commands.c:463
+#: ../src/external_commands.c:473
 msgid "Supply extra arguments"
 msgstr "Fornisci argomenti aggiuntivi"
 
-#: ../src/external_commands.c:468
+#: ../src/external_commands.c:478
 #, c-format
 msgid "Supply arguments to define %%a in '%s'"
 msgstr "Fornisci argomenti per definire%%a in '%s'"
 
-#: ../src/external_commands.c:749
+#: ../src/external_commands.c:759
 msgid "Internal error."
 msgstr "Errore interno."
 
-#: ../src/external_commands.c:752
+#: ../src/external_commands.c:762
 msgid ""
 "This command requires the current document to have a file name. Please save "
 "your document first."
@@ -1731,7 +1732,7 @@ msgstr ""
 "Questo comando richiede che il documento corrente abbia un nome. Si prega di "
 "salvare prima il documento."
 
-#: ../src/external_commands.c:755
+#: ../src/external_commands.c:765
 msgid ""
 "This command requires the current document to be a local file. Please save "
 "your document to a local file."
@@ -1739,7 +1740,7 @@ msgstr ""
 "Questo comando richiede che il documento corrente sia un file locale. Si "
 "prega di salvare il documento in un file locale."
 
-#: ../src/external_commands.c:758
+#: ../src/external_commands.c:768
 msgid ""
 "External commands cannot have an output defined. Please fix this command in "
 "the preferences."
@@ -1747,20 +1748,20 @@ msgstr ""
 "I comandi esterni non possono avere un'output definito. Correggi questo "
 "comando nelle preferenze."
 
-#: ../src/external_commands.c:761
+#: ../src/external_commands.c:771
 msgid ""
 "This command has multiple inputs. Please fix this command in the preferences."
 msgstr ""
 "Questo comando ha input multipli. Correggi questo comando nelle preferenze."
 
-#: ../src/external_commands.c:764
+#: ../src/external_commands.c:774
 msgid ""
 "This command has multiple outputs. Please fix this command in the "
 "preferences."
 msgstr ""
 "Questo comando ha output multipli. Correggi questo comando nelle preferenze."
 
-#: ../src/external_commands.c:768
+#: ../src/external_commands.c:778
 #, c-format
 msgid ""
 "Failed to create a command for %s.\n"
@@ -1769,20 +1770,20 @@ msgstr ""
 "Impossibile creare un comando per %s.\n"
 "%s"
 
-#: ../src/external_commands.c:770
+#: ../src/external_commands.c:780
 msgid "Failed to create a command"
 msgstr "Impossibile creare un comando"
 
-#: ../src/external_commands.c:792 ../src/external_commands.c:809
+#: ../src/external_commands.c:802 ../src/external_commands.c:819
 #, c-format
 msgid "The command %s exited with error code %d. %s"
 msgstr "Il comando %s è uscito con il codice di errore %d. %s"
 
-#: ../src/external_commands.c:795 ../src/external_commands.c:813
+#: ../src/external_commands.c:805 ../src/external_commands.c:823
 msgid "Probably this application is not installed on your system."
 msgstr "Probabilmente questa applicazione non è installata sul sistema."
 
-#: ../src/external_commands.c:798
+#: ../src/external_commands.c:808
 msgid "Command returned error code"
 msgstr "Il comando ha restituito un codice di errore"
 
@@ -2387,6 +2388,26 @@ msgstr "Output"
 msgid "Failed to compile output parser pattern %s: %s"
 msgstr "Compilazione del modello di parser dell'output %s fallito: %s"
 
+#: ../src/print.c:384
+#, fuzzy
+msgid "<b>What to print</b>"
+msgstr "<b>Tabulazioni</b>"
+
+#: ../src/print.c:386
+#, fuzzy
+msgid "Print header"
+msgstr "Header C"
+
+#: ../src/print.c:387
+#, fuzzy
+msgid "Print line numbers"
+msgstr "Visualizza numeri di riga"
+
+#: ../src/print.c:438
+#, fuzzy
+msgid "What to print"
+msgstr "Percorso del plugin"
+
 #: ../src/preferences.c:326
 msgid "Untitled"
 msgstr "Senza nome"
@@ -2403,7 +2424,7 @@ msgstr "Nulla"
 msgid "_Template:"
 msgstr "M_odelli:"
 
-#: ../src/preferences.c:547 ../src/snr3.c:1624
+#: ../src/preferences.c:547 ../src/snr3.c:1631
 msgid "<b>Options</b>"
 msgstr "<b>Opzioni</b>"
 
@@ -2435,9 +2456,10 @@ msgstr "Visualizza _numeri di riga"
 msgid "Show _right margin indicator"
 msgstr "Mostra l'indicatore margine destro"
 
-#: ../src/preferences.c:567 ../src/preferences.c:2569
-msgid "Smart auto indentin_g"
-msgstr "Auto indentazione intelli_gente"
+#: ../src/preferences.c:567
+#, fuzzy
+msgid "Auto indentin_g"
+msgstr "Auto indentazione"
 
 #: ../src/preferences.c:569
 msgid "Wra_p lines"
@@ -2582,7 +2604,7 @@ msgstr ""
 msgid "Command"
 msgstr "Comando"
 
-#: ../src/preferences.c:1352 ../src/rcfile.c:868
+#: ../src/preferences.c:1352 ../src/rcfile.c:871
 msgid "Default browser"
 msgstr "Browser predefinito"
 
@@ -2877,6 +2899,11 @@ msgstr "Opzioni dell'editor"
 #: ../src/preferences.c:2564
 msgid "<b>Editor settings</b>"
 msgstr "<b>Opzioni dell'editor</b>"
+
+#: ../src/preferences.c:2569
+#, fuzzy
+msgid "Smart auto indentin_g on brackets"
+msgstr "Auto indentazione intelli_gente"
 
 #: ../src/preferences.c:2572
 msgid "Smart Home/_End cursor positioning"
@@ -3320,7 +3347,7 @@ msgstr "Colore _attivo della scheda documento:"
 
 #. arr = array_from_arglist(_("Java programming"),"1", "java:image:jsp", NULL);
 #. main_v->globses.filefilters = g_list_append(main_v->globses.filefilters, arr);
-#: ../src/preferences.c:3135 ../src/rcfile.c:1500
+#: ../src/preferences.c:3135 ../src/rcfile.c:1507
 msgid "Images"
 msgstr "Immagini"
 
@@ -3540,7 +3567,7 @@ msgstr "Windows 7 Internet Explorer 64-bit"
 msgid "Safari"
 msgstr "Safari"
 
-#: ../src/rcfile.c:854 ../src/rcfile.c:871
+#: ../src/rcfile.c:854 ../src/rcfile.c:874
 msgid "Firefox"
 msgstr "Firefox"
 
@@ -3548,75 +3575,80 @@ msgstr "Firefox"
 msgid "Google Chrome"
 msgstr "Google Chrome"
 
-#: ../src/rcfile.c:860 ../src/rcfile.c:874
+#: ../src/rcfile.c:860 ../src/rcfile.c:877
 msgid "Chromium"
 msgstr "Chromium"
 
-#: ../src/rcfile.c:863 ../src/rcfile.c:877
+#: ../src/rcfile.c:863 ../src/rcfile.c:880
 msgid "Opera"
 msgstr "Opera"
 
-#: ../src/rcfile.c:866 ../src/rcfile.c:889
+#: ../src/rcfile.c:866 ../src/rcfile.c:892
 msgid "chmod a+x"
 msgstr "chmod a+x"
 
-#: ../src/rcfile.c:879
+#: ../src/rcfile.c:869 ../src/rcfile.c:895
+#, fuzzy
+msgid "Insert date"
+msgstr "Inserisci file"
+
+#: ../src/rcfile.c:882
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: ../src/rcfile.c:882
+#: ../src/rcfile.c:885
 msgid "Epiphany"
 msgstr "Epiphany"
 
-#: ../src/rcfile.c:883
+#: ../src/rcfile.c:886
 msgid "Kazehakase"
 msgstr "Kazehakase"
 
-#: ../src/rcfile.c:886
+#: ../src/rcfile.c:889
 msgid "Links2 (graphics)"
 msgstr "Links2 (grafico)"
 
-#: ../src/rcfile.c:938
+#: ../src/rcfile.c:944
 msgid "C Header"
 msgstr "Header C"
 
-#: ../src/rcfile.c:941
+#: ../src/rcfile.c:947
 msgid "C Header GPL"
 msgstr "Header C GPL"
 
-#: ../src/rcfile.c:944
+#: ../src/rcfile.c:950
 msgid "XHTML 1.0"
 msgstr "XHTML 1.0"
 
-#: ../src/rcfile.c:947
+#: ../src/rcfile.c:953
 msgid "HTML 5"
 msgstr "HTML 5"
 
-#: ../src/rcfile.c:950
+#: ../src/rcfile.c:956
 msgid "PHP"
 msgstr "PHP"
 
-#: ../src/rcfile.c:953
+#: ../src/rcfile.c:959
 msgid "LaTex Book"
 msgstr "Libro LaTex"
 
-#: ../src/rcfile.c:956
+#: ../src/rcfile.c:962
 msgid "LaTex Presentation"
 msgstr "Presentazione LaTex"
 
-#: ../src/rcfile.c:1385
+#: ../src/rcfile.c:1392
 msgid "Untitled Project"
 msgstr "Progetto senza nome"
 
-#: ../src/rcfile.c:1492
+#: ../src/rcfile.c:1499
 msgid "C programming"
 msgstr "Programmazione C"
 
-#: ../src/rcfile.c:1496
+#: ../src/rcfile.c:1503
 msgid "Web files"
 msgstr "File web"
 
-#: ../src/rcfile.c:1503
+#: ../src/rcfile.c:1510
 msgid "Hide objectfiles"
 msgstr "Nascondi i file oggetto"
 
@@ -3642,7 +3674,7 @@ msgstr ""
 "<span foreground=\"red\" weight=\"bold\">Alcuni documenti sono ancora "
 "caricamento</span>"
 
-#: ../src/snr3.c:857
+#: ../src/snr3.c:856
 msgid "<span foreground=\"red\">Empty search string</span>"
 msgstr "<span foreground=\"red\">Stringa di ricerca vuota</span>"
 
@@ -3660,141 +3692,141 @@ msgid_plural "<i>Found %d entries</i>"
 msgstr[0] "<i>Trovata %d voce</i>"
 msgstr[1] "<i>Trovate %d voci</i>"
 
-#: ../src/snr3.c:1198
+#: ../src/snr3.c:1201
 #, c-format
 msgid "<i>Found %d result in %d of the %d searched documents</i>"
 msgid_plural "<i>Found %d results in %d of the %d searched documents</i>"
 msgstr[0] "<i>Trovato %d risultato in %d dei %d documenti analizzati</i>"
 msgstr[1] "<i>Trovati %d risultati in %d dei %d documenti analizzati</i>"
 
-#: ../src/snr3.c:1202
+#: ../src/snr3.c:1205
 #, c-format
 msgid "<i>Found %d result from character %d to %d</i>"
 msgid_plural "<i>Found %d results from character %d to %d</i>"
 msgstr[0] "<i>Trovato %d risultato dal %d al %d carattere</i>"
 msgstr[1] "<i>Trovati %d risultati dal %d al %d carattere</i>"
 
-#: ../src/snr3.c:1205
+#: ../src/snr3.c:1208
 #, c-format
 msgid "<i>Found %d result in the active document</i>"
 msgid_plural "<i>Found %d results in the active document</i>"
 msgstr[0] "<i>Trovato %d risultato nel documento attivo</i>"
 msgstr[1] "<i>Trovati %d risultati nel documento attivo</i>"
 
-#: ../src/snr3.c:1453
+#: ../src/snr3.c:1456
 msgid "No (more) results"
 msgstr "Nessun (altro) risultato"
 
-#: ../src/snr3.c:1555
+#: ../src/snr3.c:1562
 msgid "Active document"
 msgstr "Documento attivo"
 
-#: ../src/snr3.c:1556
+#: ../src/snr3.c:1563
 msgid "Forward from cursor position"
 msgstr "Prosegui dalla posizione del cursore"
 
-#: ../src/snr3.c:1557
+#: ../src/snr3.c:1564
 msgid "Current selection"
 msgstr "Selezione corrente"
 
-#: ../src/snr3.c:1558
+#: ../src/snr3.c:1565
 msgid "All open documents"
 msgstr "Tutti i documenti aperti"
 
-#: ../src/snr3.c:1559
+#: ../src/snr3.c:1566
 msgid "Files on disk"
 msgstr "File sul disco"
 
-#: ../src/snr3.c:1563 ../src/snr3.c:1568
+#: ../src/snr3.c:1570 ../src/snr3.c:1575
 msgid "Normal"
 msgstr "Normale"
 
-#: ../src/snr3.c:1569
+#: ../src/snr3.c:1576
 msgid "Uppercase"
 msgstr "Maiuscole"
 
-#: ../src/snr3.c:1570
+#: ../src/snr3.c:1577
 msgid "Lowercase"
 msgstr "Minuscole"
 
-#: ../src/snr3.c:1577
+#: ../src/snr3.c:1584
 msgid "Find and Replace"
 msgstr "Trova e Sostituisci"
 
-#: ../src/snr3.c:1596
+#: ../src/snr3.c:1603
 msgid "<b>_Search for</b>"
 msgstr "<b>_Ricerca</b>"
 
-#: ../src/snr3.c:1619
+#: ../src/snr3.c:1626
 msgid "<b>Replace _with</b>"
 msgstr "<b>_Sostituisci con</b>"
 
-#: ../src/snr3.c:1634
+#: ../src/snr3.c:1641
 msgid "Match Patter_n: "
 msgstr "_Modello di ricerca: "
 
-#: ../src/snr3.c:1646
+#: ../src/snr3.c:1653
 msgid "Replace T_ype: "
 msgstr "_Tipo di sostituzione: "
 
-#: ../src/snr3.c:1659
+#: ../src/snr3.c:1666
 msgid "Sco_pe: "
 msgstr "Am_bito: "
 
-#: ../src/snr3.c:1669
+#: ../src/snr3.c:1676
 msgid "Filename pattern: "
 msgstr "Modello del nome file: "
 
-#: ../src/snr3.c:1675
+#: ../src/snr3.c:1682
 msgid "Recursion level: "
 msgstr "Livello di ricorsione: "
 
-#: ../src/snr3.c:1699
+#: ../src/snr3.c:1706
 msgid "Basedir: "
 msgstr "Cartella base: "
 
-#: ../src/snr3.c:1709
+#: ../src/snr3.c:1716
 msgid "Show results in Output Pane"
 msgstr "Mostra risultati nel riquadro di output"
 
-#: ../src/snr3.c:1711
+#: ../src/snr3.c:1718
 msgid "Show all results in the Output Pane on the bottom of the document list"
 msgstr ""
 "Mostra tutti i risultati nel riquadro di output nella parte inferiore "
 "dell'elenco dei documenti"
 
-#: ../src/snr3.c:1715
+#: ../src/snr3.c:1722
 msgid "Ignore backup files"
 msgstr "Ignora i file di backup"
 
-#: ../src/snr3.c:1717
+#: ../src/snr3.c:1724
 msgid "Ignore backup files *~ created by Bluefish"
 msgstr "Ignora i file di backup *~ creati da Bluefish"
 
-#: ../src/snr3.c:1721
+#: ../src/snr3.c:1728
 msgid "Case sensitive _matching"
 msgstr "_Distingui maiuscole e minuscole"
 
-#: ../src/snr3.c:1723
+#: ../src/snr3.c:1730
 msgid "Only match if case (upper/lower) is identical."
 msgstr "Corrispondenza di maiuscole e minuscole."
 
-#: ../src/snr3.c:1727
+#: ../src/snr3.c:1734
 msgid "Pattern contains escape-se_quences"
 msgstr "Il modello contiene sequenze di _escape"
 
-#: ../src/snr3.c:1730
+#: ../src/snr3.c:1737
 msgid "Pattern contains backslash escaped characters such as \\n \\t etc."
 msgstr ""
 "Il modello contiene barre rovesciate nelle sequenze di escape come \\n \\t "
 "etc."
 
-#: ../src/snr3.c:1734
+#: ../src/snr3.c:1741
 msgid "Dot character in regex pattern matches newlines"
 msgstr ""
 "Il carattere punto in un'espressione regolare corrisponde a nuova linea"
 
-#: ../src/snr3.c:1737
+#: ../src/snr3.c:1744
 msgid ""
 "The . character will match everything including newlines, use for multiline "
 "matching."
@@ -3802,19 +3834,19 @@ msgstr ""
 "Il carattere . corrisponde a tutto compreso 'nuova linea', utilizzare per "
 "ricerche multilinea."
 
-#: ../src/snr3.c:1759
+#: ../src/snr3.c:1766
 msgid "Replace _All"
 msgstr "Sostituisci _Tutto"
 
-#: ../src/snr3.c:1761
+#: ../src/snr3.c:1768
 msgid "_Replace"
 msgstr "_Sostituisci"
 
-#: ../src/snr3.c:1765
+#: ../src/snr3.c:1772
 msgid "_Find All"
 msgstr "_Trova Tutto"
 
-#: ../src/snr3.c:1767
+#: ../src/snr3.c:1774
 msgid "B_ookmark All"
 msgstr "_Segnalibri per tutti"
 
