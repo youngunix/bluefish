@@ -3,14 +3,14 @@
 # Iwasa Kazmi <kzmi@ca2.so-net.ne.jp>, 2000.
 # Ryoichi INAGAKI <ryo1@bc.wakwak.com>, 2003.
 # Timothy Joko-Veltman <tim-oss@indigopixel.com>, 2004
-# Takeshi HAMASAKI <hmatrjp@users.sourceforge.jp>, 2005-2011
+# Takeshi HAMASAKI <hmatrjp@users.sourceforge.jp>, 2005-2020
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Bluefish 2.2.10\n"
+"Project-Id-Version: Bluefish 2.2.11\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2017-06-21 09:22+0900\n"
-"PO-Revision-Date: 2016-12-22 22:16+0900\n"
+"POT-Creation-Date: 2020-01-08 20:14+0100\n"
+"PO-Revision-Date: 2020-01-13 22:42+0900\n"
 "Last-Translator: Takeshi Hamasaki <hmatrjp@users.sourceforge.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -18,14 +18,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: /factory/ja-po/bluefish/bluefish\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.2.1\n"
 
-#: src/plugin_about/about.c:85
-msgid "This version of Bluefish was built with:\n"
+#: src/plugin_about/about.c:86
+msgid ""
+"This version of Bluefish was built with:\n"
+"\n"
 msgstr ""
-"このバージョンの Bluefish は次のオプションを使用してコンパイルされています:\n"
+"このバージョンの Bluefish は次のオプションを使用してコンパイルされていま"
+"す:\n"
+"\n"
 
-#: src/plugin_about/about.c:205
+#: src/plugin_about/about.c:184
 msgid ""
 "\n"
 "Developers of previous releases:"
@@ -33,7 +37,7 @@ msgstr ""
 "\n"
 "過去のリリースの開発者たち:"
 
-#: src/plugin_about/about.c:221
+#: src/plugin_about/about.c:200
 msgid ""
 "\n"
 "Package maintainers:"
@@ -41,7 +45,7 @@ msgstr ""
 "\n"
 "パッケージメンテナ:"
 
-#: src/plugin_about/about.c:228
+#: src/plugin_about/about.c:207
 msgid ""
 "\n"
 "If you know of anyone missing from this list,\n"
@@ -51,28 +55,29 @@ msgstr ""
 "この一覧から漏れている人をご存知でしたら, \n"
 "こちらまでお知らせください:"
 
-#: src/plugin_about/about.c:229
+#: src/plugin_about/about.c:208
 msgid "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 msgstr "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 
-#: src/plugin_about/about.c:230
+#: src/plugin_about/about.c:209
 msgid ""
 "\n"
 "Thanks to all who helped make this software available.\n"
 msgstr ""
 "\n"
-"このソフトウェアが使えるものとなるよう協力してくれた、すべての人たちに感謝し"
-"ます.\n"
+"このソフトウェアが使えるものとなるよう協力してくれた、すべての人たちに感謝"
+"します.\n"
 
-#: src/plugin_about/about.c:266
+#: src/plugin_about/about.c:245
 msgid ""
 "An open-source editor for experienced web designers and programmers, "
 "supporting many programming and markup languages, but focusing on creating "
 "dynamic and interactive websites."
 msgstr ""
-"経験を積んだウェブデザイナーやプログラマーのためのオープンソースなエディタで"
-"す。多くのプログラミング言語やマークアップ言語をサポートしており、ダイナミッ"
-"ク、インタラクティブなウェブサイトを作成する際に、大きな助けとなるでしょう。"
+"経験を積んだウェブデザイナーやプログラマーのためのオープンソースなエディタ"
+"です。多くのプログラミング言語やマークアップ言語をサポートしており、ダイナ"
+"ミック、インタラクティブなウェブサイトを作成する際に、大きな助けとなるで"
+"しょう。"
 
 #. Translators: This is a special message that shouldn't be translated
 #. * literally. It is used in the about box to give credits to
@@ -82,7 +87,7 @@ msgstr ""
 #. * to this translation (in general: this special locale). Please
 #. * use a separate line for every translator ending with a newlines (\n).
 #.
-#: src/plugin_about/about.c:276
+#: src/plugin_about/about.c:255
 msgid "translator-credits"
 msgstr ""
 "Iwasa Kazmi <kzmi@ca2.so-net.ne.jp>, 2000\n"
@@ -90,38 +95,38 @@ msgstr ""
 "Timothy Joko-Veltman <tim-oss@indigopixel.com>, 2004\n"
 "濱崎　健 <hmatrjp@users.sourceforge.jp>, 2005-2016"
 
-#: src/plugin_about/about.c:374
+#: src/plugin_about/about.c:353
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: src/plugin_about/about.c:375
+#: src/plugin_about/about.c:354
 msgid "Bluefish _Homepage"
 msgstr "Bluefish ホームページ(_H)"
 
-#: src/plugin_about/about.c:375
+#: src/plugin_about/about.c:354
 msgid "Bluefish homepage"
 msgstr "Bluefish のホームページをブラウザで開く"
 
-#: src/plugin_about/about.c:377
+#: src/plugin_about/about.c:356
 msgid "Report a _Bug"
 msgstr "バグを報告(_B)"
 
-#: src/plugin_about/about.c:377
+#: src/plugin_about/about.c:356
 msgid "Report a bug"
 msgstr "バグを報告する"
 
-#: src/plugin_about/about.c:378
+#: src/plugin_about/about.c:357
 msgid "_About"
 msgstr "バージョン情報(_A)"
 
-#: src/plugin_about/about.c:378
+#: src/plugin_about/about.c:357
 msgid "About Bluefish"
 msgstr "Bluefish について"
 
-#: src/plugin_about/about.c:380
+#: src/plugin_about/about.c:359
 msgid "Build _Info"
 msgstr "ビルド情報(_I)..."
 
-#: src/plugin_about/about.c:380
+#: src/plugin_about/about.c:359
 msgid "Build info"
 msgstr "ビルド情報を表示する"
