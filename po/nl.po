@@ -11,8 +11,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.11\n"
-"Report-Msgid-Bugs-To: https://sourceforge.net/projects/bluefish/lists/"
-"bluefish-community\n"
+"Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
 "POT-Creation-Date: 2020-01-08 20:24+0100\n"
 "PO-Revision-Date: 2020-01-08 20:54+0100\n"
 "Last-Translator: Olivier Sessink <olivier@bluefish.openoffice.nl>\n"
@@ -306,7 +305,7 @@ msgstr "Nieuw _Venster"
 
 #: ../src/bfwin_uimanager.c:861
 msgid "New window"
-msgstr "Nieuw Venster"
+msgstr "Nieuw venster"
 
 #: ../src/bfwin_uimanager.c:863
 msgid "Close Win_dow"
@@ -1921,7 +1920,7 @@ msgstr "Gebruik als documentroot"
 
 #: ../src/filebrowser2.c:1338
 msgid "Show Full _Tree"
-msgstr "Toon Volledige Bboom"
+msgstr "Toon Volledige Boom"
 
 #: ../src/filebrowser2.c:1338
 msgid "Show full tree"
@@ -2107,7 +2106,7 @@ msgstr "Open URL"
 
 #: ../src/file_dialogs.c:450 ../src/file_dialogs.c:488
 msgid "_Continue save"
-msgstr "Opslaan hervatten"
+msgstr "Doorgaan met opslaan"
 
 #: ../src/file_dialogs.c:454
 #, c-format
@@ -2367,7 +2366,7 @@ msgid ""
 msgstr ""
 "\n"
 "Druk gewenste toetsencombinatie.\n"
-"Gebruik Ctrl, Shift en Alt samen met een andere toets.\n"
+"Gebruik Ctrl, Shift of Alt samen met een andere toets.\n"
 "<i>Gebruik Esc om te annuleren, of Delete om de sneltoets te verwijderen.</i>"
 
 #: ../src/gtk_easy.c:1547
@@ -2583,7 +2582,7 @@ msgid ""
 "identical to %u</small>"
 msgstr ""
 "<small><b>Invoeropties</b>\n"
-"start met | om standard input (stdin) te gebruiked\n"
+"begin met een | om standard input (stdin) te gebruiked\n"
 "%f lokale bestandsnaam (beschikbaar voor lokale bestanden)\n"
 "%i tĳdelĳke bestandsnaam voor invoer, is gelĳk aan %f als het document niet "
 "is gewĳzigd en lokaal is\n"
@@ -2634,7 +2633,7 @@ msgid ""
 "identical to %u</small>"
 msgstr ""
 "<small><b>Invoeropties</b>\n"
-"start met | om standard input (stdin) te gebruiked\n"
+"begin met een | om standard input (stdin) te gebruiked\n"
 "%f lokale bestandsnaam (vereist een lokaal bestand, werkt niet met "
 "selecties)\n"
 "%i tijdelijke bestandsnaam voor invoer\n"
@@ -2671,7 +2670,7 @@ msgid ""
 "identical to %u</small>"
 msgstr ""
 "<small><b>Invoeropties</b>\n"
-"start met | om standard input (stdin) te gebruiked\n"
+"begin met een | om standard input (stdin) te gebruiked\n"
 "%f lokale bestandsnaam (vereist een lokaal bestand, werkt niet met "
 "selecties)\n"
 "%i tijdelijke bestandsnaam voor invoer, gelijk aan %f voor documenten zonder "
@@ -2908,11 +2907,11 @@ msgstr "Selectie inpringen met _tab toets"
 
 #: ../src/preferences.c:2580
 msgid "Replace unicode quotes with ascii quotes"
-msgstr "Vervang unicode quotes met ascii quotes"
+msgstr "Vervang unicode-quotes door ascii-quotes"
 
 #: ../src/preferences.c:2584
 msgid "Insert spaces to cursor position"
-msgstr "Spaties toevoegen tot cursor positie"
+msgstr "Spaties toevoegen tot cursorpositie"
 
 #: ../src/preferences.c:2590
 msgid "Automatically insert closing brackets"
@@ -2920,11 +2919,11 @@ msgstr "Automatisch sluithaken invoegen"
 
 #: ../src/preferences.c:2597
 msgid "Right _margin/split line end position:"
-msgstr "Positie rechter marge:"
+msgstr "Positie rechtermarge:"
 
 #: ../src/preferences.c:2600
 msgid "Wrap lines on right margin indicator"
-msgstr "Breek regels af op de rechter marge"
+msgstr "Breek regels af op de rechtermarge"
 
 #: ../src/preferences.c:2606
 msgid "Visible _whitespace mode:"
@@ -3311,11 +3310,11 @@ msgstr "_Foutstatuskleur van documenttab:"
 
 #: ../src/preferences.c:3107
 msgid "Document loading tab color"
-msgstr "Laadt-statuskleur van documenttab "
+msgstr "Laad-statuskleur van documenttab "
 
 #: ../src/preferences.c:3109
 msgid "Document tab loadin_g color:"
-msgstr "_Laadt-statuskleur van documenttab :"
+msgstr "_Laad-statuskleur van documenttab :"
 
 #: ../src/preferences.c:3113
 msgid "Document modified tab color"
@@ -3327,11 +3326,11 @@ msgstr "_Gewijzigd-statuskleur van documenttab:"
 
 #: ../src/preferences.c:3119
 msgid "Active document tab color"
-msgstr "Aktief document tab kleur"
+msgstr "Actieve document tabkleur"
 
 #: ../src/preferences.c:3121
 msgid "Document tab _active color:"
-msgstr "_Aktief document tab kleur:"
+msgstr "_Actieve document tabkleur:"
 
 #. arr = array_from_arglist(_("Java programming"),"1", "java:image:jsp", NULL);
 #. main_v->globses.filefilters = g_list_append(main_v->globses.filefilters, arr);
@@ -3422,7 +3421,7 @@ msgstr "Projectnaam:"
 #. gtk_table_attach_defaults(GTK_TABLE(table), but, 3, 4, 3, 4);
 #: ../src/project.c:719
 msgid "<b>Default settings for this project</b>"
-msgstr "<b>Standaard instellingen voor dit project</b>"
+msgstr "<b>Standaardinstellingen voor dit project</b>"
 
 #: ../src/project.c:733
 msgid "Create _Project"
@@ -3708,7 +3707,7 @@ msgstr "Geen (extra) resultaten"
 
 #: ../src/snr3.c:1562
 msgid "Active document"
-msgstr "Aktieve document"
+msgstr "Actieve document"
 
 #: ../src/snr3.c:1563
 msgid "Forward from cursor position"
