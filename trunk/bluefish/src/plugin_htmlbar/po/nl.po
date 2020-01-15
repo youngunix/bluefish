@@ -957,15 +957,15 @@ msgstr "Radioknop..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1172
 msgid "Input Radio Button..."
-msgstr "Aanklikrondje..."
+msgstr "Radioknop..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1173
 msgid "Input Check box..."
-msgstr "Aanvinkknop..."
+msgstr "Aanvinkvakje..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1174
 msgid "Input Check Box..."
-msgstr "Aankruisvakje..."
+msgstr "Aanvinkvakje..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1175
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1189
@@ -1050,7 +1050,7 @@ msgstr "R_p"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1185
 msgid "Ruby parenthesis"
-msgstr "Ruby haakjes"
+msgstr "Ruby-haakjes"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1186
 msgid "R_t"
@@ -1058,7 +1058,7 @@ msgstr "R_t"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1186
 msgid "Ruby text"
-msgstr "Ruby text"
+msgstr "Ruby-tekst"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1187
 msgid "_Ruby"
@@ -1102,11 +1102,11 @@ msgstr "Canvas..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1193
 msgid "_Time..."
-msgstr "_Time..."
+msgstr "_Tijd..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1193
 msgid "Time..."
-msgstr "Time..."
+msgstr "Tijd..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1194
 msgid "Insert _Color"
@@ -1221,12 +1221,12 @@ msgstr "  Datum (%i/%i/%i)"
 #: src/plugin_htmlbar/html.c:450
 #, c-format
 msgid "  _Unix Time (%i)"
-msgstr "  Unix tĳd (%i)"
+msgstr "  Unix-tĳd (%i)"
 
 #: src/plugin_htmlbar/html.c:455
 #, c-format
 msgid "  Unix Date _String (%s)"
-msgstr "Unix datumstring (%s)"
+msgstr "Unix-datumstring (%s)"
 
 #: src/plugin_htmlbar/html.c:463
 msgid "  ISO-8601 Ti_me "
@@ -1648,7 +1648,7 @@ msgstr ""
 "Datum- en tijdformaat (bijv.. YYYY-MM-DDThh:mm:ssTZD) :\n"
 "\n"
 "YYYY - jaar (bijv. 2009)\n"
-"MM - maand (bijv. 01 for januari)\n"
+"MM - maand (bijv. 01 voor januari)\n"
 "DD - dag van de maand (bijv. 08)\n"
 "T - een vereist scheidingsteken\n"
 "hh - uur (bijv. 22 for 10.00pm)\n"
@@ -1938,9 +1938,8 @@ msgstr "<span color=\"#A36A00\">_Scope:</span>"
 
 #: src/plugin_htmlbar/html_table.c:410
 msgid "the header cell applies to cells in the same:"
-msgstr "de header-cel bestaat uit alle cellen in de zelfde:"
+msgstr "de header-cel bestaat uit alle cellen in dezelfde:"
 
-# Wat wordt hier bedoeld?
 #: src/plugin_htmlbar/html_table.c:422
 msgid "Co_l Span:"
 msgstr "Aantal samen te voegen kolommen:"
@@ -2009,7 +2008,7 @@ msgstr "Rand:"
 
 #: src/plugin_htmlbar/image.c:975
 msgid "Select files for thumbnail creation"
-msgstr "Selecteer bestanden voor voorbeeldafbeelding creatie"
+msgstr "Selecteer bestanden voor maken voorbeeldafbeelding"
 
 #: src/plugin_htmlbar/image.c:1017
 msgid "Scaling (%)"
@@ -2128,7 +2127,7 @@ msgstr "Afbeelding invoegen"
 
 #: src/plugin_htmlbar/quickstart.c:519
 msgid "<b>E_xternal Style Sheet</b>"
-msgstr "<b>Extern Style Sheet</b>"
+msgstr "<b>Externe Style-sheet</b>"
 
 #: src/plugin_htmlbar/quickstart.c:530
 msgid "Ty_pe:"
@@ -2164,7 +2163,7 @@ msgstr "Bron:"
 #. TODO: add an option to place content in the script area
 #: src/plugin_htmlbar/quickstart.c:610
 msgid "<b>Script Area</b>"
-msgstr "<b>Script Area</b>"
+msgstr "<b>Scriptgebied</b>"
 
 #: src/plugin_htmlbar/quickstart.c:614
 msgid "Cre_ate empty script area"
@@ -2252,7 +2251,7 @@ msgstr "<b>HTML-werkbalk</b>"
 
 #: src/plugin_htmlbar/prefs.c:73
 msgid "Show toolbar in sidepanel"
-msgstr "Geef balk weer in zijbalk"
+msgstr "Geef werkbalk weer in zijbalk"
 
 #: src/plugin_htmlbar/prefs.c:74
 msgid "Keep HTML dialogs always on top"
@@ -2328,7 +2327,7 @@ msgstr "_Generator metatag automatisch bijwerken"
 #~ msgstr "A ring Å"
 
 #~ msgid "C cedilla Ç"
-#~ msgstr "C cedilla Ç"
+#~ msgstr "C cedille Ç"
 
 #~ msgid "E grave È"
 #~ msgstr "E grave È"
@@ -2421,7 +2420,7 @@ msgstr "_Generator metatag automatisch bijwerken"
 #~ msgstr "a diaeresis ä"
 
 #~ msgid "c cedilla ç"
-#~ msgstr "c cedilla ç"
+#~ msgstr "c cedille ç"
 
 #~ msgid "e grave è"
 #~ msgstr "e grave è"
@@ -2493,7 +2492,7 @@ msgstr "_Generator metatag automatisch bijwerken"
 #~ msgstr "Acute `"
 
 #~ msgid "_Cedilla ¸"
-#~ msgstr "_Cedilla ¸"
+#~ msgstr "_Cedille ¸"
 
 #~ msgid "U_mlaut ¨"
 #~ msgstr "_Umlaut ¨"
@@ -2502,25 +2501,25 @@ msgstr "_Generator metatag automatisch bijwerken"
 #~ msgstr "_Munteenheid"
 
 #~ msgid "_Cent sign ¢"
-#~ msgstr "_Cent teken ¢"
+#~ msgstr "_Cent-teken ¢"
 
 #~ msgid "_Pound sterling £"
 #~ msgstr "_Pond sterling £"
 
 #~ msgid "C_urrency sign ¤"
-#~ msgstr "_Munteenheid teken ¤"
+#~ msgstr "_Munteenheid-teken ¤"
 
 #~ msgid "_Yen sign ¥"
-#~ msgstr "Yen teken ¥"
+#~ msgstr "Yen-teken ¥"
 
 #~ msgid "_Euro €"
-#~ msgstr "_Euro teken €"
+#~ msgstr "_Euroteken €"
 
 #~ msgid "_Math-Science"
-#~ msgstr "_Wiskunde-wetenschap"
+#~ msgstr "_Wiskunde-Wetenschap"
 
 #~ msgid "Logical _not sign ¬"
-#~ msgstr "Logische NOT teken ¬"
+#~ msgstr "Logische NOT-teken ¬"
 
 #~ msgid "_Multiplication sign ×"
 #~ msgstr "_Vermenigvuldigingsteken ×"
@@ -2529,13 +2528,13 @@ msgstr "_Generator metatag automatisch bijwerken"
 #~ msgstr "_Delingsteken ÷"
 
 #~ msgid "_Plus-minus sign ±"
-#~ msgstr "_Plus-Minus teken ±"
+#~ msgstr "_Plusminus teken ±"
 
 #~ msgid "_Less-than sign <"
-#~ msgstr "_Kleiner dan teken <"
+#~ msgstr "_Kleinerdanteken <"
 
 #~ msgid "_Greater-than sign >"
-#~ msgstr "_Groter dan teken >"
+#~ msgstr "_Groterdanteken >"
 
 #~ msgid "Superscript _1 ¹"
 #~ msgstr "_Superscript 1 ¹"
@@ -2553,10 +2552,10 @@ msgstr "_Generator metatag automatisch bijwerken"
 #~ msgstr "Een _half ½"
 
 #~ msgid "_Three quarters ¾"
-#~ msgstr "_Drie kwart ¾"
+#~ msgstr "_Driekwart ¾"
 
 #~ msgid "Deg_ree sign °"
-#~ msgstr "G_raden teken °"
+#~ msgstr "G_radenteken °"
 
 #~ msgid "_Non Latin"
 #~ msgstr "_Non Latin"
@@ -2574,28 +2573,28 @@ msgstr "_Generator metatag automatisch bijwerken"
 #~ msgstr "th_orn þ"
 
 #~ msgid "Sharp _s ß"
-#~ msgstr "_Ringeles ß"
+#~ msgstr "_Ringel-s ß"
 
 #~ msgid "_Micro sign µ"
-#~ msgstr "_Micro teken µ"
+#~ msgstr "_Microteken µ"
 
 #~ msgid "_Other"
 #~ msgstr "_Overige"
 
 #~ msgid "_Section sign §"
-#~ msgstr "_Paragraaf teken §"
+#~ msgstr "_Paragraafteken §"
 
 #~ msgid "_Copyright sign ©"
-#~ msgstr "_Copyright teken ©"
+#~ msgstr "_Copyrightteken ©"
 
 #~ msgid "_Left angle quotes «"
-#~ msgstr "_Linker hoek quotes «"
+#~ msgstr "_Linker guillemet «"
 
 #~ msgid "_Right angle quotes »"
-#~ msgstr "_Rechter hoek quotes »"
+#~ msgstr "_Rechter guillemet »"
 
 #~ msgid "Registered _trademark ®"
-#~ msgstr "Geregistreerd trademark ®"
+#~ msgstr "Geregistreerd handelsmerk ®"
 
 #~ msgid "Inverted _exclamation ¡"
 #~ msgstr "Omgekeerd uitroepteken ¡"
@@ -2604,10 +2603,10 @@ msgstr "_Generator metatag automatisch bijwerken"
 #~ msgstr "Omgekeerd vraagteken ¿"
 
 #~ msgid "_Feminine ordinal ª"
-#~ msgstr "_Vrouwelijke ordinaal ª"
+#~ msgstr "_Vrouwelijk rangtelwoord ª"
 
 #~ msgid "_Masculine ordinal º"
-#~ msgstr "_Mannelijke ordinaal º"
+#~ msgstr "_Mannelijk rangtelwoord º"
 
 #~ msgid "_Pilcrow (paragraph sign) ¶"
 #~ msgstr "Alineateken ¶"
