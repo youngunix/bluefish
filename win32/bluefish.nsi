@@ -2,7 +2,7 @@
 ; Bluefish Windows NSIS Install Script
 ; [bluefish.nsi]
 ; 
-;  Copyright (C) 2009-2017 The Bluefish Developers
+;  Copyright (C) 2009-2020 The Bluefish Developers
 ;   Shawn Novak <Kernel86@gmail.com>
 ;   Daniel Leidert <daniel.leidert@wgdd.de>
 ;----------------------------------------------
@@ -139,7 +139,7 @@ ShowUninstDetails show
 
 ; Installer version information
 ;----------------------------------------------
-VIProductVersion "2.2.10.0"
+VIProductVersion "2.2.11.0"
 VIAddVersionKey "ProductName" "${PRODUCT}"
 VIAddVersionKey "FileVersion" "${VERSION}"
 VIAddVersionKey "ProductVersion" "${VERSION}"
