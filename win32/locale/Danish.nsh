@@ -5,7 +5,7 @@
 ;  The Bluefish Developers
 ;
 ;  Translators:
-;   flemming christensen <fchristensen.1948@gmail.com>, 2012
+;   flemming christensen <flemming@keemail.me>, 2012, 2020
 ;----------------------------------------------
 
 ; Section Names
@@ -37,10 +37,10 @@
 !define GTK_REQUIRED "Installer GTK+ ${GTK_MIN_VERSION} eller nyere og kontroller at den findes i din PATH før du starter Bluefish."
 
 ; Python Strings
-; !define PYTHON_DOWNLOAD	"Downloading Python..."
-; !define PYTHON_FAILED	"Python Download failed:"
-; !define PYTHON_INSTALL	"Installing Python..."
-; !define PYTHON_REQUIRED	"Please install Python ${PYTHON_MIN_VERSION} or higher before running Bluefish.$\nPython is required for the Zencoding plugin and other features."
+; !define PYTHON_DOWNLOAD	"Henter Python..."
+; !define PYTHON_FAILED	"Python kunne ikke hentes:"
+; !define PYTHON_INSTALL	"Installerer Python..."
+; !define PYTHON_REQUIRED	"Installer Python ${PYTHON_MIN_VERSION} eller nyere, før du åbner Bluefish.$\nPython kræves til Zencoding-plugin og andre redskaber."
 
 ; Plugin Names
 !define PLUG_CHARMAP "Tegnoversigt"
