@@ -1509,7 +1509,7 @@ doc_replace_text_backend(Tdocument * doc, const gchar * newstring, gint start, g
 		doc_unre_add(doc, newstring, insert, insert + g_utf8_strlen(newstring, -1), UndoInsert);
 	}
 	doc_unblock_undo_reg(doc);
-	g_print("doc_replace_text_backend, about to call doc_set_modified(%p,1)\n",doc);
+	DEBUG_MSG("doc_replace_text_backend, about to call doc_set_modified(%p,1)\n",doc);
 	doc_set_modified(doc, 1);
 }
 
@@ -2227,7 +2227,7 @@ doc_buffer_delete_range_lcb(GtkTextBuffer * textbuffer, GtkTextIter * itstart, G
 			}
 			doc_unre_add(doc, string, start, end, UndoDelete);
 		}
-		g_print("doc_buffer_delete_range_lcb, about to call doc_set_modified(%p,1)\n",doc);
+		DEBUG_MSG("doc_buffer_delete_range_lcb, about to call doc_set_modified(%p,1)\n",doc);
 		doc_set_modified(doc, 1);
 	}
 	/* see if any other code wants to see document changes */
