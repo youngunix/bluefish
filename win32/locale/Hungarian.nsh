@@ -10,7 +10,7 @@
 
 ; Section Names
 !define SECT_BLUEFISH "Bluefish szerkesztő"
-!define SECT_PLUGINS "Beépülők"
+!define SECT_PLUGINS "Bővítmények"
 !define SECT_SHORTCUT "Asztali parancsikon"
 !define SECT_DICT "Helyesírás-ellenőrzés nyelvei (Internetkapcsolat szükséges a letöltéshez)"
 
@@ -46,7 +46,7 @@
 !define PLUG_CHARMAP "Karakter térkép"
 !define PLUG_ENTITIES "Entitások"
 !define PLUG_HTMLBAR "HTML eszköztár"
-!define PLUG_INFBROWSER "Infó böngésző"
+!define PLUG_INFBROWSER "Információ böngésző"
 !define PLUG_SNIPPETS "Kódrészletek"
 !define PLUG_ZENCODING "Zencoding"
 

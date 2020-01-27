@@ -1,29 +1,33 @@
-# Hungarian language file for Bluefish.
-# Copyright (C) 2000-2011 Free Software Foundation, Inc.
+# Hungarian translation for Bluefish.
+# Copyright (C) 2000-2020 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Bluefish package.
 #
-# Péter Sáska <sasek@acolyte.hu>, 2000-2003.
-# Balázs Úr <urbalazs@gmail.com>, 2011, 2014.
-# Balázs Úr <urbalazs at gmail dot com>, 2013.
+# Péter Sáska <sasek@acolyte.hu>, 2000, 2001, 2002, 2003.
+# Balázs Úr <balazs@urbalazs.hu>, 2011, 2012, 2013, 2014, 2015, 2017, 2020.
 msgid ""
 msgstr ""
-"Project-Id-Version: Bluefish 2.2.2\n"
+"Project-Id-Version: Bluefish 2.2.11\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2017-06-21 09:22+0900\n"
-"PO-Revision-Date: 2014-04-11 23:19+0200\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
-"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"POT-Creation-Date: 2020-01-08 20:14+0100\n"
+"PO-Revision-Date: 2020-01-23 00:32+0100\n"
+"Last-Translator: Balázs Úr <balazs@urbalazs.hu>\n"
+"Language-Team: Hungarian\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 19.04.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/plugin_about/about.c:85
-msgid "This version of Bluefish was built with:\n"
-msgstr "A Bluefish jelen verziója az alábbiakkal készült:\n"
+#: src/plugin_about/about.c:86
+msgid ""
+"This version of Bluefish was built with:\n"
+"\n"
+msgstr ""
+"A Bluefish jelen verziója az alábbiakkal készült:\n"
+"\n"
 
-#: src/plugin_about/about.c:205
+#: src/plugin_about/about.c:184
 msgid ""
 "\n"
 "Developers of previous releases:"
@@ -31,7 +35,7 @@ msgstr ""
 "\n"
 "A korábbi kiadások fejlesztői:"
 
-#: src/plugin_about/about.c:221
+#: src/plugin_about/about.c:200
 msgid ""
 "\n"
 "Package maintainers:"
@@ -39,7 +43,7 @@ msgstr ""
 "\n"
 "Csomag karbantartók:"
 
-#: src/plugin_about/about.c:228
+#: src/plugin_about/about.c:207
 msgid ""
 "\n"
 "If you know of anyone missing from this list,\n"
@@ -49,11 +53,11 @@ msgstr ""
 "Ha tudomása van bárkiről, aki nincs rajta ezen a listán,\n"
 "kérjük, értesítsen minket:"
 
-#: src/plugin_about/about.c:229
+#: src/plugin_about/about.c:208
 msgid "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 msgstr "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 
-#: src/plugin_about/about.c:230
+#: src/plugin_about/about.c:209
 msgid ""
 "\n"
 "Thanks to all who helped make this software available.\n"
@@ -62,7 +66,7 @@ msgstr ""
 "Köszönjük mindenkinek, akik segítségükkel lehetővé tették e szoftver "
 "létezését.\n"
 
-#: src/plugin_about/about.c:266
+#: src/plugin_about/about.c:245
 msgid ""
 "An open-source editor for experienced web designers and programmers, "
 "supporting many programming and markup languages, but focusing on creating "
@@ -80,42 +84,42 @@ msgstr ""
 #. * to this translation (in general: this special locale). Please
 #. * use a separate line for every translator ending with a newlines (\n).
 #.
-#: src/plugin_about/about.c:276
+#: src/plugin_about/about.c:255
 msgid "translator-credits"
-msgstr "Úr Balázs <urbalazs@gmail.com>"
+msgstr "Úr Balázs <balazs@urbalazs.hu>"
 
-#: src/plugin_about/about.c:374
+#: src/plugin_about/about.c:353
 msgid "_Help"
 msgstr "_Súgó"
 
-#: src/plugin_about/about.c:375
+#: src/plugin_about/about.c:354
 msgid "Bluefish _Homepage"
 msgstr "A Bluefish _honlapja"
 
-#: src/plugin_about/about.c:375
+#: src/plugin_about/about.c:354
 msgid "Bluefish homepage"
 msgstr "A Bluefish honlapja"
 
-#: src/plugin_about/about.c:377
+#: src/plugin_about/about.c:356
 msgid "Report a _Bug"
 msgstr "Hiba _jelentése"
 
-#: src/plugin_about/about.c:377
+#: src/plugin_about/about.c:356
 msgid "Report a bug"
 msgstr "Hiba jelentése"
 
-#: src/plugin_about/about.c:378
+#: src/plugin_about/about.c:357
 msgid "_About"
 msgstr "_Névjegy"
 
-#: src/plugin_about/about.c:378
+#: src/plugin_about/about.c:357
 msgid "About Bluefish"
 msgstr "A Bluefish névjegye"
 
-#: src/plugin_about/about.c:380
+#: src/plugin_about/about.c:359
 msgid "Build _Info"
 msgstr "_Fordítási információ"
 
-#: src/plugin_about/about.c:380
+#: src/plugin_about/about.c:359
 msgid "Build info"
 msgstr "Fordítási információ"
