@@ -486,6 +486,9 @@ props_init_main(GHashTable * config_rc)
 	init_prop_integer(&config_rc, &main_v->props.open_in_running_bluefish, "open_in_running_bluefish:", 1,
 					  TRUE);
 	init_prop_integer(&config_rc, &main_v->props.open_in_new_window, "open_in_new_window:", 1, TRUE);
+#ifdef WIN32
+	init_prop_integer(&config_rc, &main_v->props.win32_ipcport, "win32_ipcport:", 0, TRUE);
+#endif
 	init_prop_integer(&config_rc, &main_v->props.register_recent_mode, "register_recent_mode:", 2, TRUE);
 	init_prop_integer(&config_rc, &main_v->props.recent_means_recently_closed, "recent_means_recently_closed:", 1, TRUE);
 	init_prop_arraylist(&config_rc, &main_v->props.plugin_config, "plugin_config:", 3, TRUE);

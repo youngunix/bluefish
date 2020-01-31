@@ -39,7 +39,7 @@
 #include "ipc_bf2bf.h"
 #include "bfwin.h"
 #include "file.h"
-
+#include "rcfile.h"
 
 #ifdef WIN32
 #ifndef HAVE_STDINT_H
@@ -228,16 +228,27 @@ static gboolean
 become_server(void)
 {
 #ifdef WIN32
-	struct sockaddr_in iaddr;
+	struct sockaddr_in iaddr, oaddr;
+	int oaddrsize = sizeof(oaddr);
 
 	iaddr.sin_family = AF_INET;
-	iaddr.sin_port = htons(5150);
+	iaddr.sin_port = htons(0);	/* Assign random tcp port */
 	iaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
 	ibf.fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	if (bind(ibf.fd, (struct sockaddr *) &iaddr, sizeof(iaddr)) == SOCKET_ERROR) {
 		ibf.fd = -1;
 		return FALSE;
+	}
+
+	/* Store random tcp port per user session */
+	if (getsockname(ibf.fd, (SOCKADDR *) &oaddr, &oaddrsize) != SOCKET_ERROR)
+	{
+		main_v->props.win32_ipcport = ntohs(oaddr.sin_port);
+		rcfile_save_main();
+		DEBUG_MSG("become_server, ipc port stored=%d\n", main_v->props.win32_ipcport);
+	} else {
+		DEBUG_MSG("getsockname error - port: %d wsa: %d", ntohs(oaddr.sin_port), WSAGetLastError());
 	}
 
 	if (listen(ibf.fd, 10) == -1) {
@@ -275,16 +286,23 @@ static gboolean
 become_client(void)
 {
 #ifdef WIN32
-	struct sockaddr_in iaddr;
+	if (main_v->props.win32_ipcport != 0)
+	{
+		DEBUG_MSG("client port: %d\n", main_v->props.win32_ipcport);
+		struct sockaddr_in iaddr;
 
-	iaddr.sin_family = AF_INET;
-	iaddr.sin_port = htons(5150);
-	iaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+		iaddr.sin_family = AF_INET;
+		iaddr.sin_port = htons(main_v->props.win32_ipcport);
+		iaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
-	ibf.fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-	if (connect(ibf.fd, (struct sockaddr *) &iaddr, sizeof(iaddr)) == SOCKET_ERROR) {
-		ibf.fd = -1;
-		DEBUG_MSG("become_client, could not connect to socket, errno=%d: %s\n", errno, strerror(errno));
+		ibf.fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+		if (connect(ibf.fd, (struct sockaddr *) &iaddr, sizeof(iaddr)) == SOCKET_ERROR) {
+			ibf.fd = -1;
+			DEBUG_MSG("become_client, could not connect to socket, errno=%d: %s\n", errno, strerror(errno));
+			return FALSE;
+		}
+	} else {
+		DEBUG_MSG("become_client, ipc port not stored yet we got here somehow\n");
 		return FALSE;
 	}
 
