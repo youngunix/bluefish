@@ -346,6 +346,9 @@ typedef struct {
 	/* key conversion */
 	gint open_in_running_bluefish;	/* open commandline documents in already running process */
 	gint open_in_new_window;	/* open commandline files in a new window as opposed to an existing window */
+#ifdef WIN32
+	gint win32_ipcport;			/* tcpip port used for ipc on win32 */
+#endif
 	gint register_recent_mode; /* 0=none,1=all,2=project only*/
 	gint recent_means_recently_closed;
 	GList *plugin_config;		/* array, 0=filename, 1=enabled, 2=name */
