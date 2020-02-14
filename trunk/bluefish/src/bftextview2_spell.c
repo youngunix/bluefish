@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * bftextview2_spell.c
  *
- * Copyright (C) 2009-2013 Olivier Sessink
+ * Copyright (C) 2009-2020 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,6 +21,17 @@
 /* for the design docs see bftextview2.h */
 
 #include "bluefish.h"
+
+#ifdef HAVE_LIBENCHANT_2
+/*nothing to do */
+#else
+	#ifdef HAVE_LIBENCHANT_1_4
+	/*nothing to do */
+	#else
+	#define HAVE_LIBENCHANT_OLD
+	#endif
+#endif
+
 
 #ifdef HAVE_LIBENCHANT
 #ifdef HAVE_ENCHANT_ENCHANT_H
@@ -167,9 +178,10 @@ void
 unload_spell_dictionary(Tbfwin * bfwin)
 {
 	if (bfwin->ed) {
-#ifdef HAVE_LIBENCHANT_1_4
+#ifndef HAVE_LIBENCHANT_OLD
 		DBG_SPELL("unload_spell_dictionary, bfwin=%p, ed=%p\n", bfwin, bfwin->ed);
 		enchant_broker_free_dict(eb, (EnchantDict *) bfwin->ed);
+		bfwin->ed = NULL;
 #else
 		/* enchant < 1.4.0 does not do refcounting, so we have to check ourselves if we are the last window that
 		   is using this dictionary */
@@ -185,6 +197,7 @@ unload_spell_dictionary(Tbfwin * bfwin)
 		if (!in_use) {
 			DBG_SPELL("free dictionary %p, it is not in use\n", bfwin->ed);
 			enchant_broker_free_dict(eb, (EnchantDict *) bfwin->ed);
+			bfwin->ed = NULL;
 		}
 #endif
 	}
@@ -678,10 +691,14 @@ bftextview2_add_word_backend(BluefishTextView * btv, Tbfwin * bfwin, gboolean to
 
 	word = gtk_text_buffer_get_text(gtk_text_view_get_buffer(GTK_TEXT_VIEW(btv)), &so, &eo, FALSE);
 	if (to_dict) {
+#ifdef HAVE_LIBENCHANT_2
+		enchant_dict_add((EnchantDict *) bfwin->ed, word, strlen(word));
+#else
 #ifdef HAVE_LIBENCHANT_1_4
 		enchant_dict_add((EnchantDict *) bfwin->ed, word, strlen(word));
 #else
 		enchant_dict_add_to_pwl((EnchantDict *) bfwin->ed, word, strlen(word));
+#endif
 #endif
 	} else {
 		enchant_dict_add_to_session((EnchantDict *) bfwin->ed, word, strlen(word));
