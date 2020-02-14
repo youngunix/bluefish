@@ -417,7 +417,7 @@ AC_ARG_WITH(
 	)
 )
 
-dnl Be explicit here and don't accept --with-gtk2=foo
+dnl Be explicit here and dont accept --with-gtk2=foo
 if test "x$with_gtk2" != "xyes"; then
 	PKG_CHECK_EXISTS(
 		[$BF_dependencies],
@@ -476,6 +476,18 @@ if test "x$enable_spell_check" != "xno"; then
 			)
 		 )
 		]
+	)
+	AC_MSG_CHECKING([for optional libenchant-2 development files])
+	PKG_CHECK_EXISTS(
+		[enchant-2],
+		[
+			BF_dependencies="$BF_dependencies enchant-2"
+			AC_DEFINE([HAVE_LIBENCHANT], [1], [Define to 1 if you have the 'enchant-2' library.])
+			AC_DEFINE([HAVE_LIBENCHANT_2], [1], [Define to 1 if you have the 'enchant-2' library.])
+		]
+		AC_MSG_RESULT([yes])
+		,
+		AC_MSG_RESULT([no])
 	)
 fi
 
