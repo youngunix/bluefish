@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application>
+<component>
  <id type="desktop">bluefish.desktop</id>
- <licence>CC0</licence>
  <name>Bluefish</name>
  <summary>Text editor with many web and software development extras</summary>
- <description>
+<url type="homepage">http://bluefish.openoffice.nl/</url>
+<metadata_licence>CC0-1.0</metadata_licence>
+<description>
 <_p>Bluefish is a powerful editor targeted towards programmers and web developers, with many options to write websites, scripts and programming code. Bluefish supports many programming and markup languages and has many features, but is still a very fast and lightweight application.</_p>
 <_p>A selection of the features:</_p>
 <ul>
@@ -21,16 +22,20 @@
 </ul>
 <_p>If you are an occasional coder who is in need for a simple to learn editor, or a heavy coder who dislikes heavy IDE's like eclipse or netbeans, Bluefish is your editor of choice!</_p>
 </description>
+<categories>
+​    <category>Development</category>
+​    <category>Webdevelopment</category>
+​</categories>
+
 <screenshots>
  <screenshot type="default">
-  <image>http://bluefish.openoffice.nl/images/bluefish-appdata-screenshot.png</image>
+  <image type="source">http://bluefish.openoffice.nl/images/bluefish-appdata-screenshot.png</image>
   <caption>The main window showing the application</caption>
  </screenshot>
 </screenshots>
-<url type="homepage">http://bluefish.openoffice.nl/</url>
 <updatecontact>olivier(at)bluefish.openoffice.nl</updatecontact>
  <kudos>
 <kudo>HiDpiIcon</kudo>
 <kudo>ModernToolkit</kudo>
 </kudos>
-</application>
+</component>
