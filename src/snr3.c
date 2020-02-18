@@ -37,7 +37,7 @@ texttag from the tag table??
 
 */
 
-/*#define DEBUG*/
+#define DEBUG
 /*#define SNR3_PROFILING*/
 
 #define _GNU_SOURCE
@@ -510,7 +510,7 @@ snr3_run_loop_idle_func(Truninidle *rii)
 {
 	Tsnr3run *s3run=rii->s3run;
 	gboolean cont;
-	DEBUG_MSG("snr3_run_loop_idle_func, next loop\n");
+	DEBUG_MSG("snr3_run_loop_idle_func, next loop for rii=%p, s3run=%p\n",rii,s3run);
 	if (s3run->type == snr3type_string)
 		cont = backend_string_loop(s3run, FALSE);
 	else
@@ -525,12 +525,12 @@ snr3_run_loop_idle_func(Truninidle *rii)
 		if (S3RESULT(s3run->results.tail->data)->doc == rii->doc)
 			s3run->resultnumdoc++;
 	}
-
 	g_free(s3run->curbuf);
 	s3run->curbuf=NULL;
 	s3run->idle_id = 0;
 	DEBUG_MSG("snr3_run_loop_idle_func, s3run=%p, ready, call queue_worker_ready()\n",s3run);
 	queue_worker_ready(&s3run->idlequeue);
+	DEBUG_MSG("snr3_run_loop_idle_func, call snr3run_unrun (which calls the callback for s3run=%p) and then slice_free rii=%p and return FALSE\n",s3run,rii);
 	snr3run_unrun(s3run); /* unrun currently only calls the callback if the refcount is zero, we can run that from here too ??? */
 	g_slice_free(Truninidle, rii);
 	return FALSE;
@@ -539,7 +539,7 @@ snr3_run_loop_idle_func(Truninidle *rii)
 void
 snr3_queue_run(gpointer data) {
 	Truninidle *rii=data;
-	DEBUG_MSG("snr3_queue_run, s3run=%p, doc=%p\n",rii->s3run, rii->doc);
+	DEBUG_MSG("snr3_queue_run, rii=%p, s3run=%p, doc=%p\n",rii,rii->s3run, rii->doc);
 
 	if (rii->update) {
 		GList *tmplist=rii->s3run->results.head;
@@ -573,7 +573,7 @@ snr3_queue_run(gpointer data) {
 			doc_unre_new_group(rii->doc);
 		}
 	}
-
+	DEBUG_MSG("snr3_queue_run, add idle callback for rii=%p with s3run=%p\n",rii,rii->s3run);
 	rii->s3run->idle_id = g_idle_add_full(G_PRIORITY_DEFAULT_IDLE,(GSourceFunc)snr3_run_loop_idle_func,rii,NULL);
 }
 
@@ -594,6 +594,7 @@ snr3_run_in_doc(Tsnr3run *s3run, Tdocument *doc, gint so, gint eo, gboolean upda
 		return;
 
 	rii = g_slice_new(Truninidle);
+	DEBUG_MSG("snr3_run_in_doc, created rii=%p to run s3run=%p\n",rii,s3run);
 	rii->doc = doc;
 	rii->s3run=s3run;
 	g_atomic_int_inc(&s3run->runcount);
@@ -604,7 +605,7 @@ snr3_run_in_doc(Tsnr3run *s3run, Tdocument *doc, gint so, gint eo, gboolean upda
 		rii->s3run->callback = update_callback;
 	}
 
-	DEBUG_MSG("s3run=%p, push doc %p on the idlequeue, len=%d, update=%d\n",s3run, doc,s3run->idlequeue.q.length, update);
+	DEBUG_MSG("snr3_run_in_doc, push rii=%p, s3run=%p, doc=%p on the idlequeue, len=%d, update=%d\n",rii, s3run, doc,s3run->idlequeue.q.length, update);
 	queue_push(&s3run->idlequeue, rii);
 }
 
@@ -777,12 +778,12 @@ snr3run_resultcleanup(Tsnr3run *s3run, gboolean clear_outputbox)
 	}
 }
 
-/* called from bfwin.c for simplesearch */
-void
+static void
 snr3run_free(Tsnr3run *s3run, gboolean remove_highlights, gboolean clear_outputbox) {
 	DEBUG_MSG("snr3run_free, started for %p\n",s3run);
-	if (s3run->curbuf)
+	if (s3run->curbuf) {
 		g_free(s3run->curbuf);
+	}
 	bfwin_current_document_change_remove_by_data(s3run->bfwin, s3run);
 	bfwin_document_insert_text_remove_by_data(s3run->bfwin, s3run);
 	bfwin_document_delete_range_remove_by_data(s3run->bfwin, s3run);
@@ -1085,6 +1086,7 @@ snr3run_new(Tbfwin *bfwin, gpointer dialog)
 {
 	Tsnr3run *s3run;
 	s3run = g_slice_new0(Tsnr3run);
+	DEBUG_MSG("snr3run_new, created s3run=%p\n",s3run);
 	s3run->bfwin = bfwin;
 	s3run->dialog = dialog;
 	g_queue_init(&s3run->results);
@@ -1182,6 +1184,15 @@ simple_search_next(Tbfwin *bfwin)
 	if (bfwin->simplesearch_snr3run) {
 		snr3_run_go(((Tsnr3run *)bfwin->simplesearch_snr3run), TRUE);
 	}
+}
+
+void
+simple_search_cancel_free(void *data) {
+	Tsnr3run *s3run=data;
+	/* first cancel anything running in either an idle loop OR on the queue */ 
+	snr3_cancel_run(s3run);
+	/* now free */
+	snr3run_free(s3run, TRUE, FALSE);
 }
 /******************************************************/
 /*********** end of simple search *********************/
@@ -1921,6 +1932,7 @@ snr3_run_extern_replace(Tdocument * doc, const gchar * search_pattern, Tsnr3scop
 			g_warning("snr3_run_extern_replace does not support replace in files\n");
 		break;
 	}
+	DEBUG_MSG("snr3_run_extern_replace, call snr3run_free for s3run=%p\n",s3run);
 	snr3run_free(s3run, FALSE, FALSE); /* We do not need to remove hightlights in current_document, so we pass FALSE */
 }
 
