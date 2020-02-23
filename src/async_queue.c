@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * async_queue.c - asynchronous function execution queue 
  *
- * Copyright (C) 2009-2019 Olivier Sessink
+ * Copyright (C) 2009-2020 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -214,6 +214,10 @@ queue_push(Tasyncqueue * queue, gpointer item)
 #else
 		g_static_mutex_lock(&queue->mutex);
 #endif
+	}
+	if (queue->cancelled) {
+		g_print("queue_push, pushing on cancelled queue, setting cancelled to FALSE\n");
+		queue->cancelled = FALSE;	
 	}
 	g_queue_push_head(&queue->q, item);
 	DEBUG_MSG("queue_push %p, new queue length=%d, worknum=%d\n",queue,queue->q.length, queue->worknum);
