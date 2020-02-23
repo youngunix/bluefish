@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * snr3.c - search and replace
  *
- * Copyright (C) 2011,2012,2013,2014,2017,2019 Olivier Sessink
+ * Copyright (C) 2011,2012,2013,2014,2017,2019,2020 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -740,12 +740,24 @@ snr3_run(Tsnr3run *s3run, TSNRWin *snrwin, Tdocument *doc, void (*callback)(void
 }
 
 static void
+idlequeue_cancel_freefunc(gpointer data, gpointer user_data)
+{
+	Truninidle *rii=data;
+	snr3run_unrun(rii->s3run);
+	g_slice_free(Truninidle, rii);
+}
+
+static void
 snr3_cancel_run(Tsnr3run *s3run) {
 	DEBUG_MSG("snr3_cancel_run, started for %p\n",s3run);
+	/* remove anthing that has not yet been started on the idlequeue */
+	queue_cancel(&s3run->idlequeue, idlequeue_cancel_freefunc, s3run);
+	DEBUG_MSG("snr3_cancel_run, after queue_cancel, runcount=%d\n",s3run->runcount);
 	if (s3run->idle_id) {
 		DEBUG_MSG("remove idle_id %d\n", s3run->idle_id);
 		g_source_remove(s3run->idle_id);
 		queue_worker_ready(&s3run->idlequeue);
+		DEBUG_MSG("snr3_cancel_run, after queue_worker_ready, runcount=%d\n",s3run->runcount);
 		g_atomic_int_set(&s3run->runcount,0);
 		/* TODO: BUG: MEMLEAK: the Truninidle is not free'ed now !?!?!?! */
 		s3run->idle_id=0;
@@ -781,6 +793,9 @@ snr3run_resultcleanup(Tsnr3run *s3run, gboolean clear_outputbox)
 static void
 snr3run_free(Tsnr3run *s3run, gboolean remove_highlights, gboolean clear_outputbox) {
 	DEBUG_MSG("snr3run_free, started for %p\n",s3run);
+	
+	queue_cancel(&s3run->idlequeue, idlequeue_cancel_freefunc, s3run);
+	
 	if (s3run->curbuf) {
 		g_free(s3run->curbuf);
 	}
