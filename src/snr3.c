@@ -37,7 +37,7 @@ texttag from the tag table??
 
 */
 
-#define DEBUG
+/*#define DEBUG*/
 /*#define SNR3_PROFILING*/
 
 #define _GNU_SOURCE
@@ -1138,7 +1138,7 @@ activate_simple_search(void *data) {
 }
 
 static void
-simple_search_add_to_history(Tbfwin *bfwin, const gchar *string)
+search_add_or_extend_history(Tbfwin *bfwin, const gchar *string)
 {
 	if (!string || string[0] == '\0')
 		return;
@@ -1168,7 +1168,7 @@ gpointer simple_search_run(Tbfwin *bfwin, const gchar *string, Tsnr3type type
 
 	s3run = snr3run_new(bfwin, NULL);
 	snr3run_multiset(s3run, string, NULL, type,snr3replace_string,snr3scope_doc, FALSE);
-	simple_search_add_to_history(bfwin, string);
+	search_add_or_extend_history(bfwin, string);
 	s3run->dotmatchall = dotmatchall;
 	s3run->is_case_sens = casesens;
 	s3run->escape_chars = unescape;
@@ -1374,7 +1374,7 @@ snr3run_init_from_gui(TSNRWin *snrwin, Tsnr3run *s3run)
 			if (cbasedir && cbasedir[0] != '\0')
 				snrwin->bfwin->session->snr3_basedir_history = add_to_history_stringlist(snrwin->bfwin->session->snr3_basedir_history, cbasedir,TRUE);
 		}
-		snrwin->bfwin->session->searchlist = add_to_history_stringlist(snrwin->bfwin->session->searchlist, s3run->query, TRUE);
+		search_add_or_extend_history(snrwin->bfwin, s3run->query);
 		if (s3run->replace && s3run->replace[0] != '\0')
 			snrwin->bfwin->session->replacelist = add_to_history_stringlist(snrwin->bfwin->session->replacelist, s3run->replace,TRUE);
 	}
