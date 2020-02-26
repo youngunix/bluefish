@@ -10,10 +10,6 @@ nobase_bfdata_DATA = \
 	default_accelmap \
 	encodings \
 	snippets \
-	lipsum/__init__.py \
-	lipsum/data/dictionary.txt \
-	lipsum/data/sample.txt \
-	lipsum/data/lipsum.xml \
 	jsbeautifier/__init__.py \
 	jsbeautifier/__version__.py \
 	jsbeautifier/unpackers/packer.py \
