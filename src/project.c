@@ -435,7 +435,7 @@ project_open_from_file(Tbfwin * bfwin, GFile * fromuri)
 		if (prwin->current_document)
 			doc_destroy(prwin->current_document, TRUE); /*new window is created with empty doc, so we destroy it TODO move empty tab creation from bfwin_create_main() */
 	}
-	tmplist = g_list_last(prj->files);
+	tmplist = g_list_first(prj->files);
 	gint doc_index = 0;
 	gint i =0;
 	gint cursor_offset = -1;
@@ -470,7 +470,7 @@ project_open_from_file(Tbfwin * bfwin, GFile * fromuri)
 				doc_new_from_uri(prwin, uri, NULL, TRUE, TRUE, -1, goto_offset, cursor_offset, FALSE, FALSE);
 			}
 			g_object_unref(uri);
-			tmplist = g_list_previous(tmplist);
+			tmplist = g_list_next(tmplist);
 			i++;
 		}
 		/* Now switch to tab that holds last active document from previous session */
