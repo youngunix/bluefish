@@ -13,9 +13,9 @@
    height="210"
    id="svg3334"
    sodipodi:version="0.32"
-   inkscape:version="0.92pre3 r"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="bluefish-splash-nb3.svg"
-   inkscape:export-filename="/home/jimh/workspace.fc22/bluefish/images/bluefish-splash-nb3.png"
+   inkscape:export-filename="/home/olivier/svnbluefish/images/bluefish-splash-nb3.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
@@ -32,7 +32,7 @@
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     inkscape:window-height="1016"
+     inkscape:window-height="1136"
      inkscape:window-width="1920"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -44,8 +44,8 @@
      pagecolor="#ffffff"
      id="base"
      inkscape:zoom="2.1221115"
-     inkscape:cx="62.136252"
-     inkscape:cy="100.03118"
+     inkscape:cx="-32.109503"
+     inkscape:cy="98.146265"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:current-layer="svg3334"
@@ -1115,7 +1115,7 @@
   <g
      id="layer9"
      style="display:inline"
-     transform="translate(-86.758433,-245.14493)">
+     transform="translate(-90.758433,-245.14493)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10px;line-height:125%;font-family:'Luxi Sans';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#808080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1124,7 +1124,7 @@
        id="text9232"><tspan
          id="tspan9234"
          x="107.55487"
-         y="401.37985">web development studio</tspan></text>
+         y="401.37985">software developers editor</tspan></text>
   </g>
   <g
      id="layer10"
@@ -1322,5 +1322,5 @@
        sodipodi:role="line"
        id="tspan4940"
        x="179.42119"
-       y="204.40457">2.2.10</tspan></text>
+       y="204.40457">2.2.11</tspan></text>
 </svg>
