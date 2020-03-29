@@ -76,7 +76,7 @@ gboolean bfwin_delete_event(GtkWidget * widget, GdkEvent * event, Tbfwin * bfwin
 gboolean bfwin_osx_terminate_event(GtkWidget * widget, GdkEvent * event, Tbfwin * bfwin);
 #endif
 
-void bfwin_create_main(Tbfwin * bfwin);
+void bfwin_create_main(Tbfwin * bfwin, gboolean with_new_doc);
 void bfwin_show_main(Tbfwin * bfwin);
 
 void bfwin_statusbar_message(Tbfwin * bfwin, const gchar * message, gint seconds);

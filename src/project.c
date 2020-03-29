@@ -432,8 +432,6 @@ project_open_from_file(Tbfwin * bfwin, GFile * fromuri)
 		/* we will open a new Bluefish window for this project */
 		DEBUG_MSG("project_open_from_file, we need a new window\n");
 		prwin = bfwin_window_new_with_project(prj);
-		if (prwin->current_document)
-			doc_destroy(prwin->current_document, TRUE); /*new window is created with empty doc, so we destroy it TODO move empty tab creation from bfwin_create_main() */
 	}
 	tmplist = g_list_first(prj->files);
 	gint doc_index = 0;
