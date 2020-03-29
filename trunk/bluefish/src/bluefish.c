@@ -243,7 +243,7 @@ static gboolean startup_in_idle(gpointer data) {
 			file_static_queues_init(); /* if a template is used, the first untiled document will already load a file */
 		break;
 		case 1:
-			bfwin_create_main(startup->firstbfwin);
+			bfwin_create_main(startup->firstbfwin, TRUE);
 			main_v->bfwinlist = g_list_append(NULL, startup->firstbfwin); /* Moved it here, so it is handled the same way as in bfwin_window_new() */
 #ifdef WITH_MSG_QUEUE
 			if (main_v->props.open_in_running_bluefish) {

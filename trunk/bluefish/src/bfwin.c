@@ -1561,7 +1561,7 @@ bfwin_key_release_event(GtkWidget *widget, GdkEventKey  *kevent, gpointer   user
 }
 
 void
-bfwin_create_main(Tbfwin * bfwin)
+bfwin_create_main(Tbfwin * bfwin, gboolean with_new_doc)
 {
 	GtkWidget *vbox;
 	DEBUG_MSG("bfwin_create_main, bfwin=%p, main_window_w=%d\n", bfwin, main_v->globses.main_window_w);
@@ -1705,7 +1705,8 @@ bfwin_create_main(Tbfwin * bfwin)
 	}
 	/* everything is ready - we can start loading documents */
 	/* start to open an empty doc */
-	file_new_cb(NULL, bfwin);
+	if (with_new_doc)
+		file_new_cb(NULL, bfwin);
 
 	gtk_notebook_set_scrollable(GTK_NOTEBOOK(bfwin->notebook), TRUE);
 	/* don't use show_all since some widgets are and should be hidden */
@@ -1882,7 +1883,7 @@ bfwin_window_new_with_project(Tproject * project)
 	DEBUG_MSG("bfwin_window_new_with_project, bfwin=%p, bfwin->session=%p, (from project %p)\n", bfwin,
 			  bfwin->session, project);
 
-	bfwin_create_main(bfwin);
+	bfwin_create_main(bfwin, FALSE);
 	main_v->bfwinlist = g_list_append(main_v->bfwinlist, bfwin);
 	bfwin_show_main(bfwin);
 
@@ -1900,7 +1901,7 @@ bfwin_window_new(void)
 	bfwin->bmarkdata = main_v->bmarkdata;
 	DEBUG_MSG("bfwin_window_new, bfwin=%p, (from main_v)\n", bfwin);
 
-	bfwin_create_main(bfwin);
+	bfwin_create_main(bfwin, TRUE);
 	main_v->bfwinlist = g_list_append(main_v->bfwinlist, bfwin);
 	bfwin_show_main(bfwin);
 
