@@ -1870,7 +1870,7 @@ bfwin_all_statusbar_message(const gchar * message, gint seconds)
 }
 
 Tbfwin *
-bfwin_window_new_with_project(Tproject * project)
+bfwin_window_new_with_project(Tproject * project, gboolean with_new_doc)
 {
 	Tbfwin *bfwin = g_new0(Tbfwin, 1);
 
@@ -1883,7 +1883,7 @@ bfwin_window_new_with_project(Tproject * project)
 	DEBUG_MSG("bfwin_window_new_with_project, bfwin=%p, bfwin->session=%p, (from project %p)\n", bfwin,
 			  bfwin->session, project);
 
-	bfwin_create_main(bfwin, FALSE);
+	bfwin_create_main(bfwin, with_new_doc);
 	main_v->bfwinlist = g_list_append(main_v->bfwinlist, bfwin);
 	bfwin_show_main(bfwin);
 

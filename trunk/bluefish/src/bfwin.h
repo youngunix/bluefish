@@ -84,7 +84,7 @@ void bfwin_all_statusbar_message(const gchar * message, gint seconds);
 
 void bfwin_window_close(Tbfwin * bfwin);
 Tbfwin *bfwin_window_new(void);
-Tbfwin *bfwin_window_new_with_project(Tproject * project);
+Tbfwin *bfwin_window_new_with_project(Tproject * project, gboolean with_new_doc);
 
 gboolean bfwin_has_doc(Tbfwin * bfwin, Tdocument * doc);
 void bfwin_docs_not_complete(Tbfwin * bfwin, gboolean increase);
