@@ -431,7 +431,7 @@ project_open_from_file(Tbfwin * bfwin, GFile * fromuri)
 	} else {
 		/* we will open a new Bluefish window for this project */
 		DEBUG_MSG("project_open_from_file, we need a new window\n");
-		prwin = bfwin_window_new_with_project(prj);
+		prwin = bfwin_window_new_with_project(prj, FALSE);
 	}
 	tmplist = g_list_first(prj->files);
 	gint doc_index = 0;
@@ -622,7 +622,7 @@ project_edit_ok_clicked_lcb(GtkWidget * widget, Tprojecteditor * pred)
 	string_apply(&prj->name, pred->entries[name]);
 	sessionprefs_apply(&pred->sprefs, pred->project->session);
 	if (pred->bfwin == NULL) {
-		pred->bfwin = bfwin_window_new_with_project(pred->project);
+		pred->bfwin = bfwin_window_new_with_project(pred->project, TRUE);
 		pred->bfwin->session = pred->project->session;
 		setup_bfwin_for_project(pred->bfwin, NULL);
 	} else {
