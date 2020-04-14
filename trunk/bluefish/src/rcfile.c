@@ -1094,7 +1094,7 @@ rcfile_save_main(void)
 void
 rcfile_check_directory(void)
 {
-	GFile *file, *rcpath;
+	GFile *file, *rcpath, *rcsubpath;
 	GFileInfo *finfo;
 	GError *gerror = NULL;
 
@@ -1112,6 +1112,12 @@ rcfile_check_directory(void)
 			g_warning("%s", gerror->message);
 			g_error_free(gerror);
 		}
+		rcsubpath = g_file_get_child(rcpath, "templates");
+		g_file_make_directory(rcsubpath, NULL, NULL);
+		g_object_unref(rcsubpath);
+		rcsubpath = g_file_get_child(rcpath, "autosave");
+		g_file_make_directory(rcsubpath, NULL, NULL);
+		g_object_unref(rcsubpath);
 	}
 
 	g_object_unref(rcpath);
