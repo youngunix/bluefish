@@ -105,6 +105,8 @@ bluefish_SOURCES = \
 	msg_queue.h \
 	outputbox.c \
 	outputbox.h \
+	osxutils.x \
+	osxutils.h \
 	pixmap.c \
 	pixmap.h \
 	plugins.c \
