@@ -67,6 +67,10 @@
 #include "file_autosave.h"
 #include "languages.h"
 
+#ifdef MAC_INTEGRATION
+#include "osxutils.h"
+#endif
+
 /*#define STARTUP_PROFILING */
 
 /*********************************************/
@@ -134,52 +138,6 @@ static void handle_signals(void) {
 FILE *winlogfile = NULL;
 #endif
 
-#ifdef MAC_INTEGRATION
-static gboolean osx_open_file_cb(GtkosxApplication *app, gchar *path, gpointer user_data) {
-	GList *tmplist;
-	Tbfwin *bfwin;
-	GFile *uri = g_file_new_for_path(path);
-	//Find toplevel in focus
-	tmplist = g_list_first(main_v->bfwinlist);
-	while(tmplist) {
-		bfwin= BFWIN(tmplist->data);
-		if (gtk_window_is_active(GTK_WINDOW(bfwin->main_window))) {
-			break;
-		}
-		tmplist = g_list_next(tmplist);
-	}
-	g_print("osx_open_file_cb, open %s\n",path);
-	file_handle(uri, bfwin , NULL, TRUE, TRUE);
-	g_object_unref(uri);
-	return TRUE;
-}
-
-static gboolean osx_block_termination_cb(GtkosxApplication *app, gpointer user_data) {
-	GList *tmplist, *duplist;
-	main_v->osx_status = 1;
-	DEBUG_MSG("osx_block_termination, started\n");
-	duplist = g_list_copy(main_v->bfwinlist); /* Copy bfwinlist first, since using just tmplist causes unexpected behavior as bfwin is destroyed */
-	tmplist = g_list_first(duplist);
-	while (tmplist) {
-		Tbfwin *bfwin = BFWIN(tmplist->data);
-		bfwin_osx_terminate_event(NULL,NULL,bfwin);
-		tmplist = g_list_next(tmplist);
-	}
-	g_list_free(duplist);
-	return FALSE;
-}
-
-static void osx_will_terminate_cb(GtkosxApplication *app, gpointer user_data) {
-	/* Connect final shutdown routine here */
-	g_print("gtkosx terminating application");
-	flush_queue();
-	rcfile_save_global_session();
-	gtk_main_quit();
-}
-
-
-#endif
-
 typedef struct {
 	Tbfwin *firstbfwin;
 	GList *filenames;
@@ -197,7 +155,6 @@ void startup_finished_cb(gpointer data) {
 	g_free(startup);
 }
 #endif
-
 
 static gboolean startup_in_idle(gpointer data) {
 	Tstartup *startup=data;
@@ -311,6 +268,9 @@ int main(int argc, char *argv[])
 #ifdef MAC_INTEGRATION
 	GPollFunc orig_poll_func;
 	GPollFunc gdk_poll_func;
+	
+	
+	osx_setenv(argv[0]);
 #endif
 
 #ifdef WINLOGFILE
@@ -552,7 +512,7 @@ int main(int argc, char *argv[])
 	gdk_poll_func = g_main_context_get_poll_func (NULL);
 	g_main_context_set_poll_func (NULL, orig_poll_func); /* use virgin polling funtion for startup loop */
 	startup->startup_main_loop = g_main_loop_new (NULL, FALSE);
-	g_idle_add_full(G_PRIORITY_DEFAULT_IDLE-50, startup_in_idle, startup, (GDestroyNotify)startup_finished_cb);
+	g_idle_add_full(G_PRIORITY_DEFAULT_IDLE-50, startup_in_idle, startup, (GDestroyNotify)osx_startup_finished_cb);
 	g_main_loop_run (startup->startup_main_loop);
 	g_main_context_set_poll_func (NULL, gdk_poll_func); /* return to NORMAL polling function */
 	gtkosx_application_ready(theApp);
