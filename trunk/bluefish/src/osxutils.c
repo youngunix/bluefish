@@ -20,6 +20,7 @@
 #ifdef MAC_INTEGRATION
 #include <limits.h>
 #include <stdlib.h>
+#include <sys/param.h>
 
 
 #include "bluefish.h"

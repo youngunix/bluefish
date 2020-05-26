@@ -1276,7 +1276,8 @@ return_session_configlist(GHashTable * configlist, Tsessionvars * session)
 
 	init_prop_integer(&configlist, &session->snr3_type, "snr_type:", 1, FALSE);
 	init_prop_integer(&configlist, &session->snr3_replacetype, "snr_replacetype:", 1, FALSE);
-	init_prop_integer(&configlist, &session->snr3_scope, "snr_scope:", 1, FALSE);
+	/*	no longer stored, see https://sourceforge.net/p/bluefish/tickets/26/ 
+	init_prop_integer(&configlist, &session->snr3_scope, "snr_scope:", 1, FALSE);*/
 	init_prop_integer(&configlist, &session->snr3_casesens, "snr_casesens:", 1, FALSE);
 	init_prop_integer(&configlist, &session->snr3_showinoutputbox, "snr_showinoutputbox:", 1, FALSE);
 	init_prop_integer(&configlist, &session->snr3_ignorebackupfiles, "snr_ignorebackupfiles:", 1, FALSE);
