@@ -1293,6 +1293,11 @@ snr3run_init_from_gui(TSNRWin *snrwin, Tsnr3run *s3run)
 		snr3_cancel_run(s3run);
 		DEBUG_MSG("set scope %d\n",scope);
 		s3run->scope = scope;
+		if (scope == snr3scope_files) {
+			gtk_label_set_markup(GTK_LABEL(snrwin->warninglabel),_("<span foreground=\"red\"><b>There is no 'undo' when replacing in files.</b>\nBackup files are created as filename~</span>"));
+		} else {
+			gtk_label_set_text(GTK_LABEL(snrwin->warninglabel),NULL);
+		}
 		retval |= 1;
 	}
 	if (type != s3run->type) {
@@ -1740,34 +1745,43 @@ snr3_advanced_dialog_backend(Tbfwin * bfwin, const gchar *findtext, Tsnr3scope s
 	currentrow++;
 
 	snrwin->showinoutputbox = dialog_check_button_in_table(_("Show results in Output Pane"), bfwin->session->snr3_showinoutputbox, table,
-										0, 4, currentrow, currentrow+1);
+										0, 2, currentrow, currentrow+1);
 	gtk_widget_set_tooltip_text(snrwin->showinoutputbox, _("Show all results in the Output Pane on the bottom of the document list"));
 
-	currentrow++;
-
-	snrwin->ignorebackupfiles = dialog_check_button_in_table(_("Ignore backup files"), bfwin->session->snr3_ignorebackupfiles, table,
-										0, 4, currentrow, currentrow+1);
-	gtk_widget_set_tooltip_text(snrwin->ignorebackupfiles, _("Ignore backup files *~ created by Bluefish"));
+	snrwin->warninglabel = gtk_label_new(NULL);
+	gtk_label_set_line_wrap(GTK_LABEL(snrwin->warninglabel), TRUE);
+#if GTK_CHECK_VERSION(3,2,0)
+	gtk_label_set_width_chars(GTK_LABEL(snrwin->warninglabel),50);
+#endif
+	gtk_misc_set_alignment(GTK_MISC(snrwin->warninglabel),0.5,0.5);
+	gtk_table_attach(GTK_TABLE(table), snrwin->warninglabel, 2, 4, currentrow, currentrow+4, GTK_EXPAND | GTK_FILL,
+					 GTK_FILL, 0, 0);
 
 	currentrow++;
 
 	snrwin->matchCase = dialog_check_button_in_table(_("Case sensitive _matching"), bfwin->session->snr3_casesens, table,
-										0, 4, currentrow, currentrow+1);
+										0, 2, currentrow, currentrow+1);
 	gtk_widget_set_tooltip_text(snrwin->matchCase, _("Only match if case (upper/lower) is identical."));
 
 	currentrow++;
 
 	snrwin->escapeChars = dialog_check_button_in_table(_("Pattern contains escape-se_quences"), bfwin->session->snr3_escape_chars, table,
-										0, 4, currentrow, currentrow+1);
+										0, 2, currentrow, currentrow+1);
 	gtk_widget_set_tooltip_text(snrwin->escapeChars,
 								_("Pattern contains backslash escaped characters such as \\n \\t etc."));
 
 	currentrow++;
 
 	snrwin->dotmatchall = dialog_check_button_in_table(_("Dot character in regex pattern matches newlines"), bfwin->session->snr3_dotmatchall, table,
-										0, 4, currentrow, currentrow+1);
+										0, 2, currentrow, currentrow+1);
 	gtk_widget_set_tooltip_text(snrwin->dotmatchall,
 								_("The . character will match everything including newlines, use for multiline matching."));
+
+	currentrow++;
+
+	snrwin->ignorebackupfiles = dialog_check_button_in_table(_("Ignore backup files"), bfwin->session->snr3_ignorebackupfiles, table,
+										0, 2, currentrow, currentrow+1);
+	gtk_widget_set_tooltip_text(snrwin->ignorebackupfiles, _("Ignore backup files *~ created by Bluefish"));
 
 
 /*	snrwin->overlappingMatches = gtk_check_button_new_with_mnemonic(_("Allow o_verlapping matches"));
