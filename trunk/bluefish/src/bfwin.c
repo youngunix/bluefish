@@ -1729,7 +1729,12 @@ bfwin_create_main(Tbfwin * bfwin, gboolean with_new_doc)
 
 #ifdef MAC_INTEGRATION
 /* first move all accelerators away from <control> to <command>, and then in a second run
-move the <alt> accelerators to <control> (alt doesn't work on osx) */
+move the <alt> accelerators to <control> (alt doesn't work on osx)
+* Modifiers mapping on osx
+* MOD1 = Option/Alt
+* MOD2 = META = Command
+* CONTROL = Control
+ */
 static void
 osx_accel_map_foreach_controltometa_lcb(gpointer data, const gchar * accel_path, guint accel_key,
 										GdkModifierType accel_mods, gboolean changed)

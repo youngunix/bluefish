@@ -868,8 +868,13 @@ static const GtkActionEntry global_actions[] = {
 	 G_CALLBACK(ui_open_from_selection)},
 	{"FilePrint", NULL, N_("_Print..."), NULL, N_("Print"), G_CALLBACK(ui_print_doc)},
 	{"FileQuit", GTK_STOCK_QUIT, N_("_Quit"), "<control>Q", N_("Quit Bluefish"), G_CALLBACK(ui_quit)},
+#ifdef MAC_INTEGRATION	
+	{"EditPreferences", GTK_STOCK_PREFERENCES, N_("Preference_s..."), "<control>comma", N_("Edit Preferences"),
+	 G_CALLBACK(ui_preferences)},
+#else
 	{"EditPreferences", GTK_STOCK_PREFERENCES, N_("Preference_s..."), NULL, N_("Edit Preferences"),
 	 G_CALLBACK(ui_preferences)},
+#endif
 	{"EditSelectAll", NULL, N_("Select _All"), "<control>A", N_("Select all"), G_CALLBACK(ui_select_all)},
 	{"DocAddBookmark", NULL, N_("Toggle Boo_kmark"), "<control>k", N_("Toggle bookmark"),
 	 G_CALLBACK(ui_bookmark_toggle)},
@@ -983,8 +988,13 @@ static const GtkActionEntry document_actions[] = {
 	 G_CALLBACK(ui_file_save_copy)},
 	{"FileInsert", NULL, N_("_Insert..."), NULL, N_("Insert file"), G_CALLBACK(ui_insert_doc)},	/* Required to move here to disable sensitivity on OSX */
 	{"FileRename", NULL, N_("Rena_me..."), "F2", N_("Rename file"), G_CALLBACK(ui_file_rename)},
+#ifdef MAC_INTEGRATION			/* On Mac we configure this to alt and then moving them to control */
+	{"EditIndent", GTK_STOCK_INDENT, N_("_Indent"), "<alt>period", N_("Indent"), G_CALLBACK(ui_indent)},
+	{"EditUnindent", GTK_STOCK_UNINDENT, N_("Unin_dent"), "<alt>comma", N_("Unindent"),
+#else
 	{"EditIndent", GTK_STOCK_INDENT, N_("_Indent"), "<control>period", N_("Indent"), G_CALLBACK(ui_indent)},
 	{"EditUnindent", GTK_STOCK_UNINDENT, N_("Unin_dent"), "<control>comma", N_("Unindent"),
+#endif
 	 G_CALLBACK(ui_unindent)},
 	{"BookmarkFirst", GTK_STOCK_GOTO_TOP, N_("F_irst Bookmark"), NULL, N_("Goto first bookmark"),
 	 G_CALLBACK(ui_bookmark_first)},
@@ -1004,6 +1014,19 @@ static const GtkActionEntry document_actions[] = {
 	 G_CALLBACK(ui_reorder_tab_byfullpath)},
 	{"DocRecent", NULL, N_("_Recent Document"), "<control>Tab", N_("Goto most recent document"),
 	 G_CALLBACK(ui_doc_recent)},
+#ifdef MAC_INTEGRATION			/* On Mac keyboard we do not have Home, PageUp etc keys. We configure this to alt and then moving them to control */
+	{"DocFirst", GTK_STOCK_GOTO_FIRST, N_("_First Document"), "<shift><alt>Left",
+	 N_("Goto first document"),
+	 G_CALLBACK(ui_doc_first)},
+	{"DocLast", GTK_STOCK_GOTO_LAST, N_("_Last Document"), "<shift><alt>Right",
+	 N_("Goto last document"),
+	 G_CALLBACK(ui_doc_last)},
+	{"DocNext", GTK_STOCK_GO_FORWARD, N_("_Next Document"), "<alt>Right", N_("Goto next document"),
+	 G_CALLBACK(ui_doc_next)},
+	{"DocPrevious", GTK_STOCK_GO_BACK, N_("_Previous Document"), "<alt>Left",
+	 N_("Goto previous document"),
+	 G_CALLBACK(ui_doc_previous)},
+#else
 	{"DocFirst", GTK_STOCK_GOTO_FIRST, N_("_First Document"), "<shift><control>Page_Up",
 	 N_("Goto first document"),
 	 G_CALLBACK(ui_doc_first)},
@@ -1015,6 +1038,7 @@ static const GtkActionEntry document_actions[] = {
 	{"DocPrevious", GTK_STOCK_GO_BACK, N_("_Previous Document"), "<control>Page_Up",
 	 N_("Goto previous document"),
 	 G_CALLBACK(ui_doc_previous)},
+#endif
 	{"GotoLine", NULL, N_("_Goto Line"), "<control>L", N_("Goto line"), G_CALLBACK(ui_goto_line)},
 	{"GotoLineSelection", NULL, N_("Goto Line Number from _Clipboard"), "<shift><control>L",
 	 N_("Goto line number in clipboard or selection"), G_CALLBACK(ui_goto_line_selection)},
