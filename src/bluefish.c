@@ -67,7 +67,7 @@
 #include "file_autosave.h"
 #include "languages.h"
 
-#ifdef MAC_INTEGRATION
+#ifdef PLATFORM_DARWIN
 #include "osxutils.h"
 #endif
 
@@ -136,24 +136,6 @@ static void handle_signals(void) {
 #ifdef WINLOGFILE
 #include <glib/gstdio.h>
 FILE *winlogfile = NULL;
-#endif
-
-typedef struct {
-	Tbfwin *firstbfwin;
-	GList *filenames;
-	guint state;
-#ifdef MAC_INTEGRATION
-	GMainLoop *startup_main_loop;
-#endif
-} Tstartup;
-
-#ifdef MAC_INTEGRATION /* quits startup loop and releases pointers */
-void startup_finished_cb(gpointer data) {
-	Tstartup *startup=data;
-	g_main_loop_quit (startup->startup_main_loop);
-	g_main_loop_unref (startup->startup_main_loop);
-	g_free(startup);
-}
 #endif
 
 static gboolean startup_in_idle(gpointer data) {
@@ -265,12 +247,14 @@ int main(int argc, char *argv[])
 	static gboolean arg_curwindow = FALSE, arg_newwindow=FALSE;
 	static gchar **files = NULL;
 	Tstartup *startup;
+	
+#ifdef PLATFORM_DARWIN
+	osx_setenv(&argc, &argv);
+#endif	
+	
 #ifdef MAC_INTEGRATION
 	GPollFunc orig_poll_func;
 	GPollFunc gdk_poll_func;
-	
-	
-	osx_setenv(argv[0]);
 #endif
 
 #ifdef WINLOGFILE

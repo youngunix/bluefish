@@ -20,12 +20,13 @@
 #ifndef __OSXUTILS_H_
 #define __OSXUTILS_H_
 
-void osx_setenv (const gchar *progname);
+void osx_setenv (int *argc, char **argv[]);
 
+#ifdef MAC_INTEGRATION
 gboolean osx_open_file_cb(GtkosxApplication *app, gchar *path, gpointer user_data);
 gboolean osx_block_termination_cb(GtkosxApplication *app, gpointer user_data);
 void osx_will_terminate_cb(GtkosxApplication *app, gpointer user_data);
-
-
+void osx_startup_finished_cb(gpointer data);
+#endif
 
 #endif /* __OSXUTILS_H_ */
