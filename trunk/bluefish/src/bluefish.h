@@ -612,6 +612,15 @@ typedef struct {
 } Tbfwin;
 
 typedef struct {
+	Tbfwin *firstbfwin;
+	GList *filenames;
+	guint state;
+#ifdef MAC_INTEGRATION
+	GMainLoop *startup_main_loop;
+#endif
+} Tstartup;
+
+typedef struct {
 	Tproperties props;			/* preferences */
 	gpointer prefdialog;		/* preferences window, there should be only 1 */
 	Tglobalsession globses;		/* global session */
