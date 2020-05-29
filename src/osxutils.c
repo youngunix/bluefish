@@ -22,13 +22,9 @@
 #include <gtk/gtk.h>
 #include <limits.h>
 #include <stdlib.h>
-<<<<<<< .mine
 #include <sys/types.h>
 #include <string.h>	
 #include "bluefish.h"
-=======
-#include <sys/param.h>
->>>>>>> .r8865
 
 #ifdef PLATFORM_DARWIN
 
