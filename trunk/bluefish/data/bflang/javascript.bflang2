@@ -29,8 +29,9 @@
 	<option name="load_reference" default="1"/>
 	<option name="load_completion" default="1"/>
 	<option name="show_in_menu" default="1"/>
-	<option name="autocomplete_with_newlines" default="0" description="autocomplete with newlines"/>
-	<option name="autocomplete_javascript_var" default="1" description="autocomplete javascript variables"/>
+	<option name="autocomplete_with_newlines" default="0" description="Autocomplete with newlines"/>
+	<option name="autocomplete_javascript_var" default="1" description="Autocomplete javascript variables"/>
+	<option name="autocomplete_javascript_let" default="1" description="Autocomplete javascript variables"/>
 	<option name="javascript_object_methods" default="1" description="Autocomplete Javascript object methods" />
 	<option name="javascript_css_properties" default="1" description="CSS properties" />
 	<option name="JQuery" default="0" description="include JQuery syntax" />
@@ -45,6 +46,7 @@
 	<highlight name="js-type" style="type"  />
 	<highlight name="js-value" style="value"  />
 	<highlight name="js-variable" style="variable"  />
+	<highlight name="js-regex" style="special-tag3"  />
 </header>
 <properties>
 	<comment id="cm.cblockcomment" type="block" start="/*" end="*/" />
@@ -56,8 +58,8 @@
 
 <definition>
 	<context symbols=" ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;." commentid_line="cm.cpplinecomment"  commentid_block="cm.cblockcomment">
-		<element pattern="(" id="e.html.js.lparen" starts_block="1" highlight="js-brackets" />
-		<element pattern=")" highlight="js-brackets" ends_block="1" blockstartelement="e.html.js.lparen" />
+		<element pattern="\([ ]*" id="e.html.js.lparen" is_regex="1" starts_block="1" highlight="js-brackets" />
+		<element pattern="[ ]*\)" highlight="js-brackets" is_regex="1" ends_block="1" blockstartelement="e.html.js.lparen" />
 		<element pattern="{" id="e.html.js.lbrace" starts_block="1" highlight="js-brackets" block_name="Curly brackets block"/>
 		<element pattern="}" highlight="js-brackets" ends_block="1" blockstartelement="e.html.js.lbrace" />
 		<element pattern="[" id="e.html.js.lbracket" starts_block="1" highlight="js-brackets" />
