@@ -213,16 +213,18 @@ osx_setenv(int *argc, char **argv[])
 			g_snprintf (tmptest, sizeof(tmptest), "%s/%s", tmploc, short_locale);
 			if (!stat (tmptest,&sb) && S_ISDIR (sb.st_mode)) {
 				match_locale(code_table, sizeof (code_table) / sizeof (code_table[0]), short_locale, &matched_locale);
-				DEBUG_MSG("osx_setenv, matched_locale is %s\n", matched_locale);
+				DEBUG_MSG("osx_setenv, user-supplied locale is %s\n", matched_locale);
 				if (matched_locale) {
 					if (setlocale(LC_ALL, matched_locale)) {
-						DEBUG_MSG("osx_setenv, received -AppleLanguages option is valid, setting environment for %s\n", matched_locale);
-						g_setenv("LC_ALL",  matched_locale, TRUE);
-						g_free(short_locale);
-						g_free(locale_dir);
-						g_free(dirn);
-						return;
+						DEBUG_MSG("osx_setenv, user-supplied -AppleLanguages option is valid, setting environment for %s\n", matched_locale);
+					} else {
+						DEBUG_MSG("osx_setenv, user-supplied -AppleLanguages option does not have valid locale, using it as is.\n", matched_locale);
 					}
+					g_setenv("LC_ALL",  matched_locale, TRUE);
+					g_free(short_locale);
+					g_free(locale_dir);
+					g_free(dirn);
+					return;
 				}
 			}
 		}
