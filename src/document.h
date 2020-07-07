@@ -22,6 +22,15 @@
 #ifndef __DOCUMENT_H_
 #define __DOCUMENT_H_
 
+#if defined(__GNUC__) || (defined(__SUNPRO_C) && __SUNPRO_C > 0x580)
+#define DBG_NONE(args...)
+ /**/
+#else							/* notdef __GNUC__ || __SUNPRO_C */
+extern void g_none(char *first, ...);
+#define DBG_NONE g_none
+#endif
+#define DEBUG_ENCODING DBG_NONE
+
 typedef struct {
 	Tdocument *doc;
 	GtkTextMark *start;
