@@ -33,7 +33,7 @@ for the description of the zen-editor interface
 
 typedef struct {
 	PyObject_HEAD
-	gchar *profile;
+	char *profile;
 	Tdocument *context;
 } Tzeneditor;
 
@@ -403,7 +403,7 @@ zeneditor_init(Tzeneditor *self, PyObject *args, PyObject *kwds)
 		}
 		if (profile) {
 #ifdef IS_PY3K
-			self->profile = PyUnicode_AsEncodedString(profile, "utf-8","Error ~");
+			self->profile = PyUnicode_AsUTF8(profile);
 #else
 			self->profile = PyString_AsString(profile);
 #endif
