@@ -216,7 +216,7 @@ queue_push(Tasyncqueue * queue, gpointer item)
 #endif
 	}
 	if (queue->cancelled) {
-		g_print("queue_push, pushing on cancelled queue, setting cancelled to FALSE\n");
+		DBG_THREAD("queue_push, pushing on cancelled queue, setting cancelled to FALSE\n");
 		queue->cancelled = FALSE;	
 	}
 	g_queue_push_head(&queue->q, item);

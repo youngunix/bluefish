@@ -404,7 +404,7 @@ documentlist_return_document_from_uri(GList * doclist, GFile * uri)
 			if (tmplist->data != g_hash_table_lookup(main_v->alldochash, uri)) {
 				g_warning("document uri hash table is corrupt!!!!!!!!!!!!!!\n");
 			} else {
-				g_print("alldochash is correct\n");
+				DEBUG_MSG("alldochash is correct\n");
 			}
 			return DOCUMENT(tmplist->data);
 		}
