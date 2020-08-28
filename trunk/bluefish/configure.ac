@@ -572,15 +572,18 @@ AC_ARG_ENABLE(
 )
 
 if test "x$enable_python" = "xyes" ; then
+	AM_PATH_PYTHON([3.0])
+
 	AM_PATH_PYTHON(,[
 		AC_ARG_VAR([PYTHON_INCLUDE], [Include flags for python, bypassing python-config])
 		AC_ARG_VAR([PYTHON_CONFIG], [Path to python-config])
 		AS_IF([test -z "$PYTHON_INCLUDE"], [
 		  AS_IF([test -z "$PYTHON_CONFIG"], [
+		    FULLPYTHONPATH=`which $PYTHON`
 		    AC_PATH_PROGS([PYTHON_CONFIG],
 		                  [python$PYTHON_VERSION-config python-config],
 		                  [no],
-		                  [`dirname $PYTHON`])
+		                  [`dirname $FULLPYTHONPATH`])
 		    AS_IF([test "$PYTHON_CONFIG" = no], [enable_python=no])
 		  ])
 		  if test "x$enable_python" = "xyes" ; then
