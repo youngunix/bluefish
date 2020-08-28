@@ -593,7 +593,7 @@ if test "x$enable_python" = "xyes" ; then
 		  	CFLAGS="$CFLAGS $PYTHON_INCLUDE"
 		  	AC_MSG_CHECKING([python libs])
 # beware, --embed is only available since python 3.8
-		  	PYTHON_LDFLAGS=`$PYTHON_CONFIG --embed --ldflags`
+		  	AS_IF([PYTHON_LDFLAGS=`$PYTHON_CONFIG --embed --ldflags`],[],[PYTHON_LDFLAGS=`$PYTHON_CONFIG --ldflags`])
 		  	AC_MSG_RESULT([$PYTHON_LDFLAGS])
 		  	LDFLAGS="$LDFLAGS $PYTHON_LDFLAGS"
 		  fi
