@@ -218,7 +218,7 @@ osx_setenv(int *argc, char **argv[])
 					if (setlocale(LC_ALL, matched_locale)) {
 						DEBUG_MSG("osx_setenv, user-supplied -AppleLanguages option is valid, setting environment for %s\n", matched_locale);
 					} else {
-						DEBUG_MSG("osx_setenv, user-supplied -AppleLanguages option does not have valid locale, using it as is.\n", matched_locale);
+						DEBUG_MSG("osx_setenv, user-supplied -AppleLanguages option does not have valid locale, will use it as supplied.\n");
 					}
 					g_setenv("LC_ALL",  matched_locale, TRUE);
 					g_free(short_locale);
