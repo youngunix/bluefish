@@ -11,7 +11,7 @@ dnl ************************
 
 AC_PREREQ([2.59])
 
-AC_INIT([bluefish],[2.2.11],[https://sourceforge.net/p/bluefish/tickets/])
+AC_INIT([bluefish],[2.2.12rc1],[https://sourceforge.net/p/bluefish/tickets/])
 
 dnl Have to save them here!
 if test "${ac_configure_args+set}" != "set" ; then
@@ -572,7 +572,12 @@ AC_ARG_ENABLE(
 )
 
 if test "x$enable_python" = "xyes" ; then
-	AM_PATH_PYTHON([3.3])
+	AC_MSG_NOTICE([searching for different python versions])
+	
+	AM_PATH_PYTHON([3.3],
+		AC_MSG_NOTICE([found python > 3.3]),
+		AC_MSG_NOTICE([did not find python > 3.3])
+	)
 
 	AM_PATH_PYTHON(,[
 		AC_ARG_VAR([PYTHON_INCLUDE], [Include flags for python, bypassing python-config])
