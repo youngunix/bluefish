@@ -576,7 +576,10 @@ if test "x$enable_python" = "xyes" ; then
 	
 	AM_PATH_PYTHON([3.3],
 		AC_MSG_NOTICE([found python > 3.3]),
-		AC_MSG_NOTICE([did not find python > 3.3])
+		[
+          AC_MSG_NOTICE([did not find python > 3.3])
+          unset PYTHON
+        ]
 	)
 
 	AM_PATH_PYTHON(,[
