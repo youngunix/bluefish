@@ -1,29 +1,41 @@
-The complete VCS changelog can be obtained from our subversion repository
-using the `svn2cl' utility. The release changelogs are also available from
-our homepage: http://bluefish.openoffice.nl.
+The complete VCS changelog can be obtained from our subversion repository using
+the `svn2cl' utility. The release changelogs are also available from our
+homepage: http://bluefish.openoffice.nl.
 
-* 2.2.11 *
+* 2.2.12 *
 
-Bluefish 2.2.11 is a minor maintenance release and minor feature release. The 
-only exception to that is the python 3 compatibility which is a major change. 
-If you compile Bluefish with python 3, you might experience new bugs. There 
-are various minor changes as well. Double click selection has been improved 
-(for example selecting a function name that has underscores), and is now 
-configurable per language. Bluefish now has a feature to fill a line with 
-spaces up to a mouse click, so you can start typing in any position on the 
-screen (with a fixed width font). A crash when running very large replace 
-actions on disk on many files has been fixed. Search and replace now ignore 
-backup files by default. Cursor highlighting and line highlighting have been 
-fixed for a rare bug. A small new feature has been added, to insert output from 
-an external command in the current cursor position. Many language files have seen 
-updates, most notably CSS, Python and HTML. A data loss bug - when an unknown 
-encoding was selected - was fixed, the fallback is now to save as UTF-8. A bug 
-when saving with unknown characters in the filename has also been fixed. Printing 
-has been improved such as printing in landscape. Some small tweaks to the UI have 
-been implemented. For example you can now search in files in the filebrowser (right 
-click a directory). Search results can now be shown in the output pane. The current 
-identifier can be selected using <shift><control><i>. There various fixes when 
-Bluefish is run on top of Wayland.      
+Bluefish 2.2.12 is a minor maintenance release with some minor new features.
+Most important is a fix for a crash in simple search. Python 3 compatibility has
+been further improved. Encoding detection in python files has been improved.
+Triple click now selects the line. On Mac OSX Bluefish deals better with the new
+permission features. Also using the correct language in the Bluefish user
+interface is fixed for certain languages on OSX. Several programming languages
+have improved syntax highlighting. Bluefish now works fine with Enchant2 for
+spell checking.
+
+ * 2.2.11 *
+
+Bluefish 2.2.11 is a minor maintenance release and minor feature release. The
+only exception to that is the python 3 compatibility which is a major change.
+If you compile Bluefish with python 3, you might experience new bugs. There  are
+various minor changes as well. Double click selection has been improved  (for
+example selecting a function name that has underscores), and is now
+configurable per language. Bluefish now has a feature to fill a line with
+spaces up to a mouse click, so you can start typing in any position on the
+screen (with a fixed width font). A crash when running very large replace
+actions on disk on many files has been fixed. Search and replace now ignore
+backup files by default. Cursor highlighting and line highlighting have been
+fixed for a rare bug. A small new feature has been added, to insert output from
+an external command in the current cursor position. Many language files have
+seen  updates, most notably CSS, Python and HTML. A data loss bug - when an
+unknown  encoding was selected - was fixed, the fallback is now to save as
+UTF-8. A bug  when saving with unknown characters in the filename has also been
+fixed. Printing  has been improved such as printing in landscape. Some small
+tweaks to the UI have  been implemented. For example you can now search in files
+in the filebrowser (right  click a directory). Search results can now be shown
+in the output pane. The current  identifier can be selected using
+<shift><control><i>. There various fixes when  Bluefish is run on top of
+Wayland.      
 
 * 2.2.10 *
 
@@ -37,40 +49,39 @@ theme. Last there have been fixes for a few rare crashes.
 * 2.2.9 *
 
 Bluefish 2.2.9 is a maintenance release that most importantly fixes
-incompatibility with Gtk 3.20. Next to that some small dialogs have
-been improved, and some user interface parts have been polished. 
+incompatibility with Gtk 3.20. Next to that some small dialogs have been
+improved, and some user interface parts have been polished. 
 
 * 2.2.8 *
 
 Bluefish 2.2.8 is a bugfix release with some small improvements and more
-poloshed existing features.  It fixes a few serious but rarely occuring
-bugs.  Options defined in the language definition files are now translated. 
-Various default settings have been improved, most notably the command to
-launch Firefox for preview.  The looks on newer gtk versions have been
-restored.  CSS can now be compressed and decompressed.  The installers for
-Windows and OSX have improvements, and there have been some OSX and Windows
-specific fixes.  Character encoding detection has been improved. 
-Auto-completion for HTML attributes has been improved.
+poloshed existing features.  It fixes a few serious but rarely occuring bugs.
+Options defined in the language definition files are now translated.  Various
+default settings have been improved, most notably the command to launch Firefox
+for preview.  The looks on newer gtk versions have been restored.  CSS can now
+be compressed and decompressed.  The installers for Windows and OSX have
+improvements, and there have been some OSX and Windows specific fixes.
+Character encoding detection has been improved.  Auto-completion for HTML
+attributes has been improved.
 
 * 2.2.7 *
 
 Bluefish 2.2.7 is mostly a bug fix release. It fixes rare crashes in the
 autocompletion, the filebrowser, the htmlbar plugin preferences, and in
-file-load-cancel, fixes a rare case of broken syntax highlighting after
-multiple search/replace actions. It furthermore displays better
-error/warning output when parsing language files. It also finally fixes
-javascript regex syntax highlighting. The loading of files with corrupt
-encoding has been improved, and project loading over sftp has been improved. 
-Various HTML5 tags have been added, and HTML5 is the default now for php,
-cfml and other languages that can include html syntax. Saving and loading
-of UTF-16 encoded files was broken and has been fixes. Various languages
-have better support, such as javascript, css, html, pascal/deplhi, and html
-has improved autocompletion. On OSX the keys for tab switching no longer
-confict with some keyboard layouts, and behavior at shutdown was improved. 
-The upload/download feature has a new option to ignore backup files.  The
-home/end keys now work better on wrapped tekst.  And finally the search and
-replace dialog correctly shows the number of results when searching in files
-on disk.
+file-load-cancel, fixes a rare case of broken syntax highlighting after multiple
+search/replace actions. It furthermore displays better error/warning output when
+parsing language files. It also finally fixes javascript regex syntax
+highlighting. The loading of files with corrupt encoding has been improved, and
+project loading over sftp has been improved.  Various HTML5 tags have been
+added, and HTML5 is the default now for php, cfml and other languages that can
+include html syntax. Saving and loading of UTF-16 encoded files was broken and
+has been fixes. Various languages have better support, such as javascript, css,
+html, pascal/deplhi, and html has improved autocompletion. On OSX the keys for
+tab switching no longer confict with some keyboard layouts, and behavior at
+shutdown was improved.  The upload/download feature has a new option to ignore
+backup files.  The home/end keys now work better on wrapped tekst.  And finally
+the search and replace dialog correctly shows the number of results when
+searching in files on disk.
 
 * 2.2.6 *
 
@@ -141,8 +152,7 @@ improved, and more user configurable options have been added to most language
 files. You can now select a block of text by dragging the mouse in the margin,
 and move the selected block with <ctrl><up> and <ctrl><down>.
 
-
-* 2.2.2 *
+ * 2.2.2 *
 
 Bluefish 2.2.2 is largely a bug fix release with some very minor new features. A
 regression in the search functionality was fixed, that caused a segfault if a
