@@ -1,5 +1,8 @@
 To install Bluefish from source:
 
+More extensive documentation is found here:
+https://bfwiki.tellefsen.net/index.php/Compiling_Bluefish_from_source
+
 You can download Bluefish source packages from:
 http://www.bennewitz.com/bluefish/stable/
 http://sourceforge.net/projects/bluefish/files/
@@ -10,7 +13,7 @@ svn co svn://svn.code.sf.net/p/bluefish/code/trunk/bluefish
 0) Installing from SVN requires some additional tools to create the build
    environment:
 
-     automake (>= 1.8), autoconf (>= 2.59), libtool, gettext, intltool
+     automake, autoconf, libtool, gettext, intltool, make
 
    Then run:
 
@@ -20,10 +23,10 @@ svn co svn://svn.code.sf.net/p/bluefish/code/trunk/bluefish
    libraries (search for packages with a -dev or -devel suffix and/or prefix
    lib, e.g. libgtk2.0-dev)
 
-     - Gtk 2 (2.20 or newer) or 3 (3.2.2) or newer
-     - libxml2
-     - libenchant (optional for spell checking)
-     - libgucharmap (optional for character map plugin. Version 2.x is recommended)
+     - Gtk 2 (2.20 or newer) or 3 (3.3) or newer
+     - libxml2-dev
+     - libenchant-2-dev (optional for spell checking)
+     - libgucharmap-dev (optional for character map plugin. Version 2.x is recommended)
      - python-dev (optional)
      
 2) Configure the sources:
@@ -37,7 +40,7 @@ svn co svn://svn.code.sf.net/p/bluefish/code/trunk/bluefish
 
      $ make
 
-4) Install everything. This usually needs root privileges:
+4) Install everything. This usually needs root or sudo privileges:
 
      # make install
 
