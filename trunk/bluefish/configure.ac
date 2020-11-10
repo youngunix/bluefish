@@ -11,7 +11,7 @@ dnl ************************
 
 AC_PREREQ([2.59])
 
-AC_INIT([bluefish],[2.2.12],[https://sourceforge.net/p/bluefish/tickets/])
+AC_INIT([bluefish],[2.2.13beta],[https://sourceforge.net/p/bluefish/tickets/])
 
 dnl Have to save them here!
 if test "${ac_configure_args+set}" != "set" ; then
