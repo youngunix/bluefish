@@ -124,6 +124,9 @@ enum {
 	BM_SEARCH_BOTH
 };
 
+static void bmark_get_iter_at_tree_position_and_show(Tbfwin * bfwin, Tbmark * m);
+static Tbmark *bmark_from_strarr(gchar **items, GFile *cacheduri);
+
 /* Free bookmark structure */
 static void
 bmark_free(gpointer ptr)
@@ -306,16 +309,37 @@ bmark_rename_uri(Tbfwin * bfwin, Tbmark * b, Tdocument * doc)
 	}
 }
 
+/* 
+ * bmark_doc_renamed
+ * called from doc_set_uri 
+ * whic is called during save_as or rename or when a document is gone missing on disk
+*/
 void
-bmark_doc_renamed(Tbfwin * bfwin, Tdocument * doc)
+bmark_doc_renamed(Tbfwin * bfwin, Tdocument * doc, GFile *copy_bookmarks_uri)
 {
 	if (!doc->bmark_parent) {
 		DEBUG_MSG("bmark_doc_renamed, doc %p with uri %p has no bmark_parent, return\n", doc, doc->uri);
 		return;
 	}
+	GList *copylist = NULL, *tmplist;
 	GtkTreeIter tmpiter;
 	gboolean cont;
 	gboolean parent_renamed = FALSE;
+	
+	if (copy_bookmarks_uri) {
+		cont = gtk_tree_model_iter_children(GTK_TREE_MODEL(BMARKDATA(bfwin->bmarkdata)->bookmarkstore), &tmpiter,doc->bmark_parent);
+		while (cont) {
+			Tbmark *b;
+			gchar **newstrarr;
+			gtk_tree_model_get(GTK_TREE_MODEL(BMARKDATA(bfwin->bmarkdata)->bookmarkstore), &tmpiter,PTR_COLUMN, &b, -1);
+			cont = gtk_tree_model_iter_next(GTK_TREE_MODEL(BMARKDATA(bfwin->bmarkdata)->bookmarkstore), &tmpiter);
+			if (!b) {
+				continue;
+			}
+			newstrarr = g_strdupv(b->strarr);
+			copylist = g_list_prepend(copylist, newstrarr);
+		}
+	}
 
 	cont =
 		gtk_tree_model_iter_children(GTK_TREE_MODEL(BMARKDATA(bfwin->bmarkdata)->bookmarkstore), &tmpiter,
@@ -360,6 +384,11 @@ bmark_doc_renamed(Tbfwin * bfwin, Tdocument * doc)
 			parent_renamed = TRUE;
 		}
 	}
+	for (tmplist = g_list_first(copylist);tmplist;tmplist=tmplist->next) {
+		Tbmark *b = bmark_from_strarr(tmplist->data, copy_bookmarks_uri);
+		bmark_get_iter_at_tree_position_and_show(bfwin, b);
+	}
+	
 }
 
 /* removes the bookmark from the session, removed the b->strarr pointer and frees it */
@@ -1316,25 +1345,27 @@ bmark_gui(Tbfwin * bfwin)
 }
 
 /**
- * bmark_get_iter_at_tree_position:
+ * bmark_get_iter_at_tree_position_and_show:
  *
  * determine bookmark's location in the tree and  insert - result GtkTreeIter is stored in m->iter
+ *
  */
 static void
-bmark_get_iter_at_tree_position(Tbfwin * bfwin, Tbmark * m)
+bmark_get_iter_at_tree_position_and_show(Tbfwin * bfwin, Tbmark * m)
 {
 	GtkTreeIter *parent;
 	gpointer ptr;
-	DEBUG_MSG("bmark_get_iter_at_tree_position, started\n");
+	gchar *displaytext;
+	DEBUG_MSG("bmark_get_iter_at_tree_position_and_show, started\n");
 	ptr = g_hash_table_lookup(BMARKDATA(bfwin->bmarkdata)->bmarkfiles, m->uri);
-	DEBUG_MSG("bmark_get_iter_at_tree_position, found %p in hashtable %p\n", ptr,
+	DEBUG_MSG("bmark_get_iter_at_tree_position_and_show, found %p in hashtable %p\n", ptr,
 			  BMARKDATA(bfwin->bmarkdata)->bmarkfiles);
 	if (ptr == NULL) {			/* closed document or bookmarks never set */
 		gchar *title;
 		parent = g_slice_new0(GtkTreeIter);
 #ifdef BMARKREF
 		bmarkref.itercount++;
-		g_print("bmark_get_iter_at_tree_position, itercount=%d\n", bmarkref.itercount);
+		g_print("bmark_get_iter_at_tree_position_and_show, itercount=%d\n", bmarkref.itercount);
 #endif
 		/* we should sort the document names in the treestore */
 		title = bmark_filename(bfwin, m->uri);
@@ -1348,7 +1379,7 @@ bmark_get_iter_at_tree_position(Tbfwin * bfwin, Tbmark * m)
 		if (m->doc != NULL) {
 			m->doc->bmark_parent = parent;
 		}
-		DEBUG_MSG("bmark_get_iter_at_tree_position, appending parent %p in hashtable %p\n", parent,
+		DEBUG_MSG("bmark_get_iter_at_tree_position_and_show, appending parent %p in hashtable %p\n", parent,
 				  BMARKDATA(bfwin->bmarkdata)->bmarkfiles);
 		/* the hash table frees the key, but not the value, on destroy */
 		g_object_ref(m->uri);
@@ -1357,6 +1388,10 @@ bmark_get_iter_at_tree_position(Tbfwin * bfwin, Tbmark * m)
 		parent = (GtkTreeIter *) ptr;
 	}
 	gtk_tree_store_prepend(BMARKDATA(bfwin->bmarkdata)->bookmarkstore, &m->iter, parent);
+	displaytext = bmark_showname(bfwin, m);
+	gtk_tree_store_set(BMARKDATA(bfwin->bmarkdata)->bookmarkstore, &m->iter, NAME_COLUMN,
+					   displaytext, PTR_COLUMN, m, -1);
+	g_free(displaytext);
 }
 
 static gint
@@ -1455,6 +1490,36 @@ bookmark_data_cleanup(gpointer data)
 	return NULL;
 }
 
+static Tbmark *
+bmark_from_strarr(gchar **items, GFile *cacheduri) {
+	Tbmark *b;
+	b = g_slice_new0(Tbmark);
+	b->name = g_strdup(items[0]);
+	b->description = g_strdup(items[1]);
+	if (strchr(items[2], ':') == NULL) {
+		gchar *tmp;
+		tmp = g_strconcat("file://", items[2], NULL);
+		b->uri = g_file_parse_name(tmp);
+		g_free(tmp);
+	} else {
+		b->uri = g_file_parse_name(items[2]);
+	}
+	if (cacheduri && (cacheduri == b->uri || g_file_equal(cacheduri, b->uri))) {
+		DEBUG_MSG("bmark_from_strarr, uri %p and %p are identical, unref %p and use %p\n", cacheduri,
+				  b->uri, b->uri, cacheduri);
+		g_object_unref(b->uri);
+		b->uri = g_object_ref(cacheduri);;
+	} else {
+		DEBUG_MSG("bmark_from_strarr, new uri %p\n", b->uri);
+		cacheduri = b->uri;
+	}
+	b->offset = atoi(items[3]);
+	b->text = g_strdup(items[4]);
+	b->len = atoi(items[5]);
+	b->strarr = items;
+	return b;
+}
+
 /* this function will load the bookmarks
  * from bfwin->session->bmarks and parse
  * them into treestore BMARKDATA(bfwin->bmarkdata)->bookmarkstore
@@ -1462,7 +1527,7 @@ bookmark_data_cleanup(gpointer data)
  * it is called from bluefish.c for the first window (global bookmarks)
  * and from project.c during opening a project
  *
- * this function should ALSO check all douments that are
+ * this function should ALSO check all documents that are
  * opened (bfwin->documentlist) if they have bookmarks !!
  */
 void
@@ -1478,43 +1543,11 @@ bmark_reload(Tbfwin * bfwin)
 	while (tmplist) {
 		gchar **items = (gchar **) tmplist->data;
 		if (items && g_strv_length(items) == 6) {
-			gchar *ptr;
 			Tbmark *b;
-			b = g_slice_new0(Tbmark);
-			/*g_print("bmark_reload, alloc bmark %p\n",b); */
-			b->name = g_strdup(items[0]);
-			b->description = g_strdup(items[1]);
-			/* convert old (Bf 1.0) bookmarks to new bookmarks with uri's */
-			if (strchr(items[2], ':') == NULL) {
-				gchar *tmp;
-				tmp = g_strconcat("file://", items[2], NULL);
-				b->uri = g_file_parse_name(tmp);
-				g_free(tmp);
-			} else {
-				b->uri = g_file_parse_name(items[2]);
-			}
-			/* because the bookmark list is usually sorted, we try to cache the uri's and consume less memory */
-			if (cacheduri && (cacheduri == b->uri || g_file_equal(cacheduri, b->uri))) {
-				DEBUG_MSG("bmark_reload, uri %p and %p are identical, unref %p and use %p\n", cacheduri,
-						  b->uri, b->uri, cacheduri);
-				g_object_unref(b->uri);
-				b->uri = g_object_ref(cacheduri);;
-			} else {
-				DEBUG_MSG("bmark_reload, new uri %p\n", b->uri);
-				cacheduri = b->uri;
-			}
-
-			b->offset = atoi(items[3]);
-			b->text = g_strdup(items[4]);
-			b->len = atoi(items[5]);
-			b->strarr = items;
+			b = bmark_from_strarr(items, cacheduri);
 			DEBUG_MSG("bmark_reload, loaded bookmark %p for uri=%pat offset %d with text %s\n", b,
 					  b->uri, b->offset, b->text);
-			bmark_get_iter_at_tree_position(bfwin, b);
-			ptr = bmark_showname(bfwin, b);
-			gtk_tree_store_set(BMARKDATA(bfwin->bmarkdata)->bookmarkstore, &(b->iter), NAME_COLUMN, ptr,
-							   PTR_COLUMN, b, -1);
-			g_free(ptr);
+			bmark_get_iter_at_tree_position_and_show(bfwin, b);
 		}
 		tmplist = g_list_next(tmplist);
 	}
@@ -1825,11 +1858,8 @@ bmark_add_backend(Tdocument * doc, GtkTextIter * itoffset, gint offset, const gc
 	m->description = g_strdup("");
 
 	/* insert into tree */
-	bmark_get_iter_at_tree_position(doc->bfwin, m);
-	displaytext = bmark_showname(doc->bfwin, m);
-	gtk_tree_store_set(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore, &m->iter, NAME_COLUMN,
-					   displaytext, PTR_COLUMN, m, -1);
-	g_free(displaytext);
+	bmark_get_iter_at_tree_position_and_show(doc->bfwin, m);
+	
 
 	/* and store */
 	if (!m->is_temp) {

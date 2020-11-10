@@ -345,16 +345,22 @@ documentlist_return_index_from_uri(GList * doclist, GFile * uri)
 	return -1;
 }
 
+/*
+* doc_set_uri
+* called whenever the file has a new location, usually save as, rename(move), or if the file is found missing on disk 
+* copy_bookmarkt is set to TRUE if the bookmarks need copied, else they are moved (so the bookmarks for the old file are removed)
+*/
 void
-doc_set_uri(Tdocument * doc, GFile * uri, gboolean on_destroy)
+doc_set_uri(Tdocument * doc, GFile * uri, gboolean on_destroy, gboolean copy_bookmarks)
 {
 	if (uri == doc->uri)
 		return;
+	GFile *olduri = NULL;
 
 	if (doc->uri) {
 		g_hash_table_remove(main_v->alldochash, doc->uri);
 		fb2_file_is_closed(doc->uri);
-		g_object_unref(doc->uri);
+		olduri = doc->uri;
 	}
 	doc->uri = uri;
 	if (doc->uri) {
@@ -372,7 +378,10 @@ doc_set_uri(Tdocument * doc, GFile * uri, gboolean on_destroy)
 	}
 	if (!on_destroy) {
 		DEBUG_MSG("doc_set_uri, call bmark_doc_renamed for doc %p (new uri %p)\n", doc, uri);
-		bmark_doc_renamed(BFWIN(doc->bfwin), doc);
+		bmark_doc_renamed(BFWIN(doc->bfwin), doc, copy_bookmarks ? olduri : NULL);
+	}
+	if (olduri){
+		g_object_unref(olduri);
 	}
 }
 
@@ -2705,7 +2714,7 @@ doc_destroy(Tdocument * doc, gboolean delay_activation)
 			g_object_unref(backupuri);
 		}
 		DEBUG_MSG("doc_destroy, unref doc->uri %p\n", doc->uri);
-		doc_set_uri(doc, NULL, TRUE);
+		doc_set_uri(doc, NULL, TRUE, FALSE);
 	}
 
 	if (doc->encoding)
@@ -2739,7 +2748,7 @@ document_unset_filename(Tdocument * doc)
 		tmpstr = g_strconcat(_("Previously: "), gtk_label_get_text(GTK_LABEL(doc->tab_label)), NULL);
 		/* doc_set_uri calls bmark_renamed which uses the tab_label for the name, so first set the tab label */
 		doc_set_title(doc, tmpstr);
-		doc_set_uri(doc, NULL, FALSE);
+		doc_set_uri(doc, NULL, FALSE, FALSE);
 
 		if (doc->fileinfo) {
 			g_object_unref(doc->fileinfo);
@@ -3120,7 +3129,7 @@ doc_new_loading_in_background(Tbfwin * bfwin, GFile * uri, GFileInfo * finfo, gb
 	} else {
 		doc->fileinfo = NULL;
 	}
-	doc_set_uri(doc, uri, FALSE);
+	doc_set_uri(doc, uri, FALSE, FALSE);
 	doc_set_title(doc, NULL);
 	doc_set_status(doc, DOC_STATUS_LOADING);
 	bfwin_docs_not_complete(bfwin, TRUE);
