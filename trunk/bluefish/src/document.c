@@ -1370,8 +1370,8 @@ doc_set_cursor_position(Tdocument * doc, gint cursor_offset)
  *
  * Return value: void
  **/
-static void
-doc_set_statusbar_lncol(Tdocument * doc)
+void
+doc_set_statusbar_lncol(Tdocument * doc, gint blockstacklevel)
 {
 	gchar *msg;
 	gint line;
@@ -1394,17 +1394,11 @@ doc_set_statusbar_lncol(Tdocument * doc)
 			++col;
 		gtk_text_iter_forward_char(&start);
 	}
-	if (1) {
-		msg =
-			g_strdup_printf(_(" Ln: %d, Col: %d, Char: %d"), line + 1, col + 1,
-							gtk_text_iter_get_offset(&iter));
-	} else {
-		msg = g_strdup_printf(_(" Ln: %d, Col: %d"), line + 1, col + 1);
-	}
-
+	msg =
+			g_strdup_printf(_("Ln: %d, Col: %d, Char: %d, Blocks: %d"), line + 1, col + 1,
+							gtk_text_iter_get_offset(&iter), blockstacklevel);
 	gtk_statusbar_pop(GTK_STATUSBAR(BFWIN(doc->bfwin)->statusbar_lncol), 0);
 	gtk_statusbar_push(GTK_STATUSBAR(BFWIN(doc->bfwin)->statusbar_lncol), 0, msg);
-
 	g_free(msg);
 }
 
@@ -2373,19 +2367,10 @@ doc_view_populate_popup_lcb(GtkTextView * textview, GtkMenu * menu, Tdocument * 
 }
 
 static void
-doc_buffer_mark_set_lcb(GtkTextBuffer * buffer, GtkTextIter * iter, GtkTextMark * set_mark, Tdocument * doc)
-{
-	/*DEBUG_MSG("doc_buffer_mark_set_lcb, set_mark=%p, insert_mark=%p\n",set_mark,gtk_text_buffer_get_insert(buffer)); */
-	if (set_mark == gtk_text_buffer_get_insert(buffer)) {
-		doc_set_statusbar_lncol(doc);
-	}
-}
-
-static void
 doc_buffer_changed_lcb(GtkTextBuffer * textbuffer, Tdocument * doc)
 {
 	DEBUG_MSG("doc_buffer_changed_lcb()\n");
-	doc_set_statusbar_lncol(doc);
+	doc_set_statusbar_lncol(doc, 0);
 }
 
 static void
@@ -3056,7 +3041,6 @@ doc_new_backend(Tbfwin * bfwin, gboolean force_new, gboolean readonly, gboolean 
 	g_signal_connect(G_OBJECT(newdoc->buffer), "delete-range", G_CALLBACK(doc_buffer_delete_range_lcb),
 					 newdoc);
 	g_signal_connect(G_OBJECT(newdoc->buffer), "changed", G_CALLBACK(doc_buffer_changed_lcb), newdoc);
-	g_signal_connect(G_OBJECT(newdoc->buffer), "mark-set", G_CALLBACK(doc_buffer_mark_set_lcb), newdoc);
 	g_signal_connect_after(G_OBJECT(newdoc->view), "toggle-overwrite",
 						   G_CALLBACK(doc_view_toggle_overwrite_lcb), newdoc);
 	g_signal_connect_after(G_OBJECT(newdoc->view), "populate-popup",
@@ -3613,7 +3597,7 @@ doc_activate(Tdocument * doc)
 	DEBUG_MSG("doc_activate, calling bfwin_set_document_menu_items()\n");
 	bfwin_set_document_menu_items(doc);
 	bfwin_set_title(BFWIN(doc->bfwin), doc, 0);
-	doc_set_statusbar_lncol(doc);
+	doc_set_statusbar_lncol(doc, 0);
 	doc_set_statusbar_insovr(doc);
 	doc_set_statusbar_lang_encoding(doc);
 	
