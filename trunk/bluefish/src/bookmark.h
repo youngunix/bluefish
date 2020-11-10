@@ -21,7 +21,7 @@
 #ifndef __BOOKMARK_H__
 #define __BOOKMARK_H__
 
-void bmark_doc_renamed(Tbfwin * bfwin, Tdocument * doc);
+void bmark_doc_renamed(Tbfwin * bfwin, Tdocument * doc, GFile *copy_bookmarks_uri);
 
 GtkWidget *bmark_gui(Tbfwin * bfwin);	/* used in gui.c to build the bookmark panel */
 void bookmark_navigate(Tbfwin * bfwin, guint action);
