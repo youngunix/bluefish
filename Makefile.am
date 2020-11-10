@@ -20,7 +20,8 @@ EXTRA_DIST = \
 	intltool-extract.in \
 	intltool-merge.in \
 	intltool-update.in \
-	Makefile.mingw
+	Makefile.mingw \
+	autogen.sh
 
 DISTCLEANFILES = \
 	doltcompile \
