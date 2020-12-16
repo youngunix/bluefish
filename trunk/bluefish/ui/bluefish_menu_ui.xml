@@ -122,7 +122,6 @@
 		<menuitem action="DocEncodingAddRemove"/>
 	</menu>
 		<separator/>
-		<menuitem action="DocAddBookmark"/>
 		<menuitem action="DocFloatingWindow"/>
 		<separator/>
 		<menuitem action="DocMoveLeft"/>
@@ -143,6 +142,8 @@
 	<menuitem action="BookmarkNext"/>
 	<menuitem action="BookmarkFirst"/>
 	<menuitem action="BookmarkLast"/>
+	<separator/>
+	<menuitem action="DocAddBookmark"/>
 	<separator/>
 	<menuitem action="GotoLine"/>
 	<menuitem action="GotoLineSelection"/>
