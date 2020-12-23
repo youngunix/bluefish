@@ -35,7 +35,9 @@
 	<option name="javascript_object_methods" default="1" description="Autocomplete Javascript object methods" />
 	<option name="javascript_css_properties" default="1" description="CSS properties" />
 	<option name="JQuery" default="0" description="include JQuery syntax" />
-	<highlight name="js-brackets" style="brackets"  />
+	<highlight name="js-brackets-curly" style="brackets"  />
+	<highlight name="js-brackets-round" style="brackets"  />
+	<highlight name="js-brackets-square" style="brackets"  />
 	<highlight name="js-comment" style="comment"  />
 	<highlight name="js-css-property" style="function"  />
 	<highlight name="js-function" style="function"  />
@@ -58,12 +60,12 @@
 
 <definition>
 	<context symbols=" ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;." commentid_line="cm.cpplinecomment"  commentid_block="cm.cblockcomment">
-		<element pattern="\([ ]*" id="e.html.js.lparen" is_regex="1" starts_block="1" highlight="js-brackets" />
-		<element pattern="[ ]*\)" highlight="js-brackets" is_regex="1" ends_block="1" blockstartelement="e.html.js.lparen" />
-		<element pattern="{" id="e.html.js.lbrace" starts_block="1" highlight="js-brackets" block_name="Curly brackets block"/>
-		<element pattern="}" highlight="js-brackets" ends_block="1" blockstartelement="e.html.js.lbrace" />
-		<element pattern="[" id="e.html.js.lbracket" starts_block="1" highlight="js-brackets" />
-		<element pattern="]" highlight="js-brackets" ends_block="1" blockstartelement="e.html.js.lbracket" />
+		<element pattern="\([ ]*" id="e.html.js.lparen" is_regex="1" starts_block="1" highlight="js-brackets-round" />
+		<element pattern="[ ]*\)" highlight="js-brackets-round" is_regex="1" ends_block="1" blockstartelement="e.html.js.lparen" />
+		<element pattern="{" id="e.html.js.lbrace" starts_block="1" highlight="js-brackets-curly" block_name="Curly brackets block"/>
+		<element pattern="}" highlight="js-brackets-curly" ends_block="1" blockstartelement="e.html.js.lbrace" />
+		<element pattern="[" id="e.html.js.lbracket" starts_block="1" highlight="js-brackets-square" />
+		<element pattern="]" highlight="js-brackets-square" ends_block="1" blockstartelement="e.html.js.lbracket" />
 		&all-javascript;
 		<group class="JQuery">
 			&JQuery;
