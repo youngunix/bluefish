@@ -339,7 +339,7 @@ AC_ARG_WITH(
 		[install freedesktop.org appdata support files in directory DIR (if supplied) or suppress installation @<:@default=${datadir}/appdata@:>@]
 	),
 	[fdoappdatapath="$withval"],
-	[fdoappdatapath="${datadir}/appdata"]
+	[fdoappdatapath="${datadir}/metainfo"]
 )
 
 AC_ARG_WITH(

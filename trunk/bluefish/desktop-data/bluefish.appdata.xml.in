@@ -5,6 +5,7 @@
  <summary>Text editor with many web and software development extras</summary>
 <url type="homepage">http://bluefish.openoffice.nl/</url>
 <metadata_licence>CC0-1.0</metadata_licence>
+<project_license>GPL-2.0+</project_license>
 <description>
 <_p>Bluefish is a powerful editor targeted towards programmers and web developers, with many options to write websites, scripts and programming code. Bluefish supports many programming and markup languages and has many features, but is still a very fast and lightweight application.</_p>
 <_p>A selection of the features:</_p>
@@ -27,13 +28,16 @@
 
 <categories>
 ​    <category>Development</category>
-​    <category>Webdevelopment</category>
+​    <category>WebDevelopment</category>
+	​ <category>IDE</category>
+	<category>Utility</category>
+	 <category>TextEditor</category>
 ​</categories>
 
 <screenshots>
  <screenshot type="default">
   <image type="source">http://bluefish.openoffice.nl/images/bluefish-appdata-screenshot.png</image>
-  <caption>The main window showing the application</caption>
+  <caption>The Bluefish main window showing the application</caption>
  </screenshot>
 </screenshots>
 <updatecontact>olivier(at)bluefish.openoffice.nl</updatecontact>
@@ -41,4 +45,11 @@
 <kudo>HiDpiIcon</kudo>
 <kudo>ModernToolkit</kudo>
 </kudos>
+<content_rating type="oars-1.0" />
+<releases>
+	<release version="2.2.12" date="2020-11-05" type="Stable" />
+	<release version="2.2.11" date="2020-01-24" type="Stable" />
+	<release version="2.2.10" date="2019-01-27" type="Stable" />
++</releases>
+
 </component>
