@@ -104,6 +104,15 @@ static void snippets_insert_dialog(Tsnippetswin *snw, xmlNodePtr leaf, gint num_
 	gchar *tmpstr;
 	gint beforelen=0,afterlen=0;
 	
+	if (!snw->bfwin) {
+		g_warning("snippets_insert_dialog, bfwin NULL\n");
+		return; 
+	}
+	if (!snw->bfwin->current_document) {
+		g_warning("snippets_insert_dialog, current_document NULL\n");
+		return; 
+	}
+	
 	title = xmlGetProp(leaf, (const xmlChar *)"title");
 	sid = g_new0(Tsnippet_insert_dialog,1);
 	DEBUG_MSG("snippets_insert_dialog, started for %s\n",(gchar *)title);
@@ -202,7 +211,14 @@ convert_noargs(const gchar *string)
 }
 
 void snippets_activate_leaf_insert(Tsnippetswin *snw, xmlNodePtr parent) {
-
+	if (!snw->bfwin) {
+		g_warning("snippets_activate_leaf_insert, bfwin NULL\n");
+		return; 
+	}
+	if (!snw->bfwin->current_document) {
+		g_warning("snippets_activate_leaf_insert, current_document NULL\n");
+		return; 
+	}
 	gint num_vars = snippets_insert_num_params(parent);
 	DEBUG_MSG("snippets_activate_leaf_insert, num_vars=%d\n",num_vars);
 	if (num_vars == 0) {

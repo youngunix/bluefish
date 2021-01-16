@@ -1573,11 +1573,23 @@ static void doc_convert_case_in_selection(Tdocument *doc, gboolean toUpper) {
  * Return value: void
  **/
 void
-doc_insert_two_strings(Tdocument * doc, const gchar * before_str, const gchar * after_str)
+doc_insert_two_strings(Tdocument * doc, const gchar * before_str_raw, const gchar * after_str_raw)
 {
 	GtkTextIter itinsert, itselect;
 	GtkTextMark *insert, *select;
 	gboolean have_diag_marks = FALSE;
+	const gchar * before_str=before_str_raw, const gchar * after_str=after_str_raw;
+	if ((before_str == NULL || before_str[0]=='\0') && (after_str==NULL || after_str[0]=='\0')) {
+		g_warning("doc_insert_two_strings, both before and after string NULL or empty\n");
+		return;
+	}
+	
+	if (before_str == NULL) {
+		before_str = "";
+	}
+	if (after_str == NULL) {
+		after_str = "";
+	}
 
 	doc_unre_new_group(doc);
 	doc_block_undo_reg(doc);
