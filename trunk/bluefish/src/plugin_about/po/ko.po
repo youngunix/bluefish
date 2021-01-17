@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2017-06-21 09:22+0900\n"
+"POT-Creation-Date: 2020-11-06 20:24+0100\n"
 "PO-Revision-Date: 2009-05-26 08:48+0900\n"
 "Last-Translator: Taehun Kang 강태헌 <u4800330@anu.edu.au>\n"
 "Language-Team: \n"
@@ -15,11 +15,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/plugin_about/about.c:85
-msgid "This version of Bluefish was built with:\n"
+#: src/plugin_about/about.c:86
+#, fuzzy
+msgid ""
+"This version of Bluefish was built with:\n"
+"\n"
 msgstr "현재 버젼은 아래와 같이 빌드되었습니다:\n"
 
-#: src/plugin_about/about.c:205
+#: src/plugin_about/about.c:184
 msgid ""
 "\n"
 "Developers of previous releases:"
@@ -27,7 +30,7 @@ msgstr ""
 "\n"
 "이전 버젼 개발자들:"
 
-#: src/plugin_about/about.c:221
+#: src/plugin_about/about.c:200
 msgid ""
 "\n"
 "Package maintainers:"
@@ -35,7 +38,7 @@ msgstr ""
 "\n"
 "패키지 메인테이너:"
 
-#: src/plugin_about/about.c:228
+#: src/plugin_about/about.c:207
 #, fuzzy
 msgid ""
 "\n"
@@ -46,11 +49,11 @@ msgstr ""
 "이 리스트에 빠진 분들이 계시면,\n"
 "<bluefish@bluefish.openoffice.nl> 여길 통해 연락주세요."
 
-#: src/plugin_about/about.c:229
+#: src/plugin_about/about.c:208
 msgid "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 msgstr ""
 
-#: src/plugin_about/about.c:230
+#: src/plugin_about/about.c:209
 #, fuzzy
 msgid ""
 "\n"
@@ -59,7 +62,7 @@ msgstr ""
 "\n"
 "이 소프트웨어를 만드는데 도움을 주신 모든 분께 감사드립니다."
 
-#: src/plugin_about/about.c:266
+#: src/plugin_about/about.c:245
 msgid ""
 "An open-source editor for experienced web designers and programmers, "
 "supporting many programming and markup languages, but focusing on creating "
@@ -77,46 +80,46 @@ msgstr ""
 #. * to this translation (in general: this special locale). Please
 #. * use a separate line for every translator ending with a newlines (\n).
 #.
-#: src/plugin_about/about.c:276
+#: src/plugin_about/about.c:255
 msgid "translator-credits"
 msgstr ""
 "Jin-Hwan Jeong <yongdoria@gmail.com>\n"
 "Taehun Kang <u4800330@anu.edu.au>"
 
-#: src/plugin_about/about.c:374
+#: src/plugin_about/about.c:353
 msgid "_Help"
 msgstr "도움말(_H)"
 
-#: src/plugin_about/about.c:375
+#: src/plugin_about/about.c:354
 msgid "Bluefish _Homepage"
 msgstr "Bluefish 홈페이지(_H)"
 
-#: src/plugin_about/about.c:375
+#: src/plugin_about/about.c:354
 msgid "Bluefish homepage"
 msgstr "Bluefish 홈페이지"
 
-#: src/plugin_about/about.c:377
+#: src/plugin_about/about.c:356
 msgid "Report a _Bug"
 msgstr "버그 리포트하기(_B)"
 
-#: src/plugin_about/about.c:377
+#: src/plugin_about/about.c:356
 msgid "Report a bug"
 msgstr "버그 리포트하기"
 
-#: src/plugin_about/about.c:378
+#: src/plugin_about/about.c:357
 msgid "_About"
 msgstr "_About"
 
-#: src/plugin_about/about.c:378
+#: src/plugin_about/about.c:357
 msgid "About Bluefish"
 msgstr "About Bluefish"
 
-#: src/plugin_about/about.c:380
+#: src/plugin_about/about.c:359
 #, fuzzy
 msgid "Build _Info"
 msgstr "빌드 정보(_B)..."
 
-#: src/plugin_about/about.c:380
+#: src/plugin_about/about.c:359
 msgid "Build info"
 msgstr "빌드 정보"
 

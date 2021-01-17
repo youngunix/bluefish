@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bluefish 2.2.2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2017-06-21 09:22+0900\n"
+"POT-Creation-Date: 2020-11-06 20:24+0100\n"
 "PO-Revision-Date: 2015-01-01 15:51-0000\n"
 "Last-Translator: Mònica Ramírez Arceda <monica@probeta.net>\n"
 "Language-Team: Catalan\n"
@@ -17,11 +17,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.6.10\n"
 
-#: src/plugin_about/about.c:85
-msgid "This version of Bluefish was built with:\n"
+#: src/plugin_about/about.c:86
+#, fuzzy
+msgid ""
+"This version of Bluefish was built with:\n"
+"\n"
 msgstr "Aquesta versió de Bluefish s'ha muntat amb:\n"
 
-#: src/plugin_about/about.c:205
+#: src/plugin_about/about.c:184
 msgid ""
 "\n"
 "Developers of previous releases:"
@@ -29,7 +32,7 @@ msgstr ""
 "\n"
 "Desenvolupadors d'anteriors versions:"
 
-#: src/plugin_about/about.c:221
+#: src/plugin_about/about.c:200
 msgid ""
 "\n"
 "Package maintainers:"
@@ -37,7 +40,7 @@ msgstr ""
 "\n"
 "Mantenidors de paquets:"
 
-#: src/plugin_about/about.c:228
+#: src/plugin_about/about.c:207
 msgid ""
 "\n"
 "If you know of anyone missing from this list,\n"
@@ -47,11 +50,11 @@ msgstr ""
 "Si coneixeu algú que no aparegui en aquesta llista, \n"
 "feu-nos-ho saber a:"
 
-#: src/plugin_about/about.c:229
+#: src/plugin_about/about.c:208
 msgid "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 msgstr "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 
-#: src/plugin_about/about.c:230
+#: src/plugin_about/about.c:209
 msgid ""
 "\n"
 "Thanks to all who helped make this software available.\n"
@@ -60,7 +63,7 @@ msgstr ""
 "Donem les gràcies a totes les persones que han ajudat a fer que aquest "
 "programa estigui disponible.\n"
 
-#: src/plugin_about/about.c:266
+#: src/plugin_about/about.c:245
 msgid ""
 "An open-source editor for experienced web designers and programmers, "
 "supporting many programming and markup languages, but focusing on creating "
@@ -79,42 +82,42 @@ msgstr ""
 #. * to this translation (in general: this special locale). Please
 #. * use a separate line for every translator ending with a newlines (\n).
 #.
-#: src/plugin_about/about.c:276
+#: src/plugin_about/about.c:255
 msgid "translator-credits"
 msgstr "Mònica Ramírez Arceda <monica@probeta.net>"
 
-#: src/plugin_about/about.c:374
+#: src/plugin_about/about.c:353
 msgid "_Help"
 msgstr "A_juda"
 
-#: src/plugin_about/about.c:375
+#: src/plugin_about/about.c:354
 msgid "Bluefish _Homepage"
 msgstr "Pàgina _web del Bluefish"
 
-#: src/plugin_about/about.c:375
+#: src/plugin_about/about.c:354
 msgid "Bluefish homepage"
 msgstr "Pàgina web del Bluefish"
 
-#: src/plugin_about/about.c:377
+#: src/plugin_about/about.c:356
 msgid "Report a _Bug"
 msgstr "Informeu d'un _error"
 
-#: src/plugin_about/about.c:377
+#: src/plugin_about/about.c:356
 msgid "Report a bug"
 msgstr "Informeu d'un error"
 
-#: src/plugin_about/about.c:378
+#: src/plugin_about/about.c:357
 msgid "_About"
 msgstr "_Quant a"
 
-#: src/plugin_about/about.c:378
+#: src/plugin_about/about.c:357
 msgid "About Bluefish"
 msgstr "Quant al Bluefish"
 
-#: src/plugin_about/about.c:380
+#: src/plugin_about/about.c:359
 msgid "Build _Info"
 msgstr "_Informació del muntatge"
 
-#: src/plugin_about/about.c:380
+#: src/plugin_about/about.c:359
 msgid "Build info"
 msgstr "Informació del muntatge"

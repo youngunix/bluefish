@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bluefish 2.2.9\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2017-06-21 09:22+0900\n"
+"POT-Creation-Date: 2020-11-06 20:24+0100\n"
 "PO-Revision-Date: 2016-12-22 14:31+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,11 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.11\n"
 
-#: src/plugin_about/about.c:85
-msgid "This version of Bluefish was built with:\n"
+#: src/plugin_about/about.c:86
+#, fuzzy
+msgid ""
+"This version of Bluefish was built with:\n"
+"\n"
 msgstr "این نسخه از blue fish یا ساخته شده است:‬\n"
 
-#: src/plugin_about/about.c:205
+#: src/plugin_about/about.c:184
 msgid ""
 "\n"
 "Developers of previous releases:"
@@ -29,7 +32,7 @@ msgstr ""
 "\n"
 "\" \"توسعه دهندگان از نسخه های قبلی:"
 
-#: src/plugin_about/about.c:221
+#: src/plugin_about/about.c:200
 msgid ""
 "\n"
 "Package maintainers:"
@@ -37,7 +40,7 @@ msgstr ""
 "\n"
 "\" \"نگهدارنده بسته بندی:"
 
-#: src/plugin_about/about.c:228
+#: src/plugin_about/about.c:207
 msgid ""
 "\n"
 "If you know of anyone missing from this list,\n"
@@ -47,11 +50,11 @@ msgstr ""
 "اگر شما از هر کسی از دست رفته از این لیست می دانید، لطفا  ما را با اطلاع نگه "
 "دارید در:  ‬"
 
-#: src/plugin_about/about.c:229
+#: src/plugin_about/about.c:208
 msgid "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 msgstr "bluefish@bluefish.openoffice.nl <bluefish@bluefish.openoffice.nl>"
 
-#: src/plugin_about/about.c:230
+#: src/plugin_about/about.c:209
 #, fuzzy
 msgid ""
 "\n"
@@ -60,7 +63,7 @@ msgstr ""
 "\n"
 "\" \"با تشکر از همه که کمک کنان که این نرم افزار در دسترس قرار دادند.‬"
 
-#: src/plugin_about/about.c:266
+#: src/plugin_about/about.c:245
 msgid ""
 "An open-source editor for experienced web designers and programmers, "
 "supporting many programming and markup languages, but focusing on creating "
@@ -78,42 +81,42 @@ msgstr ""
 #. * to this translation (in general: this special locale). Please
 #. * use a separate line for every translator ending with a newlines (\n).
 #.
-#: src/plugin_about/about.c:276
+#: src/plugin_about/about.c:255
 msgid "translator-credits"
 msgstr "‫Paymon - pm835@live.mdx.ac.uk"
 
-#: src/plugin_about/about.c:374
+#: src/plugin_about/about.c:353
 msgid "_Help"
 msgstr "_Help"
 
-#: src/plugin_about/about.c:375
+#: src/plugin_about/about.c:354
 msgid "Bluefish _Homepage"
 msgstr "Bluefish به ما _Homepage"
 
-#: src/plugin_about/about.c:375
+#: src/plugin_about/about.c:354
 msgid "Bluefish homepage"
 msgstr "صفحه اصلی  بلوفیش"
 
-#: src/plugin_about/about.c:377
+#: src/plugin_about/about.c:356
 msgid "Report a _Bug"
 msgstr "گزارش یک _Bug"
 
-#: src/plugin_about/about.c:377
+#: src/plugin_about/about.c:356
 msgid "Report a bug"
 msgstr "گزارش یک اشکال"
 
-#: src/plugin_about/about.c:378
+#: src/plugin_about/about.c:357
 msgid "_About"
 msgstr "‫_About‬"
 
-#: src/plugin_about/about.c:378
+#: src/plugin_about/about.c:357
 msgid "About Bluefish"
 msgstr " در مورد Bluefish"
 
-#: src/plugin_about/about.c:380
+#: src/plugin_about/about.c:359
 msgid "Build _Info"
 msgstr "ساخت _Info"
 
-#: src/plugin_about/about.c:380
+#: src/plugin_about/about.c:359
 msgid "Build info"
 msgstr " ساخت اطلاعات"
