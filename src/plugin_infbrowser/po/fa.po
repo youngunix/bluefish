@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bluefish 2.2.9\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2017-06-21 09:22+0900\n"
+"POT-Creation-Date: 2020-11-06 20:24+0100\n"
 "PO-Revision-Date: 2016-12-22 14:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -76,19 +76,19 @@ msgstr ""
 "مرجع پرونده %s را نمی توان بارگذاری‫\n"
 "‬\n"
 
-#: src/plugin_infbrowser/infb_load.c:164
+#: src/plugin_infbrowser/infb_load.c:168
 msgid "Documentation entries"
 msgstr "اسناد ها"
 
-#: src/plugin_infbrowser/infb_load.c:168
+#: src/plugin_infbrowser/infb_load.c:172
 msgid "References"
 msgstr "منابع"
 
-#: src/plugin_infbrowser/infb_load.c:170
+#: src/plugin_infbrowser/infb_load.c:174
 msgid "DTD"
 msgstr "DTD"
 
-#: src/plugin_infbrowser/infb_load.c:172
+#: src/plugin_infbrowser/infb_load.c:176
 msgid "Web pages"
 msgstr "صفحات وب"
 

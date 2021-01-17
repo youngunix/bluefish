@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bluefish 2.2.4\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2017-06-21 09:22+0900\n"
+"POT-Creation-Date: 2020-11-06 20:24+0100\n"
 "PO-Revision-Date: 2012-08-30 08:46+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -74,19 +74,19 @@ msgstr "Info Browser"
 msgid "Cannot load reference file %s\n"
 msgstr "Cannot load reference file %s\n"
 
-#: src/plugin_infbrowser/infb_load.c:164
+#: src/plugin_infbrowser/infb_load.c:168
 msgid "Documentation entries"
 msgstr "Documentation entries"
 
-#: src/plugin_infbrowser/infb_load.c:168
+#: src/plugin_infbrowser/infb_load.c:172
 msgid "References"
 msgstr "References"
 
-#: src/plugin_infbrowser/infb_load.c:170
+#: src/plugin_infbrowser/infb_load.c:174
 msgid "DTD"
 msgstr "DTD"
 
-#: src/plugin_infbrowser/infb_load.c:172
+#: src/plugin_infbrowser/infb_load.c:176
 msgid "Web pages"
 msgstr "Web pages"
 

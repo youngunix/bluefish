@@ -1578,7 +1578,8 @@ doc_insert_two_strings(Tdocument * doc, const gchar * before_str_raw, const gcha
 	GtkTextIter itinsert, itselect;
 	GtkTextMark *insert, *select;
 	gboolean have_diag_marks = FALSE;
-	const gchar * before_str=before_str_raw, const gchar * after_str=after_str_raw;
+	const gchar * before_str=before_str_raw;
+	const gchar * after_str=after_str_raw;
 	if ((before_str == NULL || before_str[0]=='\0') && (after_str==NULL || after_str[0]=='\0')) {
 		g_warning("doc_insert_two_strings, both before and after string NULL or empty\n");
 		return;

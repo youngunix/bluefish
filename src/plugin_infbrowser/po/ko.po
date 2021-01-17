@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2017-06-21 09:22+0900\n"
+"POT-Creation-Date: 2020-11-06 20:24+0100\n"
 "PO-Revision-Date: 2009-05-26 08:48+0900\n"
 "Last-Translator: Taehun Kang 강태헌 <u4800330@anu.edu.au>\n"
 "Language-Team: \n"
@@ -73,20 +73,20 @@ msgstr "Info 탐색기"
 msgid "Cannot load reference file %s\n"
 msgstr "레퍼런스 파일을 읽어오지 못했습니다 %s \n"
 
-#: src/plugin_infbrowser/infb_load.c:164
+#: src/plugin_infbrowser/infb_load.c:168
 #, fuzzy
 msgid "Documentation entries"
 msgstr "Documentation entries"
 
-#: src/plugin_infbrowser/infb_load.c:168
+#: src/plugin_infbrowser/infb_load.c:172
 msgid "References"
 msgstr "참조"
 
-#: src/plugin_infbrowser/infb_load.c:170
+#: src/plugin_infbrowser/infb_load.c:174
 msgid "DTD"
 msgstr "DTD"
 
-#: src/plugin_infbrowser/infb_load.c:172
+#: src/plugin_infbrowser/infb_load.c:176
 msgid "Web pages"
 msgstr "웹페이지"
 
