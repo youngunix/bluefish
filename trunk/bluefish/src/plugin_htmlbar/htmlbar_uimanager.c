@@ -1475,11 +1475,11 @@ htmlbar_toolbar_create(Thtmlbarwin * hbw, Thtmlbarsession *hbs)
 	toolbar = new_html_subtoolbar(hbw, html_notebook, gtk_ui_manager_get_widget(bfwin->uimanager, "/HTMLStandardToolbar"), _("Standard"));
 
 	if (main_v->props.format_by_context) {
-		gtk_widget_destroy(gtk_ui_manager_get_widget(bfwin->uimanager, "/HTMLStandardToolbar/FormatStrong"));
-		gtk_widget_destroy(gtk_ui_manager_get_widget(bfwin->uimanager, "/HTMLStandardToolbar/FormatEmphasis"));
-	} else {
 		gtk_widget_destroy(gtk_ui_manager_get_widget(bfwin->uimanager, "/HTMLStandardToolbar/FormatBold"));
 		gtk_widget_destroy(gtk_ui_manager_get_widget(bfwin->uimanager, "/HTMLStandardToolbar/FormatItalic"));
+	} else {
+		gtk_widget_destroy(gtk_ui_manager_get_widget(bfwin->uimanager, "/HTMLStandardToolbar/FormatStrong"));
+		gtk_widget_destroy(gtk_ui_manager_get_widget(bfwin->uimanager, "/HTMLStandardToolbar/FormatEmphasis"));
 	}
 
 	DEBUG_MSG("standard created\n");
