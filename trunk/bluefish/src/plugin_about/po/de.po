@@ -71,7 +71,7 @@ msgid ""
 "dynamic and interactive websites."
 msgstr ""
 "Ein quelloffener Editor für fortgeschrittene Web-Designer und Programmierer, "
-"der viele Programmier- und Auszeichnugssprachen unterstützt, sich aber auf "
+"der viele Programmier- und Auszeichnungssprachen unterstützt, sich aber auf "
 "die Erstellung interaktiver und dymanischer Webseiten spezialisiert hat."
 
 #. Translators: This is a special message that shouldn't be translated
