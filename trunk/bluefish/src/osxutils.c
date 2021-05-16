@@ -88,17 +88,17 @@ static const struct locale_table code_table[] =
 
 
 static void 
-match_locale (const struct locale_table *table, size_t table_size, const char *string, const char **result) {
+match_locale (const struct locale_table *table, size_t table_size, const char *string, char **result) {
+	if (*result != NULL) {
+		g_free(*result);
+		*result = NULL;
+	}
 	for(int i=0; i < table_size; i++) {
-		if (!strcmp (table[i].code, string)) {
-        	*result = table[i].locale;
+		if (strcmp (table[i].code, string) == 0) {
+        	*result = strdup(table[i].locale);
         	break;	
 		}
-    }
-    if (!result) {
-		g_free(result);
-		*result = NULL;
-	}     
+	}
 }
 
 static void 
@@ -216,12 +216,13 @@ osx_setenv(int *argc, char **argv[])
 				DEBUG_MSG("osx_setenv, user-supplied locale is %s\n", matched_locale);
 				if (matched_locale) {
 					if (setlocale(LC_ALL, matched_locale)) {
-						DEBUG_MSG("osx_setenv, user-supplied -AppleLanguages option is valid, setting environment for %s\n", matched_locale);
+						DEBUG_MSG("osx_setenv, user-supplied -AppleLanguages option is valid, setting environment for %s.\n", matched_locale);
 					} else {
 						DEBUG_MSG("osx_setenv, user-supplied -AppleLanguages option does not have valid locale, will use it as supplied.\n");
 					}
 					g_setenv("LC_ALL",  matched_locale, TRUE);
 					g_free(short_locale);
+					g_free(matched_locale);
 					g_free(locale_dir);
 					g_free(dirn);
 					return;
@@ -232,20 +233,31 @@ osx_setenv(int *argc, char **argv[])
 	
 	CFTypeRef CFLocaleString = CFPreferencesCopyAppValue (CFSTR ("AppleLocale"), kCFPreferencesCurrentApplication);
 	if (CFLocaleString != NULL && (CFGetTypeID (CFLocaleString) == CFStringGetTypeID ())) {
-		localeString = g_strdup((const char *)CFStringGetCStringPtr((CFStringRef)CFLocaleString, kCFStringEncodingASCII));
-		CFRelease(CFLocaleString);
-		tmp = strrchr(localeString, '_');
-		if (tmp != NULL) {
-			region = strdup(tmp+1);
-      } else {
+		CFIndex length = CFStringGetLength (CFLocaleString);
+  		CFIndex maxlen = CFStringGetMaximumSizeForEncoding (length, kCFStringEncodingUTF8);
+  		localeString = g_malloc (maxlen + 1);
+  		Boolean done = CFStringGetCString (CFLocaleString, (char *) localeString, maxlen, kCFStringEncodingUTF8);
+		if (done) {
+			DEBUG_MSG("osx_setenv, AppleLocale found, %s.\n", localeString);
+			tmp = strrchr(localeString, '_');
+			if (tmp != NULL) {
+				region = strdup(tmp+1);
+	      } else {
+				region = strdup("US");
+	      }
+	   } else {
+   		g_free (localeString);
+   		DEBUG_MSG("osx_setenv, AppleLocale string is null, using fallback locale string.\n");
+   		localeString = strdup("en_US"); //default to en_US 
 			region = strdup("US");
-      }
+	   }
+		CFRelease(CFLocaleString);
 	} else {
 		localeString = strdup("en_US"); //default to en_US 
 		region = strdup("US");
 	}
 	if (setlocale(LC_ALL, localeString)) {
-		DEBUG_MSG("osx_setenv, long locale string %s matched \n", localeString);
+		DEBUG_MSG("osx_setenv, long locale string %s matched.\n", localeString);
 		g_setenv("LC_ALL",  localeString, TRUE);
 		g_free(localeString);
 		g_free(region);
@@ -260,14 +272,15 @@ osx_setenv(int *argc, char **argv[])
 		g_snprintf (tmptest, sizeof(tmptest), "%s/%s", tmploc, short_locale);
 		if (!stat (tmptest,&sb) && S_ISDIR (sb.st_mode)) {
 			match_locale(code_table, sizeof (code_table) / sizeof (code_table[0]), short_locale, &matched_locale);
-			DEBUG_MSG("osx_setenv, 2-symbol string %s matched \n", matched_locale);
+			DEBUG_MSG("osx_setenv, 2-symbol string %s matched.\n", matched_locale);
 			if (matched_locale) {
 				if (setlocale(LC_ALL, matched_locale)) {
-					DEBUG_MSG("osx_setenv, locale %s is valid, setting environment. \n", matched_locale);
+					DEBUG_MSG("osx_setenv, locale %s is valid, setting environment.\n", matched_locale);
 					g_setenv("LC_ALL",  matched_locale, TRUE);
 					g_free(localeString);
 					g_free(region);
 					g_free(short_locale);
+					g_free(matched_locale);
 					g_free(locale_dir);
 					g_free(dirn);
 					return;
@@ -287,6 +300,7 @@ osx_setenv(int *argc, char **argv[])
 					g_free(localeString);
 					g_free(region);
 					g_free(short_locale);
+					g_free(matched_locale);
 					g_free(locale_dir);
 					g_free(dirn);
 					return;
