@@ -104,7 +104,7 @@ about_options_dialog_create(GtkAction * action, gpointer user_data)
 #else
 			, "no"
 #endif
-#ifdef HAVE_LIBENCHANT_1_4
+#if defined(HAVE_LIBENCHANT_1_4) || defined(HAVE_LIBENCHANT_2)
 			, "yes"
 #else
 			, "no"
