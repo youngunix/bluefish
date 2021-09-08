@@ -31,6 +31,7 @@
 	<highlight name="string" style="string"  />
 	<highlight name="brackets" style="brackets"  />
 	<highlight name="keyword" style="keyword"  />
+	<highlight name="classdef_keyword" style="function"  />
 	<highlight name="exception" style="special-keyword"  />
 	<highlight name="value" style="value"  />
 	<highlight name="function" style="special-function"  />
@@ -52,14 +53,17 @@
 <element pattern="from[ &#9;][^&#10;&#13;]+" is_regex="1" highlight="imports" >
 	<autocomplete string="from" />
 </element>
+<group  highlight="classdef_keyword">
+	<autocomplete enable="1" />
+<element pattern="class" identifier_mode="1" identifier_jump="1" identifier_autocomp="1"/>
+<element pattern="def" identifier_mode="1" identifier_jump="1" identifier_autocomp="1" />
+</group>
 <group  highlight="keyword">
 	<autocomplete enable="1" />
 <element pattern="and" />
 <element pattern="assert" />
 <element pattern="break" />
-<element pattern="class" identifier_mode="1" identifier_jump="1" identifier_autocomp="1"/>
 <element pattern="continue" />
-<element pattern="def" identifier_mode="1" identifier_jump="1" identifier_autocomp="1" />
 <element pattern="del" />
 <element pattern="elif" />
 <element pattern="else" />
