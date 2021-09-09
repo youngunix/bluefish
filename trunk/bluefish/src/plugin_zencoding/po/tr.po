@@ -1,74 +1,69 @@
-# Turkish translations for bluefish package.
-# Copyright (C) 2011 The Bluefish Development Team.
-# This file is distributed under the same license as the bluefish package.
-# Automatically generated, 2011.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: bluefish 2.2.1\n"
+"Project-Id-Version: bluefish 2.2.4\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2017-06-21 09:22+0900\n"
-"PO-Revision-Date: 2011-11-23 21:18+0100\n"
+"POT-Creation-Date: 2020-11-10 18:01+0100\n"
+"PO-Revision-Date: 2012-08-30 08:46+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/plugin_zencoding/zencoding.c:177
 msgid "_Zencoding"
-msgstr ""
+msgstr "_Zenkodlama"
 
 #: src/plugin_zencoding/zencoding.c:178
 msgid "E_xpand zen-coding"
-msgstr ""
+msgstr "Zen kodlamasını _genişlet"
 
 #: src/plugin_zencoding/zencoding.c:178
 msgid "Expand zen-code at cursor"
-msgstr ""
+msgstr "İmleçteki zen kodunu genişlet"
 
 #: src/plugin_zencoding/zencoding.c:179
 msgid "Select Tag _Content"
-msgstr ""
+msgstr "Etiket _İçeriğini Seç"
 
 #: src/plugin_zencoding/zencoding.c:180
 msgid "Select _Tag and Content"
-msgstr ""
+msgstr "_Etiket ve İçeriği Seç"
 
 #: src/plugin_zencoding/zencoding.c:181
 msgid "Wrap with _Abbreviation"
-msgstr ""
+msgstr "_Kısaltma ile Sar"
 
 #: src/plugin_zencoding/zencoding.c:182
 msgid "_Split or Join Tag"
-msgstr ""
+msgstr "Etiketi _Böl veya Birleştir"
 
 #: src/plugin_zencoding/zencoding.c:183
 msgid "_Previous Edit Point"
-msgstr ""
+msgstr "_Önceki Düzenleme Noktası"
 
 #: src/plugin_zencoding/zencoding.c:184
 msgid "_Next Edit Point"
-msgstr ""
+msgstr "_Sonraki Düzenleme Noktası"
 
 #: src/plugin_zencoding/zencoding.c:185
 msgid "_Insert Formatted Newline"
-msgstr ""
+msgstr "Biçimlendirilmiş Yeni Satır _Ekle"
 
 #: src/plugin_zencoding/zencoding.c:186
 msgid "_Go to Matching Pair"
-msgstr ""
+msgstr "Eşleşen Çifte _Git"
 
 #: src/plugin_zencoding/zencoding.c:187
 msgid "_Merge Lines"
-msgstr ""
+msgstr "Satırları _Birleştir"
 
 #: src/plugin_zencoding/zencoding.c:188
 msgid "_Remove Tag"
-msgstr ""
+msgstr "Etiketi _Kaldır"
 
 #: src/plugin_zencoding/zencoding.c:189
 msgid "_Evaluate Math Expression"
-msgstr ""
+msgstr "Matematik İfadesini _Değerlendir"
