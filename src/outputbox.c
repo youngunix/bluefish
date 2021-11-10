@@ -250,10 +250,13 @@ init_output_box(Tbfwin * bfwin)
 
 	renderer = gtk_cell_renderer_text_new();
 	column = gtk_tree_view_column_new_with_attributes(_("Filename"), renderer, "text", 0, NULL);
+	gtk_tree_view_column_set_resizable(column, TRUE);
 	gtk_tree_view_append_column(GTK_TREE_VIEW(ob->lview), column);
 	column = gtk_tree_view_column_new_with_attributes(_("Line"), renderer, "text", 1, NULL);
+	gtk_tree_view_column_set_resizable(column, TRUE);
 	gtk_tree_view_append_column(GTK_TREE_VIEW(ob->lview), column);
 	column = gtk_tree_view_column_new_with_attributes(_("Output"), renderer, "markup", 2, NULL);
+	gtk_tree_view_column_set_resizable(column, TRUE);
 	gtk_tree_view_append_column(GTK_TREE_VIEW(ob->lview), column);
 
 	scrolwin = gtk_scrolled_window_new(NULL, NULL);
