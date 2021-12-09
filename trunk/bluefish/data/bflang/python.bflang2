@@ -85,6 +85,7 @@
 <element pattern="try" />
 <element pattern="where" />
 <element pattern="while" />
+<element pattern="with" />
 <element pattern="yield" />
 </group>
 <group highlight="built-in-function" >
