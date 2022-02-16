@@ -1053,6 +1053,7 @@ gotoline_frame_create(Tbfwin * bfwin)
 
 	gtk_box_pack_start(GTK_BOX(hbox), gtk_label_new(_("Goto Line:")), FALSE, FALSE, 0);
 	bfwin->gotoline_entry = gtk_entry_new();
+	gtk_entry_set_width_chars(GTK_ENTRY(bfwin->gotoline_entry), 5);
 	gtk_box_pack_start(GTK_BOX(hbox), bfwin->gotoline_entry, FALSE, FALSE, 0);
 	g_signal_connect(bfwin->gotoline_entry, "changed", G_CALLBACK(gotoline_entry_changed), bfwin);
 	g_signal_connect(bfwin->gotoline_entry, "insert-text", G_CALLBACK(gotoline_entry_insert_text), NULL);
