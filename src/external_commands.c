@@ -366,6 +366,11 @@ operatable_on_selection(const gchar * formatstring)
 
 }
 
+static void
+command_dialog_entry_activated_lcb(GtkEntry *entry,gpointer  user_data)
+{
+	gtk_dialog_response (GTK_DIALOG(user_data),GTK_RESPONSE_ACCEPT);
+}
 /* The format string should have new options:
     * %f local full path (function should abort for remote files)
     * %c local directory of file (function should abort for remote files)
@@ -475,8 +480,10 @@ create_commandstring(Texternalp * ep, const gchar * formatstr, gboolean discard_
 											 GTK_DIALOG_DESTROY_WITH_PARENT,
 											 GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 											 GTK_STOCK_OK, GTK_RESPONSE_ACCEPT, NULL);
+		gtk_dialog_set_default_response(GTK_DIALOG(dialog),GTK_RESPONSE_ACCEPT);
 		tmp = g_strdup_printf(_("Supply arguments to define %%a in '%s'"), formatstring);
 		entry = dialog_entry_labeled(NULL, tmp, gtk_dialog_get_content_area(GTK_DIALOG(dialog)), 6);
+		g_signal_connect(G_OBJECT(entry), "activate", command_dialog_entry_activated_lcb, dialog);
 		g_free(tmp);
 		gtk_widget_show_all(dialog);
 		result = gtk_dialog_run(GTK_DIALOG(dialog));
