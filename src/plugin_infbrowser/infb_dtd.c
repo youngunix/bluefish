@@ -80,7 +80,7 @@ static gchar *infb_dtd_str_content(xmlElementContentPtr ct,gchar *sofar) {
 	return ret;
 }
 
-static void infb_dtd_element_to_group(void *payload, void *data, xmlChar *name) {
+static void infb_dtd_element_to_group(void *payload, void *data,const xmlChar *name) {
 	xmlElementPtr el = (xmlElementPtr)payload;
 	switch(name[0]) {
 		case 'a':case 'b':case 'c':case 'd':case 'e':
