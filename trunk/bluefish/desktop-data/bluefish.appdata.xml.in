@@ -27,12 +27,12 @@
 <launchable type="desktop-id">bluefish.desktop</launchable>
 
 <categories>
-​    <category>Development</category>
-​    <category>WebDevelopment</category>
-	​ <category>IDE</category>
+    <category>Development</category>
+    <category>WebDevelopment</category>
+	 <category>IDE</category>
 	<category>Utility</category>
 	 <category>TextEditor</category>
-​</categories>
+</categories>
 
 <screenshots>
  <screenshot type="default">
@@ -47,9 +47,10 @@
 </kudos>
 <content_rating type="oars-1.0" />
 <releases>
+	<release version="2.2.13" date="2023-01-03" type="Stable" />
 	<release version="2.2.12" date="2020-11-05" type="Stable" />
 	<release version="2.2.11" date="2020-01-24" type="Stable" />
 	<release version="2.2.10" date="2019-01-27" type="Stable" />
-+</releases>
+</releases>
 
 </component>
