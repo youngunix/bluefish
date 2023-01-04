@@ -1949,7 +1949,7 @@ bftextview2_match_conditions(Tbflangparsing * bfparser) {
 			/* find out which pattern has this condition to easy debugging of the language file */
 			for (j = 1; j < bfparser->st->matches->len; j++) {
 				if (g_array_index(bfparser->st->matches, Tpattern, j).condition == i) {
-					g_print("Error in language file %s: condition reference to %s %s for pattern %d (%s) does not exist\n",bfparser->bflang->name,relationtypestring,g_array_index(bfparser->st->conditions, Tpattern_condition, i).refname,
+					g_print("Possible error in language file %s: condition reference to %s %s for pattern %d (%s) does not exist\n",bfparser->bflang->name,relationtypestring,g_array_index(bfparser->st->conditions, Tpattern_condition, i).refname,
 						j, g_array_index(bfparser->st->matches, Tpattern, j).pattern);
 				}
 			}
