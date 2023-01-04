@@ -73,7 +73,7 @@
 							<element pattern="tty" />
 							<element pattern="tv" />
 							<element id="e.css.media.group.lbrace" pattern="{" starts_block="1" highlight="css-brackets">
-								<context idref="c.html.css.main" />
+								<context idref="c.css.main" />
 							</element>
 						</group>
 					</context>
@@ -108,7 +108,7 @@
 					<element pattern="tty" />
 					<element pattern="tv" />
 					<element id="e.css.media.lbrace" pattern="{" starts_block="1" highlight="css-brackets">
-						<context idref="c.html.css.main" />
+						<context idref="c.css.main" />
 					</element>
 				</group>
 			</context>

@@ -136,7 +136,7 @@
 </tag>
 <tag name="style" highlight="tag" attributes="type,src" attribhighlight="attribute"  attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1" >
 	<autocomplete append=" /&gt;" />
-	<context id="c.html.css.main" symbols=" &#9;&#10;&#13;{}./*&lt;&gt;:+~[]," default_spellcheck="0">
+	<context id="c.css.main" symbols=" &#9;&#10;&#13;{}./*&lt;&gt;:+~[]," default_spellcheck="0">
 		<element idref="e.html.comment"/>
 		<element id="e.xhtml.css.lcomment" pattern="/*" starts_block="1" highlight="css-comment">
 			<context symbols="*/&#9;&#10;&#13;" highlight="css-comment">
@@ -160,7 +160,7 @@
 					<element pattern="tty" />
 					<element pattern="tv" />
 					<element id="e.css.media.group.lbrace" pattern="{" starts_block="1" highlight="css-brackets">
-						<context idref="c.html.css.main" />
+						<context idref="c.css.main" />
 					</element>
 				</group>
 			</context>

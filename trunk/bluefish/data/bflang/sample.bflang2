@@ -364,7 +364,7 @@ condition_contextref=""
 
 -->
 <element id="end-style-tag" pattern="&lt;/style&gt;" highlight="
-html-tag" ends_context="3" condition_mode="1" condition_relation="2" condition_contextref="c.html.css.main"/>
+html-tag" ends_context="3" condition_mode="1" condition_relation="2" condition_contextref="c.css.main"/>
 
 <!-- -------- OPTIMISATIONS ---------
 context re-use (<context idref=""/>) is more important than element or tag re-use

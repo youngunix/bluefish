@@ -20,7 +20,6 @@
 -->
 
 <bfinc>
-
 <group highlight="css-html-tag" >
 	<autocomplete enable="1" />
 	<element pattern="a"/>
@@ -79,7 +78,7 @@
 	<element pattern="link"/>
 	<element pattern="map"/>
 	<element pattern="meta"/>
-<!-- 	<element pattern="menu"/> -->
+ 	<element pattern="menu"/> 
 	<element pattern="noframes"><reference><b>WARNING:</b> Not supported anymore in HTML5</reference></element>
 	<element pattern="noscript"/>
 	<element pattern="object"/>
