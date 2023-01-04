@@ -55,7 +55,7 @@
 	<smartoutdent characters="}" />
 </properties>
 <definition>
-	<context id="c.html.css.main" symbols=" &#9;&#10;&#13;{}./*&lt;&gt;:$@+~[]()#,@">
+	<context id="c.sass.css.main" symbols=" &#9;&#10;&#13;{}./*&lt;&gt;:$@+~[]()#,@">
 
 		<element id="e.sass.variable" pattern="$[a-z0-9_-]+" is_regex="1" case_insens="1" highlight="sass-variable" />
 		
