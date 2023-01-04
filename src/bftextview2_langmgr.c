@@ -155,6 +155,7 @@ ldb_stack_string(gpointer ldb)
 	if (!tmplist)
 		return g_strdup("");
 	str = g_string_new(tmplist->data);
+	tmplist = g_list_previous(tmplist);
 	while(tmplist) {
 		g_string_append(str," / ");
 		g_string_append(str,tmplist->data);
@@ -949,8 +950,10 @@ process_scanning_element(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gin
 				blockstartelementum =
 					GPOINTER_TO_INT(g_hash_table_lookup(bfparser->patterns, blockstartelement));
 				if (!blockstartelementum) {
-					g_print("Error in language file, blockstartelement %s does not exist\n",
-							blockstartelement);
+					gchar *dbstring = ldb_stack_string(&bfparser->ldb);
+					g_print("Error in language file %s, blockstartelement %s does not exist\n",
+							dbstring, blockstartelement);
+					g_free(dbstring);
 				}
 				DBG_PARSING("got blockstartelementum %d for blockstartelement %s, ends_block=%d\n",
 							blockstartelementum, blockstartelement, ends_block);
@@ -1142,7 +1145,9 @@ add_attribute_to_tag(Tbflangparsing * bfparser, const gchar *attrstring, gint co
 		/*g_print("tag attribute contains a '=', lookup context %s\n",splitted[1]);*/
 		startscontext = GPOINTER_TO_INT(g_hash_table_lookup(bfparser->contexts, splitted[1]));
 		if (startscontext == 0) {
-			g_warning("attribute %s refers to context %s which does not (yet) exist\n",splitted[0],splitted[1]);
+			gchar *dbstring = ldb_stack_string(&bfparser->ldb);
+			g_print("Possible error in language file %s: attribute %s refers to context %s which does not (yet) exist\n",dbstring, splitted[0],splitted[1]);
+			g_free(dbstring);
 		}
 		tmp = g_strdup_printf("%s[ \t]*=", splitted[0]);
 		attrmatch = add_pattern_to_scanning_table(bfparser->st, tmp, TRUE, TRUE, contexttag, &bfparser->ldb);
@@ -1417,7 +1422,7 @@ process_scanning_tag(xmlTextReaderPtr reader, Tbflangparsing * bfparser, guint16
 					{"attrib_autocomplete_backup_cursor", &attrib_autocomplete_backup_cursor, attribtype_int}};
 	parse_attributes(bfparser->bflang,reader, attribs, bfparser->load_completion ? sizeof(attribs)/sizeof(Tattrib) : sizeof(attribs)/sizeof(Tattrib)-2);
 
-	ldb_stack_push(&bfparser->ldb, id?id:"nameless-tag");
+	ldb_stack_push(&bfparser->ldb, id?id:(tag?tag:"nameless-tag"));
 
 	add_tag = do_parse(bfparser, class, notclass);
 	if (add_tag) {
@@ -1974,6 +1979,7 @@ build_lang_thread(gpointer data)
 
 	bfparser = g_slice_new0(Tbflangparsing);
 	bfparser->ldb.stack = NULL;
+	ldb_stack_push(&bfparser->ldb, bflang->filename);
 	bfparser->patterns = g_hash_table_new_full(g_str_hash, g_str_equal, g_free, NULL);
 	bfparser->contexts = g_hash_table_new_full(g_str_hash, g_str_equal, g_free, NULL);
 	bfparser->bflang = bflang;
