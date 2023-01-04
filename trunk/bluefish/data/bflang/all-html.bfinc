@@ -236,7 +236,7 @@ However, there are many extensions.
 <tag name="link" highlight="html-tag" case_insens="1" sgml_shorttag="1" no_close="1" attributes="&univ;&evnt;,crossorigin,charset,href,rev,target" attribhighlight="html-attribute"  attrib_autocomplete_append="=&quot;&quot;" attrib_autocomplete_backup_cursor="1" >
 	<autocomplete append=" /&gt;" backup_cursor="2"/>
 	<reference>Defines the relationship between a document and an external resource </reference>
-	<attribute name="hreflang" values="aa,ab,af,am,ar,as,ay,az,ba,be,bg,bh,bi,bn,bo,br,ca,co,cs,cy,da,de,dz,el,en,eo,es,et,eu,fa,fi,fj,fo,fr,fy,ga,gd,gl,gn,gu,ha,hi,hr,hu,hy,ia,ie,ik,in,is,it,iw,ja,ji,jw,ka,kk,kl,km,kn,ko,ks,ku,ky,la,ln,lo,lt,lv,mg,mi,mk,ml,mn,mo,mr,ms,mt,my,na,ne,nl,no,oc,om,or,pa,pl,ps,pt,qu,rm,rn,ro,ru,rw,sa,sd,sg,sh,si,sk,sl,sm,sn,so,sq,sr,ss,st,su,sv,sw,ta,te,tg,th,ti,tk,tl,tn,to,tr,ts,tt,tw,uk,ur,uz,vi,vo,wo,xh,yo,zh,zu,">
+	<attribute name="hreflang" values="aa,ab,af,am,ar,as,ay,az,ba,be,bg,bh,bi,bn,bo,br,ca,co,cs,cy,da,de,dz,el,en,eo,es,et,eu,fa,fi,fj,fo,fr,fy,ga,gd,gl,gn,gu,ha,hi,hr,hu,hy,ia,ie,ik,in,is,it,iw,ja,ji,jw,ka,kk,kl,km,kn,ko,ks,ku,ky,la,ln,lo,lt,lv,mg,mi,mk,ml,mn,mo,mr,ms,mt,my,na,ne,nl,no,oc,om,or,pa,pl,ps,pt,qu,rm,rn,ro,ru,rw,sa,sd,sg,sh,si,sk,sl,sm,sn,so,sq,sr,ss,st,su,sv,sw,ta,te,tg,th,ti,tk,tl,tn,to,tr,ts,tt,tw,uk,ur,uz,vi,vo,wo,xh,yo,zh,zu">
 <reference>A two-letter language code that specifies the language of the linked document.
 Only valid if the href attribute is set.</reference></attribute>
 	<attribute name="media"><reference>The media attribute specifies what media/device the target URL is optimized for. Values can be combined with 'and' 'not' or ',' (as or):
