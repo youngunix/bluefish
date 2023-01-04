@@ -2,8 +2,9 @@
 <!--
 	Bluefish HTML Editor
 	css-rules.bfinc $Revision$
-
+	
 	Copyright (C) 2008-2013 Olivier Sessink
+	updated 2022 by Martin Senftleben
 
 		This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -19,216 +20,240 @@
 	along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 <bfinc>
+
 <element pattern="align-content" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>WARNING:</b> this property is not supported by Chrome, Firefox, Internet Explorer and Safari
-Aligns a flex container's lines within the flex container when there is extra space in the cross-axis.
-<b>Values:</b> flex-start | flex-end | center | space-between | space-around | stretch
-<b>Initial:</b> stretch
-<b>Applies to:</b> multi-line flex containers
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> specified value
-<b>Animatable:</b> no
-<b>Canonical order:</b> per grammar
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-flexbox/#align-content">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:&quot;'">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="flex-start"/>
-	<element pattern="flex-end"/>
-	<element pattern="center"/>
-	<element pattern="space-between"/>
-	<element pattern="space-around"/>
-	<element pattern="stretch"/>
-</group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element id="e.sass.newline_end" idref="e.sass.newline_end" pattern="(&#9;|&#10;|&#13;)" is_regex="1" ends_context="1"/></group>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-</context>
+	<reference>Aligns a flex container's lines within the flex container when there is extra space in the cross-axis.
+	<b>Values:</b> flex-start | flex-end | center | space-between | space-evenly | space-around | initial | inherit | stretch
+	<b>Initial:</b> stretch
+	<b>Applies to:</b> multi-line flex containers
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> specified value
+	<b>Animatable:</b> no
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-flexbox/#align-content">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:&quot;'">
+		<group highlight="css-value" >
+			<autocomplete append=";" />
+			<element pattern="flex-start">
+				<reference>Lines are packed toward the start of the flex container</reference>
+			</element>
+			<element pattern="flex-end">
+				<reference>Lines are packed toward the end of the flex container</reference>
+			</element>
+			<element pattern="center">
+				<reference>Lines are packed toward the center of the flex container</reference>
+			</element>
+			<element pattern="space-between">
+				<reference>Lines are evenly distributed in the flex container</reference>
+			</element>
+			<element pattern="space-evenly">
+				<reference>Lines are evenly distributed in the flex container, with equal space around them</reference>
+			</element>
+			<element pattern="space-around">
+				<reference>Lines are evenly distributed in the flex container, with half-size spaces on either end</reference>
+			</element>
+			<element pattern="initial">
+				<reference>Sets this property to its default value.</reference>
+			</element>
+			<element pattern="inherit">
+				<reference>Inherits this property from its parent element.</reference>
+			</element>
+			<element pattern="stretch">
+				<reference>Default value. Lines stretch to take up the remaining space</reference>
+			</element>
+		</group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>
+		<group class="is_SASS">
+			<element idref="e.sass.variable" />
+			<element id="e.sass.newline_end" idref="e.sass.newline_end" pattern="(&#9;|&#10;|&#13;)" is_regex="1" ends_context="1"/>
+		</group>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2" />
+	</context>
 </element>
+
 <element pattern="align-items" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>WARNING:</b> this property is not supported by Chrome and Safari
-Flex items can be aligned in the cross axis of the current line of the flex container, similar to ‘justify-content’ but in the perpendicular direction.
-<b>Values:</b> flex-start | flex-end | center | baseline | stretch
-<b>Initial:</b> stretch
-<b>Applies to:</b> flex containers
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> specified value
-<b>Animatable:</b> no
-<b>Canonical order:</b> per grammar
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-flexbox/#align-items">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="flex-start"/>
-	<element pattern="flex-end"/>
-	<element pattern="center"/>
-	<element pattern="baseline"/>
-	<element pattern="stretch"/>
-</group>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-</context>
+	<reference><b>WARNING:</b> Flex items can be aligned in the cross axis of the current line of the flex container, similar to 
+		‘justify-content’ but in the perpendicular direction.
+	<b>Values:</b> flex-start | flex-end | center | baseline | stretch
+	<b>Initial:</b> stretch
+	<b>Applies to:</b> flex containers
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> specified value
+	<b>Animatable:</b> no
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-flexbox/#align-items">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<group highlight="css-value" >
+			<autocomplete append=";" />
+			<element pattern="flex-start"/>
+			<element pattern="flex-end"/>
+			<element pattern="center"/>
+			<element pattern="baseline"/>
+			<element pattern="stretch"/>
+		</group>
+		<element idref="e.css.end"/>
+		<group class="is_SASS">
+			<element idref="e.sass.variable" />
+			<element idref="e.sass.newline_end"/>
+		</group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
+
 <element pattern="align-self" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>WARNING:</b> this property is not supported by Chrome, Internet Explorer and Safari
-Flex items can be aligned in the cross axis of the current line of the flex container, similar to ‘justify-content’ but in the perpendicular direction.
-<b>Values:</b> auto | flex-start | flex-end | center | baseline | stretch
-<b>Initial:</b> auto
-<b>Applies to:</b> flex items
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> ‘auto’ computes to parent's ‘align-items’; otherwise as specified
-<b>Animatable:</b> no
-<b>Canonical order:</b> per grammar
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-flexbox/#align-self">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="auto"/>
-	<element pattern="flex-start"/>
-	<element pattern="flex-end"/>
-	<element pattern="center"/>
-	<element pattern="baseline"/>
-	<element pattern="stretch"/>
-</group>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Flex items can be aligned in the cross axis of the current line of the flex container, similar to 
+		‘justify-content’ but in the perpendicular direction.
+	<b>Values:</b> auto | flex-start | flex-end | center | baseline | stretch
+	<b>Initial:</b> auto
+	<b>Applies to:</b> flex items
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> ‘auto’ computes to parent's ‘align-items’; otherwise as specified
+	<b>Animatable:</b> no
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-flexbox/#align-self">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<group highlight="css-value" >
+			<autocomplete append=";" />
+			<element pattern="auto"/>
+			<element pattern="flex-start"/>
+			<element pattern="flex-end"/>
+			<element pattern="center"/>
+			<element pattern="baseline"/>
+			<element pattern="stretch"/>
+		</group>
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
+
 <element pattern="animation" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>WARNING:</b> this property is not supported by Chrome and Safari
-Shorthand property combines six of the animation properties into a single property.
-<b>Values:</b> &lt;single-animation&gt; [ ‘,’ &lt;single-animation&gt; ]*
-<b>Initial:</b> see individual properties
-<b>Applies to:</b> all elements, ::before and ::after pseudo-elements
-<b>Inherited:</b> see individual properties
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> see individual properties
-<b>Animatable:</b> no
-<b>Canonical order:</b> per grammar
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-animations/#animation-shorthand-property">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Shorthand property combines six of the animation properties into a single property.
+	<b>Values:</b> &lt;single-animation&gt; [ ‘,’ &lt;single-animation&gt; ]*
+	<b>Initial:</b> see individual properties
+	<b>Applies to:</b> all elements, ::before and ::after pseudo-elements
+	<b>Inherited:</b> see individual properties
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> see individual properties
+	<b>Animatable:</b> no
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-animations/#animation-shorthand-property">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
+
 <element pattern="animation-delay" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>WARNING:</b> this property is not supported by Chrome and Safari
-Defines what values are applied by the animation outside the time it is executing.
-<b>Values:</b> &lt;time&gt; [, &lt;time&gt;]*
-<b>Initial:</b> 0s
-<b>Applies to:</b> all elements, ::before and ::after pseudo-elements
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> as specified
-<b>Animatable:</b> no
-<b>Canonical order:</b> per grammar
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-animations/#animation-delay-property">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Defines what values are applied by the animation outside the time it is executing.
+	<b>Values:</b> &lt;time&gt; [, &lt;time&gt;]*
+	<b>Initial:</b> 0s
+	<b>Applies to:</b> all elements, ::before and ::after pseudo-elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> as specified
+	<b>Animatable:</b> no
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-animations/#animation-delay-property">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
+
 <element pattern="animation-direction" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>WARNING:</b> this property is not supported by Chrome, Opera and Safari
-Defines whether or not the animation should play in reverse on alternate cycles.
-<b>Values:</b> normal | reverse | alternate | alternate-reverse
-<b>Initial:</b> normal
-<b>Applies to:</b> all elements, ::before and ::after pseudo-elements
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> as specified
-<b>Animatable:</b> no
-<b>Canonical order:</b> per grammar
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-animations/#animation-direction-property">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="normal"/>
-	<element pattern="reverse"/>
-	<element pattern="alternate"/>
-	<element pattern="alternate-reverse"/>
-</group>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Defines whether or not the animation should play in reverse on alternate cycles.
+	<b>Values:</b> normal | reverse | alternate | alternate-reverse
+	<b>Initial:</b> normal
+	<b>Applies to:</b> all elements, ::before and ::after pseudo-elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> as specified
+	<b>Animatable:</b> no
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-animations/#animation-direction-property">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<group highlight="css-value" >
+			<autocomplete append=";" />
+			<element pattern="normal"/>
+			<element pattern="reverse"/>
+			<element pattern="alternate"/>
+			<element pattern="alternate-reverse"/>
+		</group>
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
+
 <element pattern="animation-duration" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>WARNING:</b> this property is not supported by Chrome and Safari
-Defines the length of time that an animation takes to complete one cycle.
-<b>Values:</b> &lt;time&gt; [, &lt;time&gt;]*
-<b>Initial:</b> 0s
-<b>Applies to:</b> all elements, ::before and ::after pseudo-elements
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> as specified
-<b>Animatable:</b> no
-<b>Canonical order:</b> per grammar
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-animations/#animation-duration-property">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Defines the length of time that an animation takes to complete one cycle.
+	<b>Values:</b> &lt;time&gt; [, &lt;time&gt;]*
+	<b>Initial:</b> 0s
+	<b>Applies to:</b> all elements, ::before and ::after pseudo-elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> as specified
+	<b>Animatable:</b> no
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-animations/#animation-duration-property">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
+
 <element pattern="animation-fill-mode" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>WARNING:</b> this property is not supported by Chrome and Safari
-Defines what values are applied by the animation outside the time it is executing.
+<reference>Defines what values are applied by the animation outside the time it is executing.
 <b>Values:</b> none | forwards | backwards | both
 <b>Initial:</b> none
 <b>Applies to:</b> all elements, ::before and ::after pseudo-elements
@@ -257,10 +282,11 @@ href="http://www.w3.org/TR/css3-animations/#animation-fill-mode-property">www.w3
 
 </context>
 </element>
+
 <element pattern="animation-iteration-count" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>WARNING:</b> this property is not supported by Chrome and Safari
-Specifies the number of times an animation cycle is played. The initial value is ‘1’, meaning the animation will play from beginning to end once.
+<reference>Specifies the number of times an animation cycle is played. The initial value is ‘1’, meaning the animation will play 
+	from beginning to end once.
 <b>Values:</b> infinite | &lt;number&gt;
 <b>Initial:</b> 1
 <b>Applies to:</b> all elements, ::before and ::after pseudo-elements
@@ -283,13 +309,12 @@ href="http://www.w3.org/TR/css3-animations/#animation-iteration-count-property">
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
 </context>
 </element>
+
 <element pattern="animation-name" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>WARNING:</b> this property is not supported by Chrome and Safari
-Defines a list of animations that apply. Each name is used to select the keyframe at-rule that provides the property values for the animation.
+<reference>Defines a list of animations that apply. Each name is used to select the keyframe at-rule that provides the property values for the animation.
 <b>Values:</b> none | &lt;IDENT&gt;
 <b>Initial:</b> none
 <b>Applies to:</b> all elements, ::before and ::after pseudo-elements
@@ -312,13 +337,12 @@ href="http://www.w3.org/TR/css3-animations/#animation-name-property">www.w3.org<
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
 </context>
 </element>
+
 <element pattern="animation-play-state" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>WARNING:</b> this property is not supported by Chrome and Safari
-Defines whether the animation is running or paused.
+<reference>Defines whether the animation is running or paused.
 <b>Values:</b> running | paused
 <b>Initial:</b> running
 <b>Applies to:</b> all elements, ::before and ::after pseudo-elements
@@ -342,13 +366,12 @@ href="http://www.w3.org/TR/css3-animations/#animation-play-state-property">www.w
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
 </context>
 </element>
+
 <element pattern="animation-timing-function" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>WARNING:</b> this property is not supported by Chrome and Safari
-Describes how the animation will progress over one cycle of its duration.
+<reference>Describes how the animation will progress over one cycle of its duration.
 <b>Values:</b> ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | steps(&lt;integer&gt;[, [ start | end ] ]?) | cubic-bezier(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;number&gt;)
 <b>Initial:</b> ease
 <b>Applies to:</b> all elements, ::before and ::after pseudo-elements
@@ -391,9 +414,9 @@ href="http://www.w3.org/TR/css3-animations/#animation-timing-function-property">
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
 </context>
 </element>
+
 <element pattern="azimuth" highlight="css-property" >
 	<autocomplete append=": " />
 <reference><b>WARNING:</b> this property is not supported by famous browsers yet
@@ -436,8 +459,7 @@ href="http://www.w3.org/TR/2007/CR-CSS21-20070719/aural.html#spatial-props">www.
 </element>
 <element pattern="backface-visibility" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>WARNING:</b> this property is not supported by Chrome and Safari
-determines whether or not the ‘back’ side of a transformed element is visible when facing the viewer.
+<reference>determines whether or not the ‘back’ side of a transformed element is visible when facing the viewer.
 <b>Values:</b> visible | hidden
 <b>Initial:</b> visible
 <b>Applies to:</b> transformable elements
@@ -826,6 +848,7 @@ href="http://www.w3.org/TR/css3-background/#the-background-origin">www.w3.org</a
 
 </context>
 </element>
+
 <element pattern="background-position" highlight="css-property" >
 	<autocomplete append=": " />
 <reference>Specifies the background image initial position
@@ -2065,7 +2088,7 @@ href="http://www.w3.org/TR/CSS2/visuren.html#propdef-direction">www.w3.org</a></
 <element pattern="display" highlight="css-property" >
 	<autocomplete append=": " />
 <reference>Specifies how the element should be displayed.
-<b>Values:</b> inline | block | list-item | inline-block | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell | table-caption | none | inherit
+<b>Values:</b> inline | block | contents | grid | inline-grid | flex | inline-flex | list-item | inline-block | run-in | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell | table-caption | none | inherit | initial
 <b>Initial:</b> inline
 <b>Applies to:</b> all elements
 <b>Inherited:</b> no
@@ -2078,22 +2101,75 @@ href="http://www.w3.org/TR/CSS21/visuren.html#display-prop">www.w3.org</a></refe
 <context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <group highlight="css-value" >
 	<autocomplete append=";" />
-	<element pattern="inline"/>
-	<element pattern="block"/>
-	<element pattern="list-item"/>
-	<element pattern="inline-block"/>
-	<element pattern="table"/>
-	<element pattern="inline-table"/>
-	<element pattern="table-row-group"/>
-	<element pattern="table-header-group"/>
-	<element pattern="table-footer-group"/>
-	<element pattern="table-row"/>
-	<element pattern="table-column-group"/>
-	<element pattern="table-column"/>
-	<element pattern="table-cell"/>
-	<element pattern="table-caption"/>
-	<element pattern="none"/>
-	<element pattern="inherit"/>
+	<element pattern="inline">
+		<reference>Displays an element as an inline element (like &lt;span&gt;). Any height and width properties will have no effect</reference>
+	</element>
+	<element pattern="block">
+		<reference>Displays an element as a block element (like &lt;p&gt;). It starts on a new line, and takes up the whole width</reference>
+	</element>
+	<element pattern="inline-block">
+		<reference>Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values</reference>
+	</element>
+	<element pattern="contents">
+		<reference>Makes the container disappear, making the child elements children of the element the next level up in the DOM</reference>
+	</element>
+	<element pattern="grid">
+		<reference>Displays an element as a block-level grid container</reference>
+	</element>
+	<element pattern="inline-grid">
+		<reference>Displays an element as an inline-level grid container</reference>
+	</element>
+	<element pattern="flex">
+		<reference>Displays an element as a block-level flex container</reference>
+	</element>
+	<element pattern="inline-flex">
+		<reference>Displays an element as an inline-level flex container</reference>
+	</element>
+	<element pattern="list-item">
+		<reference>Let the element behave like a &lt;li&gt; element</reference>
+	</element>
+	<element pattern="run-in">
+		<reference>Displays an element as either block or inline, depending on context </reference>
+	</element>
+	<element pattern="table">
+		<reference>Let the element behave like a &lt;table&gt; element</reference>
+	</element>
+	<element pattern="inline-table">
+		<reference>The element is displayed as an inline-level table</reference>
+	</element>
+	<element pattern="table-row-group">
+		<reference>Let the element behave like a &lt;tbody&gt; element</reference>
+	</element>
+	<element pattern="table-header-group">
+		<reference>Let the element behave like a &lt;thead&gt; element</reference>
+	</element>
+	<element pattern="table-footer-group">
+		<reference>Let the element behave like a &lt;tfoot&gt; element</reference>
+	</element>
+	<element pattern="table-column-group">
+		<reference>Let the element behave like a &lt;colgroup&gt; element</reference>
+	</element>
+	<element pattern="table-column">
+		<reference>Let the element behave like a &lt;col&gt; element</reference>
+	</element>
+	<element pattern="table-row">
+		<reference>Let the element behave like a &lt;tr&gt; element</reference>
+	</element>
+	<element pattern="table-cell">
+		<reference>Let the element behave like a &lt;td&gt; element</reference>
+	</element>
+	<element pattern="table-caption">
+		<reference>Let the element behave like a &lt;caption&gt; element</reference>
+	</element>
+	<element pattern="none">
+		<reference>The element is completely removed</reference>
+	</element>
+	<element pattern="inherit">
+		<reference>Inherits this property from its parent element.</reference>
+	</element>
+	<element pattern="initial">
+		<reference>Sets this property to its default value.</reference>
+	</element>
 </group>
 <element idref="e.css.end"/>
 <group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
@@ -2152,6 +2228,7 @@ The flex property is a shorthand for the flex-grow, flex-shrink, and the flex-ba
 <element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
 </context>
 </element>
+
 <element pattern="float" highlight="css-property" >
 	<autocomplete append=": " />
 <reference>Specifies whether a box should float to the left, right, or not at all.
@@ -2179,236 +2256,563 @@ href="http://www.w3.org/TR/CSS2/visuren.html#float-position">www.w3.org</a></ref
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
 </context>
 </element>
+
 <element pattern="font" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>font</b> is a convenience option to set font-style, font-variant, font-weight, and font-size.
-<b>Values:</b> [ [ 'font-style' || 'font-variant' || 'font-weight' ]? 'font-size' [ / 'line-height' ]? 'font-family' ] | caption | icon | menu | message-box | small-caption | status-bar | inherit
-<b>Initial:</b> see individual properties
-<b>Applies to:</b> all elements
-<b>Inherited:</b> yes
-<b>Percentages:</b> see individual properties
-<b>Media:</b> visual
-<b>Computed value:</b> see individual properties
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/CSS2/fonts.html#font-shorthand">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="normal"/>
-	<element pattern="italic"/>
-	<element pattern="oblique"/>
-	<element pattern="small-caps"/>
-	<element pattern="bold"/>
-	<element pattern="bolder"/>
-	<element pattern="lighter"/>
-	<element pattern="xx-small"/>
-	<element pattern="x-small"/>
-	<element pattern="small"/>
-	<element pattern="medium"/>
-	<element pattern="large"/>
-	<element pattern="x-large"/>
-	<element pattern="xx-large"/>
-	<element pattern="larger"/>
-	<element pattern="smaller"/>
-	<element pattern="serif"/>
-	<element pattern="Times"/>
-	<element pattern="sans-serif"/>
-	<element pattern="Helvetica"/>
-	<element pattern="cursive"/>
-	<element pattern="Zapf-Chancery"/>
-	<element pattern="monospace"/>
-	<element pattern="Courier"/>
-	<element pattern="caption"/>
-	<element pattern="icon"/>
-	<element pattern="menu"/>
-	<element pattern="message-box"/>
-	<element pattern="small-caption"/>
-	<element pattern="status-bar"/>
-	<element pattern="inherit"/>
-</group>
-<element pattern="(100|200|300|400|500|600|700|800|900)" is_regex="1" highlight="css-value"/>
-<element pattern="[0-9]+\.?[0-9]*" is_regex="1" highlight="css-value"/>
-<element pattern="/"/>
-<element idref="e.css.length"/>
-<element idref="e.css.percent"/>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference><b>font</b> is a convenience option to set font-style, font-variant, font-weight, and font-size.
+	<b>Values:</b> [ [ 'font-style' || 'font-variant' || 'font-weight' ]? 'font-size' [ / 'line-height' ]? 'font-family' ] | caption | icon | menu | message-box | small-caption | status-bar | inherit
+	<b>Initial:</b> see individual properties
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> yes
+	<b>Percentages:</b> see individual properties
+	<b>Media:</b> visual
+	<b>Computed value:</b> see individual properties
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/CSS2/fonts.html#font-shorthand">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<group highlight="css-value" >
+			<autocomplete append=";" />
+			<element pattern="normal"/>
+			<element pattern="italic"/>
+			<element pattern="oblique"/>
+			<element pattern="small-caps"/>
+			<element pattern="bold"/>
+			<element pattern="bolder"/>
+			<element pattern="lighter"/>
+			<element pattern="xx-small"/>
+			<element pattern="x-small"/>
+			<element pattern="small"/>
+			<element pattern="medium"/>
+			<element pattern="large"/>
+			<element pattern="x-large"/>
+			<element pattern="xx-large"/>
+			<element pattern="larger"/>
+			<element pattern="smaller"/>
+			<element pattern="serif"/>
+			<element pattern="Times"/>
+			<element pattern="sans-serif"/>
+			<element pattern="Helvetica"/>
+			<element pattern="cursive"/>
+			<element pattern="Zapf-Chancery"/>
+			<element pattern="monospace"/>
+			<element pattern="Courier"/>
+			<element pattern="caption"/>
+			<element pattern="icon"/>
+			<element pattern="menu"/>
+			<element pattern="message-box"/>
+			<element pattern="small-caption"/>
+			<element pattern="status-bar"/>
+			<element pattern="inherit"/>
+		</group>
+		<element pattern="(100|200|300|400|500|600|700|800|900)" is_regex="1" highlight="css-value"/>
+		<element pattern="[0-9]+\.?[0-9]*" is_regex="1" highlight="css-value"/>
+		<element pattern="/"/>
+		<element idref="e.css.length"/>
+		<element idref="e.css.percent"/>
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
+
 <element pattern="font-family" highlight="css-property" >
 	<autocomplete append=": " />
-<reference>The property value is a prioritized list of font family names and/or generic family names.
-<b>Values:</b> [[ &lt;family-name&gt; | &lt;generic-family&gt; ] [, &lt;family-name&gt;| &lt;generic-family&gt;]* ] | inherit
-<b>Initial:</b> depends on user agent
-<b>Applies to:</b> all elements
-<b>Inherited:</b> yes
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> as specified
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/CSS2/fonts.html#font-family-prop">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="serif"/>
-	<element pattern="Times"/>
-	<element pattern="sans-serif"/>
-	<element pattern="Helvetica"/>
-	<element pattern="cursive"/>
-	<element pattern="Zapf-Chancery"/>
-	<element pattern="monospace"/>
-	<element pattern="Courier"/>
-	<element pattern="inherit"/>
-</group>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>The property value is a prioritized list of font family names and/or generic family names.
+	<b>Values:</b> [[ &lt;family-name&gt; | &lt;generic-family&gt; ] [, &lt;family-name&gt;| &lt;generic-family&gt;]* ] | inherit
+	<b>Initial:</b> depends on user agent
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> yes
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> as specified
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/CSS2/fonts.html#font-family-prop">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<group highlight="css-value" >
+			<autocomplete append=";" />
+			<element pattern="serif"/>
+			<element pattern="Times"/>
+			<element pattern="sans-serif"/>
+			<element pattern="Helvetica"/>
+			<element pattern="cursive"/>
+			<element pattern="Zapf-Chancery"/>
+			<element pattern="monospace"/>
+			<element pattern="Courier"/>
+			<element pattern="inherit"/>
+		</group>
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
+
 <element pattern="font-size" highlight="css-property" >
 	<autocomplete append=": " />
-<reference>Describes the size of the font when set solid.
-<b>Values:</b> &lt;absolute-size&gt; | &lt;relative-size&gt; | &lt;length&gt; | &lt;percentage&gt; | inherit
-<b>Initial:</b> medium
-<b>Applies to:</b> all elements
-<b>Inherited:</b> yes
-<b>Percentages:</b> refer to inherited font size
-<b>Media:</b> visual
-<b>Computed value:</b> absolute length
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/CSS2/fonts.html#font-size-props">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="xx-small"/>
-	<element pattern="x-small"/>
-	<element pattern="small"/>
-	<element pattern="medium"/>
-	<element pattern="large"/>
-	<element pattern="x-large"/>
-	<element pattern="xx-large"/>
-	<element pattern="larger"/>
-	<element pattern="smaller"/>
-	<element pattern="0"/>
-	<element pattern="inherit"/>
-</group>
-<element idref="e.css.length"/>
-<element idref="e.css.percent"/>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Describes the size of the font when set solid.
+	<b>Values:</b> &lt;absolute-size&gt; | &lt;relative-size&gt; | &lt;length&gt; | &lt;percentage&gt; | inherit
+	<b>Initial:</b> medium
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> yes
+	<b>Percentages:</b> refer to inherited font size
+	<b>Media:</b> visual
+	<b>Computed value:</b> absolute length
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/CSS2/fonts.html#font-size-props">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<group highlight="css-value" >
+			<autocomplete append=";" />
+			<element pattern="xx-small"/>
+			<element pattern="x-small"/>
+			<element pattern="small"/>
+			<element pattern="medium"/>
+			<element pattern="large"/>
+			<element pattern="x-large"/>
+			<element pattern="xx-large"/>
+			<element pattern="larger"/>
+			<element pattern="smaller"/>
+			<element pattern="0"/>
+			<element pattern="inherit"/>
+		</group>
+		<element idref="e.css.length"/>
+		<element idref="e.css.percent"/>
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
+
 <element pattern="font-style" highlight="css-property" >
 	<autocomplete append=": " />
-<reference>Selects between normal (sometimes referred to as `roman` or `upright`), italic and oblique faces within a font family.
-<b>Values:</b> normal | italic | oblique | inherit
-<b>Initial:</b> normal
-<b>Applies to:</b> all elements
-<b>Inherited:</b> yes
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> as specified
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/CSS2/fonts.html#font-styling">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="normal"/>
-	<element pattern="italic"/>
-	<element pattern="oblique"/>
-	<element pattern="inherit"/>
-</group>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Selects between normal (sometimes referred to as `roman` or `upright`), italic and oblique faces within a font family.
+	<b>Values:</b> normal | italic | oblique | inherit
+	<b>Initial:</b> normal
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> yes
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> as specified
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/CSS2/fonts.html#font-styling">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<group highlight="css-value" >
+			<autocomplete append=";" />
+			<element pattern="normal"/>
+			<element pattern="italic"/>
+			<element pattern="oblique"/>
+			<element pattern="inherit"/>
+		</group>
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
+
 <element pattern="font-variant" highlight="css-property" >
 	<autocomplete append=": " />
-<reference>Another type of variation within a font family is the small-caps.
-<b>Values:</b> normal | small-caps | inherit
-<b>Initial:</b> normal
-<b>Applies to:</b> all elements
-<b>Inherited:</b> yes
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> as specified
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/CSS2/fonts.html#small-caps">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="normal"/>
-	<element pattern="small-caps"/>
-	<element pattern="inherit"/>
-</group>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Another type of variation within a font family is the small-caps.
+	<b>Values:</b> normal | small-caps | inherit
+	<b>Initial:</b> normal
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> yes
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> as specified
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/CSS2/fonts.html#small-caps">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<group highlight="css-value" >
+			<autocomplete append=";" />
+			<element pattern="normal"/>
+			<element pattern="small-caps"/>
+			<element pattern="inherit"/>
+		</group>
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
+
 <element pattern="font-weight" highlight="css-property" >
 	<autocomplete append=": " />
-<reference>Selects the weight of the font.
-<b>Values:</b> normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | inherit
-<b>Initial:</b> normal
-<b>Applies to:</b> all elements
-<b>Inherited:</b> yes
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> see text
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/CSS2/fonts.html#font-boldness">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="normal"/>
-	<element pattern="bold"/>
-	<element pattern="bolder"/>
-	<element pattern="lighter"/>
-	<element pattern="inherit"/>
-</group>
-<element pattern="(100|200|300|400|500|600|700|800|900)" is_regex="1" highlight="css-value"/>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Selects the weight of the font.
+	<b>Values:</b> normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | inherit
+	<b>Initial:</b> normal
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> yes
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> see text
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/CSS2/fonts.html#font-boldness">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<group highlight="css-value" >
+			<autocomplete append=";" />
+			<element pattern="normal"/>
+			<element pattern="bold"/>
+			<element pattern="bolder"/>
+			<element pattern="lighter"/>
+			<element pattern="inherit"/>
+		</group>
+		<element pattern="(100|200|300|400|500|600|700|800|900)" is_regex="1" highlight="css-value"/>
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
+
+<element pattern="grid" highlight="css-property" >
+	<autocomplete append=": " />
+	<reference>grid property is a shorthand property for: grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows,
+	    grid-auto-columns, grid-auto-flow
+	<b>Values:</b> none | auto | row
+	<b>Initial:</b> none none none auto auto row
+	<b>Applies to:</b> grid layout
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> specified value
+	<b>Animatable:</b> yes
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/css-grid-1/#overview-grid">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:&quot;'">
+		<group highlight="css-value" >
+			<autocomplete append=" " />
+			<element pattern="none"/>
+			<element pattern="auto"/>
+			<element pattern="row"/>
+		</group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>
+		<group class="is_SASS">
+			<element idref="e.sass.variable" />
+			<element idref="e.sass.newline_end"/>
+		</group>
+
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+<!--		<element idref="e.css.in_style_attribute.dquote"/>
+		<element idref="e.css.in_style_attribute.squote"/>
+		<element idref="e.css.in_style_section.rbrace"/>
+	</context>
+</element>
+-->
+<!-- Done up to here - complete, ready for testing ^^^ -->
+
+<element pattern="grid-area" highlight="css-property" >
+	<autocomplete append=": " />
+	<reference>The grid-area property specifies a grid item's size and location in a grid layout, and is a shorthand property for the following properties:
+     grid-row-start
+     grid-column-start
+     grid-row-end
+     grid-column-end
+	The grid-area property can also be used to assign a name to a grid item. Named grid items can then be referenced to by the grid-template-areas property of the grid container.	
+	<b>Values:</b> grid-line | itemname
+	<b>Initial:</b> auto
+	<b>Applies to:</b> grid items
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> specified value
+	<b>Animatable:</b> yes
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/css-grid-1/#placement-shorthands">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:&quot;'">
+		<group highlight="css-value" >
+			<autocomplete append=" " />
+			<element pattern="([a-z0-9])" highlight="css-value" is_regex="1" case_insens="1"/>
+<!--			<element pattern="span"/>
+			<element pattern="auto"/>
+			<element pattern="row"/>
+-->		
+		</group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>
+		<group class="is_SASS">
+			<element idref="e.sass.variable" />
+			<element idref="e.sass.newline_end"/>
+		</group>
+
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
+<element pattern="grid-auto-columns" highlight="css-property" >
+	<autocomplete append=": " />
+	<reference>The grid-auto-columns property sets a size for the columns in a grid container. This property affects only columns with the size not set.
+	<b>Values:</b> auto | max-content | min-content | <em>length (in % or measure)</em>;
+	<b>Initial:</b> auto
+	<b>Applies to:</b> grid containers
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> specified value
+	<b>Animatable:</b> yes
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/css-grid-1/#propdef-grid-auto-columns">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:&quot;'">
+		<group highlight="css-value" >
+			<autocomplete append=" " />
+			<element id="e.css.percent" pattern="[0-9]+\.?[0-9]*%" is_regex="1" highlight="css-value"/>
+			<element id="e.css.length" pattern="[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px|ch)" is_regex="1" highlight="css-value"/>
+			<element pattern="auto">
+				<reference>Default value. The size of the columns is determined by the size of the container</reference>
+			</element>
+			<element pattern="max-content">
+				<reference>Sets the size of each column depending on the largest item in the column</reference>
+			</element>
+			<element pattern="min-content">
+				<reference>Sets the size of each column depending on the smallest item in the column</reference>
+			</element>
+<!--
+		<element pattern="([A-Za-z0-9;'])" highlight="css-value" is_regex="1" case_insens="1"/>
+-->		
+		</group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>
+		<group class="is_SASS">
+			<element idref="e.sass.variable" />
+			<element idref="e.sass.newline_end"/>
+		</group>
+
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
+<element pattern="grid-auto-flow" highlight="css-property" >
+	<autocomplete append=": " />
+	<reference>The grid-auto-flow property controls how auto-placed items get inserted in the grid.
+	<b>Values:</b> row | column | dense | row dense | column dense 
+	<b>Initial:</b> auto
+	<b>Applies to:</b> grid containers
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> specified value
+	<b>Animatable:</b> yes
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/css-grid-1/#propdef-grid-auto-flow">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:&quot;'">
+		<group highlight="css-value" >
+			<autocomplete append=" " />
+			<element pattern="row">
+				<reference>Default value. Places items by filling each row</reference>
+			</element>
+			<element pattern="column">
+				<reference>Places items by filling each column</reference>
+			</element>
+			<element pattern="dense">
+				<reference>Place items to fill any holes in the grid</reference>
+			</element>
+			<element pattern="row dense">
+				<reference>Places items by filling each row, and fill any holes in the grid</reference>
+			</element>
+			<element pattern="column dense">
+				<reference>Places items by filling each column, and fill any holes in the grid</reference>
+			</element>
+<!--
+		<element pattern="([A-Za-z0-9;'])" highlight="css-value" is_regex="1" case_insens="1"/>
+			<element id="e.css.percent" pattern="[0-9]+\.?[0-9]*%" is_regex="1" highlight="css-value"/>
+			<element id="e.css.length" pattern="[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px|ch)" is_regex="1" highlight="css-value"/>
+-->		
+		</group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>
+		<group class="is_SASS">
+			<element idref="e.sass.variable" />
+			<element idref="e.sass.newline_end"/>
+		</group>
+
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
+<element pattern="grid-auto-rows" highlight="css-property" >
+	<autocomplete append=": " />
+	<reference>The grid-auto-rows property sets a size for the rows in a grid container.
+	<b>Values:</b> auto | max-content | min-content | length (in % or units) 
+	<b>Initial:</b> auto
+	<b>Applies to:</b> grid containers
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> specified value
+	<b>Animatable:</b> yes
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/css-grid-1/#propdef-grid-auto-rows">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:&quot;'">
+		<group highlight="css-value" >
+			<autocomplete append="; " />
+			<element pattern="auto">
+				<reference>Default value. The size of the rows is determined by the size of the largest item in the row</reference>
+			</element>
+			<element pattern="max-content">
+				<reference>Sets the size of each row to depend on the largest item in the row</reference>
+			</element>
+			<element pattern="min-content">
+				<reference>Sets the size of each row to depend on the largest item in the row</reference>
+			</element>
+			<element id="e.css.percent" pattern="[0-9]+\.?[0-9]*%" is_regex="1" highlight="css-value"/>
+			<element id="e.css.length" pattern="[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px|ch)" is_regex="1" highlight="css-value"/>
+<!--
+		<element pattern="([A-Za-z0-9;'])" highlight="css-value" is_regex="1" case_insens="1"/>
+			<element id="e.css.percent" pattern="[0-9]+\.?[0-9]*%" is_regex="1" highlight="css-value"/>
+			<element id="e.css.length" pattern="[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px|ch)" is_regex="1" highlight="css-value"/>
+-->		
+		</group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>
+		<group class="is_SASS">
+			<element idref="e.sass.variable" />
+			<element idref="e.sass.newline_end"/>
+		</group>
+
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
+<element pattern="grid-column" highlight="css-property" >
+	<autocomplete append=": " />
+	<reference>The grid-column property specifies a grid item's size and location in a grid layout, and is a shorthand property for the following properties:
+	    grid-column-start
+   	 grid-column-end
+	<b>Values:</b> <em>grid-column-start</em> | <em>grid-column-end</em>
+	<b>Initial:</b> auto / auto
+	<b>Applies to:</b> grid containers
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> specified value
+	<b>Animatable:</b> yes
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/css-grid-1/#propdef-grid-column">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:&quot;'">
+		<group highlight="css-value" >
+			<autocomplete append="; " />
+			<element id="e.css.percent" pattern="[0-9] \/ [0-9]" is_regex="1" highlight="css-value"/>
+<!--
+			<element pattern="auto">
+				<reference>Default value. The size of the rows is determined by the size of the largest item in the row</reference>
+			</element>
+			<element pattern="auto">
+				<reference>Default value. The size of the rows is determined by the size of the largest item in the row</reference>
+			</element>
+			<element pattern="max-content">
+				<reference>Sets the size of each row to depend on the largest item in the row</reference>
+			</element>
+			<element pattern="min-content">
+				<reference>Sets the size of each row to depend on the largest item in the row</reference>
+			</element>
+			<element id="e.css.percent" pattern="[0-9]+\.?[0-9]*%" is_regex="1" highlight="css-value"/>
+			<element id="e.css.length" pattern="[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px|ch)" is_regex="1" highlight="css-value"/>
+		<element pattern="([A-Za-z0-9;'])" highlight="css-value" is_regex="1" case_insens="1"/>
+			<element id="e.css.percent" pattern="[0-9]+\.?[0-9]*%" is_regex="1" highlight="css-value"/>
+			<element id="e.css.length" pattern="[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px|ch)" is_regex="1" highlight="css-value"/>
+-->		
+		</group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>
+		<group class="is_SASS">
+			<element idref="e.sass.variable" />
+			<element idref="e.sass.newline_end"/>
+		</group>
+
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
+<element pattern="grid-column-end" highlight="css-property" >
+	<autocomplete append=": " />
+	<reference>The grid-column-end property defines how many columns an item will span, or on which column-line the item will end (see example at the end of this page).
+	<b>Values:</b> auto | span <em>n</em> | <em>column-line</em>
+	<b>Initial:</b> auto
+	<b>Applies to:</b> grid containers
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> specified value
+	<b>Animatable:</b> yes
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/css-grid-1/#propdef-grid-column-end">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:&quot;'">
+		<group highlight="css-value" >
+			<autocomplete append="; " />
+			<element pattern="auto">
+				<reference>Default value. The item will span one column</reference>
+			</element>
+			<element pattern="(span [0-9])"  is_regex="1" case_insens="1">
+				<reference>span <em>n</em> - Specifies the number of columns the item will span</reference>
+			</element>
+			<element pattern="([0-9])"  is_regex="1">
+				<reference>Specifies on which column to end the display of the item</reference>
+			</element>
+<!--
+			<element id="e.css.percent" pattern="[0-9] \/ [0-9]" is_regex="1" highlight="css-value"/>
+			<element id="e.css.percent" pattern="[0-9]+\.?[0-9]*%" is_regex="1" highlight="css-value"/>
+			<element id="e.css.length" pattern="[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px|ch)" is_regex="1" highlight="css-value"/>
+		<element pattern="([A-Za-z0-9;'])" highlight="css-value" is_regex="1" case_insens="1"/>
+			<element id="e.css.percent" pattern="[0-9]+\.?[0-9]*%" is_regex="1" highlight="css-value"/>
+			<element id="e.css.length" pattern="[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px|ch)" is_regex="1" highlight="css-value"/>
+-->		
+		</group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>
+		<group class="is_SASS">
+			<element idref="e.sass.variable" />
+			<element idref="e.sass.newline_end"/>
+		</group>
+
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
 <element pattern="height" highlight="css-property" >
 	<autocomplete append=": " />
 <reference>Specifies the content height of boxes.
@@ -2450,6 +2854,7 @@ href="http://www.w3.org/TR/CSS21/visudet.html#the-height-property">www.w3.org</a
 href="http://www.w3.org/TR/CSS2/visuren.html#position-props">www.w3.org</a></reference>
 <context idref="c.css.box_offsets"/>
 </element>
+
 <element pattern="letter-spacing" highlight="css-property" >
 	<autocomplete append=": " />
 <reference>Specifies spacing behavior between text characters.
@@ -3490,8 +3895,7 @@ href="http://www.w3.org/TR/CSS21/generate.html#quotes-specify">www.w3.org</a></r
 </element>
 <element pattern="resize" highlight="css-property" >
 	<autocomplete append=": " />
-<reference><b>WARNING:</b> this property is not supported by Internet Explorer and Opera
-Allows the author to specify whether or not an element is resizable by the user, and if so, along which axis/axes.
+<reference>Allows the author to specify whether or not an element is resizable by the user, and if so, along which axis/axes.
 <b>Values:</b> none | both | horizontal | vertical | inherit
 <b>Initial:</b> none
 <b>Applies to:</b> elements with 'overflow' other than visible
