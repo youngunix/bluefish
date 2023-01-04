@@ -618,10 +618,10 @@ compile_keyword_to_DFA(Tscantable * st, const gchar * keyword, guint16 matchnum,
 				if (get_tablerow(st, context, p).match != 0
 					&& get_tablerow(st, context, p).match != matchnum) {
 					gchar *dbstring = ldb_stack_string(ldb);
-					g_print("Error in language file %s: patterns %s and %s in context %d overlap each other\n",
-							dbstring, keyword, g_array_index(st->matches, Tpattern,
-												   get_tablerow(st, context, p).match).pattern,
-							context);
+					g_print("Error in language file %s: while compiling pattern %s (%d) in context %d, it overlaps with existing pattern %s (%d)\n",
+							dbstring, keyword, matchnum, context,
+							g_array_index(st->matches, Tpattern,get_tablerow(st, context, p).match).pattern,
+							get_tablerow(st, context, p).match);
 					g_free(dbstring);
 				}
 				get_tablerow(st, context, p).match = matchnum;
