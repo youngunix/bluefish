@@ -30,9 +30,9 @@
 	<autocomplete append=" type=&quot;text/css&quot;&gt;&#10;&#10;&lt;/style&gt;" backup_cursor="9" />
 	<context id="c.html.css.main" symbols=" &#9;&#10;&#13;{}./*&lt;&gt;:" commentid_block="cm.cblockcomment" commentid_line="none" default_spellcheck="0">
 		<element idref="e.html.lcomment"/>
-		<element id="e.html.css.lcomment" pattern="/*" starts_block="1" highlight="css-comment">
+		<element id="e.css.lcomment" pattern="/*" starts_block="1" highlight="css-comment">
 			<context symbols="*/&#9;&#10;&#13;" highlight="css-comment">
-				<element pattern="*/" ends_block="1" blockstartelement="e.html.css.lcomment" highlight="css-comment" ends_context="1" />
+				<element pattern="*/" ends_block="1" blockstartelement="e.css.lcomment" highlight="css-comment" ends_context="1" />
 			</context>
 		</element>
 		&css-selectors;
