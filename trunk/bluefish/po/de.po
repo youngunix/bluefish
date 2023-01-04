@@ -3276,10 +3276,6 @@ msgstr "<b>Tastenkürzel</b>"
 msgid "_Switch between tabs with <Alt>+0..9"
 msgstr "Zwi_schen Tabreitern mit <Alt>+0..9 wechseln"
 
-#: ../src/preferences.c:3006
-msgid "_Switch between tabs with <Alt>+0..9"
-msgstr "Zwi_schen Tabreitern mit <Alt>+0..9 wechseln"
-
 #: ../src/preferences.c:3011
 msgid "Save menu accelerators on exit"
 msgstr "Menü-Tastenkürzel beim Beenden speichern"
