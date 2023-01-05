@@ -138,9 +138,9 @@
 	<autocomplete append=" /&gt;" />
 	<context id="c.css.main" symbols=" &#9;&#10;&#13;{}./*&lt;&gt;:+~[]," default_spellcheck="0">
 		<element idref="e.html.comment"/>
-		<element id="e.xhtml.css.lcomment" pattern="/*" starts_block="1" highlight="css-comment">
+		<element id="e.css.lcomment" pattern="/*" starts_block="1" highlight="css-comment">
 			<context symbols="*/&#9;&#10;&#13;" highlight="css-comment">
-				<element pattern="*/" ends_block="1" blockstartelement="e.xhtml.css.lcomment" highlight="css-comment" ends_context="1" />
+				<element pattern="*/" ends_block="1" blockstartelement="e.css.lcomment" highlight="css-comment" ends_context="1" />
 			</context>
 		</element>
 		&css-selectors;
