@@ -590,7 +590,7 @@ parse_attributes(Tbflang *bflang,xmlTextReaderPtr reader, Tattrib *attribs, gint
 			}
 		}
 		if (!found) {
-			g_print("Error in language file, found unknown attribute %s\n",aname);
+			g_print("Error in language file %s, found unknown attribute %s\n",bflang->name, aname);
 		}
 		xmlFree(aname);
 	}
