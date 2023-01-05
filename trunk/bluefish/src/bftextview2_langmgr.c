@@ -2370,7 +2370,9 @@ cleanup_scantable(Tscantable *st)
 			g_completion_free(g_array_index(st->contexts, Tcontext, i).ac);
 		if (g_array_index(st->contexts, Tcontext, i).patternhash)
 			g_hash_table_destroy(g_array_index(st->contexts, Tcontext, i).patternhash);
-		g_free(g_array_index(st->contexts, Tcontext, i).contexthighlight);
+		/* the contexthighlight cannot be free'ed, because it is sometimes re-used over multiple contexts, and it might also be a 
+		static string defined in the executable
+		g_free(g_array_index(st->contexts, Tcontext, i).contexthighlight);*/
 		g_array_free(g_array_index(st->contexts, Tcontext, i).table, TRUE);
 	}
 	for (i = 1; i < st->comments->len; i++) {
