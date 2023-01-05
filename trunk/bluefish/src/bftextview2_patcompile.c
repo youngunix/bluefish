@@ -750,7 +750,7 @@ match_autocomplete_reference(Tscantable * st, guint16 matchnum, guint16 context)
 #ifdef DEVELOPMENT
 			if (g_strcmp0(pac->autocomplete_string, g_array_index(st->matches, Tpattern, matchnum).pattern)!=0) {
 				gint hashpat = GPOINTER_TO_INT(g_hash_table_lookup(g_array_index(st->contexts, Tcontext, context).patternhash,pac->autocomplete_string));
-				if (hashpat && !already_handled) {
+				if (hashpat && !already_handled && hashpat != pattern_id) {
 					g_print("autocompletion item %s is already in the context %d hash table for pattern %d, now handling pattern %d that has %d autocomplete entries?!\n", pac->autocomplete_string, context, hashpat, pattern_id, g_slist_length(g_array_index(st->matches, Tpattern, matchnum).autocomp_items));
 				}
 			}
