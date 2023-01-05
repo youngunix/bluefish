@@ -358,6 +358,16 @@ acw_selection_changed_lcb(GtkTreeSelection * selection, Tacwin * acw)
 	gtk_widget_set_size_request(acw->win, acw->listwidth, -1);
 }
 
+static gboolean
+acw_label_active_link_lcb(GtkLabel *label,gchar    *uri,gpointer  user_data) {
+	/*
+	this executes the default browser inside our process, and thus exits bluefish
+	gchar *uri2 = g_strdup(uri);
+	g_app_info_launch_default_for_uri(uri2,NULL,NULL);
+	g_free(uri2);*/
+	return TRUE;
+}
+
 static Tacwin *
 acwin_create(BluefishTextView * btv)
 {
@@ -419,6 +429,7 @@ acwin_create(BluefishTextView * btv)
 	/*gtk_widget_set_size_request(acw->reflabel,150,-1); */
 	gtk_widget_show_all(acw->scroll);
 	gtk_widget_show(hbox);
+	g_signal_connect(acw->reflabel, "activate-link", acw_label_active_link_lcb, acw);
 	/*gtk_widget_set_size_request(GTK_WIDGET(acw->tree),100,200); */
 	/*gtk_widget_set_size_request(acw->win, 150, 200); */
 	/*g_signal_connect(G_OBJECT(acw->win),"key-release-event",G_CALLBACK(acwin_key_release_lcb),acw); */
