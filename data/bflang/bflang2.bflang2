@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		bflang2.bflang2 $Revision$
 
-		Copyright (C) 2008-2015 Olivier Sessink
+		Copyright (C) 2008-2023 Olivier Sessink
 
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -83,9 +83,9 @@ The default value defines the behavior if the user previously did not have this 
 				<autocomplete append=" type=&quot;&quot; start=&quot;&quot; /&gt;" />
 				<reference>The comment tag specifies which comment syntax is possible in this language. This is used by the 'toggle comment' feature. In some languages this is context specific (for example Javascript inside HTML has a different comment than HTML). The id attribute can be used to set a certain comment type for a certain context.</reference>
 			</tag>
-			<tag name="smartindent" highlight="tag" attributes="characters" autocomplete_append=" characters=&quot;&quot; /&gt;" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;"/>
-			<tag name="smartoutdent" highlight="tag" attributes="characters" autocomplete_append=" characters=&quot;&quot; /&gt;" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;"/>
-			<tag name="smartselection" highlight="tag" attributes="characters" autocomplete_append=" characters=&quot;&quot; /&gt;" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;"/>
+			<tag name="smartindent" highlight="tag" attributes="characters" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;"/>
+			<tag name="smartoutdent" highlight="tag" attributes="characters" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;"/>
+			<tag name="smartselection" highlight="tag" attributes="characters" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;"/>
 			<tag name="default_spellcheck" highlight="tag" attributes="enabled,spell_decode_entities" attribhighlight="attribute" attrib_autocomplete_append="=&quot;1&quot;">
 				<autocomplete append=" enabled=&quot;1&quot; /&gt;" />
 			</tag>
@@ -179,7 +179,7 @@ Some elements are identifiers, for example the name of a function or variable. I
 	</context>
 </tag>
 
-<tag name="bfinc" highlight="tag" autocomplete_append="&gt;">
+<tag name="bfinc" highlight="tag" >
 <reference>the <i>bfinc</i> tag is the root tag of the bluefish language include file.</reference>
 	<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;" >
 		<element idref="e.comment"/>
