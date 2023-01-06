@@ -856,11 +856,11 @@ process_scanning_element(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gin
 		NULL, *block_name = NULL, *class = NULL, *notclass = NULL, *id =	NULL, *condition_idref=NULL, *condition_contextref=NULL;
 	gboolean starts_block = FALSE, ends_block = FALSE, is_empty, tagclose_from_blockstack = FALSE, stretch_blockstart=FALSE;
 	gint case_insens = UNDEFINED, is_regex = UNDEFINED;
-	gint ends_context = 0;
+	gint ends_context = 0, depth;
 	gint identifier_mode=0, identifier_jump=0, identifier_autocomp=0,condition_mode=0,condition_relation=0;
 	GSList *autocomplete=NULL;
 	is_empty = xmlTextReaderIsEmptyElement(reader);
-
+	depth = xmlTextReaderDepth(reader);
 	Tattrib attribs[] = {{"pattern", &pattern, attribtype_string},
 					{"id", &id, attribtype_string},
 					{"idref", &idref, attribtype_string},
@@ -887,7 +887,7 @@ process_scanning_element(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gin
 					};
 	parse_attributes(bfparser->bflang,reader, attribs, sizeof(attribs)/sizeof(Tattrib));
 	ldb_stack_push(&bfparser->ldb, id?id:(idref?idref:(pattern?pattern:"empty-element")));
-
+	DBG_PARSING("process_scanning_element, called for pattern=%s, id=%s, idref=%s\n",pattern?pattern:"NULL",id?id:"NULL",idref?idref:"NULL");
 #ifdef DEVELOPMENT
 /*	if (g_strcmp0(id,"e.css.in_style_attribute.dquote")==0) {
 		g_print("e.css.in_style_attribute.dquote has condition_mode=%d and contextref=%s\n",condition_mode,condition_contextref);
@@ -902,7 +902,7 @@ process_scanning_element(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gin
 		g_print("Error in language file, id %s / pattern %s has stretch_blockstart or ends_block enabled without blockstartelement\n", id?id:"-", pattern?pattern:"null");
 	}
 	add_element = do_parse(bfparser, class, notclass);
-/*	g_print("add_element=%d for class=%s and notclass=%s\n",add_element, class, notclass);*/
+	/*g_print("add_element=%d for class=%s and notclass=%s\n",add_element, class, notclass);*/
 	if (add_element) {
 		if (idref && idref[0]) {
 			guint16 matchnum;
@@ -911,6 +911,7 @@ process_scanning_element(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gin
 				g_print("Error in language file, element with id %s does not exist, ABORT\n", idref);
 				bfparser->failed = TRUE;
 			} else if (matchnum) {
+				DBG_AUTOCOMP("process_scanning_element:%d, calling compile_existing_match(matchnum=%d, context=%d)\n",__LINE__,matchnum,context);
 				compile_existing_match(bfparser->st, matchnum, context, &bfparser->ldb);
 				used_idref=TRUE;
 				if (g_array_index(bfparser->st->matches, Tpattern, matchnum).nextcontext < 0
@@ -1037,6 +1038,9 @@ process_scanning_element(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gin
 					} else if (nodetype == XML_READER_TYPE_ELEMENT && xmlStrEqual(name, (xmlChar *) "autocomplete")) {
 						process_autocomplete(reader, bfparser, &autocomplete);
 					} else {
+						gchar *dbstring = ldb_stack_string(&bfparser->ldb);
+						g_print("Error in language file %s, found unknown element %s, ignoring this..\n",dbstring,name);
+						g_free(dbstring);
 						DBG_PARSING("process_scanning_element, parsing UNKNOWN element with name %s and nodetype %d\n", name, nodetype);
 					}
 					xmlFree(name);
@@ -1048,7 +1052,11 @@ process_scanning_element(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gin
 				match_set_reference(bfparser->st, matchnum, reference);
 				xmlFree(reference);
 			}
+			DBG_AUTOCOMP("process_scanning_element:%d calling match_autocomplete_reference for pattern %d %s in context %d\n",__LINE__,matchnum,pattern?pattern:"NULL",context);
 			match_autocomplete_reference(bfparser->st, matchnum, context);
+		} else {
+			if (!is_empty)
+				skip_to_end_tag(reader, depth);
 		}
 	}
 	/* TODO cleanup! */
@@ -1888,7 +1896,7 @@ process_scanning_context(xmlTextReaderPtr reader, Tbflangparsing * bfparser, GQu
 	/* now get the children */
 	while (xmlTextReaderRead(reader) == 1) {
 		xmlChar *name = xmlTextReaderName(reader);
-		DBG_PARSING("parsing context, found node id %s\n", name);
+		DBG_PARSING("xmlreader at depth %d, parsing context, found node id %s\n",xmlTextReaderDepth(reader), name);
 		if (xmlStrEqual(name, (xmlChar *) "element")) {
 			process_scanning_element(reader, bfparser, context, contextstack, NULL, UNDEFINED,
 									 UNDEFINED, NULL);

@@ -756,6 +756,7 @@ match_autocomplete_reference(Tscantable * st, guint16 matchnum, guint16 context)
 			}
 #endif
 			if (!already_handled) {
+				DBG_AUTOCOMP("match_autocomplete_reference:%d, adding %s to autocompletion in context %d\n",__LINE__,pac->autocomplete_string, context);
 				list = g_list_prepend(list, pac->autocomplete_string);
 				/* we only need to add an autocomplete string to the hash table if the pattern has a
 				reference text, or backup_cursor is set, or trigger_new_autocomp_popup, or there
@@ -844,7 +845,7 @@ match_set_reference(Tscantable * st, guint16 matchnum, const gchar * reference)
 void
 compile_existing_match(Tscantable * st, guint16 matchnum, gint16 context, gpointer ldb)
 {
-	DBG_PATCOMPILE("compile existing match %d (%s) in context %d\n", matchnum,
+	DBG_AUTOCOMP("compile existing match %d (%s) in context %d\n", matchnum,
 				   g_array_index(st->matches, Tpattern, matchnum).pattern, context);
 	if (g_array_index(st->matches, Tpattern, matchnum).is_regex) {
 		compile_limitedregex_to_DFA(st, g_array_index(st->matches, Tpattern, matchnum).pattern,
@@ -854,6 +855,7 @@ compile_existing_match(Tscantable * st, guint16 matchnum, gint16 context, gpoint
 		compile_keyword_to_DFA(st, g_array_index(st->matches, Tpattern, matchnum).pattern, matchnum, context,
 							   g_array_index(st->matches, Tpattern, matchnum).case_insens, ldb);
 	}
+	DBG_AUTOCOMP("compile_existing_match:%d, calling match_autocomplete_reference(%d, %d)\n",__LINE__, matchnum, context);
 	match_autocomplete_reference(st, matchnum, context);
 }
 
