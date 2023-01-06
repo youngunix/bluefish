@@ -29,7 +29,7 @@
 	<!ENTITY JQuery SYSTEM "JQuery.bfinc">
 ]>
 
-<bflang name="Generic HTML" version="3" contexts="414" matches="4820">
+<bflang name="Generic HTML" version="3" contexts="216" matches="3195">
 <header>
 	<mime type="text/html"/>
 	<mime type="text/plain?shtml"/>
