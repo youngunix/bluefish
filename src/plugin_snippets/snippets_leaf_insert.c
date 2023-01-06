@@ -190,7 +190,7 @@ static void snippets_insert_dialog(Tsnippetswin *snw, xmlNodePtr leaf, gint num_
 		}
 		free_convert_table(ctable);
 		doc_insert_two_strings(snw->bfwin->current_document, before_final, after_final);
-		doc_scroll_to_cursor(snw->bfwin->current_document);
+		gtk_widget_grab_focus(snw->bfwin->current_document->view);
 	}
 	gtk_widget_destroy(sid->dialog);
 	g_free(sid);
