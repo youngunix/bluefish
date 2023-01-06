@@ -2143,7 +2143,7 @@ build_lang_thread(gpointer data)
 		}
 		g_print("Language statistics for %s from %s\n", bfparser->bflang->name, bfparser->bflang->filename);
 		g_print("reference size       %9.2f Kbytes\n", bfparser->reference_size/1024.0);
-		g_print("largest table %5d (%9.2f Kbytes)\n", largest_table,
+		g_print("largest table %5d (%9.2f Kbytes)      <-- should never exceed 65500\n", largest_table,
 				1.0 * largest_table * sizeof(Ttablerow) / 1024.0);
 		g_print("total tables  %5d (%9.2f Kbytes)\n", tablenum,
 				1.0 * tablenum * sizeof(Ttablerow) / 1024.0);
