@@ -1038,10 +1038,12 @@ process_scanning_element(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gin
 					} else if (nodetype == XML_READER_TYPE_ELEMENT && xmlStrEqual(name, (xmlChar *) "autocomplete")) {
 						process_autocomplete(reader, bfparser, &autocomplete);
 					} else {
-						gchar *dbstring = ldb_stack_string(&bfparser->ldb);
-						g_print("Error in language file %s, found unknown element %s, ignoring this..\n",dbstring,name);
-						g_free(dbstring);
-						DBG_PARSING("process_scanning_element, parsing UNKNOWN element with name %s and nodetype %d\n", name, nodetype);
+						if (nodetype == XML_READER_TYPE_ELEMENT) {
+							gchar *dbstring = ldb_stack_string(&bfparser->ldb);
+							g_print("Error in language file %s, found unknown element %s, ignoring this..\n",dbstring,name);
+							g_free(dbstring);
+						}
+						DBG_PARSING("process_scanning_element, not handling element with name %s and nodetype %d\n", name, nodetype);
 					}
 					xmlFree(name);
 				}
