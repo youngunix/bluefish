@@ -33,15 +33,203 @@
 *********************************************************************************************
 *********************************************************************************************
 -->
-<bfinc>
 <!--
-********************************************************************************************
-With original file the following possible errors occur:
-Possible error in language file /home/drmartin/.bluefish//css.bflang2 / c.html.css.main / group / }: id - / pattern } has ends_context=2, but has only 1 parent contexts
-Possible error in language file CSS: condition reference to context c.html.attrib.style.inner for pattern 193 (") does not exist
-Possible error in language file CSS: condition reference to context c.html.attrib.style.inner for pattern 194 (') does not exist
-*********************************************************************************************
+*******************************************************************************************
+** The following idrefs are available for reuse (in parentheses is the line number
+** from which they are made available). This does not include the idrefs of the master
+** element (i.e. the CSS properties):
+** prefix "c.css.": accent-color (59 - includes also auto, initial, inherit),
+** prefix "e.css.": end (222); lcomment(224); in_style_attribute.dquote(225); 
+**   in_style_attribute.squote (228); in_style_section.rbrace (229);
+** 
 -->
+<bfinc>
+
+<element pattern="accent-color" highlight="css-property"  id="e.css.accent-color" idref="e.css.accent-color">
+	<autocomplete append=": " />
+	<reference>The accent-color property specifies the accent color for user-interface controls like: &lt;input type="checkbox"&gt;, &lt;input type="radio"&gt;, &lt;input type="range"&gt; and &lt;progress&gt;.
+	<b>Values:</b> auto | <i>color</i> | initial | inherit
+	<b>Initial:</b> see individual properties
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> yes
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> the keyword <i>auto</i> or a computed color 
+	<b>Animatable:</b> yes
+	<b>Animation type:</b> by computed value type
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-background">www.w3.org</a></reference>
+	<context id="c.css.accent-color" idref="c.css.accent-color" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="aliceblue"/>
+		<element pattern="antiquewhite"/>
+		<element pattern="aqua"/>
+		<element pattern="aquamarine"/>
+		<element pattern="azure"/>
+		<element pattern="beige"/>
+		<element pattern="bisque"/>
+		<element pattern="black"/>
+		<element pattern="blanchedalmond"/>
+		<element pattern="blue"/>
+		<element pattern="blueviolet"/>
+		<element pattern="brown"/>
+		<element pattern="burlywood"/>
+		<element pattern="cadetblue"/>
+		<element pattern="chartreuse"/>
+		<element pattern="chocolate"/>
+		<element pattern="coral"/>
+		<element pattern="cornflowerblue"/>
+		<element pattern="cornsilk"/>
+		<element pattern="crimson"/>
+		<element pattern="cyan"/>
+		<element pattern="darkblue"/>
+		<element pattern="darkcyan"/>
+		<element pattern="darkgoldenrod"/>
+		<element pattern="darkgray"/>
+		<element pattern="darkgreen"/>
+		<element pattern="darkgrey"/>
+		<element pattern="darkkhaki"/>
+		<element pattern="darkmagenta"/>
+		<element pattern="darkolivegreen"/>
+		<element pattern="darkorange"/>
+		<element pattern="darkorchid"/>
+		<element pattern="darkred"/>
+		<element pattern="darksalmon"/>
+		<element pattern="darkseagreen"/>
+		<element pattern="darkslateblue"/>
+		<element pattern="darkslategray"/>
+		<element pattern="darkslategrey"/>
+		<element pattern="darkturquoise"/>
+		<element pattern="darkviolet"/>
+		<element pattern="deeppink"/>
+		<element pattern="deepskyblue"/>
+		<element pattern="dimgray"/>
+		<element pattern="dimgrey"/>
+		<element pattern="dodgerblue"/>
+		<element pattern="firebrick"/>
+		<element pattern="floralwhite"/>
+		<element pattern="forestgreen"/>
+		<element pattern="fuchsia"/>
+		<element pattern="gainsboro"/>
+		<element pattern="ghostwhite"/>
+		<element pattern="gold"/>
+		<element pattern="goldenrod"/>
+		<element pattern="gray"/>
+		<element pattern="green"/>
+		<element pattern="greenyellow"/>
+		<element pattern="grey"/>
+		<element pattern="honeydew"/>
+		<element pattern="hotpink"/>
+		<element pattern="indianred"/>
+		<element pattern="indigo"/>
+		<element pattern="ivory"/>
+		<element pattern="khaki"/>
+		<element pattern="lavender"/>
+		<element pattern="lavenderblush"/>
+		<element pattern="lawngreen"/>
+		<element pattern="lemonchiffon"/>
+		<element pattern="lightblue"/>
+		<element pattern="lightcoral"/>
+		<element pattern="lightcyan"/>
+		<element pattern="lightgoldenrodyellow"/>
+		<element pattern="lightgray"/>
+		<element pattern="lightgreen"/>
+		<element pattern="lightgrey"/>
+		<element pattern="lightpink"/>
+		<element pattern="lightsalmon"/>
+		<element pattern="lightseagreen"/>
+		<element pattern="lightskyblue"/>
+		<element pattern="lightslategray"/>
+		<element pattern="lightslategrey"/>
+		<element pattern="lightsteelblue"/>
+		<element pattern="lightyellow"/>
+		<element pattern="lime"/>
+		<element pattern="limegreen"/>
+		<element pattern="linen"/>
+		<element pattern="magenta"/>
+		<element pattern="maroon"/>
+		<element pattern="mediumaquamarine"/>
+		<element pattern="mediumblue"/>
+		<element pattern="mediumorchid"/>
+		<element pattern="mediumpurple"/>
+		<element pattern="mediumseagreen"/>
+		<element pattern="mediumslateblue"/>
+		<element pattern="mediumspringgreen"/>
+		<element pattern="mediumturquoise"/>
+		<element pattern="mediumvioletred"/>
+		<element pattern="midnightblue"/>
+		<element pattern="mintcream"/>
+		<element pattern="mistyrose"/>
+		<element pattern="moccasin"/>
+		<element pattern="navajowhite"/>
+		<element pattern="navy"/>
+		<element pattern="oldlace"/>
+		<element pattern="olive"/>
+		<element pattern="olivedrab"/>
+		<element pattern="orange"/>
+		<element pattern="orangered"/>
+		<element pattern="orchid"/>
+		<element pattern="palegoldenrod"/>
+		<element pattern="palegreen"/>
+		<element pattern="paleturquoise"/>
+		<element pattern="palevioletred"/>
+		<element pattern="papayawhip"/>
+		<element pattern="peachpuff"/>
+		<element pattern="peru"/>
+		<element pattern="pink"/>
+		<element pattern="plum"/>
+		<element pattern="powderblue"/>
+		<element pattern="purple"/>
+		<element pattern="red"/>
+		<element pattern="rosybrown"/>
+		<element pattern="royalblue"/>
+		<element pattern="saddlebrown"/>
+		<element pattern="salmon"/>
+		<element pattern="sandybrown"/>
+		<element pattern="seagreen"/>
+		<element pattern="seashell"/>
+		<element pattern="sienna"/>
+		<element pattern="silver"/>
+		<element pattern="skyblue"/>
+		<element pattern="slateblue"/>
+		<element pattern="slategray"/>
+		<element pattern="slategrey"/>
+		<element pattern="snow"/>
+		<element pattern="springgreen"/>
+		<element pattern="steelblue"/>
+		<element pattern="tan"/>
+		<element pattern="teal"/>
+		<element pattern="thistle"/>
+		<element pattern="tomato"/>
+		<element pattern="turquoise"/>
+		<element pattern="violet"/>
+		<element pattern="wheat"/>
+		<element pattern="white"/>
+		<element pattern="whitesmoke"/>
+		<element pattern="yellow"/>
+		<element pattern="yellowgreen"/>
+		<element pattern="currentColor"/>
+		<element pattern="transparent"/>
+	</group>
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="auto"/>
+		<element pattern="initial"/>
+		<element pattern="inherit"/>
+	</group>
+	<element pattern="#([0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]|[0-9a-f][0-9a-f][0-9a-f])" highlight="css-value" is_regex="1" case_insens="1" id="e.css.hex-color" idref="e.css.hex-color" />
+	<element pattern="(rgba|hsla)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *, *(0|1|0.[0-9]) *\)" highlight="css-value" is_regex="1" case_insens="1" id="e.css.rgba-color" idref="e.css.rgba-color" />
+	<element pattern="(rgb|hsl)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *\)" highlight="css-value" is_regex="1" case_insens="1" id="e.css.rgb-color" idref="e.css.rgb-color" />
+	<element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
 <element pattern="align-content" highlight="css-property"  id="e.css.align-content" idref="e.css.align-content">
 	<autocomplete append=": " />
 	<reference>Aligns a flex container's lines within the flex container when there is extra space in the cross-axis.
@@ -88,7 +276,8 @@ Possible error in language file CSS: condition reference to context c.html.attri
 			</element>
 		</group>
 		<element idref="e.css.lcomment"/>
-		<element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>
+		<element idref="e.css.end"/>
+<!--		<element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>-->
 		<group class="is_SASS">
 			<element idref="e.sass.variable" />
 			<element id="e.sass.newline_end" idref="e.sass.newline_end" pattern="(&#9;|&#10;|&#13;)" is_regex="1" ends_context="1"/>
@@ -101,10 +290,13 @@ Possible error in language file CSS: condition reference to context c.html.attri
 
 <element pattern="align-items" highlight="css-property"  id="e.css.align-items" idref="e.css.align-items">
 	<autocomplete append=": " />
-	<reference>Flex items can be aligned in the cross axis of the current line of the flex container, similar to 
-		‘justify-content’ but in the perpendicular direction.
-	<b>Values:</b> flex-start | flex-end | center | baseline | stretch
-	<b>Initial:</b> stretch
+	<reference>The align-items property specifies the default alignment for items inside a flexbox or grid container.
+	 In a flexbox container, the flexbox items are aligned on the cross axis, which is vertical by default (opposite of flex-direction).
+    In a grid container, the grid items are aligned in the block direction. For pages in English, block direction is downward and inline direction is left to right.
+	For this property to have any alignment effect, the items need available space around themselves in the appropriate direction.
+	<b>Tip</b>: Use the align-self property of each item to override the align-items property.
+	<b>Values:</b> normal | stretch | <i>positional alignment</i> | flex-start | flex-end | baseline | initial | inherit
+	<b>Initial:</b> normal
 	<b>Applies to:</b> flex containers
 	<b>Inherited:</b> no
 	<b>Percentages:</b> N/A
@@ -117,11 +309,16 @@ Possible error in language file CSS: condition reference to context c.html.attri
 	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.align-items" idref="c.css.align-items">
 		<group highlight="css-value" >
 			<autocomplete append=";" />
+			<element pattern="normal"/>
+			<element pattern="stretch"/>
+			<element pattern="start"/>
+			<element pattern="end"/>
 			<element pattern="flex-start"/>
 			<element pattern="flex-end"/>
 			<element pattern="center"/>
 			<element pattern="baseline"/>
-			<element pattern="stretch"/>
+			<element pattern="initial"/>
+			<element pattern="inherit"/>
 		</group>
 		<element idref="e.css.end"/>
 		<group class="is_SASS">
@@ -159,6 +356,44 @@ Possible error in language file CSS: condition reference to context c.html.attri
 			<element pattern="center"/>
 			<element pattern="baseline"/>
 			<element pattern="stretch"/>
+			<element pattern="initial"/>
+			<element pattern="inherit"/>
+		</group>
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
+<element pattern="all" highlight="css-property"  id="e.css.all" idref="e.css.all">
+	<autocomplete append=": " />
+	<reference>The <i>all</i> property resets all properties, apart from unicode-bidi and direction, to their initial or inherited value. It does not reset custom properties.
+	<b>Values:</b> initial | inherit | unset
+	<b>Initial:</b> see individual properties
+	<b>Applies to:</b> see individual properties
+	<b>Inherited:</b> see individual properties
+	<b>Percentages:</b> see individual properties
+	<b>Media:</b> see individual properties
+	<b>Computed value:</b> see individual properties
+	<b>Animatable:</b> no
+	<b>Animation type:</b> see individual properties
+	<b>Canonical order:</b> per grammar
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/css-cascade-3/#all-shorthand">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.empty_generic" idref="c.css.empty_generic">
+		<group highlight="css-value" >
+			<element pattern="initial">
+				<reference>Changes all the properties applied to the element or the element's parent to their initial value</reference>
+			</element>
+			<element pattern="inherit">
+				<reference>Changes all the properties applied to the element or the element's parent to their parent value</reference>
+			</element>
+			<element pattern="unset">
+			<reference>Changes all the properties applied to the element or the element's parent to their parent value if they are inheritable or to their initial value if not</reference>
+			</element>
 		</group>
 		<element idref="e.css.end"/>
 		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
@@ -171,8 +406,18 @@ Possible error in language file CSS: condition reference to context c.html.attri
 
 <element pattern="animation" highlight="css-property"  id="e.css.animation" idref="e.css.animation">
 	<autocomplete append=": " />
-	<reference>Shorthand property combines six of the animation properties into a single property.
-	<b>Values:</b> &lt;single-animation&gt; [ ‘,’ &lt;single-animation&gt; ]*
+	<reference>The animation property is a shorthand property for:
+    <i>animation-name</i> - Specifies the name of the keyframe you want to bind to the selector
+    <i>animation-duration</i> - Specifies how many seconds or milliseconds an animation takes to complete ( can also be &lt;inherit%gt; | &lt;initial%gt;)
+    <i>animation-timing-function</i> - Specifies the speed curve of the animation
+    <i>animation-delay</i> - Specifies a delay before the animation will start
+    <i>animation-iteration-count</i> - Specifies how many times an animation should be played
+    <i>animation-direction</i> - Specifies whether or not the animation should play in reverse on alternate cycles
+    <i>animation-fill-mode</i> - Specifies what values are applied by the animation outside the time it is executing
+    <i>animation-play-state</i> - Specifies whether the animation is running or paused
+    <b>Example</b>: animation: mymove 5s ease-in 2s 4 alternate none running;
+	<b>Note</b>: Always specify the animation-duration property, otherwise the duration is 0, and will never be played.
+	<b>Values:</b> <i>name duration timing-function delay iteration-count direction fill-mode play-state</i> | initial | inherit
 	<b>Initial:</b> see individual properties
 	<b>Applies to:</b> all elements, ::before and ::after pseudo-elements
 	<b>Inherited:</b> see individual properties
@@ -183,9 +428,20 @@ Possible error in language file CSS: condition reference to context c.html.attri
 	<b>Canonical order:</b> per grammar
 	<b>Specification:</b> <a
 	href="http://www.w3.org/TR/css3-animations/#animation-shorthand-property">www.w3.org</a></reference>
-	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.empty_generic" idref="c.css.empty_generic">
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.animation" idref="c.css.animation">
+		<element pattern="[A-Za-z0-9._-]+" is_regex="1" case_insens="1" highlight="css-value"/>
+		<element pattern="ease-in"/>
+		<element pattern="ease-out"/>
+		<element pattern="ease-in-out"/>
+		<element pattern="step-start"/>
+		<element pattern="step-end"/>
+		<element pattern="initial"/>
+		<element pattern="inherit"/>
 		<element idref="e.css.end"/>
-		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<group class="is_SASS">
+			<element idref="e.sass.variable" />
+			<element idref="e.sass.newline_end"/>
+		</group>
 		<element idref="e.css.lcomment"/>
 		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -195,19 +451,32 @@ Possible error in language file CSS: condition reference to context c.html.attri
 
 <element pattern="animation-delay" highlight="css-property"  id="e.css.animation-delay" idref="e.css.animation-delay">
 	<autocomplete append=": " />
-	<reference>Defines what values are applied by the animation outside the time it is executing.
-	<b>Values:</b> &lt;time&gt; [, &lt;time&gt;]*
+	<reference>	The animation-delay property specifies a delay for the start of an animation. The animation-delay value is defined in seconds (s) or milliseconds (ms).
+	<b>Values:</b> <i>time</i> | initial | inherit
 	<b>Initial:</b> 0s
-	<b>Applies to:</b> all elements, ::before and ::after pseudo-elements
+	<b>Applies to:</b> all elements
 	<b>Inherited:</b> no
 	<b>Percentages:</b> N/A
 	<b>Media:</b> visual
-	<b>Computed value:</b> as specified
+	<b>Computed value:</b> list, each item a duration
 	<b>Animatable:</b> no
-	<b>Canonical order:</b> per grammar
+	<b>Canonical order:</b> per grammar 
 	<b>Specification:</b> <a
-	href="http://www.w3.org/TR/css3-animations/#animation-delay-property">www.w3.org</a></reference>
-	<context idref="c.css.empty_generic" />
+	href="https://www.w3.org/TR/css-animations-1/#animation-delay">www.w3.org</a>
+	</reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.animation-delay" idref="c.css.animation-delay">
+		<element pattern="[0-9._-][s|ms]" is_regex="1" case_insens="1" highlight="css-value"/>
+		<element pattern="inherit"/>
+		<element idref="e.css.end"/>
+		<group class="is_SASS">
+			<element idref="e.sass.variable" />
+			<element idref="e.sass.newline_end"/>
+		</group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
 
 <element pattern="animation-direction" highlight="css-property"  id="e.css.animation-direction" idref="e.css.animation-direction">
@@ -420,9 +689,49 @@ Possible error in language file CSS: condition reference to context c.html.attri
 	</context>
 </element>
 
+<element pattern="aspect-ratio" highlight="css-property" id="e.css.aspect-ratio" idref="e.css.aspect-ratio" >
+	<autocomplete append=": " />
+	<reference>The aspect-ratio property allows you to define the ratio between width and height of an element. If aspect-ratio and width properties are set, the height will follow in the defined aspect ratio. <b>Tip</b>: Use the aspect-ratio property in responsive layouts where elements often vary in size and you want to preserve the ratio between width and height.
+	<b>Values:</b> auto | <i>number</i>/<i>number</i> | initial | inherit
+	<b>Initial:</b> auto
+	<b>Applies to:</b> all elements except inline boxes and internal ruby or table boxes 
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> specified keyword or a pair of numbers
+	<b>Animatable:</b> yes
+	<b>Animation type:</b> by computed value
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/css-sizing-4/#aspect-ratio">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.aspect-ratio" idref="c.css.aspect-ratio">
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+<!--		[0-9]+.\/?[0-9]+ -->
+		<element id="e.css.number-slash-number" pattern="[0-9]+.\/?[0-9]+" is_regex="1" highlight="css-value">
+			<reference>First number specifies the number for width in aspect ratio. Second number specifies the number for height in aspect ratio. Optional. If not set, number for height is 1 as default. Format <i>n</i>/<i>n</i></reference>
+		</element>
+		<element pattern="auto">
+			<reference>Replaced elements with a natural aspect ratio use that aspect ratio; otherwise the box has no preferred aspect ratio. Size calculations involving the aspect ratio work with the content box dimensions always.</reference>
+		</element>
+		<element pattern="initial">
+			<reference>Sets this property to its default value.</reference>
+		</element>
+		<element pattern="inherit">
+			<reference>Inherits this property from its parent element.</reference>
+		</element>
+	</group>
+	<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
 <element pattern="azimuth" highlight="css-property"  id="e.css.azimuth" idref="e.css.azimuth">
 	<autocomplete append=": " />
-	<reference><b>WARNING:</b> this property is not supported by famous browsers yet
+	<reference><b>WARNING:</b> This property is not supported by most browsers yet
 	Spatial audio is an important stylistic property for aural presentation.
 	<b>Values:</b> &lt;angle&gt; | [[ left-side | far-left | left | center-left | center | center-right | right | far-right | right-side ] || behind ] | leftwards | rightwards | inherit
 	<b>Initial:</b> center
@@ -460,6 +769,51 @@ Possible error in language file CSS: condition reference to context c.html.attri
 	</context>
 </element>
 
+<element pattern="backdrop-filter" highlight="css-property" id="e.css.backdrop-filter" idref="e.css.backdrop-filter" >
+	<autocomplete append=": " />
+	<reference>The backdrop-filter property is used to apply a graphical effect to the area behind an element. <b>Tip</b>: To see the effect, the element or its background must be at least partially transparent.
+	<b>Values:</b> none | <i>filter</i> [blur()|brightness()|contrast()|drop-shadow()|grayscale()|hue-rotate()|invert()|opacity()|sepia()|saturate()|<i>url to an SVG filter</i>] | initial | inherit
+	<b>Initial:</b> none
+	<b>Applies to:</b> area behind the element 
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> specified keyword or filter
+	<b>Animatable:</b> no
+	<b>Animation type:</b> N/A
+	<b>Specification:</b> no official specifications yet?
+	</reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.backdrop-filter" idref="c.css.backdrop-filter">
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element id="e.css.filters" idref="e.css.filters" pattern="(blur|brightness|contrast|drop-shadow|grayscale|hue-rotate|invert|opacity|sepia|saturate)\([0-9]+\.?[0-9]*%\)" is_regex="1" highlight="css-value">
+			<reference>A space-separated list of filter-functions (in parentheses follows the intensitiy in appropriate units)</reference>
+		</element>
+<!--		<element id="e.css.filters" idref="e.css.filters" pattern="(blur|brightness|contrast|drop-shadow|grayscale|hue-rotate|invert|opacity|sepia|saturate)" is_regex="1" highlight="css-value">
+			<reference>A space-separated list of filter-functions (in parentheses follows each filter the intensitiy in appropriate units)</reference>
+		</element>-->
+<!--		<element id="e.css.percent_in_parantheses" idref="e.css.percent_in_parantheses" pattern="\([0-9]+\.?[0-9]\)*%" is_regex="1" highlight="css-value">
+			<reference>intensity of the filter in percent</reference>
+		</element>-->
+		<element pattern="none">
+			<reference>Default value. No filter is applied to the backdrop.</reference>
+		</element>
+		<element pattern="initial">
+			<reference>Sets this property to its default value.</reference>
+		</element>
+		<element pattern="inherit">
+			<reference>Inherits this property from its parent element.</reference>
+		</element>
+	</group>
+	<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
 <element pattern="backface-visibility" highlight="css-property" id="e.css.backface-visibility" idref="e.css.backface-visibility" >
 	<autocomplete append=": " />
 	<reference>determines whether or not the ‘back’ side of a transformed element is visible when facing the viewer.
@@ -472,7 +826,8 @@ Possible error in language file CSS: condition reference to context c.html.attri
 	<b>Computed value:</b> same as specified value
 	<b>Animatable:</b> no
 	<b>Specification:</b> <a
-	href="http://www.w3.org/TR/css3-transforms/#backface-visibility-property">www.w3.org</a></reference>
+	href="http://www.w3.org/TR/css3-transforms/#backface-visibility-property">www.w3.org</a>
+	</reference>
 	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.backface-visibility" idref="c.css.backface-visibility">
 	<group highlight="css-value" >
 		<autocomplete append=";" />
@@ -501,7 +856,7 @@ Possible error in language file CSS: condition reference to context c.html.attri
 	<b>Animatable:</b> see individual properties
 	<b>Specification:</b> <a
 	href="http://www.w3.org/TR/css3-background/#the-background">www.w3.org</a></reference>
-	<context id="c.css.color" idref="c.css.color" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+<context id="c.css.background" idref="c.css.background" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 	<group highlight="css-value" >
 		<autocomplete append=";" />
 		<element pattern="aliceblue"/>
@@ -689,22 +1044,28 @@ Possible error in language file CSS: condition reference to context c.html.attri
 	<element pattern="url" highlight="css-value">
 		<autocomplete append="()" backup_cursor="1" />
 		<context id="c.css.uri" idref="c.css.uri" symbols="()" highlight="css-value">
-		<element pattern="("/>
-		<element pattern=")" ends_context="1" highlight="css-value"/>
+			<element pattern="("/>
+			<element pattern=")" ends_context="1" highlight="css-value"/>
 		</context>
 	</element>
-	<element pattern="#([0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]|[0-9a-f][0-9a-f][0-9a-f])" highlight="css-value" is_regex="1" case_insens="1"/>
-	<element pattern="(rgba|hsla)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *, *(0|1|0.[0-9]) *\)" highlight="css-value" is_regex="1" case_insens="1"/>
-	<element pattern="(rgb|hsl)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *\)" highlight="css-value" is_regex="1" case_insens="1"/>
-	<element id="e.css.percent" pattern="[0-9]+\.?[0-9]*%" is_regex="1" highlight="css-value"/>
-	<element id="e.css.length" pattern="[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px)" is_regex="1" highlight="css-value"/>
+<!--	<element pattern="#([0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]|[0-9a-f][0-9a-f][0-9a-f])" highlight="css-value" is_regex="1" case_insens="1" id="e.css.hex-color" idref="e.css.hex-color" />
+	<element pattern="(rgba|hsla)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *, *(0|1|0.[0-9]) *\)" highlight="css-value" is_regex="1" case_insens="1" id="e.css.rgba-color" idref="e.css.rgba-color" />
+	<element pattern="(rgb|hsl)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *\)" highlight="css-value" is_regex="1" case_insens="1" id="e.css.rgb-color" idref="e.css.rgb-color" />	-->
+	<element idref="e.css.hex-color" />
+	<element idref="e.css.rgb-color" />
+	<element idref="e.css.rgba-color" />
+	<element id="e.css.percent" idref="e.css.percent" pattern="[0-9]+\.?[0-9]*%" is_regex="1" highlight="css-value"/>
+	<element id="e.css.length" idref="e.css.length" pattern="[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px)" is_regex="1" highlight="css-value"/>
 	<element idref="e.css.end"/>
-	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<group class="is_SASS">
+		<element idref="e.sass.variable" />
+		<element idref="e.sass.newline_end"/>
+	</group>
 	<element idref="e.css.lcomment"/>
 	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-	</context>
+	</context>-->
 </element>
 
 <element pattern="background-attachment" highlight="css-property"  id="e.css.background-attachment" idref="e.css.background-attachment">
@@ -726,6 +1087,62 @@ Possible error in language file CSS: condition reference to context c.html.attri
 		<element pattern="scroll"/>
 		<element pattern="fixed"/>
 		<element pattern="local"/>
+	</group>
+	<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
+<element pattern="background-blend-mode" highlight="css-property"  id="e.css.background-blend-mode" idref="e.css.background-blend-mode">
+	<autocomplete append=": " />
+	<reference>The background-blend-mode property defines the blending mode of each background layer (color and/or image)
+	<b>Values:</b> normal | multiply | screen | overlay | darken | lighten | color-dodge | saturation | color | luminosity
+	<b>Initial:</b> normal
+	<b>Applies to:</b> All HTML elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> as specified
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/compositing-1/#propdef-background-blend-mode">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.background-blend-mode" idref="c.css.background-blend-mode">
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="normal">
+			<reference>This is default. Sets the blending mode to normal</reference>
+		</element>
+		<element pattern="multiply">
+			<reference>Sets the blending mode to multiply</reference>
+		</element>
+		<element pattern="screen">
+			<reference>Sets the blending mode to screen</reference>
+		</element>
+		<element pattern="overlay">
+			<reference>Sets the blending mode to overlay</reference>
+		</element>
+		<element pattern="darken">
+			<reference>Sets the blending mode to darken</reference>
+		</element>
+		<element pattern="lighten">
+			<reference>Sets the blending mode to lighten</reference>
+		</element>
+		<element pattern="color-dodge">
+			<reference>Sets the blending mode to color-dodge</reference>
+		</element>
+		<element pattern="saturation">
+			<reference>Sets the blending mode to saturation</reference>
+		</element>
+		<element pattern="color">
+			<reference>Sets the blending mode to color</reference>
+		</element>
+		<element pattern="luminosity">
+			<reference>Sets the blending mode to luminosity</reference>
+		</element>
 	</group>
 	<element idref="e.css.end"/>
 	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
@@ -777,8 +1194,9 @@ Possible error in language file CSS: condition reference to context c.html.attri
 	<b>Computed value:</b> the computed color(s)
 	<b>Animatable:</b> yes
 	<b>Specification:</b> <a
-	href="http://www.w3.org/TR/css3-background/#the-background-color">www.w3.org</a></reference>
-	<context idref="c.css.color"/>
+	href="http://www.w3.org/TR/css3-background/#the-background-color">www.w3.org</a>
+	</reference>
+	<context idref="c.css.accent-color"/>
 <!--<context symbols=" &#9;&#10;&#13;{}.;:'&quot;">
 <element pattern="inherit" highlight="css-value" >
 	<autocomplete append=";" />
@@ -874,7 +1292,8 @@ Possible error in language file CSS: condition reference to context c.html.attri
 	<b>Computed value:</b> A list, each item consisting of: two keywords representing the origin and two offsets from that origin, each given as an absolute length (if given a &lt;length&gt;), otherwise as a percentage
 	<b>Animatable:</b> yes
 	<b>Specification:</b> <a
-	href="http://www.w3.org/TR/css3-background/#the-background-position">www.w3.org</a></reference>
+	href="http://www.w3.org/TR/css3-background/#the-background-position">www.w3.org</a>
+	</reference>
 	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.background-position" idref="c.css.background-position">
 	<group highlight="css-value" >
 		<autocomplete append=";" />
@@ -905,7 +1324,84 @@ Possible error in language file CSS: condition reference to context c.html.attri
 	<element idref="e.css.percent"/>
 	<element idref="e.css.length"/>
 	<element idref="e.css.end"/>
+	<group class="is_SASS">
+		<element idref="e.sass.variable" />
+		<element idref="e.sass.newline_end"/>
+	</group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
+<element pattern="background-position-x" highlight="css-property" id="e.css.background-position-x" idref="e.css.background-position-x">
+	<autocomplete append=": " />
+	<reference><b>Warning</b>: This property is only supported by Firefox and Safari Browser!
+	The background-position-x property sets the position of a background image on the x-axis. <b>Tip</b>: By default, a background-image is placed at the top-left corner of an element, and repeated both vertically and horizontally.
+	<b>Values:</b> left | center | right | &lt;percentage&gt; | &lt;length&gt; | initial | inherit
+	<b>Initial:</b> 0%
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> refer to size of background positioning area minus size of background image
+	<b>Media:</b> visual
+	<b>Computed value:</b> A list, each item consisting of: two keywords representing the origin and two offsets from that origin, each given as an absolute length (if given a &lt;length&gt;), otherwise as a percentage
+	<b>Animatable:</b> yes
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-background-position">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.background-position-x" idref="c.css.background-position-x">
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="left"/>
+		<element pattern="center"/>
+		<element pattern="right"/>
+		<element pattern="initial"/>
+		<element pattern="inherit"/>
+		<element pattern="0"/>
+	</group>
+	<element idref="e.css.percent"/>
+	<element idref="e.css.length"/>
+	<element idref="e.css.end"/>
 	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
+<element pattern="background-position-y" highlight="css-property" id="e.css.background-position-y" idref="e.css.background-position-y">
+	<autocomplete append=": " />
+	<reference><b>Warning</b>: This property is only supported by Firefox and Safari Browser!
+	The background-position-y property sets the position of a background image on the y-axis. <b>Tip</b>: By default, a background-image is placed at the top-left corner of an element, and repeated both vertically and horizontally.
+	<b>Values:</b> top | center | bottom | &lt;percentage&gt; | &lt;length&gt; | initial | inherit
+	<b>Initial:</b> 0%
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> refer to size of background positioning area minus size of background image
+	<b>Media:</b> visual
+	<b>Computed value:</b> A list, each item consisting of: two keywords representing the origin and two offsets from that origin, each given as an absolute length (if given a &lt;length&gt;), otherwise as a percentage
+	<b>Animatable:</b> yes
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-background-position">www.w3.org</a>
+	</reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.background-position-y" idref="c.css.background-position-y">
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="top"/>
+		<element pattern="center"/>
+		<element pattern="bottom"/>
+		<element pattern="initial"/>
+		<element pattern="inherit"/>
+		<element pattern="0"/>
+	</group>
+	<element idref="e.css.percent"/>
+	<element idref="e.css.length"/>
+	<element idref="e.css.end"/>
+	<group class="is_SASS">
+		<element idref="e.sass.variable" />
+		<element idref="e.sass.newline_end"/>
+	</group>
 	<element idref="e.css.lcomment"/>
 	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -974,371 +1470,661 @@ Possible error in language file CSS: condition reference to context c.html.attri
 	</context>
 </element>
 
+<element pattern="block-size" highlight="css-property" id="e.css.block-size" idref="e.css.block-size">
+	<autocomplete append=": " />
+	<reference>The block-size property specifies the size of an element in the block direction. <b>Note</b>: The related CSS property writing-mode defines block direction, and this affects the result of the block-size property. For pages in English, block direction is downward and inline direction is left to right.
+	The CSS block-size and inline-size properties are very similar to CSS properties <i>width</i> and <i>height</i>, but the block-size and inline-size properties are dependent on block and inline directions. 
+	<b>Values:</b> auto | &lt;<i>value</i>&gt; | initial | inherit
+	<b>Initial:</b> auto
+	<b>Applies to:</b> all elements but non-replaced inline elements, table rows, and row groups
+	<b>Inherited:</b> no
+	<b>Percentages:</b> As for the corresponding physical property
+	<b>Media:</b> visual
+	<b>Computed value:</b> all elements but non-replaced inline elements, table rows, and row groups
+	<b>Animatable:</b> yes
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/css-logical-1/#propdef-block-size">w3.org</a>
+	</reference>
+	<context id="c.css.block-size" idref="c.css.block-size" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<group highlight="css-value" >
+			<autocomplete append=";" />
+			<element pattern="auto"/>
+			<element pattern="initial"/>
+			<element pattern="inherit"/>
+		</group>
+		<element idref="e.css.percent"/>
+		<element idref="e.css.length"/>
+		<element idref="e.css.end"/>
+		<group class="is_SASS">
+			<element idref="e.sass.variable" />
+			<element idref="e.sass.newline_end"/>
+		</group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
 <element pattern="border" highlight="css-property" id="e.css.border" idref="e.css.border">
 	<autocomplete append=": " />
-<reference>Shorthand property for setting the same width, style and color for all four borders of a box.
-<b>Values:</b> &lt;border-width&gt; || &lt;border-style&gt; || &lt;color&gt;
-<b>Initial:</b> see individual properties
-<b>Applies to:</b> all elements
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> see individual properties
-<b>Animatable:</b> see individual properties
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-background/#the-border-shorthands">www.w3.org</a></reference>
-<context id="c.css.border" idref="c.css.border" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<element pattern="#([0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]|[0-9a-f][0-9a-f][0-9a-f])" highlight="css-value" is_regex="1" case_insens="1"/>
-<element pattern="(rgba|hsla)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *, *(0|1|0.[0-9]) *\)" highlight="css-value" is_regex="1" case_insens="1"/>
-<element pattern="(rgb|hsl)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *\)" highlight="css-value" is_regex="1" case_insens="1"/>
-<element idref="e.css.length"/>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	<reference>Shorthand property for setting the same width, style and color for all four borders of a box.
+	<b>Values:</b> &lt;border-width&gt; || &lt;border-style&gt; || &lt;color&gt;
+	<b>Initial:</b> see individual properties
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> see individual properties
+	<b>Animatable:</b> see individual properties
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-shorthands">www.w3.org</a></reference>
+	<context id="c.css.border" idref="c.css.border" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<group highlight="css-value" >
+			<element pattern="(aliceblue|antiquewhite|aqua|aquamarine|azure|beige|bisque|black|blanchedalmond|blue|blueviolet|brown|burlywood|cadetblue|chartreuse|chocolate|coral|cornflowerblue|cornsilk|crimson|cyan|darkblue|darkcyan|darkgoldenrod|darkgray|darkgreen|darkgrey|darkkhaki|darkmagenta|darkolivegreen|darkorange|darkorchid|darkred|darksalmon|darkseagreen|darkslateblue|darkslategray|darkslategrey|darkturquoise|darkviolet|deeppink|deepskyblue|dimgray|dimgrey|dodgerblue|firebrick|floralwhite|forestgreen|fuchsia|gainsboro|ghostwhite|gold|goldenrod|gray|green|greenyellow|grey|honeydew|hotpink|indianred|indigo|ivory|khaki|lavender|lavenderblush|lawngreen|lemonchiffon|lightblue|lightcoral|lightcyan|lightgoldenrodyellow|lightgray|lightgreen|lightgrey|lightpink|lightsalmon|lightseagreen|lightskyblue|lightslategray|lightslategrey|lightsteelblue|lightyellow|lime|limegreen|linen|magenta|maroon|mediumaquamarine|mediumblue|mediumorchid|mediumpurple|mediumseagreen|mediumslateblue|mediumspringgreen|mediumturquoise|mediumvioletred|midnightblue|mintcream|mistyrose|moccasin|navajowhite|navy|oldlace|olive|olivedrab|orange|orangered|orchid|palegoldenrod|palegreen|paleturquoise|palevioletred|papayawhip|peachpuff|peru|pink|plum|powderblue|purple|red|rosybrown|royalblue|saddlebrown|salmon|sandybrown|seagreen|seashell|sienna|silver|skyblue|slateblue|slategray|slategrey|snow|springgreen|steelblue|tan|teal|thistle|tomato|turquoise|violet|wheat|white|whitesmoke|yellow|yellowgreen|currentColor|transparent)" is_regex="1" id="e.css.colors" idref="e.css.colors" /> 
+			<element idref="e.css.hex-color"/>
+			<element idref="e.css.rgba-color"/>
+			<element idref="e.css.rgb-color"/>
+			<element idref="e.css.length"/>
+			<element idref="e.css.end"/>
+			<element pattern="(none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset|initial|inherit)" is_regex="1" id="e.css.border-style" idref="e.css.border-style"/>
+		</group>
+		<group class="is_SASS">
+			<element idref="e.sass.variable" />
+			<element idref="e.sass.newline_end"/>
+		</group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
 
-</context>
-</element>
-<element pattern="border-bottom" highlight="css-property" id="e.css.border-bottom" idref="e.css.border-bottom">
+<element pattern="border-block" highlight="css-property" id="e.css.border-block" idref="e.css.border-block">
 	<autocomplete append=": " />
-<reference>Shorthand property for setting the width, style and color of the bottom border of a box.
-<b>Values:</b> &lt;border-width&gt; || &lt;border-style&gt; || &lt;color&gt;
-<b>Initial:</b> see individual properties
-<b>Applies to:</b> all elements
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> see individual properties
-<b>Animatable:</b> see individual properties
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-background/#the-border-shorthands">www.w3.org</a></reference>
-<context idref="c.css.border"/>
-</element>
-<element pattern="border-bottom-color" highlight="css-property" id="e.css.border-bottom-color" idref="e.css.border-bottom-color">
-	<autocomplete append=": " />
-<reference>Sets the foreground color of the bottom border specified by the border-style properties.
-<b>Values:</b> &lt;color&gt;
-<b>Initial:</b> currentColor
-<b>Applies to:</b> all elements
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> the computed color
-<b>Animatable:</b> yes
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-background/#the-border-color">www.w3.org</a></reference>
-<context idref="c.css.color"/>
-</element>
-<element pattern="border-bottom-left-radius" highlight="css-property" id="e.css.border-bottom-left-radius" idref="e.css.border-bottom-left-radius">
-	<autocomplete append=": " />
-<reference>Defines the radii of a quarter ellipse that defines the shape of the corner of the outer border edge.
-<b>Values:</b> [ &lt;length&gt; | &lt;percentage&gt; ]{1,2}
-<b>Initial:</b> 0
-<b>Applies to:</b> all elements (but see prose)
-<b>Inherited:</b> no
-<b>Percentages:</b> refer to corresponding dimension of the border box
-<b>Media:</b> visual
-<b>Computed value:</b> two absolute &lt;length&gt; or percentages
-<b>Animatable:</b> yes
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-background/#the-border-radius">www.w3.org</a></reference>
-<context id="c.css.length_percentage" idref="c.css.length_percentage" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-	<element pattern="[0-9]+%" is_regex="1" highlight="css-value" />
-	<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<reference>The border-block property is a shorthand property for these properties:
+    border-block-width
+    border-block-style (required)
+    border-block-color
+	If values for color or width are omitted, default values will be used. The CSS border-block property is very similar to CSS property border, but the border-block property is dependent on block direction. 
+	<b>Note</b>: The related CSS property writing-mode defines block direction. This affects where the start and end of a block is and the result of the border-block property. For pages in English, inline direction is left to right and block direction is downward.
+	<b>Values:</b> &lt;<i>border-block-width</i>&gt; &lt;<i>border-block-style</i>&gt; &lt;<i>border-block-color</i>&gt; |initial | inherit
+	<b>Initial:</b> see individual properties
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> see individual properties
+	<b>Animatable:</b> see individual properties
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/2018/WD-css-logical-1-20180827/#propdef-border-block">www.w3.org</a></reference>
+	<context id="c.css.border-block" idref="c.css.border-block" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+	<group highlight="css-value" >
+		<autocomplete append=" " />
+		<element idref="e.css.length"/>
+	</group>
+	<group highlight="css-value" >
+		<autocomplete append=" " />
+		<element idref="e.css.border-style"/>
+	</group>
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element idref="e.css.colors" />
+		<element idref="e.css.hex-color" />
+		<element idref="e.css.rgb-color" />
+		<element idref="e.css.rgba-color" />
+	</group>
+<!--	<element pattern="#([0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]|[0-9a-f][0-9a-f][0-9a-f])" highlight="css-value" is_regex="1" case_insens="1" id="e.css.hex-color" idref="e.css.hex-color"/>
+	<element pattern="(rgba|hsla)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *, *(0|1|0.[0-9]) *\)" highlight="css-value" is_regex="1" case_insens="1" id="e.css.rgba-color" idref="e.css.rgba-color"/>
+	<element pattern="(rgb|hsl)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *\)" highlight="css-value" is_regex="1" case_insens="1" id="e.css.rgb-color" idref="e.css.rgb-color"/>
+-->	
+	<element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 	<element idref="e.css.lcomment"/>
 	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-</context>
+	</context>
+</element>
+
+<element pattern="border-block-color" highlight="css-property" id="e.css.border-block-color" idref="e.css.border-block-color">
+	<autocomplete append=": " />
+	<reference>The border-block-color property sets the color of an element's borders in the block direction. If two values are set, the second applies to the bottom border line
+	<b>Note</b>: For the border-block-color property to take effect, the border-block-style <i>must</i> be set.
+	<b>Values:</b> <i>color</i> [<i>color</i>] | transparent | initial | inherit
+	<b>Initial:</b> see individual properties
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> see individual properties
+	<b>Animatable:</b> see individual properties
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/2018/WD-css-logical-1-20180827/#propdef-border-block">www.w3.org</a></reference>
+	<context id="c.css.border-block-color" idref="c.css.border-block-color" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+	<group highlight="css-value" >
+		<autocomplete append=" " />
+		<element idref="e.css.length"/>
+	</group>
+	<group highlight="css-value" >
+		<autocomplete append=" " />
+		<element idref="e.css.colors" />
+		<element idref="e.css.hex-color" />
+		<element idref="e.css.rgb-color" />
+		<element idref="e.css.rgba-color" />
+	</group>
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="initial"/>
+		<element pattern="inherit"/>
+	</group>
+<!--	<element pattern="#([0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]|[0-9a-f][0-9a-f][0-9a-f])" highlight="css-value" is_regex="1" case_insens="1" id="e.css.hex-color" idref="e.css.hex-color"/>
+	<element pattern="(rgba|hsla)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *, *(0|1|0.[0-9]) *\)" highlight="css-value" is_regex="1" case_insens="1" id="e.css.rgba-color" idref="e.css.rgba-color"/>
+	<element pattern="(rgb|hsl)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *\)" highlight="css-value" is_regex="1" case_insens="1" id="e.css.rgb-color" idref="e.css.rgb-color"/>
+-->	
+	<element id="e.css.end" idref="e.css.end" pattern=";" ends_context="1"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
+<element pattern="border-block-end-color" highlight="css-property" id="e.css.border-block-end-color" idref="e.css.border-block-end-color">
+	<autocomplete append=": " />
+	<reference>The border-block-end-color property sets the color of an element's border at the end in the block direction.
+	<b>Note</b>: For the border-block-end-color property to take effect, the border-block-end-style property <i>must</i> be set.
+	<b>Values:</b> <i>color</i> | transparent | initial | inherit
+	<b>Initial:</b> the current value
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> see individual properties
+	<b>Animatable:</b> see individual properties
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/2018/WD-css-logical-1-20180827/#propdef-border-block">www.w3.org</a></reference>
+	<context idref="c.css.border-block-color" />
+</element>
+
+<element pattern="border-block-end-style" highlight="css-property" id="e.css.border-block-end-style" idref="e.css.border-block-end-style">
+	<autocomplete append=": " />
+	<reference>The border-block-end-color property sets the color of an element's border at the end in the block direction.
+	<b>Values:</b> none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset | initial | inherit
+	<b>Initial:</b> see individual properties
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> see individual properties
+	<b>Animatable:</b> see individual properties
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/2018/WD-css-logical-1-20180827/#propdef-border-block">www.w3.org</a></reference>
+	<context id="c.css.border_style" idref="c.css.border_style" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="none"/>
+		<element pattern="hidden"/>
+		<element pattern="dotted"/>
+		<element pattern="dashed"/>
+		<element pattern="solid"/>
+		<element pattern="double"/>
+		<element pattern="groove"/>
+		<element pattern="ridge"/>
+		<element pattern="inset"/>
+		<element pattern="outset"/>
+		<element pattern="initial"/>
+		<element pattern="inherit"/>
+	</group>
+	<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
+<element pattern="border-block-end-width" highlight="css-property" id="e.css.border-block-end-width" idref="e.css.border-block-end-width">
+	<autocomplete append=": " />
+	<reference>The border-block-end-width property sets the width of an element's border at the end in the block direction.
+	<b>Note</b>: For the border-block-end-width property to take effect, the border-block-end-style property <i>must</i> be set.
+	<b>Values:</b> medium | thin | thick | <i>length</i> | initial | inherit
+	<b>Initial:</b> medium
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> absolute length; zero if the border style is none or hidden
+	<b>Animatable:</b> by computed value
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/2018/WD-css-logical-1-20180827/#propdef-border-block-end-width">www.w3.org</a></reference>
+	<context id="c.css.border_width" idref="c.css.border_width" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element idref="e.css.length"/>
+		<element pattern="thin"/>
+		<element pattern="medium"/>
+		<element pattern="thick"/>
+		<element pattern="initial"/>
+		<element pattern="inherit"/>
+	</group>
+	<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
+</element>
+
+<element pattern="border-block-start-color" highlight="css-property" id="e.css.border-block-start-color" idref="e.css.border-block-start-color">
+	<autocomplete append=": " />
+	<reference>The border-block-start-color property sets the color of an element's border at the start in the block direction.
+	<b>Note</b>: For the border-block-start-color property to take effect, the border-block-start-style property <i>must</i> be set.
+	<b>Values:</b> <i>color</i> | transparent | initial | inherit
+	<b>Initial:</b> the current value
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> see individual properties
+	<b>Animatable:</b> see individual properties
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/2018/WD-css-logical-1-20180827/#propdef-border-block">www.w3.org</a></reference>
+	<context idref="c.css.border-block-color" />
+</element>
+
+<element pattern="border-block-start-style" highlight="css-property" id="e.css.border-block-start-style" idref="e.css.border-block-start-style">
+	<autocomplete append=": " />
+	<reference>The border-block-start-styele property sets the color of an element's border at the start in the block direction.
+	<b>Values:</b> none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset | initial | inherit
+	<b>Initial:</b> see individual properties
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> see individual properties
+	<b>Animatable:</b> see individual properties
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/2018/WD-css-logical-1-20180827/#propdef-border-block">www.w3.org</a></reference>
+	<context idref="c.css.border_style"/>
+</element>
+
+<element pattern="border-block-start-width" highlight="css-property" id="e.css.border-block-start-width" idref="e.css.border-block-start-width">
+	<autocomplete append=": " />
+	<reference>The border-block-start-width property sets the width of an element's border at the start in the block direction.
+	<b>Note</b>: For the border-block-start-width property to take effect, the border-block-start-style property <i>must</i> be set.
+	<b>Values:</b> medium | thin | thick | <i>length</i> | initial | inherit
+	<b>Initial:</b> medium
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> absolute length; zero if the border style is none or hidden
+	<b>Animatable:</b> by computed value
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/2018/WD-css-logical-1-20180827/#propdef-border-block-start-width">www.w3.org</a></reference>
+	<context idref="c.css.border_width"/>
+</element>
+
+<element pattern="border-block-style" highlight="css-property" id="e.css.border-block-style" idref="e.css.border-block-style">
+	<autocomplete append=": " />
+	<reference>The border-block-style property sets the style of an element's borders in the block direction.
+	<b>Values:</b> none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset | initial | inherit
+	<b>Initial:</b> none
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> 
+	<b>Animatable:</b> 
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/2018/WD-css-logical-1-20180827/#border-style">www.w3.org</a></reference>
+	<context idref="c.css.border_style"/>
+</element>
+
+<element pattern="border-block-width" highlight="css-property" id="e.css.border-block-width" idref="e.css.border-block-width">
+	<autocomplete append=": " />
+	<reference>The border-block-width property sets the width of an element's border at the start in the block direction.
+	<b>Note</b>: For the border-block-width property to take effect, the border-block-style property <i>must</i> be set.
+	<b>Values:</b> medium | thin | thick | <i>length</i> | initial | inherit
+	<b>Initial:</b> medium
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> absolute length; zero if the border style is none or hidden
+	<b>Animatable:</b> by computed value
+	<b>Specification:</b> <a
+	href="https://www.w3.org/TR/2018/WD-css-logical-1-20180827/#propdef-border-block-start-width">www.w3.org</a></reference>
+	<context idref="c.css.border_width"/>
+</element>
+
+<element pattern="border-bottom" highlight="css-property" id="e.css.border-bottom" idref="e.css.border-bottom">
+	<autocomplete append=": " />
+	<reference>Shorthand property for setting the width, style and color of the bottom border of a box.
+	<b>Values:</b> &lt;border-width&gt; || &lt;border-style&gt; || &lt;color&gt;
+	<b>Initial:</b> see individual properties
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> see individual properties
+	<b>Animatable:</b> see individual properties
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-shorthands">www.w3.org</a></reference>
+	<context idref="c.css.border"/>
+</element>
+
+<element pattern="border-bottom-color" highlight="css-property" id="e.css.border-bottom-color" idref="e.css.border-bottom-color">
+	<autocomplete append=": " />
+	<reference>Sets the foreground color of the bottom border specified by the border-style properties.
+	<b>Values:</b> &lt;color&gt;
+	<b>Initial:</b> currentColor
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> the computed color
+	<b>Animatable:</b> yes
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-color">www.w3.org</a></reference>
+	<context idref="c.css.border-block-color"/>
+</element>
+<element pattern="border-bottom-left-radius" highlight="css-property" id="e.css.border-bottom-left-radius" idref="e.css.border-bottom-left-radius">
+	<autocomplete append=": " />
+	<reference>Defines the radii of a quarter ellipse that defines the shape of the corner of the outer border edge.
+	<b>Values:</b> [ &lt;length&gt; | &lt;percentage&gt; ]{1,2}
+	<b>Initial:</b> 0
+	<b>Applies to:</b> all elements (but see prose)
+	<b>Inherited:</b> no
+	<b>Percentages:</b> refer to corresponding dimension of the border box
+	<b>Media:</b> visual
+	<b>Computed value:</b> two absolute &lt;length&gt; or percentages
+	<b>Animatable:</b> yes
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-radius">www.w3.org</a></reference>
+	<context id="c.css.length_percentage" idref="c.css.length_percentage" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+		<element pattern="[0-9]+%" is_regex="1" highlight="css-value" />
+		<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
 <element pattern="border-bottom-right-radius" highlight="css-property" id="e.css.border-bottom-right-radius" idref="e.css.border-bottom-right-radius">
 	<autocomplete append=": " />
-<reference>Defines the radii of a quarter ellipse that defines the shape of the corner of the outer border edge.
-<b>Values:</b> [ &lt;length&gt; | &lt;percentage&gt; ]{1,2}
-<b>Initial:</b> 0
-<b>Applies to:</b> all elements (but see prose)
-<b>Inherited:</b> no
-<b>Percentages:</b> refer to corresponding dimension of the border box
-<b>Media:</b> visual
-<b>Computed value:</b> two absolute &lt;length&gt; or percentages
-<b>Animatable:</b> yes
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-background/#the-border-radius">www.w3.org</a></reference>
-<context idref="c.css.length_percentage"/>
+	<reference>Defines the radii of a quarter ellipse that defines the shape of the corner of the outer border edge.
+	<b>Values:</b> [ &lt;length&gt; | &lt;percentage&gt; ]{1,2}
+	<b>Initial:</b> 0
+	<b>Applies to:</b> all elements (but see prose)
+	<b>Inherited:</b> no
+	<b>Percentages:</b> refer to corresponding dimension of the border box
+	<b>Media:</b> visual
+	<b>Computed value:</b> two absolute &lt;length&gt; or percentages
+	<b>Animatable:</b> yes
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-radius">www.w3.org</a></reference>
+	<context idref="c.css.length_percentage"/>
 </element>
 <element pattern="border-bottom-style" highlight="css-property" id="e.css.border-bottom-style" idref="e.css.border-bottom-style">
 	<autocomplete append=": " />
-<reference>Sets the style of the bottom border, unless there is a border image.
-<b>Values:</b> none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset
-<b>Initial:</b> none
-<b>Applies to:</b> all elements
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> specified value
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-background/#the-border-style">www.w3.org</a></reference>
-<context id="c.css.border_style" idref="c.css.border_style" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="none"/>
-	<element pattern="hidden"/>
-	<element pattern="dotted"/>
-	<element pattern="dashed"/>
-	<element pattern="solid"/>
-	<element pattern="double"/>
-	<element pattern="groove"/>
-	<element pattern="ridge"/>
-	<element pattern="inset"/>
-	<element pattern="outset"/>
-</group>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Sets the style of the bottom border, unless there is a border image.
+	<b>Values:</b> none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset
+	<b>Initial:</b> none
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> specified value
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-style">www.w3.org</a></reference>
+	<context idref="c.css.border_style"/>
+<!--	<context id="c.css.border_style" idref="c.css.border_style" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="none"/>
+		<element pattern="hidden"/>
+		<element pattern="dotted"/>
+		<element pattern="dashed"/>
+		<element pattern="solid"/>
+		<element pattern="double"/>
+		<element pattern="groove"/>
+		<element pattern="ridge"/>
+		<element pattern="inset"/>
+		<element pattern="outset"/>
+	</group>
+	<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>-->
 </element>
 <element pattern="border-bottom-width" highlight="css-property" id="e.css.border-bottom-width" idref="e.css.border-bottom-width">
 	<autocomplete append=": " />
-<reference>Sets the thickness of the bottom border.
-<b>Values:</b> &lt;length&gt; | thin | medium | thick
-<b>Initial:</b> medium
-<b>Applies to:</b> all elements
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> absolute length; ‘0’ if the border style is ‘none’ or ‘hidden’
-<b>Animatable:</b> yes
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-background/#the-border-style">www.w3.org</a></reference>
-<context id="c.css.border_width" idref="c.css.border_width" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="thin"/>
-	<element pattern="medium"/>
-	<element pattern="thick"/>
-</group>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Sets the thickness of the bottom border.
+	<b>Values:</b> &lt;length&gt; | thin | medium | thick |initial | inherit
+	<b>Initial:</b> medium
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> absolute length; ‘0’ if the border style is ‘none’ or ‘hidden’
+	<b>Animatable:</b> yes
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-style">www.w3.org</a></reference>
+	<context idref="c.css.border_width"/>
 </element>
+
 <element pattern="border-collapse" highlight="css-property" id="e.css.border-collapse" idref="e.css.border-collapse">
 	<autocomplete append=": " />
-<reference>Selects a table's border model.
-<b>Values:</b> collapse | separate | inherit
-<b>Initial:</b> separate
-<b>Applies to:</b> ‘table’ and ‘inline-table’ elements
-<b>Inherited:</b> yes
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> as specified
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/CSS2/tables.html#borders">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-collapse" idref="c.css.border-collapse">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="collapse"/>
-	<element pattern="separate"/>
-	<element pattern="inherit"/>
-</group>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Selects a table's border model.
+	<b>Values:</b> collapse | separate | inherit
+	<b>Initial:</b> separate
+	<b>Applies to:</b> ‘table’ and ‘inline-table’ elements
+	<b>Inherited:</b> yes
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> as specified
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/CSS2/tables.html#borders">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-collapse" idref="c.css.border-collapse">
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="collapse"/>
+		<element pattern="separate"/>
+		<element pattern="inherit"/>
+	</group>
+	<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
 
 <element pattern="border-color" highlight="css-property"  id="e.css.border-color" idref="e.css.border-color">
 	<autocomplete append=": " />
-<reference>Sets the foreground color of the border specified by the border-style properties.
-<b>Values:</b> &lt;color&gt;{1,4}
-<b>Initial:</b> see individual properties
-<b>Applies to:</b> all elements
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> see individual properties
-<b>Animatable:</b> see individual properties
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-background/#the-border-color">www.w3.org</a></reference>
-<context idref="c.css.color"/>
+	<reference>Sets the foreground color of the border specified by the border-style properties.
+	<b>Values:</b> &lt;color&gt;{1,4}
+	<b>Initial:</b> see individual properties
+	<b>Applies to:</b> all elements
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> see individual properties
+	<b>Animatable:</b> see individual properties
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-color">www.w3.org</a></reference>
+	<context idref="c.css.accent-color"/>
 </element>
 
 <element pattern="border-image" highlight="css-property" id="e.css.border-image" idref="e.css.border-image">
 	<autocomplete append=": " />
-<reference>Shorthand property for setting ‘border-image-source’, ‘border-image-slice’, ‘border-image-width’, ‘border-image-outset’ and ‘border-image-repeat’.
-<b>Values:</b> &lt;border-image-source&gt; || &lt;border-image-slice&gt; [ / &lt;border-image-width&gt; | / &lt;border-image-width&gt;? / &lt;border-image-outset&gt; ]? || &lt;border-image-repeat&gt;
-<b>Initial:</b> see individual properties
-<b>Applies to:</b> see individual properties
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> see individual properties
-<b>Animatable:</b> see individual properties
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-background/#the-border-image">www.w3.org</a></reference>
-<context idref="c.css.empty_generic" />
+	<reference>Shorthand property for setting ‘border-image-source’, ‘border-image-slice’, ‘border-image-width’, ‘border-image-outset’ and ‘border-image-repeat’.
+	<b>Values:</b> &lt;border-image-source&gt; || &lt;border-image-slice&gt; [ / &lt;border-image-width&gt; | / &lt;border-image-width&gt;? / &lt;border-image-outset&gt; ]? || &lt;border-image-repeat&gt;
+	<b>Initial:</b> see individual properties
+	<b>Applies to:</b> see individual properties
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> see individual properties
+	<b>Animatable:</b> see individual properties
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-image">www.w3.org</a></reference>
+	<context idref="c.css.empty_generic" />
 </element>
 
 <element pattern="border-image-outset" highlight="css-property" id="e.css.border-image-outset" idref="e.css.border-image-outset">
 	<autocomplete append=": " />
-<reference>Specifies the amount by which the border image area extends beyond the border box.
-<b>Values:</b> [ &lt;length&gt; | &lt;number&gt; ]{1,4}
-<b>Initial:</b> 0
-<b>Applies to:</b> all elements, except internal table elements when ‘border-collapse’ is ‘collapse’
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> all &lt;length&gt;s made absolute, otherwise as specified
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-background/#the-border-image-outset">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-image-outset" idref="c.css.border-image-outset">
-<element idref="e.css.length"/>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-</context>
+	<reference>Specifies the amount by which the border image area extends beyond the border box.
+	<b>Values:</b> [ &lt;length&gt; | &lt;number&gt; ]{1,4}
+	<b>Initial:</b> 0
+	<b>Applies to:</b> all elements, except internal table elements when ‘border-collapse’ is ‘collapse’
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> all &lt;length&gt;s made absolute, otherwise as specified
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-image-outset">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-image-outset" idref="c.css.border-image-outset">
+	<element idref="e.css.length"/>
+	<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
 
 <element pattern="border-image-repeat" highlight="css-property" id="e.css.border-image-repeat" idref="e.css.border-image-repeat">
 	<autocomplete append=": " />
-<reference>Specifies how the images for the sides and the middle part of the border image are scaled and tiled.
-<b>Values:</b> [ stretch | repeat | round | space ]{1,2}
-<b>Initial:</b> stretch
-<b>Applies to:</b> all elements, except internal table elements when ‘border-collapse’ is ‘collapse’
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> as specified
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-background/#the-border-image-repeat">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-image-repeat" idref="c.css.border-image-repeat">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="stretch"/>
-	<element pattern="repeat"/>
-	<element pattern="round"/>
-	<element pattern="space"/>
-</group>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-</context>
+	<reference>Specifies how the images for the sides and the middle part of the border image are scaled and tiled.
+	<b>Values:</b> [ stretch | repeat | round | space ]{1,2}
+	<b>Initial:</b> stretch
+	<b>Applies to:</b> all elements, except internal table elements when ‘border-collapse’ is ‘collapse’
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> as specified
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-image-repeat">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-image-repeat" idref="c.css.border-image-repeat">
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="stretch"/>
+		<element pattern="repeat"/>
+		<element pattern="round"/>
+		<element pattern="space"/>
+	</group>
+	<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
 
 <element pattern="border-image-slice" highlight="css-property" id="e.css.border-image-slice" idref="e.css.border-image-slice">
 	<autocomplete append=": " />
-<reference>Specifies inward offsets from the top, right, bottom, and left edges of the image, dividing it into nine regions: four corners, four edges and a middle.
-<b>Values:</b> [ &lt;number&gt; | &lt;percentage&gt; ]{1,4} &amp;&amp; fill?
-<b>Initial:</b> 100%
-<b>Applies to:</b> all elements, except internal table elements when ‘border-collapse’ is ‘collapse’
-<b>Inherited:</b> no
-<b>Percentages:</b> refer to size of the border image
-<b>Media:</b> visual
-<b>Computed value:</b> as specified
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-background/#the-border-image-slice">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-image-slice" idref="c.css.border-image-slice">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="fill"/>
-</group>
-<element idref="e.css.length"/>
-<element idref="e.css.percent"/>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Specifies inward offsets from the top, right, bottom, and left edges of the image, dividing it into nine regions: four corners, four edges and a middle.
+	<b>Values:</b> [ &lt;number&gt; | &lt;percentage&gt; ]{1,4} &amp;&amp; fill?
+	<b>Initial:</b> 100%
+	<b>Applies to:</b> all elements, except internal table elements when ‘border-collapse’ is ‘collapse’
+	<b>Inherited:</b> no
+	<b>Percentages:</b> refer to size of the border image
+	<b>Media:</b> visual
+	<b>Computed value:</b> as specified
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-image-slice">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-image-slice" idref="c.css.border-image-slice">
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="fill"/>
+	</group>
+	<element idref="e.css.length"/>
+	<element idref="e.css.percent"/>
+	<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
 <element pattern="border-image-source" highlight="css-property" id="e.css.border-image-source" idref="e.css.border-image-source">
 	<autocomplete append=": " />
-<reference>Specifies an image to use instead of the border styles given by the ‘border-style’ properties and as an additional background layer for the element.
-<b>Values:</b> none | &lt;image&gt;
-<b>Initial:</b> none
-<b>Applies to:</b> all elements, except internal table elements when ‘border-collapse’ is ‘collapse’
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> ‘none’ or the image with its URI made absolute
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-background/#the-border-image-source">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;-{}.;:'&quot;()" id="c.css.border-image-source" idref="c.css.border-image-source">
-<element pattern="url" highlight="css-value">
-	<autocomplete append="();" backup_cursor="2" />
-	<context idref="c.css.uri"/>
-</element>
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="none"/>
-</group>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Specifies an image to use instead of the border styles given by the ‘border-style’ properties and as an additional background layer for the element.
+	<b>Values:</b> none | &lt;image&gt;
+	<b>Initial:</b> none
+	<b>Applies to:</b> all elements, except internal table elements when ‘border-collapse’ is ‘collapse’
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> ‘none’ or the image with its URI made absolute
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-image-source">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;-{}.;:'&quot;()" id="c.css.border-image-source" idref="c.css.border-image-source">
+	<element pattern="url" highlight="css-value">
+		<autocomplete append="();" backup_cursor="2" />
+		<context idref="c.css.uri"/>
+	</element>
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="none"/>
+	</group>
+	<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
 <element pattern="border-image-width" highlight="css-property" id="e.css.border-image-width" idref="e.css.border-image-width">
 	<autocomplete append=": " />
-<reference>Specifies the offsets that are used to divide the border image area into nine parts.
-<b>Values:</b> [ &lt;length&gt; | &lt;percentage&gt; | &lt;number&gt; | auto ]{1,4}
-<b>Initial:</b> 1
-<b>Applies to:</b> all elements, except table elements when ‘border-collapse’ is ‘collapse’
-<b>Inherited:</b> no
-<b>Percentages:</b> relative to width/height of the border image area
-<b>Media:</b> visual
-<b>Computed value:</b> all &lt;length&gt;s made absolute, otherwise as specified
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/css3-background/#the-border-image-width">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-image-width" idref="c.css.border-image-width">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="auto"/>
-</group>
-<element idref="e.css.length"/>
-<element idref="e.css.percent"/>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Specifies the offsets that are used to divide the border image area into nine parts.
+	<b>Values:</b> [ &lt;length&gt; | &lt;percentage&gt; | &lt;number&gt; | auto ]{1,4}
+	<b>Initial:</b> 1
+	<b>Applies to:</b> all elements, except table elements when ‘border-collapse’ is ‘collapse’
+	<b>Inherited:</b> no
+	<b>Percentages:</b> relative to width/height of the border image area
+	<b>Media:</b> visual
+	<b>Computed value:</b> all &lt;length&gt;s made absolute, otherwise as specified
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-image-width">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-image-width" idref="c.css.border-image-width">
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="auto"/>
+	</group>
+	<element idref="e.css.length"/>
+	<element idref="e.css.percent"/>
+	<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
+
 <element pattern="border-left" highlight="css-property" id="e.css.border-left" idref="e.css.border-left">
 	<autocomplete append=": " />
 <reference>Shorthand property for setting the width, style and color of the left border of a box.
@@ -1367,7 +2153,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-shorthands">www.w3.org</a
 <b>Animatable:</b> yes
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/css3-background/#the-border-color">www.w3.org</a></reference>
-<context idref="c.css.color"/>
+<context idref="c.css.accent-color"/>
 </element>
 <element pattern="border-left-style" highlight="css-property" id="e.css.border-left-style" idref="e.css.border-left-style">
 	<autocomplete append=": " />
@@ -1384,6 +2170,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-color">www.w3.org</a></re
 href="http://www.w3.org/TR/css3-background/#the-border-style">www.w3.org</a></reference>
 <context idref="c.css.border_style"/>
 </element>
+
 <element pattern="border-left-width" highlight="css-property" id="e.css.border-left-width" idref="e.css.border-left-width">
 	<autocomplete append=": " />
 <reference>Sets the thickness of the left border.
@@ -1444,7 +2231,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-shorthands">www.w3.org</a
 <b>Animatable:</b> yes
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/css3-background/#the-border-color">www.w3.org</a></reference>
-<context idref="c.css.color"/>
+<context idref="c.css.accent-color"/>
 </element>
 
 <element pattern="border-right-style" highlight="css-property" id="e.css.border-right-style" idref="e.css.border-right-style">
@@ -1481,31 +2268,34 @@ href="http://www.w3.org/TR/css3-background/#the-border-style">www.w3.org</a></re
 
 <element pattern="border-spacing" highlight="css-property" id="e.css.border-spacing" idref="e.css.border-spacing">
 	<autocomplete append=": " />
-<reference>Specifies the distance that separates adjoining cell borders.
-<b>Values:</b> &lt;length&gt; &lt;length&gt;? | inherit
-<b>Initial:</b> 0
-<b>Applies to:</b> ‘table’ and ‘inline-table’ elements
-<b>Inherited:</b> yes
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> two absolute lengths
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/CSS2/tables.html#borders">www.w3.org</a></reference>
-<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-spacing" idref="c.css.border-spacing">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="inherit"/>
-</group>
-<element idref="e.css.length"/>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group><element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
-</context>
+	<reference>Specifies the distance that separates adjoining cell borders.
+	<b>Values:</b> &lt;length&gt; &lt;length&gt;? | inherit
+	<b>Initial:</b> 0
+	<b>Applies to:</b> ‘table’ and ‘inline-table’ elements
+	<b>Inherited:</b> yes
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> two absolute lengths
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/CSS2/tables.html#borders">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-spacing" idref="c.css.border-spacing">
+	<group highlight="css-value" >
+		<autocomplete append=" " />
+		<element idref="e.css.length"/>
+	</group>
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="inherit"/>
+	</group>
+	<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group><element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
+
 <element pattern="border-style" highlight="css-property" id="e.css.border-style" idref="e.css.border-style">
 	<autocomplete append=": " />
 <reference>Sets the style of the border, unless there is a border image.
@@ -1549,8 +2339,9 @@ href="http://www.w3.org/TR/css3-background/#the-border-shorthands">www.w3.org</a
 <b>Animatable:</b> yes
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/css3-background/#the-border-color">www.w3.org</a></reference>
-<context idref="c.css.color"/>
+<context idref="c.css.accent-color"/>
 </element>
+
 <element pattern="border-top-left-radius" highlight="css-property" id="e.css.border-top-left-radius" idref="e.css.border-top-left-radius">
 	<autocomplete append=": " />
 <reference>Defines the radii of a quarter ellipse that defines the shape of the corner of the outer border edge.
@@ -1566,6 +2357,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-color">www.w3.org</a></re
 href="http://www.w3.org/TR/css3-background/#the-border-radius">www.w3.org</a></reference>
 <context idref="c.css.length_percentage"/>
 </element>
+
 <element pattern="border-top-right-radius" highlight="css-property" id="e.css.border-top-right-radius" idref="e.css.border-top-right-radius">
 	<autocomplete append=": " />
 <reference>Defines the radii of a quarter ellipse that defines the shape of the corner of the outer border edge.
@@ -1581,6 +2373,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-radius">www.w3.org</a></r
 href="http://www.w3.org/TR/css3-background/#the-border-radius">www.w3.org</a></reference>
 <context idref="c.css.length_percentage"/>
 </element>
+
 <element pattern="border-top-style" highlight="css-property" id="e.css.border-top-style" idref="e.css.border-top-style">
 	<autocomplete append=": " />
 <reference>Sets the style of the top border, unless there is a border image.
@@ -1596,6 +2389,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-radius">www.w3.org</a></r
 href="http://www.w3.org/TR/css3-background/#the-border-style">www.w3.org</a></reference>
 <context idref="c.css.border_style"/>
 </element>
+
 <element pattern="border-top-width" highlight="css-property" id="e.css.border-top-width" idref="e.css.border-top-width">
 	<autocomplete append=": " />
 <reference>Sets the thickness of the top border.
@@ -1611,6 +2405,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-style">www.w3.org</a></re
 href="http://www.w3.org/TR/css3-background/#the-border-style">www.w3.org</a></reference>
 <context idref="c.css.border_width"/>
 </element>
+
 <element pattern="border-width" highlight="css-property" id="e.css.border-width" idref="e.css.border-width">
 	<autocomplete append=": " />
 <reference>Sets the thickness of the top border.
@@ -1626,6 +2421,7 @@ href="http://www.w3.org/TR/css3-background/#the-border-style">www.w3.org</a></re
 href="http://www.w3.org/TR/css3-background/#the-border-width">www.w3.org</a></reference>
 <context idref="c.css.border_width"/>
 </element>
+
 <element pattern="bottom" highlight="css-property" id="e.css.bottom" idref="e.css.bottom">
 	<autocomplete append=": " />
 <reference>Specifies how far a box's bottom margin edge is offset above the bottom of the box's containing block.
@@ -1799,7 +2595,7 @@ href="http://www.w3.org/TR/CSS21/visufx.html#clipping">www.w3.org</a></reference
 <b>Animatable:</b> yes
 <b>Specification:</b> <a
 href="http://www.w3.org/TR/css3-color/#color">www.w3.org</a></reference>
-<context idref="c.css.color"/>
+<context idref="c.css.accent-color"/>
 </element>
 
 <!--
@@ -2264,32 +3060,32 @@ The flex property is a shorthand for the flex-grow, flex-shrink, and the flex-ba
 
 <element pattern="float" highlight="css-property" id="e.css.float" idref="e.css.float">
 	<autocomplete append=": " />
-<reference>Specifies whether a box should float to the left, right, or not at all.
-<b>Values:</b> left | right | none | inherit
-<b>Initial:</b> none
-<b>Applies to:</b> all
-<b>Inherited:</b> no
-<b>Percentages:</b> N/A
-<b>Media:</b> visual
-<b>Computed value:</b> as specified
-<b>Animatable:</b> no
-<b>Specification:</b> <a
-href="http://www.w3.org/TR/CSS2/visuren.html#float-position">www.w3.org</a></reference>
-<context id="c.css.float" idref="c.css.float" symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
-<group highlight="css-value" >
-	<autocomplete append=";" />
-	<element pattern="left"/>
-	<element pattern="right"/>
-	<element pattern="none"/>
-	<element pattern="inherit"/>
-</group>
-<element idref="e.css.end"/>
-<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-<element idref="e.css.lcomment"/>
-<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-</context>
+	<reference>Specifies whether a box should float to the left, right, or not at all.
+	<b>Values:</b> left | right | none | inherit
+	<b>Initial:</b> none
+	<b>Applies to:</b> all
+	<b>Inherited:</b> no
+	<b>Percentages:</b> N/A
+	<b>Media:</b> visual
+	<b>Computed value:</b> as specified
+	<b>Animatable:</b> no
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/CSS2/visuren.html#float-position">www.w3.org</a></reference>
+	<context id="c.css.float" idref="c.css.float" symbols=" &#9;&#10;&#13;-{}.;:'&quot;">
+	<group highlight="css-value" >
+		<autocomplete append=";" />
+		<element pattern="left"/>
+		<element pattern="right"/>
+		<element pattern="none"/>
+		<element pattern="inherit"/>
+	</group>
+	<element idref="e.css.end"/>
+	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+	<element idref="e.css.lcomment"/>
+	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
 
 <element pattern="font" highlight="css-property" id="e.css.font" idref="e.css.font">
@@ -2541,7 +3337,7 @@ href="http://www.w3.org/TR/CSS2/visuren.html#float-position">www.w3.org</a></ref
 			<autocomplete append=" " />
 <!--			<element id="e.css.length" pattern="[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px|ch)" is_regex="1" highlight="css-value">-->
 			<element idref="e.css.length">
-				<reference>The first value sets the size of the gap between the rows in a grid layout. 0 is the default value</reference>
+				<reference>The first value sets the size of the gap between the rows in a grid layout. The second value sets the size of the gap between the columns in a grid layout. 0 is the default value</reference>
 			</element>
 			<element pattern="inherit">
 				<reference>Inherits this property from its parent element.</reference>
@@ -3784,11 +4580,16 @@ href="http://www.w3.org/TR/CSS2/visuren.html#float-position">www.w3.org</a></ref
 	<b>Specification:</b> <a
 	href="http://www.w3.org/TR/CSS2/ui.html#propdef-outline">www.w3.org</a></reference>
 	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.outline" idref="c.css.outline">
-	<element pattern="#([0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]|[0-9a-f][0-9a-f][0-9a-f])" highlight="css-value" is_regex="1" case_insens="1"/>
+	<!--<element pattern="#([0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]|[0-9a-f][0-9a-f][0-9a-f])" highlight="css-value" is_regex="1" case_insens="1"/>
 	<element pattern="(rgba|hsla)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *, *(0|1|0.[0-9]) *\)" highlight="css-value" is_regex="1" case_insens="1"/>
 	<element pattern="(rgb|hsl)\( *[0-9]+%? *, *[0-9]+%? *, *[0-9]+%? *\)" highlight="css-value" is_regex="1" case_insens="1"/>
+-->
+	<group highlight="css-value">;
+		<autocomplete append=" " />
+		<element idref="e.css.length" />
+	</group>
 	<group highlight="css-value" >
-		<autocomplete append=";" />
+		<autocomplete append=" " />
 		<element pattern="invert"/>
 		<element pattern="none"/>
 		<element pattern="hidden"/>
@@ -3802,8 +4603,16 @@ href="http://www.w3.org/TR/CSS2/visuren.html#float-position">www.w3.org</a></ref
 		<element pattern="outset"/>
 		<element pattern="thin"/>
 		<element pattern="medium"/>
-		<element pattern="0"/>
-		<element pattern="aliceblue"/>
+	</group>
+	<group highlight="css-value">
+		<autocomplete append=";" />
+		<element idref="e.css.colors"/>
+		<element pattern="initial"/>
+		<element pattern="inherit"/>
+		<element idref="e.css.hex-color"/>	
+		<element idref="e.css.rgba-color"/>	
+		<element idref="e.css.rgb-color"/>	
+<!--		<element pattern="aliceblue"/>
 		<element pattern="antiquewhite"/>
 		<element pattern="aqua"/>
 		<element pattern="aquamarine"/>
@@ -3951,10 +4760,8 @@ href="http://www.w3.org/TR/CSS2/visuren.html#float-position">www.w3.org</a></ref
 		<element pattern="yellow"/>
 		<element pattern="yellowgreen"/>
 		<element pattern="currentColor"/>
-		<element pattern="transparent"/>
-		<element pattern="inherit"/>
+		<element pattern="transparent"/> -->
 	</group>
-	<element idref="e.css.length"/>
 	<element idref="e.css.end"/>
 	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 	<element idref="e.css.lcomment"/>
@@ -3977,8 +4784,9 @@ href="http://www.w3.org/TR/CSS2/visuren.html#float-position">www.w3.org</a></ref
 	<b>Animatable:</b> yes
 	<b>Specification:</b> <a
 	href="http://www.w3.org/TR/CSS2/ui.html#propdef-outline-color">www.w3.org</a></reference>
-	<context idref="c.css.color"/>
+	<context idref="c.css.accent-color"/>
 </element>
+
 <element pattern="outline-style" highlight="css-property" id="e.css.outline-style" idref="e.css.outline-style">
 		<autocomplete append=": " />
 	<reference>Controls the style of these dynamic outlines.
