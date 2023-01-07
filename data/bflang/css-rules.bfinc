@@ -3927,7 +3927,7 @@ The flex property is a shorthand for the flex-grow, flex-shrink, and the flex-ba
 			<element pattern="initial">
 				<reference>Sets this property to its default value.</reference>
 			</element>
-			<element id="e.css.length" pattern="[0-9]+\/[0-9]*(em|ex|in|cm|mm|pt|pc|px|ch)" is_regex="1" highlight="css-value"/>
+			<element id="e.css.length" pattern="[0-9]+\.?[0-9]*(em|ex|in|cm|mm|pt|pc|px|ch)" is_regex="1" highlight="css-value"/>
 			<group highlight="css-value" >
 				<autocomplete append=" " />
 				<element pattern="([a-z0-9])" highlight="css-value" is_regex="1" case_insens="1"/>
