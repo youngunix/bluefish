@@ -1207,7 +1207,6 @@
 <element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
 <element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-
 </context>-->
 </element>
 
@@ -1833,10 +1832,11 @@
 	href="http://www.w3.org/TR/css3-background/#the-border-color">www.w3.org</a></reference>
 	<context idref="c.css.border-block-color"/>
 </element>
+
 <element pattern="border-bottom-left-radius" highlight="css-property" id="e.css.border-bottom-left-radius" idref="e.css.border-bottom-left-radius">
 	<autocomplete append=": " />
-	<reference>Defines the radii of a quarter ellipse that defines the shape of the corner of the outer border edge.
-	<b>Values:</b> [ &lt;length&gt; | &lt;percentage&gt; ]{1,2}
+	<reference>Defines the radius of the bottom left corner.
+	<b>Values:</b> [ &lt;length&gt; | &lt;percentage&gt; ] | initial | inherit
 	<b>Initial:</b> 0
 	<b>Applies to:</b> all elements (but see prose)
 	<b>Inherited:</b> no
@@ -1847,8 +1847,13 @@
 	<b>Specification:</b> <a
 	href="http://www.w3.org/TR/css3-background/#the-border-radius">www.w3.org</a></reference>
 	<context id="c.css.length_percentage" idref="c.css.length_percentage" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-		<element pattern="[0-9]+%" is_regex="1" highlight="css-value" />
-		<element idref="e.css.end"/>
+		<group highlight="css-value" >		
+			<element pattern="[0-9]+%" is_regex="1" />
+			<element idref="e.css.length" />
+			<element pattern="inherit"  />
+			<element pattern="initial" />
+		</group>
+		<element idref="e.css.end" />
 	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
 		<element idref="e.css.lcomment"/>
 		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
@@ -1856,10 +1861,11 @@
 		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
 	</context>
 </element>
+
 <element pattern="border-bottom-right-radius" highlight="css-property" id="e.css.border-bottom-right-radius" idref="e.css.border-bottom-right-radius">
 	<autocomplete append=": " />
-	<reference>Defines the radii of a quarter ellipse that defines the shape of the corner of the outer border edge.
-	<b>Values:</b> [ &lt;length&gt; | &lt;percentage&gt; ]{1,2}
+	<reference>Defines the radius of the right bottom corner
+	<b>Values:</b> [ &lt;length&gt; | &lt;percentage&gt; ] | initial | inherit
 	<b>Initial:</b> 0
 	<b>Applies to:</b> all elements (but see prose)
 	<b>Inherited:</b> no
@@ -1871,10 +1877,11 @@
 	href="http://www.w3.org/TR/css3-background/#the-border-radius">www.w3.org</a></reference>
 	<context idref="c.css.length_percentage"/>
 </element>
+
 <element pattern="border-bottom-style" highlight="css-property" id="e.css.border-bottom-style" idref="e.css.border-bottom-style">
 	<autocomplete append=": " />
-	<reference>Sets the style of the bottom border, unless there is a border image.
-	<b>Values:</b> none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset
+	<reference>Sets the style of the element's bottom border, unless there is a border image.
+	<b>Values:</b> none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset | initial | inherit
 	<b>Initial:</b> none
 	<b>Applies to:</b> all elements
 	<b>Inherited:</b> no
@@ -1885,31 +1892,11 @@
 	<b>Specification:</b> <a
 	href="http://www.w3.org/TR/css3-background/#the-border-style">www.w3.org</a></reference>
 	<context idref="c.css.border_style"/>
-<!--	<context id="c.css.border_style" idref="c.css.border_style" symbols=" &#9;&#10;&#13;{}.;:'&quot;">
-	<group highlight="css-value" >
-		<autocomplete append=";" />
-		<element pattern="none"/>
-		<element pattern="hidden"/>
-		<element pattern="dotted"/>
-		<element pattern="dashed"/>
-		<element pattern="solid"/>
-		<element pattern="double"/>
-		<element pattern="groove"/>
-		<element pattern="ridge"/>
-		<element pattern="inset"/>
-		<element pattern="outset"/>
-	</group>
-	<element idref="e.css.end"/>
-	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-	<element idref="e.css.lcomment"/>
-	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
-	</context>-->
 </element>
+
 <element pattern="border-bottom-width" highlight="css-property" id="e.css.border-bottom-width" idref="e.css.border-bottom-width">
 	<autocomplete append=": " />
-	<reference>Sets the thickness of the bottom border.
+	<reference>Sets the thickness of the bottom border. <b>Note</b>: Always declare the border-style or the border-bottom-style property before the border-bottom-width property. An element must have borders before you can change the width.
 	<b>Values:</b> &lt;length&gt; | thin | medium | thick |initial | inherit
 	<b>Initial:</b> medium
 	<b>Applies to:</b> all elements
@@ -1925,8 +1912,8 @@
 
 <element pattern="border-collapse" highlight="css-property" id="e.css.border-collapse" idref="e.css.border-collapse">
 	<autocomplete append=": " />
-	<reference>Selects a table's border model.
-	<b>Values:</b> collapse | separate | inherit
+	<reference>The border-collapse property sets whether table borders should collapse into a single border or be separated as in standard HTML.
+	<b>Values:</b> collapse | separate | initial | inherit
 	<b>Initial:</b> separate
 	<b>Applies to:</b> ‘table’ and ‘inline-table’ elements
 	<b>Inherited:</b> yes
@@ -1942,6 +1929,7 @@
 		<element pattern="collapse"/>
 		<element pattern="separate"/>
 		<element pattern="inherit"/>
+		<element pattern="initial"/>
 	</group>
 	<element idref="e.css.end"/>
 	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
@@ -1968,10 +1956,66 @@
 	<context idref="c.css.accent-color"/>
 </element>
 
+<element pattern="border-end-end-radius" highlight="css-property" id="e.css.border-end-end-radius" idref="e.css.border-end-end-radius">
+	<autocomplete append=": " />
+	<reference>The border-end-end-radius property defines the radius of the corner at the end in the block and inline directions. Values for the border-end-end-radius property can be set in different ways:
+	If the border-end-end-radius property has two values:
+	    border-end-end-radius: 10px 50px;
+   	     radius at block end is 10px
+      	  radius at inline end is 50px
+	If the border-end-end-radius property has one value:
+	    border-end-end-radius: 10px;
+   	     radius at block and inline end corner is 10px
+The CSS border-end-end-radius property is very similar to CSS properties border-bottom-left-radius, border-bottom-right-radius, border-top-left-radius and border-top-right-radius, but the border-end-end-radius property is dependent on block and inline directions.
+<b>Note</b>: The related CSS properties writing-mode, text-orientation and direction define block and inline directions. That is why these properties also affect the result of the border-end-end-radius property. For pages in English, inline direction is left to right and block direction is downward.
+	<b>Values:</b> [ &lt;length&gt; | &lt;percentage&gt; ] | initial | inherit
+	<b>Initial:</b> 0
+	<b>Applies to:</b> all elements (but see prose)
+	<b>Inherited:</b> no
+	<b>Percentages:</b> refer to corresponding dimension of the border box
+	<b>Media:</b> visual
+	<b>Computed value:</b> two absolute &lt;length&gt; or percentages
+	<b>Animatable:</b> yes
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-radius">www.w3.org</a></reference>
+	<context idref="c.css.length_percentage"/>
+</element>
+
+<element pattern="border-end-start-radius" highlight="css-property" id="e.css.border-end-start-radius" idref="e.css.border-end-start-radius">
+	<autocomplete append=": " />
+	<reference>The border-end-start-radius property defines the radius of the corner at the end in the block direction and the start in the inline direction. Values for the border-end-start-radius property can be set in different ways:
+	If the border-end-start-radius property has two values:
+	    border-end-end-radius: 10px 50px;
+   	     radius at block end is 10px
+      	  radius at inline start is 50px
+	If the border-end-start-radius property has one value:
+	    border-end-end-radius: 10px;
+   	     radius at block and inline start corner is 10px
+The CSS border-end-start-radius property is very similar to CSS properties border-bottom-left-radius, border-bottom-right-radius, border-top-left-radius and border-top-right-radius, but the border-end-start-radius property is dependent on block and inline directions.
+<b>Note</b>: The related CSS properties writing-mode, text-orientation and direction define block and inline directions. That is why these properties also affect the result of the border-end-start-radius property. For pages in English, inline direction is left to right and block direction is downward.
+	<b>Values:</b> [ &lt;length&gt; | &lt;percentage&gt; ] | initial | inherit
+	<b>Initial:</b> 0
+	<b>Applies to:</b> all elements (but see prose)
+	<b>Inherited:</b> no
+	<b>Percentages:</b> refer to corresponding dimension of the border box
+	<b>Media:</b> visual
+	<b>Computed value:</b> two absolute &lt;length&gt; or percentages
+	<b>Animatable:</b> yes
+	<b>Specification:</b> <a
+	href="http://www.w3.org/TR/css3-background/#the-border-radius">www.w3.org</a></reference>
+	<context idref="c.css.length_percentage"/>
+</element>
+
 <element pattern="border-image" highlight="css-property" id="e.css.border-image" idref="e.css.border-image">
 	<autocomplete append=": " />
-	<reference>Shorthand property for setting ‘border-image-source’, ‘border-image-slice’, ‘border-image-width’, ‘border-image-outset’ and ‘border-image-repeat’.
-	<b>Values:</b> &lt;border-image-source&gt; || &lt;border-image-slice&gt; [ / &lt;border-image-width&gt; | / &lt;border-image-width&gt;? / &lt;border-image-outset&gt; ]? || &lt;border-image-repeat&gt;
+	<reference>The border-image property allows you to specify an image to be used as the border around an element. The <i>border-image</i> property is a shorthand property for:
+	    border-image-source (The path to the image to be used as a border)
+   	 border-image-slice (How to slice the border image, values can be <i>integer</i>, <i>percent</i> or fill)
+    	 border-image-width (The width of the border image, values as usual for length, can also be auto)
+	    border-image-outset (The amount by which the border image area extends beyond the border box)
+   	 border-image-repeat (Whether the border image should be repeated, rounded or stretched, values are stretch | round | repeat | stretch)
+	Omitted values are set to their default values.
+	<b>Values:</b> &lt;border-image-source&gt; | &lt;border-image-slice&gt; [ / &lt;border-image-width&gt; | / &lt;border-image-width&gt;? / &lt;border-image-outset&gt; ]? || &lt;border-image-repeat&gt;
 	<b>Initial:</b> see individual properties
 	<b>Applies to:</b> see individual properties
 	<b>Inherited:</b> no
@@ -1980,31 +2024,55 @@
 	<b>Computed value:</b> see individual properties
 	<b>Animatable:</b> see individual properties
 	<b>Specification:</b> <a
-	href="http://www.w3.org/TR/css3-background/#the-border-image">www.w3.org</a></reference>
-	<context idref="c.css.empty_generic" />
+	href="https://www.w3.org/TR/2021/CRD-css-backgrounds-3-20210726/#propdef-border-image">www.w3.org</a></reference>
+	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-image" idref="c.css.border-image">
+		<element pattern="url" highlight="css-value">
+			<autocomplete append="();" backup_cursor="2" />
+			<context idref="c.css.uri"/>
+		</element>
+		<group highlight="css-value" >
+			<autocomplete append=" " />
+			<element pattern="stretch"/>
+			<element pattern="repeat"/>
+			<element pattern="round"/>
+			<element pattern="space"/>
+		</group>
+		<element pattern="fill"/>
+		<element idref="e.css.percent"/>
+		<element pattern="auto"/>
+		<element idref="e.css.length"/>
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+	</context>
 </element>
 
 <element pattern="border-image-outset" highlight="css-property" id="e.css.border-image-outset" idref="e.css.border-image-outset">
 	<autocomplete append=": " />
 	<reference>Specifies the amount by which the border image area extends beyond the border box.
-	<b>Values:</b> [ &lt;length&gt; | &lt;number&gt; ]{1,4}
+	<b>Values:</b> &lt;length&gt; | &lt;number&gt; |initial | inherit
 	<b>Initial:</b> 0
 	<b>Applies to:</b> all elements, except internal table elements when ‘border-collapse’ is ‘collapse’
 	<b>Inherited:</b> no
 	<b>Percentages:</b> N/A
 	<b>Media:</b> visual
-	<b>Computed value:</b> all &lt;length&gt;s made absolute, otherwise as specified
+	<b>Computed value:</b> four values, each a number or absolute length 
 	<b>Animatable:</b> no
 	<b>Specification:</b> <a
-	href="http://www.w3.org/TR/css3-background/#the-border-image-outset">www.w3.org</a></reference>
+	href="https://www.w3.org/TR/2021/CRD-css-backgrounds-3-20210726/#border-image-outset">www.w3.org</a></reference>
 	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-image-outset" idref="c.css.border-image-outset">
-	<element idref="e.css.length"/>
-	<element idref="e.css.end"/>
-	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-	<element idref="e.css.lcomment"/>
-	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+		<element idref="e.css.length"/>
+		<element pattern="initial"/>
+		<element pattern="inherit"/>
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
 	</context>
 </element>
 
@@ -2022,19 +2090,19 @@
 	<b>Specification:</b> <a
 	href="http://www.w3.org/TR/css3-background/#the-border-image-repeat">www.w3.org</a></reference>
 	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-image-repeat" idref="c.css.border-image-repeat">
-	<group highlight="css-value" >
-		<autocomplete append=";" />
-		<element pattern="stretch"/>
-		<element pattern="repeat"/>
-		<element pattern="round"/>
-		<element pattern="space"/>
-	</group>
-	<element idref="e.css.end"/>
-	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-	<element idref="e.css.lcomment"/>
-	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+		<group highlight="css-value" >
+			<autocomplete append=";" />
+			<element pattern="stretch"/>
+			<element pattern="repeat"/>
+			<element pattern="round"/>
+			<element pattern="space"/>
+		</group>
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
 	</context>
 </element>
 
@@ -2052,20 +2120,21 @@
 	<b>Specification:</b> <a
 	href="http://www.w3.org/TR/css3-background/#the-border-image-slice">www.w3.org</a></reference>
 	<context symbols=" &#9;&#10;&#13;{}.;:'&quot;" id="c.css.border-image-slice" idref="c.css.border-image-slice">
-	<group highlight="css-value" >
-		<autocomplete append=";" />
-		<element pattern="fill"/>
-	</group>
-	<element idref="e.css.length"/>
-	<element idref="e.css.percent"/>
-	<element idref="e.css.end"/>
-	<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
-	<element idref="e.css.lcomment"/>
-	<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-	<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
-	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
+		<group highlight="css-value" >
+			<autocomplete append=";" />
+			<element pattern="fill"/>
+		</group>
+		<element idref="e.css.length"/>
+		<element idref="e.css.percent"/>
+		<element idref="e.css.end"/>
+		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
+		<element idref="e.css.lcomment"/>
+		<element id="e.css.in_style_attribute.dquote" idref="e.css.in_style_attribute.dquote" pattern="&quot;" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_attribute.squote" idref="e.css.in_style_attribute.squote" pattern="'" highlight="string" ends_context="3" condition_contextref="c.html.attrib.style.inner" condition_mode="1" condition_relation="1" />
+		<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
 	</context>
 </element>
+
 <element pattern="border-image-source" highlight="css-property" id="e.css.border-image-source" idref="e.css.border-image-source">
 	<autocomplete append=": " />
 	<reference>Specifies an image to use instead of the border styles given by the ‘border-style’ properties and as an additional background layer for the element.
@@ -2096,6 +2165,7 @@
 	<element id="e.css.in_style_section.rbrace" idref="e.css.in_style_section.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="2"/>
 	</context>
 </element>
+
 <element pattern="border-image-width" highlight="css-property" id="e.css.border-image-width" idref="e.css.border-image-width">
 	<autocomplete append=": " />
 	<reference>Specifies the offsets that are used to divide the border image area into nine parts.
