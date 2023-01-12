@@ -1157,19 +1157,20 @@ search_add_or_extend_history(Tbfwin *bfwin, const gchar *string)
 {
 	if (!string || string[0] == '\0')
 		return;
-	if (bfwin->session->searchlist) {
+	if (bfwin->session->searchlist && bfwin->session->searchlist->data) {
 		gint nlen, hlen;
 		/* look if the top most entry in the history is the prefix to this string */
 		DEBUG_MSG("top entry on searchlist is %s\n", (gchar *)bfwin->session->searchlist->data);
 		hlen = strlen((gchar *)bfwin->session->searchlist->data);
 		nlen = strlen(string);
-		if (strncmp((gchar *)bfwin->session->searchlist->data, string, MIN(hlen, nlen))==0) {
-			if (nlen > hlen) {
-				/* replace that entry */
-				g_free(bfwin->session->searchlist->data);
-				DEBUG_MSG("set %s as new searchlist string\n", string);
-				bfwin->session->searchlist->data = g_strdup(string);
-			}
+		if (strncmp((gchar *)bfwin->session->searchlist->data, string, hlen)==0 && nlen > hlen) {
+			/* first check if a similar entry already exists and remove it */
+			DEBUG_MSG("remove %s from the list to avoid dudplicates\n", string);
+			bfwin->session->searchlist = remove_from_stringlist(bfwin->session->searchlist, string);
+			/* replace the first entry */
+			g_free(bfwin->session->searchlist->data);
+			DEBUG_MSG("free the prefix and set %s as newtop of the list\n", string);
+			bfwin->session->searchlist->data = g_strdup(string);
 			return;
 		}
 	}
