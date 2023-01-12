@@ -239,8 +239,8 @@
 	<toolitem action='FormatFontSizeMinus'/>
 	<toolitem action='FormatSubscript'/>
 	<toolitem action='FormatSuperscript'/>
-	<toolitem action='FormatStrong'/>
-	<toolitem action='FormatEmphasis'/>
+	<toolitem action='FormatBold'/>
+	<toolitem action='FormatItalic'/>
 	<toolitem action='FormatPre'/>
 	<separator/>
 	<toolitem action='HeadingsH1'/>
@@ -252,6 +252,8 @@
 </toolbar>
 
 <toolbar name='HTMLFormattingToolbar'>
+	<toolitem action='FormatStrong'/>
+	<toolitem action='FormatEmphasis'/>
 	<toolitem action='FormatAbbr'/>
 	<toolitem action='FormatAcronym'/>
 	<toolitem action='FormatCitation'/>
