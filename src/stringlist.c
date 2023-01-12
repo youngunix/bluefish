@@ -607,14 +607,14 @@ GList *add_to_history_stringlist(GList *which_list, const gchar *string, gboolea
 	if (tmplist) {
 		/* move this entry to the end */
 		if (move_if_exists) {
-			DEBUG_MSG("add_to_history_stringlist, entry %s exists, moving!\n", string);
+			DEBUG_MSG("add_to_history_stringlist, entry %s exists, moving to top!\n", string);
 			which_list = g_list_remove_link(which_list, tmplist);
 			return g_list_concat(tmplist, which_list);
 		} else {
 			return which_list;
 		}
 	} else {
-		DEBUG_MSG("add_to_history_stringlist, adding new entry %s\n",string);
+		DEBUG_MSG("add_to_history_stringlist, not found, adding entry %s\n",string);
 		which_list = g_list_prepend(which_list, g_strdup(string));
 	}
 	return which_list;
