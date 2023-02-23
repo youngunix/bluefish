@@ -4,10 +4,10 @@ homepage: http://bluefish.openoffice.nl.
 
 * 2.2.13 *
 
-Bluefish 2.2.13 is a very minor maintenance release. It improves a few user 
-interface parts, and fixes some very minor bugs. It also has some minor 
-improvements for the syntax highlighting in a few languages, most notably
-python. 
+Bluefish 2.2.13 is a very minor maintenance release. The biggest update is in
+the CSS syntax support. Next to that it improves a few user interface parts, 
+and fixes some very minor bugs. It also has some minor improvements for the 
+syntax highlighting in a few other languages, most notably python.
 
 * 2.2.12 *
 
