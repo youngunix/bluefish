@@ -21,6 +21,7 @@
 
 #include <math.h>				/* log10() */
 #include <string.h>				/* strlen() */
+#include <locale.h>
 
 #include "bftextview2.h"
 #include "bftextview2_private.h"

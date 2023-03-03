@@ -10,7 +10,6 @@ dnl permission to copy, distribute and modify it.
 dnl ************************
 
 AC_PREREQ([2.59])
-
 AC_INIT([bluefish],[2.2.13],[https://sourceforge.net/p/bluefish/tickets/])
 
 dnl Have to save them here!
@@ -27,7 +26,7 @@ AC_CONFIG_HEADERS(src/config.h)
 AC_CANONICAL_HOST
 
 AC_REVISION($Revision$)
-
+AC_CONFIG_MACRO_DIRS([m4])
 AM_MAINTAINER_MODE
 
 dnl ************************
@@ -40,25 +39,9 @@ AC_SUBST([ALL_LINGUAS], "_BF_LINGUAS")
 GETTEXT_PACKAGE=AC_PACKAGE_NAME
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [gettext domain])
-AM_GLIB_GNU_GETTEXT
-
 IT_PROG_INTLTOOL
-dnl if AM_PO_SUBDIRS is available use it (most recent systems)
-dnl else try to use the very old AM_WITH_NLS
-dnl or try AM_GNU_GETTEXT at last
-m4_ifdef(
-	[AM_PO_SUBDIRS],
-	[AM_PO_SUBDIRS],
-	[
-	 m4_ifdef(
-	 	[AM_WITH_NLS],
-	 	[AM_WITH_NLS([external])],
-	 	[AM_GNU_GETTEXT([external])]
-	 )
-	]
-)
-
 BF_DEFINE_LINGUAS(_BF_LINGUAS)
+AM_GNU_GETTEXT([external])
 
 dnl ************************
 dnl   Compiler options
@@ -83,7 +66,6 @@ m4_ifdef(
 	]
 )
 m4_ifdef([DOLT], [DOLT])
-AC_ISC_POSIX
 AC_C_INLINE
 AC_PROG_INSTALL
 
@@ -386,14 +368,6 @@ AM_CONDITIONAL(INSTALL_THEMEICONS, [test "x$iconthemepath" != "xno"])
 AC_SUBST([iconpath])
 AM_CONDITIONAL(INSTALL_ICONS, [test "x$iconpath" != "xno"])
 
-
-dnl ************************
-dnl   Standard headers
-dnl ************************
-
-AC_HEADER_STDC
-
-
 dnl ************************
 dnl   Libraries
 dnl ************************
@@ -636,7 +610,6 @@ dnl **************************
 
 AC_DEFINE([WITH_SPC], [1], [Don't define to 1 if you want to build without spell-checker.])
 AC_FUNC_SELECT_ARGTYPES
-AC_HEADER_TIME
 
 dnl **************************
 dnl   Types
