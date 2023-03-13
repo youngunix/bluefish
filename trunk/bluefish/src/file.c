@@ -294,10 +294,13 @@ checkmodified_asyncfileinfo_lcb(GObject * source_object, GAsyncResult * res, gpo
 		}
 		g_object_unref(info);
 	} else if (gerror) {
+		DEBUG_MSG("checkmodified_asyncfileinfo_lcb, error condition %d: %s\n",gerror->code,gerror->message);
 		/* error condition */
-		DEBUG_MSG("************************ checkmodified_asyncfileinfo_lcb, non-handled error condition\n");
-		g_warning("while checking file modification on disk, received error %d: %s\n", gerror->code,
+		if (gerror->code != G_IO_ERROR_NOT_MOUNTED) {
+			/* ignore the not-mounted error, because it happens a lot when a remote file is open */
+			g_warning("while checking file modification on disk, received error %d: %s\n", gerror->code,
 				  gerror->message);
+		}
 		cm->callback_func(CHECKMODIFIED_ERROR, gerror, NULL, NULL, cm->callback_data);
 		g_error_free(gerror);
 	}
