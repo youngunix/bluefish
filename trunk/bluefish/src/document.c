@@ -2596,13 +2596,6 @@ doc_set_readonly(Tdocument * doc, gboolean readonly)
 
 }
 
-static void
-delete_backupfile_lcb(gpointer data)
-{
-	GFile *uri = (GFile *) data;
-	g_object_unref(uri);
-}
-
 /**
  * doc_destroy:
  * @doc: a #Tdocument
@@ -2708,7 +2701,7 @@ doc_destroy(Tdocument * doc, gboolean delay_activation)
 			backupuri = g_file_new_for_uri(tmp2);
 			g_free(tmp);
 			g_free(tmp2);
-			file_delete_async(backupuri, FALSE, delete_backupfile_lcb, backupuri);
+			file_delete_async(backupuri, FALSE, NULL, NULL);
 			g_object_unref(backupuri);
 		}
 		DEBUG_MSG("doc_destroy, unref doc->uri %p\n", doc->uri);
