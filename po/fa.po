@@ -3,39 +3,49 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: src/xmlstrings.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2016-10-13 10:48+0200\n"
+"Report-Msgid-Bugs-To: olivier@bluefish.openoffice.nl\n"
+"POT-Creation-Date: 2023-03-27 22:24+0200\n"
 "PO-Revision-Date: 2016-12-22 15:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 1.8.11\n"
 
-#: ../desktop-data/bluefish.appdata.xml.in.h:1
+#: desktop-data/bluefish.appdata.xml.in:4
+#, fuzzy
+msgid "Bluefish"
+msgstr "ترک از Bluefish برنامه ماهی ابی‬"
+
+#: desktop-data/bluefish.appdata.xml.in:5
+msgid "Text editor with many web and software development extras"
+msgstr ""
+
+#: desktop-data/bluefish.appdata.xml.in:10
 msgid ""
-"Bluefish is a powerful editor targeted towards programmers and web developers, "
-"with many options to write websites, scripts and programming code. Bluefish "
-"supports many programming and markup languages and has many features, but is "
-"still a very fast and lightweight application."
+"Bluefish is a powerful editor targeted towards programmers and web "
+"developers, with many options to write websites, scripts and programming "
+"code. Bluefish supports many programming and markup languages and has many "
+"features, but is still a very fast and lightweight application."
 msgstr ""
 " بلوفیش یک ویرایشگره قدرتمندی است برای برنامه نویسان و توسعه دهندگانه وب "
 "سایتها , با گزینه های بسیاری  برای طراهی وب سایت , اسکریبها و کد های برنامه "
-"نویسی  است. بلوفیش پشتیبانی و کمک میکند از برای بسیاری از زبانهای برنامه نویسی "
-"و نشانه گذاری و دارای خصوصیاتهای بسیاری است. ولی هنوز یک نرم افزار بسیار اسان, "
-"سبک و سریع است.‬ "
+"نویسی  است. بلوفیش پشتیبانی و کمک میکند از برای بسیاری از زبانهای برنامه "
+"نویسی و نشانه گذاری و دارای خصوصیاتهای بسیاری است. ولی هنوز یک نرم افزار "
+"بسیار اسان, سبک و سریع است.‬ "
 
-#: ../desktop-data/bluefish.appdata.xml.in.h:2
+#: desktop-data/bluefish.appdata.xml.in:11
 msgid "A selection of the features:"
 msgstr "یک  چند اتنتخواباتی از ویزگی ها:  "
 
-#: ../desktop-data/bluefish.appdata.xml.in.h:3
+#: desktop-data/bluefish.appdata.xml.in:13
 msgid ""
 "Well done syntax highlighting which for example supports languages inside "
 "languages (e.g. Javascript inside HTML inside PHP)"
@@ -43,7 +53,7 @@ msgstr ""
 "به خوبی انجام و نحو سریع و برجسته که به عنوان مثال پشتیبانی از زبان های داخل "
 "زبان (به عنوان مثال:  جاوا اسکریپت در داخل HTML در داخل پی اچ پی)"
 
-#: ../desktop-data/bluefish.appdata.xml.in.h:4
+#: desktop-data/bluefish.appdata.xml.in:14
 msgid ""
 "All kind of powerful editor features like auto indenting and auto completion "
 "for many functions and libraries in many programming languages"
@@ -51,1237 +61,1267 @@ msgstr ""
 "همه نوع از ویرایشگر قدرتمند ویژگی های مانند تورفتگی متن خودرو و تکمیل خودکار "
 "برای بسیاری از توابع و کتابخانه ها در بسیاری از زبان های برنامه نویسی"
 
-#: ../desktop-data/bluefish.appdata.xml.in.h:5
+#: desktop-data/bluefish.appdata.xml.in:15
 msgid "Project support"
 msgstr " پشتیبانی کن ار پروژهها‬"
 
-#: ../desktop-data/bluefish.appdata.xml.in.h:6
+#: desktop-data/bluefish.appdata.xml.in:16
 msgid "Support for remote files over ftp, sftp, webdav, etc"
 msgstr ""
 "پشتیبانی از فایل های FTP، SFTP، WebDAV و غیره از طریق راه دور هم امکان دارد.‬"
 
-#: ../desktop-data/bluefish.appdata.xml.in.h:7
+#: desktop-data/bluefish.appdata.xml.in:17
 msgid "Powerful search and replace engine"
 msgstr "موتور جستجو و جایگزین قدرتمند."
 
-#: ../desktop-data/bluefish.appdata.xml.in.h:8
+#: desktop-data/bluefish.appdata.xml.in:18
 msgid "Customizable integration of external programs such as lint, make, etc"
 msgstr "قابل تنظیم برنامه ریزی برنامه های خارجی مانند لینت , میک و غیره‬"
 
-#: ../desktop-data/bluefish.appdata.xml.in.h:9
+#: desktop-data/bluefish.appdata.xml.in:19
 msgid "Snippets plugin to automate often used code"
 msgstr "قطعه و تکهه های ؛ پلاگین ؛ که به طور خودکار اغلب مواقع استفاده می شود"
 
-#: ../desktop-data/bluefish.appdata.xml.in.h:10
+#: desktop-data/bluefish.appdata.xml.in:20
 msgid "Code-aware in-line spell checking"
 msgstr " برسی و چک کردن دیکته برای ؛ کود ور؛  و ؛این لاین؛."
 
-#: ../desktop-data/bluefish.appdata.xml.in.h:11
+#: desktop-data/bluefish.appdata.xml.in:21
 msgid "Zencoding or Emmet support"
 msgstr "؛ زن کودینگ ؛ و یا ؛آمت؛ هم کرد داشته باشد و پشتیبانی کند "
 
-#: ../desktop-data/bluefish.appdata.xml.in.h:12
+#: desktop-data/bluefish.appdata.xml.in:22
 msgid "Bookmarks panel"
 msgstr "صفحه و تصویره ؛نشانیها؛"
 
-#: ../desktop-data/bluefish.appdata.xml.in.h:13
+#: desktop-data/bluefish.appdata.xml.in:24
 msgid ""
-"If you are an occasional coder who is in need for a simple to learn editor, or "
-"a heavy coder who dislikes heavy IDE's like eclipse or netbeans, Bluefish is "
-"your editor of choice!"
+"If you are an occasional coder who is in need for a simple to learn editor, "
+"or a heavy coder who dislikes heavy IDE's like eclipse or netbeans, Bluefish "
+"is your editor of choice!"
 msgstr ""
 "اگر شما یک برنامه نویسی و کورد نویسی هستید که گاهی اوقاط احتیاج دارید که یک "
-"ویراستار ساده ایی را یاد بگیرید, ویا یک کودر و یا برنامه نویسه حرفه ایی باشید "
-"که از استفاده زیاد  IDE ها ماننده اکلیپس و یا نت بینز , را دوست نداشته باشید "
-"انوقت ؛بلوفیش؛ انتخواب ویراستار ایده ال شما است    "
+"ویراستار ساده ایی را یاد بگیرید, ویا یک کودر و یا برنامه نویسه حرفه ایی "
+"باشید که از استفاده زیاد  IDE ها ماننده اکلیپس و یا نت بینز , را دوست نداشته "
+"باشید انوقت ؛بلوفیش؛ انتخواب ویراستار ایده ال شما است    "
 
-#: ../desktop-data/bluefish.desktop.in.h:1 ../src/bluefish.c:91
+#: desktop-data/bluefish.appdata.xml.in:40
+msgid "The Bluefish main window showing the application"
+msgstr ""
+
+#: desktop-data/bluefish.desktop.in:4 src/bluefish.c:95
 msgid "Bluefish Editor"
 msgstr "ویراستار بلوفیش"
 
-#: ../desktop-data/bluefish.desktop.in.h:2
+#: desktop-data/bluefish.desktop.in:5
 msgid "Web Development Editor"
 msgstr "ویرایشگر ویراستار برای توسعه وب‬"
 
-#: ../desktop-data/bluefish.desktop.in.h:3
+#: desktop-data/bluefish.desktop.in:6
 msgid "programming;code;web;editor;development;html;php;python;"
 msgstr "برنامه نویسی; کد; وب; ویرایشگر; توسعه; اچ تی ام ال ; پی اچ پی; پایتون;"
 
-#: ../desktop-data/bluefish.xml.in.h:1
-msgid "Bluefish project file"
-msgstr "پرونده پروژه ؛ بلو فیش ؛‬"
+#: desktop-data/bluefish.desktop.in:8
+#, fuzzy
+msgid "bluefish"
+msgstr "ترک از Bluefish برنامه ماهی ابی‬"
 
-#: ../desktop-data/bluefish.xml.in.h:2
-msgid "Bluefish language definition file"
-msgstr "Bluefish زبان فایل تعریف"
-
-#: ../src/bftextview2.c:1890
+#: src/bftextview2.c:2047
 msgid "Collapse all"
 msgstr "جمع شدن همه"
 
-#: ../src/bftextview2.c:1893
+#: src/bftextview2.c:2050
 msgid "Expand all"
 msgstr "باز کردن همه"
 
-#: ../src/bftextview2.c:1901
+#: src/bftextview2.c:2058
+#, fuzzy, c-format
 msgid "Collapse %s"
 msgstr "سقوط به٪ s"
 
-#: ../src/bftextview2.c:1911
+#: src/bftextview2.c:2068
+#, c-format
 msgid "Expand %s"
 msgstr "گسترش %s"
 
-#: ../src/bftextview2_spell.c:826
+#: src/bftextview2_spell.c:843
 msgid "Spell check language"
 msgstr "طلسم زبان چک"
 
-#: ../src/bftextview2_spell.c:859
+#: src/bftextview2_spell.c:876
 msgid "Add to dictionary"
 msgstr "افزودن به دیکشنری"
 
-#: ../src/bftextview2_spell.c:862
+#: src/bftextview2_spell.c:879
 msgid "Ignore spelling"
 msgstr "نادیده گرفتن املا"
 
-#: ../src/bftextview2_spell.c:877
+#: src/bftextview2_spell.c:894
 msgid "Insert special characters as entities"
 msgstr "درج نویسه های خاص به عنوان اشخاص"
 
-#: ../src/bfwin.c:232
+#: src/bfwin.c:284
 msgid "Filebrowser"
 msgstr "  دیدن پرونده Filebrowser‬"
 
-#: ../src/bfwin.c:234
+#: src/bfwin.c:286
 msgid "Bookmarks"
 msgstr "نشانه‌گذاری شده های من"
 
-#: ../src/bfwin.c:1002
+#: src/bfwin.c:1054
 msgid "Goto Line:"
 msgstr "رفتن به خط:"
 
-#: ../src/bfwin.c:1013
+#: src/bfwin.c:1066
 msgid "Find:"
 msgstr "یافتن"
 
-#: ../src/bfwin.c:1024 ../src/snr3.c:1526
+#: src/bfwin.c:1077 src/snr3.c:1603
 msgid "Regular expression (pcre)"
 msgstr "عبارت  با قاعده معمولی (pcre)‬"
 
-#: ../src/bfwin.c:1027
+#: src/bfwin.c:1080
 msgid "Case sensitive"
 msgstr "حساس به حروف کوچک و بزرگ"
 
-#: ../src/bfwin.c:1030
+#: src/bfwin.c:1083
 msgid "Dot character matches newlines"
 msgstr "شخصیت نقطه منطبق newlines"
 
-#: ../src/bfwin.c:1033
+#: src/bfwin.c:1086
 msgid "Pattern contains backslash escaped sequences"
 msgstr "الگوی حاوی توالی های ممیز فرار"
 
-#: ../src/bfwin.c:1045
+#: src/bfwin.c:1098
 msgid "Advanced"
 msgstr "پیشرفته"
 
-#: ../src/bfwin.c:1519
+#: src/bfwin.c:1572
 msgid "New Bluefish Window"
 msgstr "Bluefish پنجره جدید"
 
 #. Fake-label (for notebook_hide() and _show() ;)
-#: ../src/bfwin.c:1585
+#: src/bfwin.c:1638
 msgid "Stand by..."
 msgstr " در حال انتظار...‬"
 
-#: ../src/bfwin_uimanager.c:761
+#: src/bfwin_uimanager.c:778
 msgid "Leave Fullscreen"
 msgstr "ترک تمام صفحه"
 
-#: ../src/bfwin_uimanager.c:761
+#: src/bfwin_uimanager.c:778
 msgid "Fullscreen"
 msgstr "تمام صفحه"
 
-#: ../src/bfwin_uimanager.c:819
+#: src/bfwin_uimanager.c:836
 msgid "_File"
 msgstr "پرونده پروژه ‬"
 
-#: ../src/bfwin_uimanager.c:820
+#: src/bfwin_uimanager.c:837
 msgid "New From Template"
 msgstr "از الگو قالب جدید‬"
 
-#: ../src/bfwin_uimanager.c:821 ../src/bfwin_uimanager.c:831
+#: src/bfwin_uimanager.c:838 src/bfwin_uimanager.c:849
 msgid "Open _Recent"
 msgstr ""
 "باز کن اخیر‬\n"
 "‫ "
 
-#: ../src/bfwin_uimanager.c:822
+#: src/bfwin_uimanager.c:839
 msgid "_Edit"
 msgstr "تغییر دادن یا تصحیح کردن‬"
 
-#: ../src/bfwin_uimanager.c:823
+#: src/bfwin_uimanager.c:840
 msgid "_View"
 msgstr "نما‬"
 
-#: ../src/bfwin_uimanager.c:824
+#: src/bfwin_uimanager.c:841
 msgid "_Document"
 msgstr "سند‬"
 
-#: ../src/bfwin_uimanager.c:825
+#: src/bfwin_uimanager.c:842
 msgid "_Tab Size"
 msgstr "اندازه برگ  _Tab‬"
 
-#: ../src/bfwin_uimanager.c:826
+#: src/bfwin_uimanager.c:843
 msgid "_Font Size"
 msgstr "اندازه خانواده حروف_Font‬"
 
-#: ../src/bfwin_uimanager.c:827
+#: src/bfwin_uimanager.c:844
 msgid "Language M_ode"
 msgstr " سبک زبان M_ode ‬"
 
-#: ../src/bfwin_uimanager.c:828
+#: src/bfwin_uimanager.c:845
 msgid "Character _Encoding"
 msgstr "کدگزاری کارکترها"
 
-#: ../src/bfwin_uimanager.c:829
+#: src/bfwin_uimanager.c:846
+#, fuzzy
+msgid "Reorder documents"
+msgstr "تمام اسناد باز"
+
+#: src/bfwin_uimanager.c:847
 msgid "_Go"
 msgstr "راهی شدن _Go‬"
 
-#: ../src/bfwin_uimanager.c:830
+#: src/bfwin_uimanager.c:848
 msgid "_Project"
 msgstr "پرونده پروژه ؛ بلو فیش ؛‬‬"
 
-#: ../src/bfwin_uimanager.c:832
+#: src/bfwin_uimanager.c:850
 msgid "_Tools"
 msgstr "دست افزار _Tools‬"
 
-#: ../src/bfwin_uimanager.c:833
+#: src/bfwin_uimanager.c:851
 msgid "_Commands"
 msgstr "فرماندهی _Commands‬"
 
-#: ../src/bfwin_uimanager.c:834
+#: src/bfwin_uimanager.c:852
 msgid "_Filters"
 msgstr " تصفیه کردن _Filters‬"
 
-#: ../src/bfwin_uimanager.c:835
+#: src/bfwin_uimanager.c:853
 msgid "_Output parsers"
 msgstr "تجزیه کنندهای خروجی _Output parsers‬"
 
-#: ../src/bfwin_uimanager.c:836
+#: src/bfwin_uimanager.c:854
 msgid "For_mat"
 msgstr ""
 " قالب For_mat ‬\n"
 "‫ "
 
-#: ../src/bfwin_uimanager.c:837
+#: src/bfwin_uimanager.c:855
 msgid "_Insert"
 msgstr "در میان گذاشتن _Insert‬"
 
-#: ../src/bfwin_uimanager.c:838
+#: src/bfwin_uimanager.c:856
 msgid "Con_vert"
 msgstr ""
 "تبدیل کردن Con_vert  ‬\n"
 "‫ "
 
-#: ../src/bfwin_uimanager.c:842
+#: src/bfwin_uimanager.c:860
 msgid "_New"
 msgstr "جدید‬‬"
 
-#: ../src/bfwin_uimanager.c:842 ../src/filebrowser2.c:898
-#: ../src/filebrowser2.c:900 ../src/filebrowser2.c:1288
+#: src/bfwin_uimanager.c:860 src/filebrowser2.c:899 src/filebrowser2.c:901
+#: src/filebrowser2.c:1329
 msgid "New file"
 msgstr "فایل جدید"
 
-#: ../src/bfwin_uimanager.c:843
+#: src/bfwin_uimanager.c:861
 msgid "New _Window"
 msgstr "‫_Window جدید‬"
 
-#: ../src/bfwin_uimanager.c:843
+#: src/bfwin_uimanager.c:861
 msgid "New window"
 msgstr "بعد از کلیک صفحه در پنجره جدید باز شود؟"
 
-#: ../src/bfwin_uimanager.c:845
+#: src/bfwin_uimanager.c:863
 msgid "Close Win_dow"
 msgstr "بستن Win_dow"
 
-#: ../src/bfwin_uimanager.c:845
+#: src/bfwin_uimanager.c:863
 msgid "Close window"
 msgstr "بستن پنجره‬"
 
-#: ../src/bfwin_uimanager.c:846
+#: src/bfwin_uimanager.c:864
 msgid "_Open..."
 msgstr ""
 "باز کن اخیر ‬\\ open‬\n"
 "\n"
 "‫‫ "
 
-#: ../src/bfwin_uimanager.c:846
+#: src/bfwin_uimanager.c:864
 msgid "Open file"
 msgstr "فایل را باز کنید‬"
 
-#: ../src/bfwin_uimanager.c:847
+#: src/bfwin_uimanager.c:865
 msgid "Open Ad_vanced..."
 msgstr "باز کردن advanced‬"
 
-#: ../src/bfwin_uimanager.c:847 ../src/filebrowser2.c:1284
+#: src/bfwin_uimanager.c:865 src/filebrowser2.c:1323
 msgid "Open advanced"
 msgstr "باز پیشرفته "
 
-#: ../src/bfwin_uimanager.c:849
+#: src/bfwin_uimanager.c:867
 msgid "Open _from Selection"
 msgstr "انتخاب _from باز"
 
-#: ../src/bfwin_uimanager.c:849
+#: src/bfwin_uimanager.c:867
 msgid "Open from Selection"
 msgstr "باز از انتخاب"
 
-#: ../src/bfwin_uimanager.c:851
+#: src/bfwin_uimanager.c:869
 msgid "_Print..."
 msgstr "_Print..."
 
-#: ../src/bfwin_uimanager.c:851
+#: src/bfwin_uimanager.c:869
 msgid "Print"
 msgstr "چاپ فرم"
 
-#: ../src/bfwin_uimanager.c:852
+#: src/bfwin_uimanager.c:870
 msgid "_Quit"
 msgstr "_Quit"
 
-#: ../src/bfwin_uimanager.c:852
+#: src/bfwin_uimanager.c:870
 msgid "Quit Bluefish"
 msgstr "ترک از Bluefish برنامه ماهی ابی‬"
 
-#: ../src/bfwin_uimanager.c:853
+#: src/bfwin_uimanager.c:872 src/bfwin_uimanager.c:875
 msgid "Preference_s..."
 msgstr "ترجی هیها‬"
 
-#: ../src/bfwin_uimanager.c:853
+#: src/bfwin_uimanager.c:872 src/bfwin_uimanager.c:875
 msgid "Edit Preferences"
 msgstr "تغییر دادن یا تصحیح کردن‬ ترجی هیها‬"
 
-#: ../src/bfwin_uimanager.c:855
+#: src/bfwin_uimanager.c:878
 msgid "Select _All"
 msgstr "انتخاب"
 
-#: ../src/bfwin_uimanager.c:855
+#: src/bfwin_uimanager.c:878
 msgid "Select all"
 msgstr "انتخاب همه"
 
-#: ../src/bfwin_uimanager.c:856
+#: src/bfwin_uimanager.c:879
 msgid "Toggle Boo_kmark"
 msgstr "ضامن Boo_kmark"
 
-#: ../src/bfwin_uimanager.c:856
+#: src/bfwin_uimanager.c:879
 msgid "Toggle bookmark"
 msgstr "تغییر نشانه گذاری"
 
-#: ../src/bfwin_uimanager.c:858
+#: src/bfwin_uimanager.c:881
 msgid "_Add or Remove..."
 msgstr "افزودن یا حذف کردن ‬"
 
-#: ../src/bfwin_uimanager.c:858
+#: src/bfwin_uimanager.c:881
 msgid "Add or remove character encoding"
 msgstr "افزودن یا حذف کاراکتر را پشتیبانی می کند‬"
 
-#: ../src/bfwin_uimanager.c:860
+#: src/bfwin_uimanager.c:883
 msgid "Floati_ng Window"
 msgstr "پنجره Floati_ng"
 
-#: ../src/bfwin_uimanager.c:860
+#: src/bfwin_uimanager.c:883
 msgid "Open current document in floating window"
 msgstr "باز نوشتار کنونی در پنجره شناور‬"
 
-#: ../src/bfwin_uimanager.c:862 ../src/bfwin_uimanager.c:868
+#: src/bfwin_uimanager.c:885 src/bfwin_uimanager.c:891
 msgid "_Increase"
 msgstr " افضایش دادن  _Increase‬"
 
-#: ../src/bfwin_uimanager.c:862
+#: src/bfwin_uimanager.c:885
 msgid "Increase document font size"
 msgstr "افزایش اندازه نوع خط نوشتار‬"
 
-#: ../src/bfwin_uimanager.c:864 ../src/bfwin_uimanager.c:870
+#: src/bfwin_uimanager.c:887 src/bfwin_uimanager.c:893
 msgid "_Decrease"
 msgstr "  نزول کردن _Decrease‬"
 
-#: ../src/bfwin_uimanager.c:864
+#: src/bfwin_uimanager.c:887
 msgid "Decrease document font size"
 msgstr "کاهش اندازه نوع خط نوشتار "
 
-#: ../src/bfwin_uimanager.c:866 ../src/bfwin_uimanager.c:872
+#: src/bfwin_uimanager.c:889 src/bfwin_uimanager.c:895
 msgid "_Reset"
 msgstr "تنظیم مجدد‬"
 
-#: ../src/bfwin_uimanager.c:866
+#: src/bfwin_uimanager.c:889
 msgid "Reset document font size"
 msgstr "تنظیم مجدد اندازه نوع خط نوشتار‬"
 
-#: ../src/bfwin_uimanager.c:868
+#: src/bfwin_uimanager.c:891
 msgid "Increase document tab size"
 msgstr "افزایش اندازه برگه سند‬"
 
-#: ../src/bfwin_uimanager.c:870
+#: src/bfwin_uimanager.c:893
 msgid "Decrease document tab size"
 msgstr "کاهش اندازه برگه سند‬"
 
-#: ../src/bfwin_uimanager.c:872
+#: src/bfwin_uimanager.c:895
 msgid "Reset document tab size"
 msgstr "تنظیم مجدد اندازه برگه سند‬"
 
-#: ../src/bfwin_uimanager.c:875
+#: src/bfwin_uimanager.c:898
 msgid "Rescan Synta_x & Spelling"
 msgstr "پویشمجدد Synta_x دستخورده & املا‬"
 
-#: ../src/bfwin_uimanager.c:875 ../src/bfwin_uimanager.c:878
+#: src/bfwin_uimanager.c:898 src/bfwin_uimanager.c:901
 msgid "Rescan document highlighting"
 msgstr "پویشمجدد برجسته سند ‬"
 
-#: ../src/bfwin_uimanager.c:878
+#: src/bfwin_uimanager.c:901
 msgid "Rescan Synta_x"
 msgstr "پویشمجدد Synta_x ‬"
 
-#: ../src/bfwin_uimanager.c:881
+#: src/bfwin_uimanager.c:904
 msgid "_New Project..."
 msgstr "پروژه  جدید _New...‬"
 
-#: ../src/bfwin_uimanager.c:881 ../src/project.c:231
+#: src/bfwin_uimanager.c:904 src/project.c:231
 msgid "New project"
 msgstr "پروژه  جدید‬"
 
-#: ../src/bfwin_uimanager.c:882
+#: src/bfwin_uimanager.c:905
 msgid "_Open Project..."
 msgstr "پروژه  باز _Open...‬"
 
-#: ../src/bfwin_uimanager.c:882
+#: src/bfwin_uimanager.c:905
 msgid "Open project"
 msgstr "پروژه در حال اجرا‬"
 
-#: ../src/bfwin_uimanager.c:883
+#: src/bfwin_uimanager.c:906
 msgid "_Synchronize Text Block"
 msgstr " همگام سازی _Synchronize قطعه متن"
 
-#: ../src/bfwin_uimanager.c:883 ../src/blocksync.c:295
+#: src/bfwin_uimanager.c:906 src/blocksync.c:295
 msgid "Synchronize text block"
 msgstr "همگام سازی قطعه متن ‬"
 
-#: ../src/bfwin_uimanager.c:885
+#: src/bfwin_uimanager.c:908
 msgid "_Toggle Comment"
 msgstr "نظر _Toggle"
 
-#: ../src/bfwin_uimanager.c:885
+#: src/bfwin_uimanager.c:908
 msgid "Toggle comment"
 msgstr "تغییر چگونگی نظر"
 
-#: ../src/bfwin_uimanager.c:887
+#: src/bfwin_uimanager.c:910
 msgid "Select _Block"
 msgstr "انتخاب _Block"
 
-#: ../src/bfwin_uimanager.c:888
+#: src/bfwin_uimanager.c:911
 msgid "Select block, use multiple times to select parent blocks "
 msgstr "انتخاب قطعه، چند بار این است که پدر و مادر بلوک را انتخاب کنید"
 
-#: ../src/bfwin_uimanager.c:890
+#: src/bfwin_uimanager.c:913
+#, fuzzy
+msgid "Select _Identifier"
+msgstr "انتخاب فایل"
+
+#: src/bfwin_uimanager.c:914
+#, fuzzy
+msgid "Select identifier"
+msgstr "انتخاب فایل"
+
+#: src/bfwin_uimanager.c:915
 msgid "D_uplicate Line"
 msgstr "خط D_uplicate"
 
-#: ../src/bfwin_uimanager.c:890
+#: src/bfwin_uimanager.c:915
 msgid "Duplicate the current line"
 msgstr "تکراری خط کنونی"
 
-#: ../src/bfwin_uimanager.c:892
+#: src/bfwin_uimanager.c:917
 msgid "_Delete Line"
 msgstr "حذف ردیف خط‬"
 
-#: ../src/bfwin_uimanager.c:892
+#: src/bfwin_uimanager.c:917
 msgid "Delete the current line"
 msgstr "حذف خط کنونی"
 
-#: ../src/bfwin_uimanager.c:894
+#: src/bfwin_uimanager.c:919
 msgid "_Word Count"
 msgstr "شمردن لغات ‬"
 
-#: ../src/bfwin_uimanager.c:894
+#: src/bfwin_uimanager.c:919
 msgid "Word count"
 msgstr "تعداد لغات:"
 
-#: ../src/bfwin_uimanager.c:895 ../src/doc_extern_tools.c:47
+#: src/bfwin_uimanager.c:920 src/doc_extern_tools.c:47
 msgid "Lorem Ipsum generator"
 msgstr "Lorem Ipsum ژنراتور"
 
-#: ../src/bfwin_uimanager.c:897
+#: src/bfwin_uimanager.c:922
 msgid "Insert Relative Filename"
 msgstr "درج نام فایل نسبی"
 
-#: ../src/bfwin_uimanager.c:899
+#: src/bfwin_uimanager.c:924
 msgid "Insert Absolute Filename"
 msgstr "مطلق نام پرونده را وارد کنید"
 
-#: ../src/bfwin_uimanager.c:901
+#: src/bfwin_uimanager.c:926
 msgid "Indenting to S_paces"
 msgstr "تورفتگی به S_paces"
 
-#: ../src/bfwin_uimanager.c:901
+#: src/bfwin_uimanager.c:926
 msgid "Indenting to spaces"
 msgstr "تورفتگی به S_paces"
 
-#: ../src/bfwin_uimanager.c:903
+#: src/bfwin_uimanager.c:928
 msgid "Indenting to T_abs"
 msgstr "تورفتگی به T_abs‬"
 
-#: ../src/bfwin_uimanager.c:903
+#: src/bfwin_uimanager.c:928
 msgid "Indenting to tabs"
 msgstr "تورفتگی به T_abs‬"
 
-#: ../src/bfwin_uimanager.c:905
+#: src/bfwin_uimanager.c:930
 msgid "_Join Lines Together"
 msgstr "_Join خطوط با هم"
 
-#: ../src/bfwin_uimanager.c:905
+#: src/bfwin_uimanager.c:930
 msgid "Join lines together"
 msgstr "پیوستن خطوط با هم"
 
-#: ../src/bfwin_uimanager.c:907
+#: src/bfwin_uimanager.c:932
 msgid "Split Lines on Right _Margin"
 msgstr "خطوط تقسیم حق _Margin راست‬"
 
-#: ../src/bfwin_uimanager.c:907
+#: src/bfwin_uimanager.c:932
 msgid "Split lines on right margin"
 msgstr "خطوط در حاشیه سمت راست تقسیم‬"
 
-#: ../src/bfwin_uimanager.c:909
+#: src/bfwin_uimanager.c:934
 msgid "Merge Lines Into Col_umns"
 msgstr "خطوط ادغام Col_umns"
 
-#: ../src/bfwin_uimanager.c:909
+#: src/bfwin_uimanager.c:934
 msgid "Merge lines into columns"
 msgstr "خطوط را در ستون ادغام"
 
-#: ../src/bfwin_uimanager.c:911
+#: src/bfwin_uimanager.c:936
 msgid "Rewrap _Lines"
 msgstr " خطوت Rewrap _Lines"
 
-#: ../src/bfwin_uimanager.c:911
+#: src/bfwin_uimanager.c:936
 msgid "Rewrap lines"
 msgstr "قثصقشح  سازی خطوط‬"
 
-#: ../src/bfwin_uimanager.c:912
+#: src/bfwin_uimanager.c:937
 msgid "Strip T_railing Whitespace"
 msgstr "نوار فضای خالی T_railing"
 
-#: ../src/bfwin_uimanager.c:912
+#: src/bfwin_uimanager.c:937
 msgid "Strip trailing whitespace"
 msgstr "نوار فضای خالی انتهایی"
 
-#: ../src/bfwin_uimanager.c:914
+#: src/bfwin_uimanager.c:939
 msgid "Javascript beautifier"
 msgstr "جاوا اسکریپت زیباکننده"
 
-#: ../src/bfwin_uimanager.c:916
+#: src/bfwin_uimanager.c:941
 msgid "Preview in browser"
 msgstr "پیش نمایش در مرورگر"
 
-#: ../src/bfwin_uimanager.c:921
+#: src/bfwin_uimanager.c:946
 msgid "_Full Screen"
 msgstr "تمام صفحه"
 
-#: ../src/bfwin_uimanager.c:921
+#: src/bfwin_uimanager.c:946
 msgid "Full screen"
 msgstr "تمام صفحه"
 
-#: ../src/bfwin_uimanager.c:923
+#: src/bfwin_uimanager.c:948
 msgid "_Main Toolbar"
 msgstr "نوار ابزار _Main"
 
-#: ../src/bfwin_uimanager.c:923
+#: src/bfwin_uimanager.c:948
 msgid "Show main toolbar"
 msgstr "نمایش نوار ابزار اصلی"
 
-#: ../src/bfwin_uimanager.c:925
+#: src/bfwin_uimanager.c:950
 msgid "_Side Pane"
 msgstr "صفحه _Side"
 
-#: ../src/bfwin_uimanager.c:925
+#: src/bfwin_uimanager.c:950
 msgid "Show side pane"
 msgstr "نمایش صفحه جانبی"
 
-#: ../src/bfwin_uimanager.c:926
+#: src/bfwin_uimanager.c:951
 msgid "_Output Pane"
 msgstr "پنجره خروجی ـ"
 
-#: ../src/bfwin_uimanager.c:926
+#: src/bfwin_uimanager.c:951
 msgid "Show output pane"
 msgstr "نمایش پنجره خروجی"
 
-#: ../src/bfwin_uimanager.c:928
+#: src/bfwin_uimanager.c:953
 msgid "Status_bar"
 msgstr "خط - حالت وضعیت"
 
-#: ../src/bfwin_uimanager.c:928
+#: src/bfwin_uimanager.c:953
 msgid "Show statusbar"
 msgstr "نمایش نوار وضعیت"
 
-#: ../src/bfwin_uimanager.c:930
+#: src/bfwin_uimanager.c:955
 msgid "Auto _Completion Popup"
 msgstr "خودرو پنجره _ تکمیل‬"
 
-#: ../src/bfwin_uimanager.c:930
+#: src/bfwin_uimanager.c:955
 msgid "Show auto completion popup"
 msgstr "نمایش تکمیل خودکار پرشی"
 
-#: ../src/bfwin_uimanager.c:932
+#: src/bfwin_uimanager.c:957
 msgid "_Auto Indent"
 msgstr "تورفتگی _ اتومتیک‬"
 
-#: ../src/bfwin_uimanager.c:932
+#: src/bfwin_uimanager.c:957
 msgid "Auto indent"
 msgstr "تورفتگی -  خودکار"
 
-#: ../src/bfwin_uimanager.c:933
+#: src/bfwin_uimanager.c:958
 msgid "Highlight Block _Delimiters"
 msgstr "برجسته کردن بلوک _Delimiters"
 
-#: ../src/bfwin_uimanager.c:934
+#: src/bfwin_uimanager.c:959
 msgid "Highlight block delimiters"
 msgstr "مرزبندهای بلوک برجسته"
 
-#: ../src/bfwin_uimanager.c:935
+#: src/bfwin_uimanager.c:960
 msgid "_Highlight Syntax"
 msgstr "نحوه _ برجسته"
 
-#: ../src/bfwin_uimanager.c:935
+#: src/bfwin_uimanager.c:960
 msgid "Highlight syntax"
 msgstr "نحو برجسته"
 
-#: ../src/bfwin_uimanager.c:937
+#: src/bfwin_uimanager.c:962
 msgid "Show _Blocks"
 msgstr "نمایش _Blocks"
 
-#: ../src/bfwin_uimanager.c:937
+#: src/bfwin_uimanager.c:962
 msgid "Show blocks"
 msgstr "نمایش بلوک"
 
-#: ../src/bfwin_uimanager.c:938
+#: src/bfwin_uimanager.c:963
 msgid "Show Line N_umbers"
 msgstr "نمایش خط N_umbers"
 
-#: ../src/bfwin_uimanager.c:938
+#: src/bfwin_uimanager.c:963
 msgid "Show line numbers"
 msgstr "نمایش شماره های خط"
 
-#: ../src/bfwin_uimanager.c:940
+#: src/bfwin_uimanager.c:965
 msgid "Show Right _Margin"
 msgstr "نمایش راست _Margin"
 
-#: ../src/bfwin_uimanager.c:940
+#: src/bfwin_uimanager.c:965
 msgid "Show right margin"
 msgstr "حاشیه راست"
 
-#: ../src/bfwin_uimanager.c:942
+#: src/bfwin_uimanager.c:967
 msgid "Show Split _View"
 msgstr "نشان می دهد تقسیم _View"
 
-#: ../src/bfwin_uimanager.c:942
+#: src/bfwin_uimanager.c:967
 msgid "Show split view"
 msgstr "تقسیم نمایش"
 
-#: ../src/bfwin_uimanager.c:944
+#: src/bfwin_uimanager.c:969
 msgid "Show V_isible Spacing"
 msgstr "نشان دادن فاصله V_isible"
 
-#: ../src/bfwin_uimanager.c:944
+#: src/bfwin_uimanager.c:969
 msgid "Show visible spacing"
 msgstr "نشان دادن فاصله قابل مشاهده"
 
-#: ../src/bfwin_uimanager.c:946
+#: src/bfwin_uimanager.c:971
 msgid "_Wrap Text"
 msgstr "متن _قطع "
 
-#: ../src/bfwin_uimanager.c:946
+#: src/bfwin_uimanager.c:971
 msgid "Wrap text"
 msgstr "پیچیدن متن"
 
-#: ../src/bfwin_uimanager.c:950 ../src/document.c:2097 ../src/document.c:3493
+#: src/bfwin_uimanager.c:975 src/document.c:2129 src/document.c:3526
 msgid "_Close"
 msgstr "بستن  - پنجره"
 
-#: ../src/bfwin_uimanager.c:950
+#: src/bfwin_uimanager.c:975
 msgid "Close current file"
 msgstr "بستن فایل فعلی"
 
-#: ../src/bfwin_uimanager.c:952
+#: src/bfwin_uimanager.c:977
 msgid "Close A_ll"
 msgstr "بستن A_ll"
 
-#: ../src/bfwin_uimanager.c:952
+#: src/bfwin_uimanager.c:977
 msgid "Close all files"
 msgstr "همه پرونده ها را ببندید"
 
-#: ../src/bfwin_uimanager.c:954 ../src/bfwin_uimanager.c:1041
-#: ../src/file_dialogs.c:1455
+#: src/bfwin_uimanager.c:979 src/bfwin_uimanager.c:1089 src/file_dialogs.c:1461
 msgid "_Save"
 msgstr "_جمع اوری "
 
-#: ../src/bfwin_uimanager.c:954
+#: src/bfwin_uimanager.c:979
 msgid "Save current file"
 msgstr "فایل فعلی"
 
-#: ../src/bfwin_uimanager.c:956 ../src/bfwin_uimanager.c:1042
+#: src/bfwin_uimanager.c:981 src/bfwin_uimanager.c:1090
 msgid "Save _as..."
 msgstr "ذخیره _as..."
 
-#: ../src/bfwin_uimanager.c:956
+#: src/bfwin_uimanager.c:981
 msgid "Save file as"
 msgstr "ذخیره پرونده بعنوان"
 
-#: ../src/bfwin_uimanager.c:958
+#: src/bfwin_uimanager.c:983
 msgid "Sav_e All"
 msgstr "Sav_e همه"
 
-#: ../src/bfwin_uimanager.c:958
+#: src/bfwin_uimanager.c:983
 msgid "Save all files"
 msgstr "تمام فایل‌ها"
 
-#: ../src/bfwin_uimanager.c:960
+#: src/bfwin_uimanager.c:985
 msgid "Rever_t to Saved"
 msgstr "ذخیره Rever_t به"
 
-#: ../src/bfwin_uimanager.c:960
+#: src/bfwin_uimanager.c:985
 msgid "Reload current file"
 msgstr "بارگذاری فایل فعلی"
 
-#: ../src/bfwin_uimanager.c:962
+#: src/bfwin_uimanager.c:987
 msgid "Save a cop_y..."
 msgstr "ذخیره cop_y..."
 
-#: ../src/bfwin_uimanager.c:962
+#: src/bfwin_uimanager.c:987
 msgid "Save a copy"
 msgstr "ذخیره رونوشت"
 
-#: ../src/bfwin_uimanager.c:964
+#: src/bfwin_uimanager.c:989
 msgid "_Insert..."
 msgstr "در میان گذاشتن _Insert‬"
 
-#: ../src/bfwin_uimanager.c:964
+#: src/bfwin_uimanager.c:989
 msgid "Insert file"
 msgstr "فایل جدید"
 
 #. Required to move here to disable sensitivity on OSX
-#: ../src/bfwin_uimanager.c:965
+#: src/bfwin_uimanager.c:990
 msgid "Rena_me..."
 msgstr "تغییر نام"
 
-#: ../src/bfwin_uimanager.c:965
+#: src/bfwin_uimanager.c:990
 msgid "Rename file"
 msgstr "تغییر نام"
 
-#: ../src/bfwin_uimanager.c:966
+#: src/bfwin_uimanager.c:992 src/bfwin_uimanager.c:995
 msgid "_Indent"
 msgstr "تورفتگی -  خودکار"
 
-#: ../src/bfwin_uimanager.c:966
+#: src/bfwin_uimanager.c:992 src/bfwin_uimanager.c:995
 msgid "Indent"
 msgstr "دندانه دار کردن"
 
-#: ../src/bfwin_uimanager.c:967
+#: src/bfwin_uimanager.c:993 src/bfwin_uimanager.c:996
 msgid "Unin_dent"
 msgstr "دندانه دار کردن"
 
-#: ../src/bfwin_uimanager.c:967
+#: src/bfwin_uimanager.c:993 src/bfwin_uimanager.c:996
 msgid "Unindent"
 msgstr "لغو تورفتنگی"
 
-#: ../src/bfwin_uimanager.c:969
+#: src/bfwin_uimanager.c:999
 msgid "F_irst Bookmark"
 msgstr "تغییر نشانه گذاری"
 
-#: ../src/bfwin_uimanager.c:969
+#: src/bfwin_uimanager.c:999
 msgid "Goto first bookmark"
 msgstr "رفتن به اولین نشانه"
 
-#: ../src/bfwin_uimanager.c:971
+#: src/bfwin_uimanager.c:1001
 msgid "L_ast Bookmark"
 msgstr "تغییر نشانه گذاری"
 
-#: ../src/bfwin_uimanager.c:971
+#: src/bfwin_uimanager.c:1001
 msgid "Goto last bookmark"
 msgstr "برو به آخرین نشانه"
 
-#: ../src/bfwin_uimanager.c:973
+#: src/bfwin_uimanager.c:1003
 msgid "N_ext Bookmark"
 msgstr "نشانه _ بعدی"
 
-#: ../src/bfwin_uimanager.c:973
+#: src/bfwin_uimanager.c:1003
 msgid "Goto next bookmark"
 msgstr "نشانه رفتن به بعدی"
 
-#: ../src/bfwin_uimanager.c:975
+#: src/bfwin_uimanager.c:1005
 msgid "P_revious Bookmark"
 msgstr "نشانه قبلی"
 
-#: ../src/bfwin_uimanager.c:976 ../src/bfwin_uimanager.c:992
+#: src/bfwin_uimanager.c:1006 src/bfwin_uimanager.c:1027
+#: src/bfwin_uimanager.c:1039
 msgid "Goto previous document"
 msgstr "برو به نوشتار قبلی"
 
-#: ../src/bfwin_uimanager.c:977
+#: src/bfwin_uimanager.c:1007
 msgid "Move Tab _Left"
 msgstr "حرکت _Left برگه"
 
-#: ../src/bfwin_uimanager.c:977
+#: src/bfwin_uimanager.c:1007
 msgid "Move current tab left"
 msgstr "برگه کنونی به حرکت چپ"
 
-#: ../src/bfwin_uimanager.c:979
+#: src/bfwin_uimanager.c:1009
 msgid "Move Tab _Right"
 msgstr "حرکت _Right برگه"
 
-#: ../src/bfwin_uimanager.c:979
+#: src/bfwin_uimanager.c:1009
 msgid "Move current tab right"
 msgstr "زبانه فعلی حرکت به راست"
 
-#: ../src/bfwin_uimanager.c:981
+#: src/bfwin_uimanager.c:1011
+#, fuzzy
+msgid "Sort by filename"
+msgstr "نام فایل _Unset"
+
+#: src/bfwin_uimanager.c:1013
+#, fuzzy
+msgid "Sort by full path"
+msgstr "توسط مسیر کامل"
+
+#: src/bfwin_uimanager.c:1015
 msgid "_Recent Document"
 msgstr "سند _Recent"
 
-#: ../src/bfwin_uimanager.c:981
+#: src/bfwin_uimanager.c:1015
 msgid "Goto most recent document"
 msgstr "برو به تازه ترین سند"
 
-#: ../src/bfwin_uimanager.c:983
+#: src/bfwin_uimanager.c:1018 src/bfwin_uimanager.c:1030
 msgid "_First Document"
 msgstr "سند _First"
 
-#: ../src/bfwin_uimanager.c:984
+#: src/bfwin_uimanager.c:1019 src/bfwin_uimanager.c:1031
 msgid "Goto first document"
 msgstr "رفتن به اولین سند"
 
-#: ../src/bfwin_uimanager.c:986
+#: src/bfwin_uimanager.c:1021 src/bfwin_uimanager.c:1033
 msgid "_Last Document"
 msgstr "سند _Last"
 
-#: ../src/bfwin_uimanager.c:987
+#: src/bfwin_uimanager.c:1022 src/bfwin_uimanager.c:1034
 msgid "Goto last document"
 msgstr "برو به آخرین سند"
 
-#: ../src/bfwin_uimanager.c:989
+#: src/bfwin_uimanager.c:1024 src/bfwin_uimanager.c:1036
 msgid "_Next Document"
 msgstr "سند _Next"
 
-#: ../src/bfwin_uimanager.c:989
+#: src/bfwin_uimanager.c:1024 src/bfwin_uimanager.c:1036
 msgid "Goto next document"
 msgstr "برو به نوشتار بعدی"
 
-#: ../src/bfwin_uimanager.c:991
+#: src/bfwin_uimanager.c:1026 src/bfwin_uimanager.c:1038
 msgid "_Previous Document"
 msgstr "سند _Previous"
 
-#: ../src/bfwin_uimanager.c:994
+#: src/bfwin_uimanager.c:1042
 msgid "_Goto Line"
 msgstr "رفتن به خط:"
 
-#: ../src/bfwin_uimanager.c:994
+#: src/bfwin_uimanager.c:1042
 msgid "Goto line"
 msgstr "رفتن به خط:"
 
-#: ../src/bfwin_uimanager.c:995
+#: src/bfwin_uimanager.c:1043
 msgid "Goto Line Number from _Clipboard"
 msgstr "رفتن به خط شماره از _Clipboard"
 
-#: ../src/bfwin_uimanager.c:996
+#: src/bfwin_uimanager.c:1044
 msgid "Goto line number in clipboard or selection"
 msgstr "شماره خط رفتن به ایمیل و یا انتخاب"
 
-#: ../src/bfwin_uimanager.c:997
+#: src/bfwin_uimanager.c:1045
 msgid "_Jump to Reference"
 msgstr "_Jump به مرجع"
 
-#: ../src/bfwin_uimanager.c:997
+#: src/bfwin_uimanager.c:1045
 msgid "Jump to reference"
 msgstr "پرش به مرجع"
 
-#: ../src/bfwin_uimanager.c:1000 ../src/bfwin_uimanager.c:1001
-#: ../src/bfwin_uimanager.c:1004 ../src/bfwin_uimanager.c:1005
+#: src/bfwin_uimanager.c:1048 src/bfwin_uimanager.c:1049
+#: src/bfwin_uimanager.c:1052 src/bfwin_uimanager.c:1053
 msgid "Jump to Matching Block Boundary"
 msgstr "پرش به تطبیق بلوک مرز"
 
-#: ../src/bfwin_uimanager.c:1011
+#: src/bfwin_uimanager.c:1059
 msgid "Cu_t"
 msgstr "Cu_t"
 
-#: ../src/bfwin_uimanager.c:1011
+#: src/bfwin_uimanager.c:1059
 msgid "Cut"
 msgstr "بریدن"
 
-#: ../src/bfwin_uimanager.c:1012
+#: src/bfwin_uimanager.c:1060
 msgid "_Copy"
 msgstr "_Copy"
 
-#: ../src/bfwin_uimanager.c:1012
+#: src/bfwin_uimanager.c:1060
 msgid "Copy"
 msgstr "کپی"
 
-#: ../src/bfwin_uimanager.c:1013
+#: src/bfwin_uimanager.c:1061
 msgid "_Paste"
 msgstr "_Paste"
 
-#: ../src/bfwin_uimanager.c:1013
+#: src/bfwin_uimanager.c:1061
 msgid "Paste"
 msgstr "انتقال"
 
-#: ../src/bfwin_uimanager.c:1014
+#: src/bfwin_uimanager.c:1062
 msgid "Paste Specia_l"
 msgstr "رب Specia_l"
 
-#: ../src/bfwin_uimanager.c:1014
+#: src/bfwin_uimanager.c:1062
 msgid "Paste Special"
 msgstr "جای گذاری ویژه"
 
-#: ../src/bfwin_uimanager.c:1019
+#: src/bfwin_uimanager.c:1067
 msgid "_Find"
 msgstr "یافتن"
 
-#: ../src/bfwin_uimanager.c:1019
+#: src/bfwin_uimanager.c:1067
 msgid "Show find bar"
 msgstr "نشان دادن نوار یافتن"
 
-#: ../src/bfwin_uimanager.c:1020
+#: src/bfwin_uimanager.c:1068
 msgid "Find A_gain"
 msgstr "پیدا کردن A_gain"
 
-#: ../src/bfwin_uimanager.c:1020
+#: src/bfwin_uimanager.c:1068
 msgid "Find again"
 msgstr "دوباره"
 
-#: ../src/bfwin_uimanager.c:1021
+#: src/bfwin_uimanager.c:1069
 msgid "Find from Clip_board"
 msgstr "پیدا کردن از Clip_board"
 
-#: ../src/bfwin_uimanager.c:1022
+#: src/bfwin_uimanager.c:1070
 msgid "Find from clipboard or selection"
 msgstr "از ایمیل و یا انتخاب پیدا"
 
-#: ../src/bfwin_uimanager.c:1025 ../src/bfwin_uimanager.c:1029
+#: src/bfwin_uimanager.c:1073 src/bfwin_uimanager.c:1077
 msgid "Ad_vanced Find & Replace..."
 msgstr "پیدا کردن Ad_vanced & جایگزین..."
 
-#: ../src/bfwin_uimanager.c:1026 ../src/bfwin_uimanager.c:1030
+#: src/bfwin_uimanager.c:1074 src/bfwin_uimanager.c:1078
 msgid "Advanced Find and Replace"
 msgstr "پیشرفته و جایگزین"
 
-#: ../src/bfwin_uimanager.c:1039
+#: src/bfwin_uimanager.c:1087
 msgid "Save & _close"
 msgstr "ذخیره & _close"
 
-#: ../src/bfwin_uimanager.c:1039
+#: src/bfwin_uimanager.c:1087
 msgid "Save & close project"
 msgstr "بستن پروژه"
 
-#: ../src/bfwin_uimanager.c:1041
+#: src/bfwin_uimanager.c:1089
 msgid "Save project"
 msgstr "ذخیره پروژه"
 
-#: ../src/bfwin_uimanager.c:1042
+#: src/bfwin_uimanager.c:1090
 msgid "Save project as"
 msgstr "ذخیره پروژه"
 
-#: ../src/bfwin_uimanager.c:1043
+#: src/bfwin_uimanager.c:1091
 msgid "_Edit Project Options..."
 msgstr "تنظیمات  پروژه"
 
-#: ../src/bfwin_uimanager.c:1043
+#: src/bfwin_uimanager.c:1091
 msgid "Edit project options"
 msgstr "تنظیمات  پروژه"
 
-#: ../src/bfwin_uimanager.c:1048
+#: src/bfwin_uimanager.c:1096
 msgid "_Undo"
 msgstr "_Undo"
 
-#: ../src/bfwin_uimanager.c:1048
+#: src/bfwin_uimanager.c:1096
 msgid "Undo"
 msgstr "پاک شود؟"
 
-#: ../src/bfwin_uimanager.c:1049
+#: src/bfwin_uimanager.c:1097
 msgid "U_ndo All"
 msgstr "U_ndo همه"
 
-#: ../src/bfwin_uimanager.c:1049
+#: src/bfwin_uimanager.c:1097
 msgid "Undo All"
 msgstr "لغو همه عملکردها"
 
-#: ../src/bfwin_uimanager.c:1050
+#: src/bfwin_uimanager.c:1098
 msgid "_Redo"
 msgstr "_Redo"
 
-#: ../src/bfwin_uimanager.c:1050
+#: src/bfwin_uimanager.c:1098
 msgid "Redo"
 msgstr "انجام بده"
 
-#: ../src/bfwin_uimanager.c:1051
+#: src/bfwin_uimanager.c:1099
 msgid "R_edo All"
 msgstr "R_edo همه"
 
-#: ../src/bfwin_uimanager.c:1051
+#: src/bfwin_uimanager.c:1099
 msgid "Redo All"
 msgstr "انجام مجدد همه عملکردها"
 
-#: ../src/bfwin_uimanager.c:1078
+#: src/bfwin_uimanager.c:1126
 #, c-format
 msgid "Always use this syntax for files of type %s ?"
 msgstr "همیشه استفاده از این دستور برای انواع %s پرونده"
 
-#: ../src/bfwin_uimanager.c:1257
+#: src/bfwin_uimanager.c:1305
 msgid "Open _URL..."
 msgstr "باز _URL..."
 
-#: ../src/bfwin_uimanager.c:1267
+#: src/bfwin_uimanager.c:1315
 msgid "Upload _/ Download..."
 msgstr "_ آپلود / دانلود..."
 
-#: ../src/bfwin_uimanager.c:1280
+#: src/bfwin_uimanager.c:1328
 msgid "_Spell Check"
 msgstr "چک کردن غلط املایی"
 
-#: ../src/bfwin_uimanager.c:1760
+#: src/bfwin_uimanager.c:1808
 msgid "Text area to filter"
 msgstr "محیط متن به فیلتر"
 
-#: ../src/bfwin_uimanager.c:1761
+#: src/bfwin_uimanager.c:1809
 msgid "All text"
 msgstr "متن تمام فروشگاه"
 
-#: ../src/bfwin_uimanager.c:1762
+#: src/bfwin_uimanager.c:1810
 msgid "Selected text only"
 msgstr "فقط متن منتخب"
 
-#: ../src/bfwin_uimanager.c:1764
+#: src/bfwin_uimanager.c:1812
 msgid "Never ask again"
 msgstr "هرگز دوباره از من نپرس"
 
-#: ../src/blocksync.c:87
+#: src/blocksync.c:87
 msgid ""
-"Select the block to sync to other pages. Include the start-of-block and end-of-"
-"block markers in your selection."
+"Select the block to sync to other pages. Include the start-of-block and end-"
+"of-block markers in your selection."
 msgstr ""
-"بلوک همگام به صفحات دیگر را انتخاب کنید. شروع بلوک و پایان بلوک نشانگر این است "
-"که در انتخاب خود قرار."
+"بلوک همگام به صفحات دیگر را انتخاب کنید. شروع بلوک و پایان بلوک نشانگر این "
+"است که در انتخاب خود قرار."
 
-#: ../src/blocksync.c:92
+#: src/blocksync.c:92
 msgid "To proceed with the current selection click forward."
 msgstr "ادامه با کلیک انتخاب فعلی رو به جلو."
 
-#: ../src/blocksync.c:121
+#: src/blocksync.c:121
 msgid ""
-"Below is the block, including start and end marker. Please <b>select the start "
-"marker</b> in the text below."
+"Below is the block, including start and end marker. Please <b>select the "
+"start marker</b> in the text below."
 msgstr ""
-"زیر بلوک از جمله نشانه های شروع و پایان است. لطفا در متن زیر <b>نشانگر شروع را "
-"انتخاب کنید</b> ."
+"زیر بلوک از جمله نشانه های شروع و پایان است. لطفا در متن زیر <b>نشانگر شروع "
+"را انتخاب کنید</b> ."
 
-#: ../src/blocksync.c:156
+#: src/blocksync.c:156
 msgid "Please <b>select the end marker</b> in the text below."
 msgstr "لطفا در متن زیر <b>نشانگر پایان را انتخاب کنید</b> ."
 
-#: ../src/blocksync.c:194
+#: src/blocksync.c:194
 #, c-format
 msgid ""
-"Will replace the text between <i>%s</i> and <i>%s</i> in all documents opened "
-"in this window.\n"
+"Will replace the text between <i>%s</i> and <i>%s</i> in all documents "
+"opened in this window.\n"
 "<b>Proceed?</b>"
 msgstr ""
-"قادر به جایگزینی متن بین <i>%s</i> و <i>%s</i> در تمام اسناد در این پنجره باز "
-"خواهد شد.\n"
+"قادر به جایگزینی متن بین <i>%s</i> و <i>%s</i> در تمام اسناد در این پنجره "
+"باز خواهد شد.\n"
 "<b>ادامه?</b>"
 
-#: ../src/blocksync.c:225
+#: src/blocksync.c:225
 msgid ""
 "<span foreground=\"red\" weight=\"bold\">Please select the block of text to "
 "synchronize.</span>"
 msgstr ""
-"<span foreground=\"red\" weight=\"bold\">لطفا قطعه متن برای همگام سازی انتخاب "
-"کنید.</span>"
+"<span foreground=\"red\" weight=\"bold\">لطفا قطعه متن برای همگام سازی "
+"انتخاب کنید.</span>"
 
-#: ../src/blocksync.c:239 ../src/blocksync.c:259
+#: src/blocksync.c:239 src/blocksync.c:259
 msgid ""
-"<span foreground=\"red\" weight=\"bold\">This marker exists more than once in "
-"the block.</span>"
+"<span foreground=\"red\" weight=\"bold\">This marker exists more than once "
+"in the block.</span>"
 msgstr ""
-"<span foreground=\"red\" weight=\"bold\">این نشانگر بیش از یک بار در بلوک موجود "
-"می باشد.</span>"
+"<span foreground=\"red\" weight=\"bold\">این نشانگر بیش از یک بار در بلوک "
+"موجود می باشد.</span>"
 
-#: ../src/blocksync.c:245
+#: src/blocksync.c:245
 msgid ""
-"<span foreground=\"red\" weight=\"bold\">Select the text that marks the start "
+"<span foreground=\"red\" weight=\"bold\">Select the text that marks the "
+"start of the block.</span>"
+msgstr ""
+"<span foreground=\"red\" weight=\"bold\">متن نشانه شروع بلوک را انتخاب.</"
+"span>"
+
+#: src/blocksync.c:265
+msgid ""
+"<span foreground=\"red\" weight=\"bold\">Select the text that marks the end "
 "of the block.</span>"
 msgstr ""
-"<span foreground=\"red\" weight=\"bold\">متن نشانه شروع بلوک را انتخاب.</span>"
+"<span foreground=\"red\" weight=\"bold\">متن نشانه پایان بلوک را انتخاب.</"
+"span>"
 
-#: ../src/blocksync.c:265
-msgid ""
-"<span foreground=\"red\" weight=\"bold\">Select the text that marks the end of "
-"the block.</span>"
-msgstr ""
-"<span foreground=\"red\" weight=\"bold\">متن نشانه پایان بلوک را انتخاب.</span>"
-
-#: ../src/bluefish.c:91
+#: src/bluefish.c:95
 msgid "Visit us at http://bluefish.openoffice.nl"
 msgstr "سایت رسمی ما در http://bluefish.openoffice.nl"
 
-#: ../src/bluefish.c:370
+#: src/bluefish.c:343
 msgid "Open in existing window."
 msgstr "در پنجره موجود باز."
 
-#: ../src/bluefish.c:372
+#: src/bluefish.c:345
 msgid "Open in new window."
 msgstr "باز کردن در صفحه جدید"
 
-#: ../src/bluefish.c:374
+#: src/bluefish.c:347
 msgid "Print version information."
 msgstr "نسخهٔ اطلاعات را چاپ کنید."
 
-#: ../src/bluefish.c:401
+#: src/bluefish.c:374
 msgid " [FILE(S)]"
 msgstr "[دریافت فایل (S)]"
 
-#: ../src/bluefish.c:412
+#: src/bluefish.c:385
 #, c-format
 msgid ""
 "Error parsing command line options. %s\n"
 "Please run: %s -?\n"
 msgstr "خطای تجزیه گزینه های خط فرمان. لطفا اجرا %s: %s-?\n"
 
-#: ../src/bookmark.c:548 ../src/bookmark.c:569
+#: src/bookmark.c:577 src/bookmark.c:598
 msgid "_Name:"
 msgstr "_Name:"
 
-#: ../src/bookmark.c:555 ../src/bookmark.c:573
+#: src/bookmark.c:584 src/bookmark.c:602
 msgid "_Description:"
 msgstr "_Description:"
 
-#: ../src/bookmark.c:558
+#: src/bookmark.c:587
 msgid "_Temporary"
 msgstr "_Temporary"
 
-#: ../src/bookmark.c:575
+#: src/bookmark.c:604
 msgid "Temporary"
 msgstr "موقتی"
 
-#: ../src/bookmark.c:748
+#: src/bookmark.c:777
 #, c-format
 msgid "Do you really want to delete %s?"
 msgstr "آیا واقعا قصد حذف کردن دارید%s؟"
 
-#: ../src/bookmark.c:751
+#: src/bookmark.c:780
 msgid "Delete permanent bookmark."
 msgstr "حذف نشانک های دائمی."
 
-#: ../src/bookmark.c:777
+#: src/bookmark.c:806
 msgid "Delete all bookmarks."
 msgstr "همه نشانک ها را حذف کنید."
 
-#: ../src/bookmark.c:815
+#: src/bookmark.c:844
 #, c-format
 msgid "Do you really want to delete all bookmarks for %s?"
 msgstr "واقعا خواهید نشانک ها همه برای %s را حذف کنید؟"
 
-#: ../src/bookmark.c:817
+#: src/bookmark.c:846
 msgid "Delete bookmarks?"
 msgstr "حذف نشانک ها?"
 
-#: ../src/bookmark.c:838 ../src/bookmark.c:899
+#: src/bookmark.c:867 src/bookmark.c:928
 msgid "Edit bookmark"
 msgstr "ویرایش نشانک"
 
-#: ../src/bookmark.c:895
+#: src/bookmark.c:924
 msgid "Bookmark menu"
 msgstr "منوی نشانک"
 
-#: ../src/bookmark.c:896
+#: src/bookmark.c:925
 msgid "Show Bookmark"
 msgstr "نشانه نشان می دهد"
 
-#: ../src/bookmark.c:897
+#: src/bookmark.c:926
 msgid "Show File"
 msgstr "نشان دادن فایل"
 
-#: ../src/bookmark.c:898
+#: src/bookmark.c:927
 msgid "Bookmark search menu"
 msgstr "منوی جستجو در نشانه گذاری"
 
-#: ../src/bookmark.c:899
+#: src/bookmark.c:928
 msgid "_Edit..."
 msgstr "تغییر دادن یا تصحیح کردن‬"
 
-#: ../src/bookmark.c:901 ../src/filebrowser2.c:1287
+#: src/bookmark.c:930 src/filebrowser2.c:1328
 msgid "_Delete"
 msgstr "حذف خط کنونی"
 
-#: ../src/bookmark.c:901 ../src/document.c:2306
+#: src/bookmark.c:930 src/document.c:2341
 msgid "Delete bookmark"
 msgstr "پاک کردن این علاقه مندی"
 
-#: ../src/bookmark.c:902
+#: src/bookmark.c:931
 msgid "Delete All"
 msgstr "حذف همه"
 
-#: ../src/bookmark.c:902
+#: src/bookmark.c:931
 msgid "Delete all bookmarks"
 msgstr "حذف همه نشانک ها"
 
-#: ../src/bookmark.c:904
+#: src/bookmark.c:933
 msgid "Delete All in Document"
 msgstr "در نوشتار را حذف کنید"
 
-#: ../src/bookmark.c:905
+#: src/bookmark.c:934
 msgid "Delete all bookmarks in document"
 msgstr "حذف نشانک ها همه در نوشتار"
 
-#: ../src/bookmark.c:910
+#: src/bookmark.c:939
 msgid "Permanent by default"
 msgstr "دائم پیش فرض"
 
-#: ../src/bookmark.c:915
+#: src/bookmark.c:944
 msgid "By Name"
 msgstr "نام"
 
-#: ../src/bookmark.c:916
+#: src/bookmark.c:945
 msgid "By Full Path"
 msgstr "توسط مسیر کامل"
 
-#: ../src/bookmark.c:917
+#: src/bookmark.c:946
 msgid "By Full URI"
 msgstr "توسط URI کامل"
 
-#: ../src/bookmark.c:921 ../src/bookmark.c:927
+#: src/bookmark.c:950 src/bookmark.c:956
 msgid "Content"
 msgstr "محتوا"
 
-#: ../src/bookmark.c:922 ../src/bookmark.c:928 ../src/preferences.c:621
-#: ../src/preferences.c:1686 ../src/preferences.c:1688 ../src/preferences.c:1789
+#: src/bookmark.c:951 src/bookmark.c:957 src/preferences.c:626
+#: src/preferences.c:1691 src/preferences.c:1693 src/preferences.c:1794
 msgid "Name"
 msgstr "نام"
 
-#: ../src/bookmark.c:923 ../src/bookmark.c:929
+#: src/bookmark.c:952 src/bookmark.c:958
 msgid "Name & Content"
 msgstr "نام & محتوا"
 
-#: ../src/bookmark.c:1261
+#: src/bookmark.c:1298
 msgid "First bookmark"
 msgstr "اولین نشانه"
 
-#: ../src/bookmark.c:1265
+#: src/bookmark.c:1302
 msgid "Previous bookmark"
 msgstr "نشانه گذاری قبلی"
 
-#: ../src/bookmark.c:1269
+#: src/bookmark.c:1306
 msgid "Next bookmark"
 msgstr "نشانه بعدی"
 
-#: ../src/bookmark.c:1273
+#: src/bookmark.c:1310
 msgid "Last bookmark"
 msgstr "آخرین نشانه"
 
-#: ../src/document.c:518
+#: src/document.c:527
 msgid "Name: "
 msgstr "نام:"
 
-#: ../src/document.c:545
+#: src/document.c:554
 msgid ""
 "\n"
 "Language mode: "
@@ -1289,7 +1329,7 @@ msgstr ""
 "\n"
 "\" \"حالت زبان:"
 
-#: ../src/document.c:549
+#: src/document.c:558
 msgid ""
 "\n"
 "Encoding: "
@@ -1297,7 +1337,7 @@ msgstr ""
 "\n"
 "\" \"رمزی کردن:"
 
-#: ../src/document.c:561
+#: src/document.c:570
 msgid ""
 "\n"
 "Mime type: "
@@ -1305,7 +1345,7 @@ msgstr ""
 "\n"
 "\" \"نوع میمه"
 
-#: ../src/document.c:569
+#: src/document.c:578
 #, c-format
 msgid ""
 "\n"
@@ -1315,7 +1355,7 @@ msgstr ""
 "\n"
 "\" \"مجوز: %s Uid: %u جنسي: %u"
 
-#: ../src/document.c:586
+#: src/document.c:595
 msgid ""
 "\n"
 "Size (on disk): "
@@ -1323,7 +1363,7 @@ msgstr ""
 "\n"
 "\" \"حجم (روی دیسک):"
 
-#: ../src/document.c:595
+#: src/document.c:604
 msgid ""
 "\n"
 "Last modified: "
@@ -1331,88 +1371,83 @@ msgstr ""
 "\n"
 "\" \"آخرین اصلاح:"
 
-#: ../src/document.c:663
+#: src/document.c:672
 #, c-format
 msgid "Untitled %d"
 msgstr "بدون عنوان‫‫ ‬%d "
 
-#: ../src/document.c:846
+#: src/document.c:855
 #, c-format
 msgid "Changed tab width to %d"
 msgstr "تب تغییر عرض به %d"
 
-#: ../src/document.c:1024
+#: src/document.c:1033
 #, c-format
 msgid "Document %s is already open in another Bluefish window."
 msgstr "نوشتار %s در حال حاضر Bluefish پنجره دیگری باز است."
 
-#: ../src/document.c:1026
+#: src/document.c:1035
 msgid "Move to this window"
 msgstr "به این پنجره حرکت می کند"
 
-#: ../src/document.c:1026
+#: src/document.c:1035
 msgid "Open readonly"
 msgstr "فقط خواندنی باز"
 
-#: ../src/document.c:1027
+#: src/document.c:1036
 msgid "Do not open"
 msgstr "باز نکن"
 
-#: ../src/document.c:1381
-#, c-format
-msgid " Ln: %d, Col: %d, Char: %d"
+#: src/document.c:1398
+#, fuzzy, c-format
+msgid "Ln: %d, Col: %d, Char: %d, Blocks: %d"
 msgstr "Ln: %d ستون: %d کاراکتر: %d"
 
-#: ../src/document.c:1384
-#, c-format
-msgid " Ln: %d, Col: %d"
-msgstr "Ln: %d ستون: %d"
-
-#: ../src/document.c:1407
+#: src/document.c:1419
 msgid " OVR"
 msgstr "OVR"
 
-#: ../src/document.c:1407
+#: src/document.c:1419
 msgid " INS"
 msgstr "INS"
 
-#: ../src/document.c:1409
+#: src/document.c:1421
 msgid " RO"
 msgstr "RO"
 
-#: ../src/document.c:1428
+#: src/document.c:1440
 msgid "Unknown"
 msgstr "ناشناس"
 
-#: ../src/document.c:2016
+#: src/document.c:2048
 msgid "_No"
 msgstr "_No"
 
-#: ../src/document.c:2016
+#: src/document.c:2048
 msgid "_Split"
 msgstr "_Split"
 
-#: ../src/document.c:2019
+#: src/document.c:2051
 msgid "File contains very long lines. Split these lines?"
 msgstr "پرونده خط بسیار طولانی است. این خطوط تقسیم?"
 
-#: ../src/document.c:2021
+#: src/document.c:2053
 msgid ""
 "The lines in this file are longer than Bluefish can handle with reasonable "
-"performance. This split function, however, is unaware of any language syntax, "
-"and may replace spaces or tabs with newlines in any location, or insert "
-"newlines if no spaces or tabs are found."
+"performance. This split function, however, is unaware of any language "
+"syntax, and may replace spaces or tabs with newlines in any location, or "
+"insert newlines if no spaces or tabs are found."
 msgstr ""
-"خطوط در این پرونده طولانی تر از Bluefish دسته می تواند با عملکرد مناسب هستند. "
-"این تابع تقسیم، با این حال، غافل از هر نحو زبان و ممکن است جایگزینی فضاهای یا "
-"زبانه با newlines در هر مکان یا newlines اگر بدون فاصله وارد کنید یا زبانه ها "
-"یافت می شوند."
+"خطوط در این پرونده طولانی تر از Bluefish دسته می تواند با عملکرد مناسب "
+"هستند. این تابع تقسیم، با این حال، غافل از هر نحو زبان و ممکن است جایگزینی "
+"فضاهای یا زبانه با newlines در هر مکان یا newlines اگر بدون فاصله وارد کنید "
+"یا زبانه ها یافت می شوند."
 
-#: ../src/document.c:2097
+#: src/document.c:2129
 msgid "_Convert"
 msgstr "_Convert"
 
-#: ../src/document.c:2101
+#: src/document.c:2133
 #, c-format
 msgid ""
 "File '%s' is not a valid text file.\n"
@@ -1421,7 +1456,7 @@ msgstr ""
 "پرونده \"%s\" یک پرونده متنی معتبر نیست.\n"
 "پرونده، ناقص، یا در رمزگذاری غیر منتظره خراب شده است."
 
-#: ../src/document.c:2106
+#: src/document.c:2138
 msgid ""
 "Bluefish can convert this file into a valid one by replacing illegal symbols "
 "with spaces. Convert?"
@@ -1429,40 +1464,41 @@ msgstr ""
 "Bluefish این پرونده می تواند تبدیل به یکی از معتبر با جایگزین کردن نشانه های "
 "غیر قانونی با فاصله. تبدیل"
 
-#: ../src/document.c:2118
+#: src/document.c:2150
 #, c-format
 msgid ""
 "File is opened in read-only mode since it differs from original one.\n"
 "%lu characters were replaced by space"
 msgstr ""
-"از آنجا که آن را متفاوت از یکی از اصلی پرونده در حالت فقط خواندنی گشوده است.\n"
+"از آنجا که آن را متفاوت از یکی از اصلی پرونده در حالت فقط خواندنی گشوده "
+"است.\n"
 "% lu کاراکتر فضای جایگزین شد"
 
-#: ../src/document.c:2121
+#: src/document.c:2153
 msgid "Use 'Save As' to save it with different name and make editable"
 msgstr ""
 "استفاده از \"ذخیره بعنوان\" برای ذخیره آن را با نام های مختلف و قابل ویرایش"
 
-#: ../src/document.c:2310
+#: src/document.c:2345
 msgid "Add bookmark"
 msgstr "افزونه نشانه"
 
-#: ../src/document.c:2316
+#: src/document.c:2351
 msgid "Exit fullscreen"
 msgstr "خروج از تمام صفحه"
 
 #. if (main_v->props.backup_abort_action == 2)
 #. we have to ask the user
 #. we have to ask the user what to do
-#: ../src/document.c:2516 ../src/file_dialogs.c:450 ../src/file_dialogs.c:488
+#: src/document.c:2542 src/file_dialogs.c:450 src/file_dialogs.c:488
 msgid "_Abort save"
 msgstr "_Abort نجات"
 
-#: ../src/document.c:2516
+#: src/document.c:2542
 msgid "_Continue save in UTF-8"
 msgstr "_Continue را در UTF-8 ذخیره کنید"
 
-#: ../src/document.c:2529
+#: src/document.c:2555
 #, c-format
 msgid ""
 "Failed to convert %s to character encoding %s. Encoding failed on character "
@@ -1473,310 +1509,313 @@ msgstr ""
 "عدم موفقیت در %s تبدیل به شخصیت رمزگذاری %s. رمزی نشد در شخصیت '%s' در خط %d "
 "ستون %d ادامه ذخیره در UTF-8 را پشتیبانی می کند?"
 
-#: ../src/document.c:2534
+#: src/document.c:2560
 msgid "File encoding conversion failure"
 msgstr "پرونده رمزگذاری تبدیل شکست"
 
-#: ../src/document.c:2711
+#: src/document.c:2739
 msgid "Previously: "
 msgstr "قبلا"
 
-#: ../src/document.c:3409
+#: src/document.c:3441
 msgid "Unable to open file"
 msgstr "قادر به بازکردن پرونده"
 
-#: ../src/document.c:3421
+#: src/document.c:3453
 #, c-format
 msgid ""
 "If you revert \"%s\" to your last saved copy, your current changes will be "
 "permanently lost."
 msgstr "اگر \"%s\" را به آخرین نسخه ذخیره شده برگرداندن تغییرات فعلی شما است."
 
-#: ../src/document.c:3425
+#: src/document.c:3457
 msgid "Revert changes to last saved copy?"
 msgstr "برگرداندن تغییرات در آخرین نسخه ذخیره شده است؟"
 
-#: ../src/document.c:3493
+#: src/document.c:3526
 msgid "_Retry"
 msgstr "_Retry"
 
-#: ../src/document.c:3493
+#: src/document.c:3526
 msgid "Retry _all failed"
 msgstr "،تادرب شکست خورده را دوباره انجام دهید"
 
-#: ../src/document.c:3493
+#: src/document.c:3526
 msgid "Close all _failed"
 msgstr "تمام _failed را ببندید"
 
-#: ../src/document.c:3498
+#: src/document.c:3531
 msgid "File "
 msgstr "فایل"
 
-#: ../src/document.c:3498
+#: src/document.c:3531
 msgid " failed to load."
 msgstr "بارگیری نشد."
 
-#: ../src/document.c:3502
+#: src/document.c:3535
 msgid "File failed to load\n"
 msgstr "پرونده بارگیری نشد\"\n"
 
-#: ../src/document.c:3629
+#: src/document.c:3669
 msgid "Select file to insert"
 msgstr "پرونده برای وارد کردن انتخاب کنید"
 
-#: ../src/document.c:3638
+#: src/document.c:3678
 msgid "No file to insert"
 msgstr "هیچ فایلی را وارد کنید"
 
-#: ../src/document.c:3729
+#: src/document.c:3769
 msgid "Save pasted image as"
 msgstr "ذخیره تصویر جا به عنوان"
 
-#: ../src/document.c:3831
+#: src/document.c:3871
 msgid "Paste special"
 msgstr "جای گذاری ویژه"
 
-#: ../src/document.c:3837
+#: src/document.c:3877
 msgid "No compatible clipboard data found"
 msgstr "فعلا کلیپ بورد سازگار در بر داشت"
 
-#: ../src/document.c:3842
+#: src/document.c:3882
 msgid "Paste as _HTML"
 msgstr "جای گذاری بعنوان _HTML"
 
-#: ../src/document.c:3847
+#: src/document.c:3887
 msgid "Paste as HTML with _JPG"
 msgstr "جای گذاری بعنوان اچ با _JPG"
 
-#: ../src/document.c:3857
+#: src/document.c:3897
 msgid "Paste as plain text"
 msgstr "جای گذاری بعنوان متن ساده"
 
-#: ../src/document.c:3952
-#, c-format
+#: src/document.c:3992
+#, fuzzy, c-format
 msgid "%d line"
-msgstr "خط %d"
+msgid_plural "%d lines"
+msgstr[0] "خط %d"
 
-#: ../src/document.c:3953
+#: src/document.c:3993
 #, c-format
 msgid "%d word"
 msgid_plural "%d words"
 msgstr[0] "کلمه %d"
 
-#: ../src/document.c:3954
+#: src/document.c:3994
 #, c-format
 msgid "%d character"
 msgid_plural "%d characters"
 msgstr[0] "شخصیت های %d"
 
-#: ../src/document.c:3956
+#: src/document.c:3996
 msgid "Selection statistics: "
 msgstr "آمار انتخاب:"
 
-#: ../src/document.c:3956
+#: src/document.c:3996
 msgid "Statistics: "
 msgstr "آماری"
 
-#: ../src/doc_text_tools.c:400
+#: src/doc_text_tools.c:400
 msgid "Lines into columns"
 msgstr "خطوط را در ستون ادغام"
 
-#: ../src/doc_text_tools.c:412
+#: src/doc_text_tools.c:412
 msgid "Number of columns:"
 msgstr "تعداد ستون ها:"
 
-#: ../src/doc_text_tools.c:416
+#: src/doc_text_tools.c:416
 msgid "Spread lines horizontally"
 msgstr "گسترش خطوط افقی"
 
-#: ../src/doc_text_tools.c:423
+#: src/doc_text_tools.c:423
 msgid "Column separator:"
 msgstr "CSV جدا ستون"
 
-#: ../src/doc_text_tools.c:427
+#: src/doc_text_tools.c:427
 msgid "Fill empty entries:"
 msgstr "نوشته های خالی را پر کنید:"
 
-#: ../src/doc_extern_tools.c:63
+#: src/doc_extern_tools.c:63
 msgid "Number of _paragraphs:"
 msgstr "تعداد _paragraphs:"
 
-#: ../src/doc_extern_tools.c:68
+#: src/doc_extern_tools.c:68
 msgid "Number of _sentences:"
 msgstr "تعداد _sentences:"
 
-#: ../src/doc_extern_tools.c:71 ../src/doc_extern_tools.c:86
+#: src/doc_extern_tools.c:71 src/doc_extern_tools.c:86
 msgid "Insert plain text"
 msgstr "درج متن ساده"
 
-#: ../src/doc_extern_tools.c:71 ../src/doc_extern_tools.c:86
+#: src/doc_extern_tools.c:71 src/doc_extern_tools.c:86
 msgid "Insert in <li>"
 msgstr "را وارد کنید<li></li>"
 
-#: ../src/doc_extern_tools.c:71 ../src/doc_extern_tools.c:86
+#: src/doc_extern_tools.c:71 src/doc_extern_tools.c:86
 msgid "Insert in <p>"
 msgstr "را وارد کنید<p>"
 
-#: ../src/doc_extern_tools.c:81
+#: src/doc_extern_tools.c:81
 msgid "Number of paragraphs"
 msgstr "شماره پاراگراف"
 
-#: ../src/doc_extern_tools.c:84
+#: src/doc_extern_tools.c:84
 msgid "Number of sentences"
 msgstr "تعداد جملات"
 
-#: ../src/doc_extern_tools.c:134
+#: src/doc_extern_tools.c:134
 msgid "Javascript Beautify"
 msgstr "زیباسازی جاوا اسکریپت"
 
-#: ../src/doc_extern_tools.c:148
+#: src/doc_extern_tools.c:148
 msgid "_Indent size:"
 msgstr "حجم _Indent:"
 
-#: ../src/doc_extern_tools.c:151 ../src/doc_extern_tools.c:178
+#: src/doc_extern_tools.c:151 src/doc_extern_tools.c:178
 msgid "Use _tabs to indent, not spaces"
 msgstr "استفاده از _tabs برای تورفتگی نه فضاهای"
 
-#: ../src/doc_extern_tools.c:154 ../src/doc_extern_tools.c:183
+#: src/doc_extern_tools.c:154 src/doc_extern_tools.c:183
 msgid "Do not _preserve existing line breaks"
 msgstr "انجام نمی _preserve موجود خط شکسته"
 
-#: ../src/doc_extern_tools.c:156 ../src/doc_extern_tools.c:184
+#: src/doc_extern_tools.c:156 src/doc_extern_tools.c:184
 msgid "More _jslint-compatible output"
 msgstr "بیشتر خروجی سازگار با _jslint"
 
-#: ../src/doc_extern_tools.c:159 ../src/doc_extern_tools.c:186
+#: src/doc_extern_tools.c:159 src/doc_extern_tools.c:186
 msgid "_Decode printable chars encoded in \\\\xNN notation"
 msgstr "_Decode قابل چاپ کاراکتر کد گذاری در نماد \\\\xNN"
 
-#: ../src/doc_extern_tools.c:164 ../src/doc_extern_tools.c:173
+#: src/doc_extern_tools.c:164 src/doc_extern_tools.c:173
 msgid "Beautify only in _selection"
 msgstr "زیبا فقط در _selection"
 
-#: ../src/doc_extern_tools.c:179
+#: src/doc_extern_tools.c:179
 msgid "_Indent size"
 msgstr "اندازه _Indent"
 
-#: ../src/encodings_dialog.c:287
+#: src/encodings_dialog.c:287
 msgid "_Available encodings:"
 msgstr "_Available کدگذاری:"
 
-#: ../src/encodings_dialog.c:333 ../src/encodings_dialog.c:385
+#: src/encodings_dialog.c:333 src/encodings_dialog.c:385
 msgid "Description"
 msgstr "کالا"
 
-#: ../src/encodings_dialog.c:339 ../src/encodings_dialog.c:390
+#: src/encodings_dialog.c:339 src/encodings_dialog.c:390
 msgid "Encoding"
 msgstr "رمز گذاری"
 
-#: ../src/encodings_dialog.c:362
+#: src/encodings_dialog.c:362
 msgid "Encodings in _menu:"
 msgstr "رمزگذاری در _menu:"
 
-#: ../src/encodings_dialog.c:436
+#: src/encodings_dialog.c:436
 msgid "Add or remove document encodings"
 msgstr "افزودن یا حذف نوشتار رمزگذاری"
 
-#: ../src/external_commands.c:463
+#: src/external_commands.c:478
 msgid "Supply extra arguments"
 msgstr "عرضه اضافی استدلال"
 
-#: ../src/external_commands.c:468
+#: src/external_commands.c:484
 #, c-format
 msgid "Supply arguments to define %%a in '%s'"
 msgstr "عرضه را تعریف كيلوبايت در \"%s\""
 
-#: ../src/external_commands.c:749
+#: src/external_commands.c:766
 msgid "Internal error."
 msgstr "خطای داخلی."
 
-#: ../src/external_commands.c:752
+#: src/external_commands.c:769
 msgid ""
 "This command requires the current document to have a file name. Please save "
 "your document first."
-msgstr "این دستور نیاز به نوشتار کنونی به نام فایل. لطفاً سند خود را ذخیره کنید."
-
-#: ../src/external_commands.c:755
-msgid ""
-"This command requires the current document to be a local file. Please save your "
-"document to a local file."
 msgstr ""
-"این فرمان سند فعلی را به یک فایل محلی را نیاز دارد. لطفاً سند خود را به یک فایل "
-"محلی ذخیره کنید."
+"این دستور نیاز به نوشتار کنونی به نام فایل. لطفاً سند خود را ذخیره کنید."
 
-#: ../src/external_commands.c:758
+#: src/external_commands.c:772
 msgid ""
-"External commands cannot have an output defined. Please fix this command in the "
-"preferences."
+"This command requires the current document to be a local file. Please save "
+"your document to a local file."
+msgstr ""
+"این فرمان سند فعلی را به یک فایل محلی را نیاز دارد. لطفاً سند خود را به یک "
+"فایل محلی ذخیره کنید."
+
+#: src/external_commands.c:775
+msgid ""
+"External commands cannot have an output defined. Please fix this command in "
+"the preferences."
 msgstr ""
 "فرمان های خارجی وجود ندارد خروجی تعریف شده. لطفا این فرمان را در تنظیمات حل "
 "کنند."
 
-#: ../src/external_commands.c:761
+#: src/external_commands.c:778
 msgid ""
 "This command has multiple inputs. Please fix this command in the preferences."
 msgstr "این دستور ورودی های متعدد است. لطفا این فرمان را در تنظیمات حل کنند."
 
-#: ../src/external_commands.c:764
+#: src/external_commands.c:781
 msgid ""
-"This command has multiple outputs. Please fix this command in the preferences."
+"This command has multiple outputs. Please fix this command in the "
+"preferences."
 msgstr "این دستور خروجی چندگانه است. لطفا این فرمان را در تنظیمات حل کنند."
 
-#: ../src/external_commands.c:768
+#: src/external_commands.c:785
 #, c-format
 msgid ""
 "Failed to create a command for %s.\n"
 "%s"
 msgstr "فرمان برای %s. %s ایجاد نشد"
 
-#: ../src/external_commands.c:770
+#: src/external_commands.c:787
 msgid "Failed to create a command"
 msgstr "دستور ایجاد نشد"
 
-#: ../src/external_commands.c:792 ../src/external_commands.c:809
+#: src/external_commands.c:809 src/external_commands.c:826
 #, c-format
 msgid "The command %s exited with error code %d. %s"
 msgstr "خارج از دستور %s با خطای کد % d. %s"
 
-#: ../src/external_commands.c:795 ../src/external_commands.c:813
+#: src/external_commands.c:812 src/external_commands.c:830
 msgid "Probably this application is not installed on your system."
 msgstr "احتمالا این نرم افزار بر روی سیستم شما نصب شده است."
 
-#: ../src/external_commands.c:798
+#: src/external_commands.c:815
 msgid "Command returned error code"
 msgstr "فرمان کد"
 
-#: ../src/filebrowser2.c:748
+#: src/filebrowser2.c:749
 msgid "Set documentroot and webroot"
 msgstr "مجموعه documentroot و webroot"
 
-#: ../src/filebrowser2.c:757
+#: src/filebrowser2.c:758
 msgid ""
 "The <i>documentroot</i> is the place where Bluefish finds the file,\n"
-"the <i>webroot</i> is the location where those same files can be viewed on the "
-"webserver"
+"the <i>webroot</i> is the location where those same files can be viewed on "
+"the webserver"
 msgstr ""
-"<i>Documentroot</i> جایی که Bluefish می یابد این پرونده است <i>webroot</i> محل "
-"که در آن فایل های مشابه می توان مشاهده بر روی وب سرور است"
+"<i>Documentroot</i> جایی که Bluefish می یابد این پرونده است <i>webroot</i> "
+"محل که در آن فایل های مشابه می توان مشاهده بر روی وب سرور است"
 
-#: ../src/filebrowser2.c:764
+#: src/filebrowser2.c:765
 msgid "Documentroot"
 msgstr "Documentroot"
 
-#: ../src/filebrowser2.c:775
+#: src/filebrowser2.c:776
 msgid "Webroot"
 msgstr "Webroot"
 
-#: ../src/filebrowser2.c:788 ../src/file_dialogs.c:776
+#: src/filebrowser2.c:789 src/file_dialogs.c:780
 #, c-format
 msgid "Move/rename %s to"
 msgstr "انتقال/تغییر نام به %s"
 
-#: ../src/filebrowser2.c:799
+#: src/filebrowser2.c:800
 msgid "Could not rename\n"
 msgstr "تغییر نام می تواند\n"
 
-#: ../src/filebrowser2.c:873 ../src/filebrowser2.c:1289
+#: src/filebrowser2.c:874 src/filebrowser2.c:1330
 msgid "New directory"
 msgstr "آیتم جدید دایرکتوری"
 
@@ -1788,154 +1827,174 @@ msgstr "آیتم جدید دایرکتوری"
 #. * --> Sometimes you can have a file in many directories (e.g. Makefile.in, index.html)
 #. * and then this might give you more indication if this is indeed the file you wanted to delete
 #.
-#: ../src/filebrowser2.c:983
+#: src/filebrowser2.c:984
 #, c-format
 msgid ""
 "Are you sure you want to delete\n"
 "\"%s\"?"
 msgstr "آیا مطمئن هستید که میخواهید \"%s\" را حذف کنید؟"
 
-#: ../src/filebrowser2.c:984
+#: src/filebrowser2.c:985
 #, c-format
 msgid "If you delete %s, it will be permanently lost."
 msgstr "اگر %s را حذف آن است."
 
-#: ../src/filebrowser2.c:1282
+#: src/filebrowser2.c:1321
 msgid "File Browser menu"
 msgstr "مدیر پرونده‌ها"
 
-#: ../src/filebrowser2.c:1283
+#: src/filebrowser2.c:1322
 msgid "_Open"
 msgstr ""
 "باز کن اخیر ‬\\ open‬\n"
 "\n"
 "‫‫ "
 
-#: ../src/filebrowser2.c:1283
+#: src/filebrowser2.c:1322
 msgid "Open"
 msgstr "باز"
 
-#: ../src/filebrowser2.c:1284
+#: src/filebrowser2.c:1323
 msgid "Open _Advanced..."
 msgstr "باز پیشرفته "
 
-#: ../src/filebrowser2.c:1286
+#: src/filebrowser2.c:1325
+#, fuzzy
+msgid "Search files..."
+msgstr "انتخاب فایل"
+
+#: src/filebrowser2.c:1325
+#, fuzzy
+msgid "Search files"
+msgstr "انتخاب فایل"
+
+#: src/filebrowser2.c:1327
 msgid "Rena_me"
 msgstr "Rena_me"
 
-#: ../src/filebrowser2.c:1286
+#: src/filebrowser2.c:1327
 msgid "Rename"
 msgstr "تغییر نام"
 
-#: ../src/filebrowser2.c:1287
+#: src/filebrowser2.c:1328
 msgid "Delete"
 msgstr "پاک کردن"
 
-#: ../src/filebrowser2.c:1288
+#: src/filebrowser2.c:1329
 msgid "New _File"
 msgstr "فایل جدید"
 
-#: ../src/filebrowser2.c:1289
+#: src/filebrowser2.c:1330
 msgid "_New Directory"
 msgstr "فهرست _New"
 
-#: ../src/filebrowser2.c:1291
+#: src/filebrowser2.c:1332
+#, fuzzy
+msgid "Insert _link"
+msgstr "را وارد کنید<p>"
+
+#: src/filebrowser2.c:1332
+#, fuzzy
+msgid "Insert link"
+msgstr "را وارد کنید<p>"
+
+#: src/filebrowser2.c:1333
 msgid "_Refresh"
 msgstr "_Refresh"
 
-#: ../src/filebrowser2.c:1291
+#: src/filebrowser2.c:1333
 msgid "Refresh"
 msgstr "تازه سازی"
 
-#: ../src/filebrowser2.c:1292
+#: src/filebrowser2.c:1334
 msgid "_Set as base dir"
 msgstr "_Set به عنوان پایه شما"
 
-#: ../src/filebrowser2.c:1292
+#: src/filebrowser2.c:1334
 msgid "Set as base directory"
 msgstr "تنظیم به عنوان پایه"
 
-#: ../src/filebrowser2.c:1294
+#: src/filebrowser2.c:1336
 msgid "Set as document root"
 msgstr "تنظیم به عنوان ریشه سند"
 
-#: ../src/filebrowser2.c:1296
+#: src/filebrowser2.c:1338
 msgid "Show Full _Tree"
 msgstr "نمایش کامل _Tree"
 
-#: ../src/filebrowser2.c:1296
+#: src/filebrowser2.c:1338
 msgid "Show full tree"
 msgstr "نمایش کامل درخت"
 
-#: ../src/filebrowser2.c:1298
+#: src/filebrowser2.c:1340
 msgid "View Mode"
 msgstr "حالت نمایش"
 
-#: ../src/filebrowser2.c:1299
+#: src/filebrowser2.c:1341
 msgid "Filter"
 msgstr "فیلتر"
 
-#: ../src/filebrowser2.c:1300
+#: src/filebrowser2.c:1342
 msgid "New Filter"
 msgstr "فیلتر جدید"
 
-#: ../src/filebrowser2.c:1300 ../src/filefilter.c:549
+#: src/filebrowser2.c:1342 src/filefilter.c:549
 msgid "New filter"
 msgstr "فیلتر جدید"
 
-#: ../src/filebrowser2.c:1301
+#: src/filebrowser2.c:1343
 msgid "Edit Filter"
 msgstr "ویرایش فیلتر"
 
-#: ../src/filebrowser2.c:1301 ../src/filefilter.c:554
+#: src/filebrowser2.c:1343 src/filefilter.c:554
 msgid "Edit filter"
 msgstr "ویرایش فیلتر"
 
-#: ../src/filebrowser2.c:1302
+#: src/filebrowser2.c:1344
 msgid "Delete Filter"
 msgstr "حذف فیلتر"
 
-#: ../src/filebrowser2.c:1302
+#: src/filebrowser2.c:1344
 msgid "Delete filter"
 msgstr "حذف فیلتر"
 
-#: ../src/filebrowser2.c:1306
+#: src/filebrowser2.c:1348
 msgid "Follow Active Document"
 msgstr "نوشتار فعال را دنبال کنید"
 
-#: ../src/filebrowser2.c:1306
+#: src/filebrowser2.c:1348
 msgid "Follow active document"
 msgstr "نوشتار فعال را دنبال کنید"
 
-#: ../src/filebrowser2.c:1308
+#: src/filebrowser2.c:1350
 msgid "Show Backup Files"
 msgstr "بکاپ فایل ها"
 
-#: ../src/filebrowser2.c:1308 ../src/gtk_easy.c:1340
+#: src/filebrowser2.c:1350 src/gtk_easy.c:1344
 msgid "Show backup files"
 msgstr "بکاپ فایل ها"
 
-#: ../src/filebrowser2.c:1310
+#: src/filebrowser2.c:1352
 msgid "Show Hidden Files"
 msgstr "نمایش فایل های مخفی"
 
-#: ../src/filebrowser2.c:1310
+#: src/filebrowser2.c:1352
 msgid "Show hidden files"
 msgstr "نمایش فایل های مخفی"
 
-#: ../src/filebrowser2.c:1315
+#: src/filebrowser2.c:1357
 msgid "Dual"
 msgstr "دوتایی"
 
-#: ../src/filebrowser2.c:1316
+#: src/filebrowser2.c:1358
 msgid "Flat"
 msgstr "تخت"
 
-#: ../src/filebrowser2.c:1317
+#: src/filebrowser2.c:1359
 msgid "Tree"
 msgstr "درخت"
 
-#: ../src/filebrowser2.c:2359
+#: src/filebrowser2.c:2406
 #, c-format
 msgid ""
 "<b>%s</b>\n"
@@ -1943,269 +2002,270 @@ msgid ""
 "<b>%s%s</b>"
 msgstr "<b>%s</b> است که معادل از <b>%s %s</b>"
 
-#: ../src/file.c:875
+#: src/file.c:902
 #, c-format
 msgid "Still loading %d file, finished %s"
 msgid_plural "Still loading %d files, finished %s"
 msgstr[0] "بارگذاری هنوز %d پرونده %s به پایان رسید"
 
-#: ../src/file.c:883
-#, c-format
+#: src/file.c:910
+#, fuzzy, c-format
 msgid "All files loaded, finished %s, %d document open"
-msgstr "تمام فایل های بارگذاری، %s %d سند باز به پایان رسید"
+msgid_plural "All files loaded, finished %s, %d documents open"
+msgstr[0] "تمام فایل های بارگذاری، %s %d سند باز به پایان رسید"
 
-#: ../src/file.c:1445
+#: src/file.c:1472
 #, c-format
 msgid "Finished advanced open, %d document open."
 msgid_plural "Finished advanced open, %d documents open."
 msgstr[0] "باز پیشرفته %d سند باز به پایان رسید."
 
-#: ../src/file.c:1625
+#: src/file.c:1652
 msgid "_Skip"
 msgstr "بگزر‬"
 
-#: ../src/file.c:1625 ../src/file_dialogs.c:624 ../src/file_dialogs.c:645
-#: ../src/project.c:339
+#: src/file.c:1652 src/file_dialogs.c:624 src/file_dialogs.c:645
+#: src/project.c:352
 msgid "_Overwrite"
 msgstr "- باز نویسی"
 
-#: ../src/file.c:1629
+#: src/file.c:1656
 #, c-format
 msgid "%s cannot be copied, it already exists, overwrite?"
 msgstr "%s نمی تواند کپی شده, آن را در حال حاضر وجود دارد, بازنویسی کنید؟"
 
-#: ../src/file.c:1631
+#: src/file.c:1658
 msgid "Overwrite file?"
 msgstr "پرونده را رونویسی کنید؟"
 
-#: ../src/file_autosave.c:291
+#: src/file_autosave.c:291
 msgid "Autosave in progress..."
 msgstr "ذخیره خودکار در پیشرفت..."
 
-#: ../src/file_dialogs.c:109
+#: src/file_dialogs.c:109
 msgid "Started open advanced..."
 msgstr "باز شروع پیشرفته..."
 
-#: ../src/file_dialogs.c:120
+#: src/file_dialogs.c:120
 msgid "Select basedir"
 msgstr "انتخاب basedir"
 
-#: ../src/file_dialogs.c:142
+#: src/file_dialogs.c:142
 msgid "Advanced open file selector"
 msgstr "انتخاب پرونده باز پیشرفته"
 
-#: ../src/file_dialogs.c:159
+#: src/file_dialogs.c:159
 msgid "<b>Files</b>"
 msgstr "<b>فایل های</b>"
 
-#: ../src/file_dialogs.c:168
+#: src/file_dialogs.c:168
 msgid "Base _Dir:"
 msgstr "پایه _Dir:"
 
-#: ../src/file_dialogs.c:184
+#: src/file_dialogs.c:184
 msgid "_Pattern:"
 msgstr "_Pattern:"
 
-#: ../src/file_dialogs.c:192
+#: src/file_dialogs.c:192
 msgid "Pattern matches _full path:"
 msgstr "الگوی مسابقات مسیر _full:"
 
-#: ../src/file_dialogs.c:196
+#: src/file_dialogs.c:196
 msgid "_Recursive:"
 msgstr "_Recursive:"
 
-#: ../src/file_dialogs.c:200
+#: src/file_dialogs.c:200
 msgid "Ma_x recursion:"
 msgstr "Ma_x توابع بازگشتی:"
 
-#: ../src/file_dialogs.c:209
+#: src/file_dialogs.c:209
 msgid "<b>Contains</b>"
 msgstr "<b>شامل</b>"
 
-#: ../src/file_dialogs.c:214
+#: src/file_dialogs.c:214
 msgid "Pa_ttern:"
 msgstr "Pa_ttern:"
 
-#: ../src/file_dialogs.c:218
+#: src/file_dialogs.c:218
 msgid "Is rege_x:"
 msgstr "Rege_x است:"
 
-#: ../src/file_dialogs.c:287 ../src/file_dialogs.c:307
+#: src/file_dialogs.c:287 src/file_dialogs.c:307
 msgid "Select files"
 msgstr "انتخاب فایل"
 
-#: ../src/file_dialogs.c:367
+#: src/file_dialogs.c:367
 msgid "Open URL"
 msgstr "آدرس باز"
 
-#: ../src/file_dialogs.c:450 ../src/file_dialogs.c:488
+#: src/file_dialogs.c:450 src/file_dialogs.c:488
 msgid "_Continue save"
 msgstr "_Continue نجات"
 
-#: ../src/file_dialogs.c:454
+#: src/file_dialogs.c:454
 #, c-format
 msgid ""
 "A backupfile for %s could not be created. If you continue, this file will be "
 "overwritten."
 msgstr ""
-"Backupfile برای %s را نمی توان ایجاد کرد. اگر ادامه دهید، این پرونده را رونویسی "
-"شده باشد."
+"Backupfile برای %s را نمی توان ایجاد کرد. اگر ادامه دهید، این پرونده را "
+"رونویسی شده باشد."
 
-#: ../src/file_dialogs.c:458
+#: src/file_dialogs.c:458
 msgid "File backup failure"
 msgstr "پرونده پشتیبان شکست"
 
-#: ../src/file_dialogs.c:474
+#: src/file_dialogs.c:474
 msgid "Could not save file "
 msgstr "نمیتوان فایل را ذخیره کرد"
 
-#: ../src/file_dialogs.c:509 ../src/file_dialogs.c:1496
+#: src/file_dialogs.c:509 src/file_dialogs.c:1502
 msgid "File changed on disk\n"
 msgstr ""
 "‫\n"
 "‬پرونده تغییر یافته روی دیسک\n"
 
-#: ../src/file_dialogs.c:624 ../src/file_dialogs.c:645 ../src/file_dialogs.c:964
-#: ../src/project.c:339
+#: src/file_dialogs.c:624 src/file_dialogs.c:645 src/file_dialogs.c:970
+#: src/project.c:352
 msgid "_Cancel"
 msgstr "_ لغو کردن"
 
-#: ../src/file_dialogs.c:625
+#: src/file_dialogs.c:625
 #, c-format
 msgid "File %s exists and is open, overwrite?"
 msgstr "پرونده %s وجود دارد و باز است، بازنویسی کنید؟"
 
-#: ../src/file_dialogs.c:628
+#: src/file_dialogs.c:628
 msgid "The file you have selected is being edited in Bluefish."
 msgstr "پرونده ای که انتخاب کرده اید در bluefish به ما در حال ویرایش است."
 
-#: ../src/file_dialogs.c:646 ../src/project.c:341
+#: src/file_dialogs.c:646 src/project.c:354
 #, c-format
 msgid "A file named \"%s\" already exists."
 msgstr "مقاله ای با اسلاگ \"%s\" از قبل موجود است."
 
-#: ../src/file_dialogs.c:649 ../src/project.c:345
+#: src/file_dialogs.c:649 src/project.c:358
 msgid "Do you want to replace the existing file?"
 msgstr "آیا مایل به جایگزینی پرونده موجود است؟"
 
-#: ../src/file_dialogs.c:756
+#: src/file_dialogs.c:760
 msgid ""
 "File:\n"
 "\""
 msgstr "فایل:"
 
-#: ../src/file_dialogs.c:757
+#: src/file_dialogs.c:761
 msgid "\" save is in progress"
 msgstr "\"ذخیره در حال انجام است"
 
-#: ../src/file_dialogs.c:759
+#: src/file_dialogs.c:763
 msgid "Save in progress!"
 msgstr "صرفه جویی در پیشرفت!"
 
-#: ../src/file_dialogs.c:772
+#: src/file_dialogs.c:776
 msgid "Save"
 msgstr "ذخیره"
 
-#: ../src/file_dialogs.c:774
+#: src/file_dialogs.c:778
 #, c-format
 msgid "Save %s as"
 msgstr "ذخیره %s"
 
-#: ../src/file_dialogs.c:778
+#: src/file_dialogs.c:782
 #, c-format
 msgid "Save copy of %s"
 msgstr "کپی%s"
 
-#: ../src/file_dialogs.c:935
+#: src/file_dialogs.c:941
 msgid "Close _Without Saving"
 msgstr "صرفه جویی در _Without را ببندید"
 
-#: ../src/file_dialogs.c:938
+#: src/file_dialogs.c:944
 #, c-format
 msgid "Save changes to \"%s\" before closing?"
 msgstr "ذخیره تغییرات در \"%s\" قبل از بسته شدن?"
 
-#: ../src/file_dialogs.c:941 ../src/file_dialogs.c:968
+#: src/file_dialogs.c:947 src/file_dialogs.c:974
 msgid "If you don't save your changes they will be lost."
 msgstr "اگر قادر به ذخیره تغییرات آنها گم می شود نیست."
 
-#: ../src/file_dialogs.c:951
+#: src/file_dialogs.c:957
 msgid "_Reopen"
 msgstr "_Reopen"
 
-#: ../src/file_dialogs.c:953
+#: src/file_dialogs.c:959
 #, c-format
 msgid "Project \"%s\" failed to load"
 msgstr "پروژه \"%s\" بارگیری نشد"
 
-#: ../src/file_dialogs.c:955
+#: src/file_dialogs.c:961
 msgid "Do you want to reopen project from another location?"
 msgstr "آیا مایلید که پروژه از مکانی دیگر دوباره باز"
 
-#: ../src/file_dialogs.c:964
+#: src/file_dialogs.c:970
 msgid "Choose per _File"
 msgstr "در هر _File را انتخاب کنید"
 
-#: ../src/file_dialogs.c:964
+#: src/file_dialogs.c:970
 msgid "Close _All"
 msgstr "نزدیک،تادرب"
 
-#: ../src/file_dialogs.c:964
+#: src/file_dialogs.c:970
 msgid "_Save All"
 msgstr "_Save همه"
 
-#: ../src/file_dialogs.c:967
+#: src/file_dialogs.c:973
 msgid "One or more open files have been changed."
 msgstr "یک یا چند پرونده باز تغيير كرده اند."
 
-#: ../src/file_dialogs.c:1288
+#: src/file_dialogs.c:1294
 #, c-format
 msgid "<span color=\"red\">%d failure</span>"
 msgid_plural "<span color=\"red\">%d failures</span>"
 msgstr[0] "<span color=\"red\">%d شکست</span>"
 
-#: ../src/file_dialogs.c:1297
+#: src/file_dialogs.c:1303
 msgid "incomplete finished"
 msgstr "ناقص به پایان رسید"
 
-#: ../src/file_dialogs.c:1299
+#: src/file_dialogs.c:1305
 msgid "completed"
 msgstr "تکمیل شده"
 
-#: ../src/file_dialogs.c:1357
+#: src/file_dialogs.c:1363
 msgid "Upload / Download"
 msgstr "_ آپلود / دانلود..."
 
-#: ../src/file_dialogs.c:1360
+#: src/file_dialogs.c:1366
 msgid "Upload"
 msgstr "آپلود"
 
-#: ../src/file_dialogs.c:1360
+#: src/file_dialogs.c:1366
 msgid "Download"
 msgstr "دانلود"
 
-#: ../src/file_dialogs.c:1367
+#: src/file_dialogs.c:1373
 msgid "Local directory"
 msgstr "دایرکتوری محلی"
 
-#: ../src/file_dialogs.c:1373
+#: src/file_dialogs.c:1379
 msgid "Remote directory"
 msgstr "دایرکتوری از راه دور"
 
-#: ../src/file_dialogs.c:1378
+#: src/file_dialogs.c:1384
 msgid "Delete deprecated files"
 msgstr "حذف فایل های بد"
 
-#: ../src/file_dialogs.c:1382
+#: src/file_dialogs.c:1388
 msgid "Include hidden files"
 msgstr "شامل فایل های مخفی"
 
-#: ../src/file_dialogs.c:1385
+#: src/file_dialogs.c:1391
 msgid "Include backup files"
 msgstr "شامل پرونده های پشتیبان"
 
 #. g_print("oldtimestr=%s, newtimestr=%s\n",oldtimestr,newtimestr);
-#: ../src/file_dialogs.c:1432
+#: src/file_dialogs.c:1438
 #, c-format
 msgid ""
 "Filename:%s changed on disk.\n"
@@ -2220,259 +2280,288 @@ msgstr ""
 "اصلی زمان تغییر %s جدید اصلاح زمان است %s اصلی اندازه %s بایت اندازه %s بایت "
 "بود بود"
 
-#: ../src/file_dialogs.c:1455
+#: src/file_dialogs.c:1461
 msgid "_Unset file name"
 msgstr "نام فایل _Unset"
 
 #. file is deleted on disk, what do we do now ?
-#: ../src/file_dialogs.c:1457
+#: src/file_dialogs.c:1463
 #, c-format
 msgid "File name: %s"
 msgstr "نام : %s"
 
-#: ../src/file_dialogs.c:1460
+#: src/file_dialogs.c:1466
 msgid "File disappeared from disk\n"
 msgstr "فایل را از دیسک ناپدید شد\n"
 
-#: ../src/file_dialogs.c:1479
+#: src/file_dialogs.c:1485
 msgid "_Ignore"
 msgstr "_Ignore"
 
-#: ../src/file_dialogs.c:1479
+#: src/file_dialogs.c:1485
 msgid "_Reload"
 msgstr "_Reload"
 
-#: ../src/file_dialogs.c:1479
+#: src/file_dialogs.c:1485
 msgid "Check and reload all documents"
 msgstr "بررسی و بازنگری تمامی اسناد"
 
 #. build a list of filters
-#: ../src/filefilter.c:250 ../src/gtk_easy.c:1351 ../src/preferences.c:2440
+#: src/filefilter.c:250 src/gtk_easy.c:1355 src/preferences.c:2505
 msgid "All files"
 msgstr "همه فایل ها"
 
-#: ../src/filefilter.c:639
+#: src/filefilter.c:639
 msgid "Hide files that match the filter"
 msgstr "مخفی کردن فایل ها که خطی"
 
-#: ../src/filefilter.c:643
+#: src/filefilter.c:643
 msgid "Add pattern"
 msgstr "افزودن الگو"
 
-#: ../src/filefilter.c:649 ../src/filefilter.c:661
+#: src/filefilter.c:649 src/filefilter.c:661
 msgid "Mime type"
 msgstr "انوع پیوست"
 
-#: ../src/filefilter.c:652 ../src/filefilter.c:664
+#: src/filefilter.c:652 src/filefilter.c:664
 msgid "Icon"
 msgstr "آیکن"
 
-#: ../src/gtk_easy.c:970
+#: src/gtk_easy.c:970
 #, c-format
 msgid "%d of %d"
 msgstr "%d از %d"
 
-#: ../src/gtk_easy.c:1051
+#: src/gtk_easy.c:1051
 msgid "Select File"
 msgstr "انتخاب فایل"
 
-#: ../src/gtk_easy.c:1401
+#: src/gtk_easy.c:1405
 msgid "Character _Encoding:"
 msgstr "کدگزاری کارکترها"
 
-#: ../src/gtk_easy.c:1421
+#: src/gtk_easy.c:1425
 msgid "Automatic detection"
 msgstr "تشخیص خودکار"
 
-#: ../src/gtk_easy.c:1510
+#: src/gtk_easy.c:1514
 msgid "<b>Keystroke choice</b>"
 msgstr "<b>ضربه زدن به کلید انتخاب</b>"
 
-#: ../src/gtk_easy.c:1518 ../src/gtk_easy.c:1543
+#: src/gtk_easy.c:1522
+msgid ""
+"\n"
+"Press requested key combination.\n"
+"Please use Ctrl, Shift, Alt key with any other key.\n"
+"<i>Esc to cancel, Delete to remove the accelerator.</i>"
+msgstr ""
+
+#: src/gtk_easy.c:1547
 msgid "Press shortcut key combination"
 msgstr "ترکیب کلید میانبر را فشار دهید"
 
-#: ../src/outputbox.c:247
+#: src/outputbox.c:252
 msgid "Filename"
 msgstr "نام پرونده"
 
-#: ../src/outputbox.c:249
+#: src/outputbox.c:255
 msgid "Line"
 msgstr "خط"
 
-#: ../src/outputbox.c:251
+#: src/outputbox.c:258
 msgid "Output"
 msgstr "خروجی"
 
-#: ../src/outputbox.c:481
+#: src/outputbox.c:515
 #, c-format
 msgid "Failed to compile output parser pattern %s: %s"
 msgstr "عدم موفقیت کامپایل خروجی تجزیه کننده الگوی %s: %s"
 
-#: ../src/preferences.c:321
+#: src/print.c:384
+#, fuzzy
+msgid "<b>What to print</b>"
+msgstr "<b>ایست با tab</b>"
+
+#: src/print.c:386
+#, fuzzy
+msgid "Print header"
+msgstr "سربرگ"
+
+#: src/print.c:387
+#, fuzzy
+msgid "Print line numbers"
+msgstr "نمایش شماره های خط"
+
+#: src/print.c:438
+#, fuzzy
+msgid "What to print"
+msgstr "مسیر به پلاگین"
+
+#: src/preferences.c:326
 msgid "Untitled"
 msgstr "بدون عنوان"
 
-#: ../src/preferences.c:523
+#: src/preferences.c:528
 msgid "_Mime type:"
 msgstr "نوع میمه"
 
-#: ../src/preferences.c:535 ../src/preferences.c:537
+#: src/preferences.c:540 src/preferences.c:542
 msgid "None"
 msgstr "هیچ"
 
-#: ../src/preferences.c:539
+#: src/preferences.c:544
 msgid "_Template:"
 msgstr "_Template:"
 
-#: ../src/preferences.c:542 ../src/snr3.c:1586
+#: src/preferences.c:547 src/snr3.c:1663
 msgid "<b>Options</b>"
 msgstr "<b>گزینه های</b>"
 
-#: ../src/preferences.c:546
+#: src/preferences.c:551
 msgid "Enable a_uto-completion"
 msgstr "فعال a_uto اتمام"
 
-#: ../src/preferences.c:548
+#: src/preferences.c:553
 msgid "Enable _block folding"
 msgstr "فعال کردن _block تاشو"
 
-#: ../src/preferences.c:550
+#: src/preferences.c:555
 msgid "Display block stack in statusbar"
 msgstr "پشته بلوک نمایش شده در نوار وضعیت"
 
-#: ../src/preferences.c:552
+#: src/preferences.c:557
 msgid "Highlight block _delimiters"
 msgstr "برجسته کردن بلوک _Delimiters"
 
-#: ../src/preferences.c:554
+#: src/preferences.c:559
 msgid "_Highlight current line"
 msgstr "_Highlight خط کنونی"
 
-#: ../src/preferences.c:556
+#: src/preferences.c:561
 msgid "Show line _numbers"
 msgstr "نمایش شماره های خط"
 
-#: ../src/preferences.c:560
+#: src/preferences.c:565
 msgid "Show _right margin indicator"
 msgstr "نمایش شاخص حاشیه _right"
 
-#: ../src/preferences.c:562 ../src/preferences.c:2504
-msgid "Smart auto indentin_g"
-msgstr "خودکار هوشمند indentin_g"
+#: src/preferences.c:567
+#, fuzzy
+msgid "Auto indentin_g"
+msgstr "تورفتگی -  خودکار"
 
-#: ../src/preferences.c:564
+#: src/preferences.c:569
 msgid "Wra_p lines"
 msgstr "خطوط Wra_p"
 
-#: ../src/preferences.c:566
+#: src/preferences.c:571
 msgid "Enable syntax scanning"
 msgstr "فعال کردن اسکن نحو"
 
-#: ../src/preferences.c:568
+#: src/preferences.c:573
 msgid "Show _visible spacing"
 msgstr "نشان دادن فاصله قابل مشاهده"
 
-#: ../src/preferences.c:572
+#: src/preferences.c:577
 msgid "_Enable spell check"
 msgstr "_Enable غلط"
 
-#: ../src/preferences.c:577
+#: src/preferences.c:582
 msgid "<b>Tab Stops</b>"
 msgstr "<b>ایست با tab</b>"
 
-#: ../src/preferences.c:582
+#: src/preferences.c:587
 msgid "Tab _width:"
 msgstr "_Width بند:"
 
-#: ../src/preferences.c:585
+#: src/preferences.c:590
 msgid "Insert _spaces instead of tabs"
 msgstr "_Spaces به جای زبانهها را وارد کنید"
 
-#: ../src/preferences.c:622 ../src/preferences.c:1341 ../src/preferences.c:1500
+#: src/preferences.c:627 src/preferences.c:1346 src/preferences.c:1505
 msgid "Enabled"
 msgstr "فعال"
 
-#: ../src/preferences.c:624
+#: src/preferences.c:629
 msgid "Path to plugin"
 msgstr "مسیر به پلاگین"
 
-#: ../src/preferences.c:901
+#: src/preferences.c:906
 msgid "Extension"
 msgstr "افزونه"
 
-#: ../src/preferences.c:903
+#: src/preferences.c:908
 msgid "Mime-Type"
 msgstr "نوع پرونده"
 
-#: ../src/preferences.c:1131
+#: src/preferences.c:1136
 msgid ""
 "<small>Text styles are applied on top of each other. If multiple styles are "
 "applied to the same text, the top-most style in this list has the highest "
 "priority. Use drag and drop to re-order the text styles.</small>"
 msgstr ""
-"<small>قادر به اعمال سبک متن بالای یکدیگر هستند. اگر سبک های مختلف می شود به یک "
-"متن، سبک بالا بیشتر در این لیست بالاترین اولویت است. استفاده از کشیدن و رها "
-"کردن به سبک متن به سفارش دوباره.</small>"
+"<small>قادر به اعمال سبک متن بالای یکدیگر هستند. اگر سبک های مختلف می شود به "
+"یک متن، سبک بالا بیشتر در این لیست بالاترین اولویت است. استفاده از کشیدن و "
+"رها کردن به سبک متن به سفارش دوباره.</small>"
 
-#: ../src/preferences.c:1142 ../src/preferences.c:1342 ../src/preferences.c:1502
+#: src/preferences.c:1147 src/preferences.c:1347 src/preferences.c:1507
 msgid "Label"
 msgstr "برچسب"
 
-#: ../src/preferences.c:1157 ../src/preferences.c:2618
+#: src/preferences.c:1162 src/preferences.c:2691
 msgid "Foreground color"
 msgstr "رنگ پیش زمینه"
 
-#: ../src/preferences.c:1158 ../src/preferences.c:2619
+#: src/preferences.c:1163 src/preferences.c:2692
 msgid "_Foreground color:"
 msgstr "رنگ _Foreground:"
 
-#: ../src/preferences.c:1159 ../src/preferences.c:2622
+#: src/preferences.c:1164 src/preferences.c:2695
 msgid "Background color"
 msgstr "رنگ پس زمینه"
 
-#: ../src/preferences.c:1160 ../src/preferences.c:2623
+#: src/preferences.c:1165 src/preferences.c:2696
 msgid "_Background color:"
 msgstr "_رنگ پس زمینه"
 
-#: ../src/preferences.c:1164
+#: src/preferences.c:1169
 msgid "_Normal weight"
 msgstr "وزن _Normal"
 
-#: ../src/preferences.c:1166
+#: src/preferences.c:1171
 msgid "Bold _weight"
 msgstr "_Weight پررنگ"
 
-#: ../src/preferences.c:1168
+#: src/preferences.c:1173
 msgid "Normal st_yle"
 msgstr "St_yle طبیعی"
 
-#: ../src/preferences.c:1171
+#: src/preferences.c:1176
 msgid "_Italic style"
 msgstr "سبک _Italic"
 
-#: ../src/preferences.c:1173
+#: src/preferences.c:1178
 msgid "_Spell check"
 msgstr "چک کردن غلط املایی"
 
-#: ../src/preferences.c:1215 ../src/preferences.c:1379 ../src/preferences.c:1532
-#: ../src/preferences.c:1724 ../src/preferences.c:1820
+#: src/preferences.c:1220 src/preferences.c:1384 src/preferences.c:1537
+#: src/preferences.c:1729 src/preferences.c:1825
 msgid "Add entry"
 msgstr "سند جدید"
 
-#: ../src/preferences.c:1217 ../src/preferences.c:1381 ../src/preferences.c:1534
-#: ../src/preferences.c:1726 ../src/preferences.c:1822
+#: src/preferences.c:1222 src/preferences.c:1386 src/preferences.c:1539
+#: src/preferences.c:1731 src/preferences.c:1827
 msgid "Delete entry"
 msgstr "حذف ورودی"
 
-#: ../src/preferences.c:1318
+#: src/preferences.c:1323
 #, fuzzy, c-format
 msgid ""
 "<small><b>Input options</b>\n"
 "start with a | to send the input to the standard input\n"
 "%f local filename (available for local files)\n"
-"%i temporary filename for input, equals %f if the document is not modified and "
-"local\n"
+"%i temporary filename for input, equals %f if the document is not modified "
+"and local\n"
 "<b>Other options</b>\n"
 "%a additional arguments that will be asked when this filter is activated\n"
 "%c local directory of file (available for local files)\n"
@@ -2482,23 +2571,23 @@ msgid ""
 "identical to %u</small>"
 msgstr "ورقه نزدیک  تعغیری نکرده  < b >  انتخواباته خروجیه  < b/> "
 
-#: ../src/preferences.c:1344 ../src/preferences.c:1504 ../src/preferences.c:1698
+#: src/preferences.c:1349 src/preferences.c:1509 src/preferences.c:1703
 msgid "Command"
 msgstr "دستور"
 
-#: ../src/preferences.c:1347
+#: src/preferences.c:1352 src/rcfile.c:874
 msgid "Default browser"
 msgstr "مرورگر پیش فرض"
 
-#: ../src/preferences.c:1383 ../src/preferences.c:1536 ../src/preferences.c:1728
+#: src/preferences.c:1388 src/preferences.c:1541 src/preferences.c:1733
 msgid "Update defaults"
 msgstr "بروز رسانی پیش فرض ها"
 
-#: ../src/preferences.c:1385 ../src/preferences.c:1538 ../src/preferences.c:1730
+#: src/preferences.c:1390 src/preferences.c:1543 src/preferences.c:1735
 msgid "Reset all"
 msgstr "تنظیم مجدد همه"
 
-#: ../src/preferences.c:1475
+#: src/preferences.c:1480
 msgid ""
 "<small><b>Input options</b>\n"
 "start with a | to send the input to the standard input\n"
@@ -2507,8 +2596,8 @@ msgid ""
 "<b>Output options</b>\n"
 "end with a | to read the output from the standard output\n"
 "%o temporary filename\n"
-"%t temporary filename for both input and output (for in-place-editing filters, "
-"cannot operate on selection)\n"
+"%t temporary filename for both input and output (for in-place-editing "
+"filters, cannot operate on selection)\n"
 "<b>Other options</b>\n"
 "%a additional arguments that will be asked when this filter is activated\n"
 "%c local directory of file (requires local file)\n"
@@ -2518,17 +2607,17 @@ msgid ""
 "identical to %u</small>"
 msgstr ""
 " <کوچک> <b> انتخوابهای ورودی<b/> شروع با a ا فرستادن ؛ورودی؛ به همان ورودی "
-"استاندارد ٪f اسم  فایل مووقتی برای ورودی , برابر است با ٪f اگر که ان نسخه ورقه "
-"نزدیک  تعغیری نکرده  < b >  انتخواباته خروجیه  < b/> "
+"استاندارد ٪f اسم  فایل مووقتی برای ورودی , برابر است با ٪f اگر که ان نسخه "
+"ورقه نزدیک  تعغیری نکرده  < b >  انتخواباته خروجیه  < b/> "
 
-#: ../src/preferences.c:1660
+#: src/preferences.c:1665
 #, fuzzy, c-format
 msgid ""
 "<small><b>Input options</b>\n"
 "start with a | to send the input to the standard input\n"
 "%f local filename (available for local files)\n"
-"%i temporary filename for input, equals %f if the document is not modified and "
-"local\n"
+"%i temporary filename for input, equals %f if the document is not modified "
+"and local\n"
 "<b>Output options</b>\n"
 "end with a | to read the output from the standard output\n"
 "%o temporary filename\n"
@@ -2541,635 +2630,734 @@ msgid ""
 "identical to %u</small>"
 msgstr ""
 " <کوچک> <b> انتخوابهای ورودی<b/> شروع با a ا فرستادن ؛ورودی؛ به همان ورودی "
-"استاندارد ٪f اسم  فایل مووقتی برای ورودی , برابر است با ٪f اگر که ان نسخه ورقه "
-"نزدیک  تعغیری نکرده  < b >  انتخواباته خروجیه  < b/> ‬"
+"استاندارد ٪f اسم  فایل مووقتی برای ورودی , برابر است با ٪f اگر که ان نسخه "
+"ورقه نزدیک  تعغیری نکرده  < b >  انتخواباته خروجیه  < b/> ‬"
 
-#: ../src/preferences.c:1690
+#: src/preferences.c:1695
 msgid "Pattern"
 msgstr "الگو"
 
-#: ../src/preferences.c:1692
+#: src/preferences.c:1697
 msgid "File #"
 msgstr "فابل#"
 
-#: ../src/preferences.c:1694
+#: src/preferences.c:1699
 msgid "Line #"
 msgstr "خط #"
 
-#: ../src/preferences.c:1696
+#: src/preferences.c:1701
 msgid "Output #"
 msgstr "خروجی"
 
-#: ../src/preferences.c:1791
+#: src/preferences.c:1796
 msgid "File"
 msgstr "فایل"
 
-#: ../src/preferences.c:1969
+#: src/preferences.c:1974
 msgid "A restart is needed to see the effect of these options"
 msgstr "راه اندازی مجدد برای دیدن اثر این گزینه ها مورد نیاز است"
 
 #. 1=text
-#: ../src/preferences.c:1981
+#: src/preferences.c:1986
 msgid "Option name"
 msgstr "نام اختیاری"
 
 #. 2=boolean
-#: ../src/preferences.c:1983
+#: src/preferences.c:1988
 msgid "value"
 msgstr "ارزش"
 
 #. 1=text
-#: ../src/preferences.c:2000
+#: src/preferences.c:2005
 msgid "Highlight name"
 msgstr "برجسته"
 
-#: ../src/preferences.c:2005
+#: src/preferences.c:2010
 msgid "Textstyle"
 msgstr "Textstyle"
 
-#: ../src/preferences.c:2167 ../src/preferences.c:2862
+#: src/preferences.c:2177 src/preferences.c:2965
 msgid "Auto"
 msgstr "خودکار"
 
-#: ../src/preferences.c:2431
+#: src/preferences.c:2447
+msgid "Continue and ignore changes"
+msgstr ""
+
+#: src/preferences.c:2447
+#, fuzzy
+msgid "Cancel"
+msgstr "_ لغو کردن"
+
+#: src/preferences.c:2449
+msgid "Importing colors will abort any preferences changes"
+msgstr ""
+
+#: src/preferences.c:2449
+msgid ""
+"Importing colors will close the preferences dialog and cancel any changes "
+"you made. Do you want to continue?"
+msgstr ""
+
+#: src/preferences.c:2457 src/preferences.c:2737 src/preferences.c:2746
+#, fuzzy
+msgid "Choose file"
+msgstr "در هر _File را انتخاب کنید"
+
+#: src/preferences.c:2471
+msgid "Import done"
+msgstr ""
+
+#: src/preferences.c:2473
+#, c-format
+msgid "Import %s failed"
+msgstr ""
+
+#: src/preferences.c:2496
 msgid "Delayed"
 msgstr "تاخیردار"
 
-#: ../src/preferences.c:2431
+#: src/preferences.c:2496
 msgid "Immediately"
 msgstr "فوری"
 
-#: ../src/preferences.c:2432
+#: src/preferences.c:2497
 msgid "Continue save"
 msgstr "ادامه"
 
-#: ../src/preferences.c:2432
+#: src/preferences.c:2497
 msgid "Abort save"
 msgstr "_Abort نجات"
 
-#: ../src/preferences.c:2432
+#: src/preferences.c:2497
 msgid "Ask what to do"
 msgstr "بپرسید چه باید بکنید"
 
-#: ../src/preferences.c:2433 ../src/preferences.c:2440 ../src/preferences.c:2447
+#: src/preferences.c:2498 src/preferences.c:2505 src/preferences.c:2512
 msgid "Never"
 msgstr "هرگز"
 
-#: ../src/preferences.c:2433
+#: src/preferences.c:2498
 msgid "Periodically and during save"
 msgstr "دوره ای و در طول ذخیره"
 
-#: ../src/preferences.c:2433
+#: src/preferences.c:2498
 msgid "Only during save"
 msgstr "فقط در طول ذخیره"
 
-#: ../src/preferences.c:2435
+#: src/preferences.c:2500
 msgid "Nothing"
 msgstr "هیجی"
 
-#: ../src/preferences.c:2435
+#: src/preferences.c:2500
 msgid "Modified time and file size"
 msgstr "تغییر زمان و اندازه پرونده"
 
-#: ../src/preferences.c:2435
+#: src/preferences.c:2500
 msgid "Modified time"
 msgstr "ساعت  ویرایش"
 
-#: ../src/preferences.c:2435
+#: src/preferences.c:2500
 msgid "File size"
 msgstr "سایز فایل"
 
-#: ../src/preferences.c:2436 ../src/preferences.c:2437
+#: src/preferences.c:2501 src/preferences.c:2502
 msgid "left"
 msgstr "چپ"
 
-#: ../src/preferences.c:2436 ../src/preferences.c:2437
+#: src/preferences.c:2501 src/preferences.c:2502
 msgid "right"
 msgstr "راست"
 
-#: ../src/preferences.c:2436
+#: src/preferences.c:2501
 msgid "top"
 msgstr "بالا"
 
-#: ../src/preferences.c:2436
+#: src/preferences.c:2501
 msgid "bottom"
 msgstr "پایین"
 
-#: ../src/preferences.c:2438
+#: src/preferences.c:2503
 msgid "Recently opened"
 msgstr "به تازگی افتتاح شد"
 
-#: ../src/preferences.c:2438
+#: src/preferences.c:2503
 msgid "Recently closed"
 msgstr "اخیراً بسته شده"
 
-#: ../src/preferences.c:2440
+#: src/preferences.c:2505
 msgid "Only project files"
 msgstr "فایل های پروژه"
 
-#: ../src/preferences.c:2444
+#: src/preferences.c:2509
 msgid "All"
 msgstr "همه"
 
-#: ../src/preferences.c:2444
+#: src/preferences.c:2509
 msgid "All except spaces"
 msgstr "جز فضاهای"
 
-#: ../src/preferences.c:2444
+#: src/preferences.c:2509
 msgid "All trailing"
 msgstr "تمام انتهایی"
 
-#: ../src/preferences.c:2444
+#: src/preferences.c:2509
 msgid "All except non-trailing spaces"
 msgstr "جز فضاهای غیر متوالی"
 
-#: ../src/preferences.c:2447
+#: src/preferences.c:2512
 msgid "Always"
 msgstr "همیشه"
 
-#: ../src/preferences.c:2447
+#: src/preferences.c:2512
 msgid "Smart"
 msgstr "اسمارت"
 
-#: ../src/preferences.c:2458
+#: src/preferences.c:2523
 msgid "Edit preferences"
 msgstr "تغییر دادن یا تصحیح کردن‬ ترجی هیها‬"
 
 #.
 #. *  Initial document settings
 #.
-#: ../src/preferences.c:2482
-msgid "<b>Non Project Defaults</b>"
-msgstr "<b>پروژه های غیر پیش فرض</b>"
+#: src/preferences.c:2547
+msgid "<b>Default settings (overridden by project settings)</b>"
+msgstr ""
 
-#: ../src/preferences.c:2484
+#: src/preferences.c:2549
 msgid "Initial document settings"
 msgstr "تنظیمات اولیه اسناد"
 
-#: ../src/preferences.c:2496
+#: src/preferences.c:2561
 msgid "Editor settings"
 msgstr "تنظیمات ویرایشگر"
 
-#: ../src/preferences.c:2499
+#: src/preferences.c:2564
 msgid "<b>Editor settings</b>"
 msgstr "تنظیمات ویرایشگر"
 
-#: ../src/preferences.c:2507
+#: src/preferences.c:2569
+#, fuzzy
+msgid "Smart auto indentin_g on brackets"
+msgstr "خودکار هوشمند indentin_g"
+
+#: src/preferences.c:2572
 msgid "Smart Home/_End cursor positioning"
 msgstr "موقعیت مکان نما خانه هوشمند/_End"
 
-#: ../src/preferences.c:2511
+#: src/preferences.c:2576
 msgid "_Tab key indents selection"
 msgstr "انتخاب تورفتگی های کلیدی _Tab"
 
-#: ../src/preferences.c:2517
+#: src/preferences.c:2580
+msgid "Replace unicode quotes with ascii quotes"
+msgstr ""
+
+#: src/preferences.c:2584
+#, fuzzy
+msgid "Insert spaces to cursor position"
+msgstr "به جلو از موقعیت مکان نما"
+
+#: src/preferences.c:2590
 msgid "Automatically insert closing brackets"
 msgstr "درج خودکار براکت بسته شدن"
 
-#: ../src/preferences.c:2524
+#: src/preferences.c:2597
 msgid "Right _margin/split line end position:"
 msgstr "حق _margin/تقسیم خط پایان موقعیت:"
 
-#: ../src/preferences.c:2527
+#: src/preferences.c:2600
 msgid "Wrap lines on right margin indicator"
 msgstr "قرار دادن خطوط در حاشیه سمت راست شاخص"
 
-#: ../src/preferences.c:2533
+#: src/preferences.c:2606
 msgid "Visible _whitespace mode:"
 msgstr "حالت قابل مشاهده _whitespace:"
 
-#: ../src/preferences.c:2536
+#: src/preferences.c:2609
 msgid "<b>Undo</b>"
 msgstr "<b>باطل کردن</b>"
 
-#: ../src/preferences.c:2541
+#: src/preferences.c:2614
 msgid "_Number of actions in history:"
 msgstr "_Number اقدامات در تاریخ:"
 
-#: ../src/preferences.c:2544
+#: src/preferences.c:2617
 msgid "Clear _history on save"
 msgstr "ذخیره _history روشن در"
 
-#: ../src/preferences.c:2549
+#: src/preferences.c:2622
 msgid "Auto-completion & Reference"
 msgstr "تکمیل خودکار & مرجع"
 
-#: ../src/preferences.c:2555
+#: src/preferences.c:2628
 msgid "<b>Auto-completion</b>"
 msgstr "<b>تکمیل خودکار</b>"
 
-#: ../src/preferences.c:2561
+#: src/preferences.c:2634
 msgid "Show _pop-up window:"
 msgstr "نشان دادن پنجره _pop به بالا:"
 
-#: ../src/preferences.c:2565
+#: src/preferences.c:2638
 msgid "Minimum matching length for auto-completion:"
 msgstr "حداقل طول برای تکمیل خودکار مطابق:"
 
-#: ../src/preferences.c:2570
+#: src/preferences.c:2643
 msgid "Shortcut _key combination:"
 msgstr "میانبر _key ترکیبی:"
 
-#: ../src/preferences.c:2573
+#: src/preferences.c:2646
 msgid "<b>Reference Information</b>"
 msgstr "<b>مرجع اطلاعات</b>"
 
-#: ../src/preferences.c:2576
+#: src/preferences.c:2649
 msgid "_Load reference data from language files"
 msgstr "_Load مرجع داده ها از فایل های زبان"
 
-#: ../src/preferences.c:2579
+#: src/preferences.c:2652
 msgid "Show references in auto-completion _pop-up window"
 msgstr "نشان می دهد منابع در تکمیل خودکار پنجره _pop به بالا"
 
-#: ../src/preferences.c:2582
+#: src/preferences.c:2655
 msgid "Show references if mouse is over text editor"
 msgstr "منابع نشان می دهد اگر ماوس بیش از ویرایشگر متن است"
 
-#: ../src/preferences.c:2591 ../src/preferences.c:2968
+#: src/preferences.c:2664 src/preferences.c:3071
 msgid "Font & Colors"
 msgstr "رنگ فونت"
 
-#: ../src/preferences.c:2597
+#: src/preferences.c:2670
 msgid "<b>Font &amp; Cursor</b>"
 msgstr "<b>قلم و مکان نما</b>"
 
-#: ../src/preferences.c:2601
+#: src/preferences.c:2674
 msgid "_Editor font:"
 msgstr "قلم _Editor:"
 
-#: ../src/preferences.c:2609
+#: src/preferences.c:2682
 msgid "Cursor / font size ratio (%):"
 msgstr "مکان نما / فونت حجم نسبت (%):"
 
-#: ../src/preferences.c:2611 ../src/preferences.c:2994
+#: src/preferences.c:2684 src/preferences.c:3097
 msgid "<b>Colors</b>"
 msgstr "<b>رنگ</b>"
 
-#: ../src/preferences.c:2615
+#: src/preferences.c:2688
 msgid "Use system wide color settings"
 msgstr "استفاده از تنظیمات رنگ سیستم"
 
-#: ../src/preferences.c:2626
+#: src/preferences.c:2699
 msgid "Cursor color"
 msgstr "رنگ اسکرول بار"
 
-#: ../src/preferences.c:2627
+#: src/preferences.c:2700
 msgid "C_ursor color:"
 msgstr "رنگ C_ursor:"
 
-#: ../src/preferences.c:2630
+#: src/preferences.c:2703
 msgid "Selection background color"
 msgstr "انتخاب رنگ پس زمینه"
 
-#: ../src/preferences.c:2631
+#: src/preferences.c:2704
 msgid "_Selection background color:"
 msgstr "_Selection رنگ پس زمینه:"
 
-#: ../src/preferences.c:2636
+#: src/preferences.c:2707
+#, fuzzy
+msgid "Margin foreground color"
+msgstr "رنگ پیش زمینه"
+
+#: src/preferences.c:2708
+#, fuzzy
+msgid "_Margin foreground color:"
+msgstr "رنگ _Foreground:"
+
+#: src/preferences.c:2711
+#, fuzzy
+msgid "Margin background color"
+msgstr "انتخاب رنگ پس زمینه"
+
+#: src/preferences.c:2712
+#, fuzzy
+msgid "_Margin background color:"
+msgstr "_Selection رنگ پس زمینه:"
+
+#: src/preferences.c:2717
 msgid "Highlight cursor position"
 msgstr "موقعیت اشاره گر برجسته"
 
-#: ../src/preferences.c:2638
+#: src/preferences.c:2719
 msgid "Cursor highlight color"
 msgstr "مکان نما برجسته رنگ"
 
-#: ../src/preferences.c:2639
+#: src/preferences.c:2720
 msgid "_Cursor highlight color:"
 msgstr "رنگ برجسته _Cursor:"
 
-#: ../src/preferences.c:2644
+#: src/preferences.c:2725
 msgid "Current line color"
 msgstr "رنگ فعلی"
 
-#: ../src/preferences.c:2645
+#: src/preferences.c:2726
 msgid "Cu_rrent line color:"
 msgstr "رنگ خط Cu_rrent:"
 
-#: ../src/preferences.c:2648
+#: src/preferences.c:2729
 msgid "Visible whitespace color"
 msgstr "رنگ فضای خالی قابل مشاهده"
 
-#: ../src/preferences.c:2649
+#: src/preferences.c:2730
 msgid "_Visible whitespace color:"
 msgstr "_Visible رنگی فضای خالی:"
 
-#: ../src/preferences.c:2661
+#: src/preferences.c:2732
+msgid "<b>Import / export color profiles</b>"
+msgstr ""
+
+#: src/preferences.c:2733
+msgid ""
+"Color profiles set colors for the editor, user interface and all textstyles."
+msgstr ""
+
+#: src/preferences.c:2736
+msgid "Export"
+msgstr ""
+
+#: src/preferences.c:2743
+msgid "Import"
+msgstr ""
+
+#: src/preferences.c:2750
+msgid "Apply"
+msgstr ""
+
+#: src/preferences.c:2764
 msgid "Text styles"
 msgstr "استایل های متن"
 
-#: ../src/preferences.c:2663
+#: src/preferences.c:2766
 msgid "<b>Text Styles</b>"
 msgstr "استایل متن"
 
-#: ../src/preferences.c:2676
+#: src/preferences.c:2779
 msgid "Files"
 msgstr "فایل‌ها"
 
-#: ../src/preferences.c:2679
+#: src/preferences.c:2782
 msgid "<b>Encoding</b>"
 msgstr "<b>پشتیبانی می کند</b>"
 
-#: ../src/preferences.c:2695
+#: src/preferences.c:2798
 msgid "_Default character set for new files:"
 msgstr "مجموعه نویسه های _Default برای پرونده های جدید:"
 
-#: ../src/preferences.c:2701
+#: src/preferences.c:2804
 msgid "Auto set <meta> _HTML tag on encoding change"
 msgstr "تنظیم خودکار <meta> _HTML برچسب روی تغییر را پشتیبانی می کند"
 
-#: ../src/preferences.c:2705 ../src/preferences.c:2851
+#: src/preferences.c:2808 src/preferences.c:2954
 msgid "<b>Misc</b>"
 msgstr "<b>متفرقه</b>"
 
-#: ../src/preferences.c:2708
+#: src/preferences.c:2811
 msgid "Strip trailing spaces on save"
 msgstr "نوار فاصله های متوالی در ذخیره"
 
-#: ../src/preferences.c:2714
+#: src/preferences.c:2817
 msgid "Open co_mmandline files in running bluefish process"
 msgstr "باز co_mmandline فایل در حال اجرا روند bluefish"
 
-#: ../src/preferences.c:2719
+#: src/preferences.c:2822
 msgid "Open commandline files in new _window"
 msgstr "خط فرمان باز کردن فایل های جدید _window"
 
-#: ../src/preferences.c:2726
+#: src/preferences.c:2829
 msgid "Check if file is modified on disk:"
 msgstr "اگر فایل در دیسک تغییر را بررسی کنید:"
 
-#: ../src/preferences.c:2732
+#: src/preferences.c:2835
 msgid "File properties to check on dis_k for modifications:"
 msgstr "ویژگیهای پرونده برای بررسی در dis_k تغييرات:"
 
-#: ../src/preferences.c:2736
+#: src/preferences.c:2839
 msgid "Show warning for files with very long lines"
 msgstr "نمایش هشدار برای فایل های با خط بسیار طولانی"
 
-#: ../src/preferences.c:2746
+#: src/preferences.c:2849
 msgid "Backup & Recovery"
 msgstr "حالت پشتیبانگیری/بازگردانی"
 
-#: ../src/preferences.c:2749
+#: src/preferences.c:2852
 msgid "<b>Backup</b>"
 msgstr "<b>پشتیبان گیری</b>"
 
-#: ../src/preferences.c:2751
+#: src/preferences.c:2854
 msgid "Create _backup file during file save"
 msgstr "ایجاد فایل _backup در فایل ذخیره"
 
-#: ../src/preferences.c:2756
+#: src/preferences.c:2859
 msgid "_Remove backup file on close"
 msgstr "نزدیک _Remove پرونده های پشتیبان در"
 
-#: ../src/preferences.c:2761
+#: src/preferences.c:2864
 msgid "If back_up fails:"
 msgstr "اگر نتواند back_up:"
 
-#: ../src/preferences.c:2768
+#: src/preferences.c:2871
 msgid "<b>Document Recovery</b>"
 msgstr "<b>بازیابی نوشتار</b>"
 
-#: ../src/preferences.c:2770
+#: src/preferences.c:2873
 msgid "_Enable recovery of modified documents"
 msgstr "_Enable بهبود اصلاح اسناد"
 
-#: ../src/preferences.c:2774
+#: src/preferences.c:2877
 msgid "_Frequency to store changes (seconds):"
 msgstr "_Frequency برای ذخیره تغییرات (ثانیه):"
 
-#: ../src/preferences.c:2788 ../src/preferences.c:2789
+#: src/preferences.c:2891 src/preferences.c:2892
 msgid "File Associations"
 msgstr "انجمن فایل"
 
-#: ../src/preferences.c:2807
+#: src/preferences.c:2910
 msgid "Templates"
 msgstr "الگوها"
 
-#: ../src/preferences.c:2810
+#: src/preferences.c:2913
 msgid "<b>Templates</b>"
 msgstr "<b>قالب ها</b>"
 
-#: ../src/preferences.c:2823
+#: src/preferences.c:2926
 msgid "User interface"
 msgstr "رابط کاربری"
 
-#: ../src/preferences.c:2826
+#: src/preferences.c:2929
 msgid "<b>Layout</b>"
 msgstr "<b>چیدمان</b>"
 
-#: ../src/preferences.c:2832
+#: src/preferences.c:2935
 msgid "Document _tab position:"
 msgstr "موقعیت _tab سند:"
 
-#: ../src/preferences.c:2837
+#: src/preferences.c:2940
 msgid "Maximum filename length shown in tab (0 is no limit)"
 msgstr "نام پرونده حداکثر طول نشان داده شده در بند (0 است بدون محدودیت)"
 
-#: ../src/preferences.c:2843
+#: src/preferences.c:2946
 msgid "_Sidebar position:"
 msgstr "_Sidebar موقعیت:"
 
-#: ../src/preferences.c:2849
+#: src/preferences.c:2952
 msgid "Sidebar tab _position:"
 msgstr "نوار _position نوار:"
 
-#: ../src/preferences.c:2853
+#: src/preferences.c:2956
 msgid "Hide toolbars on full-screen"
 msgstr "پنهان کردن نوار ابزار در تمام صفحه"
 
-#: ../src/preferences.c:2862
+#: src/preferences.c:2965
 msgid "User interface _language:"
 msgstr "_Language رابط کاربر:"
 
-#: ../src/preferences.c:2865
+#: src/preferences.c:2968
 msgid "<b>Recent Files</b>"
 msgstr "<b>پرونده های اخیر</b>"
 
-#: ../src/preferences.c:2870
+#: src/preferences.c:2973
 msgid "Recent files _shows:"
 msgstr "_Shows فایل های اخیر:"
 
-#: ../src/preferences.c:2875
+#: src/preferences.c:2978
 msgid "_Number of files in 'Open recent' menu:"
 msgstr "_Number فایل ها در منو 'باز اخیر':"
 
-#: ../src/preferences.c:2880
+#: src/preferences.c:2983
 msgid "_Register recent files with your desktop:"
 msgstr "_Register فایل های اخیر با کامپیوتر خود ببینید:"
 
-#: ../src/preferences.c:2891
+#: src/preferences.c:2994
 msgid "Shortcut keys"
 msgstr "کلید های میانبر"
 
-#: ../src/preferences.c:2896
+#: src/preferences.c:2999
 msgid "<b>Shortcut keys</b>"
 msgstr "<b>کلید های میانبر</b>"
 
-#: ../src/preferences.c:2900
+#: src/preferences.c:3003
 msgid "_Switch between tabs with <Alt>+0..9"
 msgstr "_Switch بین زبانه با <Alt>+ 0..9</Alt>"
 
-#: ../src/preferences.c:2903
+#: src/preferences.c:3006
 msgid "_Switch between tabs with <Command>+0..9"
 msgstr "_Switch بین زبانه با <Command>+ 0..9</Command>"
 
-#: ../src/preferences.c:2908
+#: src/preferences.c:3011
 msgid "Save menu accelerators on exit"
 msgstr "شتاب دهنده های منو هنگام خروج ذخیره"
 
-#: ../src/preferences.c:2911
+#: src/preferences.c:3014
 msgid "Save user customised menu accelerators now"
 msgstr "کاربر سفارشی شتاب دهنده های منوی ذخیره"
 
-#: ../src/preferences.c:2915
+#: src/preferences.c:3018
 msgid "Reset menu accelerators to application defaults"
 msgstr "بازنشانی منو شتاب دهنده ها به صورت پیش فرض برنامه"
 
-#: ../src/preferences.c:2927
+#: src/preferences.c:3030
 msgid "Dimensions"
 msgstr "ابعاد"
 
-#: ../src/preferences.c:2930
+#: src/preferences.c:3033
 msgid "<b>Dimensions</b>"
 msgstr "<b>ابعاد</b>"
 
-#: ../src/preferences.c:2932
+#: src/preferences.c:3035
 msgid "_Leave dimensions to window manager"
 msgstr "ابعاد _Leave به مدیر پنجره"
 
-#: ../src/preferences.c:2939
+#: src/preferences.c:3042
 msgid "_Restore last used dimensions"
 msgstr "_Restore آخرین ابعاد استفاده می شود"
 
-#: ../src/preferences.c:2947
+#: src/preferences.c:3050
 msgid "Initial _sidebar width:"
 msgstr "تب تغییر عرض به %d"
 
-#: ../src/preferences.c:2951
+#: src/preferences.c:3054
 msgid "Initial window _height:"
 msgstr "_Height پنجره های اولیه:"
 
-#: ../src/preferences.c:2954
+#: src/preferences.c:3057
 msgid "Initial window _width:"
 msgstr "_Width پنجره های اولیه:"
 
-#: ../src/preferences.c:2961
+#: src/preferences.c:3064
 msgid "_Limit window title length"
 msgstr "طول عنوان پنجره _Limit"
 
-#: ../src/preferences.c:2974
+#: src/preferences.c:3077
 msgid "<b>Document tab</b>"
 msgstr "<b>برگه سند</b>"
 
-#: ../src/preferences.c:2979
+#: src/preferences.c:3082
 msgid "_Use system document tab font"
 msgstr "_Use سیستم نوع خط نوشتار زبانه"
 
-#: ../src/preferences.c:2984
+#: src/preferences.c:3087
 msgid "_Document tab font:"
 msgstr "_Document قلم بند:"
 
-#: ../src/preferences.c:2998
+#: src/preferences.c:3101
 msgid "Document error tab color"
 msgstr "سند خطای رنگ بند"
 
-#: ../src/preferences.c:3000
+#: src/preferences.c:3103
 msgid "Document tab _error color:"
 msgstr "رنگ _error برگه سند:"
 
-#: ../src/preferences.c:3004
+#: src/preferences.c:3107
 msgid "Document loading tab color"
 msgstr "سند بارگذاری رنگ بند"
 
-#: ../src/preferences.c:3006
+#: src/preferences.c:3109
 msgid "Document tab loadin_g color:"
 msgstr "رنگ loadin_g برگه سند:"
 
-#: ../src/preferences.c:3010
+#: src/preferences.c:3113
 msgid "Document modified tab color"
 msgstr "رنگ بند اصلاح سند"
 
-#: ../src/preferences.c:3012
+#: src/preferences.c:3115
 msgid "Document tab _modified color:"
 msgstr "رنگ _modified برگه سند:"
 
+#: src/preferences.c:3119
+#, fuzzy
+msgid "Active document tab color"
+msgstr "نوشتار فعال"
+
+#: src/preferences.c:3121
+#, fuzzy
+msgid "Document tab _active color:"
+msgstr "رنگ _error برگه سند:"
+
 #. arr = array_from_arglist(_("Java programming"),"1", "java:image:jsp", NULL);
 #. main_v->globses.filefilters = g_list_append(main_v->globses.filefilters, arr);
-#: ../src/preferences.c:3025 ../src/rcfile.c:1445
+#: src/preferences.c:3135 src/rcfile.c:1517
 msgid "Images"
 msgstr "تصاویر"
 
-#: ../src/preferences.c:3028
+#: src/preferences.c:3138
 msgid "<b>Thumbnails</b>"
 msgstr "<b>ریز عکسها به</b>"
 
-#: ../src/preferences.c:3034
+#: src/preferences.c:3144
 msgid "Thumbnail _filetype:"
 msgstr "تصویر بند _filetype:"
 
-#: ../src/preferences.c:3038
+#: src/preferences.c:3148
 msgid "Thumbnail _suffix:"
 msgstr "تصویر بند _suffix:"
 
-#: ../src/preferences.c:3051
+#: src/preferences.c:3161
 msgid "External commands"
 msgstr "فرمان های خارجی"
 
-#: ../src/preferences.c:3053
+#: src/preferences.c:3163
 msgid "<b>External Commands</b>"
 msgstr "<b>فرمان های خارجی</b>"
 
-#: ../src/preferences.c:3066
+#: src/preferences.c:3176
 msgid "External filters"
 msgstr "فیلتر خارجی"
 
-#: ../src/preferences.c:3069
+#: src/preferences.c:3179
 msgid "<b>External Filters</b>"
 msgstr "<b>فیلتر خارجی</b>"
 
-#: ../src/preferences.c:3082
+#: src/preferences.c:3192
 msgid "Output parsers"
 msgstr "تجزیه کنندهای خروجی _Output parsers‬"
 
-#: ../src/preferences.c:3084
+#: src/preferences.c:3194
 msgid "<b>Output Parsers</b>"
 msgstr "<b>Parsers خروجی</b>"
 
-#: ../src/preferences.c:3097
+#: src/preferences.c:3207
 msgid "Plugins"
 msgstr "پلاگین"
 
-#: ../src/preferences.c:3099
+#: src/preferences.c:3209
 msgid "<b>Plugins</b>"
 msgstr "پلاگین"
 
-#: ../src/preferences.c:3121
+#: src/preferences.c:3231
 msgid "Language support"
 msgstr "پشتیبانی زبان"
 
-#: ../src/project.c:311
+#: src/project.c:323
 msgid "Enter Bluefish project filename"
 msgstr "Bluefish پروژه نام پرونده را وارد کنید"
 
-#: ../src/project.c:494
+#: src/project.c:506
 msgid "Select Bluefish project filename"
 msgstr "انتخاب نام پرونده پروژه Bluefish"
 
-#: ../src/project.c:655
+#: src/project.c:668
 msgid "Create New Project"
 msgstr "ایجاد پروژه جدید"
 
-#: ../src/project.c:658
+#: src/project.c:671
 msgid "Edit Project"
 msgstr "ویرایش پروژه"
 
-#: ../src/project.c:683
-#, c-format
+#: src/project.c:696
+#, fuzzy, c-format
 msgid "This project contains %d file"
-msgstr "%dپرونده پروژه ؛  بلو فیش  ؛‬"
+msgid_plural "This project contains %d files"
+msgstr[0] "%dپرونده پروژه ؛  بلو فیش  ؛‬"
 
-#: ../src/project.c:696
+#: src/project.c:709
 msgid "Project _Name:"
 msgstr "نام خوراک :"
 
@@ -3178,572 +3366,623 @@ msgstr "نام خوراک :"
 #. but = file_but_new(pred->entries[template], 1, NULL);
 #. gtk_table_attach_defaults(GTK_TABLE(table), pred->entries[template], 2, 3, 3, 4);
 #. gtk_table_attach_defaults(GTK_TABLE(table), but, 3, 4, 3, 4);
-#: ../src/project.c:704
-msgid "<b>Project Defaults</b>"
-msgstr "<b>پروژه به صورت پیش فرض</b>"
+#: src/project.c:717
+msgid "<b>Default settings for this project</b>"
+msgstr ""
 
-#: ../src/project.c:718
+#: src/project.c:731
 msgid "Create _Project"
 msgstr "ایجاد _Project"
 
-#: ../src/project.c:767
+#: src/project.c:780
 msgid "Create project"
 msgstr "ایجاد پروژه"
 
-#: ../src/project.c:772
+#: src/project.c:785
 msgid "Create project with currently opened documents"
 msgstr "ایجاد پروژه با اسناد در حال حاضر باز"
 
-#: ../src/project.c:774
+#: src/project.c:787
 msgid "Create empty project"
 msgstr "ایجاد پروژه های خالی"
 
-#: ../src/rcfile.c:701 ../src/rcfile.c:729
+#: src/rcfile.c:712 src/rcfile.c:740
 msgid "php"
 msgstr "پی اچ پی"
 
-#: ../src/rcfile.c:707
+#: src/rcfile.c:718
 msgid "make"
 msgstr "ساخت"
 
-#: ../src/rcfile.c:711
+#: src/rcfile.c:722
 msgid "weblint HTML checker"
 msgstr "جستجوگر weblint HTML"
 
-#: ../src/rcfile.c:716
+#: src/rcfile.c:727
 msgid "tidy HTML validator"
 msgstr "اعتبار سنجHTML"
 
-#: ../src/rcfile.c:720
+#: src/rcfile.c:731
 msgid "javac"
 msgstr "javac"
 
-#: ../src/rcfile.c:724
+#: src/rcfile.c:735
 msgid "xmllint XML checker"
 msgstr "xmllint جستجوگر XML"
 
-#: ../src/rcfile.c:733
+#: src/rcfile.c:744
 msgid "php syntax check"
 msgstr "بررسی ساختار پی اچ پی"
 
-#: ../src/rcfile.c:737
+#: src/rcfile.c:748
 msgid "perl syntax check"
 msgstr "پرل نحو بررسی"
 
-#: ../src/rcfile.c:741
+#: src/rcfile.c:752
 msgid "php codesniffer"
 msgstr "پی اچ پی codesniffer"
 
-#: ../src/rcfile.c:745
+#: src/rcfile.c:756
 msgid "pylint"
 msgstr "pylint"
 
-#: ../src/rcfile.c:758
+#: src/rcfile.c:769
 msgid "Sort"
 msgstr "مرتب سازی"
 
-#: ../src/rcfile.c:761
+#: src/rcfile.c:772
 msgid "Sort / Uniq"
 msgstr "مرتب سازی / Uniq"
 
-#: ../src/rcfile.c:764
+#: src/rcfile.c:775
 msgid "Reverse lines"
 msgstr "خطوط معکوس"
 
-#: ../src/rcfile.c:767
+#: src/rcfile.c:778
 msgid "Dos2unix"
 msgstr "Dos2unix"
 
-#: ../src/rcfile.c:769
+#: src/rcfile.c:780
 msgid "Tidy HTML"
 msgstr "مرتب HTML"
 
-#: ../src/rcfile.c:771
+#: src/rcfile.c:782
 msgid "Tidy convert to XHTML"
 msgstr "مرتب تبدیل به XHTML"
 
-#: ../src/rcfile.c:774
+#: src/rcfile.c:785
 msgid "Tidy HTML (perltidy)"
 msgstr "HTML مرتب (perltidy)"
 
-#: ../src/rcfile.c:777
+#: src/rcfile.c:788
 msgid "Strip empty lines"
 msgstr "نوار خالی خطوط"
 
-#: ../src/rcfile.c:780
+#: src/rcfile.c:791
 msgid "Render HTML to text"
 msgstr "ارائه نسخه متنی به متن"
 
-#: ../src/rcfile.c:783
+#: src/rcfile.c:794
 msgid "PHP Beautifier"
 msgstr "پی اچ پی زیباکننده"
 
-#: ../src/rcfile.c:787 ../src/rcfile.c:797
+#: src/rcfile.c:798 src/rcfile.c:808
 msgid "Javascript Minify with jsmin"
 msgstr "جاوا اسکریپت Minify با jsmin"
 
-#: ../src/rcfile.c:790 ../src/rcfile.c:800
+#: src/rcfile.c:801 src/rcfile.c:811
 msgid "Decompress CSS"
 msgstr "خارج کردن CSS"
 
-#: ../src/rcfile.c:793 ../src/rcfile.c:803
+#: src/rcfile.c:804 src/rcfile.c:814
 msgid "Compress CSS"
 msgstr "فشرده کردن"
 
-#: ../src/rcfile.c:807
+#: src/rcfile.c:818
 msgid "CSS tidy"
 msgstr "CSS tidy"
 
-#: ../src/rcfile.c:834 ../src/rcfile.c:839
+#: src/rcfile.c:847
 msgid "Windows 7 Firefox 32-bit"
 msgstr "فایرفاکس برای ویندوز 7 32 بیتی"
 
-#: ../src/rcfile.c:835
+#: src/rcfile.c:848
 msgid "Windows 7 Firefox"
 msgstr "فایرفاکس ویندوز 7"
 
-#: ../src/rcfile.c:844
+#: src/rcfile.c:849
 msgid "Windows 7 Internet Explorer 32-bit"
 msgstr "اینترنت اکسپلورر برای ویندوز 7 32 بیتی"
 
-#: ../src/rcfile.c:849
+#: src/rcfile.c:850
 msgid "Windows 7 Internet Explorer 64-bit"
 msgstr "اینترنت اکسپلورر برای ویندوز 7 64-ذره"
 
-#: ../src/rcfile.c:855
+#: src/rcfile.c:854
 msgid "Safari"
 msgstr "Safari"
 
-#: ../src/rcfile.c:858 ../src/rcfile.c:874
+#: src/rcfile.c:857 src/rcfile.c:877
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ../src/rcfile.c:861
+#: src/rcfile.c:860
 msgid "Google Chrome"
 msgstr "گوگل کروم"
 
-#: ../src/rcfile.c:864 ../src/rcfile.c:881
+#: src/rcfile.c:863 src/rcfile.c:880
 msgid "Chromium"
 msgstr "کروم"
 
-#: ../src/rcfile.c:867 ../src/rcfile.c:877
+#: src/rcfile.c:866 src/rcfile.c:883
 msgid "Opera"
 msgstr "Opera"
 
-#: ../src/rcfile.c:870 ../src/rcfile.c:896
+#: src/rcfile.c:869 src/rcfile.c:895
 msgid "chmod a+x"
 msgstr "سطح دسترسی ایکس +"
 
-#: ../src/rcfile.c:884
+#: src/rcfile.c:872 src/rcfile.c:898
+#, fuzzy
+msgid "Insert date"
+msgstr "فایل جدید"
+
+#: src/rcfile.c:885
 msgid "Konqueror"
 msgstr "کانکرر"
 
-#: ../src/rcfile.c:887
+#: src/rcfile.c:888
 msgid "Epiphany"
 msgstr "تجلی"
 
-#: ../src/rcfile.c:890
+#: src/rcfile.c:889
 msgid "Kazehakase"
 msgstr "Kazehakase"
 
-#: ../src/rcfile.c:893
+#: src/rcfile.c:892
 msgid "Links2 (graphics)"
 msgstr "Links2 (گرافیک)"
 
-#: ../src/rcfile.c:945
+#: src/rcfile.c:947
 msgid "C Header"
 msgstr "سربرگ"
 
-#: ../src/rcfile.c:948
+#: src/rcfile.c:950
 msgid "C Header GPL"
 msgstr "ج هدر GPL"
 
-#: ../src/rcfile.c:951
+#: src/rcfile.c:953
 msgid "XHTML 1.0"
 msgstr "XHTML 1.0"
 
-#: ../src/rcfile.c:954
+#: src/rcfile.c:956
 msgid "HTML 5"
 msgstr "لوگوی html5"
 
-#: ../src/rcfile.c:957
+#: src/rcfile.c:959
 msgid "PHP"
 msgstr "پی اچ پی"
 
-#: ../src/rcfile.c:960
+#: src/rcfile.c:962
 msgid "LaTex Book"
 msgstr "شیرابه"
 
-#: ../src/rcfile.c:963
+#: src/rcfile.c:965
 msgid "LaTex Presentation"
 msgstr "لاتکس ارائه"
 
-#: ../src/rcfile.c:1330
+#: src/rcfile.c:1402
 msgid "Untitled Project"
 msgstr "پروژه بدون عنوان"
 
-#: ../src/rcfile.c:1437
+#: src/rcfile.c:1509
 msgid "C programming"
 msgstr "برنامه نویسی C"
 
-#: ../src/rcfile.c:1441
+#: src/rcfile.c:1513
 msgid "Web files"
 msgstr "فایل‌ها"
 
-#: ../src/rcfile.c:1448
+#: src/rcfile.c:1520
 msgid "Hide objectfiles"
 msgstr "پنهان کردن objectfiles"
 
-#: ../src/snr3.c:678
+#: src/snr3.c:689
 msgid "<i>Replace started</i>"
 msgstr "<i>جایگزینی آغاز شده</i>"
 
-#: ../src/snr3.c:683
+#: src/snr3.c:694
 msgid "<i>Search started</i>"
 msgstr "<i>آغاز جستجو</i>"
 
-#: ../src/snr3.c:701
+#: src/snr3.c:712
 msgid "<span foreground=\"red\"><b>No selection, aborted search</b></span>"
 msgstr "<span foreground=\"red\"><b>هیچ انتخاب، جستجو سقط</b></span>"
 
 #. display warning that not all documents have yet finished loading
-#: ../src/snr3.c:710
+#: src/snr3.c:721
 msgid ""
-"<span foreground=\"red\" weight=\"bold\">Some documents are still loading</span>"
+"<span foreground=\"red\" weight=\"bold\">Some documents are still loading</"
+"span>"
 msgstr ""
 "<span foreground=\"red\" weight=\"bold\">برخی از اسناد هنوز بارگذاری</span>"
 
-#: ../src/snr3.c:844
+#: src/snr3.c:872
 msgid "<span foreground=\"red\">Empty search string</span>"
 msgstr "جستوجوی رشته خالی"
 
-#: ../src/snr3.c:894
-#, c-format
+#: src/snr3.c:923
+#, fuzzy, c-format
 msgid "<i>Replaced %d entry</i>"
-msgstr "<i>ورود جایگزین %d</i>"
+msgid_plural "<i>Replaced %d entries</i>"
+msgstr[0] "<i>ورود جایگزین %d</i>"
 
-#: ../src/snr3.c:896
-#, c-format
+#: src/snr3.c:925
+#, fuzzy, c-format
 msgid "<i>Found %d entry</i>"
-msgstr "<i>%d مجموعه یافت</i>"
+msgid_plural "<i>Found %d entries</i>"
+msgstr[0] "<i>%d مجموعه یافت</i>"
 
-#: ../src/snr3.c:1184
-#, c-format
+#: src/snr3.c:1228
+#, fuzzy, c-format
 msgid "<i>Found %d result in %d of the %d searched documents</i>"
-msgstr "<i>%d نتیجه در بر داشت در %d از %d جستجو اسناد</i>"
+msgid_plural "<i>Found %d results in %d of the %d searched documents</i>"
+msgstr[0] "<i>%d نتیجه در بر داشت در %d از %d جستجو اسناد</i>"
 
-#: ../src/snr3.c:1188
-#, c-format
+#: src/snr3.c:1232
+#, fuzzy, c-format
 msgid "<i>Found %d result from character %d to %d</i>"
-msgstr "<i>%d نتیجه از شخصیت یافت %d و %d</i>"
+msgid_plural "<i>Found %d results from character %d to %d</i>"
+msgstr[0] "<i>%d نتیجه از شخصیت یافت %d و %d</i>"
 
-#: ../src/snr3.c:1191
-#, c-format
+#: src/snr3.c:1235
+#, fuzzy, c-format
 msgid "<i>Found %d result in the active document</i>"
-msgstr "<i>%d نتیجه در بر داشت در نوشتار فعال</i>"
+msgid_plural "<i>Found %d results in the active document</i>"
+msgstr[0] "<i>%d نتیجه در بر داشت در نوشتار فعال</i>"
 
-#: ../src/snr3.c:1419
+#: src/snr3.c:1298
+msgid ""
+"<span foreground=\"red\"><b>There is no 'undo' when replacing in files.</b>\n"
+"Backup files are created as filename~</span>"
+msgstr ""
+
+#: src/snr3.c:1488
 msgid "No (more) results"
 msgstr "بدون نتایج بیشتری"
 
-#: ../src/snr3.c:1517
+#: src/snr3.c:1594
 msgid "Active document"
 msgstr "نوشتار فعال"
 
-#: ../src/snr3.c:1518
+#: src/snr3.c:1595
 msgid "Forward from cursor position"
 msgstr "به جلو از موقعیت مکان نما"
 
-#: ../src/snr3.c:1519
+#: src/snr3.c:1596
 msgid "Current selection"
 msgstr "انتخاب فعلی"
 
-#: ../src/snr3.c:1520
+#: src/snr3.c:1597
 msgid "All open documents"
 msgstr "تمام اسناد باز"
 
-#: ../src/snr3.c:1521
+#: src/snr3.c:1598
 msgid "Files on disk"
 msgstr "پرونده های روی دیسک"
 
-#: ../src/snr3.c:1525 ../src/snr3.c:1530
+#: src/snr3.c:1602 src/snr3.c:1607
 msgid "Normal"
 msgstr "عادی"
 
-#: ../src/snr3.c:1531
+#: src/snr3.c:1608
 msgid "Uppercase"
 msgstr "حروف بزرگ(مخصوص زبان انگلیسی)"
 
-#: ../src/snr3.c:1532
+#: src/snr3.c:1609
 msgid "Lowercase"
 msgstr "تمامی حروف کوچک"
 
-#: ../src/snr3.c:1539
+#: src/snr3.c:1616
 msgid "Find and Replace"
 msgstr "پیدا و جایگزین کردن"
 
-#: ../src/snr3.c:1558
+#: src/snr3.c:1635
 msgid "<b>_Search for</b>"
 msgstr "<b>_Search برای</b>"
 
-#: ../src/snr3.c:1581
+#: src/snr3.c:1658
 msgid "<b>Replace _with</b>"
 msgstr "<b>جایگزین _with</b>"
 
-#: ../src/snr3.c:1596
+#: src/snr3.c:1673
 msgid "Match Patter_n: "
 msgstr "مسابقه Patter_n:"
 
-#: ../src/snr3.c:1608
+#: src/snr3.c:1685
 msgid "Replace T_ype: "
 msgstr "T_ype جایگزینی:"
 
-#: ../src/snr3.c:1621
+#: src/snr3.c:1698
 msgid "Sco_pe: "
 msgstr "Sco_pe:"
 
-#: ../src/snr3.c:1631
+#: src/snr3.c:1708
 msgid "Filename pattern: "
 msgstr "الگوی نام فایل:"
 
-#: ../src/snr3.c:1637
+#: src/snr3.c:1714
 msgid "Recursion level: "
 msgstr "توابع بازگشتی سطح:"
 
-#: ../src/snr3.c:1643
+#: src/snr3.c:1738
 msgid "Basedir: "
 msgstr "باز کردن basedir:"
 
-#: ../src/snr3.c:1663
+#: src/snr3.c:1748
+#, fuzzy
+msgid "Show results in Output Pane"
+msgstr "نمایش پنجره خروجی"
+
+#: src/snr3.c:1750
+msgid "Show all results in the Output Pane on the bottom of the document list"
+msgstr ""
+
+#: src/snr3.c:1763
 msgid "Case sensitive _matching"
 msgstr "_Matching حساس"
 
-#: ../src/snr3.c:1665
+#: src/snr3.c:1765
 msgid "Only match if case (upper/lower) is identical."
 msgstr "مسابقه تنها اگر مورد (بالا/پایین) یکسان است."
 
-#: ../src/snr3.c:1669
+#: src/snr3.c:1769
 msgid "Pattern contains escape-se_quences"
 msgstr "الگوی شامل فرار se_quences"
 
-#: ../src/snr3.c:1672
+#: src/snr3.c:1772
 msgid "Pattern contains backslash escaped characters such as \\n \\t etc."
 msgstr "الگوی شامل نویسه فرار ممیز وارونه مانند \\n \\t و غیره."
 
-#: ../src/snr3.c:1676
+#: src/snr3.c:1776
 msgid "Dot character in regex pattern matches newlines"
 msgstr "نقطه شخصیت در الگوی regex newlines مسابقات"
 
-#: ../src/snr3.c:1679
+#: src/snr3.c:1779
 msgid ""
 "The . character will match everything including newlines, use for multiline "
 "matching."
-msgstr "است. شخصیت همه چیز را شامل سطر جدید مطابقت، استفاده برای تطبیق چند خطی."
+msgstr ""
+"است. شخصیت همه چیز را شامل سطر جدید مطابقت، استفاده برای تطبیق چند خطی."
 
-#: ../src/snr3.c:1701
+#: src/snr3.c:1783
+#, fuzzy
+msgid "Ignore backup files"
+msgstr "شامل پرونده های پشتیبان"
+
+#: src/snr3.c:1785
+msgid "Ignore backup files *~ created by Bluefish"
+msgstr ""
+
+#: src/snr3.c:1807
 msgid "Replace _All"
 msgstr "جایگزین همه"
 
-#: ../src/snr3.c:1703
+#: src/snr3.c:1809
 msgid "_Replace"
 msgstr "_Replace"
 
-#: ../src/snr3.c:1707
+#: src/snr3.c:1813
 msgid "_Find All"
 msgstr "_Find همه"
 
-#: ../src/snr3.c:1709
+#: src/snr3.c:1815
 msgid "B_ookmark All"
 msgstr "B_ookmark همه"
 
-#: ../src/undo_redo.c:555 ../src/undo_redo.c:697
+#: src/undo_redo.c:555 src/undo_redo.c:695
 msgid "Undo in _all documents"
 msgstr "باطل کردن در اسناد،تادرب"
 
-#: ../src/undo_redo.c:555 ../src/undo_redo.c:697
+#: src/undo_redo.c:555 src/undo_redo.c:695
 msgid "Undo only _this document"
 msgstr "باطل کردن تنها _this سند"
 
-#: ../src/undo_redo.c:558 ../src/undo_redo.c:700
+#: src/undo_redo.c:558 src/undo_redo.c:698
 msgid "Undo this change in all documents?"
 msgstr "این تغییر در تمام اسناد باطل است؟"
 
-#: ../src/undo_redo.c:559 ../src/undo_redo.c:701
+#: src/undo_redo.c:559 src/undo_redo.c:699
 msgid "This change concerns multiple documents."
 msgstr "این تغییر اسناد متعدد نگرانی."
 
-#: ../src/xmlstrings.h:2
+#: src/xmlstrings.h:2
 msgid "Allow folding of C style comments"
 msgstr "اجازه می دهد از نظر سبک C تاشو"
 
-#: ../src/xmlstrings.h:3
+#: src/xmlstrings.h:3
 msgid "Allow folding of Curly brackets block"
 msgstr "اجازه می دهد از براکت مجعد بلوک تاشو"
 
-#: ../src/xmlstrings.h:4
+#: src/xmlstrings.h:4
 msgid "Allow folding of Javascript Curly brackets block"
 msgstr "اجازه می دهد جاوا اسکریپت فرفری براکت بلوک تاشو"
 
-#: ../src/xmlstrings.h:5
+#: src/xmlstrings.h:5
 msgid "Allow folding of Javascript Parentheses block"
 msgstr "بلوک جاوا اسکریپت پرانتز تاشو اجازه می دهد"
 
-#: ../src/xmlstrings.h:6
+#: src/xmlstrings.h:6
 msgid "Allow folding of Javascript Square brackets block"
 msgstr "اجازه می دهد جاوا اسکریپت میدان براکت بلوک تاشو"
 
-#: ../src/xmlstrings.h:7
+#: src/xmlstrings.h:7
 msgid "Allow folding of Parentheses block"
 msgstr "اجازه می دهد از پرانتز بلوک تاشو"
 
-#: ../src/xmlstrings.h:8
+#: src/xmlstrings.h:8
 msgid "Allow folding of PHP blocks"
 msgstr "اجازه تاشو از بلوک های پی اچ پی"
 
-#: ../src/xmlstrings.h:9
+#: src/xmlstrings.h:9
 msgid "Allow folding of Square brackets block"
 msgstr "از کروشه بلوک تاشو اجازه می دهد"
 
-#: ../src/xmlstrings.h:10
+#: src/xmlstrings.h:10
 msgid "Allow folding of the Parentheses block"
 msgstr "بلوک پرانتز تاشو اجازه می دهد"
 
-#: ../src/xmlstrings.h:11
+#: src/xmlstrings.h:11
 msgid "Allow to fold the the root html tag"
 msgstr "اجازه می دهد تا برابر ریشه برچسب html"
 
-#: ../src/xmlstrings.h:12
+#: src/xmlstrings.h:12
 msgid "All php functions"
 msgstr "تمام توابع پی اچ پی"
 
-#: ../src/xmlstrings.h:13
+#: src/xmlstrings.h:13
 msgid "All wordpress functions"
 msgstr "تمام توابع وردپرس"
 
-#: ../src/xmlstrings.h:14
+#: src/xmlstrings.h:14
 msgid "Autocomplete function names with semicolon"
 msgstr "پر شدن خودکار نام های تابع با نقطه ویرگول"
 
-#: ../src/xmlstrings.h:15
+#: src/xmlstrings.h:15
 msgid "Autocomplete HTML entities"
 msgstr "موجودیت های HTML تکمیل خودکار"
 
-#: ../src/xmlstrings.h:16
+#: src/xmlstrings.h:16
 msgid "Autocomplete Javascript object methods"
 msgstr "روش تکمیل خودکار جاوا اسکریپت شی"
 
-#: ../src/xmlstrings.h:17
+#: src/xmlstrings.h:17
 msgid "autocomplete javascript variables"
 msgstr "autocomplete متغیرهای جاوا اسکریپت"
 
-#: ../src/xmlstrings.h:18
+#: src/xmlstrings.h:18
 msgid "Auto-complete PHP functions"
 msgstr "تکمیل خودکار توابع پی اچ پی"
 
-#: ../src/xmlstrings.h:19
+#: src/xmlstrings.h:19
 msgid "Auto-complete PHP variables"
 msgstr "خودکار کامل متغیر های پی اچ پی"
 
-#: ../src/xmlstrings.h:20
+#: src/xmlstrings.h:20
 msgid "Autocomplete tags"
 msgstr "تکمیل سازی خودکار"
 
-#: ../src/xmlstrings.h:21
+#: src/xmlstrings.h:21
 msgid "autocomplete with newlines"
 msgstr "autocomplete با newlines"
 
-#: ../src/xmlstrings.h:22
+#: src/xmlstrings.h:22
 msgid "CSS properties"
 msgstr "خواص CSS"
 
-#: ../src/xmlstrings.h:23
+#: src/xmlstrings.h:23
 msgid "Enable the PHP short open tag"
 msgstr "فعال نمودن برچسبهای باز کوتاه پی اچ پی"
 
-#: ../src/xmlstrings.h:24
+#: src/xmlstrings.h:24
 msgid "GNU Coreutils functions"
 msgstr "توابع Coreutils گنو"
 
-#: ../src/xmlstrings.h:25
+#: src/xmlstrings.h:25
 msgid "HTML entities"
 msgstr "موجودیت‌ها"
 
-#: ../src/xmlstrings.h:26
+#: src/xmlstrings.h:26
 msgid "include JQuery syntax"
 msgstr "JQuery نحو عبارتند از:"
 
-#: ../src/xmlstrings.h:27
+#: src/xmlstrings.h:27
 msgid "Javascript CSS properties"
 msgstr "خواص CSS جاوا اسکریپت"
 
-#: ../src/xmlstrings.h:28
+#: src/xmlstrings.h:28
 msgid "Load all php functions"
 msgstr "بار تمام توابع پی اچ پی"
 
-#: ../src/xmlstrings.h:29
+#: src/xmlstrings.h:29
 msgid "Load auto-completion information"
 msgstr "بارگیری اطلاعات تکمیل خودکار"
 
-#: ../src/xmlstrings.h:30
+#: src/xmlstrings.h:30
 msgid "Load completion data"
 msgstr "بار تکمیل داده ها"
 
-#: ../src/xmlstrings.h:31
+#: src/xmlstrings.h:31
 msgid "Load glib types and functions"
 msgstr "انواع زبان دار و توابع"
 
-#: ../src/xmlstrings.h:32
+#: src/xmlstrings.h:32
 msgid "Load GObject functions"
 msgstr "توابع GObject بار"
 
-#: ../src/xmlstrings.h:33
+#: src/xmlstrings.h:33
 msgid "Load GTK+ functions"
 msgstr "بار GTK + توابع"
 
-#: ../src/xmlstrings.h:34
+#: src/xmlstrings.h:34
 msgid "Load reference data"
 msgstr "داده های مرجع بار"
 
-#: ../src/xmlstrings.h:35
+#: src/xmlstrings.h:35
 msgid "Load reference information"
 msgstr "اطلاعات مرجع بار"
 
-#: ../src/xmlstrings.h:36
+#: src/xmlstrings.h:36
 msgid "Load standard C library functions "
 msgstr "بارگذاری توابع کتابخانه استاندارد C"
 
-#: ../src/xmlstrings.h:37
+#: src/xmlstrings.h:37
 msgid "Load XSLT 2.0 support."
 msgstr "بار XSLT 2.0 پشتیبانی."
 
-#: ../src/xmlstrings.h:38
+#: src/xmlstrings.h:38
 msgid "Methods in javadoc but not in references"
 msgstr "روش در javadoc اما هنوز در مراجع"
 
-#: ../src/xmlstrings.h:39
+#: src/xmlstrings.h:39
 msgid "scan for sql in php strings"
 msgstr "اسکن برای گذاشتن در رشته های پی اچ پی"
 
-#: ../src/xmlstrings.h:40
+#: src/xmlstrings.h:40
 msgid "Scan for sql in strings"
 msgstr "اسکن برای گذاشتن در رشته"
 
-#: ../src/xmlstrings.h:41
+#: src/xmlstrings.h:41
 msgid "Self-close tags such as br, hr, and img with /&gt;"
 msgstr "برچسب ها مانند برزیلی hr و خلیج فارس با خود نزدیک / >"
 
-#: ../src/xmlstrings.h:42
+#: src/xmlstrings.h:42
 msgid "Show a string as a block"
 msgstr "رشته به عنوان بلوک نمایش"
 
-#: ../src/xmlstrings.h:43
+#: src/xmlstrings.h:43
 msgid "Show tag attributes as block"
 msgstr "برچسب، نشان می دهد به عنوان بلوک"
 
-#: ../src/xmlstrings.h:44
+#: src/xmlstrings.h:44
 msgid "Show this language in the menu"
 msgstr "این زبان را در منوی نشان می دهد"
 
-#: ../src/xmlstrings.h:45
+#: src/xmlstrings.h:45
 msgid "Tag block-start includes all attributes"
 msgstr "برچسب شروع بلوک شامل همه ویژگی های"
+
+#~ msgid "Bluefish project file"
+#~ msgstr "پرونده پروژه ؛ بلو فیش ؛‬"
+
+#~ msgid "Bluefish language definition file"
+#~ msgstr "Bluefish زبان فایل تعریف"
+
+#~ msgid " Ln: %d, Col: %d"
+#~ msgstr "Ln: %d ستون: %d"
+
+#~ msgid "<b>Non Project Defaults</b>"
+#~ msgstr "<b>پروژه های غیر پیش فرض</b>"
+
+#~ msgid "<b>Project Defaults</b>"
+#~ msgstr "<b>پروژه به صورت پیش فرض</b>"

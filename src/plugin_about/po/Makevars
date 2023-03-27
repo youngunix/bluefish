@@ -6,7 +6,7 @@ top_builddir = ../../..
 
 XGETTEXT_OPTIONS = -c --from-code=UTF-8 --keyword=_ --keyword=N_
 
-MSGID_BUGS_ADDRESS = bluefish-dev@lists.ems.ru
+MSGID_BUGS_ADDRESS = olivier@bluefish.openoffice.nl
 
 COPYRIGHT_HOLDER = The Bluefish Development Team.
 

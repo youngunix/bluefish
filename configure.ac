@@ -32,16 +32,16 @@ AM_MAINTAINER_MODE
 dnl ************************
 dnl   I18N options
 dnl ************************
-
 m4_define([_BF_LINGUAS], [ar bg ca cs da de el en es eu fa fi fr gl hu it ja ko nb nl nn pl pt pt_BR ro ru sk sr sv ta tr uk zh_CN zh_TW])
 #ALL_LINGUAS="bg cs da de el es eu fi fr gl hu it ja ko nb nl pl pt pt_BR ro ru sk sr sv ta tr uk zh_CN zh_TW"
 AC_SUBST([ALL_LINGUAS], "_BF_LINGUAS")
 GETTEXT_PACKAGE=AC_PACKAGE_NAME
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [gettext domain])
-IT_PROG_INTLTOOL
 BF_DEFINE_LINGUAS(_BF_LINGUAS)
+AM_GNU_GETTEXT_VERSION([0.19.8])
 AM_GNU_GETTEXT([external])
+
 
 dnl ************************
 dnl   Compiler options

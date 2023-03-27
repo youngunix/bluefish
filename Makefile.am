@@ -16,18 +16,12 @@ PO_SUBDIRS = \
 #	src/plugin_xmltools/po
 
 
-EXTRA_DIST = \
-	intltool-extract.in \
-	intltool-merge.in \
-	intltool-update.in \
+EXTRA_DIST = config.rpath  \
 	Makefile.mingw \
 	autogen.sh
 
 DISTCLEANFILES = \
-	doltcompile \
-	intltool-extract \
-	intltool-merge \
-	intltool-update
+	doltcompile
 
 MAINTAINERCLEANFILES = \
 	ABOUT-NLS \
@@ -39,9 +33,6 @@ MAINTAINERCLEANFILES = \
 	configure \
 	depcomp \
 	install-sh \
-	intltool-extract.in \
-	intltool-merge.in \
-	intltool-update.in \
 	ltmain.sh \
 	missing \
 	mkinstalldirs \
@@ -64,3 +55,5 @@ update-po:
 		for subdir in $$list; do \
 		(cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) update-po) || true; \
 	done
+
+ACLOCAL_AMFLAGS = -I m4
