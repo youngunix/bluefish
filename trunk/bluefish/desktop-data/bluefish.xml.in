@@ -2,12 +2,12 @@
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
 	<mime-type type="application/x-bluefish-project">
 		<sub-class-of type="text/plain" />
-		<_comment>Bluefish project file</_comment>
+		<comment>Bluefish project file</comment>
 		<glob pattern="*.bfproject" />
 	</mime-type>
 	<mime-type type="application/x-bluefish-language2">
 		<sub-class-of type="application/xml" />
-		<_comment>Bluefish language definition file</_comment>
+		<comment>Bluefish language definition file</comment>
 		<magic priority="90">
 			<match value="&lt;bflang" type="string" offset="0:1024" />
 			<match value="&lt;bfinc" type="string" offset="0:1024" />

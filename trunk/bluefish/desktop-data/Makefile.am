@@ -11,6 +11,14 @@ CLEANFILES = \
 
 MAINTAINERCLEANFILES = Makefile.in
 
+bluefish.desktop: bluefish.desktop.in
+	$(AM_V_GEN)$(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
+
+bluefish.appdata.xml: bluefish.appdata.xml.in
+	$(AM_V_GEN)$(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
+
+bluefish.xml: bluefish.xml.in
+	cat $< >$@
 
 fdomenu_in_files  = bluefish.desktop.in
 fdomime_in_files  = bluefish.xml.in
@@ -30,9 +38,6 @@ if INSTALL_FDOAPPDATA
 fdoappdatadir = $(fdoappdatapath)
 fdoappdata_DATA = $(fdoappdata_in_files:.xml.in=.xml)
 endif
-
-@INTLTOOL_DESKTOP_RULE@
-@INTLTOOL_XML_RULE@
 
 
 install-data-hook:

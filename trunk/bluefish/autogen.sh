@@ -10,7 +10,6 @@ AUTOCONF=${AUTOCONF:-autoconf}
 AUTOHEADER=${AUTOHEADER:-autoheader}
 AUTOMAKE=${AUTOMAKE:-automake}
 GETTEXTIZE=${GETTEXTIZE:-gettextize}
-INTLTOOLIZE=${INTLTOOLIZE:-intltoolize}
 LIBTOOLIZE=${LIBTOOLIZE:-libtoolize}
 
 ## check, if all binaries exist and fail with error 1 if not
@@ -19,7 +18,6 @@ if [ -z `which $AUTOCONF` ] ; then echo "Error. AUTOCONF=$AUTOCONF not found." >
 if [ -z `which $AUTOHEADER` ] ; then echo "Error. AUTOHEADER=$AUTOHEADER not found." >&2 && exit 1 ; fi
 if [ -z `which $AUTOMAKE` ] ; then echo "Error. AUTOMAKE=$AUTOMAKE not found." >&2 && exit 1 ; fi
 if [ -z `which $GETTEXTIZE` ] ; then echo "Error. GETTEXTIZE=$GETTEXTIZE not found." >&2 && exit 1 ; fi
-if [ -z `which $INTLTOOLIZE` ] ; then echo "Error. INTLTOOLIZE=$INTLTOOLIZE not found." >&2 && exit 1 ; fi
 if [ -z `which $LIBTOOLIZE` ] ; then echo "Error. LIBTOOLIZE=$LIBTOOLIZE not found." >&2 && exit 1 ; fi
 
 ## find where automake is installed and get the version
@@ -141,7 +139,8 @@ autogen_if_missing() {
 ## link/copy the necessary files to our source to prepare for a build
 autogen() {
 	$LIBTOOLIZE $DEBUG -f $COPYOPTION
-	$INTLTOOLIZE $DEBUG -f $COPYOPTION
+	autopoint
+	#$INTLTOOLIZE $DEBUG -f $COPYOPTION
 	prepare_gettext
 	$ACLOCAL $ACLOCAL_OPT --force $VERBOSE
 	$AUTOHEADER -f $DEBUG $VERBOSE

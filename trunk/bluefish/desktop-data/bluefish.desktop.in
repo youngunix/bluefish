@@ -1,8 +1,8 @@
 [Desktop Entry]
 Version=1.0
-_Name=Bluefish Editor
-_Comment=Web Development Editor
-_Keywords=programming;code;web;editor;development;html;php;python;
+Name=Bluefish Editor
+Comment=Web Development Editor
+Keywords=programming;code;web;editor;development;html;php;python;
 Exec=bluefish %F
 Icon=bluefish
 Terminal=false
