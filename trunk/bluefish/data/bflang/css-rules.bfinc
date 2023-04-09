@@ -10792,8 +10792,10 @@ href="https://www.w3.org/TR/2022/REC-css-color-3-20220118/#color1">www.w3.org</a
 			<element idref="e.css.inherit"/>
 			<element idref="e.css.initial"/>
 		</group>
-<!-- There is no highlighting for the following two elements. I couldn't figure out why... -->
-		<element pattern="(‹|›|’|’|‚|‛|“|”|„|‟|«|»)" is_regex="1" highlight="css-value" />
+<!-- There is no highlighting for the following two elements. I couldn't figure out why... 
+  it is because bluefish can only use ascii chcracters in the highlighting, not UTF-8 characters, 
+  current SVN and future 2.2.14 releasde will give a warning if UTF-8 characters are used -->
+		<!--<element pattern="(‹|›|'|`|‚|‛|“|”|„|‟|«|»)" is_regex="1" highlight="css-value" />-->
 		<element pattern="(\\[0-9]+?[0-9]+?[A-F]+)" is_regex="1" highlight="css-value" />
 		<element idref="e.css.end"/>
 		<group class="is_SASS"><element idref="e.sass.variable" /><element idref="e.sass.newline_end"/></group>
