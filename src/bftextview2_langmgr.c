@@ -936,6 +936,13 @@ process_scanning_element(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gin
 			gboolean foldable=TRUE;
 			guint16 blockstartelementum = 0, nextcontext = 0;
 			DBG_PARSING("pattern %s\n", pattern);
+			/* make sure all characters are in the first 127 ascii bytes */
+			if (!g_str_is_ascii(pattern)) {
+				gchar *dbstring = ldb_stack_string(&bfparser->ldb);
+				g_warning("Error in language file %s: id %s / pattern %s contains non ASCII characters\n", dbstring,id?id:"-", pattern?pattern:"null");
+				pattern = g_str_to_ascii(pattern, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+				g_free(dbstring);
+			}
 			if (ends_context) {
 				/* the nth number in the stack */
 				nextcontext = -1 * ends_context;	/*GPOINTER_TO_INT(g_queue_peek_nth(contextstack,ends_context)); */
@@ -1141,6 +1148,12 @@ add_attribute_to_tag(Tbflangparsing * bfparser, const gchar *attrstring, gint co
 	}
 
 	if (strchr(attrstring, '=')== NULL) {
+		if (!g_str_is_ascii(attrstring)) {
+			gchar *dbstring = ldb_stack_string(&bfparser->ldb);
+			g_warning("Error in language file %s: attribute %s contains non ASCII characters\n", dbstring, attrstring);
+			attrstring = g_str_to_ascii(attrstring, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+			g_free(dbstring);
+		}
 		attrmatch = add_pattern_to_scanning_table(bfparser->st, attrstring, FALSE, TRUE, contexttag, &bfparser->ldb);
 		pattern_set_runtime_properties(bfparser->st, attrmatch,attribhighlight, 0, FALSE, FALSE,0, FALSE, FALSE);
 		match_add_autocomp_item(bfparser->st, attrmatch, NULL,attrib_autocomplete_append,attrib_autocomplete_backup_cursor, 0,NULL,0,0);
@@ -1160,6 +1173,12 @@ add_attribute_to_tag(Tbflangparsing * bfparser, const gchar *attrstring, gint co
 			g_free(dbstring);
 		}
 		tmp = g_strdup_printf("%s[ \t]*=", splitted[0]);
+		if (!g_str_is_ascii(tmp)) {
+			gchar *dbstring = ldb_stack_string(&bfparser->ldb);
+			g_warning("Error in language file %s: attribute %s contains non ASCII characters\n", dbstring,tmp);
+			tmp = g_str_to_ascii(tmp, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+			g_free(dbstring);
+		}
 		attrmatch = add_pattern_to_scanning_table(bfparser->st, tmp, TRUE, TRUE, contexttag, &bfparser->ldb);
 		g_free(tmp);
 		pattern_set_runtime_properties(bfparser->st, attrmatch,attribhighlight,startscontext,FALSE,FALSE,0,FALSE,FALSE);
@@ -1186,6 +1205,12 @@ attribute_add_value(Tbflangparsing * bfparser, gchar *string, guint16 valueconte
 	guint16 valmatchnum;
 	if (!string || string[0]=='\0') {
 		return;
+	}
+	if (!g_str_is_ascii(string)) {
+		gchar *dbstring = ldb_stack_string(&bfparser->ldb);
+		g_warning("Error in language file %s: attribute value %s contains non ASCII characters\n", dbstring,string);
+		string = g_str_to_ascii(string, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+		g_free(dbstring);
 	}
 	valmatchnum = add_pattern_to_scanning_table(bfparser->st,string,FALSE,TRUE,valuecontext, &bfparser->ldb);
 	pattern_set_runtime_properties(bfparser->st, valmatchnum,"string", -1, FALSE, FALSE,0, FALSE, FALSE);
@@ -1282,6 +1307,12 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 				}
 				xmlFree(name);
 			}
+				if (!g_str_is_ascii(attribute_name)) {
+					gchar *dbstring = ldb_stack_string(&bfparser->ldb);
+					g_warning("Error in language file %s: id %s / pattern %s contains non ASCII characters\n", dbstring,id?id:"-", attribute_name);
+					attribute_name = g_str_to_ascii(attribute_name, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+					g_free(dbstring);
+				}
 			if (values && values[0]) {
 				valuecontext = new_context(bfparser->st, 8, ">\"=' \t\n\r", NULL, FALSE, FALSE, FALSE);;
 
@@ -1452,6 +1483,13 @@ process_scanning_tag(xmlTextReaderPtr reader, Tbflangparsing * bfparser, guint16
 			gint contexttag = 0 /*, contextstring */ ;
 			gchar *tagpattern, *tmp, *reference = NULL;
 			gboolean foldable=TRUE, have_reusable_attribute_context=FALSE;
+
+			if (!g_str_is_ascii(tag)) {
+				gchar *dbstring = ldb_stack_string(&bfparser->ldb);
+				g_warning("Error in language file %s: id %s / tag %s contains non ASCII characters\n", dbstring,id?id:"-", tag);
+				tag = g_str_to_ascii(tag, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+				g_free(dbstring);
+			}
 
 			tagpattern = g_strconcat("<", tag, NULL);
 			matchnum = add_pattern_to_scanning_table(bfparser->st, tagpattern, FALSE, case_insens, context, &bfparser->ldb);
