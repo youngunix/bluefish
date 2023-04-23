@@ -32,7 +32,7 @@ def is_parsed(obj):
 	Check if specified resource is parsed by Zen Coding
 	@return: bool
 	"""
-	return obj and not isinstance(obj, types.StringTypes)
+	return obj and not isinstance(obj, str)
 
 def get_vocabulary(name):
 	"""
@@ -62,7 +62,7 @@ def has_deep_key(obj, key):
 	for v in key:
 		if hasattr(last_obj, v):
 			last_obj = getattr(last_obj, v)
-		elif last_obj.has_key(v):
+		elif v in last_obj:
 			last_obj = last_obj[v]
 		else:
 			return False

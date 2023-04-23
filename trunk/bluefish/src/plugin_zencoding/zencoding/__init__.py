@@ -1,4 +1,4 @@
-import utils
+import zencoding.utils as utils
 import re
 import os
 import imp
@@ -9,10 +9,10 @@ __imported = []
 
 def action(name=None, action_func=None):
 	"Decorator for Zen Coding actions"
-	if name == None and action_func == None:
+	if name is None and action_func is None:
 		# @zencoding.action()
 		return action_function
-	elif action_func == None:
+	elif action_func is None:
 		if(callable(name)):
 			# @zencoding.action
 			return action_function(name)
@@ -21,12 +21,12 @@ def action(name=None, action_func=None):
 			def dec(func):
 				return action(name, func)
 			return dec
-	elif name != None and action_func != None:
+	elif name is not None and action_func is not None:
 		# zencoding.action('somename', somefunc)
 		__actions[name] = action_func
 		return action_func
 	else:
-		raise "Unsupported arguments to Zen Action: (%r, %r)", (name, action_func)
+		raise ValueError("Unsupported arguments to Zen Action: (%r, %r)", (name, action_func))
 
 def action_function(func):
 	__actions[getattr(func, "_decorated_function", func).__name__] = func
@@ -51,7 +51,7 @@ def filter(name=None, filter_func=None):
 		__filters[name] = filter_func
 		return filter_func
 	else:
-		raise "Unsupported arguments to Zen Filter: (%r, %r)", (name, filter_func)
+		raise ValueError("Unsupported arguments to Zen Filter: (%r, %r)", (name, filter_func))
 
 def filter_function(func):
 	__filters[getattr(func, "_decorated_function", func).__name__] = func
@@ -88,7 +88,7 @@ def run_filters(tree, profile, filter_list):
 	
 	profile = utils.process_profile(profile)
 		
-	if isinstance(filter_list, basestring):
+	if isinstance(filter_list, str):
 		filter_list = re.split(r'[\|,]', filter_list)
 		
 	for name in filter_list:

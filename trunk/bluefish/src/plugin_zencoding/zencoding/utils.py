@@ -139,7 +139,7 @@ def pad_string(text, pad):
 	"""
 	pad_str = ''
 	result = ''
-	if isinstance(pad, basestring):
+	if isinstance(pad, str):
 		pad_str = pad
 	else:
 		pad_str = get_indentation() * pad
@@ -287,7 +287,7 @@ def rollout_tree(tree, parent=None):
 		else:
 			tag_content = child.get_paste_content()
 		
-		for j in xrange(how_many):
+		for j in range(how_many):
 			tag = ZenNode(child)
 			parent.add_child(tag)
 			tag.counter = j + 1
@@ -296,7 +296,7 @@ def rollout_tree(tree, parent=None):
 				rollout_tree(child, tag)
 				
 			if tag_content:
-				text = isinstance(tag_content, basestring) and tag_content or tag_content[j] or ''
+				text = isinstance(tag_content, str) and tag_content or tag_content[j] or ''
 				tag.paste_content(text.strip())
 					
 	return parent
@@ -415,7 +415,7 @@ def process_profile(profile):
 	Processes profile argument, returning, if possible, profile object
 	"""
 	_profile = profile
-	if isinstance(profile, basestring) and profile in profiles:
+	if isinstance(profile, str) and profile in profiles:
 		_profile = profiles[profile]
 	
 	if not _profile:
@@ -574,7 +574,7 @@ def apply_filters(tree, syntax, profile, additional_filters=None):
 	if additional_filters:
 		if additional_filters:
 			_filters += '|'
-			if isinstance(additional_filters, basestring):
+			if isinstance(additional_filters, str):
 				_filters += additional_filters
 			else:
 				_filters += '|'.join(additional_filters)
