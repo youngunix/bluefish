@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * preferences.c - the preferences code
  *
- * Copyright (C) 2002-2017 Olivier Sessink
+ * Copyright (C) 2002-2023 Olivier Sessink
  * Copyright (C) 2010-2011 James Hayward
  *
  * This program is free software; you can redistribute it and/or modify
@@ -245,6 +245,7 @@ static void preferences_apply(Tprefdialog * pd);
 void
 pref_click_column(GtkTreeViewColumn * treeviewcolumn, gpointer user_data)
 {
+	DEBUG_MSG("pref_click_column, treeviewcolumn=%p, togglebutton=%p\n",treeviewcolumn, user_data);
 	GtkToggleButton *but = GTK_TOGGLE_BUTTON(user_data);
 	GList *lst = gtk_cell_layout_get_cells(GTK_CELL_LAYOUT(treeviewcolumn));
 	if (gtk_toggle_button_get_active(but)) {
@@ -610,6 +611,7 @@ set_plugin_strarr_in_list(GtkTreeIter * iter, gchar ** strarr, Tprefdialog * pd)
 static void
 plugin_1_toggled_lcb(GtkCellRendererToggle * cellrenderertoggle, gchar * path, Tprefdialog * pd)
 {
+	DEBUG_MSG("plugin_1_toggled_lcb\n");
 	gchar *val = g_strdup(gtk_cell_renderer_toggle_get_active(cellrenderertoggle) ? "0" : "1");
 	pref_apply_change(pd->pd.lstore, 3, 2, path, val, 1);
 	g_free(val);
@@ -1109,6 +1111,7 @@ static void
 textstyle_spellcheck_changed(GtkToggleButton * togglebutton, gpointer user_data)
 {
 	Tprefdialog *pd = (Tprefdialog *) user_data;
+	DEBUG_MSG("textstyle_spellcheck_changed\n");
 	if (pd->tsd.curstrarr) {
 		if (pd->tsd.curstrarr[5])
 			g_free(pd->tsd.curstrarr[5]);
@@ -1885,6 +1888,7 @@ bflanggui_set_bflang(Tprefdialog * pd, gpointer data)
 	gchar *name;
 	Tbflang *bflang = data;
 	pd->bld.curbflang = bflang;
+	DEBUG_MSG("bflanggui_set_bflang bflang=%p\n",bflang);
 	if (bflang) {
 		name = g_strdup_printf("<b>%s</b>",bflang->name);
 		gtk_label_set_markup(GTK_LABEL(pd->bld.title), name);
@@ -2041,19 +2045,40 @@ destroy_widgets_in_freelist_lcb(gpointer child,gpointer user_data)
 }
 
 static void
+preftree_remove_current_widget(Tprefdialog *pd)
+{
+	GList *lst = gtk_container_get_children(GTK_CONTAINER(pd->fixed));
+	while (lst) {
+		if (GTK_IS_WIDGET(lst->data)) {
+			DEBUG_MSG("preftree_remove_current_widget, ref %p\n",lst->data);
+			g_object_ref(G_OBJECT(lst->data));
+			gtk_container_remove(GTK_CONTAINER(pd->fixed), lst->data);
+		}
+		lst = g_list_next(lst);
+	}
+	pd->curchild = NULL;
+}
+
+static void
 preferences_destroy_lcb(GtkWidget * widget, Tprefdialog * pd)
 {
 	GtkTreeSelection *select;
 	DEBUG_MSG("preferences_destroy_lcb, started\n");
+	preftree_remove_current_widget(pd);	
+	DEBUG_MSG("preferences_destroy_lcb, free_arraylist textstyles %p\n", pd->lists[textstyles]);
 	free_arraylist(pd->lists[textstyles]);
+	pd->lists[textstyles] = NULL;
+	DEBUG_MSG("preferences_destroy_lcb, free_arraylist highlight_styles %p\n", pd->lists[highlight_styles]);
 	free_arraylist(pd->lists[highlight_styles]);
-	free_arraylist(pd->lists[bflang_options]);
 	pd->lists[highlight_styles] = NULL;
+	DEBUG_MSG("preferences_destroy_lcb, free_arraylist bflang_options %p\n", pd->lists[bflang_options]);
+	free_arraylist(pd->lists[bflang_options]);
+	pd->lists[bflang_options] = NULL;
 	free_arraylist(pd->lists[extcommands]);
-	free_arraylist(pd->lists[extfilters]);
-	free_arraylist(pd->lists[extoutputbox]);
 	pd->lists[extcommands] = NULL;
+	free_arraylist(pd->lists[extfilters]);
 	pd->lists[extfilters] = NULL;
+	free_arraylist(pd->lists[extoutputbox]);
 	pd->lists[extoutputbox] = NULL;
 #ifdef OLDTEMPLATES
 	free_arraylist(pd->lists[templates]);
@@ -2071,6 +2096,11 @@ preferences_destroy_lcb(GtkWidget * widget, Tprefdialog * pd)
 	/*  g_signal_handlers_destroy(G_OBJECT(GTK_COMBO(pd->ed.combo)->list)); */
 	select = gtk_tree_view_get_selection(GTK_TREE_VIEW(pd->ed.lview));
 	g_signal_handlers_destroy(G_OBJECT(select));
+	select = gtk_tree_view_get_selection(GTK_TREE_VIEW(pd->od.lview));
+	g_signal_handlers_destroy(G_OBJECT(select));
+	select = gtk_tree_view_get_selection(GTK_TREE_VIEW(pd->tsd.lview));
+	g_signal_handlers_destroy(G_OBJECT(select));
+	
 	lingua_cleanup();
 
 	DEBUG_MSG("preferences_destroy_lcb, about to destroy all widgets in the model\n");
@@ -2078,7 +2108,9 @@ preferences_destroy_lcb(GtkWidget * widget, Tprefdialog * pd)
 
 	DEBUG_MSG("preferences_destroy_lcb, about to destroy the window\n");
 	window_destroy(pd->win);
+	DEBUG_MSG("preferences_destroy_lcb, window destroyed, set main_v->prefdialog (%p) to NULL\n", main_v->prefdialog);
 	main_v->prefdialog = NULL;
+	DEBUG_MSG("preferences_destroy_lcb, g_free(pd) at %p\n", pd);
 	g_free(pd);
 }
 
@@ -2336,18 +2368,8 @@ preftree_cursor_changed_cb(GtkTreeView * treeview, gpointer user_data)
 	GtkTreePath *path;
 	GtkTreeIter iter;
 	gpointer child;
-	GList *lst;
-
-	lst = gtk_container_get_children(GTK_CONTAINER(pd->fixed));
-	while (lst) {
-		if (GTK_IS_WIDGET(lst->data)) {
-			DEBUG_MSG("preftree_cursor_changed_cb, ref %p\n",lst->data);
-			g_object_ref(G_OBJECT(lst->data));
-			gtk_container_remove(GTK_CONTAINER(pd->fixed), lst->data);
-		}
-		lst = g_list_next(lst);
-	}
-	pd->curchild = NULL;
+	DEBUG_MSG("preftree_cursor_changed_cb, treeview=%p, pd=%p\n",treeview,pd);
+	preftree_remove_current_widget(pd);
 
 	gtk_tree_view_get_cursor(treeview, &path, NULL);
 	if (path) {
