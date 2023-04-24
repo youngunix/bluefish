@@ -6,6 +6,7 @@
 <url type="homepage">http://bluefish.openoffice.nl/</url>
 <metadata_licence>CC0-1.0</metadata_licence>
 <project_license>GPL-2.0+</project_license>
+<developer_name>Olivier Sessink</developer_name>
 <description>
 <_p>Bluefish is a powerful editor targeted towards programmers and web developers, with many options to write websites, scripts and programming code. Bluefish supports many programming and markup languages and has many features, but is still a very fast and lightweight application.</_p>
 <_p>A selection of the features:</_p>
@@ -27,11 +28,7 @@
 <launchable type="desktop-id">bluefish.desktop</launchable>
 
 <categories>
-    <category>Development</category>
-    <category>WebDevelopment</category>
-	 <category>IDE</category>
-	<category>Utility</category>
-	 <category>TextEditor</category>
+<category>Development</category><category>WebDevelopment</category><category>IDE</category><category>Utility</category><category>TextEditor</category>
 </categories>
 
 <screenshots>
