@@ -918,6 +918,7 @@ paint_margin(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible, G
 	PangoLayout *panlay;
 	gpointer bmark;
 	gint bmarkline = -1;
+	guint startvisible_offset;
 
 #if GTK_CHECK_VERSION(3,0,0)
 	GtkStyleContext *cntxt;
@@ -950,7 +951,7 @@ paint_margin(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible, G
 		gtk_text_buffer_get_iter_at_mark(buffer, &cursorit, gtk_text_buffer_get_insert(buffer));
 		cursor_line = gtk_text_iter_get_line(&cursorit);
 	}
-
+	startvisible_offset = gtk_text_iter_get_offset(startvisible);
 	/* to see how many blocks are active here */
 	if (G_UNLIKELY(gtk_text_iter_is_start(startvisible)
 				   && (g_sequence_get_length(master->scancache.foundcaches) != 0))) {
@@ -961,20 +962,20 @@ paint_margin(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible, G
 		num_blocks = 0;
 		DBG_MARGIN("EXPOSE: start at begin, set num_blocks %d, found=%p\n", num_blocks, found);
 	} else {
-		found = get_foundcache_at_offset(master, gtk_text_iter_get_offset(startvisible), &siter);
+		found = get_foundcache_at_offset(master, startvisible_offset, &siter);
 		if (found) {
 			num_blocks = get_num_foldable_blocks(found);
 			DBG_MARGIN("EXPOSE: got %d foldable blocks at found %p at offset %d\n", num_blocks, found,
 					   found->charoffset_o);
 		} else {
 			DBG_MARGIN("EXPOSE: no found for position %d, siter=%p\n",
-					   gtk_text_iter_get_offset(startvisible), siter);
+					   startvisible_offset, siter);
 			num_blocks = 0;
 		}
 	}
 	/* in the case that the *first* found is relevant, we don't need
 	   the 'next' found */
-	if (!found || found->charoffset_o < gtk_text_iter_get_offset(startvisible)) {
+	if (!found || found->charoffset_o < startvisible_offset) {
 		DBG_MARGIN("get next found..\n");
 		if (siter)
 			found = get_foundcache_next(master, &siter);
@@ -987,7 +988,7 @@ paint_margin(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible, G
 
 	folded = gtk_text_tag_table_lookup(langmgr_get_tagtable(), "_folded_");
 	if (master->showsymbols) {
-		bmarkline = bmark_margin_get_initial_bookmark((Tdocument *) master->doc, startvisible, &bmark);
+		bmarkline = bmark_margin_get_initial_bookmark((Tdocument *) master->doc, startvisible_offset, &bmark);
 	}
 
 	for (i = gtk_text_iter_get_line(startvisible); i <= gtk_text_iter_get_line(endvisible); i++) {
