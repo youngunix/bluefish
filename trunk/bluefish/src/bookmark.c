@@ -2,7 +2,7 @@
  * bookmark.c - bookmarks
  *
  * Copyright (C) 2003 Oskar Swida
- * modifications (C) 2004-2013 Olivier Sessink
+ * modifications (C) 2004-2023 Olivier Sessink
  * modifications (C) 2011-2012 James Hayward
  *
  * This program is free software; you can redistribute it and/or modify
@@ -20,6 +20,7 @@
  */
 /*#define DEBUG*/
 /*#define BMARKREF*/
+#define SUPPRESS_DRAWING_CALLS /* reduces the output caused by drawing the margin of the document */
 
 #include <gtk/gtk.h>
 #include <fcntl.h>
@@ -247,6 +248,9 @@ bmark_update_treestore_name(Tbfwin * bfwin)
 	}
 }
 
+/* 
+this function is called when drawing the margin in the editor widget, which is *a lot*
+*/
 static void
 bmark_update_offset_from_textmark(Tbmark * b)
 {
@@ -260,7 +264,9 @@ bmark_update_offset_from_textmark(Tbmark * b)
 		gtk_text_buffer_get_iter_at_offset(b->doc->buffer, &it2, b->offset + len);
 		g_free(b->text);
 		b->text = gtk_text_buffer_get_text(b->doc->buffer, &it, &it2, FALSE);
+#ifndef SUPPRESS_DRAWING_CALLS
 		DEBUG_MSG("bmark_update_offset_from_textmark, text=%s\n", b->text);
+#endif
 	}
 }
 
@@ -282,6 +288,9 @@ bmark_find_bookmark_before_offset(Tbfwin * bfwin, guint offset, GtkTreeIter * pa
 	gboolean cont;
 	GtkTreeIter iter;
 	Tbmark *b1 = NULL, *b2;
+#ifndef SUPPRESS_DRAWING_CALLS
+	DEBUG_MSG("bmark_find_bookmark_before_offset, started\n");
+#endif
 	cont =
 		gtk_tree_model_iter_children(GTK_TREE_MODEL(BMARKDATA(bfwin->bmarkdata)->bookmarkstore), &iter,
 									 parent);
@@ -1051,6 +1060,7 @@ static void
 bmark_row_activated(GtkTreeView * tree, GtkTreePath * path, GtkTreeViewColumn * column, Tbfwin * bfwin)
 {
 	GtkTreeIter iter;
+	DEBUG_MSG("bmark_row_activated, started\n");
 	gtk_tree_model_get_iter(GTK_TREE_MODEL(bfwin->bmarkfilter), &iter, path);
 	if (gtk_tree_path_get_depth(path) == 2) {
 		bmark_activate(bfwin, get_bmark_at_iter(GTK_TREE_MODEL(bfwin->bmarkfilter), &iter), FALSE);
@@ -1063,6 +1073,7 @@ bmark_event_mouseclick(GtkWidget * widget, GdkEventButton * event, Tbfwin * bfwi
 {
 	GtkTreePath *path;
 	gboolean show_bmark_specific = FALSE, show_file_specific = FALSE;
+	DEBUG_MSG("bmark_event_mouseclick, started\n");
 	if (gtk_tree_view_get_path_at_pos
 		(GTK_TREE_VIEW(bfwin->bmark), event->x, event->y, &path, NULL, NULL, NULL)) {
 		if (path) {
@@ -1071,12 +1082,12 @@ bmark_event_mouseclick(GtkWidget * widget, GdkEventButton * event, Tbfwin * bfwi
 			if (depth == 2) {
 				show_bmark_specific = TRUE;
 				show_file_specific = TRUE;
-				if (event->button == 1) {
+/*				if (event->button == 1) {
 					GtkTreeIter iter;
 					gtk_tree_model_get_iter(GTK_TREE_MODEL(bfwin->bmarkfilter), &iter, path);
 					bmark_activate(bfwin, get_bmark_at_iter(GTK_TREE_MODEL(bfwin->bmarkfilter), &iter),
 								   FALSE);
-				}
+				}*/
 			} else if (depth == 1) {
 				show_file_specific = TRUE;
 			}
@@ -1267,6 +1278,23 @@ bmark_search_changed(GtkEditable * editable, gpointer user_data)
 	gtk_tree_model_filter_refilter(bfwin->bmarkfilter);
 }
 
+static void
+bmark_cursor_changed_cb(GtkTreeView * treeview, gpointer user_data)
+{
+	Tbfwin *bfwin = user_data;
+	DEBUG_MSG("bmark_cursor_changed_cb, started\n");
+	GtkTreePath *path;
+	gtk_tree_view_get_cursor(treeview, &path, NULL);
+	if (path) {
+		if (gtk_tree_path_get_depth(path) == 2) {
+			GtkTreeIter iter;
+			gtk_tree_model_get_iter(GTK_TREE_MODEL(bfwin->bmarkfilter), &iter, path);
+			bmark_activate(bfwin, get_bmark_at_iter(GTK_TREE_MODEL(bfwin->bmarkfilter), &iter), FALSE);
+		}
+		gtk_tree_path_free(path);
+	}
+}
+
 /* Initialize bookmarks gui for window */
 GtkWidget *
 bmark_gui(Tbfwin * bfwin)
@@ -1331,6 +1359,7 @@ bmark_gui(Tbfwin * bfwin)
 	gtk_box_pack_start(GTK_BOX(vbox), scroll, TRUE, TRUE, 0);
 	g_signal_connect(G_OBJECT(bfwin->bmark), "button-press-event", G_CALLBACK(bmark_event_mouseclick), bfwin);
 	g_signal_connect(G_OBJECT(bfwin->bmark), "row-activated", G_CALLBACK(bmark_row_activated), bfwin);
+	g_signal_connect(G_OBJECT(bfwin->bmark), "cursor-changed", G_CALLBACK(bmark_cursor_changed_cb), bfwin);
 	gtk_tree_view_expand_all(bfwin->bmark);
 	/*{
 	   GtkTreeSelection* selection = gtk_tree_view_get_selection(GTK_TREE_VIEW(bfwin->bmark));
@@ -1807,6 +1836,7 @@ bmark_margin_get_initial_bookmark(Tdocument * doc, GtkTextIter * fromit, gpointe
 	if (!doc->bmark_parent) {
 		return -1;
 	}
+	/*DEBUG_MSG("bmark_margin_get_initial_bookmark, started\n");*/
 	offset = gtk_text_iter_get_offset(fromit);
 	*bmark = bmark_find_bookmark_before_offset(BFWIN(doc->bfwin), offset, doc->bmark_parent);	/* returns NULL if there is no existing bookmark *before* offset */
 	if (!*bmark) {
@@ -1936,6 +1966,10 @@ bmark_add_current_doc_backend(Tbfwin * bfwin, const gchar * name, gint offset, g
 /*
 can we make this function faster? when adding bookmarks from a search this function uses
 a lot of time, perhaps that can be improved
+
+
+this function is also called from bmark_margin_get_initial_bookmark() during drawing 
+of the editor widget, which is called very often
 */
 static Tbmark *
 bmark_get_bmark_at_iter(Tdocument * doc, GtkTextIter * iter, gint offset)
@@ -1948,6 +1982,9 @@ bmark_get_bmark_at_iter(Tdocument * doc, GtkTextIter * iter, gint offset)
 	eit = sit;
 	gtk_text_iter_set_line_offset(&sit, 0);
 	gtk_text_iter_forward_to_line_end(&eit);
+#ifndef SUPPRESS_DRAWING_CALLS 
+	DEBUG_MSG("bmark_get_bmark_at_iter, iter=%p, offset=%d\n",iter,offset);
+#endif
 	/* check for existing bookmark in this place */
 	if (DOCUMENT(doc)->bmark_parent) {
 		GtkTextIter testit;
