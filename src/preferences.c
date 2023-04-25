@@ -2064,14 +2064,10 @@ preferences_destroy_lcb(GtkWidget * widget, Tprefdialog * pd)
 {
 	GtkTreeSelection *select;
 	DEBUG_MSG("preferences_destroy_lcb, started\n");
-	preftree_remove_current_widget(pd);	
-	DEBUG_MSG("preferences_destroy_lcb, free_arraylist textstyles %p\n", pd->lists[textstyles]);
 	free_arraylist(pd->lists[textstyles]);
 	pd->lists[textstyles] = NULL;
-	DEBUG_MSG("preferences_destroy_lcb, free_arraylist highlight_styles %p\n", pd->lists[highlight_styles]);
 	free_arraylist(pd->lists[highlight_styles]);
 	pd->lists[highlight_styles] = NULL;
-	DEBUG_MSG("preferences_destroy_lcb, free_arraylist bflang_options %p\n", pd->lists[bflang_options]);
 	free_arraylist(pd->lists[bflang_options]);
 	pd->lists[bflang_options] = NULL;
 	free_arraylist(pd->lists[extcommands]);
@@ -2106,8 +2102,6 @@ preferences_destroy_lcb(GtkWidget * widget, Tprefdialog * pd)
 	DEBUG_MSG("preferences_destroy_lcb, about to destroy all widgets in the model\n");
 	g_slist_foreach(pd->widgetfreelist,destroy_widgets_in_freelist_lcb,pd);
 
-	DEBUG_MSG("preferences_destroy_lcb, about to destroy the window\n");
-	window_destroy(pd->win);
 	DEBUG_MSG("preferences_destroy_lcb, window destroyed, set main_v->prefdialog (%p) to NULL\n", main_v->prefdialog);
 	main_v->prefdialog = NULL;
 	DEBUG_MSG("preferences_destroy_lcb, g_free(pd) at %p\n", pd);
@@ -2307,7 +2301,7 @@ preferences_apply(Tprefdialog * pd)
 static void
 preferences_cancel_clicked_lcb(GtkWidget * wid, Tprefdialog * pd)
 {
-	preferences_destroy_lcb(NULL, pd);
+	gtk_widget_destroy(pd->win);
 }
 
 static void
@@ -2320,7 +2314,7 @@ static void
 preferences_ok_clicked_lcb(GtkWidget * wid, Tprefdialog * pd)
 {
 	preferences_apply(pd);
-	preferences_destroy_lcb(NULL, pd);
+	gtk_widget_destroy(pd->win);
 }
 
 static void
@@ -2473,7 +2467,7 @@ import_color_profile_clicked(GtkWidget *widget, Tprefdialog * pd)
 		return;
 	
 	tmpstr = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX_TEXT(pd->import_color_combo));
-	preferences_destroy_lcb(NULL, pd);
+	gtk_widget_destroy(pd->win);
 	
 	
 	if (g_strcmp0(tmpstr, _("Choose file"))==0) {
