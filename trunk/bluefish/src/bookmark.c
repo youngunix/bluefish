@@ -277,6 +277,10 @@ bmark_update_offset_from_textmark(Tbmark * b)
  * find the bookmarks we have to check to detect double bookmarks
  * at the same line.
  *
+ * this function is also called to find the first bookmark where the editor
+ * window needs to draw a bookmark in the margin, so this function is called
+ * a lot!
+ *
  * returns the bookmark closest before 'offset', or the bookmark exactly at 'offset'
  *
  * returns NULL if we have to append this as first child to the parent
@@ -1826,18 +1830,23 @@ bmark_margin_get_next_bookmark(Tdocument * doc, gpointer * bmark)
 	return gtk_text_iter_get_line(&textit);
 }
 
-/* this is called by the editor widget to show bookmarks in the left margin.
- returns a line number for the Tbmark that bmark points to, or -1 if there is no bmark */
+/*
+this is called by the editor widget to show bookmarks in the left margin.
+it is called every time the margin is drawn to find the first line that has a bookmark 
+for the visible area that has to be drawn, from there on the editor widget will call 
+bmark_margin_get_next_bookmark() to paint the next bookmark in the margin
+
+returns a line number for the first Tbmark that this document has in the visible area
+of the margin that has to be drawn, or -1 if there is no bmark 
+*/
 gint
-bmark_margin_get_initial_bookmark(Tdocument * doc, GtkTextIter * fromit, gpointer * bmark)
+bmark_margin_get_initial_bookmark(Tdocument * doc, guint offset, gpointer * bmark)
 {
-	guint offset;
 	GtkTextIter textit;
 	if (!doc->bmark_parent) {
 		return -1;
 	}
 	/*DEBUG_MSG("bmark_margin_get_initial_bookmark, started\n");*/
-	offset = gtk_text_iter_get_offset(fromit);
 	*bmark = bmark_find_bookmark_before_offset(BFWIN(doc->bfwin), offset, doc->bmark_parent);	/* returns NULL if there is no existing bookmark *before* offset */
 	if (!*bmark) {
 		GtkTreeIter treeit;
