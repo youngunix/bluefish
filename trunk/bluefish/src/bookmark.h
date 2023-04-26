@@ -35,7 +35,7 @@ void bmark_store_all(Tbfwin * bfwin);
 void bmark_clean_for_doc(Tdocument * doc);	/* set bookmark's doc to NULL when closing file */
 void bmark_set_for_doc(Tdocument * doc, gboolean check_positions);	/* set bookmark's doc to proper doc when opening file */
 
-gint bmark_margin_get_initial_bookmark(Tdocument * doc, guint offset, gpointer * bmark);
+gint bmark_margin_get_first_bookmark(Tdocument *doc, gpointer *bmark);
 gint bmark_margin_get_next_bookmark(Tdocument * doc, gpointer * bmark);
 
 void bmark_toggle_at_cursor(Tbfwin * bfwin);

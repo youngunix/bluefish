@@ -8,21 +8,21 @@
 <project_license>GPL-2.0+</project_license>
 <developer_name>Olivier Sessink</developer_name>
 <description>
-<_p>Bluefish is a powerful editor targeted towards programmers and web developers, with many options to write websites, scripts and programming code. Bluefish supports many programming and markup languages and has many features, but is still a very fast and lightweight application.</_p>
-<_p>A selection of the features:</_p>
+<p>Bluefish is a powerful editor targeted towards programmers and web developers, with many options to write websites, scripts and programming code. Bluefish supports many programming and markup languages and has many features, but is still a very fast and lightweight application.</p>
+<p>A selection of the features:</p>
 <ul>
-<_li>Well done syntax highlighting which for example supports languages inside languages (e.g. Javascript inside HTML inside PHP)</_li>
-<_li>All kind of powerful editor features like auto indenting and auto completion for many functions and libraries in many programming languages</_li>
-<_li>Project support</_li>
-<_li>Support for remote files over ftp, sftp, webdav, etc</_li>
-<_li>Powerful search and replace engine</_li>
-<_li>Customizable integration of external programs such as lint, make, etc</_li>
-<_li>Snippets plugin to automate often used code</_li>
-<_li>Code-aware in-line spell checking</_li>
-<_li>Zencoding or Emmet support</_li>
-<_li>Bookmarks panel</_li>
+<li>Well done syntax highlighting which for example supports languages inside languages (e.g. Javascript inside HTML inside PHP)</li>
+<li>All kind of powerful editor features like auto indenting and auto completion for many functions and libraries in many programming languages</li>
+<li>Project support</li>
+<li>Support for remote files over ftp, sftp, webdav, etc</li>
+<li>Powerful search and replace engine</li>
+<li>Customizable integration of external programs such as lint, make, etc</li>
+<li>Snippets plugin to automate often used code</li>
+<li>Code-aware in-line spell checking</li>
+<li>Zencoding or Emmet support</li>
+<li>Bookmarks panel</li>
 </ul>
-<_p>If you are an occasional coder who is in need for a simple to learn editor, or a heavy coder who dislikes heavy IDE's like eclipse or netbeans, Bluefish is your editor of choice!</_p>
+<p>If you are an occasional coder who is in need for a simple to learn editor, or a heavy coder who dislikes heavy IDE's like eclipse or netbeans, Bluefish is your editor of choice!</p>
 </description>
 
 <launchable type="desktop-id">bluefish.desktop</launchable>

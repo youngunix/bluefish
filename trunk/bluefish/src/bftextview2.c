@@ -988,7 +988,7 @@ paint_margin(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible, G
 
 	folded = gtk_text_tag_table_lookup(langmgr_get_tagtable(), "_folded_");
 	if (master->showsymbols) {
-		bmarkline = bmark_margin_get_initial_bookmark((Tdocument *) master->doc, startvisible_offset, &bmark);
+		bmarkline = bmark_margin_get_first_bookmark((Tdocument *) master->doc, &bmark);
 	}
 
 	for (i = gtk_text_iter_get_line(startvisible); i <= gtk_text_iter_get_line(endvisible); i++) {
