@@ -1829,16 +1829,32 @@ bmark_margin_get_next_bookmark(Tdocument * doc, gpointer * bmark)
 	gtk_text_buffer_get_iter_at_mark(doc->buffer, &textit, ((Tbmark *) * bmark)->mark);
 	return gtk_text_iter_get_line(&textit);
 }
-
 /*
 this is called by the editor widget to show bookmarks in the left margin.
 it is called every time the margin is drawn to find the first line that has a bookmark 
-for the visible area that has to be drawn, from there on the editor widget will call 
-bmark_margin_get_next_bookmark() to paint the next bookmark in the margin
+from there on the editor widget will call bmark_margin_get_next_bookmark() to paint 
+the next bookmark in the margin
 
-returns a line number for the first Tbmark that this document has in the visible area
-of the margin that has to be drawn, or -1 if there is no bmark 
+returns a line number for the first Tbmark that this document has, or -1 if there is no bmark 
 */
+
+gint 
+bmark_margin_get_first_bookmark(Tdocument *doc, gpointer *bmark) {
+	gboolean cont;
+	GtkTextIter textit;
+	GtkTreeIter treeit;
+	if (!doc->bmark_parent) return -1;
+	cont = gtk_tree_model_iter_children(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore),
+		&treeit, doc->bmark_parent);
+	if (!cont) {
+		return -1;
+	}
+	gtk_tree_model_get(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore), &treeit,
+					   PTR_COLUMN, bmark, -1);
+	gtk_text_buffer_get_iter_at_mark(doc->buffer, &textit, ((Tbmark *) * bmark)->mark);
+	return gtk_text_iter_get_line(&textit);
+}
+
 gint
 bmark_margin_get_initial_bookmark(Tdocument * doc, guint offset, gpointer * bmark)
 {
