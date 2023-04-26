@@ -275,13 +275,9 @@ bmark_update_offset_from_textmark(Tbmark * b)
  * find the bookmarks we have to check to detect double bookmarks
  * at the same line.
  *
- * this function is also called to find the bookmark for a tooltip when the mouse
- * moves over the margin
- *
  * returns the bookmark closest before 'offset', or the bookmark exactly at 'offset'
  *
  * returns NULL if we have to append this as first child to the parent
- *
  */
 static Tbmark *
 bmark_find_bookmark_before_offset(Tbfwin * bfwin, guint offset, GtkTreeIter * parent)
@@ -1859,6 +1855,8 @@ bmark_margin_get_first_bookmark(Tdocument *doc, gpointer *bmark) {
 	return gtk_text_iter_get_line(&textit);
 }
 
+/* bmark_margin_get_initial_bookmark
+this function is only used for the previous and the next function */
 gint
 bmark_margin_get_initial_bookmark(Tdocument * doc, guint offset, gpointer * bmark)
 {
@@ -1995,62 +1993,59 @@ bmark_add_current_doc_backend(Tbfwin * bfwin, const gchar * name, gint offset, g
 /*
 can we make this function faster? when adding bookmarks from a search this function uses
 a lot of time, perhaps that can be improved
-
-it is also used to find which tooltip to show when the mouse is over the margin
 */
 static Tbmark *
-bmark_get_bmark_at_iter(Tdocument * doc, GtkTextIter * iter, gint offset)
+bmark_get_bmark_at_offset(Tdocument * doc, gint offset)
 {
 	GtkTextIter sit, eit;
 	GtkTreeIter tmpiter;
 	gint linenum;
-	sit = *iter;
+
+	if (!DOCUMENT(doc)->bmark_parent) {	
+		return NULL;
+	}
+	gtk_text_buffer_get_iter_at_offset(doc->buffer, &sit, offset);
 	linenum = gtk_text_iter_get_line(&sit);
 	eit = sit;
 	gtk_text_iter_set_line_offset(&sit, 0);
 	gtk_text_iter_forward_to_line_end(&eit);
-	DEBUG_MSG("bmark_get_bmark_at_iter, iter=%p, offset=%d\n",iter,offset);
+	DEBUG_MSG("bmark_get_bmark_at_offset, iter=%p, offset=%d\n",iter,offset);
 	/* check for existing bookmark in this place */
-	if (DOCUMENT(doc)->bmark_parent) {
-		GtkTextIter testit;
-		Tbmark *m, *m2;
-		/* the next function is probably the slowest since it jumps through the listmodel 
-		   to find the right bookmark */
-		m = bmark_find_bookmark_before_offset(BFWIN(doc->bfwin), offset, doc->bmark_parent);
-		if (m == NULL) {
-			DEBUG_MSG("bmark_get_bmark_at_iter, m=NULL, get first child\n");
-			if (gtk_tree_model_iter_children
-				(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore), &tmpiter,
-				 doc->bmark_parent)) {
-				gtk_tree_model_get(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore),
-								   &tmpiter, PTR_COLUMN, &m2, -1);
-				gtk_text_buffer_get_iter_at_mark(doc->buffer, &testit, m2->mark);
-				if (gtk_text_iter_get_line(&testit) == linenum) {
-					return m2;
-				}
-			}
-		} else {
-			gtk_text_buffer_get_iter_at_mark(doc->buffer, &testit, m->mark);
-			DEBUG_MSG("bmark_get_bmark_at_iter, m=%p, has linenum=%d\n", m, gtk_text_iter_get_line(&testit));
+	GtkTextIter testit;
+	Tbmark *m, *m2;
+	/* the next function is probably the slowest since it jumps through the listmodel 
+	   to find the right bookmark */
+	m = bmark_find_bookmark_before_offset(BFWIN(doc->bfwin), offset, doc->bmark_parent);
+	if (m == NULL) {
+		DEBUG_MSG("bmark_get_bmark_at_offset, m=NULL, get first child\n");
+		if (gtk_tree_model_iter_children
+			(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore), &tmpiter,
+			 doc->bmark_parent)) {
+			gtk_tree_model_get(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore),
+							   &tmpiter, PTR_COLUMN, &m2, -1);
+			gtk_text_buffer_get_iter_at_mark(doc->buffer, &testit, m2->mark);
 			if (gtk_text_iter_get_line(&testit) == linenum) {
-				return m;
-			}
-			tmpiter = m->iter;
-			if (gtk_tree_model_iter_next
-				(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore), &tmpiter)) {
-				gtk_tree_model_get(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore),
-								   &tmpiter, PTR_COLUMN, &m2, -1);
-				gtk_text_buffer_get_iter_at_mark(doc->buffer, &testit, m2->mark);
-				if (gtk_text_iter_get_line(&testit) == linenum) {
-					return m2;
-				}
+				return m2;
 			}
 		}
-		DEBUG_MSG("bmark_get_bmark_at_iter, nothing found at this line, return NULL\n");
-		return NULL;
-
+	} else {
+		gtk_text_buffer_get_iter_at_mark(doc->buffer, &testit, m->mark);
+		DEBUG_MSG("bmark_get_bmark_at_offset, m=%p, has linenum=%d\n", m, gtk_text_iter_get_line(&testit));
+		if (gtk_text_iter_get_line(&testit) == linenum) {
+			return m;
+		}
+		tmpiter = m->iter;
+		if (gtk_tree_model_iter_next
+			(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore), &tmpiter)) {
+			gtk_tree_model_get(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore),
+							   &tmpiter, PTR_COLUMN, &m2, -1);
+			gtk_text_buffer_get_iter_at_mark(doc->buffer, &testit, m2->mark);
+			if (gtk_text_iter_get_line(&testit) == linenum) {
+				return m2;
+			}
+		}
 	}
-	DEBUG_MSG("bmark_get_bmark_at_iter, no existing bookmark found, return NULL\n");
+	DEBUG_MSG("bmark_get_bmark_at_offset, nothing found at this line, return NULL\n");
 	return NULL;
 }
 
@@ -2078,14 +2073,6 @@ bmark_get_bmark_at_line(Tdocument * doc, guint line)
 	return NULL;
 }
 
-static Tbmark *
-bmark_get_bmark_at_offset(Tdocument * doc, gint offset)
-{
-	GtkTextIter iter;
-	DEBUG_MSG("bmark_get_bmark_at_offset %d\n", offset);
-	gtk_text_buffer_get_iter_at_offset(doc->buffer, &iter, offset);
-	return bmark_get_bmark_at_iter(doc, &iter, offset);
-}
 
 /**
  * bmark_add_extern
