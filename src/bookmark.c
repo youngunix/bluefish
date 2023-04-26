@@ -264,9 +264,7 @@ bmark_update_offset_from_textmark(Tbmark * b)
 		gtk_text_buffer_get_iter_at_offset(b->doc->buffer, &it2, b->offset + len);
 		g_free(b->text);
 		b->text = gtk_text_buffer_get_text(b->doc->buffer, &it, &it2, FALSE);
-#ifndef SUPPRESS_DRAWING_CALLS
 		DEBUG_MSG("bmark_update_offset_from_textmark, text=%s\n", b->text);
-#endif
 	}
 }
 
@@ -277,9 +275,8 @@ bmark_update_offset_from_textmark(Tbmark * b)
  * find the bookmarks we have to check to detect double bookmarks
  * at the same line.
  *
- * this function is also called to find the first bookmark where the editor
- * window needs to draw a bookmark in the margin, so this function is called
- * a lot!
+ * this function is also called to find the bookmark for a tooltip when the mouse
+ * moves over the margin
  *
  * returns the bookmark closest before 'offset', or the bookmark exactly at 'offset'
  *
@@ -292,9 +289,7 @@ bmark_find_bookmark_before_offset(Tbfwin * bfwin, guint offset, GtkTreeIter * pa
 	gboolean cont;
 	GtkTreeIter iter;
 	Tbmark *b1 = NULL, *b2;
-#ifndef SUPPRESS_DRAWING_CALLS
 	DEBUG_MSG("bmark_find_bookmark_before_offset, started\n");
-#endif
 	cont =
 		gtk_tree_model_iter_children(GTK_TREE_MODEL(BMARKDATA(bfwin->bmarkdata)->bookmarkstore), &iter,
 									 parent);
@@ -661,28 +656,31 @@ bmark_activate(Tbfwin * bfwin, Tbmark * b, gboolean select_bmark)
 		gtk_text_buffer_get_iter_at_mark(b->doc->buffer, &it, b->mark);
 		b->offset = gtk_text_iter_get_offset(&it);
 	}
-	DEBUG_MSG("bmark_activate, bmark at %p, uri at %p\n", b, b->uri);
-	DEBUG_MSG("bmark_activate, calling doc_new_from_uri with goto_offset %d\n", b->offset);
+	DEBUG_MSG("bmark_activate, bmark=%p, bmark->uri=%p, bmark->doc=%p\n", b, b->uri, b->doc);
 	if (b->doc) {
+		DEBUG_MSG("bmark_activate, calling bfwin_switch_to_document_by_pointer(%p) and doc_select_line_by_offset(%d)\n", b->doc, b->offset);
 		bfwin_switch_to_document_by_pointer(BFWIN(b->doc->bfwin), b->doc);
 		doc_select_line_by_offset(b->doc, b->offset, TRUE, TRUE);
 	} else {
+		DEBUG_MSG("bmark_activate, calling doc_new_from_uri with goto_offset %d\n", b->offset);
 		doc_new_from_uri(bfwin, b->uri, NULL, FALSE, FALSE, -1, b->offset, -1, TRUE, FALSE);
 	}
 	/* remove selection */
 	if (b->doc) {
+		DEBUG_MSG("move selection and grab focus\n");
 		gtk_text_buffer_get_iter_at_mark(b->doc->buffer, &it, gtk_text_buffer_get_insert(b->doc->buffer));
 		gtk_text_buffer_move_mark_by_name(b->doc->buffer, "selection_bound", &it);
 		gtk_widget_grab_focus(b->doc->view);
 	} else if (bfwin->current_document) {
+		DEBUG_MSG("grab focus\n");
 		gtk_widget_grab_focus(bfwin->current_document->view);
 	}
 	if (select_bmark) {
 		GtkTreeIter fiter;
+		DEBUG_MSG("select the iter for the bmark in the treeview\n");
 		gtk_tree_model_filter_convert_child_iter_to_iter(bfwin->bmarkfilter, &fiter, &b->iter);
 		gtk_tree_selection_select_iter(gtk_tree_view_get_selection(bfwin->bmark), &fiter);
 	}
-
 }
 
 /*static void bmark_goto_selected(Tbfwin *bfwin) {
@@ -1818,6 +1816,9 @@ bmark_margin_get_next_bookmark(Tdocument * doc, gpointer * bmark)
 	gboolean cont;
 	GtkTextIter textit;
 	GtkTreeIter treeit = ((Tbmark *) * bmark)->iter;
+#ifndef SUPPRESS_DRAWING_CALLS
+	DEBUG_MSG("bmark_margin_get_next_bookmark\n");
+#endif
 	cont =
 		gtk_tree_model_iter_next(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore),
 								 &treeit);
@@ -1844,6 +1845,9 @@ bmark_margin_get_first_bookmark(Tdocument *doc, gpointer *bmark) {
 	GtkTextIter textit;
 	GtkTreeIter treeit;
 	if (!doc->bmark_parent) return -1;
+#ifndef SUPPRESS_DRAWING_CALLS
+	DEBUG_MSG("bmark_margin_get_first_bookmark\n");
+#endif
 	cont = gtk_tree_model_iter_children(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore),
 		&treeit, doc->bmark_parent);
 	if (!cont) {
@@ -1862,7 +1866,7 @@ bmark_margin_get_initial_bookmark(Tdocument * doc, guint offset, gpointer * bmar
 	if (!doc->bmark_parent) {
 		return -1;
 	}
-	/*DEBUG_MSG("bmark_margin_get_initial_bookmark, started\n");*/
+	DEBUG_MSG("bmark_margin_get_initial_bookmark, started\n");
 	*bmark = bmark_find_bookmark_before_offset(BFWIN(doc->bfwin), offset, doc->bmark_parent);	/* returns NULL if there is no existing bookmark *before* offset */
 	if (!*bmark) {
 		GtkTreeIter treeit;
@@ -1905,7 +1909,7 @@ bmark_add_backend(Tdocument * doc, GtkTextIter * itoffset, gint offset, const gc
 	}
 
 	m->mark = gtk_text_buffer_create_mark(doc->buffer, NULL, &it, TRUE);
-	DEBUG_MSG("bmark_add_backend, mark=%p, create GtkTextMark %p\n", m, m->mark);
+	DEBUG_MSG("bmark_add_backend, Tbmark=%p, create GtkTextMark %p\n", m, m->mark);
 	m->uri = bmark_uri_from_doc(doc);
 	m->is_temp = is_temp;
 	m->text = g_strdup(text);
@@ -1992,9 +1996,7 @@ bmark_add_current_doc_backend(Tbfwin * bfwin, const gchar * name, gint offset, g
 can we make this function faster? when adding bookmarks from a search this function uses
 a lot of time, perhaps that can be improved
 
-
-this function is also called from bmark_margin_get_initial_bookmark() during drawing 
-of the editor widget, which is called very often
+it is also used to find which tooltip to show when the mouse is over the margin
 */
 static Tbmark *
 bmark_get_bmark_at_iter(Tdocument * doc, GtkTextIter * iter, gint offset)
@@ -2007,9 +2009,7 @@ bmark_get_bmark_at_iter(Tdocument * doc, GtkTextIter * iter, gint offset)
 	eit = sit;
 	gtk_text_iter_set_line_offset(&sit, 0);
 	gtk_text_iter_forward_to_line_end(&eit);
-#ifndef SUPPRESS_DRAWING_CALLS 
 	DEBUG_MSG("bmark_get_bmark_at_iter, iter=%p, offset=%d\n",iter,offset);
-#endif
 	/* check for existing bookmark in this place */
 	if (DOCUMENT(doc)->bmark_parent) {
 		GtkTextIter testit;
@@ -2055,17 +2055,34 @@ bmark_get_bmark_at_iter(Tdocument * doc, GtkTextIter * iter, gint offset)
 }
 
 static Tbmark *
-bmark_get_bmark_at_line(Tdocument * doc, gint line)
+bmark_get_bmark_at_line(Tdocument * doc, guint line)
 {
-	GtkTextIter iter;
-	gtk_text_buffer_get_iter_at_line(doc->buffer, &iter, line);
-	return bmark_get_bmark_at_iter(doc, &iter, gtk_text_iter_get_offset(&iter));
+	gboolean cont;
+	GtkTreeIter treeit;
+	GtkTextIter textit;
+	DEBUG_MSG("bmark_get_bmark_at_line, started\n");
+	cont = gtk_tree_model_iter_children(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore), &treeit,doc->bmark_parent);
+	while (cont) {
+		guint bline;
+		Tbmark *bmark;
+		gtk_tree_model_get(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore), &treeit, PTR_COLUMN, &bmark,-1);
+		gtk_text_buffer_get_iter_at_mark(doc->buffer, &textit, bmark->mark);
+		bline = gtk_text_iter_get_line(&textit);
+		if (bline == line) {
+			return bmark;
+		} else if (bline > line) {
+			return NULL;
+		}
+		cont = gtk_tree_model_iter_next(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore), &treeit);
+	}
+	return NULL;
 }
 
 static Tbmark *
 bmark_get_bmark_at_offset(Tdocument * doc, gint offset)
 {
 	GtkTextIter iter;
+	DEBUG_MSG("bmark_get_bmark_at_offset %d\n", offset);
 	gtk_text_buffer_get_iter_at_offset(doc->buffer, &iter, offset);
 	return bmark_get_bmark_at_iter(doc, &iter, offset);
 }
@@ -2152,6 +2169,7 @@ gchar *
 bmark_get_tooltip_for_line(Tdocument * doc, gint line)
 {
 	Tbmark *bmark;
+	DEBUG_MSG("bmark_get_tooltip_for_line %d\n",line);
 	bmark = bmark_get_bmark_at_line(doc, line);
 	if (!bmark || !bmark->text)
 		return NULL;
@@ -2162,21 +2180,6 @@ bmark_get_tooltip_for_line(Tdocument * doc, gint line)
 	return g_markup_escape_text(bmark->text, -1);
 }
 
-
-/*gchar *
-bmark_get_tooltip_for_line(Tdocument *doc, gint line)
-{
-	Tbmark *bmark;
-	bmark = bmark_get_bmark_at_line(doc, line);
-	if (!bmark || !bmark->text)
-		return NULL;
-	if (bmark->text && bmark->name) 
-		return g_strconcat(bmark->name," ", bmark->text, NULL);
-	if (bmark->name)
-		return g_strdup(bmark->name);
-	return g_strdup(bmark->text);
-}
-*/
 void
 bmark_del_at_bevent(Tdocument * doc)
 {
