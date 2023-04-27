@@ -2060,6 +2060,7 @@ bmark_get_bmark_at_line(Tdocument * doc, guint line)
 	GtkTreeIter treeit;
 	GtkTextIter textit;
 	DEBUG_MSG("bmark_get_bmark_at_line, started\n");
+	if (!doc->bmark_parent) return NULL;
 	cont = gtk_tree_model_iter_children(GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore), &treeit,doc->bmark_parent);
 	while (cont) {
 		guint bline;
@@ -2095,14 +2096,12 @@ bmark_add_extern(Tdocument * doc, gint offset, const gchar * name, const gchar *
 	if (!doc)
 		return;
 	DEBUG_MSG("adding bookmark at offset %d with name %s\n", offset, name);	/* dummy */
-	if (!bmark_get_bmark_at_offset(doc, offset)) {
-		if (text) {
-			bmark_add_backend(doc, NULL, offset, (name) ? name : "", text, is_temp);
-		} else {
-			gchar *tmp = bmark_text_for_offset(doc, NULL, offset);
-			bmark_add_backend(doc, NULL, offset, (name) ? name : "", tmp, is_temp);
-			g_free(tmp);
-		}
+	if (text) {
+		bmark_add_backend(doc, NULL, offset, (name) ? name : "", text, is_temp);
+	} else {
+		gchar *tmp = bmark_text_for_offset(doc, NULL, offset);
+		bmark_add_backend(doc, NULL, offset, (name) ? name : "", tmp, is_temp);
+		g_free(tmp);
 	}
 }
 
