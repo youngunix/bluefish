@@ -139,7 +139,7 @@ autogen_if_missing() {
 ## link/copy the necessary files to our source to prepare for a build
 autogen() {
 	$LIBTOOLIZE $DEBUG -f $COPYOPTION
-	autopoint
+	autopoint --force
 	#$INTLTOOLIZE $DEBUG -f $COPYOPTION
 	prepare_gettext
 	$ACLOCAL $ACLOCAL_OPT --force $VERBOSE
