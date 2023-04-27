@@ -70,6 +70,7 @@ enum {
 	leave_to_window_manager,
 	restore_dimensions,
 	left_panel_left,
+	restore_search_scope,
 	hide_bars_on_fullscreen,
 	cursor_size,
 	highlight_cursor,
@@ -2192,6 +2193,7 @@ preferences_apply(Tprefdialog * pd)
 	main_v->props.document_tabposition =
 		gtk_combo_box_get_active(GTK_COMBO_BOX(pd->prefs[document_tabposition]));
 	integer_apply(&main_v->props.switch_tabs_by_altx, pd->prefs[switch_tabs_by_altx], TRUE);
+	integer_apply(&main_v->props.restore_search_scope, pd->prefs[restore_search_scope], TRUE);
 	integer_apply(&main_v->props.hide_bars_on_fullscreen, pd->prefs[hide_bars_on_fullscreen], TRUE);
 	main_v->props.leftpanel_tabposition =
 		gtk_combo_box_get_active(GTK_COMBO_BOX(pd->prefs[leftpanel_tabposition]));
@@ -2935,7 +2937,7 @@ preferences_dialog_new(Tbfwin *bfwin)
 	frame = gtk_frame_new(NULL);
 	gtk_frame_set_shadow_type(GTK_FRAME(frame), GTK_SHADOW_IN);
 	vbox1 = gtk_vbox_new(FALSE, 12);
-	gtk_container_set_border_width(GTK_CONTAINER(vbox1), 6);
+	gtk_container_set_border_width(GTK_CONTAINER(vbox1), 5);
 	gtk_container_add(GTK_CONTAINER(frame), vbox1);
 
 	gtk_tree_store_append(pd->nstore, &iter, NULL);
@@ -2968,6 +2970,9 @@ preferences_dialog_new(Tbfwin *bfwin)
 	dialog_mnemonic_label_in_table(_("Sidebar tab _position:"), pd->prefs[leftpanel_tabposition], table, 0, 1, 3,4);
 
 	vbox2 = dialog_vbox_labeled(_("<b>Misc</b>"), vbox1);
+	pd->prefs[restore_search_scope] =
+		dialog_check_button_new(_("Restore search scope from session or project"), main_v->props.restore_search_scope);
+	gtk_box_pack_start(GTK_BOX(vbox2), pd->prefs[restore_search_scope], FALSE, FALSE, 0);
 	pd->prefs[hide_bars_on_fullscreen] =
 		dialog_check_button_new(_("Hide toolbars on full-screen"), main_v->props.hide_bars_on_fullscreen);
 	gtk_box_pack_start(GTK_BOX(vbox2), pd->prefs[hide_bars_on_fullscreen], FALSE, FALSE, 0);
