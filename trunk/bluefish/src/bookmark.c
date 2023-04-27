@@ -278,6 +278,10 @@ bmark_update_offset_from_textmark(Tbmark * b)
  * returns the bookmark closest before 'offset', or the bookmark exactly at 'offset'
  *
  * returns NULL if we have to append this as first child to the parent
+ *
+ * when adings lots (like 1000) bookmarks from the search dialog, this function
+ * uses a considerable amount of time 
+ *
  */
 static Tbmark *
 bmark_find_bookmark_before_offset(Tbfwin * bfwin, guint offset, GtkTreeIter * parent)
@@ -2009,7 +2013,7 @@ bmark_get_bmark_at_offset(Tdocument * doc, gint offset)
 	eit = sit;
 	gtk_text_iter_set_line_offset(&sit, 0);
 	gtk_text_iter_forward_to_line_end(&eit);
-	DEBUG_MSG("bmark_get_bmark_at_offset, iter=%p, offset=%d\n",iter,offset);
+	DEBUG_MSG("bmark_get_bmark_at_offset, offset=%d\n",offset);
 	/* check for existing bookmark in this place */
 	GtkTextIter testit;
 	Tbmark *m, *m2;
