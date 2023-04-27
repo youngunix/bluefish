@@ -309,6 +309,7 @@ typedef struct {
 	gint leave_to_window_manager;	/* don't set any dimensions, leave all to window manager */
 	gint restore_dimensions;	/* use the dimensions as used the previous run */
 	gint left_panel_left;		/* 1 = left, 0 = right */
+	gint restore_search_scope;
 	gint hide_bars_on_fullscreen;
 	gint cursor_size;
 	gint highlight_cursor;
