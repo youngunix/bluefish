@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * compatibility.h
  *
- * Copyright (C) 2014 Olivier Sessink
+ * Copyright (C) 2014-2023 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,6 +30,10 @@ void g_list_free_full(GList *list,GDestroyNotify free_func);
 
 #ifndef HAVE_STRCASESTR
 char *strcasestr(char *a, char *b);
+#endif
+
+#if !GLIB_CHECK_VERSION(2,40,0)
+gboolean g_str_is_ascii (const gchar *str);
 #endif
 
 /* Avoid lots of warnings from API depreciated in GTK 3.0. -Wdeprecated-declarations */

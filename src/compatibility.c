@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * compatibility.c
  *
- * Copyright (C) 2014 Olivier Sessink
+ * Copyright (C) 2014-2023 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -43,3 +43,16 @@ char *strcasestr(char *a, char *b)
 	return(NULL);
 }
 #endif
+
+#if !GLIB_CHECK_VERSION(2,40,0)
+gboolean
+g_str_is_ascii(const gchar *str)
+{
+	gsize i;
+	for (i = 0; str[i]; i++)
+	if (str[i] & 0x80)
+		return FALSE;
+	return TRUE;
+}
+#endif
+ 
