@@ -60,9 +60,9 @@ g_str_to_ascii_minimal(const gchar *pattern)
 {
 	gsize i=0, j=0;
 	gchar *retval = g_malloc(strlen(pattern));
-	while(str[i]) {
-		if (str[i] & 0x80)
-			retval[j]=str[i];
+	while(pattern[i]) {
+		if (pattern[i] & 0x80)
+			retval[j]=pattern[i];
 			j++;
 		i++;
 	}

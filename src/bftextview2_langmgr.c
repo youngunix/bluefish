@@ -1155,7 +1155,11 @@ add_attribute_to_tag(Tbflangparsing * bfparser, const gchar *attrstring, gint co
 		if (!g_str_is_ascii(attrstring)) {
 			gchar *dbstring = ldb_stack_string(&bfparser->ldb);
 			g_warning("Error in language file %s: attribute %s contains non ASCII characters\n", dbstring, attrstring);
-			attrstring = g_str_to_ascii(attrstring, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+#if GLIB_CHECK_VERSION(2,40,0)
+				attrstring = g_str_to_ascii(attrsting, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+#else
+				attrstring = g_str_to_ascii_minimal(attrstring);
+#endif
 			g_free(dbstring);
 		}
 		attrmatch = add_pattern_to_scanning_table(bfparser->st, attrstring, FALSE, TRUE, contexttag, &bfparser->ldb);
@@ -1180,7 +1184,11 @@ add_attribute_to_tag(Tbflangparsing * bfparser, const gchar *attrstring, gint co
 		if (!g_str_is_ascii(tmp)) {
 			gchar *dbstring = ldb_stack_string(&bfparser->ldb);
 			g_warning("Error in language file %s: attribute %s contains non ASCII characters\n", dbstring,tmp);
-			tmp = g_str_to_ascii(tmp, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+#if GLIB_CHECK_VERSION(2,40,0)
+				tmp = g_str_to_ascii(tmp, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+#else
+				tmp = g_str_to_ascii_minimal(tmp);
+#endif
 			g_free(dbstring);
 		}
 		attrmatch = add_pattern_to_scanning_table(bfparser->st, tmp, TRUE, TRUE, contexttag, &bfparser->ldb);
@@ -1213,7 +1221,11 @@ attribute_add_value(Tbflangparsing * bfparser, gchar *string, guint16 valueconte
 	if (!g_str_is_ascii(string)) {
 		gchar *dbstring = ldb_stack_string(&bfparser->ldb);
 		g_warning("Error in language file %s: attribute value %s contains non ASCII characters\n", dbstring,string);
-		string = g_str_to_ascii(string, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+#if GLIB_CHECK_VERSION(2,40,0)
+				string = g_str_to_ascii(string, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+#else
+				string = g_str_to_ascii_minimal(string);
+#endif
 		g_free(dbstring);
 	}
 	valmatchnum = add_pattern_to_scanning_table(bfparser->st,string,FALSE,TRUE,valuecontext, &bfparser->ldb);
@@ -1314,7 +1326,11 @@ process_scanning_attribute(xmlTextReaderPtr reader, Tbflangparsing * bfparser, g
 				if (!g_str_is_ascii(attribute_name)) {
 					gchar *dbstring = ldb_stack_string(&bfparser->ldb);
 					g_warning("Error in language file %s: id %s / pattern %s contains non ASCII characters\n", dbstring,id?id:"-", attribute_name);
-					attribute_name = g_str_to_ascii(attribute_name, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+#if GLIB_CHECK_VERSION(2,40,0)
+				attribute_name = g_str_to_ascii(attribute_name, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+#else
+				attribute_name = g_str_to_ascii_minimal(attribute_name);
+#endif
 					g_free(dbstring);
 				}
 			if (values && values[0]) {
@@ -1491,7 +1507,11 @@ process_scanning_tag(xmlTextReaderPtr reader, Tbflangparsing * bfparser, guint16
 			if (!g_str_is_ascii(tag)) {
 				gchar *dbstring = ldb_stack_string(&bfparser->ldb);
 				g_warning("Error in language file %s: id %s / tag %s contains non ASCII characters\n", dbstring,id?id:"-", tag);
+#if GLIB_CHECK_VERSION(2,40,0)
 				tag = g_str_to_ascii(tag, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+#else
+				tag = g_str_to_ascii_minimal(tag);
+#endif
 				g_free(dbstring);
 			}
 
