@@ -940,7 +940,11 @@ process_scanning_element(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gin
 			if (!g_str_is_ascii(pattern)) {
 				gchar *dbstring = ldb_stack_string(&bfparser->ldb);
 				g_warning("Error in language file %s: id %s / pattern %s contains non ASCII characters\n", dbstring,id?id:"-", pattern?pattern:"null");
+#if GLIB_CHECK_VERSION(2,40,0)
 				pattern = g_str_to_ascii(pattern, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+#else
+				pattern = g_str_to_ascii_minimal(pattern);
+#endif
 				g_free(dbstring);
 			}
 			if (ends_context) {

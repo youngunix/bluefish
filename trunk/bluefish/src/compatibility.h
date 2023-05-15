@@ -34,6 +34,7 @@ char *strcasestr(char *a, char *b);
 
 #if !GLIB_CHECK_VERSION(2,40,0)
 gboolean g_str_is_ascii (const gchar *str);
+gchar *g_str_to_ascii_minimal(const gchar *pattern);
 #endif
 
 /* Avoid lots of warnings from API depreciated in GTK 3.0. -Wdeprecated-declarations */
