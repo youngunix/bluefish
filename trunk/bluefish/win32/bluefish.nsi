@@ -43,15 +43,15 @@ ${StrRep}
 ;----------------------------------------------
 !define PRODUCT		"Bluefish"
 !define PUBLISHER	"The Bluefish Developers"
-!define HOMEPAGE	"http://bluefish.openoffice.nl/"
-!define HELPURL		"http://bluefish.openoffice.nl/manual/"
+!define HOMEPAGE	"https://bluefish.openoffice.nl/"
+!define HELPURL		"https://bluefish.openoffice.nl/manual/"
 !define PROGRAM_EXE	"${PACKAGE}.exe"
 !define UNINSTALL_EXE	"bluefish-uninst.exe"
 
 !if ${BUILD} == "2.16.6"
 	!define GTK_MIN_VERSION	"2.14.7"
 	!define GTK_VERSION	"${BUILD}"
-	!define GTK_URL		"http://downloads.sourceforge.net/project/gtk-win/GTK%2B%20Runtime%20Environment/GTK%2B%202.16"
+	!define GTK_URL		"https://downloads.sourceforge.net/project/gtk-win/GTK%2B%20Runtime%20Environment/GTK%2B%202.16"
 	!define GTK_FILENAME	"gtk2-runtime-2.16.6-2010-05-12-ash.exe"
 	!define GTK_SIZE	"27183" ; Install size in Kilobytes
 	OutFile		"${PRODUCT}-${VERSION}-classic-setup.exe"
@@ -59,14 +59,14 @@ ${StrRep}
 !else if ${BUILD} == "3.6.4"
 	!define GTK_MIN_VERSION	"3.6.0"
 	!define GTK_VERSION	"${BUILD}" 
-	!define GTK_URL		"http://www.muleslow.net/files/gtk+/packages"
+	!define GTK_URL		"https://www.muleslow.net/files/gtk+/packages"
 	!define GTK_FILENAME	"gtk+3.6.4-1_bin_full.tbz2"
 	!define GTK_SIZE	"51474" ; Install size in Kilobytes
 	OutFile		"${PRODUCT}-${VERSION}-gtk3-setup.exe"
 !else ; Default 2.24.8
 	!define GTK_MIN_VERSION	"2.22.0"
 	!define GTK_VERSION	"${BUILD}" 
-	!define GTK_URL		"http://downloads.sourceforge.net/project/gtk-win/GTK%2B%20Runtime%20Environment/GTK%2B%202.24"
+	!define GTK_URL		"https://downloads.sourceforge.net/project/gtk-win/GTK%2B%20Runtime%20Environment/GTK%2B%202.24"
 	!define GTK_FILENAME	"gtk2-runtime-2.24.8-2011-12-03-ash.exe"
 	!define GTK_SIZE	"14803" ; Install size in Kilobytes
 	OutFile		"${PRODUCT}-${VERSION}-setup.exe"
@@ -74,11 +74,11 @@ ${StrRep}
 !endif
 
 !define PYTHON_MIN_VERSION "2.7.0"
-!define PYTHON_URL "http://www.python.org/ftp/python/2.7.3"
+!define PYTHON_URL "https://www.python.org/ftp/python/2.7.3"
 !define PYTHON_FILENAME "python-2.7.3.msi"
 !define PYTHON_SIZE "15868"
 
-!define AS_DICT_URL	"http://www.muleslow.net/files/aspell/lang"
+!define AS_DICT_URL	"https://www.muleslow.net/files/aspell/lang"
 
 !define REG_USER_SET	"Software\${PRODUCT}"
 !define REG_CLASS_SET	"Software\Classes"
@@ -137,13 +137,27 @@ ShowInstDetails show
 ShowUninstDetails show
 
 
+; Mangle version for VIProductVersion
+;----------------------------------------------
+!searchreplace VERSION_NUMBERSONLY "${VERSION}" "alpha" ".0"
+!if "${VERSION_NUMBERSONLY}" == "${VERSION}"
+    !searchreplace VERSION_NUMBERSONLY "${VERSION}" "beta" ".0"
+!endif
+!if "${VERSION_NUMBERSONLY}" == "${VERSION}"
+    !searchreplace VERSION_NUMBERSONLY "${VERSION}" "rc1" ".0"
+!endif
+!if "${VERSION_NUMBERSONLY}" == "${VERSION}"
+    !searchreplace VERSION_NUMBERSONLY "${VERSION}" "rc2" ".0"
+!endif
+
+
 ; Installer version information
 ;----------------------------------------------
-VIProductVersion "2.2.12.0"
+VIProductVersion "${VERSION_NUMBERSONLY}"
 VIAddVersionKey "ProductName" "${PRODUCT}"
 VIAddVersionKey "FileVersion" "${VERSION}"
 VIAddVersionKey "ProductVersion" "${VERSION}"
-VIAddVersionKey "LegalCopyright" ""
+VIAddVersionKey "LegalCopyright" "Copyright (C) 2009-2023 The Bluefish Developers"
 VIAddVersionKey "FileDescription" "Bluefish Installer"
 
 
