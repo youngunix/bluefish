@@ -1156,7 +1156,7 @@ add_attribute_to_tag(Tbflangparsing * bfparser, const gchar *attrstring, gint co
 			gchar *dbstring = ldb_stack_string(&bfparser->ldb);
 			g_warning("Error in language file %s: attribute %s contains non ASCII characters\n", dbstring, attrstring);
 #if GLIB_CHECK_VERSION(2,40,0)
-				attrstring = g_str_to_ascii(attrsting, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
+				attrstring = g_str_to_ascii(attrstring, NULL); // this results in a memory leak, but we shouldn't get to this line if the language file is not buggy  
 #else
 				attrstring = g_str_to_ascii_minimal(attrstring);
 #endif
