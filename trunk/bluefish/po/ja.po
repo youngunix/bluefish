@@ -3,15 +3,14 @@
 # Iwasa Kazmi <kzmi@ca2.so-net.ne.jp>, 2000.
 # Ryoichi INAGAKI <ryo1@bc.wakwak.com>, 2003.
 # Timothy Joko-Veltman <tim-oss@indigopixel.com>, 2004
-# Takeshi HAMASAKI <hmatrjp@users.sourceforge.jp>, 2005-2020
+# Takeshi HAMASAKI <hmatrjp@users.sourceforge.jp>, 2005-2023
 #
-#: src/xmlstrings.h:1
 msgid ""
 msgstr ""
-"Project-Id-Version: Bluefish 2.2.11\n"
+"Project-Id-Version: Bluefish 2.2.14\n"
 "Report-Msgid-Bugs-To: olivier@bluefish.openoffice.nl\n"
 "POT-Creation-Date: 2023-03-27 22:24+0200\n"
-"PO-Revision-Date: 2020-01-13 22:40+0900\n"
+"PO-Revision-Date: 2023-05-20 21:07+0900\n"
 "Last-Translator: Takeshi Hamasaki <hmatrjp@users.sourceforge.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -19,18 +18,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: /factory/ja-po/bluefish/bluefish/po\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: desktop-data/bluefish.appdata.xml.in:4
-#, fuzzy
 msgid "Bluefish"
-msgstr "Bluefish を終了"
+msgstr "Bluefish"
 
 #: desktop-data/bluefish.appdata.xml.in:5
 msgid "Text editor with many web and software development extras"
-msgstr ""
+msgstr "ウェブサイト作成とソフトウェア開発のための機能豊富なテキストエディター"
 
 #: desktop-data/bluefish.appdata.xml.in:10
 msgid ""
@@ -39,11 +37,11 @@ msgid ""
 "code. Bluefish supports many programming and markup languages and has many "
 "features, but is still a very fast and lightweight application."
 msgstr ""
-"Bluefish は強力なエディタでプログラマ、Web開発者を対象としています。ウェブサ"
-"イト、スクリプト、プログラムコードを書くために必要な多くのオプションを持って"
-"います。Bluefish は多くのプログラミング言語、マークアップ言語をサポートし、こ"
-"れらの言語のための数多くの機能を持ちながら、速く、また軽く動作するアプリケー"
-"ションです。"
+"Bluefish は強力なエディターでプログラマ、Web開発者を対象としています。ウェブ"
+"サイト、スクリプト、プログラムコードを書くために必要な多くのオプションを持っ"
+"ています。Bluefish は多くのプログラミング言語、マークアップ言語をサポートし、"
+"これらの言語のための数多くの機能を持ちながら、速く、また軽く動作するアプリ"
+"ケーションです。"
 
 #: desktop-data/bluefish.appdata.xml.in:11
 msgid "A selection of the features:"
@@ -62,8 +60,8 @@ msgid ""
 "All kind of powerful editor features like auto indenting and auto completion "
 "for many functions and libraries in many programming languages"
 msgstr ""
-"強力なあらゆる種類のエディタとしての機能: 多くの場面でのオートインデントおよ"
-"び自動補間、プログラム言語についての参考文書"
+"強力なあらゆる種類のエディターとしての機能: 多くの場面でのオートインデントお"
+"よび自動補間、プログラム言語についての参考文書"
 
 #: desktop-data/bluefish.appdata.xml.in:15
 msgid "Project support"
@@ -103,30 +101,29 @@ msgid ""
 "or a heavy coder who dislikes heavy IDE's like eclipse or netbeans, Bluefish "
 "is your editor of choice!"
 msgstr ""
-"あなたがたまにコーディングをする人で簡単に操作を学ぶことができるエディタを必"
-"要とするなら、あるいは常にコーディングをしている人であって、Eclipse や "
+"あなたがたまにコーディングをする人で簡単に操作を学ぶことができるエディターを"
+"必要とするなら、あるいは常にコーディングをしている人であって、Eclipse や "
 "netbeans のような重いIDEを嫌っているなら、Bluefish こそがあなたの選択肢です！"
 
 #: desktop-data/bluefish.appdata.xml.in:40
 msgid "The Bluefish main window showing the application"
-msgstr ""
+msgstr "Bluefish のメインウィンドウ"
 
 #: desktop-data/bluefish.desktop.in:4 src/bluefish.c:95
 msgid "Bluefish Editor"
-msgstr "Bluefish エディタ"
+msgstr "Bluefish エディター"
 
 #: desktop-data/bluefish.desktop.in:5
 msgid "Web Development Editor"
-msgstr "ウェブ開発エディタ"
+msgstr "ウェブ開発エディター"
 
 #: desktop-data/bluefish.desktop.in:6
 msgid "programming;code;web;editor;development;html;php;python;"
-msgstr "プログラミング;コード;ウェブ;エディタ;開発;HTML;PHP;Python;"
+msgstr "プログラミング;コード;ウェブ;エディター;開発;HTML;PHP;Python;"
 
 #: desktop-data/bluefish.desktop.in:8
-#, fuzzy
 msgid "bluefish"
-msgstr "Bluefish を終了"
+msgstr "bluefish"
 
 #: src/bftextview2.c:2047
 msgid "Collapse all"
@@ -1018,7 +1015,7 @@ msgstr "プロジェクトのオプションを編集する"
 
 #: src/bfwin_uimanager.c:1096
 msgid "_Undo"
-msgstr "やり直す(_U)"
+msgstr "元に戻す(_U)"
 
 #: src/bfwin_uimanager.c:1096
 msgid "Undo"
@@ -1034,7 +1031,7 @@ msgstr "すべて元に戻す"
 
 #: src/bfwin_uimanager.c:1098
 msgid "_Redo"
-msgstr "元に戻す(_R)"
+msgstr "やり直す(_R)"
 
 #: src/bfwin_uimanager.c:1098
 msgid "Redo"
@@ -1391,9 +1388,9 @@ msgid "Do not open"
 msgstr "開きません"
 
 #: src/document.c:1398
-#, fuzzy, c-format
+#, c-format
 msgid "Ln: %d, Col: %d, Char: %d, Blocks: %d"
-msgstr " 行: %d, 列: %d, 文字: %d"
+msgstr "行: %d, 列: %d, 文字: %d, ブロック: %d"
 
 #: src/document.c:1419
 msgid " OVR"
@@ -2871,11 +2868,11 @@ msgstr "文書の初期設定"
 
 #: src/preferences.c:2561
 msgid "Editor settings"
-msgstr "エディタの設定"
+msgstr "編集のための設定"
 
 #: src/preferences.c:2564
 msgid "<b>Editor settings</b>"
-msgstr "<b>エディタの設定</b>"
+msgstr "<b>編集のための設定</b>"
 
 #: src/preferences.c:2569
 msgid "Smart auto indentin_g on brackets"
@@ -2959,7 +2956,7 @@ msgstr "自動補完ポップアップウィンドウにリファレンスを表
 
 #: src/preferences.c:2655
 msgid "Show references if mouse is over text editor"
-msgstr "マウスカーソルがテキストエディタに重なったらリファレンスを表示"
+msgstr "マウスカーソルがテキストエディターに重なったらリファレンスを表示"
 
 #: src/preferences.c:2664 src/preferences.c:3071
 msgid "Font & Colors"
@@ -2971,7 +2968,7 @@ msgstr "<b>フォント と カーソル</b>"
 
 #: src/preferences.c:2674
 msgid "_Editor font:"
-msgstr "エディタのフォント(_E):"
+msgstr "編集部分のフォント(_E):"
 
 #: src/preferences.c:2682
 msgid "Cursor / font size ratio (%):"
@@ -3053,7 +3050,7 @@ msgstr "<b>色プロファイルのインポート/エクスポート</b>"
 msgid ""
 "Color profiles set colors for the editor, user interface and all textstyles."
 msgstr ""
-"色プロファイルはエディタ、ユーザーインターフェイス、すべてのテキストスタイル"
+"色プロファイルは編集部分、ユーザーインターフェイス、すべてのテキストスタイル"
 "の色を指定するものです。"
 
 #: src/preferences.c:2736
@@ -3687,6 +3684,9 @@ msgid ""
 "<span foreground=\"red\"><b>There is no 'undo' when replacing in files.</b>\n"
 "Backup files are created as filename~</span>"
 msgstr ""
+"<span foreground=\"red\"><b>置換の対象がファイル内容の場合、'元に戻す' は使え"
+"ません。</b>\n"
+"バックアップとしてファイル名に~が付加されたファイルが作成されます</span>"
 
 #: src/snr3.c:1488
 msgid "No (more) results"
