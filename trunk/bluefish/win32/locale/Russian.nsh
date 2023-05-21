@@ -6,11 +6,12 @@
 ;
 ;  Translators:
 ;   Fr. Br. George <george@altlinux.org>
+;   Olesya Gerasimenko <translation-team@basealt.ru>
 ;----------------------------------------------
 
 ; Section Names
 !define SECT_BLUEFISH	"Редактор Bluefish"
-; !define SECT_DEPENDS	"Dependencies"
+; !define SECT_DEPENDS	"Зависимости"
 !define SECT_PLUGINS	"Модули"
 !define SECT_SHORTCUT	"Ярлык на рабочем столе"
 !define SECT_DICT	"Язык проверки орфографии (для загрузки необходимо подключение к сети Интернет)"
@@ -38,10 +39,10 @@
 !define GTK_REQUIRED	"Пожалуйста, установите GTK+ версии ${GTK_MIN_VERSION} или выше. Перед запуском Bluefish убедитесь также, что путь до GTK+ присутствует в переменной окружения PATH."
 
 ; Python Strings
-; !define PYTHON_DOWNLOAD	"Downloading Python..."
-; !define PYTHON_FAILED	"Python Download failed:"
-; !define PYTHON_INSTALL	"Installing Python..."
-; !define PYTHON_REQUIRED	"Please install Python ${PYTHON_MIN_VERSION} or higher before running Bluefish.$\nPython is required for the Zencoding plugin and other features."
+; !define PYTHON_DOWNLOAD	"Загрузка Python..."
+; !define PYTHON_FAILED	"Ошибка загрузки Python:"
+; !define PYTHON_INSTALL	"Установка Python..."
+; !define PYTHON_REQUIRED	"Пожалуйста, установите Python версии ${PYTHON_MIN_VERSION} или выше перед запуском Bluefish.$\nPython требуется для работы модуля Zencoding и других возможностей."
 
 ; Plugin Names
 !define PLUG_CHARMAP	"Таблица символов"
@@ -49,7 +50,7 @@
 !define PLUG_HTMLBAR	"Панель HTML"
 !define PLUG_INFBROWSER	"Просмотр справки"
 !define PLUG_SNIPPETS	"Сниппеты"
-; !define PLUG_VCS	"Version Control"
+; !define PLUG_VCS	"Управление версиями"
 !define PLUG_ZENCODING	"Zencoding"
 
 ; File Associations Page
@@ -81,10 +82,10 @@
 !define CT_SH	"Сценарий оболочки Bash Shell"
 !define CT_BFPROJECT	"Проект Bluefish"
 !define CT_BFLANG2	"Файл определения языков Bluefish, версия 2"
-!define CT_C	"Исходник Си"
-!define CT_H	"Заголовочный файл Си"
-!define CT_CPP	"Исходник Си++"
-!define CT_HPP	"Заголовочный файл Си++"
+!define CT_C	"Исходник C"
+!define CT_H	"Заголовочный файл C"
+!define CT_CPP	"Исходник C++"
+!define CT_HPP	"Заголовочный файл C++"
 !define CT_CSS	"Таблица стилей CSS"
 !define CT_D	"Исходник D"
 !define CT_DIFF	"Файл Diff/Patch"
