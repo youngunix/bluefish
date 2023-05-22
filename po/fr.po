@@ -5,15 +5,15 @@
 # romeo viuberges <apostledemencia@free.fr>, 2003.
 # Romeo VIU-BERGES <romda@free.fr>, 2003.
 # Michèle Garoche <michele.garoche@easyconnect.fr>, 2004.
-# Frédéric Falsetti <falsetti@clansco.org>,2009-2019.
+# Frédéric Falsetti <falsetti@clansco.org>,2009-2023.
 #
 #: src/xmlstrings.h:1
 msgid ""
 msgstr ""
-"Project-Id-Version: Bluefish 2.2.11\n"
+"Project-Id-Version: Bluefish 2.2.14\n"
 "Report-Msgid-Bugs-To: olivier@bluefish.openoffice.nl\n"
-"POT-Creation-Date: 2023-03-27 22:24+0200\n"
-"PO-Revision-Date: 2020-01-10 18:01+0100\n"
+"POT-Creation-Date: 2023-04-27 22:57+0200\n"
+"PO-Revision-Date: 2023-05-22 14:00+0200\n"
 "Last-Translator: Frédéric Falsetti <falsetti@clansco.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -23,15 +23,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
 #: desktop-data/bluefish.appdata.xml.in:4
-#, fuzzy
 msgid "Bluefish"
-msgstr "Quitter Bluefish"
+msgstr "Bluefish"
 
 #: desktop-data/bluefish.appdata.xml.in:5
 msgid "Text editor with many web and software development extras"
-msgstr ""
+msgstr "Éditeur de texte avec de nombreux extras de développement "
+"Web et logiciel"
 
-#: desktop-data/bluefish.appdata.xml.in:10
+#: desktop-data/bluefish.appdata.xml.in:9
+msgid "Olivier Sessink"
+msgstr "Olivier Sessink"
+
+#: desktop-data/bluefish.appdata.xml.in:11
 msgid ""
 "Bluefish is a powerful editor targeted towards programmers and web "
 "developers, with many options to write websites, scripts and programming "
@@ -44,11 +48,11 @@ msgstr ""
 "balise et possède de nombreuses fonctionnalités, mais il reste rapide et "
 "léger."
 
-#: desktop-data/bluefish.appdata.xml.in:11
+#: desktop-data/bluefish.appdata.xml.in:12
 msgid "A selection of the features:"
 msgstr "Une sélection des fonctionnalités :"
 
-#: desktop-data/bluefish.appdata.xml.in:13
+#: desktop-data/bluefish.appdata.xml.in:14
 msgid ""
 "Well done syntax highlighting which for example supports languages inside "
 "languages (e.g. Javascript inside HTML inside PHP)"
@@ -56,7 +60,7 @@ msgstr ""
 "Coloration syntaxique avancée permettant entre autres le support de langages "
 "inclus dans d'autres langages (par exemple : Javascript dans HTML dans PHP)"
 
-#: desktop-data/bluefish.appdata.xml.in:14
+#: desktop-data/bluefish.appdata.xml.in:15
 msgid ""
 "All kind of powerful editor features like auto indenting and auto completion "
 "for many functions and libraries in many programming languages"
@@ -65,40 +69,40 @@ msgstr ""
 "l'auto-complétion disponibles pour de nombreuses fonctions et bibliothèques "
 "dans de nombreux langages de programmation."
 
-#: desktop-data/bluefish.appdata.xml.in:15
+#: desktop-data/bluefish.appdata.xml.in:16
 msgid "Project support"
 msgstr "Gestion des projets"
 
-#: desktop-data/bluefish.appdata.xml.in:16
+#: desktop-data/bluefish.appdata.xml.in:17
 msgid "Support for remote files over ftp, sftp, webdav, etc"
 msgstr "Support des fichiers distants via FTP, SFTP, WebDAV, etc."
 
-#: desktop-data/bluefish.appdata.xml.in:17
+#: desktop-data/bluefish.appdata.xml.in:18
 msgid "Powerful search and replace engine"
 msgstr "Puissant moteur de recherche et remplacement"
 
-#: desktop-data/bluefish.appdata.xml.in:18
+#: desktop-data/bluefish.appdata.xml.in:19
 msgid "Customizable integration of external programs such as lint, make, etc"
 msgstr ""
 "Intégration personnnlisable des programmes externes tels que lint, make, etc."
 
-#: desktop-data/bluefish.appdata.xml.in:19
+#: desktop-data/bluefish.appdata.xml.in:20
 msgid "Snippets plugin to automate often used code"
 msgstr "Plugin de snippets pour automatiser le code souvent utilisé"
 
-#: desktop-data/bluefish.appdata.xml.in:20
+#: desktop-data/bluefish.appdata.xml.in:21
 msgid "Code-aware in-line spell checking"
 msgstr "Vérification orthographique en ligne avec discrimination du code"
 
-#: desktop-data/bluefish.appdata.xml.in:21
+#: desktop-data/bluefish.appdata.xml.in:22
 msgid "Zencoding or Emmet support"
 msgstr "Support de Zencoding ou Emmet"
 
-#: desktop-data/bluefish.appdata.xml.in:22
+#: desktop-data/bluefish.appdata.xml.in:23
 msgid "Bookmarks panel"
 msgstr "Panneau de marque-pages"
 
-#: desktop-data/bluefish.appdata.xml.in:24
+#: desktop-data/bluefish.appdata.xml.in:25
 msgid ""
 "If you are an occasional coder who is in need for a simple to learn editor, "
 "or a heavy coder who dislikes heavy IDE's like eclipse or netbeans, Bluefish "
@@ -108,9 +112,9 @@ msgstr ""
 "maîtriser,ou un codeur frénétique peu attiré par les IDE lourds tels eclipse "
 "ou netbeans, Bluefish est fait pour vous !"
 
-#: desktop-data/bluefish.appdata.xml.in:40
+#: desktop-data/bluefish.appdata.xml.in:37
 msgid "The Bluefish main window showing the application"
-msgstr ""
+msgstr "La fenêtre principale de Bluefish montrant l'application"
 
 #: desktop-data/bluefish.desktop.in:4 src/bluefish.c:95
 msgid "Bluefish Editor"
@@ -125,24 +129,23 @@ msgid "programming;code;web;editor;development;html;php;python;"
 msgstr "programmation;code;web;éditeur; développement;html;php;python;"
 
 #: desktop-data/bluefish.desktop.in:8
-#, fuzzy
 msgid "bluefish"
-msgstr "Quitter Bluefish"
+msgstr "Bluefish"
 
-#: src/bftextview2.c:2047
+#: src/bftextview2.c:2048
 msgid "Collapse all"
 msgstr "Tout replier"
 
-#: src/bftextview2.c:2050
+#: src/bftextview2.c:2051
 msgid "Expand all"
 msgstr "Tout Déplier"
 
-#: src/bftextview2.c:2058
+#: src/bftextview2.c:2059
 #, c-format
 msgid "Collapse %s"
 msgstr "Replier %s"
 
-#: src/bftextview2.c:2068
+#: src/bftextview2.c:2069
 #, c-format
 msgid "Expand %s"
 msgstr "Déplier %s"
@@ -1177,134 +1180,134 @@ msgstr ""
 "Erreur lors de l'analyse des options de la ligne de commande. %s\n"
 "Essayez : %s -?\n"
 
-#: src/bookmark.c:577 src/bookmark.c:598
+#: src/bookmark.c:585 src/bookmark.c:606
 msgid "_Name:"
 msgstr "_Nom :"
 
-#: src/bookmark.c:584 src/bookmark.c:602
+#: src/bookmark.c:592 src/bookmark.c:610
 msgid "_Description:"
 msgstr "_Description :"
 
-#: src/bookmark.c:587
+#: src/bookmark.c:595
 msgid "_Temporary"
 msgstr "_Temporaire"
 
-#: src/bookmark.c:604
+#: src/bookmark.c:612
 msgid "Temporary"
 msgstr "Temporaire"
 
-#: src/bookmark.c:777
+#: src/bookmark.c:788
 #, c-format
 msgid "Do you really want to delete %s?"
 msgstr "Désirez-vous vraiment supprimer %s ?"
 
-#: src/bookmark.c:780
+#: src/bookmark.c:791
 msgid "Delete permanent bookmark."
 msgstr "Supprimer le signet permanent."
 
-#: src/bookmark.c:806
+#: src/bookmark.c:817
 msgid "Delete all bookmarks."
 msgstr "Supprimer tous les signets"
 
-#: src/bookmark.c:844
+#: src/bookmark.c:855
 #, c-format
 msgid "Do you really want to delete all bookmarks for %s?"
 msgstr "Voulez-vous vraiment supprimer tous les signets relatifs à %s ?"
 
-#: src/bookmark.c:846
+#: src/bookmark.c:857
 msgid "Delete bookmarks?"
 msgstr "Supprimer les signets ?"
 
-#: src/bookmark.c:867 src/bookmark.c:928
+#: src/bookmark.c:878 src/bookmark.c:939
 msgid "Edit bookmark"
 msgstr "Éditer le signet"
 
-#: src/bookmark.c:924
+#: src/bookmark.c:935
 msgid "Bookmark menu"
 msgstr "Menu des _signets"
 
-#: src/bookmark.c:925
+#: src/bookmark.c:936
 msgid "Show Bookmark"
 msgstr "Afficher les signets"
 
-#: src/bookmark.c:926
+#: src/bookmark.c:937
 msgid "Show File"
 msgstr "Afficher le fichier"
 
-#: src/bookmark.c:927
+#: src/bookmark.c:938
 msgid "Bookmark search menu"
 msgstr "Menu de recherche des signets"
 
-#: src/bookmark.c:928
+#: src/bookmark.c:939
 msgid "_Edit..."
 msgstr "É_diter…"
 
-#: src/bookmark.c:930 src/filebrowser2.c:1328
+#: src/bookmark.c:941 src/filebrowser2.c:1328
 msgid "_Delete"
 msgstr "_Supprimer "
 
-#: src/bookmark.c:930 src/document.c:2341
+#: src/bookmark.c:941 src/document.c:2341
 msgid "Delete bookmark"
 msgstr "Supprimer le signet"
 
-#: src/bookmark.c:931
+#: src/bookmark.c:942
 msgid "Delete All"
 msgstr "Tout supprimer"
 
-#: src/bookmark.c:931
+#: src/bookmark.c:942
 msgid "Delete all bookmarks"
 msgstr "Supprimer tous les signets"
 
-#: src/bookmark.c:933
+#: src/bookmark.c:944
 msgid "Delete All in Document"
 msgstr "Tout supprimer dans le document actif"
 
-#: src/bookmark.c:934
+#: src/bookmark.c:945
 msgid "Delete all bookmarks in document"
 msgstr "Supprimer tous les signets du document"
 
-#: src/bookmark.c:939
+#: src/bookmark.c:950
 msgid "Permanent by default"
 msgstr "Permanent par défaut"
 
-#: src/bookmark.c:944
+#: src/bookmark.c:955
 msgid "By Name"
 msgstr "Par Nom"
 
-#: src/bookmark.c:945
+#: src/bookmark.c:956
 msgid "By Full Path"
 msgstr "Par chemin complet"
 
-#: src/bookmark.c:946
+#: src/bookmark.c:957
 msgid "By Full URI"
 msgstr "Par URI complète"
 
-#: src/bookmark.c:950 src/bookmark.c:956
+#: src/bookmark.c:961 src/bookmark.c:967
 msgid "Content"
 msgstr "Contenu"
 
-#: src/bookmark.c:951 src/bookmark.c:957 src/preferences.c:626
-#: src/preferences.c:1691 src/preferences.c:1693 src/preferences.c:1794
+#: src/bookmark.c:962 src/bookmark.c:968 src/preferences.c:629
+#: src/preferences.c:1695 src/preferences.c:1697 src/preferences.c:1798
 msgid "Name"
 msgstr "Nom"
 
-#: src/bookmark.c:952 src/bookmark.c:958
+#: src/bookmark.c:963 src/bookmark.c:969
 msgid "Name & Content"
 msgstr "Nom & contenu"
 
-#: src/bookmark.c:1298
+#: src/bookmark.c:1328
 msgid "First bookmark"
 msgstr "Premier signet"
 
-#: src/bookmark.c:1302
+#: src/bookmark.c:1332
 msgid "Previous bookmark"
 msgstr "Signet précédant"
 
-#: src/bookmark.c:1306
+#: src/bookmark.c:1336
 msgid "Next bookmark"
 msgstr "Signet suivant"
 
-#: src/bookmark.c:1310
+#: src/bookmark.c:1340
 msgid "Last bookmark"
 msgstr "Dernier signet"
 
@@ -1391,9 +1394,9 @@ msgid "Do not open"
 msgstr "Ne pas ouvrir"
 
 #: src/document.c:1398
-#, fuzzy, c-format
+#, c-format
 msgid "Ln: %d, Col: %d, Char: %d, Blocks: %d"
-msgstr " Lig : %d, Col : %d, Car : %d"
+msgstr "Ln: %d, Col: %d, Car: %d, Blocs: %d"
 
 #: src/document.c:1419
 msgid " OVR"
@@ -1765,7 +1768,7 @@ msgstr ""
 "les préférences."
 
 #: src/external_commands.c:785
-#, c-format
+#,  
 msgid ""
 "Failed to create a command for %s.\n"
 "%s"
@@ -2321,7 +2324,7 @@ msgid "Check and reload all documents"
 msgstr "Vérifier et recharger tous les documents"
 
 #. build a list of filters
-#: src/filefilter.c:250 src/gtk_easy.c:1355 src/preferences.c:2505
+#: src/filefilter.c:250 src/gtk_easy.c:1355 src/preferences.c:2523
 msgid "All files"
 msgstr "Tous les fichiers"
 
@@ -2411,103 +2414,103 @@ msgstr "Imprimer les numéros de ligne"
 msgid "What to print"
 msgstr "Imprimer"
 
-#: src/preferences.c:326
+#: src/preferences.c:328
 msgid "Untitled"
 msgstr "Sans titre"
 
-#: src/preferences.c:528
+#: src/preferences.c:530
 msgid "_Mime type:"
 msgstr "Type mime :"
 
-#: src/preferences.c:540 src/preferences.c:542
+#: src/preferences.c:542 src/preferences.c:544
 msgid "None"
 msgstr "Aucun"
 
-#: src/preferences.c:544
+#: src/preferences.c:546
 msgid "_Template:"
 msgstr "Modèle :"
 
-#: src/preferences.c:547 src/snr3.c:1663
+#: src/preferences.c:549 src/snr3.c:1663
 msgid "<b>Options</b>"
 msgstr "<b>Options</b>"
 
-#: src/preferences.c:551
+#: src/preferences.c:553
 msgid "Enable a_uto-completion"
 msgstr "Activer la complétion automatique"
 
-#: src/preferences.c:553
+#: src/preferences.c:555
 msgid "Enable _block folding"
 msgstr "Activer le pliage par blocs"
 
-#: src/preferences.c:555
+#: src/preferences.c:557
 msgid "Display block stack in statusbar"
 msgstr "Afficher la pile de blocs dans la barre d'état"
 
-#: src/preferences.c:557
+#: src/preferences.c:559
 msgid "Highlight block _delimiters"
 msgstr "Colorer les délimiteurs de blocs"
 
-#: src/preferences.c:559
+#: src/preferences.c:561
 msgid "_Highlight current line"
 msgstr "Coloration syntaxique de la ligne active"
 
-#: src/preferences.c:561
+#: src/preferences.c:563
 msgid "Show line _numbers"
 msgstr "Afficher les numéros de ligne"
 
-#: src/preferences.c:565
+#: src/preferences.c:567
 msgid "Show _right margin indicator"
 msgstr "Afficher la marge droite"
 
-#: src/preferences.c:567
+#: src/preferences.c:569
 msgid "Auto indentin_g"
 msgstr "Indentation automatique"
 
-#: src/preferences.c:569
+#: src/preferences.c:571
 msgid "Wra_p lines"
 msgstr "Replier les lignes"
 
-#: src/preferences.c:571
+#: src/preferences.c:573
 msgid "Enable syntax scanning"
 msgstr "autoriser la coloration syntaxique"
 
-#: src/preferences.c:573
+#: src/preferences.c:575
 msgid "Show _visible spacing"
 msgstr "Montrer les espaces visibles"
 
-#: src/preferences.c:577
+#: src/preferences.c:579
 msgid "_Enable spell check"
 msgstr "Activer la vérification orthographique"
 
-#: src/preferences.c:582
+#: src/preferences.c:584
 msgid "<b>Tab Stops</b>"
 msgstr "<b>Tabulations</b>"
 
-#: src/preferences.c:587
+#: src/preferences.c:589
 msgid "Tab _width:"
 msgstr "Largeur de tabulation :"
 
-#: src/preferences.c:590
+#: src/preferences.c:592
 msgid "Insert _spaces instead of tabs"
 msgstr "Utiliser des espaces plutôt que des tabulations"
 
-#: src/preferences.c:627 src/preferences.c:1346 src/preferences.c:1505
+#: src/preferences.c:630 src/preferences.c:1350 src/preferences.c:1509
 msgid "Enabled"
 msgstr "Activé"
 
-#: src/preferences.c:629
+#: src/preferences.c:632
 msgid "Path to plugin"
 msgstr "Chemin du plugin"
 
-#: src/preferences.c:906
+#: src/preferences.c:909
 msgid "Extension"
 msgstr "Extension"
 
-#: src/preferences.c:908
+#: src/preferences.c:911
 msgid "Mime-Type"
 msgstr "Type mime"
 
-#: src/preferences.c:1136
+#: src/preferences.c:1140
 msgid ""
 "<small>Text styles are applied on top of each other. If multiple styles are "
 "applied to the same text, the top-most style in this list has the highest "
@@ -2518,57 +2521,57 @@ msgstr ""
 "de la plus haute priorité. Utilisez le copier-coller pour réordonner les "
 "styles de texte.</small>"
 
-#: src/preferences.c:1147 src/preferences.c:1347 src/preferences.c:1507
+#: src/preferences.c:1151 src/preferences.c:1351 src/preferences.c:1511
 msgid "Label"
 msgstr "Étiquette"
 
-#: src/preferences.c:1162 src/preferences.c:2691
+#: src/preferences.c:1166 src/preferences.c:2709
 msgid "Foreground color"
 msgstr "Couleur du premier plan"
 
-#: src/preferences.c:1163 src/preferences.c:2692
+#: src/preferences.c:1167 src/preferences.c:2710
 msgid "_Foreground color:"
 msgstr "Couleur du premier plan"
 
-#: src/preferences.c:1164 src/preferences.c:2695
+#: src/preferences.c:1168 src/preferences.c:2713
 msgid "Background color"
 msgstr "Couleur d'arrière-plan"
 
-#: src/preferences.c:1165 src/preferences.c:2696
+#: src/preferences.c:1169 src/preferences.c:2714
 msgid "_Background color:"
 msgstr "Couleur d'arrière-plan"
 
-#: src/preferences.c:1169
+#: src/preferences.c:1173
 msgid "_Normal weight"
 msgstr "Non gras"
 
-#: src/preferences.c:1171
+#: src/preferences.c:1175
 msgid "Bold _weight"
 msgstr "Gras"
 
-#: src/preferences.c:1173
+#: src/preferences.c:1177
 msgid "Normal st_yle"
 msgstr "Non Italique"
 
-#: src/preferences.c:1176
+#: src/preferences.c:1180
 msgid "_Italic style"
 msgstr "Italique"
 
-#: src/preferences.c:1178
+#: src/preferences.c:1182
 msgid "_Spell check"
 msgstr "_Vérifier l'orthographe"
 
-#: src/preferences.c:1220 src/preferences.c:1384 src/preferences.c:1537
-#: src/preferences.c:1729 src/preferences.c:1825
+#: src/preferences.c:1224 src/preferences.c:1388 src/preferences.c:1541
+#: src/preferences.c:1733 src/preferences.c:1829
 msgid "Add entry"
 msgstr "Ajouter"
 
-#: src/preferences.c:1222 src/preferences.c:1386 src/preferences.c:1539
-#: src/preferences.c:1731 src/preferences.c:1827
+#: src/preferences.c:1226 src/preferences.c:1390 src/preferences.c:1543
+#: src/preferences.c:1735 src/preferences.c:1831
 msgid "Delete entry"
 msgstr "Supprimer"
 
-#: src/preferences.c:1323
+#: src/preferences.c:1327
 #, c-format
 msgid ""
 "<small><b>Input options</b>\n"
@@ -2599,23 +2602,23 @@ msgstr ""
 "prévisualisation ont été \n"
 " définis dans les préférences du projet, autrement identique à %u</small>"
 
-#: src/preferences.c:1349 src/preferences.c:1509 src/preferences.c:1703
+#: src/preferences.c:1353 src/preferences.c:1513 src/preferences.c:1707
 msgid "Command"
 msgstr "Commande"
 
-#: src/preferences.c:1352 src/rcfile.c:874
+#: src/preferences.c:1356 src/rcfile.c:875
 msgid "Default browser"
 msgstr "Navigateur par défaut"
 
-#: src/preferences.c:1388 src/preferences.c:1541 src/preferences.c:1733
+#: src/preferences.c:1392 src/preferences.c:1545 src/preferences.c:1737
 msgid "Update defaults"
 msgstr "Paramètres par défaut"
 
-#: src/preferences.c:1390 src/preferences.c:1543 src/preferences.c:1735
+#: src/preferences.c:1394 src/preferences.c:1547 src/preferences.c:1739
 msgid "Reset all"
 msgstr "Tout réinitialiser"
 
-#: src/preferences.c:1480
+#: src/preferences.c:1484
 msgid ""
 "<small><b>Input options</b>\n"
 "start with a | to send the input to the standard input\n"
@@ -2654,7 +2657,7 @@ msgstr ""
 "de prévisualisation ont été définis dans les préférences du projet, "
 "autrement identique à %u</small>"
 
-#: src/preferences.c:1665
+#: src/preferences.c:1669
 #, c-format
 msgid ""
 "<small><b>Input options</b>\n"
@@ -2691,67 +2694,67 @@ msgstr ""
 "de prévisualisation ont été définis dans les préférences du projet, "
 "autrement identique à %u</small>"
 
-#: src/preferences.c:1695
+#: src/preferences.c:1699
 msgid "Pattern"
 msgstr "Modèle"
 
-#: src/preferences.c:1697
+#: src/preferences.c:1701
 msgid "File #"
 msgstr "Fichier #"
 
-#: src/preferences.c:1699
+#: src/preferences.c:1703
 msgid "Line #"
 msgstr "Ligne #"
 
-#: src/preferences.c:1701
+#: src/preferences.c:1705
 msgid "Output #"
 msgstr "Résultat à l'écran #"
 
-#: src/preferences.c:1796
+#: src/preferences.c:1800
 msgid "File"
 msgstr "Fichier "
 
-#: src/preferences.c:1974
+#: src/preferences.c:1979
 msgid "A restart is needed to see the effect of these options"
 msgstr "Un redémarrage est nécessaire pour rendre ces options effectives"
 
 #. 1=text
-#: src/preferences.c:1986
+#: src/preferences.c:1991
 msgid "Option name"
 msgstr "Nom de l'option"
 
 #. 2=boolean
-#: src/preferences.c:1988
+#: src/preferences.c:1993
 msgid "value"
 msgstr "Valeur"
 
 #. 1=text
-#: src/preferences.c:2005
+#: src/preferences.c:2010
 msgid "Highlight name"
 msgstr "Nom de la coloration syntaxique "
 
-#: src/preferences.c:2010
+#: src/preferences.c:2015
 msgid "Textstyle"
 msgstr "Styles de texte"
 
-#: src/preferences.c:2177 src/preferences.c:2965
+#: src/preferences.c:2205 src/preferences.c:2986
 msgid "Auto"
 msgstr "Auto"
 
-#: src/preferences.c:2447
+#: src/preferences.c:2465
 msgid "Continue and ignore changes"
 msgstr "Coninuer et ignorer tous les changements"
 
-#: src/preferences.c:2447
+#: src/preferences.c:2465
 msgid "Cancel"
 msgstr "Annuler"
 
-#: src/preferences.c:2449
+#: src/preferences.c:2467
 msgid "Importing colors will abort any preferences changes"
 msgstr ""
 "L'importation des couleurs annule toutes les modifications de préférences"
 
-#: src/preferences.c:2449
+#: src/preferences.c:2467
 msgid ""
 "Importing colors will close the preferences dialog and cancel any changes "
 "you made. Do you want to continue?"
@@ -2759,632 +2762,636 @@ msgstr ""
 "L'importation des couleurs ferme la boîte de dialogue des préférences et "
 "annule les modifications que vous avez apportées. Voulez-vous continuer?"
 
-#: src/preferences.c:2457 src/preferences.c:2737 src/preferences.c:2746
+#: src/preferences.c:2475 src/preferences.c:2755 src/preferences.c:2764
 msgid "Choose file"
 msgstr "Choisir le fichier"
 
-#: src/preferences.c:2471
+#: src/preferences.c:2489
 msgid "Import done"
 msgstr "Importation effectuée"
 
-#: src/preferences.c:2473
+#: src/preferences.c:2491
 #, c-format
 msgid "Import %s failed"
 msgstr "Échec de l'importation de %s"
 
-#: src/preferences.c:2496
+#: src/preferences.c:2514
 msgid "Delayed"
 msgstr "Différé"
 
-#: src/preferences.c:2496
+#: src/preferences.c:2514
 msgid "Immediately"
 msgstr "Immédiat"
 
-#: src/preferences.c:2497
+#: src/preferences.c:2515
 msgid "Continue save"
 msgstr "Continuer l'enregistrement"
 
-#: src/preferences.c:2497
+#: src/preferences.c:2515
 msgid "Abort save"
 msgstr "Abandonner l'enregistrement"
 
-#: src/preferences.c:2497
+#: src/preferences.c:2515
 msgid "Ask what to do"
 msgstr "Demander quoi faire"
 
-#: src/preferences.c:2498 src/preferences.c:2505 src/preferences.c:2512
+#: src/preferences.c:2516 src/preferences.c:2523 src/preferences.c:2530
 msgid "Never"
 msgstr "Jamais"
 
-#: src/preferences.c:2498
+#: src/preferences.c:2516
 msgid "Periodically and during save"
 msgstr "Périodiquement et lors d'un enregistrement"
 
-#: src/preferences.c:2498
+#: src/preferences.c:2516
 msgid "Only during save"
 msgstr "Lors des enregistrements uniquement"
 
-#: src/preferences.c:2500
+#: src/preferences.c:2518
 msgid "Nothing"
 msgstr "Aucune"
 
-#: src/preferences.c:2500
+#: src/preferences.c:2518
 msgid "Modified time and file size"
 msgstr "Date et taille du fichier modifiés"
 
-#: src/preferences.c:2500
+#: src/preferences.c:2518
 msgid "Modified time"
 msgstr "Date modifiée"
 
-#: src/preferences.c:2500
+#: src/preferences.c:2518
 msgid "File size"
 msgstr "Taille du fichier"
 
-#: src/preferences.c:2501 src/preferences.c:2502
+#: src/preferences.c:2519 src/preferences.c:2520
 msgid "left"
 msgstr "À gauche"
 
-#: src/preferences.c:2501 src/preferences.c:2502
+#: src/preferences.c:2519 src/preferences.c:2520
 msgid "right"
 msgstr "À droite"
 
-#: src/preferences.c:2501
+#: src/preferences.c:2519
 msgid "top"
 msgstr "En haut"
 
-#: src/preferences.c:2501
+#: src/preferences.c:2519
 msgid "bottom"
 msgstr "En bas"
 
-#: src/preferences.c:2503
+#: src/preferences.c:2521
 msgid "Recently opened"
 msgstr "Document récent"
 
-#: src/preferences.c:2503
+#: src/preferences.c:2521
 msgid "Recently closed"
 msgstr "Récemment fermé"
 
-#: src/preferences.c:2505
+#: src/preferences.c:2523
 msgid "Only project files"
 msgstr "Les fichiers de projet seulement"
 
-#: src/preferences.c:2509
+#: src/preferences.c:2527
 msgid "All"
 msgstr "Tout"
 
-#: src/preferences.c:2509
+#: src/preferences.c:2527
 msgid "All except spaces"
 msgstr "Tout sauf les espaces sécables"
 
-#: src/preferences.c:2509
+#: src/preferences.c:2527
 msgid "All trailing"
 msgstr "Tous les espaces en fin de ligne"
 
-#: src/preferences.c:2509
+#: src/preferences.c:2527
 msgid "All except non-trailing spaces"
 msgstr "Tabulations, insécables et espaces en fin de ligne"
 
-#: src/preferences.c:2512
+#: src/preferences.c:2530
 msgid "Always"
 msgstr "Toujours"
 
-#: src/preferences.c:2512
+#: src/preferences.c:2530
 msgid "Smart"
 msgstr "Intelligent"
 
-#: src/preferences.c:2523
+#: src/preferences.c:2541
 msgid "Edit preferences"
 msgstr "Éditer les préférences"
 
 #.
 #. *  Initial document settings
 #.
-#: src/preferences.c:2547
+#: src/preferences.c:2565
 msgid "<b>Default settings (overridden by project settings)</b>"
 msgstr "<b>Paramètres par défaut (remplacés par les paramètres du projet)</b>"
 
-#: src/preferences.c:2549
+#: src/preferences.c:2567
 msgid "Initial document settings"
 msgstr "Paramètres initiaux de l'éditeur"
 
-#: src/preferences.c:2561
+#: src/preferences.c:2579
 msgid "Editor settings"
 msgstr "Paramètres de l'éditeur"
 
-#: src/preferences.c:2564
+#: src/preferences.c:2582
 msgid "<b>Editor settings</b>"
 msgstr "<b>Paramètres de l'éditeur</b>"
 
-#: src/preferences.c:2569
+#: src/preferences.c:2587
 msgid "Smart auto indentin_g on brackets"
 msgstr "auto-indentation intelligente des crochets"
 
-#: src/preferences.c:2572
+#: src/preferences.c:2590
 msgid "Smart Home/_End cursor positioning"
 msgstr "Positionnement intelligent du curseur début/fin"
 
-#: src/preferences.c:2576
+#: src/preferences.c:2594
 msgid "_Tab key indents selection"
 msgstr "La touche tabulation indente la sélection"
 
-#: src/preferences.c:2580
+#: src/preferences.c:2598
 msgid "Replace unicode quotes with ascii quotes"
 msgstr "Remplacer les guillemets Unicode par des guillemets ASCII"
 
-#: src/preferences.c:2584
+#: src/preferences.c:2602
 msgid "Insert spaces to cursor position"
 msgstr "Insérer des espaces à la position du curseur"
 
-#: src/preferences.c:2590
+#: src/preferences.c:2608
 msgid "Automatically insert closing brackets"
 msgstr "Fermeture auto des parenthèses"
 
-#: src/preferences.c:2597
+#: src/preferences.c:2615
 msgid "Right _margin/split line end position:"
 msgstr "marge droite/coupure de ligne :"
 
-#: src/preferences.c:2600
+#: src/preferences.c:2618
 msgid "Wrap lines on right margin indicator"
 msgstr "Plier les lignes à la marge droite"
 
-#: src/preferences.c:2606
+#: src/preferences.c:2624
 msgid "Visible _whitespace mode:"
 msgstr "Présentation des espaces visibles"
 
-#: src/preferences.c:2609
+#: src/preferences.c:2627
 msgid "<b>Undo</b>"
 msgstr "<b>Annulation</b>"
 
-#: src/preferences.c:2614
+#: src/preferences.c:2632
 msgid "_Number of actions in history:"
 msgstr "Nombre d'actions dans l'historique :"
 
-#: src/preferences.c:2617
+#: src/preferences.c:2635
 msgid "Clear _history on save"
 msgstr "Effacer l'historique lors de l'enregistrement"
 
-#: src/preferences.c:2622
+#: src/preferences.c:2640
 msgid "Auto-completion & Reference"
 msgstr "Auto-completion & Références"
 
-#: src/preferences.c:2628
+#: src/preferences.c:2646
 msgid "<b>Auto-completion</b>"
 msgstr "<b>Autocomplétion</b>"
 
-#: src/preferences.c:2634
+#: src/preferences.c:2652
 msgid "Show _pop-up window:"
 msgstr "Afficher la fenêtre contextuelle :"
 
-#: src/preferences.c:2638
+#: src/preferences.c:2656
 msgid "Minimum matching length for auto-completion:"
 msgstr "Longueur minimale pour l'auto-complétion :"
 
-#: src/preferences.c:2643
+#: src/preferences.c:2661
 msgid "Shortcut _key combination:"
 msgstr "Combinaison de touches de raccourci :"
 
-#: src/preferences.c:2646
+#: src/preferences.c:2664
 msgid "<b>Reference Information</b>"
 msgstr "<b>Références</b>"
 
-#: src/preferences.c:2649
+#: src/preferences.c:2667
 msgid "_Load reference data from language files"
 msgstr "Charger les informations de références du fichier de language"
 
-#: src/preferences.c:2652
+#: src/preferences.c:2670
 msgid "Show references in auto-completion _pop-up window"
 msgstr "Afficher les références dans la fenêtre contextuelle de complétion"
 
-#: src/preferences.c:2655
+#: src/preferences.c:2673
 msgid "Show references if mouse is over text editor"
 msgstr "Afficher les références au survol de la souris"
 
-#: src/preferences.c:2664 src/preferences.c:3071
+#: src/preferences.c:2682 src/preferences.c:3092
 msgid "Font & Colors"
 msgstr "Fonte et Couleurs"
 
-#: src/preferences.c:2670
+#: src/preferences.c:2688
 msgid "<b>Font &amp; Cursor</b>"
 msgstr "<b>Fonte et curseur</b>"
 
-#: src/preferences.c:2674
+#: src/preferences.c:2692
 msgid "_Editor font:"
 msgstr "Fonte de l'éditeur :"
 
-#: src/preferences.c:2682
+#: src/preferences.c:2700
 msgid "Cursor / font size ratio (%):"
 msgstr "Ratio curseur/taille de la police (%) :"
 
-#: src/preferences.c:2684 src/preferences.c:3097
+#: src/preferences.c:2702 src/preferences.c:3118
 msgid "<b>Colors</b>"
 msgstr "<b>Couleurs</b>"
 
-#: src/preferences.c:2688
+#: src/preferences.c:2706
 msgid "Use system wide color settings"
 msgstr "Utiliser les paramètres système de couleurs"
 
-#: src/preferences.c:2699
+#: src/preferences.c:2717
 msgid "Cursor color"
 msgstr "Couleur du curseur"
 
-#: src/preferences.c:2700
+#: src/preferences.c:2718
 msgid "C_ursor color:"
 msgstr "Couleur du curseur"
 
-#: src/preferences.c:2703
+#: src/preferences.c:2721
 msgid "Selection background color"
 msgstr "Couleur d'arrière-plan de la sélection"
 
-#: src/preferences.c:2704
+#: src/preferences.c:2722
 msgid "_Selection background color:"
 msgstr "Arrière-plan de la sélection"
 
-#: src/preferences.c:2707
+#: src/preferences.c:2725
 msgid "Margin foreground color"
 msgstr "Couleur du premier plan de la marge"
 
-#: src/preferences.c:2708
+#: src/preferences.c:2726
 msgid "_Margin foreground color:"
 msgstr "Couleur du premier plan de la marge"
 
-#: src/preferences.c:2711
+#: src/preferences.c:2729
 msgid "Margin background color"
 msgstr "Couleur d'arrière-plan de la marge"
 
-#: src/preferences.c:2712
+#: src/preferences.c:2730
 msgid "_Margin background color:"
 msgstr "Couleur d'arrière-plan de la marge"
 
-#: src/preferences.c:2717
+#: src/preferences.c:2735
 msgid "Highlight cursor position"
 msgstr "Colorer la position du curseur"
 
-#: src/preferences.c:2719
+#: src/preferences.c:2737
 msgid "Cursor highlight color"
 msgstr "Couleur du curseur"
 
-#: src/preferences.c:2720
+#: src/preferences.c:2738
 msgid "_Cursor highlight color:"
 msgstr "Couleur du curseur"
 
-#: src/preferences.c:2725
+#: src/preferences.c:2743
 msgid "Current line color"
 msgstr "Couleur de la ligne courante"
 
-#: src/preferences.c:2726
+#: src/preferences.c:2744
 msgid "Cu_rrent line color:"
 msgstr "Couleur de la ligne courante"
 
-#: src/preferences.c:2729
+#: src/preferences.c:2747
 msgid "Visible whitespace color"
 msgstr "Couleur des espaces visibles"
 
-#: src/preferences.c:2730
+#: src/preferences.c:2748
 msgid "_Visible whitespace color:"
 msgstr "Couleur des espaces visibles"
 
-#: src/preferences.c:2732
+#: src/preferences.c:2750
 msgid "<b>Import / export color profiles</b>"
 msgstr "<b>Importer / exporter les profiles de couleurs</b>"
 
-#: src/preferences.c:2733
+#: src/preferences.c:2751
 msgid ""
 "Color profiles set colors for the editor, user interface and all textstyles."
 msgstr ""
 "Les profils de couleurs définissent les couleurs de l'éditeur, de "
 "l'interface utilisateur et de tous les styles de textes."
 
-#: src/preferences.c:2736
+#: src/preferences.c:2754
 msgid "Export"
 msgstr "Exporter"
 
-#: src/preferences.c:2743
+#: src/preferences.c:2761
 msgid "Import"
 msgstr "Importer"
 
-#: src/preferences.c:2750
+#: src/preferences.c:2768
 msgid "Apply"
 msgstr "Appliquer"
 
-#: src/preferences.c:2764
+#: src/preferences.c:2782
 msgid "Text styles"
 msgstr "Styles de texte"
 
-#: src/preferences.c:2766
+#: src/preferences.c:2784
 msgid "<b>Text Styles</b>"
 msgstr "<b>Styles de texte</b>"
 
-#: src/preferences.c:2779
+#: src/preferences.c:2797
 msgid "Files"
 msgstr "Fichiers"
 
-#: src/preferences.c:2782
+#: src/preferences.c:2800
 msgid "<b>Encoding</b>"
 msgstr "<b>Encodage</b>"
 
-#: src/preferences.c:2798
+#: src/preferences.c:2816
 msgid "_Default character set for new files:"
 msgstr "Jeu de caractères par défaut pour les nouveaux fichiers :"
 
-#: src/preferences.c:2804
+#: src/preferences.c:2822
 msgid "Auto set <meta> _HTML tag on encoding change"
 msgstr "Mettre à jour les balises <meta> lors de la modification de l'encodage"
 
-#: src/preferences.c:2808 src/preferences.c:2954
+#: src/preferences.c:2826 src/preferences.c:2972
 msgid "<b>Misc</b>"
 msgstr "<b>Divers</b>"
 
-#: src/preferences.c:2811
+#: src/preferences.c:2829
 msgid "Strip trailing spaces on save"
 msgstr "Supprimer les espaces en fin de ligne à l'enregistrement"
 
-#: src/preferences.c:2817
+#: src/preferences.c:2835
 msgid "Open co_mmandline files in running bluefish process"
 msgstr "Ouvrir les fichiers de commande dans le processus Bluefish actif"
 
-#: src/preferences.c:2822
+#: src/preferences.c:2840
 msgid "Open commandline files in new _window"
 msgstr "Ouvrir les fichiers de commande dans une nouvelle fenêtre"
 
-#: src/preferences.c:2829
+#: src/preferences.c:2847
 msgid "Check if file is modified on disk:"
 msgstr "Vérifier si le fichier est modifié sur le disque :"
 
-#: src/preferences.c:2835
+#: src/preferences.c:2853
 msgid "File properties to check on dis_k for modifications:"
 msgstr "Propriétés du fichier à vérifier sur le disque :"
 
-#: src/preferences.c:2839
+#: src/preferences.c:2857
 msgid "Show warning for files with very long lines"
 msgstr "Avertir pour les fichiers contenant des lignes très longues"
 
-#: src/preferences.c:2849
+#: src/preferences.c:2867
 msgid "Backup & Recovery"
 msgstr "Sauvegarde et Récupération"
 
-#: src/preferences.c:2852
+#: src/preferences.c:2870
 msgid "<b>Backup</b>"
 msgstr "<b>Sauvegarde</b>"
 
-#: src/preferences.c:2854
+#: src/preferences.c:2872
 msgid "Create _backup file during file save"
 msgstr "Créer une sauvegarde à l'enregistrement"
 
-#: src/preferences.c:2859
+#: src/preferences.c:2877
 msgid "_Remove backup file on close"
 msgstr "Supprimer la sauvegarde à la fermeture"
 
-#: src/preferences.c:2864
+#: src/preferences.c:2882
 msgid "If back_up fails:"
 msgstr "Si la sauvegarde échoue :"
 
-#: src/preferences.c:2871
+#: src/preferences.c:2889
 msgid "<b>Document Recovery</b>"
 msgstr "<b>Récupération des documents</b>"
 
-#: src/preferences.c:2873
+#: src/preferences.c:2891
 msgid "_Enable recovery of modified documents"
 msgstr "Activer la récupération des documents modifiés"
 
-#: src/preferences.c:2877
+#: src/preferences.c:2895
 msgid "_Frequency to store changes (seconds):"
 msgstr "Fréquence d'enregistrement des modifications (secondes) :"
 
-#: src/preferences.c:2891 src/preferences.c:2892
+#: src/preferences.c:2909 src/preferences.c:2910
 msgid "File Associations"
 msgstr "associations du fichier"
 
-#: src/preferences.c:2910
+#: src/preferences.c:2928
 msgid "Templates"
 msgstr "Modèles"
 
-#: src/preferences.c:2913
+#: src/preferences.c:2931
 msgid "<b>Templates</b>"
 msgstr "<b>Modèles</b>"
 
-#: src/preferences.c:2926
+#: src/preferences.c:2944
 msgid "User interface"
 msgstr "Interface utilisateur"
 
-#: src/preferences.c:2929
+#: src/preferences.c:2947
 msgid "<b>Layout</b>"
 msgstr "<b>Disposition</b>"
 
-#: src/preferences.c:2935
+#: src/preferences.c:2953
 msgid "Document _tab position:"
 msgstr "Position des onglet des documents :"
 
-#: src/preferences.c:2940
+#: src/preferences.c:2958
 msgid "Maximum filename length shown in tab (0 is no limit)"
 msgstr "Longueur maxi du nom de fichier dans l'onglet (0 pour illimité)"
 
-#: src/preferences.c:2946
+#: src/preferences.c:2964
 msgid "_Sidebar position:"
 msgstr "Position du panneau latéral :"
 
-#: src/preferences.c:2952
+#: src/preferences.c:2970
 msgid "Sidebar tab _position:"
 msgstr "Position des onglets du panneau latéral :"
 
-#: src/preferences.c:2956
+#: src/preferences.c:2974
+msgid "Restore search scope from session or project"
+msgstr "Restaurer le champ de recherche de la session ou du projet"
+
+#: src/preferences.c:2977
 msgid "Hide toolbars on full-screen"
 msgstr "Masquer les barres d'outils en plein écran"
 
-#: src/preferences.c:2965
+#: src/preferences.c:2986
 msgid "User interface _language:"
 msgstr "Langue de l'interface utilisateur"
 
-#: src/preferences.c:2968
+#: src/preferences.c:2989
 msgid "<b>Recent Files</b>"
 msgstr "<b>Fichiers récents</b>"
 
-#: src/preferences.c:2973
+#: src/preferences.c:2994
 msgid "Recent files _shows:"
 msgstr "'Fichiers récents' affiche :"
 
-#: src/preferences.c:2978
+#: src/preferences.c:2999
 msgid "_Number of files in 'Open recent' menu:"
 msgstr "Nombre de fichiers dans 'Récemment ouvert :'"
 
-#: src/preferences.c:2983
+#: src/preferences.c:3004
 msgid "_Register recent files with your desktop:"
 msgstr "Enregistrer les fichiers récents sur le bureau :"
 
-#: src/preferences.c:2994
+#: src/preferences.c:3015
 msgid "Shortcut keys"
 msgstr "Touches de raccourci"
 
-#: src/preferences.c:2999
+#: src/preferences.c:3020
 msgid "<b>Shortcut keys</b>"
 msgstr "<b>Touches de raccourci</b>"
 
-#: src/preferences.c:3003
+#: src/preferences.c:3024
 msgid "_Switch between tabs with <Alt>+0..9"
 msgstr "Basculer entre les onglets avec <Alt>+0..9"
 
-#: src/preferences.c:3006
+#: src/preferences.c:3027
 msgid "_Switch between tabs with <Command>+0..9"
 msgstr "Basculer entre les onglets avec <Alt>+0..9"
 
-#: src/preferences.c:3011
+#: src/preferences.c:3032
 msgid "Save menu accelerators on exit"
 msgstr "Enregistrer les accélérateurs de menu en quittant"
 
-#: src/preferences.c:3014
+#: src/preferences.c:3035
 msgid "Save user customised menu accelerators now"
 msgstr "Enregistrer maintenant les accélérateurs de menu personnalisés"
 
-#: src/preferences.c:3018
+#: src/preferences.c:3039
 msgid "Reset menu accelerators to application defaults"
 msgstr "Rétablir les accélérateurs de menu par défaut"
 
-#: src/preferences.c:3030
+#: src/preferences.c:3051
 msgid "Dimensions"
 msgstr "Dimensions"
 
-#: src/preferences.c:3033
+#: src/preferences.c:3054
 msgid "<b>Dimensions</b>"
 msgstr "<b>Dimensions</b>"
 
-#: src/preferences.c:3035
+#: src/preferences.c:3056
 msgid "_Leave dimensions to window manager"
 msgstr "Laisser le gestionnaire de fenêtres gérer les dimensions"
 
-#: src/preferences.c:3042
+#: src/preferences.c:3063
 msgid "_Restore last used dimensions"
 msgstr "Restaurer les dernières dimensions utilisées"
 
-#: src/preferences.c:3050
+#: src/preferences.c:3071
 msgid "Initial _sidebar width:"
 msgstr "Largeur initiale du panneau latéral :"
 
-#: src/preferences.c:3054
+#: src/preferences.c:3075
 msgid "Initial window _height:"
 msgstr "Hauteur initiale de la fenêtre :"
 
-#: src/preferences.c:3057
+#: src/preferences.c:3078
 msgid "Initial window _width:"
 msgstr "Largeur initiale de la fenêtre :"
 
-#: src/preferences.c:3064
+#: src/preferences.c:3085
 msgid "_Limit window title length"
 msgstr "Limiter la longueur du titre de la fenêtre."
 
-#: src/preferences.c:3077
+#: src/preferences.c:3098
 msgid "<b>Document tab</b>"
 msgstr "<b>Onglet des documents</b>"
 
-#: src/preferences.c:3082
+#: src/preferences.c:3103
 msgid "_Use system document tab font"
 msgstr " Utiliser la fonte système pour les onglets des documents."
 
-#: src/preferences.c:3087
+#: src/preferences.c:3108
 msgid "_Document tab font:"
 msgstr "Fonte des onglet des documents :"
 
-#: src/preferences.c:3101
+#: src/preferences.c:3122
 msgid "Document error tab color"
 msgstr "Documents, onglet d'erreur"
 
-#: src/preferences.c:3103
+#: src/preferences.c:3124
 msgid "Document tab _error color:"
 msgstr "Documents, onglet d'erreur :"
 
-#: src/preferences.c:3107
+#: src/preferences.c:3128
 msgid "Document loading tab color"
 msgstr "Documents, onglet chargement en cours"
 
-#: src/preferences.c:3109
+#: src/preferences.c:3130
 msgid "Document tab loadin_g color:"
 msgstr "Documents, onglet chargement en cours :"
 
-#: src/preferences.c:3113
+#: src/preferences.c:3134
 msgid "Document modified tab color"
 msgstr "Documents, onglet modifié"
 
-#: src/preferences.c:3115
+#: src/preferences.c:3136
 msgid "Document tab _modified color:"
 msgstr "Documents, onglet modifié :"
 
-#: src/preferences.c:3119
+#: src/preferences.c:3140
 msgid "Active document tab color"
 msgstr "Couleur de l'onglet du document courant"
 
-#: src/preferences.c:3121
+#: src/preferences.c:3142
 msgid "Document tab _active color:"
 msgstr "Couleur de l'onglet du document courant :"
 
 #. arr = array_from_arglist(_("Java programming"),"1", "java:image:jsp", NULL);
 #. main_v->globses.filefilters = g_list_append(main_v->globses.filefilters, arr);
-#: src/preferences.c:3135 src/rcfile.c:1517
+#: src/preferences.c:3156 src/rcfile.c:1520
 msgid "Images"
 msgstr "Images"
 
-#: src/preferences.c:3138
+#: src/preferences.c:3159
 msgid "<b>Thumbnails</b>"
 msgstr "<b>Vignettes</b>"
 
-#: src/preferences.c:3144
+#: src/preferences.c:3165
 msgid "Thumbnail _filetype:"
 msgstr "Type de fichier des vignettes :"
 
-#: src/preferences.c:3148
+#: src/preferences.c:3169
 msgid "Thumbnail _suffix:"
 msgstr "Suffixe des vignettes :"
 
-#: src/preferences.c:3161
+#: src/preferences.c:3182
 msgid "External commands"
 msgstr "Commandes externes"
 
-#: src/preferences.c:3163
+#: src/preferences.c:3184
 msgid "<b>External Commands</b>"
 msgstr "<b>Commandes externes</b>"
 
-#: src/preferences.c:3176
+#: src/preferences.c:3197
 msgid "External filters"
 msgstr "Filtres externes"
 
-#: src/preferences.c:3179
+#: src/preferences.c:3200
 msgid "<b>External Filters</b>"
 msgstr "<b>Filtres externes</b>"
 
-#: src/preferences.c:3192
+#: src/preferences.c:3213
 msgid "Output parsers"
 msgstr "Analyseurs syntaxiques"
 
-#: src/preferences.c:3194
+#: src/preferences.c:3215
 msgid "<b>Output Parsers</b>"
 msgstr "<b>Analyseurs syntaxiques</b>"
 
-#: src/preferences.c:3207
+#: src/preferences.c:3228
 msgid "Plugins"
 msgstr "Plugins"
 
-#: src/preferences.c:3209
+#: src/preferences.c:3230
 msgid "<b>Plugins</b>"
 msgstr "<b>Plugins</b>"
 
-#: src/preferences.c:3231
+#: src/preferences.c:3252
 msgid "Language support"
 msgstr "Languages"
 
@@ -3440,203 +3447,203 @@ msgstr "Créer un projet avec les documents ouverts"
 msgid "Create empty project"
 msgstr "Créer un projet vide"
 
-#: src/rcfile.c:712 src/rcfile.c:740
+#: src/rcfile.c:713 src/rcfile.c:741
 msgid "php"
 msgstr "php"
 
-#: src/rcfile.c:718
+#: src/rcfile.c:719
 msgid "make"
 msgstr "make"
 
-#: src/rcfile.c:722
+#: src/rcfile.c:723
 msgid "weblint HTML checker"
 msgstr "vérificateur HTML weblint"
 
-#: src/rcfile.c:727
+#: src/rcfile.c:728
 msgid "tidy HTML validator"
 msgstr "validateur HTML tidy"
 
-#: src/rcfile.c:731
+#: src/rcfile.c:732
 msgid "javac"
 msgstr "javac"
 
-#: src/rcfile.c:735
+#: src/rcfile.c:736
 msgid "xmllint XML checker"
 msgstr "vérificateur XML xmllint"
 
-#: src/rcfile.c:744
+#: src/rcfile.c:745
 msgid "php syntax check"
 msgstr "Vérifier la syntaxe PHP"
 
-#: src/rcfile.c:748
+#: src/rcfile.c:749
 msgid "perl syntax check"
 msgstr "Vérifier la syntaxe Perl"
 
-#: src/rcfile.c:752
+#: src/rcfile.c:753
 msgid "php codesniffer"
 msgstr "php codesniffer"
 
-#: src/rcfile.c:756
+#: src/rcfile.c:757
 msgid "pylint"
 msgstr "pylint"
 
-#: src/rcfile.c:769
+#: src/rcfile.c:770
 msgid "Sort"
 msgstr "Trier"
 
-#: src/rcfile.c:772
+#: src/rcfile.c:773
 msgid "Sort / Uniq"
 msgstr "Trier / Uniq"
 
-#: src/rcfile.c:775
+#: src/rcfile.c:776
 msgid "Reverse lines"
 msgstr "Inverser les lignes"
 
-#: src/rcfile.c:778
+#: src/rcfile.c:779
 msgid "Dos2unix"
 msgstr "Dos2unix"
 
-#: src/rcfile.c:780
+#: src/rcfile.c:781
 msgid "Tidy HTML"
 msgstr "Tidy HTML"
 
-#: src/rcfile.c:782
+#: src/rcfile.c:783
 msgid "Tidy convert to XHTML"
 msgstr "Tidy conversion vers XHTML"
 
-#: src/rcfile.c:785
+#: src/rcfile.c:786
 msgid "Tidy HTML (perltidy)"
 msgstr "Tidy HTML (perltidy)"
 
-#: src/rcfile.c:788
+#: src/rcfile.c:789
 msgid "Strip empty lines"
 msgstr "Ôter les lignes vides"
 
-#: src/rcfile.c:791
+#: src/rcfile.c:792
 msgid "Render HTML to text"
 msgstr "Rendu HTML en texte"
 
-#: src/rcfile.c:794
+#: src/rcfile.c:795
 msgid "PHP Beautifier"
 msgstr "PHP Beautifier"
 
-#: src/rcfile.c:798 src/rcfile.c:808
+#: src/rcfile.c:799 src/rcfile.c:809
 msgid "Javascript Minify with jsmin"
 msgstr "Compacter javascript avec jsmin"
 
-#: src/rcfile.c:801 src/rcfile.c:811
+#: src/rcfile.c:802 src/rcfile.c:812
 msgid "Decompress CSS"
 msgstr "Décompresser CSS"
 
-#: src/rcfile.c:804 src/rcfile.c:814
+#: src/rcfile.c:805 src/rcfile.c:815
 msgid "Compress CSS"
 msgstr "Compresser CSS"
 
-#: src/rcfile.c:818
+#: src/rcfile.c:819
 msgid "CSS tidy"
 msgstr "CSS tidy"
 
-#: src/rcfile.c:847
+#: src/rcfile.c:848
 msgid "Windows 7 Firefox 32-bit"
 msgstr "Windows 7 Firefox 32-bit"
 
-#: src/rcfile.c:848
+#: src/rcfile.c:849
 msgid "Windows 7 Firefox"
 msgstr "Windows 7 Firefox"
 
-#: src/rcfile.c:849
+#: src/rcfile.c:850
 msgid "Windows 7 Internet Explorer 32-bit"
 msgstr "Windows 7 Internet Explorer 32-bitr"
 
-#: src/rcfile.c:850
+#: src/rcfile.c:851
 msgid "Windows 7 Internet Explorer 64-bit"
 msgstr "Windows 7 Internet Explorer 64-bit"
 
-#: src/rcfile.c:854
+#: src/rcfile.c:855
 msgid "Safari"
 msgstr "Safari"
 
-#: src/rcfile.c:857 src/rcfile.c:877
+#: src/rcfile.c:858 src/rcfile.c:878
 msgid "Firefox"
 msgstr "Firefox"
 
-#: src/rcfile.c:860
+#: src/rcfile.c:861
 msgid "Google Chrome"
 msgstr "Google Chrome"
 
-#: src/rcfile.c:863 src/rcfile.c:880
+#: src/rcfile.c:864 src/rcfile.c:881
 msgid "Chromium"
 msgstr "Chromium"
 
-#: src/rcfile.c:866 src/rcfile.c:883
+#: src/rcfile.c:867 src/rcfile.c:884
 msgid "Opera"
 msgstr "Opera"
 
-#: src/rcfile.c:869 src/rcfile.c:895
+#: src/rcfile.c:870 src/rcfile.c:896
 msgid "chmod a+x"
 msgstr "chmod a+x"
 
-#: src/rcfile.c:872 src/rcfile.c:898
+#: src/rcfile.c:873 src/rcfile.c:899
 msgid "Insert date"
 msgstr "Insérer la date"
 
-#: src/rcfile.c:885
+#: src/rcfile.c:886
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: src/rcfile.c:888
+#: src/rcfile.c:889
 msgid "Epiphany"
 msgstr "Epiphany"
 
-#: src/rcfile.c:889
+#: src/rcfile.c:890
 msgid "Kazehakase"
 msgstr "Kazehakase"
 
-#: src/rcfile.c:892
+#: src/rcfile.c:893
 msgid "Links2 (graphics)"
 msgstr "Links2 (graphics)"
 
-#: src/rcfile.c:947
+#: src/rcfile.c:948
 msgid "C Header"
 msgstr "En-tête C"
 
-#: src/rcfile.c:950
+#: src/rcfile.c:951
 msgid "C Header GPL"
 msgstr "En-tête C GPL"
 
-#: src/rcfile.c:953
+#: src/rcfile.c:954
 msgid "XHTML 1.0"
 msgstr "XHTML 1.0"
 
-#: src/rcfile.c:956
+#: src/rcfile.c:957
 msgid "HTML 5"
 msgstr "HTML 5"
 
-#: src/rcfile.c:959
+#: src/rcfile.c:960
 msgid "PHP"
 msgstr "PHP"
 
-#: src/rcfile.c:962
+#: src/rcfile.c:963
 msgid "LaTex Book"
 msgstr "LaTex Book"
 
-#: src/rcfile.c:965
+#: src/rcfile.c:966
 msgid "LaTex Presentation"
 msgstr "LaTex Présentation"
 
-#: src/rcfile.c:1402
+#: src/rcfile.c:1405
 msgid "Untitled Project"
 msgstr "Projet sans titre"
 
-#: src/rcfile.c:1509
+#: src/rcfile.c:1512
 msgid "C programming"
 msgstr "Programmation C"
 
-#: src/rcfile.c:1513
+#: src/rcfile.c:1516
 msgid "Web files"
 msgstr "fichiers de type web"
 
-#: src/rcfile.c:1520
+#: src/rcfile.c:1523
 msgid "Hide objectfiles"
 msgstr "Cacher les fichiers objets"
 
@@ -3707,6 +3714,8 @@ msgid ""
 "<span foreground=\"red\"><b>There is no 'undo' when replacing in files.</b>\n"
 "Backup files are created as filename~</span>"
 msgstr ""
+"<span foreground=\"red\"><b>annulation impossible lors du remplacement dans les fichiers.</b>\n"
+"Les fichiers de sauvegarde sont créés avec l'extension ~</span>"
 
 #: src/snr3.c:1488
 msgid "No (more) results"
