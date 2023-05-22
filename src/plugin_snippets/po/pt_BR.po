@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2023-02-23 21:16+0100\n"
-"PO-Revision-Date: 2013-12-30 17:32-0300\n"
+"POT-Creation-Date: 2023-04-27 22:57+0200\n"
+"PO-Revision-Date: 2023-05-21 23:52-0300\n"
 "Last-Translator: Matheus Cunha Motta <esfingemetal@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: src/plugin_snippets/snippets_gui.c:428
 msgid "Click the right mouse button to add, edit or delete snippets."
@@ -193,11 +193,11 @@ msgstr "Substituir por: "
 
 #: src/plugin_snippets/snippets_wizard.c:151
 msgid "Sco_pe: "
-msgstr "Esco_po:"
+msgstr "Esco_po: "
 
 #: src/plugin_snippets/snippets_wizard.c:158
 msgid "Match Patter_n: "
-msgstr "Igualar com padrão:"
+msgstr "Igualar com padrão: "
 
 #: src/plugin_snippets/snippets_wizard.c:161
 msgid "Case sensitive _matching"

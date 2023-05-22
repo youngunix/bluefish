@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Bluefish 2.2.2\n"
 "Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2023-02-23 21:16+0100\n"
-"PO-Revision-Date: 2014-01-02 12:27-0300\n"
+"POT-Creation-Date: 2023-04-27 22:57+0200\n"
+"PO-Revision-Date: 2023-05-21 23:50-0300\n"
 "Last-Translator: Matheus Cunha Motta <esfingemetal@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: src/plugin_htmlbar/html2.c:634
 msgid "Cascading Style Sheet Builder"
@@ -527,7 +527,7 @@ msgstr "Botão de entrada"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1059
 msgid "_Button"
-msgstr "_Botão..."
+msgstr "_Botão"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1060
 msgid "_Select"
@@ -623,7 +623,7 @@ msgstr "Início Rápido..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1084
 msgid "_Link Header..."
-msgstr "Cabeçalho de _Link"
+msgstr "Cabeçalho de _Link..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1084
 msgid "Link Header..."
@@ -679,7 +679,7 @@ msgstr "Fonte..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1098
 msgid "Basef_ont..."
-msgstr "F_onte Base"
+msgstr "F_onte Base..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1098
 msgid "Base font..."
@@ -687,7 +687,7 @@ msgstr "Fonte base..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1100
 msgid "Quick_list..."
-msgstr "_Lista Rápida"
+msgstr "_Lista Rápida..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1100
 msgid "Quick List..."
@@ -695,7 +695,7 @@ msgstr "Lista Rápida..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1102
 msgid "_Meta..."
-msgstr "_Meta"
+msgstr "_Meta..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1103
 msgid "Embe_d..."
@@ -723,7 +723,7 @@ msgstr "Inserir Miniatura..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1109
 msgid "Insert thumbnail..."
-msgstr "Inserir imagem miniatura"
+msgstr "Inserir imagem miniatura..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1112
 msgid "Table _Wizard..."
@@ -900,7 +900,7 @@ msgstr "Opção..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1155
 msgid "Option _Group..."
-msgstr "_Grupo de opção"
+msgstr "_Grupo de opção..."
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1155
 msgid "Option group..."
@@ -1139,7 +1139,7 @@ msgstr "Padrão"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1489
 msgid "HTML 5"
-msgstr " HTML 5"
+msgstr "HTML 5"
 
 #: src/plugin_htmlbar/htmlbar_uimanager.c:1492
 msgid "Formatting"
@@ -1207,9 +1207,8 @@ msgid "  Day of the _week (Saturday)"
 msgstr "  Dia da semana (Sábado)"
 
 #: src/plugin_htmlbar/html.c:438
-#, fuzzy
 msgid "You appear to have a non existent day!\n"
-msgstr "Você parece ter um dia não existente!\n"
+msgstr "Você parecer ter um dia faltando!\n"
 
 #: src/plugin_htmlbar/html.c:447
 #, c-format
@@ -1228,7 +1227,7 @@ msgstr "  Data Unix _String (%s)"
 
 #: src/plugin_htmlbar/html.c:463
 msgid "  ISO-8601 Ti_me "
-msgstr "  ISO-8601 Te_mpo"
+msgstr "  ISO-8601 Te_mpo "
 
 #: src/plugin_htmlbar/html.c:658
 msgid "Quick Anchor"
@@ -1356,7 +1355,7 @@ msgstr "Cabeçalho 6"
 
 #: src/plugin_htmlbar/html.c:921
 msgid "Ali_gn:"
-msgstr "Alinhar"
+msgstr "Alinhar:"
 
 #: src/plugin_htmlbar/html.c:925 src/plugin_htmlbar/html.c:1194
 #: src/plugin_htmlbar/html.c:1933 src/plugin_htmlbar/html.c:1992
@@ -1402,7 +1401,7 @@ msgstr "Largura:"
 
 #: src/plugin_htmlbar/html.c:1097
 msgid "Is _percent"
-msgstr "É _percentual?"
+msgstr "É _percentual"
 
 #: src/plugin_htmlbar/html.c:1102
 msgid "No _shading"
@@ -1510,7 +1509,7 @@ msgstr "Copia cega para:"
 
 #: src/plugin_htmlbar/html.c:1573
 msgid "with _Subject:"
-msgstr "com Assunto"
+msgstr "com A_ssunto:"
 
 #: src/plugin_htmlbar/html.c:1576
 msgid "with _Body:"
@@ -1560,7 +1559,7 @@ msgstr "Largura da Margem:"
 
 #: src/plugin_htmlbar/html.c:1812
 msgid "Margin _Height:"
-msgstr "Altura da Margem"
+msgstr "Altura da Margem:"
 
 #: src/plugin_htmlbar/html.c:1821
 msgid "Scrollin_g:"
@@ -1730,7 +1729,7 @@ msgstr "Usar propriedade CSS com prefixo proprietário:"
 
 #: src/plugin_htmlbar/html.c:2610
 msgid "styles_heet"
-msgstr "Página de estilos"
+msgstr "página de estilos"
 
 #: src/plugin_htmlbar/html.c:2611
 msgid "Add selector(s) to create a new rule"
@@ -2186,7 +2185,7 @@ msgstr "Cabeçalho:"
 
 #: src/plugin_htmlbar/quickstart.c:702
 msgid "Open in _new document."
-msgstr "Abrir em _novo documento"
+msgstr "Abrir em _novo documento."
 
 #: src/plugin_htmlbar/wizards.c:73
 msgid "Table Wizard"

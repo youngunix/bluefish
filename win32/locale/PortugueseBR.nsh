@@ -10,7 +10,7 @@
 
 ; Section Names
 !define SECT_BLUEFISH	"Editor Bluefish"
-; !define SECT_DEPENDS	"Dependencies"
+!define SECT_DEPENDS	"Dependências"
 !define SECT_PLUGINS	"Plugins"
 !define SECT_SHORTCUT	"Atalho para Desktop"
 !define SECT_DICT	"Linguagens do corretor ortográfico (Conexão de Internet necessária para Download)"
@@ -38,10 +38,10 @@
 !define GTK_REQUIRED	"Por favor instale GTK+ ${GTK_MIN_VERSION} ou superior e certifique-se de tê-lo em seu PATH antes de executar o Bluefish."
 
 ; Python Strings
-; !define PYTHON_DOWNLOAD	"Downloading Python..."
-; !define PYTHON_FAILED	"Python Download failed:"
-; !define PYTHON_INSTALL	"Installing Python..."
-; !define PYTHON_REQUIRED	"Please install Python ${PYTHON_MIN_VERSION} or higher before running Bluefish.$\nPython is required for the Zencoding plugin and other features."
+!define PYTHON_DOWNLOAD	"Baixando o Python..."
+!define PYTHON_FAILED	"Download do Python falhou:"
+!define PYTHON_INSTALL	"Instalando o Python..."
+!define PYTHON_REQUIRED	"Por favor, instale o Python ${PYTHON_MIN_VERSION} ou versão mais recente antes de iniciar o Bluefish.$\nPython é necessário para o plugin Zencoding e outros recursos."
 
 ; Plugin Names
 !define PLUG_CHARMAP	"Mapa de caracteres"
@@ -49,7 +49,7 @@
 !define PLUG_HTMLBAR	"Barra HTML"
 !define PLUG_INFBROWSER	"Navegador de Info"
 !define PLUG_SNIPPETS	"Snippets"
-; !define PLUG_VCS	"Version Control"
+!define PLUG_VCS	"Controle de versão"
 !define PLUG_ZENCODING	"Zencoding"
 
 ; File Associations Page
