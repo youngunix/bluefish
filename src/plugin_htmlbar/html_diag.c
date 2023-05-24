@@ -21,7 +21,7 @@
 #include <gtk/gtk.h>
 #include <string.h>				/* strrchr */
 #include <stdlib.h>				/* strtod */
-/*#define DEBUG */
+/*#define DEBUG*/ 
 
 #include "html_diag.h"			/* myself */
 #include "cap.h"
@@ -44,12 +44,19 @@ html_diag_destroy_cb(GtkWidget * widget, Thtml_diag * dg)
 {
 	dg->tobedestroyed = TRUE;
 	DEBUG_MSG("html_diag_destroy_cb, widget=%p, dg=%p, dg->dialog=%p\n", widget, dg, dg->dialog);
+	gtk_widget_destroy(dg->dialog);
+	DEBUG_MSG("html_diag_destroy_cb, destroyed the widget\n");
+}
+
+static void 
+html_diag_free_cb(GtkWidget * widget, Thtml_diag * dg)
+{
+	DEBUG_MSG("html_diag_free_cb, cleanup dg=%p\n", dg);
 	if (gtk_text_buffer_get_mark(dg->doc->buffer, "diag_ins") == dg->mark_ins) {
 		gtk_text_buffer_delete_mark(dg->doc->buffer, dg->mark_ins);
 		gtk_text_buffer_delete_mark(dg->doc->buffer, dg->mark_sel);
-	}
-	window_destroy(dg->dialog);
-	DEBUG_MSG("html_diag_destroy_cb, about to free dg=%p\n", dg);
+	}	
+	DEBUG_MSG("html_diag_free_cb, about to free dg=%p\n", dg);
 	g_free(dg);
 }
 
@@ -72,7 +79,7 @@ html_diag_new(Tbfwin * bfwin, gchar * title)
 	dg->tobedestroyed = FALSE;
 	DEBUG_MSG("html_diag_new, dg=%p\n", dg);
 	dg->dialog =
-		window_full2(title, GTK_WIN_POS_CENTER, 12, G_CALLBACK(html_diag_destroy_cb), dg, TRUE,
+		window_full2(title, GTK_WIN_POS_CENTER, 12, G_CALLBACK(html_diag_free_cb), dg, TRUE,
 					 bfwin->main_window);
 	gtk_window_set_type_hint(GTK_WINDOW(dg->dialog), GDK_WINDOW_TYPE_HINT_DIALOG);
 	gtk_window_set_role(GTK_WINDOW(dg->dialog), "html_dialog");

@@ -342,7 +342,6 @@ static void
 insert_time_destroy_lcb(GtkWidget * widget, TimeInsert * data)
 {
 	DEBUG_MSG("insert_time_destroy_lcb, data=%p\n", data);
-	window_destroy(data->dialog);
 	g_free(data);
 }
 
@@ -371,7 +370,7 @@ insert_time_callback(GtkWidget * widget, TimeInsert * timeinsert)
 	DEBUG_MSG("insert_time_callback, text inserted\n");
 	g_free(insert_string);
 	g_free(final_string);
-	insert_time_destroy_lcb(NULL, timeinsert);
+	gtk_widget_destroy(timeinsert->dialog);
 	DEBUG_MSG("insert_time_callback, finished\n");
 }
 
@@ -381,7 +380,7 @@ static void
 insert_time_cancel(GtkWidget * widget, TimeInsert * data)
 {
 	DEBUG_MSG("insert_time_cancel, data=%p\n", data);
-	insert_time_destroy_lcb(widget, data);
+	gtk_widget_destroy(data->dialog);
 }
 
 /************************************************************************/
