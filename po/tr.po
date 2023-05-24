@@ -1,10 +1,9 @@
-#: src/xmlstrings.h:1
 msgid ""
 msgstr ""
 "Project-Id-Version: bluefish 2.2.4\n"
 "Report-Msgid-Bugs-To: olivier@bluefish.openoffice.nl\n"
-"POT-Creation-Date: 2023-03-27 22:24+0200\n"
-"PO-Revision-Date: 2021-09-09 07:26+0300\n"
+"POT-Creation-Date: 2023-04-27 22:57+0200\n"
+"PO-Revision-Date: 2023-05-24 12:13+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: tr\n"
@@ -12,117 +11,130 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: desktop-data/bluefish.appdata.xml.in:4
-#, fuzzy
 msgid "Bluefish"
-msgstr "Bluefish'ten çık"
+msgstr "Bluefish"
 
 #: desktop-data/bluefish.appdata.xml.in:5
 msgid "Text editor with many web and software development extras"
-msgstr ""
+msgstr "Birçok web ve yazılım geliştirme ekstralarına sahip metin düzenleyici"
 
-#: desktop-data/bluefish.appdata.xml.in:10
+#: desktop-data/bluefish.appdata.xml.in:9
+msgid "Olivier Sessink"
+msgstr "Olivier Sessink"
+
+#: desktop-data/bluefish.appdata.xml.in:11
 msgid ""
 "Bluefish is a powerful editor targeted towards programmers and web "
 "developers, with many options to write websites, scripts and programming "
 "code. Bluefish supports many programming and markup languages and has many "
 "features, but is still a very fast and lightweight application."
 msgstr ""
+"Bluefish, web siteleri, komut dosyaları ve programlama kodu yazmak için "
+"birçok seçeneğe sahip, programcıları ve web geliştiricilerini hedef alan "
+"güçlü bir düzenleyicidir. Bluefish, birçok programlama ve biçimlendirme "
+"dilini destekler ve birçok özelliğe sahiptir, ancak yine de çok hızlı ve "
+"hafif bir uygulamadır."
 
-#: desktop-data/bluefish.appdata.xml.in:11
+#: desktop-data/bluefish.appdata.xml.in:12
 msgid "A selection of the features:"
-msgstr ""
+msgstr "Özelliklerden bir seçim:"
 
-#: desktop-data/bluefish.appdata.xml.in:13
+#: desktop-data/bluefish.appdata.xml.in:14
 msgid ""
 "Well done syntax highlighting which for example supports languages inside "
 "languages (e.g. Javascript inside HTML inside PHP)"
 msgstr ""
+"Örneğin diller içindeki dilleri destekleyen iyi yapılmış sözdizimi vurgulama "
+"(örneğin, PHP içindeki HTML içindeki Javascript)"
 
-#: desktop-data/bluefish.appdata.xml.in:14
+#: desktop-data/bluefish.appdata.xml.in:15
 msgid ""
 "All kind of powerful editor features like auto indenting and auto completion "
 "for many functions and libraries in many programming languages"
 msgstr ""
-
-#: desktop-data/bluefish.appdata.xml.in:15
-#, fuzzy
-msgid "Project support"
-msgstr "_Proje"
+"Birçok programlama dilinde birçok işlev ve kitaplık için otomatik "
+"girintileme ve otomatik tamamlama gibi her türlü güçlü düzenleyici özelliği"
 
 #: desktop-data/bluefish.appdata.xml.in:16
-msgid "Support for remote files over ftp, sftp, webdav, etc"
-msgstr ""
+msgid "Project support"
+msgstr "Proje desteği"
 
 #: desktop-data/bluefish.appdata.xml.in:17
-msgid "Powerful search and replace engine"
-msgstr ""
+msgid "Support for remote files over ftp, sftp, webdav, etc"
+msgstr "Ftp, sftp, webdav, vb. üzerinden uzak dosyalar için destek"
 
 #: desktop-data/bluefish.appdata.xml.in:18
-msgid "Customizable integration of external programs such as lint, make, etc"
-msgstr ""
+msgid "Powerful search and replace engine"
+msgstr "Güçlü arama ve değiştirme motoru"
 
 #: desktop-data/bluefish.appdata.xml.in:19
-msgid "Snippets plugin to automate often used code"
+msgid "Customizable integration of external programs such as lint, make, etc"
 msgstr ""
+"Lint, make vb. gibi harici programların özelleştirilebilir entegrasyonu"
 
 #: desktop-data/bluefish.appdata.xml.in:20
-msgid "Code-aware in-line spell checking"
-msgstr ""
+msgid "Snippets plugin to automate often used code"
+msgstr "Sık kullanılan kodları otomatikleştirmek için Snippets eklentisi"
 
 #: desktop-data/bluefish.appdata.xml.in:21
-msgid "Zencoding or Emmet support"
-msgstr ""
+msgid "Code-aware in-line spell checking"
+msgstr "Koda duyarlı satır içi yazım denetimi"
 
 #: desktop-data/bluefish.appdata.xml.in:22
-#, fuzzy
-msgid "Bookmarks panel"
-msgstr "Yer imleri"
+msgid "Zencoding or Emmet support"
+msgstr "Zencoding veya Emmet desteği"
 
-#: desktop-data/bluefish.appdata.xml.in:24
+#: desktop-data/bluefish.appdata.xml.in:23
+msgid "Bookmarks panel"
+msgstr "Yer imleri paneli"
+
+#: desktop-data/bluefish.appdata.xml.in:25
 msgid ""
 "If you are an occasional coder who is in need for a simple to learn editor, "
 "or a heavy coder who dislikes heavy IDE's like eclipse or netbeans, Bluefish "
 "is your editor of choice!"
 msgstr ""
+"Öğrenmesi basit bir düzenleyiciye ihtiyaç duyan ara sıra bir kodlayıcıysanız "
+"veya Eclipse veya Netbeans gibi ağır IDE'lerden hoşlanmayan ağır bir "
+"kodlayıcıysanız, Bluefish sizin tercih ettiğiniz düzenleyicidir!"
 
-#: desktop-data/bluefish.appdata.xml.in:40
+#: desktop-data/bluefish.appdata.xml.in:37
 msgid "The Bluefish main window showing the application"
-msgstr ""
+msgstr "Uygulamayı gösteren Bluefish ana penceresi"
 
 #: desktop-data/bluefish.desktop.in:4 src/bluefish.c:95
 msgid "Bluefish Editor"
-msgstr "Bluefish Editörü"
+msgstr "Bluefish Düzenleyici"
 
 #: desktop-data/bluefish.desktop.in:5
 msgid "Web Development Editor"
-msgstr "Web Geliştirme Editörü"
+msgstr "Web Geliştirme Düzenleyici"
 
 #: desktop-data/bluefish.desktop.in:6
 msgid "programming;code;web;editor;development;html;php;python;"
-msgstr ""
+msgstr "programlama;kod;web;düzenleyici;geliştirme;html;php;python;"
 
 #: desktop-data/bluefish.desktop.in:8
-#, fuzzy
 msgid "bluefish"
-msgstr "Bluefish'ten çık"
+msgstr "bluefish"
 
-#: src/bftextview2.c:2047
+#: src/bftextview2.c:2048
 msgid "Collapse all"
 msgstr "Tümünü daralt"
 
-#: src/bftextview2.c:2050
+#: src/bftextview2.c:2051
 msgid "Expand all"
 msgstr "Tümünü genişlet"
 
-#: src/bftextview2.c:2058
+#: src/bftextview2.c:2059
 #, c-format
 msgid "Collapse %s"
 msgstr "%s daralt"
 
-#: src/bftextview2.c:2068
+#: src/bftextview2.c:2069
 #, c-format
 msgid "Expand %s"
 msgstr "%s genişlet"
@@ -161,22 +173,19 @@ msgstr "Bul:"
 
 #: src/bfwin.c:1077 src/snr3.c:1603
 msgid "Regular expression (pcre)"
-msgstr "Normal ifade (pcre)"
+msgstr "Düzenli ifade (pcre)"
 
 #: src/bfwin.c:1080
-#, fuzzy
 msgid "Case sensitive"
-msgstr "Büyük/küçük harfe duyarlı _eşleştirme"
+msgstr "Büyük/küçük harfe duyarlı"
 
 #: src/bfwin.c:1083
-#, fuzzy
 msgid "Dot character matches newlines"
-msgstr "Normal ifade modelindeki nokta karakteri yeni satırlarla eşleşir"
+msgstr "Nokta karakteri yeni satırlarla eşleşir"
 
 #: src/bfwin.c:1086
-#, fuzzy
 msgid "Pattern contains backslash escaped sequences"
-msgstr "Model, çıkış _dizileri içeriyor"
+msgstr "Desen, ters eğik çizgiden kaçan diziler içeriyor"
 
 #: src/bfwin.c:1098
 msgid "Advanced"
@@ -189,15 +198,15 @@ msgstr "Yeni Bluefish Penceresi"
 #. Fake-label (for notebook_hide() and _show() ;)
 #: src/bfwin.c:1638
 msgid "Stand by..."
-msgstr "Beklemek..."
+msgstr "Beklemede kalın..."
 
 #: src/bfwin_uimanager.c:778
 msgid "Leave Fullscreen"
-msgstr "Tam Ekrandan Çık"
+msgstr "Tam Ekrandan Ayrıl"
 
 #: src/bfwin_uimanager.c:778
 msgid "Fullscreen"
-msgstr "Tam ekran"
+msgstr "Tam Ekran"
 
 #: src/bfwin_uimanager.c:836
 msgid "_File"
@@ -209,7 +218,7 @@ msgstr "Şablondan Yeni"
 
 #: src/bfwin_uimanager.c:838 src/bfwin_uimanager.c:849
 msgid "Open _Recent"
-msgstr "_Son Kullanılanları Aç"
+msgstr "_Sonuncuyu Aç"
 
 #: src/bfwin_uimanager.c:839
 msgid "_Edit"
@@ -240,9 +249,8 @@ msgid "Character _Encoding"
 msgstr "Karakter _Kodlaması"
 
 #: src/bfwin_uimanager.c:846
-#, fuzzy
 msgid "Reorder documents"
-msgstr "Tüm açık belgeler"
+msgstr "Belgeleri yeniden sırala"
 
 #: src/bfwin_uimanager.c:847
 msgid "_Go"
@@ -265,13 +273,12 @@ msgid "_Filters"
 msgstr "_Filtreler"
 
 #: src/bfwin_uimanager.c:853
-#, fuzzy
 msgid "_Output parsers"
-msgstr "Çıktı ayrıştırıcıları"
+msgstr "_Çıktı ayrıştırıcıları"
 
 #: src/bfwin_uimanager.c:854
 msgid "For_mat"
-msgstr ""
+msgstr "Biçi_m"
 
 #: src/bfwin_uimanager.c:855
 msgid "_Insert"
@@ -279,7 +286,7 @@ msgstr "_Ekle"
 
 #: src/bfwin_uimanager.c:856
 msgid "Con_vert"
-msgstr ""
+msgstr "_Dönüştür"
 
 #: src/bfwin_uimanager.c:860
 msgid "_New"
@@ -300,7 +307,7 @@ msgstr "Yeni pencere"
 
 #: src/bfwin_uimanager.c:863
 msgid "Close Win_dow"
-msgstr "_Pencereyi kapat"
+msgstr "_Pencereyi Kapat"
 
 #: src/bfwin_uimanager.c:863
 msgid "Close window"
@@ -316,7 +323,7 @@ msgstr "Dosya aç"
 
 #: src/bfwin_uimanager.c:865
 msgid "Open Ad_vanced..."
-msgstr "Geli_şmiş'i Aç..."
+msgstr "_Gelişmişi Aç..."
 
 #: src/bfwin_uimanager.c:865 src/filebrowser2.c:1323
 msgid "Open advanced"
@@ -328,7 +335,7 @@ msgstr "_Seçimden Aç"
 
 #: src/bfwin_uimanager.c:867
 msgid "Open from Selection"
-msgstr "Seçimden Aç"
+msgstr "Seçimden aç"
 
 #: src/bfwin_uimanager.c:869
 msgid "_Print..."
@@ -344,7 +351,7 @@ msgstr "_Çık"
 
 #: src/bfwin_uimanager.c:870
 msgid "Quit Bluefish"
-msgstr "Bluefish'ten çık"
+msgstr "Bluefish'ten Çık"
 
 #: src/bfwin_uimanager.c:872 src/bfwin_uimanager.c:875
 msgid "Preference_s..."
@@ -352,25 +359,23 @@ msgstr "_Tercihler..."
 
 #: src/bfwin_uimanager.c:872 src/bfwin_uimanager.c:875
 msgid "Edit Preferences"
-msgstr "Tercihleri ​​düzenle"
+msgstr "Tercihleri Düzenle"
 
 #: src/bfwin_uimanager.c:878
 msgid "Select _All"
-msgstr "_Tümünü seç"
+msgstr "_Tümünü Seç"
 
 #: src/bfwin_uimanager.c:878
 msgid "Select all"
 msgstr "Tümünü seç"
 
 #: src/bfwin_uimanager.c:879
-#, fuzzy
 msgid "Toggle Boo_kmark"
-msgstr "Yer İmini Göster"
+msgstr "_Yer İmini Değiştir"
 
 #: src/bfwin_uimanager.c:879
-#, fuzzy
 msgid "Toggle bookmark"
-msgstr "Yer imini sil"
+msgstr "Yer imini değiştir"
 
 #: src/bfwin_uimanager.c:881
 msgid "_Add or Remove..."
@@ -378,11 +383,11 @@ msgstr "_Ekle veya Kaldır..."
 
 #: src/bfwin_uimanager.c:881
 msgid "Add or remove character encoding"
-msgstr "Karakter kodlaması ekleme veya kaldırma"
+msgstr "Karakter kodlaması ekle veya kaldır"
 
 #: src/bfwin_uimanager.c:883
 msgid "Floati_ng Window"
-msgstr "_Kayan Pencere"
+msgstr "Kaya_n Pencere"
 
 #: src/bfwin_uimanager.c:883
 msgid "Open current document in floating window"
@@ -390,19 +395,19 @@ msgstr "Geçerli belgeyi kayan pencerede aç"
 
 #: src/bfwin_uimanager.c:885 src/bfwin_uimanager.c:891
 msgid "_Increase"
-msgstr "_Artırma"
+msgstr "_Artır"
 
 #: src/bfwin_uimanager.c:885
 msgid "Increase document font size"
-msgstr "Belge yazı tipi boyutunu artırın"
+msgstr "Belge yazı tipi boyutunu artır"
 
 #: src/bfwin_uimanager.c:887 src/bfwin_uimanager.c:893
 msgid "_Decrease"
-msgstr "_Azaltma"
+msgstr "_Azalt"
 
 #: src/bfwin_uimanager.c:887
 msgid "Decrease document font size"
-msgstr "Belge yazı tipi boyutunu küçültün"
+msgstr "Belge yazı tipi boyutunu azalt"
 
 #: src/bfwin_uimanager.c:889 src/bfwin_uimanager.c:895
 msgid "_Reset"
@@ -414,11 +419,11 @@ msgstr "Belge yazı tipi boyutunu sıfırla"
 
 #: src/bfwin_uimanager.c:891
 msgid "Increase document tab size"
-msgstr "Belge sekme boyutunu artırın"
+msgstr "Belge sekmesi boyutunu artır"
 
 #: src/bfwin_uimanager.c:893
 msgid "Decrease document tab size"
-msgstr "Belge sekmesi boyutunu küçültün"
+msgstr "Belge sekmesi boyutunu azalt"
 
 #: src/bfwin_uimanager.c:895
 msgid "Reset document tab size"
@@ -446,7 +451,7 @@ msgstr "Yeni proje"
 
 #: src/bfwin_uimanager.c:905
 msgid "_Open Project..."
-msgstr "Proje _aç..."
+msgstr "Proje _Aç..."
 
 #: src/bfwin_uimanager.c:905
 msgid "Open project"
@@ -461,9 +466,8 @@ msgid "Synchronize text block"
 msgstr "Metin bloğunu senkronize et"
 
 #: src/bfwin_uimanager.c:908
-#, fuzzy
 msgid "_Toggle Comment"
-msgstr "Yorumu değiştir"
+msgstr "Yorumu _Değiştir"
 
 #: src/bfwin_uimanager.c:908
 msgid "Toggle comment"
@@ -471,44 +475,39 @@ msgstr "Yorumu değiştir"
 
 #: src/bfwin_uimanager.c:910
 msgid "Select _Block"
-msgstr "_Blok seç"
+msgstr "_Blok Seç"
 
 #: src/bfwin_uimanager.c:911
 msgid "Select block, use multiple times to select parent blocks "
-msgstr "Blok seçin, ana blokları seçmek için birden çok kez kullanın "
+msgstr "Blok seçin, üst blokları seçmek için birden çok kez kullanın "
 
 #: src/bfwin_uimanager.c:913
-#, fuzzy
 msgid "Select _Identifier"
-msgstr "Dosyaları seçin"
+msgstr "_Tanımlayıcı Seç"
 
 #: src/bfwin_uimanager.c:914
-#, fuzzy
 msgid "Select identifier"
-msgstr "Dosyaları seçin"
+msgstr "Tanımlayıcı seç"
 
 #: src/bfwin_uimanager.c:915
-#, fuzzy
 msgid "D_uplicate Line"
-msgstr "Geçerli satırı çoğalt"
+msgstr "Satırı _Çoğalt"
 
 #: src/bfwin_uimanager.c:915
 msgid "Duplicate the current line"
 msgstr "Geçerli satırı çoğalt"
 
 #: src/bfwin_uimanager.c:917
-#, fuzzy
 msgid "_Delete Line"
-msgstr "_Sil"
+msgstr "Satırı _Sil"
 
 #: src/bfwin_uimanager.c:917
 msgid "Delete the current line"
 msgstr "Geçerli satırı sil"
 
 #: src/bfwin_uimanager.c:919
-#, fuzzy
 msgid "_Word Count"
-msgstr "Kelime sayısı"
+msgstr "_Kelime Sayısı"
 
 #: src/bfwin_uimanager.c:919
 msgid "Word count"
@@ -516,7 +515,7 @@ msgstr "Kelime sayısı"
 
 #: src/bfwin_uimanager.c:920 src/doc_extern_tools.c:47
 msgid "Lorem Ipsum generator"
-msgstr "Lorem Ipsum oluşturucu"
+msgstr "Lorem Ipsum üreteci"
 
 #: src/bfwin_uimanager.c:922
 msgid "Insert Relative Filename"
@@ -528,7 +527,7 @@ msgstr "Mutlak Dosya Adı Ekle"
 
 #: src/bfwin_uimanager.c:926
 msgid "Indenting to S_paces"
-msgstr "_Boşluklara girinti"
+msgstr "_Boşluklara Girinti"
 
 #: src/bfwin_uimanager.c:926
 msgid "Indenting to spaces"
@@ -536,7 +535,7 @@ msgstr "Boşluklara girinti"
 
 #: src/bfwin_uimanager.c:928
 msgid "Indenting to T_abs"
-msgstr "_Sekmelere girinti"
+msgstr "_Sekmelere Girinti"
 
 #: src/bfwin_uimanager.c:928
 msgid "Indenting to tabs"
@@ -544,11 +543,11 @@ msgstr "Sekmelere girinti"
 
 #: src/bfwin_uimanager.c:930
 msgid "_Join Lines Together"
-msgstr "Satırları _Birleştirin"
+msgstr "Satırları _Birleştir"
 
 #: src/bfwin_uimanager.c:930
 msgid "Join lines together"
-msgstr "Satırları bir araya getir"
+msgstr "Satırları birleştir"
 
 #: src/bfwin_uimanager.c:932
 msgid "Split Lines on Right _Margin"
@@ -560,15 +559,15 @@ msgstr "Sağ kenarda satırları böl"
 
 #: src/bfwin_uimanager.c:934
 msgid "Merge Lines Into Col_umns"
-msgstr "Satırları _Sütunlara Birleştirme"
+msgstr "Satırları Süt_unlara Birleştir"
 
 #: src/bfwin_uimanager.c:934
 msgid "Merge lines into columns"
-msgstr "Satırları sütunlara birleştirme"
+msgstr "Satırları sütunlara birleştir"
 
 #: src/bfwin_uimanager.c:936
 msgid "Rewrap _Lines"
-msgstr "_Satırları yeniden sar"
+msgstr "_Satırları Yeniden Sar"
 
 #: src/bfwin_uimanager.c:936
 msgid "Rewrap lines"
@@ -576,15 +575,15 @@ msgstr "Satırları yeniden sar"
 
 #: src/bfwin_uimanager.c:937
 msgid "Strip T_railing Whitespace"
-msgstr "_Sondaki Beyaz Boşluğu Çıkarın"
+msgstr "_Sondaki Beyaz Boşluğu Çıkar"
 
 #: src/bfwin_uimanager.c:937
 msgid "Strip trailing whitespace"
-msgstr "Sondaki beyaz boşluğu çıkarın"
+msgstr "Sondaki beyaz boşluğu çıkar"
 
 #: src/bfwin_uimanager.c:939
 msgid "Javascript beautifier"
-msgstr ""
+msgstr "Javascript güzelleştirici"
 
 #: src/bfwin_uimanager.c:941
 msgid "Preview in browser"
@@ -624,7 +623,7 @@ msgstr "Çıktı bölmesini göster"
 
 #: src/bfwin_uimanager.c:953
 msgid "Status_bar"
-msgstr "Durum _çubuğu"
+msgstr "Durum çu_buğu"
 
 #: src/bfwin_uimanager.c:953
 msgid "Show statusbar"
@@ -672,7 +671,7 @@ msgstr "Blokları göster"
 
 #: src/bfwin_uimanager.c:963
 msgid "Show Line N_umbers"
-msgstr "Satır _Numaralarını Göster"
+msgstr "Satır N_umaralarını Göster"
 
 #: src/bfwin_uimanager.c:963
 msgid "Show line numbers"
@@ -716,7 +715,7 @@ msgstr "_Kapat"
 
 #: src/bfwin_uimanager.c:975
 msgid "Close current file"
-msgstr "Mevcut dosyayı kapat"
+msgstr "Geçerli dosyayı kapat"
 
 #: src/bfwin_uimanager.c:977
 msgid "Close A_ll"
@@ -744,7 +743,7 @@ msgstr "Dosyayı farklı kaydet"
 
 #: src/bfwin_uimanager.c:983
 msgid "Sav_e All"
-msgstr "Tümünü _kaydet"
+msgstr "Tümünü Kayd_et"
 
 #: src/bfwin_uimanager.c:983
 msgid "Save all files"
@@ -752,21 +751,19 @@ msgstr "Tüm dosyaları kaydet"
 
 #: src/bfwin_uimanager.c:985
 msgid "Rever_t to Saved"
-msgstr "Kaydedildi'ye _Geri Döndür"
+msgstr "Kaydedilenlere _Geri Dön"
 
 #: src/bfwin_uimanager.c:985
 msgid "Reload current file"
 msgstr "Geçerli dosyayı yeniden yükle"
 
 #: src/bfwin_uimanager.c:987
-#, fuzzy
 msgid "Save a cop_y..."
-msgstr "_Farklı kaydet..."
+msgstr "Bir kop_yasını kaydet..."
 
 #: src/bfwin_uimanager.c:987
-#, fuzzy
 msgid "Save a copy"
-msgstr "Kaydet ve _kapat"
+msgstr "Bir kopyasını kaydet"
 
 #: src/bfwin_uimanager.c:989
 msgid "_Insert..."
@@ -795,11 +792,11 @@ msgstr "Girinti"
 
 #: src/bfwin_uimanager.c:993 src/bfwin_uimanager.c:996
 msgid "Unin_dent"
-msgstr "_Girintiyi kaldır"
+msgstr "_Girintisiz"
 
 #: src/bfwin_uimanager.c:993 src/bfwin_uimanager.c:996
 msgid "Unindent"
-msgstr "Girintiyi kaldır"
+msgstr "Girintisiz"
 
 #: src/bfwin_uimanager.c:999
 msgid "F_irst Bookmark"
@@ -851,14 +848,12 @@ msgid "Move current tab right"
 msgstr "Geçerli sekmeyi sağa taşı"
 
 #: src/bfwin_uimanager.c:1011
-#, fuzzy
 msgid "Sort by filename"
-msgstr "Dosya adı _ayarlanmadı"
+msgstr "Dosya adına göre sırala"
 
 #: src/bfwin_uimanager.c:1013
-#, fuzzy
 msgid "Sort by full path"
-msgstr "Tam Yola Göre"
+msgstr "Tam yola göre sırala"
 
 #: src/bfwin_uimanager.c:1015
 msgid "_Recent Document"
@@ -897,9 +892,8 @@ msgid "_Previous Document"
 msgstr "_Önceki Belge"
 
 #: src/bfwin_uimanager.c:1042
-#, fuzzy
 msgid "_Goto Line"
-msgstr "Satıra Git:"
+msgstr "Satıra _Git"
 
 #: src/bfwin_uimanager.c:1042
 msgid "Goto line"
@@ -911,20 +905,20 @@ msgstr "_Panodan Satır Numarasına Git"
 
 #: src/bfwin_uimanager.c:1044
 msgid "Goto line number in clipboard or selection"
-msgstr "Panoda veya seçimde satır numarasına git"
+msgstr "Panodaki veya seçimdeki satır numarasına git"
 
 #: src/bfwin_uimanager.c:1045
 msgid "_Jump to Reference"
-msgstr "Referansa _Git"
+msgstr "Referansa _Atla"
 
 #: src/bfwin_uimanager.c:1045
 msgid "Jump to reference"
-msgstr "Referansa git"
+msgstr "Referansa atla"
 
 #: src/bfwin_uimanager.c:1048 src/bfwin_uimanager.c:1049
 #: src/bfwin_uimanager.c:1052 src/bfwin_uimanager.c:1053
 msgid "Jump to Matching Block Boundary"
-msgstr ""
+msgstr "Eşleşen Blok Sınırına Atla"
 
 #: src/bfwin_uimanager.c:1059
 msgid "Cu_t"
@@ -951,13 +945,12 @@ msgid "Paste"
 msgstr "Yapıştır"
 
 #: src/bfwin_uimanager.c:1062
-#, fuzzy
 msgid "Paste Specia_l"
-msgstr "Özel yapıştır"
+msgstr "Öze_l Yapıştır"
 
 #: src/bfwin_uimanager.c:1062
 msgid "Paste Special"
-msgstr "Özel yapıştır"
+msgstr "Özel Yapıştır"
 
 #: src/bfwin_uimanager.c:1067
 msgid "_Find"
@@ -984,9 +977,8 @@ msgid "Find from clipboard or selection"
 msgstr "Panodan veya seçimden bul"
 
 #: src/bfwin_uimanager.c:1073 src/bfwin_uimanager.c:1077
-#, fuzzy
 msgid "Ad_vanced Find & Replace..."
-msgstr "Gelişmiş Bul ve Değiştir"
+msgstr "_Gelişmiş Bul ve Değiştir..."
 
 #: src/bfwin_uimanager.c:1074 src/bfwin_uimanager.c:1078
 msgid "Advanced Find and Replace"
@@ -1018,15 +1010,15 @@ msgstr "Proje seçeneklerini düzenle"
 
 #: src/bfwin_uimanager.c:1096
 msgid "_Undo"
-msgstr "_Geri al"
+msgstr "_Geri Al"
 
 #: src/bfwin_uimanager.c:1096
 msgid "Undo"
-msgstr "Geri al"
+msgstr "Geri Al"
 
 #: src/bfwin_uimanager.c:1097
 msgid "U_ndo All"
-msgstr "Tümünü _geri al"
+msgstr "Tümünü _Geri Al"
 
 #: src/bfwin_uimanager.c:1097
 msgid "Undo All"
@@ -1034,33 +1026,32 @@ msgstr "Tümünü Geri Al"
 
 #: src/bfwin_uimanager.c:1098
 msgid "_Redo"
-msgstr "_Yeniden yap"
+msgstr "_Yeniden Yap"
 
 #: src/bfwin_uimanager.c:1098
 msgid "Redo"
-msgstr "Yeniden yap"
+msgstr "Yeniden Yap"
 
 #: src/bfwin_uimanager.c:1099
 msgid "R_edo All"
-msgstr "Tümünü _yeniden yap"
+msgstr "Tümünü _Yeniden Yap"
 
 #: src/bfwin_uimanager.c:1099
 msgid "Redo All"
-msgstr "Tümünü yeniden yap"
+msgstr "Tümünü Yeniden Yap"
 
 #: src/bfwin_uimanager.c:1126
 #, c-format
 msgid "Always use this syntax for files of type %s ?"
-msgstr ""
+msgstr "%s türündeki dosyalar için her zaman bu sözdizimi kullanılsın mı?"
 
 #: src/bfwin_uimanager.c:1305
 msgid "Open _URL..."
-msgstr "_URL aç..."
+msgstr "_URL Aç..."
 
 #: src/bfwin_uimanager.c:1315
-#, fuzzy
 msgid "Upload _/ Download..."
-msgstr "Yükle / İndir"
+msgstr "Yükle _/ İndir..."
 
 #: src/bfwin_uimanager.c:1328
 msgid "_Spell Check"
@@ -1080,27 +1071,28 @@ msgstr "Yalnızca seçili metin"
 
 #: src/bfwin_uimanager.c:1812
 msgid "Never ask again"
-msgstr ""
+msgstr "Asla tekrar sorma"
 
 #: src/blocksync.c:87
 msgid ""
 "Select the block to sync to other pages. Include the start-of-block and end-"
 "of-block markers in your selection."
 msgstr ""
-"Diğer sayfalarla eşitlenecek bloğu seçin. Seçiminize blok başlangıcı ve blok "
-"sonu işaretleyicilerini ekleyin."
+"Diğer sayfalarla senkronize edilecek bloğu seçin. Seçiminize blok başlangıcı "
+"ve blok bitişi işaretleyicilerini ekleyin."
 
 #: src/blocksync.c:92
 msgid "To proceed with the current selection click forward."
-msgstr "Mevcut seçime devam etmek için ileriye tıklayın."
+msgstr "Geçerli seçime devam etmek için ileri düğmesini tıklayın."
 
 #: src/blocksync.c:121
 msgid ""
 "Below is the block, including start and end marker. Please <b>select the "
 "start marker</b> in the text below."
 msgstr ""
-"Başlangıç ​​ve bitiş işaretini içeren blok aşağıdadır. Lütfen aşağıdaki "
-"metinde <b>başlangıç ​​işaretini seçin</b>."
+"Aşağıda, başlangıç ve bitiş işaretleyicisi dahil olmak üzere blok "
+"bulunmaktadır. Lütfen aşağıdaki metinde <b>başlangıç işaretleyicisini seçin</"
+"b>."
 
 #: src/blocksync.c:156
 msgid "Please <b>select the end marker</b> in the text below."
@@ -1146,7 +1138,7 @@ msgid ""
 "<span foreground=\"red\" weight=\"bold\">Select the text that marks the end "
 "of the block.</span>"
 msgstr ""
-"<span foreground=\"red\" weight=\"bold\">Bloğun sonunu işaretleyen metni "
+"<span foreground=\"red\" weight=\"bold\">Bloğun bitişini işaretleyen metni "
 "seçin.</span>"
 
 #: src/bluefish.c:95
@@ -1176,137 +1168,136 @@ msgid ""
 "Please run: %s -?\n"
 msgstr ""
 "Komut satırı seçenekleri ayrıştırılırken hata oluştu. %s\n"
-"Lütfen çalıştırın: %s -?\n"
+"Lütfen çalıştırır mısınız: %s -?\n"
 
-#: src/bookmark.c:577 src/bookmark.c:598
+#: src/bookmark.c:585 src/bookmark.c:606
 msgid "_Name:"
 msgstr "_Adı:"
 
-#: src/bookmark.c:584 src/bookmark.c:602
+#: src/bookmark.c:592 src/bookmark.c:610
 msgid "_Description:"
 msgstr "_Açıklama:"
 
-#: src/bookmark.c:587
-#, fuzzy
+#: src/bookmark.c:595
 msgid "_Temporary"
-msgstr "Geçici"
+msgstr "_Geçici"
 
-#: src/bookmark.c:604
+#: src/bookmark.c:612
 msgid "Temporary"
 msgstr "Geçici"
 
-#: src/bookmark.c:777
+#: src/bookmark.c:788
 #, c-format
 msgid "Do you really want to delete %s?"
 msgstr "%s'i gerçekten silmek istiyor musunuz?"
 
-#: src/bookmark.c:780
+#: src/bookmark.c:791
 msgid "Delete permanent bookmark."
 msgstr "Kalıcı yer imini sil."
 
-#: src/bookmark.c:806
+#: src/bookmark.c:817
 msgid "Delete all bookmarks."
 msgstr "Tüm yer imlerini sil."
 
-#: src/bookmark.c:844
+#: src/bookmark.c:855
 #, c-format
 msgid "Do you really want to delete all bookmarks for %s?"
 msgstr "%s için tüm yer imlerini gerçekten silmek istiyor musunuz?"
 
-#: src/bookmark.c:846
+#: src/bookmark.c:857
 msgid "Delete bookmarks?"
 msgstr "Yer imleri silinsin mi?"
 
-#: src/bookmark.c:867 src/bookmark.c:928
+#: src/bookmark.c:878 src/bookmark.c:939
 msgid "Edit bookmark"
 msgstr "Yer imini düzenle"
 
-#: src/bookmark.c:924
+#: src/bookmark.c:935
 msgid "Bookmark menu"
 msgstr "Yer imi menüsü"
 
-#: src/bookmark.c:925
+#: src/bookmark.c:936
 msgid "Show Bookmark"
 msgstr "Yer İmini Göster"
 
-#: src/bookmark.c:926
+#: src/bookmark.c:937
 msgid "Show File"
 msgstr "Dosyayı Göster"
 
-#: src/bookmark.c:927
+#: src/bookmark.c:938
 msgid "Bookmark search menu"
 msgstr "Yer imi arama menüsü"
 
-#: src/bookmark.c:928
+#: src/bookmark.c:939
 msgid "_Edit..."
 msgstr "_Düzenle..."
 
-#: src/bookmark.c:930 src/filebrowser2.c:1328
+#: src/bookmark.c:941 src/filebrowser2.c:1328
 msgid "_Delete"
 msgstr "_Sil"
 
-#: src/bookmark.c:930 src/document.c:2341
+#: src/bookmark.c:941 src/document.c:2341
 msgid "Delete bookmark"
 msgstr "Yer imini sil"
 
-#: src/bookmark.c:931
+#: src/bookmark.c:942
 msgid "Delete All"
-msgstr "Tümünü sil"
+msgstr "Tümünü Sil"
 
-#: src/bookmark.c:931
+#: src/bookmark.c:942
 msgid "Delete all bookmarks"
 msgstr "Tüm yer imlerini sil"
 
-#: src/bookmark.c:933
+#: src/bookmark.c:944
 msgid "Delete All in Document"
-msgstr "Belgedeki tümünü sil"
+msgstr "Belgedeki Tümünü Sil"
 
-#: src/bookmark.c:934
+#: src/bookmark.c:945
 msgid "Delete all bookmarks in document"
 msgstr "Belgedeki tüm yer imlerini sil"
 
-#: src/bookmark.c:939
+#: src/bookmark.c:950
 msgid "Permanent by default"
 msgstr "Varsayılan olarak kalıcı"
 
-#: src/bookmark.c:944
+#: src/bookmark.c:955
 msgid "By Name"
-msgstr "İsme Göre"
+msgstr "Ada Göre"
 
-#: src/bookmark.c:945
+#: src/bookmark.c:956
 msgid "By Full Path"
 msgstr "Tam Yola Göre"
 
-#: src/bookmark.c:946
+#: src/bookmark.c:957
 msgid "By Full URI"
 msgstr "Tam URI'e göre"
 
-#: src/bookmark.c:950 src/bookmark.c:956
+#: src/bookmark.c:961 src/bookmark.c:967
 msgid "Content"
 msgstr "İçerik"
 
-#: src/bookmark.c:951 src/bookmark.c:957 src/preferences.c:626
-#: src/preferences.c:1691 src/preferences.c:1693 src/preferences.c:1794
+#: src/bookmark.c:962 src/bookmark.c:968 src/preferences.c:629
+#: src/preferences.c:1695 src/preferences.c:1697 src/preferences.c:1798
 msgid "Name"
 msgstr "Adı"
 
-#: src/bookmark.c:952 src/bookmark.c:958
+#: src/bookmark.c:963 src/bookmark.c:969
 msgid "Name & Content"
-msgstr "Adı & İçeriği"
+msgstr "Adı ve İçeriği"
 
-#: src/bookmark.c:1298
+#: src/bookmark.c:1328
 msgid "First bookmark"
 msgstr "İlk yer imi"
 
-#: src/bookmark.c:1302
+#: src/bookmark.c:1332
 msgid "Previous bookmark"
 msgstr "Önceki yer imi"
 
-#: src/bookmark.c:1306
+#: src/bookmark.c:1336
 msgid "Next bookmark"
 msgstr "Sonraki yer imİ"
 
-#: src/bookmark.c:1310
+#: src/bookmark.c:1340
 msgid "Last bookmark"
 msgstr "Son yer imi"
 
@@ -1368,7 +1359,7 @@ msgstr ""
 #: src/document.c:672
 #, c-format
 msgid "Untitled %d"
-msgstr "%d adsız"
+msgstr "Başlıksız %d"
 
 #: src/document.c:855
 #, c-format
@@ -1382,7 +1373,7 @@ msgstr "%s belgesi zaten başka bir Bluefish penceresinde açık."
 
 #: src/document.c:1035
 msgid "Move to this window"
-msgstr "Bu pencereye git"
+msgstr "Bu pencereye taşı"
 
 #: src/document.c:1035
 msgid "Open readonly"
@@ -1393,9 +1384,9 @@ msgid "Do not open"
 msgstr "Açmayın"
 
 #: src/document.c:1398
-#, fuzzy, c-format
+#, c-format
 msgid "Ln: %d, Col: %d, Char: %d, Blocks: %d"
-msgstr " Satır: %d, Sütun: %d, Karakter: %d"
+msgstr "Satır: %d, Sütun: %d, Karakter: %d, Bloklar: %d"
 
 #: src/document.c:1419
 msgid " OVR"
@@ -1403,7 +1394,7 @@ msgstr " OVR"
 
 #: src/document.c:1419
 msgid " INS"
-msgstr " EKLENTİ"
+msgstr " INS"
 
 #: src/document.c:1421
 msgid " RO"
@@ -1432,10 +1423,14 @@ msgid ""
 "syntax, and may replace spaces or tabs with newlines in any location, or "
 "insert newlines if no spaces or tabs are found."
 msgstr ""
+"Bu dosyadaki satırlar Bluefish'in makul bir performansla işleyebileceğinden "
+"daha uzun. Bununla birlikte, bu bölme işlevi herhangi bir dil sözdiziminden "
+"habersizdir ve boşlukları veya sekmeleri herhangi bir yerde yeni satırlarla "
+"değiştirebilir veya boşluk veya sekme bulunmazsa yeni satır ekleyebilir."
 
 #: src/document.c:2129
 msgid "_Convert"
-msgstr ""
+msgstr "_Dönüştür"
 
 #: src/document.c:2133
 #, c-format
@@ -1443,12 +1438,16 @@ msgid ""
 "File '%s' is not a valid text file.\n"
 "The file might be corrupted, truncated, or in an unexpected encoding."
 msgstr ""
+"'%s' dosyası geçerli bir metin dosyası değil.\n"
+"Dosya bozulmuş, kesilmiş veya beklenmedik bir kodlamaya sahip olabilir."
 
 #: src/document.c:2138
 msgid ""
 "Bluefish can convert this file into a valid one by replacing illegal symbols "
 "with spaces. Convert?"
 msgstr ""
+"Bluefish, geçersiz sembolleri boşluklarla değiştirerek bu dosyayı geçerli "
+"bir dosyaya dönüştürebilir. Dönüştürülsün mü?"
 
 #: src/document.c:2150
 #, c-format
@@ -1456,10 +1455,14 @@ msgid ""
 "File is opened in read-only mode since it differs from original one.\n"
 "%lu characters were replaced by space"
 msgstr ""
+"Dosya orijinalinden farklı olduğu için salt okunur modda açıldı.\n"
+"%lu karakterleri boşlukla değiştirildi"
 
 #: src/document.c:2153
 msgid "Use 'Save As' to save it with different name and make editable"
 msgstr ""
+"Farklı bir adla kaydetmek ve düzenlenebilir hale getirmek için 'Farklı "
+"Kaydet'i kullanın"
 
 #: src/document.c:2345
 msgid "Add bookmark"
@@ -1474,22 +1477,22 @@ msgstr "Tam ekrandan çık"
 #. we have to ask the user what to do
 #: src/document.c:2542 src/file_dialogs.c:450 src/file_dialogs.c:488
 msgid "_Abort save"
-msgstr "Kaydetmeyi _iptal et"
+msgstr "Kaydetmeden v_azgeç"
 
 #: src/document.c:2542
 msgid "_Continue save in UTF-8"
 msgstr "UTF-8'de kaydetmeye _devam et"
 
 #: src/document.c:2555
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Failed to convert %s to character encoding %s. Encoding failed on character "
 "'%s' at line %d column %d\n"
 "\n"
 "Continue saving in UTF-8 encoding?"
 msgstr ""
-"%s, %s karakter kodlamasına dönüştürülemedi. %d satır %d sütunundaki '%s' "
-"karakterinde kodlama başarısız oldu\n"
+"%s, %s karakter kodlamasına dönüştürülemedi. '%s' karakterinde kodlama %d "
+"satırında %d sütununda başarısız oldu\n"
 "\n"
 "UTF-8 kodlamasında kaydetmeye devam edilsin mi?"
 
@@ -1511,7 +1514,7 @@ msgid ""
 "If you revert \"%s\" to your last saved copy, your current changes will be "
 "permanently lost."
 msgstr ""
-"\"%s\" i son kaydedilmiş kopyanıza geri döndürürseniz, mevcut "
+"\"%s\" i son kaydedilen kopyanıza geri döndürürseniz, mevcut "
 "değişiklikleriniz kalıcı olarak kaybolacaktır."
 
 #: src/document.c:3457
@@ -1520,15 +1523,15 @@ msgstr "Değişiklikler son kaydedilen kopyaya geri döndürülsün mü?"
 
 #: src/document.c:3526
 msgid "_Retry"
-msgstr "_Dene"
+msgstr "_Yeniden dene"
 
 #: src/document.c:3526
 msgid "Retry _all failed"
-msgstr "Başarısız olanların _tümünü yeniden dene"
+msgstr "_Tüm başarısızları yeniden dene"
 
 #: src/document.c:3526
 msgid "Close all _failed"
-msgstr "Tümünü kapat _başarısız"
+msgstr "Tüm _başarısızları kapat"
 
 #: src/document.c:3531
 msgid "File "
@@ -1540,7 +1543,7 @@ msgstr " yükleme başarısız."
 
 #: src/document.c:3535
 msgid "File failed to load\n"
-msgstr "Dosya yüklenemedi\n"
+msgstr "Dosya yükleme başarısız\n"
 
 #: src/document.c:3669
 msgid "Select file to insert"
@@ -1560,7 +1563,7 @@ msgstr "Özel yapıştır"
 
 #: src/document.c:3877
 msgid "No compatible clipboard data found"
-msgstr ""
+msgstr "Uyumlu pano verisi bulunamadı"
 
 #: src/document.c:3882
 msgid "Paste as _HTML"
@@ -1571,16 +1574,15 @@ msgid "Paste as HTML with _JPG"
 msgstr "_JPG ile HTML olarak yapıştır"
 
 #: src/document.c:3897
-#, fuzzy
 msgid "Paste as plain text"
-msgstr "Düz metin ekle"
+msgstr "Düz metin olarak yapıştır"
 
 #: src/document.c:3992
 #, c-format
 msgid "%d line"
 msgid_plural "%d lines"
 msgstr[0] "%d satır"
-msgstr[1] "%d satırlar"
+msgstr[1] "%d lines"
 
 #: src/document.c:3993
 #, c-format
@@ -1602,11 +1604,11 @@ msgstr "Seçim istatistikleri: "
 
 #: src/document.c:3996
 msgid "Statistics: "
-msgstr "İstatistik: "
+msgstr "İstatistikler: "
 
 #: src/doc_text_tools.c:400
 msgid "Lines into columns"
-msgstr "Sütunlar halinde satırlar"
+msgstr "Sütunlara satırlar"
 
 #: src/doc_text_tools.c:412
 msgid "Number of columns:"
@@ -1614,7 +1616,7 @@ msgstr "Sütun sayısı:"
 
 #: src/doc_text_tools.c:416
 msgid "Spread lines horizontally"
-msgstr "Satırları yatay olarak yayın"
+msgstr "Satırları yatay olarak yay"
 
 #: src/doc_text_tools.c:423
 msgid "Column separator:"
@@ -1622,17 +1624,15 @@ msgstr "Sütun ayırıcı:"
 
 #: src/doc_text_tools.c:427
 msgid "Fill empty entries:"
-msgstr "Boş girişleri doldurun:"
+msgstr "Boş girişleri doldur:"
 
 #: src/doc_extern_tools.c:63
-#, fuzzy
 msgid "Number of _paragraphs:"
-msgstr "Paragraf sayısı"
+msgstr "_Paragraf sayısı:"
 
 #: src/doc_extern_tools.c:68
-#, fuzzy
 msgid "Number of _sentences:"
-msgstr "Cümle sayısı"
+msgstr "_Cümle sayısı:"
 
 #: src/doc_extern_tools.c:71 src/doc_extern_tools.c:86
 msgid "Insert plain text"
@@ -1640,11 +1640,11 @@ msgstr "Düz metin ekle"
 
 #: src/doc_extern_tools.c:71 src/doc_extern_tools.c:86
 msgid "Insert in <li>"
-msgstr "<li> içine ekle"
+msgstr "İçine ekle <li>"
 
 #: src/doc_extern_tools.c:71 src/doc_extern_tools.c:86
 msgid "Insert in <p>"
-msgstr "<p> içine ekle"
+msgstr "İçine ekle <p>"
 
 #: src/doc_extern_tools.c:81
 msgid "Number of paragraphs"
@@ -1656,38 +1656,36 @@ msgstr "Cümle sayısı"
 
 #: src/doc_extern_tools.c:134
 msgid "Javascript Beautify"
-msgstr ""
+msgstr "Javascript Güzelleştirme"
 
 #: src/doc_extern_tools.c:148
-#, fuzzy
 msgid "_Indent size:"
-msgstr "_Girinti"
+msgstr "_Girinti boyutu:"
 
 #: src/doc_extern_tools.c:151 src/doc_extern_tools.c:178
 msgid "Use _tabs to indent, not spaces"
-msgstr ""
+msgstr "Girinti yapmak için _sekmeleri kullanın, boşluk değil"
 
 #: src/doc_extern_tools.c:154 src/doc_extern_tools.c:183
 msgid "Do not _preserve existing line breaks"
-msgstr ""
+msgstr "Mevcut satır sonlarını _korumayın"
 
 #: src/doc_extern_tools.c:156 src/doc_extern_tools.c:184
 msgid "More _jslint-compatible output"
-msgstr ""
+msgstr "Daha fazla _jslint uyumlu çıktı"
 
 #: src/doc_extern_tools.c:159 src/doc_extern_tools.c:186
 msgid "_Decode printable chars encoded in \\\\xNN notation"
 msgstr ""
+"\\\\xNN gösteriminde kodlanmış yazdırılabilir karakterlerin ko_dunu çöz"
 
 #: src/doc_extern_tools.c:164 src/doc_extern_tools.c:173
-#, fuzzy
 msgid "Beautify only in _selection"
-msgstr "_Sekme tuşu girintileri seçimi"
+msgstr "Sadece _seçimde güzelleştir"
 
 #: src/doc_extern_tools.c:179
-#, fuzzy
 msgid "_Indent size"
-msgstr "_Girinti"
+msgstr "_Girinti boyutu"
 
 #: src/encodings_dialog.c:287
 msgid "_Available encodings:"
@@ -1703,53 +1701,62 @@ msgstr "Kodlama"
 
 #: src/encodings_dialog.c:362
 msgid "Encodings in _menu:"
-msgstr "_Menu içindeki kodlamalar:"
+msgstr "_Menüdeki kodlamalar:"
 
 #: src/encodings_dialog.c:436
 msgid "Add or remove document encodings"
-msgstr "Belge kodlamaları ekleme veya kaldırma"
+msgstr "Belge kodlamaları ekle veya kaldır"
 
 #: src/external_commands.c:478
 msgid "Supply extra arguments"
-msgstr "Ekstra değişkenler sağlayın"
+msgstr "Ekstra bağımsız değişkenler sağlayın"
 
 #: src/external_commands.c:484
 #, c-format
 msgid "Supply arguments to define %%a in '%s'"
-msgstr "%%a'yı '%s' içinde tanımlamak için bağımsız değişkenler sağlayın"
+msgstr "%%a'i '%s' içinde tanımlamak için bağımsız değişkenler sağlayın"
 
 #: src/external_commands.c:766
 msgid "Internal error."
-msgstr ""
+msgstr "Dahili hata."
 
 #: src/external_commands.c:769
 msgid ""
 "This command requires the current document to have a file name. Please save "
 "your document first."
 msgstr ""
+"Bu komut, geçerli belgenin bir dosya adına sahip olmasını gerektirir. Lütfen "
+"önce belgenizi kaydedin."
 
 #: src/external_commands.c:772
 msgid ""
 "This command requires the current document to be a local file. Please save "
 "your document to a local file."
 msgstr ""
+"Bu komut, geçerli belgenin yerel bir dosya olmasını gerektirir. Lütfen "
+"belgenizi yerel bir dosyaya kaydedin."
 
 #: src/external_commands.c:775
 msgid ""
 "External commands cannot have an output defined. Please fix this command in "
 "the preferences."
 msgstr ""
+"Harici komutların tanımlanmış bir çıktısı olamaz. Lütfen bu komutu "
+"tercihlerde düzeltin."
 
 #: src/external_commands.c:778
 msgid ""
 "This command has multiple inputs. Please fix this command in the preferences."
 msgstr ""
+"Bu komutun birden fazla girdisi vardır. Lütfen bu komutu tercihlerde "
+"düzeltin."
 
 #: src/external_commands.c:781
 msgid ""
 "This command has multiple outputs. Please fix this command in the "
 "preferences."
 msgstr ""
+"Bu komutun birden çok çıktısı vardır. Lütfen bu komutu tercihlerde düzeltin."
 
 #: src/external_commands.c:785
 #, c-format
@@ -1757,23 +1764,25 @@ msgid ""
 "Failed to create a command for %s.\n"
 "%s"
 msgstr ""
+"%s için bir komut oluşturulamadı.\n"
+"%s"
 
 #: src/external_commands.c:787
 msgid "Failed to create a command"
-msgstr ""
+msgstr "Bir komut oluşturulamadı"
 
 #: src/external_commands.c:809 src/external_commands.c:826
 #, c-format
 msgid "The command %s exited with error code %d. %s"
-msgstr ""
+msgstr "%s komutundan %d hata koduyla çıkıldı. %s"
 
 #: src/external_commands.c:812 src/external_commands.c:830
 msgid "Probably this application is not installed on your system."
-msgstr ""
+msgstr "Muhtemelen bu uygulama sisteminizde yüklü değildir."
 
 #: src/external_commands.c:815
 msgid "Command returned error code"
-msgstr ""
+msgstr "Komut hata kodunu döndürdü"
 
 #: src/filebrowser2.c:749
 msgid "Set documentroot and webroot"
@@ -1786,8 +1795,7 @@ msgid ""
 "the webserver"
 msgstr ""
 "<i>belge kökü</i> Bluefish'in dosyayı bulduğu yerdir,\n"
-"<i>web kökü</i> is ise aynı dosyaların web sunucusunda görüntülenebileceği "
-"yerdir"
+"<i>web kökü</i>,aynı dosyaların web sunucusunda görüntülenebildiği konumdur"
 
 #: src/filebrowser2.c:765
 msgid "Documentroot"
@@ -1846,17 +1854,15 @@ msgstr "Aç"
 
 #: src/filebrowser2.c:1323
 msgid "Open _Advanced..."
-msgstr "_Gelişmiş'i Aç..."
+msgstr "_Gelişmişi Aç..."
 
 #: src/filebrowser2.c:1325
-#, fuzzy
 msgid "Search files..."
-msgstr "Dosyaları seçin"
+msgstr "Dosyaları ara..."
 
 #: src/filebrowser2.c:1325
-#, fuzzy
 msgid "Search files"
-msgstr "Dosyaları seçin"
+msgstr "Dosyaları ara"
 
 #: src/filebrowser2.c:1327
 msgid "Rena_me"
@@ -1879,18 +1885,16 @@ msgid "_New Directory"
 msgstr "_Yeni Dizin"
 
 #: src/filebrowser2.c:1332
-#, fuzzy
 msgid "Insert _link"
-msgstr "<p> içine ekle"
+msgstr "_Bağlantı ekle"
 
 #: src/filebrowser2.c:1332
-#, fuzzy
 msgid "Insert link"
-msgstr "<p> içine ekle"
+msgstr "Bağlantı ekle"
 
 #: src/filebrowser2.c:1333
 msgid "_Refresh"
-msgstr "_Yinele"
+msgstr "_Yenile"
 
 #: src/filebrowser2.c:1333
 msgid "Refresh"
@@ -1898,7 +1902,7 @@ msgstr "Yenile"
 
 #: src/filebrowser2.c:1334
 msgid "_Set as base dir"
-msgstr "_Temel dizin olarak ayarla"
+msgstr "Temel dizin olarak _ayarla"
 
 #: src/filebrowser2.c:1334
 msgid "Set as base directory"
@@ -1991,9 +1995,9 @@ msgid ""
 "which is the equivalent of\n"
 "<b>%s%s</b>"
 msgstr ""
-"<b>%s%s</b>\n"
-"ile eşdeğer olan\n"
-"<b>%s</b>"
+"<b>%s</b>\n"
+"şunun eşdeğeridir\n"
+"<b>%s%s</b>"
 
 #: src/file.c:902
 #, c-format
@@ -2006,15 +2010,15 @@ msgstr[1] "Hâlâ %d dosyalar yükleniyor, %s tamamlandı"
 #, c-format
 msgid "All files loaded, finished %s, %d document open"
 msgid_plural "All files loaded, finished %s, %d documents open"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tüm dosyalar yüklendi, %s tamamlandı, %d belge açıldı"
+msgstr[1] "Tüm dosyalar yüklendi, %s tamamlandı, %d belge açıldı"
 
 #: src/file.c:1472
 #, c-format
 msgid "Finished advanced open, %d document open."
 msgid_plural "Finished advanced open, %d documents open."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Gelişmiş açma tamamlandı, %d belge açıldı."
+msgstr[1] "Gelişmiş açma tamamlandı, %d belge açıldı."
 
 #: src/file.c:1652
 msgid "_Skip"
@@ -2044,11 +2048,11 @@ msgstr "Gelişmiş açmaya başlandı..."
 
 #: src/file_dialogs.c:120
 msgid "Select basedir"
-msgstr "Basedir seç"
+msgstr "Temel dizini seç"
 
 #: src/file_dialogs.c:142
 msgid "Advanced open file selector"
-msgstr "Gelişmiş açık dosya seçici"
+msgstr "Gelişmiş dosya açma seçici"
 
 #: src/file_dialogs.c:159
 msgid "<b>Files</b>"
@@ -2056,7 +2060,7 @@ msgstr "<b>Dosyalar</b>"
 
 #: src/file_dialogs.c:168
 msgid "Base _Dir:"
-msgstr "Base _Dir:"
+msgstr "Temel _Dizin:"
 
 #: src/file_dialogs.c:184
 msgid "_Pattern:"
@@ -2084,11 +2088,11 @@ msgstr "_Model:"
 
 #: src/file_dialogs.c:218
 msgid "Is rege_x:"
-msgstr "Normal _ifade:"
+msgstr "Düzenli _ifade:"
 
 #: src/file_dialogs.c:287 src/file_dialogs.c:307
 msgid "Select files"
-msgstr "Dosyaları seçin"
+msgstr "Dosyaları seç"
 
 #: src/file_dialogs.c:367
 msgid "Open URL"
@@ -2117,7 +2121,7 @@ msgstr "Dosya kaydedilemedi "
 
 #: src/file_dialogs.c:509 src/file_dialogs.c:1502
 msgid "File changed on disk\n"
-msgstr "Diskte değiştirilen dosya\n"
+msgstr "Dosya diskte değiştirildi\n"
 
 #: src/file_dialogs.c:624 src/file_dialogs.c:645 src/file_dialogs.c:970
 #: src/project.c:352
@@ -2159,19 +2163,18 @@ msgid "Save in progress!"
 msgstr "Kaydetme devam ediyor!"
 
 #: src/file_dialogs.c:776
-#, fuzzy
 msgid "Save"
-msgstr "_Kaydet"
+msgstr "Kaydet"
 
 #: src/file_dialogs.c:778
 #, c-format
 msgid "Save %s as"
-msgstr "%s farklı kaydet"
+msgstr "%s'i farklı kaydet"
 
 #: src/file_dialogs.c:782
-#, fuzzy, c-format
+#, c-format
 msgid "Save copy of %s"
-msgstr "Projeyi farklı kaydet"
+msgstr "%s kopyasını kaydet"
 
 #: src/file_dialogs.c:941
 msgid "Close _Without Saving"
@@ -2180,7 +2183,7 @@ msgstr "_Kaydetmeden Kapat"
 #: src/file_dialogs.c:944
 #, c-format
 msgid "Save changes to \"%s\" before closing?"
-msgstr "Kapatmadan önce değişiklikler \"%s\" olarak kaydedilsin mi?"
+msgstr "Kapatmadan önce \"%s\" üzerindeki değişiklikler kaydedilsin mi?"
 
 #: src/file_dialogs.c:947 src/file_dialogs.c:974
 msgid "If you don't save your changes they will be lost."
@@ -2188,25 +2191,24 @@ msgstr "Değişikliklerinizi kaydetmezseniz kaybolacaklar."
 
 #: src/file_dialogs.c:957
 msgid "_Reopen"
-msgstr ""
+msgstr "_Yeniden aç"
 
 #: src/file_dialogs.c:959
-#, fuzzy, c-format
+#, c-format
 msgid "Project \"%s\" failed to load"
-msgstr " yükleme başarısız."
+msgstr "\"%s\" projesi yüklenemedi"
 
 #: src/file_dialogs.c:961
-#, fuzzy
 msgid "Do you want to reopen project from another location?"
-msgstr "Varolan dosyayı değiştirmek istiyor musunuz?"
+msgstr "Projeyi başka bir konumdan yeniden açmak istiyor musunuz?"
 
 #: src/file_dialogs.c:970
 msgid "Choose per _File"
-msgstr "_Dosya başına seçin"
+msgstr "_Dosya başına seç"
 
 #: src/file_dialogs.c:970
 msgid "Close _All"
-msgstr "_Tümünü kapat"
+msgstr "_Tümünü Kapat"
 
 #: src/file_dialogs.c:970
 msgid "_Save All"
@@ -2253,16 +2255,15 @@ msgstr "Uzak dizin"
 
 #: src/file_dialogs.c:1384
 msgid "Delete deprecated files"
-msgstr "Kullanımdan kaldırılmış dosyaları sil"
+msgstr "Kullanımdan kaldırılan dosyaları sil"
 
 #: src/file_dialogs.c:1388
 msgid "Include hidden files"
 msgstr "Gizli dosyaları dahil et"
 
 #: src/file_dialogs.c:1391
-#, fuzzy
 msgid "Include backup files"
-msgstr "Dosya yedekleme hatası"
+msgstr "Yedekleme dosyalarını dahil et"
 
 #. g_print("oldtimestr=%s, newtimestr=%s\n",oldtimestr,newtimestr);
 #: src/file_dialogs.c:1438
@@ -2284,7 +2285,7 @@ msgstr ""
 
 #: src/file_dialogs.c:1461
 msgid "_Unset file name"
-msgstr "Dosya adı _ayarlanmadı"
+msgstr "_Ayarlanmamış dosya adı"
 
 #. file is deleted on disk, what do we do now ?
 #: src/file_dialogs.c:1463
@@ -2302,14 +2303,14 @@ msgstr "_Yoksay"
 
 #: src/file_dialogs.c:1485
 msgid "_Reload"
-msgstr "_Tekrar yükle"
+msgstr "_Yeniden yükle"
 
 #: src/file_dialogs.c:1485
 msgid "Check and reload all documents"
 msgstr "Tüm belgeleri kontrol edin ve yeniden yükleyin"
 
 #. build a list of filters
-#: src/filefilter.c:250 src/gtk_easy.c:1355 src/preferences.c:2505
+#: src/filefilter.c:250 src/gtk_easy.c:1355 src/preferences.c:2523
 msgid "All files"
 msgstr "Tüm dosyalar"
 
@@ -2336,11 +2337,11 @@ msgstr "%d / %d"
 
 #: src/gtk_easy.c:1051
 msgid "Select File"
-msgstr "Dosya seç"
+msgstr "Dosya Seç"
 
 #: src/gtk_easy.c:1405
 msgid "Character _Encoding:"
-msgstr "Karakter _Kodlaması:"
+msgstr "Karakter _Kodlama:"
 
 #: src/gtk_easy.c:1425
 msgid "Automatic detection"
@@ -2359,12 +2360,13 @@ msgid ""
 msgstr ""
 "\n"
 "İstenen tuş bileşimine basın.\n"
-"Lütfen Ctrl, Shift, Alt tuşlarını başka herhangi bir tuş ile kullanın.\n"
+"Lütfen Ctrl, Shift, Alt tuşlarını başka herhangi bir tuşla birlikte "
+"kullanın.\n"
 "<i>İptal etmek için Esc, hızlandırıcıyı kaldırmak için Delete</i>"
 
 #: src/gtk_easy.c:1547
 msgid "Press shortcut key combination"
-msgstr "Kısayol tuş kombinasyonuna basın"
+msgstr "Kısayol tuş bileşimine basın"
 
 #: src/outputbox.c:252
 msgid "Filename"
@@ -2381,128 +2383,121 @@ msgstr "Çıktı"
 #: src/outputbox.c:515
 #, c-format
 msgid "Failed to compile output parser pattern %s: %s"
-msgstr ""
+msgstr "Çıktı çözümleyici kalıbı derlenemedi %s: %s"
 
 #: src/print.c:384
-#, fuzzy
 msgid "<b>What to print</b>"
-msgstr "<b>Sekme Durakları</b>"
+msgstr "<b>Ne yazdırılır</b>"
 
 #: src/print.c:386
-#, fuzzy
 msgid "Print header"
-msgstr "C Başlık"
+msgstr "Başlığı yazdır"
 
 #: src/print.c:387
-#, fuzzy
 msgid "Print line numbers"
-msgstr "Satır numaralarını göster"
+msgstr "Satır numaralarını yazdır"
 
 #: src/print.c:438
-#, fuzzy
 msgid "What to print"
-msgstr "Eklentiye giden yol"
+msgstr "Ne yazdırılır"
 
-#: src/preferences.c:326
+#: src/preferences.c:328
 msgid "Untitled"
 msgstr "Adsız"
 
-#: src/preferences.c:528
+#: src/preferences.c:530
 msgid "_Mime type:"
 msgstr "_Mime türü:"
 
-#: src/preferences.c:540 src/preferences.c:542
+#: src/preferences.c:542 src/preferences.c:544
 msgid "None"
-msgstr "Yok"
+msgstr "Hiçbiri"
 
-#: src/preferences.c:544
+#: src/preferences.c:546
 msgid "_Template:"
 msgstr "_Şablon:"
 
-#: src/preferences.c:547 src/snr3.c:1663
+#: src/preferences.c:549 src/snr3.c:1663
 msgid "<b>Options</b>"
 msgstr "<b>Seçenekler</b>"
 
-#: src/preferences.c:551
+#: src/preferences.c:553
 msgid "Enable a_uto-completion"
 msgstr "_Otomatik tamamlamayı etkinleştir"
 
-#: src/preferences.c:553
+#: src/preferences.c:555
 msgid "Enable _block folding"
 msgstr "_Block katlamayı etkinleştir"
 
-#: src/preferences.c:555
+#: src/preferences.c:557
 msgid "Display block stack in statusbar"
 msgstr "Durum çubuğunda blok yığınını görüntüle"
 
-#: src/preferences.c:557
+#: src/preferences.c:559
 msgid "Highlight block _delimiters"
 msgstr "Blok _sınırlayıcıları vurgula"
 
-#: src/preferences.c:559
+#: src/preferences.c:561
 msgid "_Highlight current line"
 msgstr "Geçerli satırı _vurgula"
 
-#: src/preferences.c:561
+#: src/preferences.c:563
 msgid "Show line _numbers"
 msgstr "Satır _numaralarını göster"
 
-#: src/preferences.c:565
+#: src/preferences.c:567
 msgid "Show _right margin indicator"
 msgstr "_Sağ kenar boşluğu göstergesini göster"
 
-#: src/preferences.c:567
-#, fuzzy
-msgid "Auto indentin_g"
-msgstr "Otomatik girinti"
-
 #: src/preferences.c:569
+msgid "Auto indentin_g"
+msgstr "Otomatik _girinti"
+
+#: src/preferences.c:571
 msgid "Wra_p lines"
 msgstr "Satırları _kaydır"
 
-#: src/preferences.c:571
+#: src/preferences.c:573
 msgid "Enable syntax scanning"
 msgstr "Sözdizimi taramasını etkinleştir"
 
-#: src/preferences.c:573
+#: src/preferences.c:575
 msgid "Show _visible spacing"
 msgstr "_Görünür aralığı göster"
 
-#: src/preferences.c:577
+#: src/preferences.c:579
 msgid "_Enable spell check"
 msgstr "Yazım denetimini _etkinleştir"
 
-#: src/preferences.c:582
+#: src/preferences.c:584
 msgid "<b>Tab Stops</b>"
 msgstr "<b>Sekme Durakları</b>"
 
-#: src/preferences.c:587
+#: src/preferences.c:589
 msgid "Tab _width:"
 msgstr "Sekme _genişliği:"
 
-#: src/preferences.c:590
+#: src/preferences.c:592
 msgid "Insert _spaces instead of tabs"
 msgstr "Sekmeler yerine _boşluklar ekle"
 
-#: src/preferences.c:627 src/preferences.c:1346 src/preferences.c:1505
+#: src/preferences.c:630 src/preferences.c:1350 src/preferences.c:1509
 msgid "Enabled"
 msgstr "Etkin"
 
-#: src/preferences.c:629
+#: src/preferences.c:632
 msgid "Path to plugin"
-msgstr "Eklentiye giden yol"
+msgstr "Eklentinin yolu"
 
-#: src/preferences.c:906
-#, fuzzy
+#: src/preferences.c:909
 msgid "Extension"
-msgstr "Boyutlar"
+msgstr "Uzantı"
 
-#: src/preferences.c:908
-#, fuzzy
+#: src/preferences.c:911
 msgid "Mime-Type"
-msgstr "Mime türü"
+msgstr "Mime Türü"
 
-#: src/preferences.c:1136
+#: src/preferences.c:1140
 msgid ""
 "<small>Text styles are applied on top of each other. If multiple styles are "
 "applied to the same text, the top-most style in this list has the highest "
@@ -2513,57 +2508,57 @@ msgstr ""
 "stillerini yeniden sıralamak için sürükle ve bırak özelliğini kullanın.</"
 "small>"
 
-#: src/preferences.c:1147 src/preferences.c:1347 src/preferences.c:1507
+#: src/preferences.c:1151 src/preferences.c:1351 src/preferences.c:1511
 msgid "Label"
 msgstr "Etiket"
 
-#: src/preferences.c:1162 src/preferences.c:2691
+#: src/preferences.c:1166 src/preferences.c:2709
 msgid "Foreground color"
 msgstr "Önplan rengi"
 
-#: src/preferences.c:1163 src/preferences.c:2692
+#: src/preferences.c:1167 src/preferences.c:2710
 msgid "_Foreground color:"
 msgstr "_Önplan rengi:"
 
-#: src/preferences.c:1164 src/preferences.c:2695
+#: src/preferences.c:1168 src/preferences.c:2713
 msgid "Background color"
 msgstr "Arkaplan rengi"
 
-#: src/preferences.c:1165 src/preferences.c:2696
+#: src/preferences.c:1169 src/preferences.c:2714
 msgid "_Background color:"
 msgstr "_Arkaplan rengi:"
 
-#: src/preferences.c:1169
+#: src/preferences.c:1173
 msgid "_Normal weight"
 msgstr "_Normal ağırlık"
 
-#: src/preferences.c:1171
+#: src/preferences.c:1175
 msgid "Bold _weight"
 msgstr "Kalın _ağırlık"
 
-#: src/preferences.c:1173
+#: src/preferences.c:1177
 msgid "Normal st_yle"
 msgstr "Normal _stil"
 
-#: src/preferences.c:1176
+#: src/preferences.c:1180
 msgid "_Italic style"
-msgstr "_İtalik stili"
+msgstr "_İtalik stil"
 
-#: src/preferences.c:1178
+#: src/preferences.c:1182
 msgid "_Spell check"
 msgstr "_Yazım denetimi"
 
-#: src/preferences.c:1220 src/preferences.c:1384 src/preferences.c:1537
-#: src/preferences.c:1729 src/preferences.c:1825
+#: src/preferences.c:1224 src/preferences.c:1388 src/preferences.c:1541
+#: src/preferences.c:1733 src/preferences.c:1829
 msgid "Add entry"
 msgstr "Giriş ekle"
 
-#: src/preferences.c:1222 src/preferences.c:1386 src/preferences.c:1539
-#: src/preferences.c:1731 src/preferences.c:1827
+#: src/preferences.c:1226 src/preferences.c:1390 src/preferences.c:1543
+#: src/preferences.c:1735 src/preferences.c:1831
 msgid "Delete entry"
 msgstr "Girişi sil"
 
-#: src/preferences.c:1323
+#: src/preferences.c:1327
 #, c-format
 msgid ""
 "<small><b>Input options</b>\n"
@@ -2580,35 +2575,35 @@ msgid ""
 "identical to %u</small>"
 msgstr ""
 "<small><b>Girdi seçenekleri</b>\n"
-"a ile başlayın | girdiyi standart girdiye göndermek için\n"
+"bir | girdiyi standart girdiye göndermek için\n"
 "%f yerel dosya adı (yerel dosyalar için kullanılabilir)\n"
-"girdi için %i geçici dosya adı, belge değiştirilmediyse ve yerel değilse "
-"%f'e eşittir\n"
+"girdi için %i geçici dosya adı, belge değiştirilmemişse ve yerel ise %f'e "
+"eşittir\n"
 "<b>Diğer seçenekler</b>\n"
-"%a bu filtre etkinleştirildiğinde sorulacak ek argümanlar\n"
-"%c yerel dosya dizini (yerel dosyalar için kullanılabilir)\n"
+"%a bu filtre değiştirildiğinde sorulacak ek argümanlar etkinleştirilmiş\n"
+"%c dosyanın yerel dizini (yerel dosyalar için kullanılabilir)\n"
 "%n yolsuz dosya adı (tüm başlıklı dosyalar için kullanılabilir)\n"
 "%u URL (tüm başlıklı dosyalar için kullanılabilir)\n"
-"%p proje ayarlarında basedir ve önizleme dizini ayarlanmışsa önizleme "
-"URL'si, diğer durumlarda %u ile aynıdır</small>"
+"%p önizleme URL'si temel dizin ve önizleme dizini proje ayarlarında "
+"ayarlanmışsa, aksi takdirde %u ile aynıdır</small>"
 
-#: src/preferences.c:1349 src/preferences.c:1509 src/preferences.c:1703
+#: src/preferences.c:1353 src/preferences.c:1513 src/preferences.c:1707
 msgid "Command"
 msgstr "Komut"
 
-#: src/preferences.c:1352 src/rcfile.c:874
+#: src/preferences.c:1356 src/rcfile.c:875
 msgid "Default browser"
 msgstr "Varsayılan tarayıcı"
 
-#: src/preferences.c:1388 src/preferences.c:1541 src/preferences.c:1733
+#: src/preferences.c:1392 src/preferences.c:1545 src/preferences.c:1737
 msgid "Update defaults"
 msgstr "Varsayılanları güncelle"
 
-#: src/preferences.c:1390 src/preferences.c:1543 src/preferences.c:1735
+#: src/preferences.c:1394 src/preferences.c:1547 src/preferences.c:1739
 msgid "Reset all"
 msgstr "Tümünü sıfırla"
 
-#: src/preferences.c:1480
+#: src/preferences.c:1484
 msgid ""
 "<small><b>Input options</b>\n"
 "start with a | to send the input to the standard input\n"
@@ -2628,23 +2623,23 @@ msgid ""
 "identical to %u</small>"
 msgstr ""
 "<small><b>Girdi seçenekleri</b>\n"
-"a ile başlayın | girdiyi standart girdiye göndermek için\n"
+"girdiyi standart girdiye göndermek için bir | ile başlat\n"
 "%f yerel dosya adı (yerel dosya gerektirir, seçim üzerinde çalışamaz)\n"
 "%i girdi için geçici dosya adı\n"
 "<b>Çıktı seçenekleri</b>\n"
-"a ile bitirin | standart çıktıdan çıktıyı okumak için\n"
+"çıktıyı standart çıktıdan okumak için bir | ile sonlandır\n"
 "%o geçici dosya adı\n"
 "%t hem girdi hem de çıktı için geçici dosya adı (yerinde düzenleme "
-"filtreleri için, seçimde çalışamaz)\n"
+"filtreleri için, seçim üzerinde çalışamaz)\n"
 "<b>Diğer seçenekler</b>\n"
 "%a bu filtre etkinleştirildiğinde sorulacak ek argümanlar\n"
-"%c yerel dosya dizini (yerel dosya gerektirir)\n"
+"%c dosyanın yerel dizini (yerel dosya gerektirir)\n"
 "%n yolsuz dosya adı (tüm başlıklı dosyalar için kullanılabilir)\n"
 "%u URL (tüm başlıklı dosyalar için kullanılabilir)\n"
-"%p proje ayarlarında basedir ve önizleme dizini ayarlanmışsa önizleme "
-"URL'si, diğer durumlarda %u ile aynıdır</small>"
+"%p önizleme URL'si temel dizin ve önizleme dizini proje ayarlarında "
+"ayarlanmışsa, aksi takdirde %u ile aynıdır</small>"
 
-#: src/preferences.c:1665
+#: src/preferences.c:1669
 #, c-format
 msgid ""
 "<small><b>Input options</b>\n"
@@ -2664,726 +2659,719 @@ msgid ""
 "identical to %u</small>"
 msgstr ""
 "<small><b>Girdi seçenekleri</b>\n"
-"a ile başlayın | girdiyi standart girdiye göndermek için\n"
+"girdiyi standart girdiye göndermek için bir | ile başlat\n"
 "%f yerel dosya adı (yerel dosyalar için kullanılabilir)\n"
-"girdi için %i geçici dosya adı, belge değiştirilmediyse ve yerel değilse "
-"%f'e eşittir\n"
+"%i girdi için geçici dosya adı, belge değiştirilmemişse ve yerelse %f'e "
+"eşittir\n"
 "<b>Çıktı seçenekleri</b>\n"
-"a ile bitirin | standart çıktıdan çıktıyı okumak için\n"
+"çıktıyı standart çıktıdan okumak için | ile sonlandır\n"
 "%o geçici dosya adı\n"
 "<b>Diğer seçenekler</b>\n"
 "%a bu filtre etkinleştirildiğinde sorulacak ek argümanlar\n"
 "%c yerel dosya dizini (yerel dosyalar için kullanılabilir)\n"
 "%n yolsuz dosya adı (tüm başlıklı dosyalar için kullanılabilir)\n"
 "%u URL (tüm başlıklı dosyalar için kullanılabilir)\n"
-"%p proje ayarlarında basedir ve önizleme dizini ayarlanmışsa önizleme "
-"URL'si, diğer durumlarda %u ile aynıdır</small>"
+"%p önizleme URL'si temel dizin ve önizleme dizini proje ayarlarında "
+"ayarlanmışsa, aksi takdirde %u ile aynıdır</small>"
 
-#: src/preferences.c:1695
+#: src/preferences.c:1699
 msgid "Pattern"
 msgstr "Model"
 
-#: src/preferences.c:1697
+#: src/preferences.c:1701
 msgid "File #"
 msgstr "Dosya #"
 
-#: src/preferences.c:1699
+#: src/preferences.c:1703
 msgid "Line #"
 msgstr "Satır #"
 
-#: src/preferences.c:1701
+#: src/preferences.c:1705
 msgid "Output #"
 msgstr "Çıktı #"
 
-#: src/preferences.c:1796
+#: src/preferences.c:1800
 msgid "File"
 msgstr "Dosya"
 
-#: src/preferences.c:1974
+#: src/preferences.c:1979
 msgid "A restart is needed to see the effect of these options"
 msgstr "Bu seçeneklerin etkisini görmek için yeniden başlatma gerekiyor"
 
 #. 1=text
-#: src/preferences.c:1986
+#: src/preferences.c:1991
 msgid "Option name"
 msgstr "Seçenek adı"
 
 #. 2=boolean
-#: src/preferences.c:1988
+#: src/preferences.c:1993
 msgid "value"
 msgstr "değer"
 
 #. 1=text
-#: src/preferences.c:2005
+#: src/preferences.c:2010
 msgid "Highlight name"
 msgstr "Adı vurgula"
 
-#: src/preferences.c:2010
+#: src/preferences.c:2015
 msgid "Textstyle"
 msgstr "Metin stili"
 
-#: src/preferences.c:2177 src/preferences.c:2965
+#: src/preferences.c:2205 src/preferences.c:2986
 msgid "Auto"
 msgstr "Otomatik"
 
-#: src/preferences.c:2447
+#: src/preferences.c:2465
 msgid "Continue and ignore changes"
-msgstr ""
+msgstr "Devam et ve değişiklikleri yoksay"
 
-#: src/preferences.c:2447
-#, fuzzy
+#: src/preferences.c:2465
 msgid "Cancel"
-msgstr "_İptal"
+msgstr "İptal"
 
-#: src/preferences.c:2449
+#: src/preferences.c:2467
 msgid "Importing colors will abort any preferences changes"
-msgstr ""
+msgstr "Renkleri içe aktarmak, tüm tercih değişikliklerini iptal eder"
 
-#: src/preferences.c:2449
+#: src/preferences.c:2467
 msgid ""
 "Importing colors will close the preferences dialog and cancel any changes "
 "you made. Do you want to continue?"
 msgstr ""
+"Renkleri içe aktarmak, tercihler iletişim kutusunu kapatır ve yaptığınız tüm "
+"değişiklikleri iptal eder. Devam etmek istiyor musun?"
 
-#: src/preferences.c:2457 src/preferences.c:2737 src/preferences.c:2746
-#, fuzzy
+#: src/preferences.c:2475 src/preferences.c:2755 src/preferences.c:2764
 msgid "Choose file"
-msgstr "_Dosya başına seçin"
+msgstr "Dosya seç"
 
-#: src/preferences.c:2471
+#: src/preferences.c:2489
 msgid "Import done"
-msgstr ""
+msgstr "İçe aktarma tamamlandı"
 
-#: src/preferences.c:2473
+#: src/preferences.c:2491
 #, c-format
 msgid "Import %s failed"
-msgstr ""
+msgstr "%s içe aktarılamadı"
 
-#: src/preferences.c:2496
+#: src/preferences.c:2514
 msgid "Delayed"
 msgstr "Gecikmiş"
 
-#: src/preferences.c:2496
+#: src/preferences.c:2514
 msgid "Immediately"
 msgstr "Hemen"
 
-#: src/preferences.c:2497
+#: src/preferences.c:2515
 msgid "Continue save"
 msgstr "Kaydetmeye devam et"
 
-#: src/preferences.c:2497
+#: src/preferences.c:2515
 msgid "Abort save"
-msgstr "Kaydetmeyi iptal et"
+msgstr "Kaydetmeden vazgeç"
 
-#: src/preferences.c:2497
+#: src/preferences.c:2515
 msgid "Ask what to do"
 msgstr "Ne yapacağını sor"
 
-#: src/preferences.c:2498 src/preferences.c:2505 src/preferences.c:2512
+#: src/preferences.c:2516 src/preferences.c:2523 src/preferences.c:2530
 msgid "Never"
 msgstr "Asla"
 
-#: src/preferences.c:2498
+#: src/preferences.c:2516
 msgid "Periodically and during save"
-msgstr ""
+msgstr "Periyodik olarak ve kaydetme sırasında"
 
-#: src/preferences.c:2498
+#: src/preferences.c:2516
 msgid "Only during save"
-msgstr ""
+msgstr "Yalnızca kaydetme sırasında"
 
-#: src/preferences.c:2500
+#: src/preferences.c:2518
 msgid "Nothing"
-msgstr "Hiçbir şey değil"
+msgstr "Hiçbir şey"
 
-#: src/preferences.c:2500
+#: src/preferences.c:2518
 msgid "Modified time and file size"
 msgstr "Değiştirilme zamanı ve dosya boyutu"
 
-#: src/preferences.c:2500
+#: src/preferences.c:2518
 msgid "Modified time"
 msgstr "Değiştirilme zamanı"
 
-#: src/preferences.c:2500
+#: src/preferences.c:2518
 msgid "File size"
 msgstr "Dosya boyutu"
 
-#: src/preferences.c:2501 src/preferences.c:2502
+#: src/preferences.c:2519 src/preferences.c:2520
 msgid "left"
 msgstr "sol"
 
-#: src/preferences.c:2501 src/preferences.c:2502
+#: src/preferences.c:2519 src/preferences.c:2520
 msgid "right"
 msgstr "sağ"
 
-#: src/preferences.c:2501
+#: src/preferences.c:2519
 msgid "top"
 msgstr "üst"
 
-#: src/preferences.c:2501
+#: src/preferences.c:2519
 msgid "bottom"
 msgstr "alt"
 
-#: src/preferences.c:2503
-#, fuzzy
+#: src/preferences.c:2521
 msgid "Recently opened"
-msgstr "_Son Belge"
+msgstr "Son açılan"
 
-#: src/preferences.c:2503
+#: src/preferences.c:2521
 msgid "Recently closed"
-msgstr ""
+msgstr "Son kapanan"
 
-#: src/preferences.c:2505
+#: src/preferences.c:2523
 msgid "Only project files"
-msgstr "Sadece proje dosyaları"
+msgstr "Yalnızca proje dosyaları"
 
-#: src/preferences.c:2509
+#: src/preferences.c:2527
 msgid "All"
 msgstr "Tüm"
 
-#: src/preferences.c:2509
+#: src/preferences.c:2527
 msgid "All except spaces"
 msgstr "Boşluklar hariç tümü"
 
-#: src/preferences.c:2509
+#: src/preferences.c:2527
 msgid "All trailing"
 msgstr "Tüm takip eden"
 
-#: src/preferences.c:2509
+#: src/preferences.c:2527
 msgid "All except non-trailing spaces"
 msgstr "Sondaki boşluklar hariç tümü"
 
-#: src/preferences.c:2512
+#: src/preferences.c:2530
 msgid "Always"
-msgstr ""
+msgstr "Her zaman"
 
-#: src/preferences.c:2512
+#: src/preferences.c:2530
 msgid "Smart"
-msgstr ""
+msgstr "Akıllı"
 
-#: src/preferences.c:2523
+#: src/preferences.c:2541
 msgid "Edit preferences"
 msgstr "Tercihleri ​​düzenle"
 
 #.
 #. *  Initial document settings
 #.
-#: src/preferences.c:2547
+#: src/preferences.c:2565
 msgid "<b>Default settings (overridden by project settings)</b>"
-msgstr ""
+msgstr "<b>Varsayılan ayarlar (proje ayarları tarafından geçersiz kılınır)</b>"
 
-#: src/preferences.c:2549
+#: src/preferences.c:2567
 msgid "Initial document settings"
 msgstr "İlk belge ayarları"
 
-#: src/preferences.c:2561
+#: src/preferences.c:2579
 msgid "Editor settings"
 msgstr "Düzenleyici ayarları"
 
-#: src/preferences.c:2564
+#: src/preferences.c:2582
 msgid "<b>Editor settings</b>"
 msgstr "<b>Düzenleyici ayarları</b>"
 
-#: src/preferences.c:2569
-#, fuzzy
+#: src/preferences.c:2587
 msgid "Smart auto indentin_g on brackets"
-msgstr "Akıllı otomatik _girinti"
+msgstr "Köşeli parantezlerde akıllı otomatik _girinti"
 
-#: src/preferences.c:2572
+#: src/preferences.c:2590
 msgid "Smart Home/_End cursor positioning"
-msgstr "Akıllı Home/_End imleç konumlandırma"
+msgstr "Akıllı Giriş / İmleç konumlandırmayı _sonlandır"
 
-#: src/preferences.c:2576
+#: src/preferences.c:2594
 msgid "_Tab key indents selection"
 msgstr "_Sekme tuşu girintileri seçimi"
 
-#: src/preferences.c:2580
+#: src/preferences.c:2598
 msgid "Replace unicode quotes with ascii quotes"
-msgstr ""
+msgstr "Unicode alıntılarını ascii alıntılarıyla değiştirin"
 
-#: src/preferences.c:2584
-#, fuzzy
+#: src/preferences.c:2602
 msgid "Insert spaces to cursor position"
-msgstr "İmleç konumundan ileri"
+msgstr "İmleç konumuna boşluk ekle"
 
-#: src/preferences.c:2590
+#: src/preferences.c:2608
 msgid "Automatically insert closing brackets"
-msgstr "Kapatma parantezlerini otomatik olarak ekle"
+msgstr "Köşeli parantezleri otomatik olarak ekle"
 
-#: src/preferences.c:2597
+#: src/preferences.c:2615
 msgid "Right _margin/split line end position:"
-msgstr "Sağ _kenar boşluğu/bölünmüş çizgi son konumu:"
+msgstr "Sağ _kenar boşluğu/bölünmüş satır bitiş konumu:"
 
-#: src/preferences.c:2600
-#, fuzzy
+#: src/preferences.c:2618
 msgid "Wrap lines on right margin indicator"
-msgstr "_Sağ kenar boşluğu göstergesini göster"
+msgstr "Sağ kenar boşluğu göstergesindeki satırları kaydır"
 
-#: src/preferences.c:2606
+#: src/preferences.c:2624
 msgid "Visible _whitespace mode:"
 msgstr "Görünür _beyaz boşluk modu:"
 
-#: src/preferences.c:2609
+#: src/preferences.c:2627
 msgid "<b>Undo</b>"
 msgstr "<b>Geri Al</b>"
 
-#: src/preferences.c:2614
+#: src/preferences.c:2632
 msgid "_Number of actions in history:"
 msgstr "Geçmişteki eylem _sayısı:"
 
-#: src/preferences.c:2617
+#: src/preferences.c:2635
 msgid "Clear _history on save"
-msgstr "Kaydederken _geçmişi temizle"
+msgstr "Kaydedildiğinde _geçmişi temizle"
 
-#: src/preferences.c:2622
+#: src/preferences.c:2640
 msgid "Auto-completion & Reference"
 msgstr "Otomatik tamamlama ve Referans"
 
-#: src/preferences.c:2628
+#: src/preferences.c:2646
 msgid "<b>Auto-completion</b>"
 msgstr "<b>Otomatik tamamlama</b>"
 
-#: src/preferences.c:2634
+#: src/preferences.c:2652
 msgid "Show _pop-up window:"
 msgstr "_Açılır pencereyi göster:"
 
-#: src/preferences.c:2638
+#: src/preferences.c:2656
 msgid "Minimum matching length for auto-completion:"
-msgstr ""
+msgstr "Otomatik tamamlama için minimum eşleştirme uzunluğu:"
 
-#: src/preferences.c:2643
+#: src/preferences.c:2661
 msgid "Shortcut _key combination:"
 msgstr "Kısayol _tuş kombinasyonu:"
 
-#: src/preferences.c:2646
+#: src/preferences.c:2664
 msgid "<b>Reference Information</b>"
 msgstr "<b>Referans Bilgileri</b>"
 
-#: src/preferences.c:2649
+#: src/preferences.c:2667
 msgid "_Load reference data from language files"
-msgstr "Dil dosyalarından referans verileri _yükle"
+msgstr "Dil dosyalarından referans verilerini _yükle"
 
-#: src/preferences.c:2652
+#: src/preferences.c:2670
 msgid "Show references in auto-completion _pop-up window"
 msgstr "Otomatik tamamlama _açılır penceresinde referansları göster"
 
-#: src/preferences.c:2655
+#: src/preferences.c:2673
 msgid "Show references if mouse is over text editor"
 msgstr "Fare metin düzenleyicinin üzerindeyse referansları göster"
 
-#: src/preferences.c:2664 src/preferences.c:3071
+#: src/preferences.c:2682 src/preferences.c:3092
 msgid "Font & Colors"
 msgstr "Yazı Tipi ve Renkler"
 
-#: src/preferences.c:2670
+#: src/preferences.c:2688
 msgid "<b>Font &amp; Cursor</b>"
 msgstr "<b>Yazı Tipi ve İmleç</b>"
 
-#: src/preferences.c:2674
+#: src/preferences.c:2692
 msgid "_Editor font:"
 msgstr "_Düzenleyici yazı tipi:"
 
-#: src/preferences.c:2682
+#: src/preferences.c:2700
 msgid "Cursor / font size ratio (%):"
 msgstr "İmleç / yazı tipi boyutu oranı (%):"
 
-#: src/preferences.c:2684 src/preferences.c:3097
+#: src/preferences.c:2702 src/preferences.c:3118
 msgid "<b>Colors</b>"
 msgstr "<b>Renkler</b>"
 
-#: src/preferences.c:2688
+#: src/preferences.c:2706
 msgid "Use system wide color settings"
 msgstr "Sistem genelinde renk ayarlarını kullan"
 
-#: src/preferences.c:2699
+#: src/preferences.c:2717
 msgid "Cursor color"
 msgstr "İmleç rengi"
 
-#: src/preferences.c:2700
+#: src/preferences.c:2718
 msgid "C_ursor color:"
 msgstr "_İmleç rengi:"
 
-#: src/preferences.c:2703
+#: src/preferences.c:2721
 msgid "Selection background color"
 msgstr "Seçim arkaplan rengi"
 
-#: src/preferences.c:2704
+#: src/preferences.c:2722
 msgid "_Selection background color:"
 msgstr "_Seçim arkaplan rengi:"
 
-#: src/preferences.c:2707
-#, fuzzy
+#: src/preferences.c:2725
 msgid "Margin foreground color"
-msgstr "Önplan rengi"
+msgstr "Kenar boşluğu önplan rengi"
 
-#: src/preferences.c:2708
-#, fuzzy
+#: src/preferences.c:2726
 msgid "_Margin foreground color:"
-msgstr "_Önplan rengi:"
+msgstr "_Kenar boşluğu önplan rengi:"
 
-#: src/preferences.c:2711
-#, fuzzy
+#: src/preferences.c:2729
 msgid "Margin background color"
-msgstr "Seçim arkaplan rengi"
+msgstr "Kenar boşluğu arkaplan rengi"
 
-#: src/preferences.c:2712
-#, fuzzy
+#: src/preferences.c:2730
 msgid "_Margin background color:"
-msgstr "_Seçim arkaplan rengi:"
+msgstr "_Kenar boşluğu arkaplan rengi:"
 
-#: src/preferences.c:2717
+#: src/preferences.c:2735
 msgid "Highlight cursor position"
 msgstr "İmleç konumunu vurgula"
 
-#: src/preferences.c:2719
+#: src/preferences.c:2737
 msgid "Cursor highlight color"
 msgstr "İmleç vurgulama rengi"
 
-#: src/preferences.c:2720
+#: src/preferences.c:2738
 msgid "_Cursor highlight color:"
 msgstr "_İmleç vurgulama rengi:"
 
-#: src/preferences.c:2725
+#: src/preferences.c:2743
 msgid "Current line color"
-msgstr "Geçerli çizgi rengi"
+msgstr "Geçerli satır rengi"
 
-#: src/preferences.c:2726
+#: src/preferences.c:2744
 msgid "Cu_rrent line color:"
-msgstr "Geçerli çizgi rengi:"
+msgstr "Geçe_rli satır rengi:"
 
-#: src/preferences.c:2729
+#: src/preferences.c:2747
 msgid "Visible whitespace color"
 msgstr "Görünür beyaz boşluk rengi"
 
-#: src/preferences.c:2730
+#: src/preferences.c:2748
 msgid "_Visible whitespace color:"
 msgstr "_Görünür beyaz boşluk rengi:"
 
-#: src/preferences.c:2732
+#: src/preferences.c:2750
 msgid "<b>Import / export color profiles</b>"
-msgstr ""
+msgstr "<b>Renk profillerini içe / dışa aktar</b>"
 
-#: src/preferences.c:2733
+#: src/preferences.c:2751
 msgid ""
 "Color profiles set colors for the editor, user interface and all textstyles."
 msgstr ""
+"Renk profilleri düzenleyici, kullanıcı arayüzü ve tüm metin stilleri için "
+"renkleri ayarlar."
 
-#: src/preferences.c:2736
+#: src/preferences.c:2754
 msgid "Export"
-msgstr ""
+msgstr "Dışa aktar"
 
-#: src/preferences.c:2743
+#: src/preferences.c:2761
 msgid "Import"
-msgstr ""
+msgstr "İçe aktar"
 
-#: src/preferences.c:2750
+#: src/preferences.c:2768
 msgid "Apply"
-msgstr ""
+msgstr "Uygula"
 
-#: src/preferences.c:2764
+#: src/preferences.c:2782
 msgid "Text styles"
 msgstr "Metin stilleri"
 
-#: src/preferences.c:2766
+#: src/preferences.c:2784
 msgid "<b>Text Styles</b>"
 msgstr "<b>Metin Stilleri</b>"
 
-#: src/preferences.c:2779
+#: src/preferences.c:2797
 msgid "Files"
 msgstr "Dosyalar"
 
-#: src/preferences.c:2782
+#: src/preferences.c:2800
 msgid "<b>Encoding</b>"
 msgstr "<b>Kodlama</b>"
 
-#: src/preferences.c:2798
+#: src/preferences.c:2816
 msgid "_Default character set for new files:"
 msgstr "Yeni dosyalar için _varsayılan karakter kümesi:"
 
-#: src/preferences.c:2804
+#: src/preferences.c:2822
 msgid "Auto set <meta> _HTML tag on encoding change"
 msgstr "Kodlamayı değiştirirken <meta> _HTML etiketini otomatik ayarla"
 
-#: src/preferences.c:2808 src/preferences.c:2954
+#: src/preferences.c:2826 src/preferences.c:2972
 msgid "<b>Misc</b>"
 msgstr "<b>Çeşitli</b>"
 
-#: src/preferences.c:2811
+#: src/preferences.c:2829
 msgid "Strip trailing spaces on save"
-msgstr "Kaydederken arkadaki boşlukları çıkarın"
+msgstr "Kaydederken sondaki boşlukları çıkar"
 
-#: src/preferences.c:2817
+#: src/preferences.c:2835
 msgid "Open co_mmandline files in running bluefish process"
 msgstr "Bluefish işlemini çalıştırırken _komut satırı dosyalarını aç"
 
-#: src/preferences.c:2822
+#: src/preferences.c:2840
 msgid "Open commandline files in new _window"
 msgstr "Komut satırı dosyalarını yeni _pencerede aç"
 
-#: src/preferences.c:2829
+#: src/preferences.c:2847
 msgid "Check if file is modified on disk:"
-msgstr ""
+msgstr "Dosyanın diskte değiştirilip değiştirilmediğini kontrol et:"
 
-#: src/preferences.c:2835
+#: src/preferences.c:2853
 msgid "File properties to check on dis_k for modifications:"
-msgstr "_Diskte değişiklikler için kontrol edilecek dosya özellikleri:"
+msgstr "Değişiklikler için dis_kte kontrol edilecek dosya özellikleri:"
 
-#: src/preferences.c:2839
+#: src/preferences.c:2857
 msgid "Show warning for files with very long lines"
-msgstr ""
+msgstr "Çok uzun satırlı dosyalar için uyarı göster"
 
-#: src/preferences.c:2849
+#: src/preferences.c:2867
 msgid "Backup & Recovery"
 msgstr "Yedekleme ve Kurtarma"
 
-#: src/preferences.c:2852
+#: src/preferences.c:2870
 msgid "<b>Backup</b>"
 msgstr "<b>Yedekleme</b>"
 
-#: src/preferences.c:2854
+#: src/preferences.c:2872
 msgid "Create _backup file during file save"
 msgstr "Dosya kaydedilirken _yedekleme dosyası oluştur"
 
-#: src/preferences.c:2859
+#: src/preferences.c:2877
 msgid "_Remove backup file on close"
-msgstr "Kapanırken yedek dosyasını _kaldır"
+msgstr "Kapanırken yedekleme dosyasını _kaldır"
 
-#: src/preferences.c:2864
+#: src/preferences.c:2882
 msgid "If back_up fails:"
 msgstr "_Yedekleme başarısız olursa:"
 
-#: src/preferences.c:2871
+#: src/preferences.c:2889
 msgid "<b>Document Recovery</b>"
 msgstr "<b>Belge Kurtarma</b>"
 
-#: src/preferences.c:2873
+#: src/preferences.c:2891
 msgid "_Enable recovery of modified documents"
 msgstr "Değiştirilen belgelerin kurtarılmasını _etkinleştir"
 
-#: src/preferences.c:2877
+#: src/preferences.c:2895
 msgid "_Frequency to store changes (seconds):"
 msgstr "Değişiklikleri saklama _sıklığı (saniye):"
 
-#: src/preferences.c:2891 src/preferences.c:2892
+#: src/preferences.c:2909 src/preferences.c:2910
 msgid "File Associations"
-msgstr ""
+msgstr "Dosya ilişkilendirmeleri"
 
-#: src/preferences.c:2910
+#: src/preferences.c:2928
 msgid "Templates"
 msgstr "Şablonlar"
 
-#: src/preferences.c:2913
+#: src/preferences.c:2931
 msgid "<b>Templates</b>"
 msgstr "<b>Şablonlar</b>"
 
-#: src/preferences.c:2926
+#: src/preferences.c:2944
 msgid "User interface"
 msgstr "Kullanıcı arayüzü"
 
-#: src/preferences.c:2929
+#: src/preferences.c:2947
 msgid "<b>Layout</b>"
 msgstr "<b>Düzen</b>"
 
-#: src/preferences.c:2935
+#: src/preferences.c:2953
 msgid "Document _tab position:"
 msgstr "Belge _sekmesi konumu:"
 
-#: src/preferences.c:2940
+#: src/preferences.c:2958
 msgid "Maximum filename length shown in tab (0 is no limit)"
-msgstr ""
+msgstr "Sekmede gösterilen maksimum dosya adı uzunluğu (0 sınırsızdır)"
 
-#: src/preferences.c:2946
+#: src/preferences.c:2964
 msgid "_Sidebar position:"
 msgstr "_Kenar çubuğu konumu:"
 
-#: src/preferences.c:2952
+#: src/preferences.c:2970
 msgid "Sidebar tab _position:"
 msgstr "Kenar çubuğu sekmesi _konumu:"
 
-#: src/preferences.c:2956
+#: src/preferences.c:2974
+msgid "Restore search scope from session or project"
+msgstr "Arama kapsamını oturumdan veya projeden geri yükle"
+
+#: src/preferences.c:2977
 msgid "Hide toolbars on full-screen"
 msgstr "Araç çubuklarını tam ekranda gizle"
 
-#: src/preferences.c:2965
-#, fuzzy
+#: src/preferences.c:2986
 msgid "User interface _language:"
-msgstr "Kullanıcı arayüzü"
+msgstr "Kullanıcı arayüzü di_li:"
 
-#: src/preferences.c:2968
+#: src/preferences.c:2989
 msgid "<b>Recent Files</b>"
 msgstr "<b>Son Dosyalar</b>"
 
-#: src/preferences.c:2973
+#: src/preferences.c:2994
 msgid "Recent files _shows:"
-msgstr ""
+msgstr "Son dosyaları _gösterir:"
 
-#: src/preferences.c:2978
+#: src/preferences.c:2999
 msgid "_Number of files in 'Open recent' menu:"
 msgstr "'Son açılan' menüsündeki dosya _sayısı:"
 
-#: src/preferences.c:2983
+#: src/preferences.c:3004
 msgid "_Register recent files with your desktop:"
-msgstr "Masaüstünüzle en son dosyaları _kaydedin:"
+msgstr "Masaüstünüzle en son dosyaları _kaydet:"
 
-#: src/preferences.c:2994
+#: src/preferences.c:3015
 msgid "Shortcut keys"
 msgstr "Kısayol tuşları"
 
-#: src/preferences.c:2999
+#: src/preferences.c:3020
 msgid "<b>Shortcut keys</b>"
 msgstr "<b>Kısayol tuşları</b>"
 
-#: src/preferences.c:3003
+#: src/preferences.c:3024
 msgid "_Switch between tabs with <Alt>+0..9"
-msgstr "<Alt>+0..9 ile sekmeler arasında _geçiş yapın"
+msgstr "<Alt>+0..9 ile sekmeler arasında _geçiş yap"
 
-#: src/preferences.c:3006
-#, fuzzy
+#: src/preferences.c:3027
 msgid "_Switch between tabs with <Command>+0..9"
-msgstr "<Alt>+0..9 ile sekmeler arasında _geçiş yapın"
+msgstr "<Command>+0..9 ile sekmeler arasında _geçiş yap"
 
-#: src/preferences.c:3011
+#: src/preferences.c:3032
 msgid "Save menu accelerators on exit"
 msgstr "Çıkışta menü hızlandırıcılarını kaydet"
 
-#: src/preferences.c:3014
+#: src/preferences.c:3035
 msgid "Save user customised menu accelerators now"
 msgstr ""
 "Kullanıcı tarafından özelleştirilmiş menü hızlandırıcılarını şimdi kaydet"
 
-#: src/preferences.c:3018
+#: src/preferences.c:3039
 msgid "Reset menu accelerators to application defaults"
 msgstr "Menü hızlandırıcılarını uygulama varsayılanlarına sıfırla"
 
-#: src/preferences.c:3030
+#: src/preferences.c:3051
 msgid "Dimensions"
 msgstr "Boyutlar"
 
-#: src/preferences.c:3033
+#: src/preferences.c:3054
 msgid "<b>Dimensions</b>"
 msgstr "<b>Boyutlar</b>"
 
-#: src/preferences.c:3035
+#: src/preferences.c:3056
 msgid "_Leave dimensions to window manager"
 msgstr "Boyutları pencere yöneticisine _bırak"
 
-#: src/preferences.c:3042
+#: src/preferences.c:3063
 msgid "_Restore last used dimensions"
 msgstr "Son kullanılan boyutları _geri yükle"
 
-#: src/preferences.c:3050
+#: src/preferences.c:3071
 msgid "Initial _sidebar width:"
 msgstr "İlk _kenar çubuğu genişliği:"
 
-#: src/preferences.c:3054
+#: src/preferences.c:3075
 msgid "Initial window _height:"
 msgstr "İlk pencere _yüksekliği:"
 
-#: src/preferences.c:3057
+#: src/preferences.c:3078
 msgid "Initial window _width:"
 msgstr "İlk pencere _genişliği:"
 
-#: src/preferences.c:3064
+#: src/preferences.c:3085
 msgid "_Limit window title length"
 msgstr "Pencere başlığı uzunluğunu _sınırla"
 
-#: src/preferences.c:3077
-#, fuzzy
+#: src/preferences.c:3098
 msgid "<b>Document tab</b>"
-msgstr "<b>Belge Kurtarma</b>"
+msgstr "<b>Belge sekmesi</b>"
 
-#: src/preferences.c:3082
+#: src/preferences.c:3103
 msgid "_Use system document tab font"
 msgstr "Sistem belgesi sekmesi yazı tipini _kullan"
 
-#: src/preferences.c:3087
+#: src/preferences.c:3108
 msgid "_Document tab font:"
 msgstr "_Belge sekmesi yazı tipi:"
 
-#: src/preferences.c:3101
+#: src/preferences.c:3122
 msgid "Document error tab color"
 msgstr "Belge hatası sekmesi rengi"
 
-#: src/preferences.c:3103
+#: src/preferences.c:3124
 msgid "Document tab _error color:"
 msgstr "Belge sekmesi _hata rengi:"
 
-#: src/preferences.c:3107
+#: src/preferences.c:3128
 msgid "Document loading tab color"
 msgstr "Belge yükleme sekmesi rengi"
 
-#: src/preferences.c:3109
+#: src/preferences.c:3130
 msgid "Document tab loadin_g color:"
 msgstr "Belge sekmesi _yükleme rengi:"
 
-#: src/preferences.c:3113
+#: src/preferences.c:3134
 msgid "Document modified tab color"
 msgstr "Belge değiştirilmiş sekme rengi"
 
-#: src/preferences.c:3115
+#: src/preferences.c:3136
 msgid "Document tab _modified color:"
 msgstr "Belge sekmesi _ değiştirilmiş rengi:"
 
-#: src/preferences.c:3119
-#, fuzzy
+#: src/preferences.c:3140
 msgid "Active document tab color"
-msgstr "Etkin belge"
+msgstr "Etkin belge sekmesi rengi"
 
-#: src/preferences.c:3121
-#, fuzzy
+#: src/preferences.c:3142
 msgid "Document tab _active color:"
-msgstr "Belge sekmesi _hata rengi:"
+msgstr "Belge sekmesi _etkin rengi:"
 
 #. arr = array_from_arglist(_("Java programming"),"1", "java:image:jsp", NULL);
 #. main_v->globses.filefilters = g_list_append(main_v->globses.filefilters, arr);
-#: src/preferences.c:3135 src/rcfile.c:1517
+#: src/preferences.c:3156 src/rcfile.c:1520
 msgid "Images"
 msgstr "Görüntüler"
 
-#: src/preferences.c:3138
+#: src/preferences.c:3159
 msgid "<b>Thumbnails</b>"
 msgstr "<b>Küçük Resimler</b>"
 
-#: src/preferences.c:3144
+#: src/preferences.c:3165
 msgid "Thumbnail _filetype:"
 msgstr "Küçük resim _dosya türü:"
 
-#: src/preferences.c:3148
+#: src/preferences.c:3169
 msgid "Thumbnail _suffix:"
-msgstr "Küçük resim _son eki:"
+msgstr "Küçük resim _soneki:"
 
-#: src/preferences.c:3161
+#: src/preferences.c:3182
 msgid "External commands"
 msgstr "Harici komutlar"
 
-#: src/preferences.c:3163
+#: src/preferences.c:3184
 msgid "<b>External Commands</b>"
 msgstr "<b>Harici Komutlar</b>"
 
-#: src/preferences.c:3176
+#: src/preferences.c:3197
 msgid "External filters"
 msgstr "Harici filtreler"
 
-#: src/preferences.c:3179
+#: src/preferences.c:3200
 msgid "<b>External Filters</b>"
 msgstr "<b>Harici Filtreler</b>"
 
-#: src/preferences.c:3192
+#: src/preferences.c:3213
 msgid "Output parsers"
 msgstr "Çıktı ayrıştırıcıları"
 
-#: src/preferences.c:3194
+#: src/preferences.c:3215
 msgid "<b>Output Parsers</b>"
 msgstr "<b>Çıktı Ayrıştırıcıları</b>"
 
-#: src/preferences.c:3207
+#: src/preferences.c:3228
 msgid "Plugins"
 msgstr "Eklentiler"
 
-#: src/preferences.c:3209
+#: src/preferences.c:3230
 msgid "<b>Plugins</b>"
 msgstr "<b>Eklentiler</b>"
 
-#: src/preferences.c:3231
+#: src/preferences.c:3252
 msgid "Language support"
 msgstr "Dil desteği"
 
@@ -3401,7 +3389,7 @@ msgstr "Yeni Proje Oluştur"
 
 #: src/project.c:671
 msgid "Edit Project"
-msgstr "Projeyi düzenle"
+msgstr "Projeyi Düzenle"
 
 #: src/project.c:696
 #, c-format
@@ -3421,7 +3409,7 @@ msgstr "Proje _Adı:"
 #. gtk_table_attach_defaults(GTK_TABLE(table), but, 3, 4, 3, 4);
 #: src/project.c:717
 msgid "<b>Default settings for this project</b>"
-msgstr ""
+msgstr "<b>Bu proje için varsayılan ayarlar</b>"
 
 #: src/project.c:731
 msgid "Create _Project"
@@ -3433,212 +3421,209 @@ msgstr "Proje oluştur"
 
 #: src/project.c:785
 msgid "Create project with currently opened documents"
-msgstr "Şu anda açık olan belgelerle proje oluşturun"
+msgstr "Şu anda açık olan belgelerle proje oluştur"
 
 #: src/project.c:787
 msgid "Create empty project"
 msgstr "Boş proje oluştur"
 
-#: src/rcfile.c:712 src/rcfile.c:740
+#: src/rcfile.c:713 src/rcfile.c:741
 msgid "php"
 msgstr "php"
 
-#: src/rcfile.c:718
+#: src/rcfile.c:719
 msgid "make"
 msgstr "yap"
 
-#: src/rcfile.c:722
+#: src/rcfile.c:723
 msgid "weblint HTML checker"
 msgstr "weblint HTML denetleyicisi"
 
-#: src/rcfile.c:727
+#: src/rcfile.c:728
 msgid "tidy HTML validator"
-msgstr "düzenli HTML doğrulayıcı"
+msgstr "tidy HTML doğrulayıcı"
 
-#: src/rcfile.c:731
+#: src/rcfile.c:732
 msgid "javac"
 msgstr "javac"
 
-#: src/rcfile.c:735
+#: src/rcfile.c:736
 msgid "xmllint XML checker"
 msgstr "xmllint XML denetleyicisi"
 
-#: src/rcfile.c:744
+#: src/rcfile.c:745
 msgid "php syntax check"
 msgstr "php sözdizimi denetimi"
 
-#: src/rcfile.c:748
+#: src/rcfile.c:749
 msgid "perl syntax check"
 msgstr "perl sözdizimi denetimi"
 
-#: src/rcfile.c:752
+#: src/rcfile.c:753
 msgid "php codesniffer"
-msgstr "php kodları"
+msgstr "php kod dinleyici"
 
-#: src/rcfile.c:756
+#: src/rcfile.c:757
 msgid "pylint"
-msgstr ""
+msgstr "pylint"
 
-#: src/rcfile.c:769
+#: src/rcfile.c:770
 msgid "Sort"
-msgstr "Sıralama"
+msgstr "Sırala"
 
-#: src/rcfile.c:772
+#: src/rcfile.c:773
 msgid "Sort / Uniq"
-msgstr "Sıralama / Tekillik"
+msgstr "Sırala / Benzersiz"
 
-#: src/rcfile.c:775
+#: src/rcfile.c:776
 msgid "Reverse lines"
 msgstr "Ters satırlar"
 
-#: src/rcfile.c:778
+#: src/rcfile.c:779
 msgid "Dos2unix"
 msgstr "Dos2unix"
 
-#: src/rcfile.c:780
+#: src/rcfile.c:781
 msgid "Tidy HTML"
-msgstr "Düzenli HTML"
+msgstr "Tidy HTML"
 
-#: src/rcfile.c:782
-#, fuzzy
+#: src/rcfile.c:783
 msgid "Tidy convert to XHTML"
-msgstr "Düzenli HTML"
+msgstr "Tidy XHTML'ye dönüştürme"
 
-#: src/rcfile.c:785
+#: src/rcfile.c:786
 msgid "Tidy HTML (perltidy)"
-msgstr "Düzenli HTML (perltidy)"
+msgstr "Tidy HTML (perltidy)"
 
-#: src/rcfile.c:788
+#: src/rcfile.c:789
 msgid "Strip empty lines"
-msgstr "Boş satırları çıkarın"
+msgstr "Boş satırları çıkar"
 
-#: src/rcfile.c:791
+#: src/rcfile.c:792
 msgid "Render HTML to text"
-msgstr "HTML'yi metne dönüştürme"
+msgstr "HTML'yi metne dönüştür"
 
-#: src/rcfile.c:794
+#: src/rcfile.c:795
 msgid "PHP Beautifier"
-msgstr ""
+msgstr "PHP Güzelleştirici"
 
-#: src/rcfile.c:798 src/rcfile.c:808
+#: src/rcfile.c:799 src/rcfile.c:809
 msgid "Javascript Minify with jsmin"
-msgstr ""
+msgstr "Jsmin ile Javascript Küçültme"
 
-#: src/rcfile.c:801 src/rcfile.c:811
+#: src/rcfile.c:802 src/rcfile.c:812
 msgid "Decompress CSS"
-msgstr ""
+msgstr "CSS sıkıştırmasını aç"
 
-#: src/rcfile.c:804 src/rcfile.c:814
+#: src/rcfile.c:805 src/rcfile.c:815
 msgid "Compress CSS"
-msgstr ""
+msgstr "CSS'yi sıkıştır"
 
-#: src/rcfile.c:818
+#: src/rcfile.c:819
 msgid "CSS tidy"
-msgstr ""
+msgstr "CSS düzenlemesi"
 
-#: src/rcfile.c:847
+#: src/rcfile.c:848
 msgid "Windows 7 Firefox 32-bit"
 msgstr "Windows 7 Firefox 32 bit"
 
-#: src/rcfile.c:848
-#, fuzzy
-msgid "Windows 7 Firefox"
-msgstr "Windows 7 Firefox 32 bit"
-
 #: src/rcfile.c:849
+msgid "Windows 7 Firefox"
+msgstr "Windows 7 Firefox"
+
+#: src/rcfile.c:850
 msgid "Windows 7 Internet Explorer 32-bit"
 msgstr "Windows 7 Internet Explorer 32 bit"
 
-#: src/rcfile.c:850
+#: src/rcfile.c:851
 msgid "Windows 7 Internet Explorer 64-bit"
 msgstr "Windows 7 Internet Explorer 64 bit"
 
-#: src/rcfile.c:854
+#: src/rcfile.c:855
 msgid "Safari"
 msgstr "Safari"
 
-#: src/rcfile.c:857 src/rcfile.c:877
+#: src/rcfile.c:858 src/rcfile.c:878
 msgid "Firefox"
 msgstr "Firefox"
 
-#: src/rcfile.c:860
+#: src/rcfile.c:861
 msgid "Google Chrome"
-msgstr ""
+msgstr "Google Chrome"
 
-#: src/rcfile.c:863 src/rcfile.c:880
+#: src/rcfile.c:864 src/rcfile.c:881
 msgid "Chromium"
 msgstr "Chromium"
 
-#: src/rcfile.c:866 src/rcfile.c:883
+#: src/rcfile.c:867 src/rcfile.c:884
 msgid "Opera"
 msgstr "Opera"
 
-#: src/rcfile.c:869 src/rcfile.c:895
+#: src/rcfile.c:870 src/rcfile.c:896
 msgid "chmod a+x"
 msgstr "chmod a+x"
 
-#: src/rcfile.c:872 src/rcfile.c:898
-#, fuzzy
+#: src/rcfile.c:873 src/rcfile.c:899
 msgid "Insert date"
-msgstr "Dosya ekle"
+msgstr "Terihi gir"
 
-#: src/rcfile.c:885
+#: src/rcfile.c:886
 msgid "Konqueror"
 msgstr "Konqueror"
 
-#: src/rcfile.c:888
-msgid "Epiphany"
-msgstr "Aydınlanma"
-
 #: src/rcfile.c:889
+msgid "Epiphany"
+msgstr "Epiphany"
+
+#: src/rcfile.c:890
 msgid "Kazehakase"
 msgstr "Kazehakase"
 
-#: src/rcfile.c:892
+#: src/rcfile.c:893
 msgid "Links2 (graphics)"
 msgstr "Links2 (grafikler)"
 
-#: src/rcfile.c:947
+#: src/rcfile.c:948
 msgid "C Header"
 msgstr "C Başlık"
 
-#: src/rcfile.c:950
+#: src/rcfile.c:951
 msgid "C Header GPL"
 msgstr "C Başlık GPL"
 
-#: src/rcfile.c:953
+#: src/rcfile.c:954
 msgid "XHTML 1.0"
 msgstr "XHTML 1.0"
 
-#: src/rcfile.c:956
+#: src/rcfile.c:957
 msgid "HTML 5"
 msgstr "HTML 5"
 
-#: src/rcfile.c:959
+#: src/rcfile.c:960
 msgid "PHP"
 msgstr "PHP"
 
-#: src/rcfile.c:962
+#: src/rcfile.c:963
 msgid "LaTex Book"
-msgstr "LaTex Kitabı"
+msgstr "LaTex Kitap"
 
-#: src/rcfile.c:965
+#: src/rcfile.c:966
 msgid "LaTex Presentation"
-msgstr "LaTex Sunumu"
+msgstr "LaTex Sunum"
 
-#: src/rcfile.c:1402
+#: src/rcfile.c:1405
 msgid "Untitled Project"
-msgstr "Adsız Proje"
+msgstr "Başlıksız Proje"
 
-#: src/rcfile.c:1509
+#: src/rcfile.c:1512
 msgid "C programming"
 msgstr "C programlama"
 
-#: src/rcfile.c:1513
+#: src/rcfile.c:1516
 msgid "Web files"
 msgstr "Web dosyaları"
 
-#: src/rcfile.c:1520
+#: src/rcfile.c:1523
 msgid "Hide objectfiles"
 msgstr "Nesne dosyalarını gizle"
 
@@ -3652,7 +3637,7 @@ msgstr "<i>Arama başlatıldı</i>"
 
 #: src/snr3.c:712
 msgid "<span foreground=\"red\"><b>No selection, aborted search</b></span>"
-msgstr "<span foreground=\"red\"><b>Seçim yok, arama iptal edildi</b></span>"
+msgstr "<span foreground=\"red\"><b>Seçim yok, aramadan vazgeçildi</b></span>"
 
 #. display warning that not all documents have yet finished loading
 #: src/snr3.c:721
@@ -3663,9 +3648,8 @@ msgstr ""
 "<span foreground=\"red\" weight=\"bold\">Bazı belgeler hâlâ yükleniyor</span>"
 
 #: src/snr3.c:872
-#, fuzzy
 msgid "<span foreground=\"red\">Empty search string</span>"
-msgstr "<span foreground=\"red\"><b>Seçim yok, arama iptal edildi</b></span>"
+msgstr "<span foreground=\"red\">Boş arama dizesi</span>"
 
 #: src/snr3.c:923
 #, c-format
@@ -3678,8 +3662,8 @@ msgstr[1] "<i>%d girişler değiştirildi</i>"
 #, c-format
 msgid "<i>Found %d entry</i>"
 msgid_plural "<i>Found %d entries</i>"
-msgstr[0] "<i>%d girdi bulundu</i>"
-msgstr[1] "<i>%d girdiler bulundu</i>"
+msgstr[0] "<i>%d giriş bulundu</i>"
+msgstr[1] "<i>%d girişler bulundu</i>"
 
 #: src/snr3.c:1228
 #, c-format
@@ -3707,6 +3691,9 @@ msgid ""
 "<span foreground=\"red\"><b>There is no 'undo' when replacing in files.</b>\n"
 "Backup files are created as filename~</span>"
 msgstr ""
+"<span foreground=\"red\"><b>Dosyalarda değişiklik yapılırken 'geri alma' "
+"yoktur.</b>\n"
+"Yedekleme dosyaları dosyaadı~ olarak oluşturulur</span>"
 
 #: src/snr3.c:1488
 msgid "No (more) results"
@@ -3754,7 +3741,7 @@ msgstr "<b>Şunun için _ara</b>"
 
 #: src/snr3.c:1658
 msgid "<b>Replace _with</b>"
-msgstr "<b>_Şununla değiştirin</b>"
+msgstr "<b>_Şununla değiştir</b>"
 
 #: src/snr3.c:1673
 msgid "Match Patter_n: "
@@ -3762,7 +3749,7 @@ msgstr "Eşleşme _Modeli: "
 
 #: src/snr3.c:1685
 msgid "Replace T_ype: "
-msgstr "Replace T_ype: "
+msgstr "_Türü Değiştir: "
 
 #: src/snr3.c:1698
 msgid "Sco_pe: "
@@ -3778,16 +3765,15 @@ msgstr "Özyineleme seviyesi: "
 
 #: src/snr3.c:1738
 msgid "Basedir: "
-msgstr "Basedir: "
+msgstr "Temel dizin: "
 
 #: src/snr3.c:1748
-#, fuzzy
 msgid "Show results in Output Pane"
-msgstr "Çıktı bölmesini göster"
+msgstr "Sonuçları Çıktı Bölmesinde göster"
 
 #: src/snr3.c:1750
 msgid "Show all results in the Output Pane on the bottom of the document list"
-msgstr ""
+msgstr "Tüm sonuçları belge listesinin altındaki Çıktı Bölmesinde göster"
 
 #: src/snr3.c:1763
 msgid "Case sensitive _matching"
@@ -3795,40 +3781,40 @@ msgstr "Büyük/küçük harfe duyarlı _eşleştirme"
 
 #: src/snr3.c:1765
 msgid "Only match if case (upper/lower) is identical."
-msgstr "Sadece büyük/küçük harf aynıysa eşleştirin."
+msgstr "Yalnızca büyük/küçük harf (üst/alt) aynıysa eşleştirin."
 
 #: src/snr3.c:1769
 msgid "Pattern contains escape-se_quences"
-msgstr "Model, çıkış _dizileri içeriyor"
+msgstr "Model, kaçış _dizileri içeriyor"
 
 #: src/snr3.c:1772
 msgid "Pattern contains backslash escaped characters such as \\n \\t etc."
-msgstr "Model, \\ n \\ t vb. gibi ters eğik çizgi karakterleri içeriyor."
+msgstr ""
+"Model, \\n \\t vb. gibi ters eğik çizgiden kaçış karakterleri içeriyor."
 
 #: src/snr3.c:1776
 msgid "Dot character in regex pattern matches newlines"
-msgstr "Normal ifade modelindeki nokta karakteri yeni satırlarla eşleşir"
+msgstr "Düzenli ifade modelindeki nokta karakteri yeni satırlarla eşleşir"
 
 #: src/snr3.c:1779
 msgid ""
 "The . character will match everything including newlines, use for multiline "
 "matching."
 msgstr ""
-"Bu . karakter, çok satırlı eşleme için kullanılan yeni satırlar da dahil "
-"olmak üzere her şeyle eşleşecektir."
+"Bu . karakteri yeni satırlar dahil her şeyle eşleşir, çok satırlı eşleştirme "
+"için kullanın."
 
 #: src/snr3.c:1783
-#, fuzzy
 msgid "Ignore backup files"
-msgstr "Yedekleme dosyalarını göster"
+msgstr "Yedekleme dosyalarını yoksay"
 
 #: src/snr3.c:1785
 msgid "Ignore backup files *~ created by Bluefish"
-msgstr ""
+msgstr "Bluefish tarafından oluşturulan yedekleme dosyalarını *~ yoksay"
 
 #: src/snr3.c:1807
 msgid "Replace _All"
-msgstr "_Tümünü değiştir"
+msgstr "_Tümünü Değiştir"
 
 #: src/snr3.c:1809
 msgid "_Replace"
@@ -3848,11 +3834,11 @@ msgstr "_Tüm belgelerde geri al"
 
 #: src/undo_redo.c:555 src/undo_redo.c:695
 msgid "Undo only _this document"
-msgstr "Sadece _bu belgeyi geri al"
+msgstr "Yalnızca _bu belgeyi geri al"
 
 #: src/undo_redo.c:558 src/undo_redo.c:698
 msgid "Undo this change in all documents?"
-msgstr "Tüm belgelerdeki bu değişiklik geri alınsın mı?"
+msgstr "Bu değişiklik tüm belgelerde geri alınsın mı?"
 
 #: src/undo_redo.c:559 src/undo_redo.c:699
 msgid "This change concerns multiple documents."
@@ -3860,186 +3846,179 @@ msgstr "Bu değişiklik birden çok belgeyle ilgilidir."
 
 #: src/xmlstrings.h:2
 msgid "Allow folding of C style comments"
-msgstr ""
+msgstr "C stili yorumların katlanmasına izin ver"
 
 #: src/xmlstrings.h:3
 msgid "Allow folding of Curly brackets block"
-msgstr ""
+msgstr "Küme parantezleri bloğunun katlanmasına izin ver"
 
 #: src/xmlstrings.h:4
 msgid "Allow folding of Javascript Curly brackets block"
-msgstr ""
+msgstr "Javascript Küme parantezleri bloğunun katlanmasına izin ver"
 
 #: src/xmlstrings.h:5
 msgid "Allow folding of Javascript Parentheses block"
-msgstr ""
+msgstr "Javascript Parantez bloğunun katlanmasına izin ver"
 
 #: src/xmlstrings.h:6
 msgid "Allow folding of Javascript Square brackets block"
-msgstr ""
+msgstr "Javascript Köşeli parantez bloğunun katlanmasına izin ver"
 
 #: src/xmlstrings.h:7
 msgid "Allow folding of Parentheses block"
-msgstr ""
+msgstr "Parantez bloğunun katlanmasına izin ver"
 
 #: src/xmlstrings.h:8
 msgid "Allow folding of PHP blocks"
-msgstr ""
+msgstr "PHP bloklarının katlanmasına izin ver"
 
 #: src/xmlstrings.h:9
 msgid "Allow folding of Square brackets block"
-msgstr ""
+msgstr "Köşeli parantez bloğunun katlanmasına izin ver"
 
 #: src/xmlstrings.h:10
 msgid "Allow folding of the Parentheses block"
-msgstr ""
+msgstr "Parantez bloğunun katlanmasına izin ver"
 
 #: src/xmlstrings.h:11
 msgid "Allow to fold the the root html tag"
-msgstr ""
+msgstr "Kök html etiketini katlamaya izin ver"
 
 #: src/xmlstrings.h:12
 msgid "All php functions"
-msgstr ""
+msgstr "Tüm php işlevleri"
 
 #: src/xmlstrings.h:13
 msgid "All wordpress functions"
-msgstr ""
+msgstr "Tüm wordpress işlevleri"
 
 #: src/xmlstrings.h:14
 msgid "Autocomplete function names with semicolon"
-msgstr ""
+msgstr "İşlev adlarını noktalı virgülle otomatik tamamlama"
 
 #: src/xmlstrings.h:15
-#, fuzzy
 msgid "Autocomplete HTML entities"
-msgstr "Otomatik tamamlama ve Referans"
+msgstr "HTML varlıklarını otomatik tamamlama"
 
 #: src/xmlstrings.h:16
 msgid "Autocomplete Javascript object methods"
-msgstr ""
+msgstr "Javascript nesne yöntemlerini otomatik tamamlama"
 
 #: src/xmlstrings.h:17
 msgid "autocomplete javascript variables"
-msgstr ""
+msgstr "javascript değişkenlerini otomatik tamamlama"
 
 #: src/xmlstrings.h:18
-#, fuzzy
 msgid "Auto-complete PHP functions"
-msgstr "Otomatik tamamlama ve Referans"
+msgstr "PHP işlevlerini otomatik tamamlama"
 
 #: src/xmlstrings.h:19
 msgid "Auto-complete PHP variables"
-msgstr ""
+msgstr "PHP değişkenlerini otomatik tamamlama"
 
 #: src/xmlstrings.h:20
-#, fuzzy
 msgid "Autocomplete tags"
-msgstr "tamamlandı"
+msgstr "Etiketleri otomatik tamamlama"
 
 #: src/xmlstrings.h:21
 msgid "autocomplete with newlines"
-msgstr ""
+msgstr "yeni satırlarla otomatik tamamlama"
 
 #: src/xmlstrings.h:22
 msgid "CSS properties"
-msgstr ""
+msgstr "CSS özellikleri"
 
 #: src/xmlstrings.h:23
 msgid "Enable the PHP short open tag"
-msgstr ""
+msgstr "PHP kısa açık etiketini etkinleştir"
 
 #: src/xmlstrings.h:24
 msgid "GNU Coreutils functions"
-msgstr ""
+msgstr "GNU Coreutils işlevleri"
 
 #: src/xmlstrings.h:25
 msgid "HTML entities"
-msgstr ""
+msgstr "HTML varlıkları"
 
 #: src/xmlstrings.h:26
 msgid "include JQuery syntax"
-msgstr ""
+msgstr "jQuery sözdizimini dahil et"
 
 #: src/xmlstrings.h:27
 msgid "Javascript CSS properties"
-msgstr ""
+msgstr "JavaScript CSS özellikleri"
 
 #: src/xmlstrings.h:28
 msgid "Load all php functions"
-msgstr ""
+msgstr "Tüm php işlevlerini yükle"
 
 #: src/xmlstrings.h:29
-#, fuzzy
 msgid "Load auto-completion information"
-msgstr "Otomatik tamamlama açılır penceresini göster"
+msgstr "Otomatik tamamlama bilgilerini yükle"
 
 #: src/xmlstrings.h:30
-#, fuzzy
 msgid "Load completion data"
-msgstr "Otomatik tamamlama açılır penceresini göster"
+msgstr "Tamamlama verilerini yükle"
 
 #: src/xmlstrings.h:31
 msgid "Load glib types and functions"
-msgstr ""
+msgstr "Glib türlerini ve işlevlerini yükle"
 
 #: src/xmlstrings.h:32
 msgid "Load GObject functions"
-msgstr ""
+msgstr "GObject işlevlerini yükle"
 
 #: src/xmlstrings.h:33
 msgid "Load GTK+ functions"
-msgstr ""
+msgstr "GTK+ işlevlerini yükle"
 
 #: src/xmlstrings.h:34
-#, fuzzy
 msgid "Load reference data"
-msgstr "Dil dosyalarından referans verileri _yükle"
+msgstr "Referans verilerini yükle"
 
 #: src/xmlstrings.h:35
-#, fuzzy
 msgid "Load reference information"
-msgstr "<b>Referans Bilgileri</b>"
+msgstr "Referans bilgilerini yükle"
 
 #: src/xmlstrings.h:36
 msgid "Load standard C library functions "
-msgstr ""
+msgstr "Standart C kitaplığı işlevlerini yükle "
 
 #: src/xmlstrings.h:37
 msgid "Load XSLT 2.0 support."
-msgstr ""
+msgstr "XSLT 2.0 desteğini yükle."
 
 #: src/xmlstrings.h:38
 msgid "Methods in javadoc but not in references"
-msgstr ""
+msgstr "Javadoc'ta bulunan ancak referanslarda bulunmayan yöntemler"
 
 #: src/xmlstrings.h:39
 msgid "scan for sql in php strings"
-msgstr ""
+msgstr "php dizelerinde sql için tara"
 
 #: src/xmlstrings.h:40
 msgid "Scan for sql in strings"
-msgstr ""
+msgstr "Dizelerde sql için tara"
 
 #: src/xmlstrings.h:41
 msgid "Self-close tags such as br, hr, and img with /&gt;"
-msgstr ""
+msgstr "Br, hr ve img gibi etiketleri /&gt; ile kendiliğinden kapatın;"
 
 #: src/xmlstrings.h:42
 msgid "Show a string as a block"
-msgstr ""
+msgstr "Bir dizeyi blok olarak göster"
 
 #: src/xmlstrings.h:43
 msgid "Show tag attributes as block"
-msgstr ""
+msgstr "Etiket özniteliklerini blok olarak göster"
 
 #: src/xmlstrings.h:44
 msgid "Show this language in the menu"
-msgstr ""
+msgstr "Bu dili menüde göster"
 
 #: src/xmlstrings.h:45
 msgid "Tag block-start includes all attributes"
-msgstr ""
+msgstr "Etiket bloğu başlangıcı tüm öznitelikleri içerir"
 
 #~ msgid "Bluefish project file"
 #~ msgstr "Bluefish proje dosyası"
