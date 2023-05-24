@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bluefish 2.2.4\n"
-"Report-Msgid-Bugs-To: bluefish-dev@lists.ems.ru\n"
-"POT-Creation-Date: 2023-02-23 21:16+0100\n"
-"PO-Revision-Date: 2021-09-09 07:32+0300\n"
+"Report-Msgid-Bugs-To: olivier@bluefish.openoffice.nl\n"
+"POT-Creation-Date: 2023-04-27 22:57+0200\n"
+"PO-Revision-Date: 2023-05-17 13:57+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: tr\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: src/plugin_infbrowser/infb_gui.c:139
 msgid "Loading..."
@@ -84,7 +84,7 @@ msgstr "DTD"
 
 #: src/plugin_infbrowser/infb_load.c:176
 msgid "Web pages"
-msgstr "Web pages"
+msgstr "Web sayfaları"
 
 #: src/plugin_infbrowser/infb_text.c:808
 msgid "Unknown document type"
