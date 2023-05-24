@@ -381,7 +381,6 @@ filefiltergui_destroy_lcb(GtkWidget * widget, Tfilefiltergui * ffg)
 {
 	g_free(ffg->origname);
 	g_object_unref(ffg->lstore);
-	window_destroy(ffg->win);
 	g_free(ffg);
 	DEBUG_MSG("filefiltergui_destroy_lcb, done\n");
 }
@@ -390,7 +389,7 @@ static void
 filefiltergui_cancel_clicked(GtkWidget * widget, Tfilefiltergui * ffg)
 {
 	restore_filter_from_config(ffg->curfilter, ffg->origname);
-	filefiltergui_destroy_lcb(widget, ffg);
+	gtk_widget_destroy(ffg->win);
 }
 
 static void
@@ -402,7 +401,7 @@ filefiltergui_ok_clicked(GtkWidget * widget, Tfilefiltergui * ffg)
 	DEBUG_MSG("filefiltergui_ok_clicked, filter '%s' has mode %d\n", ffg->curfilter->name,
 			  ffg->curfilter->mode);
 	apply_filter_to_config(ffg->curfilter, ffg->origname);
-	filefiltergui_destroy_lcb(widget, ffg);
+	gtk_widget_destroy(ffg->win);
 }
 
 static gboolean

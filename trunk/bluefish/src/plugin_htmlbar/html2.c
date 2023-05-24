@@ -382,12 +382,11 @@ static GList *pointer_arr2glist(gchar **arr) {
 }
 
 static void cs3d_destroy_lcb(GtkWidget * widget, Tcs3_diag *diag) {
-	window_destroy(diag->win);
 	g_slice_free(Tcs3_diag, diag);
 }
 
 static void cs3d_cancel_clicked_lcb(GtkWidget * widget, Tcs3_diag *diag) {
-	cs3d_destroy_lcb(NULL, diag);
+	gtk_widget_destroy(diag->win);
 }
 
 static void cs3d_ok_clicked_lcb(GtkWidget * widget, Tcs3_diag *diag) {
@@ -465,7 +464,7 @@ static void cs3d_ok_clicked_lcb(GtkWidget * widget, Tcs3_diag *diag) {
 		}
 	}
 	g_string_free(retstr, TRUE);
-	cs3d_destroy_lcb(NULL, diag);
+	window_destroy(diag->win);
 }
 
 static void cs3d_selection_changed_cb(GtkTreeSelection *selection, gpointer data) 
@@ -1105,12 +1104,12 @@ static void colsel_ok_clicked_lcb(GtkWidget *widget, Tcolsel *csd) {
 			}
 		}
 		g_free(tmpstr);
-		window_destroy(csd->win);
+		gtk_widget_destroy(csd->win);
 	}
 }
 
 static void colsel_cancel_clicked_lcb(GtkWidget *widget, Tcolsel *csd) {
-	window_destroy(csd->win);
+	gtk_widget_destroy(csd->win);
 }
 
 static Tcolsel *colsel_dialog(Tbfwin *bfwin,const gchar *setcolor, gint modal, gint startpos, gint endpos) {
@@ -1234,7 +1233,7 @@ gchar *return_color(gchar *start_value) {
 	gtk_main();
 
 	return_text = g_strdup(csd->returnval);
-	window_destroy(csd->win);
+	gtk_widget_destroy(csd->win);
 	DEBUG_MSG("return_color, the new gtk_main stopped, return_text=%s, %p\n", return_text, return_text);
 	return return_text;
 }

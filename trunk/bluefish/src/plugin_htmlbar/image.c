@@ -613,9 +613,8 @@ typedef struct {
 } Timage2thumb;
 
 static void
-mt_dialog_destroy(GtkWidget * wid, Tmuthudia * mtd)
-{
-	/* check if we have some images still loading, all images that have 'created == TRUE'
+mt_dialog_free(GtkWidget * wid, Tmuthudia * mtd) {
+		/* check if we have some images still loading, all images that have 'created == TRUE'
 	   are ready */
 	GList *tmplist;
 	for (tmplist = g_list_first(mtd->images); tmplist; tmplist = g_list_next(tmplist)) {
@@ -630,9 +629,14 @@ mt_dialog_destroy(GtkWidget * wid, Tmuthudia * mtd)
 		g_object_unref(tmp->thumbname);
 		g_free(tmp);
 	}
-	DEBUG_MSG("multi_thumbnail_dialog_destroy, called for mtd=%p\n", mtd);
-	window_destroy(mtd->win);
-	g_free(mtd);
+	DEBUG_MSG("multi_thumbnail_dialog_free, called for mtd=%p\n", mtd);
+	g_free(mtd);	
+}
+
+static void
+mt_dialog_destroy(GtkWidget * wid, Tmuthudia * mtd)
+{
+	gtk_widget_destroy(mtd->win);
 }
 
 /* needs both pixbufs to get the width !! */
@@ -1051,7 +1055,7 @@ multi_thumbnail_dialog(Tbfwin * bfwin)
 	mtd->bfwin = bfwin;
 	mtd->document = bfwin->current_document;
 	mtd->win =
-		window_full2(_("Multi thumbnail"), GTK_WIN_POS_CENTER, 5, G_CALLBACK(mt_dialog_destroy), mtd, TRUE,
+		window_full2(_("Multi thumbnail"), GTK_WIN_POS_CENTER, 5, G_CALLBACK(mt_dialog_free), mtd, TRUE,
 					 bfwin->main_window);
 	vbox = gtk_vbox_new(FALSE, 5);
 	gtk_container_add(GTK_CONTAINER(mtd->win), vbox);
