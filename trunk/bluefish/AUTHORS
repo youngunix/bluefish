@@ -27,28 +27,29 @@ Developers for previous releases:
   Yanike Mann <yanikem@gmail.com>
   Martin Senftleben <linux@drmartinus.de>
 
-Translators:
-  Basque (EU)                   Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>
+Translators for this release:
+  Turkish (TR)                  Osman Öz <osmanoz05@hotmail.com>
   Brazilian Portuguese (PT_BR)  Matheus Cunha Motta <esfingemetal@gmail.com>
-  Catalan (CA):			Mònica Ramírez Arceda <monica@probeta.net>
+  Dutch (NL)                    Olivier Sessink <olivier@bluefish.openoffice.nl>
+  French (FR)                   Frédéric Falsetti <falsetti@clansco.org>
+  Italian (IT)                  Roberto Bellingeri <bellingeri@netguru.it>
+  Russian (RU)                  Olesya Gerasimenko <gammaray@basealt.ru>
+  Japanese (JA)                 Takeshi Hamasaki <hmatrjp@users.sourceforge.jp>
+  German (DE)                   Ralf Kestler <Ralf.Kestler@gmx.net>
+ 
+Previous translators (translations might be incomplete):
+  Basque (EU)                   Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>
+  Catalan (CA):                 Mònica Ramírez Arceda <monica@probeta.net>
   Chinese (ZH_CN)               ZhiFeng Ma <mzf9527@gmail.com>
   Czech (CS)                    Marek Černocký <marek@manet.cz>
   Danish (DA)                   Flemming Christensen <fc@stromata.dk>
-  Dutch (NL)                    Olivier Sessink <olivier@bluefish.openoffice.nl>
-  French (FR)                   Frédéric Falsetti <falsetti@clansco.org>
   Galician (GL)                 Xose M. Lamas <correo.xmgz@gmail.com>
-  German (DE)                   Ralf Kestler <Ralf.Kestler@gmx.net>
   Hungarian (HU)                Balázs Úr <urbalazs@gmail.com>
-  Italian (IT)                  Roberto Bellingeri <bellingeri@netguru.it>
-  Japanese (JA)                 Takeshi Hamasaki <hmatrjp@users.sourceforge.jp>
   Norwegian (NB)                Christian Tellefsen <chris@tellefsen.net>
   Nynorsk (NN)                  Yngve Spjeld Landro <l10n@landro.net>
   Polish (PL)                   Quick-Master SI <dawajpoczte@gmail.com>
-  Russian (RU)                  Fr. Br. George <george@altlinux.org>
   Spanish (ES)                  Daniel Mustieles <daniel.mustieles@gmail.com>
   Ukrainian (UK)                Yuri Chornoivan <yurchor@ukr.net>
-
-Previous translators (translations outdated):
   Bulgarian (BG):                Peio Popov <peio(at)peio.org>
   Catalan (CA):                  Jordi Sánchez <parki(at)softhome.net>
   Chinese Traditional (zh_TW):   OLS3 <ols3@lxer.idv.tw>
@@ -60,6 +61,7 @@ Previous translators (translations outdated):
   Swedish (SV):                  David Smeringe <david.smeringe@telia.com>
   Tamil (TA):                    Murugapandian Barathee <barathee@yahoo.com>
   Turkish (TR):                  Oğuz Eren <ogzeren@gmail.com>
+  Russian (RU)                  Fr. Br. George <george@altlinux.org>
 
 Documentation: 
   Scott White     <wwsw3@earthlink.net>
@@ -71,10 +73,12 @@ Documentation:
   Denny Reeh
 
 Package Maintainers:
+  Windows:  Shawn Novak <kernel86@gmail.com> and
+  Redhat/Fedora:   Matthias Haase <matthias_haase(at)bennewitz.com>
+  Flatpak: Olivier Sessink
+
+Former / inactive maintainers 
   Debian:   Daniel Leidert <daniel.leidert@wgdd.de>
             thanks to Davide Puricelli <evo(at)debian.org> for the former maintainership
   Ubuntu:   Klaus Vormweg
-  Redhat/Fedora:   Matthias Haase <matthias_haase(at)bennewitz.com>
-  Windows:  Shawn Novak <kernel86@gmail.com> and
-            Daniel Leidert <daniel.leidert@wgdd.de>
   Mac OSX:  Andrius Rinkevicius <andriusrin@gmail.com>
