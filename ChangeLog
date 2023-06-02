@@ -6,7 +6,7 @@ homepage: http://bluefish.openoffice.nl.
 
 Bluefish 2.2.14 fixes three bugs that in certain situations could lead to a 
 segfault. One bug when deleting backup files on close. The second bug when 
-closing the preferences dialog in a flatpak distributed version of bluefish.
+closing some of the dialogs in a flatpak distributed version of bluefish.
 The third bug when the CSS language file was loaded on a 32bit system. 
 It furthermore fixes zencoding functionality with python3. It also 
 adds an option to store the scope of the search dialog to the session or 

@@ -13,7 +13,7 @@
    height="210"
    id="svg3334"
    sodipodi:version="0.32"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    sodipodi:docname="bluefish-splash-nb3.svg"
    inkscape:export-filename="/home/olivier/svnbluefish/images/bluefish-splash-nb3.png"
    inkscape:export-xdpi="90"
@@ -44,7 +44,7 @@
      pagecolor="#ffffff"
      id="base"
      inkscape:zoom="2.1221115"
-     inkscape:cx="-32.109503"
+     inkscape:cx="-31.167045"
      inkscape:cy="98.146265"
      inkscape:window-x="0"
      inkscape:window-y="27"
@@ -1322,5 +1322,5 @@
        sodipodi:role="line"
        id="tspan4940"
        x="179.42119"
-       y="204.40457">2.2.13</tspan></text>
+       y="204.40457">2.2.14</tspan></text>
 </svg>

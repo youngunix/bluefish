@@ -44,6 +44,7 @@
 </kudos>
 <content_rating type="oars-1.0" />
 <releases>
+	<release version="2.2.14" date="2023-06-02" type="Stable" />
 	<release version="2.2.13" date="2023-01-03" type="Stable" />
 	<release version="2.2.12" date="2020-11-05" type="Stable" />
 	<release version="2.2.11" date="2020-01-24" type="Stable" />
