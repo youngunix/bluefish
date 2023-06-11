@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!--
+		Bluefish HTML Editor
+		yaml.bflang2 $Revision: 8821 $
+
+		Copyright Olivier Sessink
+
+	    This program is free software: you can redistribute it and/or modify
+		it under the terms of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of the License, or
+		(at your option) any later version.
+
+		This program is distributed in the hope that it will be useful,
+		but WITHOUT ANY WARRANTY; without even the implied warranty of
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+		GNU General Public License for more details.
+
+		You should have received a copy of the GNU General Public License
+		along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<bflang name="YAML" version="2.0" >
+<header>
+	<mime type="application/yaml" />
+	<mime type="application/x-yaml" />
+	<mime type="text/x-yaml" />
+	<mime type="text/yaml" />
+	<mime type="text/plain?yaml" />
+	<option name="show_in_menu" default="0"/>
+	<option name="Parentheses block_foldable" default="0" description="Allow folding of the Parentheses block" />
+	<highlight name="keyword" style="keyword" />
+	<highlight name="brackets" style="brackets" />
+	<highlight name="type" style="type" />
+	<highlight name="comment" style="comment" />
+	<highlight name="string" style="string" />
+	<highlight name="value" style="value" />
+	<highlight name="preprocessor" style="preprocessor" />
+</header>
+
+<properties>
+	<smartindent characters=":" />
+<!--	<smartoutdent characters="}" />
+	<smartselection characters="_" />-->
+</properties>
+<definition>
+<!--  ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13; -->
+<context symbols=":-">
+
+<element pattern="-" highlight="keyword"/>
+<element pattern=":" highlight="keyword"/>
+<element pattern=">" highlight="keyword"/>
+<element pattern="|" highlight="keyword"/>
+
+<element pattern="&#34;" highlight="string">
+	<context symbols="\&#34;nrt" highlight="string">
+		<element pattern="\\." is_regex="1" highlight="string" />
+		<element pattern="&#34;" highlight="string" ends_context="1" />
+	</context>
+</element>
+
+<element pattern="'" highlight="string">
+	<context symbols="\'" highlight="string">
+		<element pattern="\\." is_regex="1" highlight="string" />
+		<element pattern="'" highlight="string" ends_context="1" />
+	</context>
+</element>
+
+<element pattern="# " highlight="comment">
+<context symbols="&#10;&#13;" highlight="comment">
+	<element pattern="(&#10;|&#13;|&#13;&#10;)" is_regex="1" highlight="comment" ends_context="1"/>
+</context>
+</element>
+
+</context>
+</definition>
+</bflang>
