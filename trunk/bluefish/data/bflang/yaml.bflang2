@@ -44,8 +44,9 @@
 </properties>
 <definition>
 <!--  ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13; -->
-<context symbols="#&#34;(){}[]:->|#&#9;&#10;&#13; ">
-
+<context symbols="#&#34;(){}[]:->|#&#9;&#10;&#13; " dump_dfa_chars=" 	
+a" dump_dfa_run="1">
+<indent foldable="0" />
 <element pattern="-" highlight="keyword"/>
 <element pattern=":" highlight="keyword"/>
 <element pattern=">" highlight="keyword"/>
@@ -72,11 +73,12 @@
 	</context>
 </element>
 
-<element pattern="# " highlight="comment">
+<element pattern="#[^&#10;&#13;]+" highlight="comment" is_regex="1" />
+<!--<element pattern="# " highlight="comment">
 <context symbols="&#10;&#13;" highlight="comment">
 	<element pattern="(&#10;|&#13;|&#13;&#10;)" is_regex="1" highlight="comment" ends_context="1"/>
 </context>
-</element>
+</element>-->
 
 </context>
 </definition>

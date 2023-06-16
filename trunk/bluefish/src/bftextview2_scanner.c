@@ -552,6 +552,7 @@ scancache_update_single_offset(BluefishTextView * btv, Tscancache_offset_update 
 	if (sou->found && sou->found->charoffset_o <= startpos) {
 		Tfoundcontext *tmpfcontext;
 		Tfoundblock *tmpfblock;
+		Tfoundindent *tmpfindent;
 		DBG_SCANCACHE
 			("scancache_update_single_offset, handle first found %p with offset %u, complete stack fcontext %p fblock %p\n",
 			 sou->found, sou->found->charoffset_o, sou->found->fcontext, sou->found->fblock);
@@ -604,6 +605,14 @@ scancache_update_single_offset(BluefishTextView * btv, Tscancache_offset_update 
 				}
 			}
 			tmpfblock = (Tfoundblock *) tmpfblock->parentfblock;
+		}
+		tmpfindent = sou->found->findent;
+		while (tmpfindent) {
+			g_print("scancache_update_single_offset, update findent %p end with offset %d\n",tmpfindent,offset);
+			if (tmpfindent->end_o > startpos && tmpfindent->end_o != BF_OFFSET_UNDEFINED) {
+				tmpfindent->end_o += offset;
+			}
+			tmpfindent = (Tfoundindent *) tmpfindent->parentfindent;
 		}
 	}
 
@@ -1094,6 +1103,11 @@ found_free_lcb(gpointer data, gpointer btv)
 		DBG_SCANCACHE("found_free_lcb, btv=%p, free fcontext=%p\n", btv, found->fcontext);
 		g_slice_free(Tfoundcontext, found->fcontext);
 	}
+	if (found->numindentchange > 0) {
+		g_print("found_free_lcb, free findent %p\n",found->findent);
+		g_slice_free(Tfoundindent, found->findent);
+	}
+	
 #ifdef HL_PROFILING
 	hl_profiling.found_refcount--;
 #endif
@@ -1462,42 +1476,6 @@ remove_invalid_cache(BluefishTextView * btv, guint match_end_o, Tscanning * scan
 
 	DBG_SCANNING("remove_invalid_cache, return invalidoffset %d\n", invalidoffset);
 	return invalidoffset;
-/*	guint invalidoffset;
-
-	DBG_SCANNING("remove_invalid_cache, cache item %p at offset %d is NO LONGER valid\n", scanning->nextfound,
-				 scanning->nextfound->charoffset_o);
-	if (scanning->nextfound->numblockchange < 0) {
-		gint i = scanning->nextfound->numblockchange;
-		Tfoundblock *tmpfblock = scanning->nextfound->fblock;
-		while (i < 0 && tmpfblock) {
-			/ * if tmpfblock is still on the stack, we have to set the end as undefined * /
-			if (is_fblock_on_stack(scanning->curfblock, tmpfblock)) {
-				DBG_SCANNING("setting end of fblock %p as undefined\n", tmpfblock);
-				tmpfblock->start2_o = BF_OFFSET_UNDEFINED;
-				tmpfblock->end2_o = BF_OFFSET_UNDEFINED;
-			}
-			tmpfblock = tmpfblock->parentfblock;
-			i++;
-		}
-	}
-	if (scanning->nextfound->numcontextchange < 0) {
-		gint i = scanning->nextfound->numcontextchange;
-		Tfoundcontext *tmpfcontext = scanning->nextfound->fcontext;
-		while (i < 0 && tmpfcontext) {
-			if (is_fcontext_on_stack(scanning->curfcontext, tmpfcontext)) {
-				DBG_SCANNING("setting end of fcontext %p as undefined\n", tmpfcontext);
-				tmpfcontext->end_o = BF_OFFSET_UNDEFINED;
-			}
-			tmpfcontext = tmpfcontext->parentfcontext;
-			i++;
-		}
-	}
-	DBG_SCANNING("remove_invalid_cache, remove everything up to %d from the cache, and any invalid entries following that offset\n", match_end_o);
-	do {
-		invalidoffset = remove_cache_entry(btv, &scanning->nextfound, &scanning->siter);
-	} while (scanning->nextfound && (scanning->nextfound->charoffset_o < match_end_o || !nextcache_valid(scanning)));
-	DBG_SCANNING("remove_invalid_cache, return invalidoffset %d\n", invalidoffset);
-	return invalidoffset;*/
 }
 
 static gboolean
@@ -1681,8 +1659,10 @@ indent_found(BluefishTextView * btv, Tmatch * match, Tscanning * scanning, guint
 			(*numindentchange)--;
 		}
 		g_print("popped %d found indents, back to Tfoundindent %p at level %d\n", (-1* (*numindentchange)), scanning->curfindent, foundlevel);
-		scanning->curfindent->end_o = match_end_o;
-		g_print("after pop, set Tfoundindent %p end to %d\n", scanning->curfindent, match_end_o);
+		if (scanning->curfindent) {
+			scanning->curfindent->end_o = match_end_o;
+			g_print("after pop, set Tfoundindent %p end to %d\n", scanning->curfindent, match_end_o);
+		}
 		return retfindent;
 	}
 }
@@ -2015,12 +1995,12 @@ reconstruct_scanning(BluefishTextView * btv, GtkTextIter * position, Tscanning *
 			scanning->curfblock = found->fblock;
 		}
 		scanning->context = (scanning->curfcontext) ? scanning->curfcontext->context : 1;
+		/* TODO: reconstruct found indent, do we need to pop any blocks?? */
+		scanning->curfindent = found->findent;
 
 		scanning->nextfound = get_foundcache_next(btv, &scanning->siter);
 		DBG_SCANNING("reconstruct_stack, found at offset %d, curfblock=%p, curfcontext=%p, context=%d\n",
 					 found->charoffset_o, scanning->curfblock, scanning->curfcontext, scanning->context);
-		/* TODO: reconstruct found indent */
-		scanning->curfindent = NULL;
 		
 		return found->charoffset_o;
 	} else {
