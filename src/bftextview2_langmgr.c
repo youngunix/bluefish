@@ -1864,6 +1864,22 @@ set_commentid(Tbflangparsing * bfparser, gboolean topevel_context, guint8 * tose
 
 
 static gint16
+process_scanning_indent(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gint context, GQueue * contextstack)
+{
+	gboolean foldable = FALSE;
+	guint16 matchnum = 0;
+	Tattrib attribs[] = {
+					{"foldable", &foldable, attribtype_boolean},
+					};
+	parse_attributes(bfparser->bflang,reader, attribs, sizeof(attribs)/sizeof(Tattrib));
+	
+	matchnum = add_pattern_to_scanning_table(bfparser->st, "\n[ \t]*", TRUE, FALSE, context, &bfparser->ldb);
+	/*g_array_index(bfparser->st->matches, Tpattern, matchnum).starts_block = 1;*/
+	g_array_index(bfparser->st->matches, Tpattern, matchnum).block = BLOCK_SPECIAL_INDENT;
+	g_print("process_scanning_indent, add indentation detection with pattern %d to context %d\n",matchnum, context);
+}
+
+static gint16
 process_scanning_context(xmlTextReaderPtr reader, Tbflangparsing * bfparser, GQueue * contextstack)
 {
 	gchar *symbols = NULL, *highlight = NULL, *id = NULL, *idref = NULL, *commentid_block =
@@ -1966,6 +1982,8 @@ process_scanning_context(xmlTextReaderPtr reader, Tbflangparsing * bfparser, GQu
 									 UNDEFINED, NULL);
 		} else if (xmlStrEqual(name, (xmlChar *) "tag")) {
 			process_scanning_tag(reader, bfparser, context, contextstack, NULL, NULL, NULL, 0, NULL);
+		} else if (xmlStrEqual(name, (xmlChar *) "indent")) {
+			process_scanning_indent(reader, bfparser, context, contextstack);
 		} else if (xmlStrEqual(name, (xmlChar *) "group")) {
 			process_scanning_group(reader, bfparser, context, contextstack, NULL, NULL, NULL, NULL,
 								   UNDEFINED, UNDEFINED, 0, NULL);
