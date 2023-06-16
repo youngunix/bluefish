@@ -80,6 +80,7 @@ typedef struct {
 typedef struct {
 	Tfoundcontext *curfcontext;
 	Tfoundblock *curfblock;
+	Tfoundindent *curfindent;
 	/*Tfound *curfound; *//* items from the cache */
 	Tfound *nextfound;			/* items from the cache */
 	GSequenceIter *siter;		/* an iterator to get the next item from the cache */
@@ -1629,14 +1630,73 @@ match_conditions_satisfied(BluefishTextView * btv, Tscanning *scanning, Tpattern
 	return TRUE;*/
 }
 
+static void
+pop_indents(BluefishTextView * btv, Tmatch * match, Tscanning * scanning, gint match_end1_o)
+{
+	// pop the last indent block(s)
+	while (scanning->curfindent) {
+		/*g_print("pop_indents, set Tfoundindent %p to end at %d\n", scanning->curfindent, match_end1_o);
+		scanning->curfindent->end_o = match_end1_o;*/
+		g_print("pop indent %p (start=%d, end=%d)\n",scanning->curfindent, scanning->curfindent->start_o, scanning->curfindent->end_o);
+		scanning->curfindent = (Tfoundindent *) scanning->curfindent->parentfindent;
+	}
+}
+
+static Tfoundindent *
+indent_found(BluefishTextView * btv, Tmatch * match, Tscanning * scanning, guint match_start_o, guint match_end_o, gint * numindentchange)
+{
+	gint foundlevel, previndent;
+	Tfoundindent *retfindent;
+	if (scanning->curfindent) {
+		previndent = scanning->curfindent->level;
+	} else {
+		previndent = 0;
+	}
+	foundlevel = match_end_o - match_start_o;
+	g_print("indent_found, previndent=%d, foundlevel=%d\n",previndent,foundlevel);
+	if (G_LIKELY(previndent == foundlevel)) {
+		// indenting is the same, stretch end
+		if (scanning->curfindent) {
+			scanning->curfindent->end_o = match_end_o;
+			g_print("stretch, set Tfoundindent %p end to %d\n", scanning->curfindent, match_end_o);
+		}
+		return NULL;
+	} else if (previndent < foundlevel) {
+		// start a new indent block
+		Tfoundindent *findent;
+		findent = g_slice_new0(Tfoundindent);
+		findent->level = foundlevel;
+		findent->start_o = match_end_o;
+		findent->end_o = BF_POSITION_UNDEFINED;
+		findent->parentfindent = scanning->curfindent;
+		scanning->curfindent = findent;
+		*numindentchange=1;
+		g_print("add new Tfoundindent %p with start %d\n", findent, findent->start_o);
+		return findent;
+	} else {
+		retfindent = scanning->curfindent;
+		// pop the last indent block(s)
+		while (scanning->curfindent && scanning->curfindent->level != foundlevel) {
+			scanning->curfindent = (Tfoundindent *) scanning->curfindent->parentfindent;
+			(*numindentchange)--;
+		}
+		g_print("popped %d found indents, back to Tfoundindent %p at level %d\n", (-1* (*numindentchange)), scanning->curfindent, foundlevel);
+		scanning->curfindent->end_o = match_end_o;
+		g_print("after pop, set Tfoundindent %p end to %d\n", scanning->curfindent, match_end_o);
+		return retfindent;
+	}
+}
+
+
 static inline int
 found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 {
 	Tfoundblock *fblock = scanning->curfblock;
 	Tfoundcontext *fcontext = scanning->curfcontext;
-	guint match_end_o;
+	Tfoundindent *findent = scanning->curfindent;
+	guint match_end_o, match_start_o;
 	gboolean cleanup_obsolete_cache_items=FALSE;
-	gint numblockchange = 0, numcontextchange = 0;
+	gint numblockchange = 0, numcontextchange = 0, numindentchange=0;
 	Tfound *found;
 	GtkTextIter iter;
 	Tpattern *pat = &g_array_index(btv->bflang->st->matches, Tpattern, match->patternum);
@@ -1658,6 +1718,7 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 	scanning->identaction = pat->identaction;
 
 	match_end_o = gtk_text_iter_get_offset(&match->end);
+	match_start_o = gtk_text_iter_get_offset(&match->start);
 	if (pat->selftag) {
 		DBG_SCANNING("found_match, apply tag %p from %d to %d\n", pat->selftag,
 					 gtk_text_iter_get_offset(&match->start), gtk_text_iter_get_offset(&match->end));
@@ -1682,8 +1743,16 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 						scanning->curfblock->patternum, scanning->curfblock->end1_o, match_end_o);
 		scanning->curfblock->end1_o = match_end_o;
 	}
+	
+	if (G_UNLIKELY(pat->block == BLOCK_SPECIAL_INDENT)) {
+		/* if this has level 0 (so the pattern matches only the newline character) we just end all indents and further do nothing */
+		if ((match_end_o - match_start_o) == 1) {
+			g_print("level is at 1, so pop all indents\n");
+			pop_indents(btv, match, scanning, match_end_o);
+		}
+	}
 
-	if G_LIKELY((!pat->starts_block && !pat->ends_block
+	if G_LIKELY((!pat->starts_block && !pat->ends_block && pat->block != BLOCK_SPECIAL_INDENT
 		&& (pat->nextcontext == 0 || pat->nextcontext == scanning->context))) {
 		DBG_SCANNING("found_match, pattern does not start block or context, return\n");
 		return scanning->context;
@@ -1750,7 +1819,10 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 		enlarge_scanning_region_to_iter(btv, scanning, &iter);
 	}
 
-	if (pat->starts_block) {
+	if (G_UNLIKELY(pat->block == BLOCK_SPECIAL_INDENT && match_end_o - match_start_o > 1)) {
+		findent = indent_found(btv, match, scanning, match_start_o, match_end_o, &numindentchange);
+	}
+	if ((pat->starts_block)) {
 		fblock = found_start_of_block(btv, match, scanning);
 		numblockchange = 1;
 	} else if (pat->ends_block) {
@@ -1776,7 +1848,7 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 	} else {
 		numcontextchange = 0;
 	}
-	if (numblockchange == 0 && numcontextchange == 0) {
+	if (numblockchange == 0 && numcontextchange == 0 && numindentchange == 0) {
 		DBG_SCANCACHE("found_match, no context change, no block change, return\n");
 		return scanning->context;
 	}
@@ -1801,6 +1873,8 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 	found->numcontextchange = numcontextchange;
 	found->fcontext = fcontext;
 	found->charoffset_o = match_end_o;
+	found->findent = findent;
+	found->numindentchange = numindentchange;
 	DBG_SCANCACHE
 		("found_match, put found %p in the cache charoffset_o=%d fblock=%p numblockchange=%d fcontext=%p numcontextchange=%d\n",
 		 found, found->charoffset_o, found->fblock, found->numblockchange, found->fcontext,
@@ -1945,11 +2019,15 @@ reconstruct_scanning(BluefishTextView * btv, GtkTextIter * position, Tscanning *
 		scanning->nextfound = get_foundcache_next(btv, &scanning->siter);
 		DBG_SCANNING("reconstruct_stack, found at offset %d, curfblock=%p, curfcontext=%p, context=%d\n",
 					 found->charoffset_o, scanning->curfblock, scanning->curfcontext, scanning->context);
+		/* TODO: reconstruct found indent */
+		scanning->curfindent = NULL;
+		
 		return found->charoffset_o;
 	} else {
 		DBG_SCANNING("nothing to reconstruct\n");
 		scanning->curfcontext = NULL;
 		scanning->curfblock = NULL;
+		scanning->curfindent = NULL;
 		scanning->context = 1;
 		scanning->nextfound = get_foundcache_first(btv, &scanning->siter);
 		DBG_SCANNING("reconstruct_scanning, nextfound=%p\n", scanning->nextfound);
@@ -2053,6 +2131,7 @@ bftextview2_run_scanner(BluefishTextView * btv, GtkTextIter * visible_end)
 		scanning.nextfound = get_foundcache_first(btv, &scanning.siter);
 		scanning.curfcontext = NULL;
 		scanning.curfblock = NULL;
+		scanning.curfindent = NULL;
 		reconstruction_o = 0;
 	} else {
 		/* we do not want to reconstruct a blockstart exactly at the point where scanning.start is right now, otherwise

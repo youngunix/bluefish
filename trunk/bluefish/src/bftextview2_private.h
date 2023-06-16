@@ -133,6 +133,7 @@ typedef struct {
 	gchar *highlight;		/* a string for the highlight corresponding to the  blocktag */
 	gboolean foldable;
 } Tpattern_block;
+#define BLOCK_SPECIAL_INDENT 65535
 
 typedef struct {
 	GtkTextTag *selftag;		/* the tag used to highlight this pattern */
@@ -183,6 +184,13 @@ gboolean character_is_symbol(Tscantable *st,guint16 context, gunichar uc);
 /* scanning the text and caching the results */
 /*****************************************************************/
 typedef struct {
+	gpointer parentfindent;
+	guint32 start_o;
+	guint32 end_o;
+	guint16 level;
+} Tfoundindent;
+
+typedef struct {
 	gpointer parentfblock;
 	guint32 start1_o;
 	guint32 end1_o;
@@ -229,13 +237,15 @@ typedef struct {
 								   if numblockchange > 0 this points to the pushed block, which also happens to be the current block
 								   if numblockchange < 0 this points to the top of the stack at this position, to get the current position
 								   you'll have to pop N items (where N is -1 * numblockchange). */
+	Tfoundindent *findent; 
 	guint32 charoffset_o;
 	gint16 numblockchange;		/* there are files that have > 127 pops in a single position
 								   for example html files that don't close paragrahs or tablerows */
 	gint8 numcontextchange;		/* 0 means no change, 1 means 1 push, -2 means 2 popped etc. */
+	gint8 numindentchange;
 } Tfound;						/*
-								   on 64bit this type has size 8+8+4+2+1 + 1 padding = 24 bytes
-								   on 32bit this type has size 4+4+4+2+1 + 1 padding = 16 bytes
+								   on 64bit this type has size 8+8+8+4+2+1 + 1 padding = 32 bytes
+								   on 32bit this type has size 4+4+4+4+2+1 + 1 padding = 20 bytes
 								 */
 
 #define IS_FOUNDMODE_CONTEXTPUSH(i)   (i->numcontextchange > 0)

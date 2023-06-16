@@ -1104,6 +1104,96 @@ paint_margin(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible, G
 	g_object_unref(G_OBJECT(panlay));
 }
 
+static void 
+paint_indent_line(BluefishTextView * btv, cairo_t * cr, gint level, gint start_o, gint end_o) {
+	GtkTextIter itstart, itend;
+	GdkRectangle rects, recte;
+	gint xs, ys, xe, ye;
+	if (end_o == BF_OFFSET_UNDEFINED)
+		return;
+	
+	g_print("paint_indent_line, paint from offset %d to %d\n",start_o, end_o);
+	gtk_text_buffer_get_iter_at_offset(btv->buffer,&itstart,start_o);
+	gtk_text_buffer_get_iter_at_offset(btv->buffer,&itend,end_o);
+	gtk_text_view_get_iter_location(GTK_TEXT_VIEW(btv), &itstart, &rects);
+	gtk_text_view_get_iter_location(GTK_TEXT_VIEW(btv), &itend, &recte);
+	
+	gtk_text_view_buffer_to_window_coords(GTK_TEXT_VIEW(btv), GTK_TEXT_WINDOW_TEXT, rects.x,
+												  rects.y, &xs, &ys);
+	gtk_text_view_buffer_to_window_coords(GTK_TEXT_VIEW(btv), GTK_TEXT_WINDOW_TEXT, recte.x,
+												  recte.y + recte.height, &xe, &ye);
+#if GTK_CHECK_VERSION(3, 0, 0)
+	guint marginoffset;
+	marginoffset = (BLUEFISH_TEXT_VIEW(btv->master)->margin_pixels_chars +
+				  BLUEFISH_TEXT_VIEW(btv->master)->margin_pixels_block +
+				  BLUEFISH_TEXT_VIEW(btv->master)->margin_pixels_symbol);
+	xe += marginoffset;
+	xs += marginoffset;
+#endif
+	g_print("paint_indent_line, paint from %d,%d to %d,%d\n",xs,ys,xe,ye);
+	cairo_move_to(cr, xs-3, ys+2);
+	cairo_line_to(cr, xe-3, ye-2);
+}
+
+static void
+paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible, GtkTextIter * endvisible)
+{
+	Tfound *found = NULL;
+	Tfoundindent *findent=NULL;
+	BluefishTextView *master = btv->master;
+	GSequenceIter *siter = NULL;
+	guint startvisible_offset;
+
+	
+	cairo_set_line_width(cr, 0.6);	/* 1.0 looks the best, smaller gives a half-transparent color */
+	gdk_cairo_set_source_color(cr,&gtk_widget_get_style(GTK_WIDGET(btv))->fg[gtk_widget_get_state
+																				  (GTK_WIDGET(btv))]);
+	/*cairo_rectangle(cr, event->area.x, event->area.y, event->area.width, event->area.height);
+	cairo_clip(cr);*/
+	startvisible_offset = gtk_text_iter_get_offset(startvisible);
+	g_print("paint_indenting, search in cache for offset %d\n",startvisible_offset);
+	if (G_UNLIKELY(gtk_text_iter_is_start(startvisible)
+				   && (g_sequence_get_length(master->scancache.foundcaches) != 0))) {
+		siter = g_sequence_get_begin_iter(master->scancache.foundcaches);
+		if (!g_sequence_iter_is_end(siter)) {
+			found = g_sequence_get(siter);
+		}
+	} else {
+		found = get_foundcache_at_offset(master, startvisible_offset, &siter);
+	}
+	if (found) {
+		gint numpop = found->numindentchange;
+		g_print("paint all active indenting levels at the top (found %p, findent=%p)\n",found,found->findent);
+		/* paint all active indenting levels, so first pop the ending indent levels from the stack, and paint 
+		the remaining active ones */
+		findent = found->findent;
+		while (findent) {
+			if (numpop >= 0) {
+				g_print("paint findent %p\n",findent);
+				paint_indent_line(btv, cr, findent->level, findent->start_o, findent->end_o);
+			}
+			numpop++;
+			findent = (Tfoundindent *)findent->parentfindent;
+		}
+	}
+	while (found) {
+		found = get_foundcache_next(master, &siter);
+		if (found) {
+			g_print("paint_indenting. found %p has numindentchange=%d\n",found, found->numindentchange);
+			if (found->numindentchange > 0) {
+				g_print("paint indenting level for found %p with findent %p\n",found, found->findent);
+				findent = found->findent;
+				if (findent) {
+					g_print("paint findent %p\n",findent);
+					paint_indent_line(btv, cr, findent->level, findent->start_o, findent->end_o);
+				}
+			}
+		}
+	}
+
+	cairo_stroke(cr);
+}
+
 /* whitespace macro. Possibly include: '/n', 8206-8207, maybe others */
 #define BTV_ISWS(c) ( \
   ((c) == '\r') || \
@@ -1240,6 +1330,7 @@ static void bluefish_text_view_draw_layer(GtkTextView * text_view, GtkTextViewLa
 #endif
 
 #if GTK_CHECK_VERSION(3,0,0)
+/* this is the GTK 3 version for this function */
 static gboolean bluefish_text_view_draw(GtkWidget * widget, cairo_t * cr)
 {
 	BluefishTextView *btv = BLUEFISH_TEXT_VIEW(widget);
@@ -1326,11 +1417,15 @@ static gboolean bluefish_text_view_draw(GtkWidget * widget, cairo_t * cr)
 			cairo_line_to(cr, pix, rect2y + rect.height);
 			cairo_stroke(cr);
 		}
+		if (master->show_indenting) {
+			paint_indenting(btv, cr, &startvisible, &endvisible);
+		}
 	}
 
 	return event_handled;
 }
 #else
+/* this is the GTK 2 version for this function */
 static gboolean bluefish_text_view_expose_event(GtkWidget * widget, GdkEventExpose * event)
 {
 	BluefishTextView *btv = BLUEFISH_TEXT_VIEW(widget);
@@ -1406,6 +1501,9 @@ static gboolean bluefish_text_view_expose_event(GtkWidget * widget, GdkEventExpo
 			cairo_move_to(cr, pix, rect2y);
 			cairo_line_to(cr, pix, rect2y + rect.height);
 			cairo_stroke(cr);
+		}
+		if (master->show_indenting) {
+			paint_indenting(btv, cr, &startvisible, &endvisible);
 		}
 	}
 
@@ -3509,6 +3607,7 @@ GtkWidget *bftextview2_new(void)
 	g_return_val_if_fail(textview != NULL, NULL);
 	textview->master = textview;
 	textview->slave = NULL;
+	textview->show_indenting = TRUE;
 	return GTK_WIDGET(textview);
 }
 

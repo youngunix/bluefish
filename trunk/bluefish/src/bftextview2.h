@@ -434,6 +434,7 @@ struct _BluefishTextView {
 	gboolean show_blocks;
 	gboolean showsymbols;
 	gboolean visible_spacing;
+	gboolean show_indenting;
 	gboolean show_right_margin;
 	gboolean show_mbhl;			/* show matching block highlighting */
 #ifdef HAVE_LIBENCHANT
