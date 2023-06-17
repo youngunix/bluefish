@@ -56,7 +56,6 @@ extern void g_none(char *first, ...);
 #define DBG_IDENTIFIER DBG_NONE
 #define DBG_MARKREGION DBG_NONE
 
-#ifdef UPDATE_OFFSET_DELAYED
 #include "bf_lib.h"
 typedef struct {
 	BF_ELIST_HEAD;
@@ -64,7 +63,7 @@ typedef struct {
 	gint32 offset;
 } Toffsetupdate;
 #define OFFSETUPDATE(var) ((Toffsetupdate *)var)
-#endif /*UPDATE_OFFSET_DELAYED*/
+
 
 #define NUMSCANCHARS 127		/* 128 is ascii, but the last character is never scanned (DEL)
 								   and the Ttablerow has one more 16bit value. By setting this to 127 instead of 128
