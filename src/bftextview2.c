@@ -3578,9 +3578,7 @@ static void bluefish_text_view_init(BluefishTextView * textview)
 /*	PangoFontDescription *font_desc;*/
 	textview->user_idle_timer = g_timer_new();
 	textview->scancache.foundcaches = g_sequence_new(NULL);
-#ifdef UPDATE_OFFSET_DELAYED
 	textview->scancache.offsetupdates = NULL;
-#endif
 	bluefish_text_view_set_colors(textview, main_v->props.btv_color_str);
 	textview->showsymbols = FALSE;
 	textview->button_press_line = -1;
