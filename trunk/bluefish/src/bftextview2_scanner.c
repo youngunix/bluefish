@@ -20,8 +20,8 @@
 /*#define HL_PROFILING*/
 /*#define VALGRIND_PROFILING*/
 
-/*#define DUMP_SCANCACHE
-#define DUMP_SCANCACHE_UPDATE_OFFSET*/
+#define DUMP_SCANCACHE
+/*#define DUMP_SCANCACHE_UPDATE_OFFSET*/
 /*#define DUMP_HIGHLIGHTING*/
 
 #ifdef VALGRIND_PROFILING
@@ -139,8 +139,8 @@ dump_scancache(BluefishTextView * btv)
 		if (!found)
 			break;
 		if (found->charoffset_o > startoutput_o && found->charoffset_o < endoutput_o) {
-			g_print("%3d: %p, fblock %p, fcontext %p siter %p\n", found->charoffset_o, found, found->fblock,
-					found->fcontext, siter);
+			g_print("%3d: %p, fblock %p, fcontext %p, findent %p, siter %p\n", found->charoffset_o, found, found->fblock,
+					found->fcontext, found->findent, siter);
 			if (found->numcontextchange != 0) {
 				g_print("\tnumcontextchange=%d", found->numcontextchange);
 				if (found->fcontext) {
@@ -181,8 +181,17 @@ dump_scancache(BluefishTextView * btv)
 					g_print(", parent=%p, %d:%d-%d:%d",
 							found->fblock->parentfblock, found->fblock->start1_o, found->fblock->end1_o,
 							found->fblock->start2_o, found->fblock->end2_o);
+				} else {
+					g_print("BUT NO FBLOCK ???");
 				}
 				g_print("\n");
+			}
+			if (found->numindentchange != 0) {
+				if (found->findent) {
+					g_print("\tnumindentchange=%d, level=%d, %d-%d\n", found->numindentchange, found->findent->level, found->findent->start_o, found->findent->end_o);
+				} else {
+					g_print("BUT NO FINDENT ???\n");
+				}
 			}
 		}
 		siter = g_sequence_iter_next(siter);
@@ -606,7 +615,7 @@ scancache_update_single_offset(BluefishTextView * btv, Tscancache_offset_update 
 		}
 		tmpfindent = sou->found->findent;
 		while (tmpfindent) {
-			g_print("scancache_update_single_offset, update findent %p end with offset %d\n",tmpfindent,offset);
+			g_print("scancache_update_single_offset, update findent %p end with offset %d (startpos=%u)\n",tmpfindent,offset,startpos);
 			if (tmpfindent->end_o > startpos && tmpfindent->end_o != BF_OFFSET_UNDEFINED) {
 				tmpfindent->end_o += offset;
 			}
@@ -2435,6 +2444,7 @@ static void
 scancache_check_integrity(BluefishTextView * btv, GTimer *timer) {
 	GQueue contexts;
 	GQueue blocks;
+	GQueue indents;
 	GSequenceIter *siter;
 	gfloat start;
 	guint32 prevfound_o=0;
@@ -2442,6 +2452,7 @@ scancache_check_integrity(BluefishTextView * btv, GTimer *timer) {
 	start = g_timer_elapsed(timer, NULL);
 	g_queue_init(&contexts);
 	g_queue_init(&blocks);
+	g_queue_init(&indents);
 	siter = g_sequence_get_begin_iter(btv->scancache.foundcaches);
 	while (siter && !g_sequence_iter_is_end(siter)) {
 		Tfound *found = g_sequence_get(siter);
@@ -2537,6 +2548,46 @@ scancache_check_integrity(BluefishTextView * btv, GTimer *timer) {
 				i++;
 			}
 		}
+		if (found->numindentchange > 0) {
+			/* push indent */
+			if (found->findent->parentfindent != g_queue_peek_head(&indents)) {
+				if (found->findent->parentfindent == NULL) {
+					g_warning("scancache_check_integrity, pushing indent at %d:%d on top of non-NULL stack, but parent contexts is NULL!? found at %d\n"
+									,found->findent->start_o, found->findent->end_o,found->charoffset_o);
+					dump_scancache(btv);
+					//g_assert_not_reached();
+				} else {
+					g_warning("scancache_check_integrity, pushing indent at %d:%d, parent indents at %d:%d do not match! found at %d\n"
+									,found->findent->start_o, found->findent->end_o
+									,((Tfoundindent *)found->findent->parentfindent)->start_o
+									,((Tfoundindent *)found->findent->parentfindent)->end_o,found->charoffset_o);
+					dump_scancache(btv);
+					//g_assert_not_reached();
+				}
+			}
+			g_queue_push_head(&indents, found->findent);
+
+			if (found->findent->start_o < prevfound_o || found->findent->start_o > found->findent->end_o || found->findent->end_o < found->charoffset_o) {
+					g_warning("scancache_check_integrity, indent is at %d:%d, but prevoffset is at %d and charoffset_o is at %d\n"
+									,found->findent->start_o, found->findent->end_o,prevfound_o, found->charoffset_o);
+					dump_scancache(btv);
+					//g_assert_not_reached();
+			}
+		} else {
+			gint i;
+			/* check the current indent */
+			if (found->findent != g_queue_peek_head(&contexts)) {
+				g_warning("scancache_check_integrity, indents don't match, found(%p) at %d\n",found,found->charoffset_o);
+				dump_scancache(btv);
+				//g_assert_not_reached();
+			}
+			i = found->numcontextchange;
+			while (i < 0) {
+				g_queue_pop_head(&indents);
+				i++;
+			}
+		}
+
 		prevfound_o = found->charoffset_o;
 		siter = g_sequence_iter_next(siter);
 	}

@@ -55,6 +55,7 @@ extern void g_none(char *first, ...);
 #define DBG_SPELL DBG_NONE
 #define DBG_IDENTIFIER DBG_NONE
 #define DBG_MARKREGION DBG_NONE
+#define DBG_PAINTINDENT DBG_NONE
 
 #include "bf_lib.h"
 typedef struct {
