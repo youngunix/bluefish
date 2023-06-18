@@ -1112,7 +1112,7 @@ paint_indent_line(BluefishTextView * btv, cairo_t * cr, gint level, gint start_o
 	if (end_o == BF_OFFSET_UNDEFINED)
 		return;
 	
-	g_print("paint_indent_line, paint from offset %d to %d\n",start_o, end_o);
+	DBG_PAINTINDENT("paint_indent_line, paint from offset %d to %d\n",start_o, end_o);
 	gtk_text_buffer_get_iter_at_offset(btv->buffer,&itstart,start_o);
 	gtk_text_buffer_get_iter_at_offset(btv->buffer,&itend,end_o);
 	gtk_text_view_get_iter_location(GTK_TEXT_VIEW(btv), &itstart, &rects);
@@ -1130,7 +1130,7 @@ paint_indent_line(BluefishTextView * btv, cairo_t * cr, gint level, gint start_o
 	xe += marginoffset;
 	xs += marginoffset;
 #endif
-	g_print("paint_indent_line, paint from %d,%d to %d,%d\n",xs,ys,xe,ye);
+	DBG_PAINTINDENT("paint_indent_line, paint from %d,%d to %d,%d\n",xs,ys,xe,ye);
 	cairo_move_to(cr, xs-3, ys+2);
 	cairo_line_to(cr, xe-3, ye-2);
 }
@@ -1151,7 +1151,7 @@ paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible
 	/*cairo_rectangle(cr, event->area.x, event->area.y, event->area.width, event->area.height);
 	cairo_clip(cr);*/
 	startvisible_offset = gtk_text_iter_get_offset(startvisible);
-	g_print("paint_indenting, search in cache for offset %d\n",startvisible_offset);
+	DBG_PAINTINDENT("paint_indenting, search in cache for offset %d\n",startvisible_offset);
 	if (G_UNLIKELY(gtk_text_iter_is_start(startvisible)
 				   && (g_sequence_get_length(master->scancache.foundcaches) != 0))) {
 		siter = g_sequence_get_begin_iter(master->scancache.foundcaches);
@@ -1163,13 +1163,13 @@ paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible
 	}
 	if (found) {
 		gint numpop = found->numindentchange;
-		g_print("paint all active indenting levels at the top (found %p, findent=%p)\n",found,found->findent);
+		DBG_PAINTINDENT("paint all active indenting levels at the top (found %p, findent=%p)\n",found,found->findent);
 		/* paint all active indenting levels, so first pop the ending indent levels from the stack, and paint 
 		the remaining active ones */
 		findent = found->findent;
 		while (findent) {
 			if (numpop >= 0) {
-				g_print("paint findent %p\n",findent);
+				DBG_PAINTINDENT("paint findent %p\n",findent);
 				paint_indent_line(btv, cr, findent->level, findent->start_o, findent->end_o);
 			}
 			numpop++;
@@ -1179,12 +1179,12 @@ paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible
 	while (found) {
 		found = get_foundcache_next(master, &siter);
 		if (found) {
-			g_print("paint_indenting. found %p has numindentchange=%d\n",found, found->numindentchange);
+			DBG_PAINTINDENT("paint_indenting. found %p has numindentchange=%d\n",found, found->numindentchange);
 			if (found->numindentchange > 0) {
-				g_print("paint indenting level for found %p with findent %p\n",found, found->findent);
+				DBG_PAINTINDENT("paint indenting level for found %p with findent %p\n",found, found->findent);
 				findent = found->findent;
 				if (findent) {
-					g_print("paint findent %p\n",findent);
+					DBG_PAINTINDENT("paint findent %p\n",findent);
 					paint_indent_line(btv, cr, findent->level, findent->start_o, findent->end_o);
 				}
 			}
