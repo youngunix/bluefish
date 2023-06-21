@@ -80,10 +80,9 @@ typedef struct {
 typedef struct {
 	Tfoundcontext *curfcontext;
 	Tfoundblock *curfblock;
-	Tfoundindent *curfindent;
-	/*Tfound *curfound; *//* items from the cache */
 	Tfound *nextfound;			/* items from the cache */
 	GSequenceIter *siter;		/* an iterator to get the next item from the cache */
+	GQueue *indentstack;
 	GTimer *timer;
 	GtkTextIter start;			/* start of area to scan */
 	GtkTextIter end;			/* end of area to scan */
@@ -139,8 +138,8 @@ dump_scancache(BluefishTextView * btv)
 		if (!found)
 			break;
 		if (found->charoffset_o > startoutput_o && found->charoffset_o < endoutput_o) {
-			g_print("%3d: %p, fblock %p, fcontext %p, findent %p, siter %p\n", found->charoffset_o, found, found->fblock,
-					found->fcontext, found->findent, siter);
+			g_print("%3d: %p, fblock %p, fcontext %p, siter %p\n", found->charoffset_o, found, found->fblock,
+					found->fcontext, siter);
 			if (found->numcontextchange != 0) {
 				g_print("\tnumcontextchange=%d", found->numcontextchange);
 				if (found->fcontext) {
@@ -185,13 +184,6 @@ dump_scancache(BluefishTextView * btv)
 					g_print("BUT NO FBLOCK ???");
 				}
 				g_print("\n");
-			}
-			if (found->numindentchange != 0) {
-				if (found->findent) {
-					g_print("\tnumindentchange=%d, level=%d, %d-%d\n", found->numindentchange, found->findent->level, found->findent->start_o, found->findent->end_o);
-				} else {
-					g_print("BUT NO FINDENT ???\n");
-				}
 			}
 		}
 		siter = g_sequence_iter_next(siter);
@@ -559,7 +551,6 @@ scancache_update_single_offset(BluefishTextView * btv, Tscancache_offset_update 
 	if (sou->found && sou->found->charoffset_o <= startpos) {
 		Tfoundcontext *tmpfcontext;
 		Tfoundblock *tmpfblock;
-		Tfoundindent *tmpfindent;
 		DBG_SCANCACHE
 			("scancache_update_single_offset, handle first found %p with offset %u, complete stack fcontext %p fblock %p\n",
 			 sou->found, sou->found->charoffset_o, sou->found->fcontext, sou->found->fblock);
@@ -612,14 +603,6 @@ scancache_update_single_offset(BluefishTextView * btv, Tscancache_offset_update 
 				}
 			}
 			tmpfblock = (Tfoundblock *) tmpfblock->parentfblock;
-		}
-		tmpfindent = sou->found->findent;
-		while (tmpfindent) {
-			g_print("scancache_update_single_offset, update findent %p end with offset %d (startpos=%u)\n",tmpfindent,offset,startpos);
-			if (tmpfindent->end_o > startpos && tmpfindent->end_o != BF_OFFSET_UNDEFINED) {
-				tmpfindent->end_o += offset;
-			}
-			tmpfindent = (Tfoundindent *) tmpfindent->parentfindent;
 		}
 	}
 
@@ -680,12 +663,6 @@ scancache_update_single_offset(BluefishTextView * btv, Tscancache_offset_update 
 					mark_needscanning(btv
 							, tmpfound->fcontext->start_o+sou->prevoffset<=startpos ? tmpfound->fcontext->start_o+sou->prevoffset : tmpfound->fcontext->start_o+sou->prevoffset+deleteoffset
 							, tmpfound->fcontext->end_o==BF_OFFSET_UNDEFINED ? BF_OFFSET_UNDEFINED : tmpfound->fcontext->end_o+sou->prevoffset+deleteoffset);
-				}
-				if (tmpfound->numindentchange > 0 && tmpfound->findent->end_o+ sou->prevoffset > startpos - deleteoffset) {
-					DBG_SCANCACHE("scancache_update_single_offset, found pushed a indent, mark obsolete context %u:%u as needscanning\n",tmpfound->findent->start_o, tmpfound->findent->end_o);
-					mark_needscanning(btv
-							, tmpfound->findent->start_o+sou->prevoffset<=startpos ? tmpfound->findent->start_o+sou->prevoffset : tmpfound->findent->start_o+sou->prevoffset+deleteoffset
-							, tmpfound->findent->end_o==BF_OFFSET_UNDEFINED ? BF_OFFSET_UNDEFINED : tmpfound->findent->end_o+sou->prevoffset+deleteoffset);
 				}
 				remove_cache_entry(btv, &tmpfound, &tmpsiter, NULL, NULL);
 				if (!tmpfound && (numblockchange < 0)) {
@@ -811,15 +788,6 @@ scancache_update_single_offset(BluefishTextView * btv, Tscancache_offset_update 
 			if (G_LIKELY(sou->found->fblock->end2_o != BF_POSITION_UNDEFINED))
 				sou->found->fblock->end2_o += handleoffset;
 		}
-		if (G_UNLIKELY(sou->found->numindentchange > 0)) {
-			g_print("scancache_update_single_offset, indentpush %p update from %u:%u to %u:%u\n",
-						  sou->found->findent, sou->found->findent->start_o, sou->found->findent->end_o,
-						  sou->found->findent->start_o + handleoffset,
-						  sou->found->findent->end_o + handleoffset);
-			sou->found->findent->start_o += handleoffset;
-			if (G_LIKELY(sou->found->findent->end_o != BF_OFFSET_UNDEFINED))
-				sou->found->findent->end_o += handleoffset;
-		}		
 		DBG_SCANCACHE("startpos=%u, offset=%d, prevoffset=%d, found=%p, update charoffset_o from %u to %u\n",startpos,offset,sou->prevoffset, sou->found,sou->found->charoffset_o,sou->found->charoffset_o+handleoffset);
 #ifdef DEVELOPMENT
 		if (((gint)(handleoffset+((gint)sou->found->charoffset_o))) < 0) {
@@ -962,10 +930,6 @@ found_free_lcb(gpointer data, gpointer btv)
 #endif
 		DBG_SCANCACHE("found_free_lcb, btv=%p, free fcontext=%p\n", btv, found->fcontext);
 		g_slice_free(Tfoundcontext, found->fcontext);
-	}
-	if (found->numindentchange > 0) {
-		g_print("found_free_lcb, free findent %p (start=%d, end=%d)\n",found->findent,found->findent->start_o,found->findent->end_o);
-		g_slice_free(Tfoundindent, found->findent);
 	}
 	
 #ifdef HL_PROFILING
@@ -1251,18 +1215,6 @@ nextcache_valid(Tscanning * scanning)
 			 scanning->nextfound, scanning->curfblock);
 		return FALSE;
 	}
-	if (G_UNLIKELY(scanning->nextfound->numindentchange <= 0 && scanning->nextfound->findent != scanning->curfindent)) {
-		g_print("nextcache_valid, next found %p with numindentchange=%d has findent=%p, current findent=%p, return FALSE\n",
-					  scanning->nextfound, scanning->nextfound->numindentchange, scanning->nextfound->findent, scanning->curfindent);
-		return FALSE;
-	} 
-	if (G_UNLIKELY(scanning->nextfound->numindentchange > 0 && (!scanning->nextfound->findent
-													  || scanning->nextfound->findent->parentfindent !=
-													  scanning->curfindent))) {
-		g_print("nextcache_valid, next found %p doesn't push indent on top of current findent %p, return FALSE\n",
-			 		scanning->nextfound, scanning->curfindent);
-		return FALSE;
-	}
 	DBG_SCANCACHE("nextcache_valid, next found %p with offset=%d,numcontextchange=%d,numblockchange=%d seems valid\n", scanning->nextfound,
 				  scanning->nextfound->charoffset_o,
 				  scanning->nextfound->numcontextchange,
@@ -1480,72 +1432,11 @@ match_conditions_satisfied(BluefishTextView * btv, Tscanning *scanning, Tpattern
 	return TRUE;*/
 }
 
-static void
-pop_indents(BluefishTextView * btv, Tmatch * match, Tscanning * scanning, gint match_end1_o)
-{
-	// pop the last indent block(s)
-	while (scanning->curfindent) {
-		/*g_print("pop_indents, set Tfoundindent %p to end at %d\n", scanning->curfindent, match_end1_o);
-		scanning->curfindent->end_o = match_end1_o;*/
-		g_print("pop indent %p (start=%d, end=%d)\n",scanning->curfindent, scanning->curfindent->start_o, scanning->curfindent->end_o);
-		scanning->curfindent = (Tfoundindent *) scanning->curfindent->parentfindent;
-	}
-}
-
-static Tfoundindent *
-indent_found(BluefishTextView * btv, Tmatch * match, Tscanning * scanning, guint match_start_o, guint match_end_o, gint * numindentchange)
-{
-	gint foundlevel, previndent;
-	Tfoundindent *retfindent;
-	if (scanning->curfindent) {
-		previndent = scanning->curfindent->level;
-	} else {
-		previndent = 0;
-	}
-	foundlevel = match_end_o - match_start_o;
-	g_print("indent_found, previndent=%d, foundlevel=%d\n",previndent,foundlevel);
-	if (G_LIKELY(previndent == foundlevel)) {
-		// indenting is the same, stretch end
-		if (scanning->curfindent) {
-			scanning->curfindent->end_o = match_end_o;
-			g_print("stretch, set Tfoundindent %p end to %d\n", scanning->curfindent, match_end_o);
-		}
-		return NULL;
-	} else if (previndent < foundlevel) {
-		// start a new indent block
-		Tfoundindent *findent;
-		findent = g_slice_new0(Tfoundindent);
-		findent->level = foundlevel;
-		findent->start_o = match_end_o;
-		findent->end_o = BF_POSITION_UNDEFINED;
-		findent->parentfindent = scanning->curfindent;
-		scanning->curfindent = findent;
-		*numindentchange=1;
-		g_print("add new Tfoundindent %p with start %d\n", findent, findent->start_o);
-		return findent;
-	} else {
-		retfindent = scanning->curfindent;
-		// pop the last indent block(s)
-		while (scanning->curfindent && scanning->curfindent->level != foundlevel) {
-			scanning->curfindent = (Tfoundindent *) scanning->curfindent->parentfindent;
-			(*numindentchange)--;
-		}
-		g_print("popped %d found indents, back to Tfoundindent %p at level %d\n", (-1* (*numindentchange)), scanning->curfindent, foundlevel);
-		if (scanning->curfindent) {
-			scanning->curfindent->end_o = match_end_o;
-			g_print("after pop, set Tfoundindent %p end to %d\n", scanning->curfindent, match_end_o);
-		}
-		return retfindent;
-	}
-}
-
-
 static inline int
 found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 {
 	Tfoundblock *fblock = scanning->curfblock;
 	Tfoundcontext *fcontext = scanning->curfcontext;
-	Tfoundindent *findent = scanning->curfindent;
 	guint match_end_o, match_start_o;
 	gboolean cleanup_obsolete_cache_items=FALSE;
 	gint numblockchange = 0, numcontextchange = 0, numindentchange=0;
@@ -1594,14 +1485,6 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 						scanning->curfblock->start1_o, scanning->curfblock->end1_o, scanning->curfblock->start2_o, scanning->curfblock->end2_o,
 						scanning->curfblock->patternum, scanning->curfblock->end1_o, match_end_o);
 		scanning->curfblock->end1_o = match_end_o;
-	}
-	
-	if (G_UNLIKELY(pat->block == BLOCK_SPECIAL_INDENT)) {
-		/* if this has level 0 (so the pattern matches only the newline character) we just end all indents and further do nothing */
-		if ((match_end_o - match_start_o) == 1) {
-			g_print("level is at 1, so pop all indents\n");
-			pop_indents(btv, match, scanning, match_end_o);
-		}
 	}
 
 	if G_LIKELY((!pat->starts_block && !pat->ends_block && pat->block != BLOCK_SPECIAL_INDENT
@@ -1671,9 +1554,6 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 		enlarge_scanning_region_to_iter(btv, scanning, &iter);
 	}
 
-	if (G_UNLIKELY(pat->block == BLOCK_SPECIAL_INDENT && match_end_o - match_start_o > 1)) {
-		findent = indent_found(btv, match, scanning, match_start_o, match_end_o, &numindentchange);
-	}
 	if ((pat->starts_block)) {
 		fblock = found_start_of_block(btv, match, scanning);
 		numblockchange = 1;
@@ -1725,8 +1605,8 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 	found->numcontextchange = numcontextchange;
 	found->fcontext = fcontext;
 	found->charoffset_o = match_end_o;
-	found->findent = findent;
-	found->numindentchange = numindentchange;
+	found->indentlevel = NO_INDENT_FOUND;
+
 	DBG_SCANCACHE
 		("found_match, put found %p in the cache charoffset_o=%d fblock=%p numblockchange=%d fcontext=%p numcontextchange=%d\n",
 		 found, found->charoffset_o, found->fblock, found->numblockchange, found->fcontext,
@@ -1867,9 +1747,6 @@ reconstruct_scanning(BluefishTextView * btv, GtkTextIter * position, Tscanning *
 			scanning->curfblock = found->fblock;
 		}
 		scanning->context = (scanning->curfcontext) ? scanning->curfcontext->context : 1;
-		/* TODO: reconstruct found indent, do we need to pop any blocks?? */
-		scanning->curfindent = found->findent;
-
 		scanning->nextfound = get_foundcache_next(btv, &scanning->siter);
 		DBG_SCANNING("reconstruct_stack, found at offset %d, curfblock=%p, curfcontext=%p, context=%d\n",
 					 found->charoffset_o, scanning->curfblock, scanning->curfcontext, scanning->context);
@@ -1879,7 +1756,6 @@ reconstruct_scanning(BluefishTextView * btv, GtkTextIter * position, Tscanning *
 		DBG_SCANNING("nothing to reconstruct\n");
 		scanning->curfcontext = NULL;
 		scanning->curfblock = NULL;
-		scanning->curfindent = NULL;
 		scanning->context = 1;
 		scanning->nextfound = get_foundcache_first(btv, &scanning->siter);
 		DBG_SCANNING("reconstruct_scanning, nextfound=%p\n", scanning->nextfound);
@@ -1981,7 +1857,6 @@ bftextview2_run_scanner(BluefishTextView * btv, GtkTextIter * visible_end)
 		scanning.nextfound = get_foundcache_first(btv, &scanning.siter);
 		scanning.curfcontext = NULL;
 		scanning.curfblock = NULL;
-		scanning.curfindent = NULL;
 		reconstruction_o = 0;
 	} else {
 		/* we do not want to reconstruct a blockstart exactly at the point where scanning.start is right now, otherwise
@@ -2184,8 +2059,7 @@ if newpos==0 we have a symbol (see bftextview2.h for an explanation of symbols a
 	compare_markregion_needscanning(btv);
 #endif
 #endif
-
-
+	
 	finished = gtk_text_iter_is_end(&iter);
 
 #ifdef HL_PROFILING
@@ -2548,46 +2422,6 @@ scancache_check_integrity(BluefishTextView * btv, GTimer *timer) {
 				i++;
 			}
 		}
-		if (found->numindentchange > 0) {
-			/* push indent */
-			if (found->findent->parentfindent != g_queue_peek_head(&indents)) {
-				if (found->findent->parentfindent == NULL) {
-					g_warning("scancache_check_integrity, pushing indent at %d:%d on top of non-NULL stack, but parent contexts is NULL!? found at %d\n"
-									,found->findent->start_o, found->findent->end_o,found->charoffset_o);
-					dump_scancache(btv);
-					//g_assert_not_reached();
-				} else {
-					g_warning("scancache_check_integrity, pushing indent at %d:%d, parent indents at %d:%d do not match! found at %d\n"
-									,found->findent->start_o, found->findent->end_o
-									,((Tfoundindent *)found->findent->parentfindent)->start_o
-									,((Tfoundindent *)found->findent->parentfindent)->end_o,found->charoffset_o);
-					dump_scancache(btv);
-					//g_assert_not_reached();
-				}
-			}
-			g_queue_push_head(&indents, found->findent);
-
-			if (found->findent->start_o < prevfound_o || found->findent->start_o > found->findent->end_o || found->findent->end_o < found->charoffset_o) {
-					g_warning("scancache_check_integrity, indent is at %d:%d, but prevoffset is at %d and charoffset_o is at %d\n"
-									,found->findent->start_o, found->findent->end_o,prevfound_o, found->charoffset_o);
-					dump_scancache(btv);
-					//g_assert_not_reached();
-			}
-		} else {
-			gint i;
-			/* check the current indent */
-			if (found->findent != g_queue_peek_head(&contexts)) {
-				g_warning("scancache_check_integrity, indents don't match, found(%p) at %d\n",found,found->charoffset_o);
-				dump_scancache(btv);
-				//g_assert_not_reached();
-			}
-			i = found->numcontextchange;
-			while (i < 0) {
-				g_queue_pop_head(&indents);
-				i++;
-			}
-		}
-
 		prevfound_o = found->charoffset_o;
 		siter = g_sequence_iter_next(siter);
 	}

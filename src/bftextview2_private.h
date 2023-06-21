@@ -227,6 +227,7 @@ typedef struct {
 								   on 64bit this type has size 8+4+4+2 + 6 padding = 24 bytes
 								   on 32bit this type has size 4+4+4+2 + 2 padding = 16 bytes
 								 */
+#define NO_INDENT_FOUND 255
 
 typedef struct {
 	Tfoundcontext *fcontext;	/* if numcontextchange == 0 this points to the current active context
@@ -237,15 +238,15 @@ typedef struct {
 								   if numblockchange > 0 this points to the pushed block, which also happens to be the current block
 								   if numblockchange < 0 this points to the top of the stack at this position, to get the current position
 								   you'll have to pop N items (where N is -1 * numblockchange). */
-	Tfoundindent *findent; 
 	guint32 charoffset_o;
 	gint16 numblockchange;		/* there are files that have > 127 pops in a single position
 								   for example html files that don't close paragrahs or tablerows */
 	gint8 numcontextchange;		/* 0 means no change, 1 means 1 push, -2 means 2 popped etc. */
-	gint8 numindentchange;
+	guint8 indentlevel; /* NO_INDENT_FOUND means this found did not detect any indenting */ 
+	
 } Tfound;						/*
-								   on 64bit this type has size 8+8+8+4+2+1 + 1 padding = 32 bytes
-								   on 32bit this type has size 4+4+4+4+2+1 + 1 padding = 20 bytes
+								   on 64bit this type has size 8+8+4+2+1 + 1 padding = 24 bytes
+								   on 32bit this type has size 4+4+4+2+1 + 1 padding = 16 bytes
 								 */
 
 #define IS_FOUNDMODE_CONTEXTPUSH(i)   (i->numcontextchange > 0)
