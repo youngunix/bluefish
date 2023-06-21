@@ -1104,24 +1104,73 @@ paint_margin(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible, G
 	g_object_unref(G_OBJECT(panlay));
 }
 
+typedef struct {
+	gpointer parentindent;
+	guint level;
+	guint x; // the x position of the GtkTextIter where this indenting started 
+	guint y;
+} Tindent;
+
 static void 
-paint_indent_line(BluefishTextView * btv, cairo_t * cr, gint level, gint start_o, gint end_o) {
-	GtkTextIter itstart, itend;
-	GdkRectangle rects, recte;
-	gint xs, ys, xe, ye;
-	if (end_o == BF_OFFSET_UNDEFINED)
-		return;
+get_indent_paint_position_from_char_offset(BluefishTextView * btv, guint32 charoffset, guint *x, guint *y) {
+	GtkTextIter iter;
+	GdkRectangle rect; 
+	gtk_text_buffer_get_iter_at_offset(btv->buffer,&iter,charoffset);
+	gtk_text_view_get_iter_location(GTK_TEXT_VIEW(btv), &iter, &rect);
+	*x = rect.x;
+	*y = rect.y;
+}
+
+static Tindent *
+new_indent(BluefishTextView *btv, guint level, guint charoffset_o) {
+	Tindent *ind = g_slice_new0(Tindent);
+	ind->level = level;
+	get_indent_paint_position_from_char_offset(btv, charoffset_o, &ind->x, &ind->y);
+	return ind;
+} 
+
+static Tindent * 
+init_indent_stack(BluefishTextView * btv, GSequenceIter *siter) {
+	GSequenceIter *tmpsiter = siter;
+	Tfound *found;
+	gboolean have_so_indent = FALSE;
+	Tindent *ind=NULL;
+	/* see if we have an indenting level here, and then move up to find lower indenting levels until 
+	we find a 0 indent level --> at that point we have a complete indent stack */
+	if (siter == NULL)
+		return NULL;
+	g_print("init_indent_stack, tmpsiter=%p\n",tmpsiter);
+	while (!have_so_indent && !g_sequence_iter_is_begin(tmpsiter)) {
+		found = g_sequence_get(tmpsiter);
+		if (!found) return ind;
+		if (found->indentlevel == 0) {
+			have_so_indent = TRUE;
+		} else if (found->indentlevel != NO_INDENT_FOUND) {
+			Tindent *newind = new_indent(btv, found->indentlevel, found->charoffset_o);
+			newind->parentindent = ind;
+			ind = newind;
+		}
+		tmpsiter = g_sequence_iter_prev(tmpsiter);
+	}
+	return ind;
+} 
+
+static void
+free_indent_stack(Tindent *indent) {
+	/* cleanup the indentstack */
+	while (indent) {
+		Tindent *parent = (Tindent *)indent->parentindent;
+		g_slice_free(Tindent, indent);
+		indent = parent;
+	}
+}
+
+static void 
+paint_indent_line(BluefishTextView * btv, cairo_t * cr, gint xs, gint ys, gint xe, gint ye) {
+	gint lxs, lys, lxe, lye;
 	
-	DBG_PAINTINDENT("paint_indent_line, paint from offset %d to %d\n",start_o, end_o);
-	gtk_text_buffer_get_iter_at_offset(btv->buffer,&itstart,start_o);
-	gtk_text_buffer_get_iter_at_offset(btv->buffer,&itend,end_o);
-	gtk_text_view_get_iter_location(GTK_TEXT_VIEW(btv), &itstart, &rects);
-	gtk_text_view_get_iter_location(GTK_TEXT_VIEW(btv), &itend, &recte);
-	
-	gtk_text_view_buffer_to_window_coords(GTK_TEXT_VIEW(btv), GTK_TEXT_WINDOW_TEXT, rects.x,
-												  rects.y, &xs, &ys);
-	gtk_text_view_buffer_to_window_coords(GTK_TEXT_VIEW(btv), GTK_TEXT_WINDOW_TEXT, recte.x,
-												  recte.y + recte.height, &xe, &ye);
+	gtk_text_view_buffer_to_window_coords(GTK_TEXT_VIEW(btv), GTK_TEXT_WINDOW_TEXT, xs, ys, &lxs, &lys);
+	gtk_text_view_buffer_to_window_coords(GTK_TEXT_VIEW(btv), GTK_TEXT_WINDOW_TEXT, xe, ye, &lxe, &lye);
 #if GTK_CHECK_VERSION(3, 0, 0)
 	guint marginoffset;
 	marginoffset = (BLUEFISH_TEXT_VIEW(btv->master)->margin_pixels_chars +
@@ -1138,8 +1187,8 @@ paint_indent_line(BluefishTextView * btv, cairo_t * cr, gint level, gint start_o
 static void
 paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible, GtkTextIter * endvisible)
 {
+	Tindent *ind;
 	Tfound *found = NULL;
-	Tfoundindent *findent=NULL;
 	BluefishTextView *master = btv->master;
 	GSequenceIter *siter = NULL;
 	guint startvisible_offset;
@@ -1152,6 +1201,7 @@ paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible
 	cairo_clip(cr);*/
 	startvisible_offset = gtk_text_iter_get_offset(startvisible);
 	DBG_PAINTINDENT("paint_indenting, search in cache for offset %d\n",startvisible_offset);
+	
 	if (G_UNLIKELY(gtk_text_iter_is_start(startvisible)
 				   && (g_sequence_get_length(master->scancache.foundcaches) != 0))) {
 		siter = g_sequence_get_begin_iter(master->scancache.foundcaches);
@@ -1161,36 +1211,39 @@ paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible
 	} else {
 		found = get_foundcache_at_offset(master, startvisible_offset, &siter);
 	}
-	if (found) {
-		gint numpop = found->numindentchange;
-		DBG_PAINTINDENT("paint all active indenting levels at the top (found %p, findent=%p)\n",found,found->findent);
-		/* paint all active indenting levels, so first pop the ending indent levels from the stack, and paint 
-		the remaining active ones */
-		findent = found->findent;
-		while (findent) {
-			if (numpop >= 0) {
-				DBG_PAINTINDENT("paint findent %p\n",findent);
-				paint_indent_line(btv, cr, findent->level, findent->start_o, findent->end_o);
-			}
-			numpop++;
-			findent = (Tfoundindent *)findent->parentfindent;
-		}
-	}
+	ind = init_indent_stack(btv, siter);
 	while (found) {
-		found = get_foundcache_next(master, &siter);
-		if (found) {
-			DBG_PAINTINDENT("paint_indenting. found %p has numindentchange=%d\n",found, found->numindentchange);
-			if (found->numindentchange > 0) {
-				DBG_PAINTINDENT("paint indenting level for found %p with findent %p\n",found, found->findent);
-				findent = found->findent;
-				if (findent) {
-					DBG_PAINTINDENT("paint findent %p\n",findent);
-					paint_indent_line(btv, cr, findent->level, findent->start_o, findent->end_o);
-				}
+		if (found->indentlevel == 0) {
+			if (ind) {
+				free_indent_stack(ind);
+			}
+		} else if (found->indentlevel == NO_INDENT_FOUND) {
+			// skip this found 
+		} else if (found->indentlevel == ind->level){
+			guint x2,y2;
+			// same level as before
+			get_indent_paint_position_from_char_offset(btv, found->charoffset_o, &x2, &y2);
+			paint_indent_line(btv, cr, ind->x,ind->y,x2,y2);
+		} else if (found->indentlevel > ind->level){
+			// new indenting level, push to stack
+			Tindent *newind = new_indent(btv, found->indentlevel, found->charoffset_o);
+			newind->parentindent = ind;
+			ind = newind;
+		} else if (found->indentlevel < ind->level) {
+			// pop from stack until we have the level from this find and paint the line for that level
+			do {
+				Tindent *oldind = ind;
+				ind = (Tindent *)ind->parentindent;
+				g_slice_free(Tindent, oldind);
+			} while (found->indentlevel < ind->level);
+			if (found->indentlevel == ind->level) {
+				guint x2,y2;
+				get_indent_paint_position_from_char_offset(btv, found->charoffset_o, &x2, &y2);
+				paint_indent_line(btv, cr, ind->x,ind->y,x2,y2);
 			}
 		}
+		found = get_foundcache_next(master, &siter);
 	}
-
 	cairo_stroke(cr);
 }
 
