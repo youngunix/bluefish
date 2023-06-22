@@ -1787,10 +1787,11 @@ bftextview2_run_scanner(BluefishTextView * btv, GtkTextIter * visible_end)
 		reconstruction_o = reconstruct_scanning(btv, &iter, &scanning);
 		pos = 0;
 		DBG_SCANNING("reconstructed stacks, context=%d, startstate=%d, nextfound=%p\n", scanning.context, pos, scanning.nextfound);
-		/* now move the start position either to the start of the line, or to the position
+		/* now move the start position either to the start of the line -1 (so we do indent detection including the newline character), or to the position
 		   where the stack was reconstructed, the largest offset */
 		gtk_text_buffer_get_iter_at_offset(btv->buffer, &iter, reconstruction_o);
 		gtk_text_iter_set_line_offset(&scanning.start, 0);
+		gtk_text_iter_backward_char(&scanning.start);
 		DBG_SCANNING("compare possible start positions %d and %d\n",
 					 gtk_text_iter_get_offset(&scanning.start), gtk_text_iter_get_offset(&iter));
 		if (gtk_text_iter_compare(&iter, &scanning.start) > 0)
