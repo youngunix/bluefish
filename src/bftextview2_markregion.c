@@ -69,54 +69,6 @@ typedef struct {
 #define CHANGE(var) ((Tchange *)var)
 
 #ifdef DEVELOPMENT
-#ifdef NEEDSCANNING
-void
-compare_markregion_needscanning(BluefishTextView *btv) {
-	gboolean cont=TRUE;
-	Tchange *cso, *ceo;
-	guint so,eo;
-	GtkTextIter start,end;
-	DBG_MARKREGION("compare_markregion_needscanning, started, markregion has head(%d)|tail(%d)\n",btv->scanning.head?CHANGE(btv->scanning.head)->pos:-1
-						,btv->scanning.tail?CHANGE(btv->scanning.tail)->pos:-1);
-	gtk_text_buffer_get_start_iter(btv->buffer, &start);
-	cso = CHANGE(btv->scanning.head);
-	while (cont) {
-		if (!gtk_text_iter_begins_tag(&start, btv->needscanning)) {
-			if (!gtk_text_iter_forward_to_tag_toggle(&start, btv->needscanning)) {
-				cont=FALSE;
-				if (cso) {
-					g_print("ABORT: needscanning has no further region, markregion has cso=%d, ceo=%d\n",cso->pos, cso->next?CHANGE(cso->next)->pos:-1);
-					g_assert_not_reached();
-				}
-				break;
-			}
-		}
-		end = start;
-		gtk_text_iter_forward_char(&end);
-		if (!gtk_text_iter_ends_tag(&end, btv->needscanning)) {
-			if (!gtk_text_iter_forward_to_tag_toggle(&end, btv->needscanning)) {
-				g_print("huh2?\n");
-			}
-		}
-		ceo = CHANGE(cso->next);
-		so = gtk_text_iter_get_offset(&start);
-		eo = gtk_text_iter_get_offset(&end);
-		if(so != cso->pos || eo != ceo->pos) {
-			g_print("ABORT: needscanning has %u:%u, markregion has %u:%u\n",so,eo,cso->pos,ceo->pos);
-			g_assert_not_reached();
-		}
-/*		DBG_MARKREGION("region %u:%u\n",so,eo);*/
-		start = end;
-		cso = ceo->next;
-		cont = gtk_text_iter_forward_char(&start);
-		if (!cont && cso) {
-			g_print("ABORT: buffer has no further characters, markregion has cso=%d, ceo=%d\n",cso->pos, cso->next?CHANGE(cso->next)->pos:-1);
-			g_assert_not_reached();
-		}
-	}
-/*	g_print("*****\n");*/
-}
-#endif
 
 static void
 markregion_verify_integrity(Tregions *rg)
