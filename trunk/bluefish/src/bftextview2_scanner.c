@@ -185,6 +185,9 @@ dump_scancache(BluefishTextView * btv)
 				}
 				g_print("\n");
 			}
+			if (found->indentlevel != NO_INDENT_FOUND) {
+				g_print("\tindentlevel=%d\n",found->indentlevel);
+			}
 		}
 		siter = g_sequence_iter_next(siter);
 	}
@@ -1580,7 +1583,7 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 	} else {
 		numcontextchange = 0;
 	}
-	if (numblockchange == 0 && numcontextchange == 0 && numindentchange == 0) {
+	if (numblockchange == 0 && numcontextchange == 0 && numindentchange == 0 && pat->block != BLOCK_SPECIAL_INDENT) {
 		DBG_SCANCACHE("found_match, no context change, no block change, return\n");
 		return scanning->context;
 	}
@@ -1605,8 +1608,12 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 	found->numcontextchange = numcontextchange;
 	found->fcontext = fcontext;
 	found->charoffset_o = match_end_o;
-	found->indentlevel = NO_INDENT_FOUND;
-
+	if (G_UNLIKELY(pat->block == BLOCK_SPECIAL_INDENT)) {
+		found->indentlevel = match_end_o - match_start_o -1;
+		DBG_PAINTINDENT("set indentlevel=%d for found at offset %d\n",found->indentlevel, found->charoffset_o);
+	} else {
+		found->indentlevel = NO_INDENT_FOUND;
+	}
 	DBG_SCANCACHE
 		("found_match, put found %p in the cache charoffset_o=%d fblock=%p numblockchange=%d fcontext=%p numcontextchange=%d\n",
 		 found, found->charoffset_o, found->fblock, found->numblockchange, found->fcontext,
