@@ -1112,20 +1112,22 @@ typedef struct {
 } Tindent;
 
 static void 
-get_indent_paint_position_from_char_offset(BluefishTextView * btv, guint32 charoffset, guint *x, guint *y) {
+get_indent_paint_position_from_char_offset(BluefishTextView * btv, guint32 charoffset, gboolean beginpos, guint *x, guint *y) {
 	GtkTextIter iter;
-	GdkRectangle rect; 
+	GdkRectangle rect;
 	gtk_text_buffer_get_iter_at_offset(btv->buffer,&iter,charoffset);
 	gtk_text_view_get_iter_location(GTK_TEXT_VIEW(btv), &iter, &rect);
 	*x = rect.x;
-	*y = rect.y;
+	if (beginpos)
+		rect.height=0;
+	*y = rect.y + rect.height;
 }
 
 static Tindent *
 new_indent(BluefishTextView *btv, guint level, guint charoffset_o) {
 	Tindent *ind = g_slice_new0(Tindent);
 	ind->level = level;
-	get_indent_paint_position_from_char_offset(btv, charoffset_o, &ind->x, &ind->y);
+	get_indent_paint_position_from_char_offset(btv, charoffset_o, TRUE, &ind->x, &ind->y);
 	return ind;
 } 
 
@@ -1139,7 +1141,7 @@ init_indent_stack(BluefishTextView * btv, GSequenceIter *siter) {
 	we find a 0 indent level --> at that point we have a complete indent stack */
 	if (siter == NULL)
 		return NULL;
-	g_print("init_indent_stack, tmpsiter=%p\n",tmpsiter);
+	DBG_PAINTINDENT("init_indent_stack, tmpsiter=%p\n",tmpsiter);
 	while (!have_so_indent && !g_sequence_iter_is_begin(tmpsiter)) {
 		found = g_sequence_get(tmpsiter);
 		if (!found) return ind;
@@ -1147,6 +1149,7 @@ init_indent_stack(BluefishTextView * btv, GSequenceIter *siter) {
 			have_so_indent = TRUE;
 		} else if (found->indentlevel != NO_INDENT_FOUND) {
 			Tindent *newind = new_indent(btv, found->indentlevel, found->charoffset_o);
+			DBG_PAINTINDENT("init_indent_stack, add indent with level %d at offset %d\n", found->indentlevel, found->charoffset_o);
 			newind->parentindent = ind;
 			ind = newind;
 		}
@@ -1213,32 +1216,39 @@ paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible
 	}
 	ind = init_indent_stack(btv, siter);
 	while (found) {
+		DBG_PAINTINDENT("found at offset %d\n",found->charoffset_o);
 		if (found->indentlevel == 0) {
 			if (ind) {
 				free_indent_stack(ind);
+				ind=NULL;
 			}
+		} else if (!ind || found->indentlevel > ind->level){
+			// new indenting level, push to stack
+			Tindent *newind = new_indent(btv, found->indentlevel, found->charoffset_o);
+			DBG_PAINTINDENT("paint_indenting, found has new indenting level %d at offset %d, push to stack\n",found->indentlevel, found->charoffset_o);
+			newind->parentindent = ind;
+			ind = newind;
 		} else if (found->indentlevel == NO_INDENT_FOUND) {
 			// skip this found 
 		} else if (found->indentlevel == ind->level){
 			guint x2,y2;
 			// same level as before
-			get_indent_paint_position_from_char_offset(btv, found->charoffset_o, &x2, &y2);
+			DBG_PAINTINDENT("paint_indenting, found level is still %d, paint line\n",found->indentlevel);
+			get_indent_paint_position_from_char_offset(btv, found->charoffset_o, FALSE, &x2, &y2);
 			paint_indent_line(btv, cr, ind->x,ind->y,x2,y2);
-		} else if (found->indentlevel > ind->level){
-			// new indenting level, push to stack
-			Tindent *newind = new_indent(btv, found->indentlevel, found->charoffset_o);
-			newind->parentindent = ind;
-			ind = newind;
 		} else if (found->indentlevel < ind->level) {
+			DBG_PAINTINDENT("paint_indenting, found has lower indenting level %d\n",found->indentlevel);
 			// pop from stack until we have the level from this find and paint the line for that level
 			do {
 				Tindent *oldind = ind;
 				ind = (Tindent *)ind->parentindent;
+				DBG_PAINTINDENT("paint_indenting, pop indent level %d from stack\n",oldind->level);
 				g_slice_free(Tindent, oldind);
-			} while (found->indentlevel < ind->level);
-			if (found->indentlevel == ind->level) {
+			} while (ind && found->indentlevel < ind->level);
+			DBG_PAINTINDENT("paint_indenting, after pop, indent level on stack is %d\n",ind?ind->level:-1);
+			if (ind && found->indentlevel == ind->level) {
 				guint x2,y2;
-				get_indent_paint_position_from_char_offset(btv, found->charoffset_o, &x2, &y2);
+				get_indent_paint_position_from_char_offset(btv, found->charoffset_o, FALSE, &x2, &y2);
 				paint_indent_line(btv, cr, ind->x,ind->y,x2,y2);
 			}
 		}
