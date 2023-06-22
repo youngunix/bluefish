@@ -419,18 +419,6 @@ mark_needscanning(BluefishTextView * btv, gint startpos, gint endpos)
 	if (startpos < 0) startpos = 0;
 	if (endpos <= 0) return;
 	/*DBG_SCANCACHE("mark_needscanning, marking %d:%d\n",startpos,endpos);*/
-#ifdef NEEDSCANNING
-	gtk_text_buffer_get_iter_at_offset(btv->buffer, &it1, startpos);
-	if (endpos == -1) {
-		gtk_text_buffer_get_end_iter(btv->buffer, &it2);
-	} else {
-		gtk_text_buffer_get_iter_at_offset(btv->buffer, &it2, endpos);
-	}
-	gtk_text_buffer_apply_tag(btv->buffer, btv->needscanning, &it1, &it2);
-	DBG_MARKREGION("mark_needscanning, markregion_needscanning() was called with %d:%d, applied needscanning to %u:%u\n",
-				startpos,endpos,
-				gtk_text_iter_get_offset(&it1), gtk_text_iter_get_offset(&it2) );
-#endif
 #ifdef MARKREGION
 	gtk_text_buffer_get_end_iter(btv->buffer, &it2);
 	bufferendpos = gtk_text_iter_get_offset(&it2);
@@ -447,12 +435,6 @@ mark_needscanning(BluefishTextView * btv, gint startpos, gint endpos)
 		}
 	}
 	markregion_nochange(&btv->scanning, startpos, endpos);
-#endif
-
-#ifdef MARKREGION
-#ifdef NEEDSCANNING
-	compare_markregion_needscanning(btv);
-#endif
 #endif
 }
 
@@ -1652,55 +1634,6 @@ markregion_find_region2scan(BluefishTextView * btv, GtkTextIter * sit, GtkTextIt
 	return TRUE;
 }
 #endif
-#ifdef NEEDSCANNING
-static gboolean
-needscanning_find_region2scan(BluefishTextView * btv, GtkTextIter * start,GtkTextIter * end)
-{
-	GtkTextIter nextit;
-	gboolean cont;
-	guint startoffset, nextitoffset, endoffset;
-	/*guint needscanning=0, noneedscanning=0;*/
-	/* first find a region that needs scanning */
-	gtk_text_buffer_get_start_iter(btv->buffer, start);
-	if (!gtk_text_iter_begins_tag(start, btv->needscanning)) {
-		if (!gtk_text_iter_forward_to_tag_toggle(start, btv->needscanning)) {
-			/* nothing to scan */
-			DBG_DELAYSCANNING("needscanning_find_region2scan, nothing to scan..\n");
-			return FALSE;
-		}
-	}
-	/* find the end of the region */
-	*end = nextit = *start;
-	startoffset = gtk_text_iter_get_offset(start);
-	nextitoffset = startoffset;
-	do {
-		cont=FALSE;
-		gtk_text_iter_forward_char(end);
-		if (!gtk_text_iter_ends_tag(end, btv->needscanning)) {
-			if (!gtk_text_iter_forward_to_tag_toggle(end, btv->needscanning)) {
-				DBG_MSG("BUG: we should never get here\n");
-				return FALSE;
-			}
-		}
-		endoffset = gtk_text_iter_get_offset(end);
-		DBG_SCANNING("needscanning_find_region2scan, region that needs scanning runs from %d to %d\n", gtk_text_iter_get_offset(start),
-					 gtk_text_iter_get_offset(end));
-		nextit = *end;
-		if (gtk_text_iter_forward_char(&nextit) && (gtk_text_iter_begins_tag(&nextit, btv->needscanning) || gtk_text_iter_forward_to_tag_toggle(&nextit, btv->needscanning))) {
-			nextitoffset = gtk_text_iter_get_offset(&nextit);
-			/* there is another start in the doc, see if it is close (doable within one scanning run, and
-			the number of chars between the regions should not be a lot more than the number of chars that
-			actually need scanning), if so merge them */
-			if ((nextitoffset - endoffset < (loops_per_timer)) && (nextitoffset - startoffset) < (NUM_TIMER_CHECKS_PER_RUN * loops_per_timer)) {
-				DBG_MARKREGION("needscanning_find_region2scan, next region that needs scanning starts at %d, merge them together!\n", gtk_text_iter_get_offset(&nextit));
-				*end = nextit;
-				cont = TRUE;
-			}
-		}
-	} while(cont);
-	return TRUE;
-}
-#endif
 
 static gboolean
 bftextview2_find_region2scan(BluefishTextView * btv, GtkTextIter * start, GtkTextIter * end)
@@ -1708,28 +1641,6 @@ bftextview2_find_region2scan(BluefishTextView * btv, GtkTextIter * start, GtkTex
 	gboolean ret;
 #ifdef MARKREGION
 	ret = markregion_find_region2scan(btv, start, end);
-#ifdef NEEDSCANNING
-	gboolean mrret=ret;
-	GtkTextIter mrits=*start, mrite=*end;
-#endif
-#endif
-#ifdef NEEDSCANNING
-	ret = needscanning_find_region2scan(btv, start, end);
-#endif
-#ifdef MARKREGION
-#ifdef NEEDSCANNING
-	if (mrret != ret) {
-		g_print("ABORT: find_region2scan, markregion returned %d, needscanning returned %d\n",mrret,ret);
-		g_assert_not_reached();
-	}
-
-	if (ret && (!gtk_text_iter_equal(&mrits, start) || !gtk_text_iter_equal(&mrite, end))) {
-		g_print("ABORT: find_region2scan, markregion (%d:%d) and needscanning code(%d:%d) have different regions!!\n",
-				gtk_text_iter_get_offset(&mrits),gtk_text_iter_get_offset(&mrite),
-				gtk_text_iter_get_offset(start),gtk_text_iter_get_offset(end));
-		g_assert_not_reached();
-	}
-#endif
 #endif
 	return ret;
 }
@@ -2047,12 +1958,6 @@ if newpos==0 we have a symbol (see bftextview2.h for an explanation of symbols a
 													scanning.curfcontext->context).contexttag, &iter, &iter2);
 		}
 	}
-#ifdef NEEDSCANNING
-	gtk_text_buffer_remove_tag(btv->buffer, btv->needscanning, &scanning.start, &iter);
-	if (gtk_text_iter_compare(&iter, &scanning.end) < 0) {
-		gtk_text_buffer_apply_tag(btv->buffer, btv->needscanning, &iter, &scanning.end);
-	}
-#endif
 #ifdef MARKREGION
 	DBG_MARKREGION("bftextview2_run_scanner, region done until %d, mark needscanning from %d:%d\n",gtk_text_iter_get_offset(&iter), gtk_text_iter_get_offset(&iter), gtk_text_iter_get_offset(&scanning.end));
 	markregion_region_done(&btv->scanning, gtk_text_iter_get_offset(&iter));
@@ -2060,13 +1965,6 @@ if newpos==0 we have a symbol (see bftextview2.h for an explanation of symbols a
 		markregion_nochange(&btv->scanning, gtk_text_iter_get_offset(&iter), gtk_text_iter_get_offset(&scanning.end));
 	}
 #endif
-
-#ifdef MARKREGION
-#ifdef NEEDSCANNING
-	compare_markregion_needscanning(btv);
-#endif
-#endif
-	
 	finished = gtk_text_iter_is_end(&iter);
 
 #ifdef HL_PROFILING

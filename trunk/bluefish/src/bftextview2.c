@@ -759,21 +759,7 @@ bftextview2_insert_text_after_lcb(GtkTextBuffer * buffer, GtkTextIter * iter, gc
 	markregion_insert(&btv->spellcheck, startpos, startpos + charlen);
 #endif
 #endif
-#ifdef NEEDSCANNING
-	gtk_text_buffer_apply_tag(buffer, btv->needscanning, &start, iter);
-#ifdef HAVE_LIBENCHANT
-	DBG_SPELL("bftextview2_insert_text_after_lcb, mark area from %d to %d with tag 'needspellcheck' %p\n",
-			  gtk_text_iter_get_offset(&start), gtk_text_iter_get_offset(iter), btv->needspellcheck);
-	gtk_text_buffer_apply_tag(buffer, btv->needspellcheck, &start, &end);
-#endif							/*HAVE_LIBENCHANT */
-#endif							/* NEEDSCANNING */
 	btv->needremovetags = 0;
-
-#ifdef MARKREGION
-#ifdef NEEDSCANNING
-	compare_markregion_needscanning(btv);
-#endif
-#endif
 }
 
 /*static void print_found(Tfound * found)
@@ -1623,16 +1609,6 @@ bftextview2_delete_range_lcb(GtkTextBuffer * buffer, GtkTextIter * obegin,
 	markregion_delete(&btv->spellcheck, mso, meo + offset, offset);
 #endif
 #endif
-#ifdef NEEDSCANNING
-	gtk_text_buffer_apply_tag(buffer, btv->needscanning, &begin, &end);
-	DBG_SIGNALS("mark text from %d to %d as needscanning\n", gtk_text_iter_get_offset(&begin),
-				gtk_text_iter_get_offset(&end));
-#ifdef HAVE_LIBENCHANT
-	gtk_text_buffer_apply_tag(buffer, btv->needspellcheck, &begin, &end);
-	DBG_SPELL("mark text from %d to %d as needspellcheck\n", gtk_text_iter_get_offset(&begin),
-			  gtk_text_iter_get_offset(&end));
-#endif							/*HAVE_LIBENCHANT */
-#endif
 	btv->needremovetags = 0;
 }
 
@@ -1664,11 +1640,6 @@ bftextview2_delete_range_after_lcb(GtkTextBuffer * buffer, GtkTextIter * obegin,
 
 	/* because compare_markregion_needscanning() compares needscanning and markregion code, the offset needs to be adjusted in both.
 	   for needscanning the offset is only adjusted in the 'after' callback */
-#ifdef MARKREGION
-#ifdef NEEDSCANNING
-	compare_markregion_needscanning(btv);
-#endif
-#endif
 }
 
 gboolean last_undo_is_spacingtoclick(BluefishTextView * btv)
@@ -2693,13 +2664,6 @@ void bluefish_text_view_rescan(BluefishTextView * btv)
 							gtk_text_iter_get_offset(&end));
 #endif
 #endif
-#ifdef NEEDSCANNING
-		gtk_text_buffer_apply_tag(buffer, BLUEFISH_TEXT_VIEW(btv->master)->needscanning, &start, &end);
-#ifdef HAVE_LIBENCHANT
-		DBG_SPELL("bluefish_text_view_rescan, mark all with needspellcheck\n");
-		gtk_text_buffer_apply_tag(buffer, BLUEFISH_TEXT_VIEW(btv->master)->needspellcheck, &start, &end);
-#endif							/*HAVE_LIBENCHANT */
-#endif
 		btv->needremovetags = 0;
 		bftextview2_schedule_scanning(btv);
 	}
@@ -3064,12 +3028,6 @@ void bluefish_text_view_select_language(BluefishTextView * btv, const gchar * mi
 							gtk_text_iter_get_offset(&end));
 #endif
 #endif
-#ifdef NEEDSCANNING
-		gtk_text_buffer_apply_tag(buffer, master->needscanning, &start, &end);
-#ifdef HAVE_LIBENCHANT
-		gtk_text_buffer_apply_tag(buffer, master->needspellcheck, &start, &end);
-#endif
-#endif
 		btv->needremovetags = 0;
 		if (master->enable_scanner) {
 			DBG_MSG("bluefish_text_view_select_language, schedule scanning\n");
@@ -3221,9 +3179,6 @@ void bluefish_text_view_set_spell_check(BluefishTextView * btv, gboolean spell_c
 	gtk_text_buffer_get_bounds(master->buffer, &start, &end);
 
 	if (master->spell_check) {
-#ifdef NEEDSCANNING
-		gtk_text_buffer_apply_tag(master->buffer, master->needspellcheck, &start, &end);
-#endif
 #ifdef MARKREGION
 		markregion_nochange(&master->spellcheck, 0, gtk_text_iter_get_offset(&end));
 #endif
@@ -3646,12 +3601,6 @@ static void bluefish_text_view_init(BluefishTextView * textview)
 	textview->showsymbols = FALSE;
 	textview->button_press_line = -1;
 	ttt = langmgr_get_tagtable();
-#ifdef NEEDSCANNING
-	textview->needscanning = gtk_text_tag_table_lookup(ttt, "_needscanning_");
-#ifdef HAVE_LIBENCHANT
-	textview->needspellcheck = gtk_text_tag_table_lookup(ttt, "_needspellcheck_");
-#endif							/*HAVE_LIBENCHANT */
-#endif
 	textview->blockmatch = gtk_text_tag_table_lookup(ttt, "blockmatch");
 	textview->cursortag = gtk_text_tag_table_lookup(ttt, "cursor_highlight");
 	textview->enable_scanner = FALSE;

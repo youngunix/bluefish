@@ -74,36 +74,6 @@ markregion_find_region2spellcheck(BluefishTextView * btv, GtkTextIter * sit, Gtk
 }
 #endif
 
-#ifdef NEEDSCANNING
-static gboolean
-needscanning_find_region2spellcheck(BluefishTextView * btv, GtkTextIter * start, GtkTextIter * end)
-{
-	/* first find a region that needs a spellcheck */
-	gtk_text_buffer_get_start_iter(btv->buffer, start);
-	if (!gtk_text_iter_begins_tag(start, btv->needspellcheck)) {
-		DBG_SPELL("iter %d does not begins tag needspellcheck %p, needscanning(%p)=%d\n",
-				  gtk_text_iter_get_offset(start), btv->needspellcheck, btv->needscanning,
-				  gtk_text_iter_begins_tag(start, btv->needscanning));
-		if (!gtk_text_iter_forward_to_tag_toggle(start, btv->needspellcheck)) {
-			/* nothing to spellcheck */
-			DBG_SPELL("tag needspellcheck is never started\n");
-			return FALSE;
-		}
-	}
-	/* find the end of the region */
-	*end = *start;
-	gtk_text_iter_forward_char(end);
-	if (!gtk_text_iter_ends_tag(end, btv->needspellcheck)) {
-		if (!gtk_text_iter_forward_to_tag_toggle(end, btv->needspellcheck)) {
-			DBG_MSG("BUG: we should never get here\n");
-			return FALSE;
-		}
-	}
-	DBG_MARKREGION("needscanning_find_region2spellcheck, return iters at %d:%d\n",gtk_text_iter_get_offset(start),gtk_text_iter_get_offset(end));
-	return TRUE;
-}
-#endif
-
 static gboolean
 bftextview2_find_region2spellcheck(BluefishTextView * btv, GtkTextIter * start,GtkTextIter * end)
 {
@@ -111,29 +81,6 @@ bftextview2_find_region2spellcheck(BluefishTextView * btv, GtkTextIter * start,G
 	gboolean ret;
 #ifdef MARKREGION
 	ret = markregion_find_region2spellcheck(btv, start, end);
-#ifdef NEEDSCANNING
-	gboolean mrret = ret;
-	GtkTextIter mrits=*start, mrite=*end;
-#endif
-#endif
-#ifdef NEEDSCANNING
-	ret = needscanning_find_region2spellcheck(btv, start, end);
-#endif
-
-#ifdef MARKREGION
-#ifdef NEEDSCANNING
-	if (mrret != ret) {
-		g_print("ABORT: find_region2spellcheck, markregion returned %d, needscanning returned %d\n",mrret,ret);
-		g_assert_not_reached();
-	}
-
-	if (ret && (!gtk_text_iter_equal(&mrits, start) || !gtk_text_iter_equal(&mrite, end))) {
-		g_print("ABORT: find_region2spellcheck, markregion (%d:%d) and needscanning code(%d:%d) have different regions!!\n",
-				gtk_text_iter_get_offset(&mrits),gtk_text_iter_get_offset(&mrite),
-				gtk_text_iter_get_offset(start),gtk_text_iter_get_offset(end));
-		g_assert_not_reached();
-	}
-#endif
 #endif
 	if (!ret) {
 		return FALSE;
@@ -557,11 +504,6 @@ spellcheck_region(BluefishTextView * btv, GTimer *timer, GtkTextIter *itcursor, 
 			(gint) (1000.0 * (g_timer_elapsed(timer, NULL)-time_at_start)), gtk_text_iter_get_offset(so),
 			gtk_text_iter_get_offset(&iter), profile_words-words_at_start);
 #endif
-#ifdef NEEDSCANNING
-	DBG_SPELL("spellcheck_region, remove needspellcheck from start %d to iter at %d\n",
-			  gtk_text_iter_get_offset(so), gtk_text_iter_get_offset(&iter));
-	gtk_text_buffer_remove_tag(btv->buffer, btv->needspellcheck, so, &iter);
-#endif
 #ifdef MARKREGION
 	markregion_region_done(&btv->spellcheck, gtk_text_iter_get_offset(&iter));
 #endif
@@ -640,11 +582,6 @@ bftextview2_spell_cleanup(void)
 static void
 recheck_document(Tdocument * doc)
 {
-#ifdef NEEDSCANNING
-	GtkTextIter start, end;
-	gtk_text_buffer_get_bounds(doc->buffer, &start, &end);
-	gtk_text_buffer_apply_tag(doc->buffer, BLUEFISH_TEXT_VIEW(doc->view)->needspellcheck, &start, &end);
-#endif
 #ifdef MARKREGION
 	GtkTextIter ite;
 	gtk_text_buffer_get_end_iter(BLUEFISH_TEXT_VIEW(doc->view)->buffer, &ite);
