@@ -1872,10 +1872,11 @@ process_scanning_indent(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gint
 					{"foldable", &foldable, attribtype_boolean},
 					};
 	parse_attributes(bfparser->bflang,reader, attribs, sizeof(attribs)/sizeof(Tattrib));
-	
-	matchnum = add_pattern_to_scanning_table(bfparser->st, "\n[ \t]*", TRUE, FALSE, context, &bfparser->ldb);
+	/*  ASCII character 02 is STX (start of text). in the scanner we use this to indicate we are on the start of a line */
+	matchnum = add_pattern_to_scanning_table(bfparser->st, "\x02""[ \t]*", TRUE, FALSE, context, &bfparser->ldb);
 	/*g_array_index(bfparser->st->matches, Tpattern, matchnum).starts_block = 1;*/
 	g_array_index(bfparser->st->matches, Tpattern, matchnum).block = BLOCK_SPECIAL_INDENT;
+	g_array_index(bfparser->st->contexts, Tcontext, context).indent_detection = 1;
 	g_print("process_scanning_indent, add indentation detection with pattern %d to context %d\n",matchnum, context);
 }
 
