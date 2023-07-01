@@ -1180,7 +1180,7 @@ paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible
 	Tfound *found = NULL;
 	BluefishTextView *master = btv->master;
 	GSequenceIter *siter = NULL;
-	guint startvisible_offset;
+	guint startvisible_offset, endvisible_o;
 
 	
 	cairo_set_line_width(cr, 0.6);	/* 1.0 looks the best, smaller gives a half-transparent color */
@@ -1189,6 +1189,7 @@ paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible
 	/*cairo_rectangle(cr, event->area.x, event->area.y, event->area.width, event->area.height);
 	cairo_clip(cr);*/
 	startvisible_offset = gtk_text_iter_get_offset(startvisible);
+	endvisible_o = gtk_text_iter_get_offset(endvisible);
 	DBG_PAINTINDENT("paint_indenting, search in cache for offset %d\n",startvisible_offset);
 	
 	if (G_UNLIKELY(gtk_text_iter_is_start(startvisible)
@@ -1203,6 +1204,8 @@ paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible
 	ind = init_indent_stack(btv, siter);
 	while (found) {
 		DBG_PAINTINDENT("found at offset %d\n",found->charoffset_o);
+		if (G_UNLIKELY(found->charoffset_o > endvisible_o && !ind))
+			break;
 		if (found->indentlevel == 0) {
 			if (ind) {
 				free_indent_stack(ind);
@@ -1222,6 +1225,7 @@ paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible
 			DBG_PAINTINDENT("paint_indenting, found level is still %d, paint line\n",found->indentlevel);
 			get_indent_paint_position_from_char_offset(btv, found->charoffset_o, FALSE, &x2, &y2);
 			paint_indent_line(btv, cr, ind->x,ind->y,x2,y2);
+			//g_assert(x2 == ind->x);
 		} else if (found->indentlevel < ind->level) {
 			DBG_PAINTINDENT("paint_indenting, found has lower indenting level %d\n",found->indentlevel);
 			// pop from stack until we have the level from this find and paint the line for that level
@@ -1235,6 +1239,7 @@ paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible
 			if (ind && found->indentlevel == ind->level) {
 				guint x2,y2;
 				get_indent_paint_position_from_char_offset(btv, found->charoffset_o, FALSE, &x2, &y2);
+				//g_assert(x2 == ind->x);
 				paint_indent_line(btv, cr, ind->x,ind->y,x2,y2);
 			}
 		}

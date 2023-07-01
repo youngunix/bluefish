@@ -55,7 +55,7 @@ extern void g_none(char *first, ...);
 #define DBG_SPELL DBG_NONE
 #define DBG_IDENTIFIER DBG_NONE
 #define DBG_MARKREGION DBG_NONE
-#define DBG_PAINTINDENT g_print
+#define DBG_PAINTINDENT DBG_NONE
 
 #include "bf_lib.h"
 typedef struct {
@@ -95,6 +95,7 @@ typedef struct {
 	guint8 autocomplete_has_conditions; /* 0 means any autocomplete item is valid, 1 means we have to check for runtime conditions */
 	guint8 default_spellcheck;
 	guint8 dump_dfa_run;
+	guint8 indent_detection;
 } Tcontext;
 /*
 32bit size = 5*32 + 7*8 = 208 + 8 padding bits = 28 bytes
