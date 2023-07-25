@@ -676,6 +676,9 @@ new_context(Tscantable * st, guint expected_size, const gchar * symbols, const g
 
 	/* 0, \0 or NULL is always a symbol */
 	g_array_index(tmptable, Ttablerow, 1).row[0] = 0;
+	/* for indent detection, ASCII character 02 is also always a symbol */
+	g_array_index(tmptable, Ttablerow, 1).row[2] = 0;
+	
 	tmp = symbols;
 	while (*tmp) {
 		/*g_print("mark %c as symbol\n",*tmp); */
