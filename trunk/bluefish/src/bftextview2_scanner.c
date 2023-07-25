@@ -137,7 +137,7 @@ dump_scancache(BluefishTextView * btv)
 		Tfound *found = g_sequence_get(siter);
 		if (!found)
 			break;
-		if (found->charoffset_o > startoutput_o && found->charoffset_o < endoutput_o) {
+		if (found->charoffset_o >= startoutput_o && found->charoffset_o <= endoutput_o) {
 			g_print("%3d: %p, fblock %p, fcontext %p, siter %p\n", found->charoffset_o, found, found->fblock,
 					found->fcontext, siter);
 			if (found->numcontextchange != 0) {
@@ -1596,7 +1596,7 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 	found->fcontext = fcontext;
 	found->charoffset_o = match_end_o;
 	if (G_UNLIKELY(pat->block == BLOCK_SPECIAL_INDENT)) {
-		found->indentlevel = match_end_o - match_start_o -1;
+		found->indentlevel = match_end_o - match_start_o;
 		g_print("set indentlevel=%d for found at offset %d\n",found->indentlevel, found->charoffset_o);
 	} else {
 		found->indentlevel = NO_INDENT_FOUND;
@@ -1863,7 +1863,10 @@ if newpos==0 we have a symbol (see bftextview2.h for an explanation of symbols a
 		DBG_SCANNING("scanning offset %d pos %d '%c'=%d ", gtk_text_iter_get_offset(&iter), pos, uc, uc);
 		newpos = get_tablerow(btv->bflang->st,scanning.context,pos).row[uc];
 		if (G_UNLIKELY(g_array_index(btv->bflang->st->contexts, Tcontext, scanning.context).dump_dfa_run)) {
-			g_print("context %d: '",scanning.context);
+			if (g_array_index(btv->bflang->st->contexts, Tcontext, scanning.context).indent_detection && gtk_text_iter_starts_line(&iter)) {
+				g_print("context %d offset %4d starts line, set pos %4d for indent detection\n",scanning.context, gtk_text_iter_get_offset(&iter),pos);
+			}
+			g_print("context %d offset %4d '",scanning.context, gtk_text_iter_get_offset(&iter));
 			print_character_escaped(uc);
 			g_print("' in %4d makes %4d", pos,newpos);
 			if (newpos == 0 && get_tablerow(btv->bflang->st,scanning.context,pos).match) {
@@ -2244,7 +2247,7 @@ scancache_check_integrity(BluefishTextView * btv, GTimer *timer) {
 		Tfound *found = g_sequence_get(siter);
 		if (!found)
 			break;
-		if (found->charoffset_o <= 0) {
+		if (found->charoffset_o < 0) {
 			g_warning("scancache_check_integrity, found %p has offset < 0\n", found);
 			dump_scancache(btv);
 			g_assert_not_reached();
@@ -2253,7 +2256,7 @@ scancache_check_integrity(BluefishTextView * btv, GTimer *timer) {
 			g_warning("scancache_check_integrity, found(%p) has offset %d, the previous found had offset %d, not ordered correctly?!?!!\n",found,found->charoffset_o, prevfound_o);
 			dump_scancache(btv);
 			g_assert_not_reached();
-		} else if (found->charoffset_o == prevfound_o) {
+		} else if (found->charoffset_o == prevfound_o && prevfound_o != 0) {
 			g_warning("scancache_check_integrity, previous found and the next found have offset %d, duplicate!!\n",found->charoffset_o);
 			dump_scancache(btv);
 			g_assert_not_reached();
