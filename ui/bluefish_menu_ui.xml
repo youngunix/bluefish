@@ -93,6 +93,7 @@
 		<menuitem action="ShowLineNumbers"/>
 		<menuitem action="ShowRightMargin"/>
 		<menuitem action="ShowVisibleSpacing"/>
+		<menuitem action="ShowIndenting"/>
 		<menuitem action="ShowSplitView"/>
 		<menuitem action="WrapText"/>
 		<placeholder name="SpellCheckPlaceholder"/>

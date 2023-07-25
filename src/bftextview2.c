@@ -3116,6 +3116,25 @@ void bluefish_text_view_set_show_visible_spacing(BluefishTextView * btv, gboolea
 		gtk_widget_queue_draw(GTK_WIDGET(btv->slave));
 }
 
+gboolean bluefish_text_view_get_show_indenting(BluefishTextView * btv)
+{
+	return (btv->show_indenting);
+}
+
+void bluefish_text_view_set_show_indenting(BluefishTextView * btv, gboolean show)
+{
+	g_return_if_fail(btv != NULL);
+
+	if (show == btv->show_indenting) {
+		return;
+	}
+
+	btv->show_indenting = show;
+	gtk_widget_queue_draw(GTK_WIDGET(btv));
+	if (btv->slave)
+		gtk_widget_queue_draw(GTK_WIDGET(btv->slave));
+}
+
 gboolean bluefish_text_view_get_show_right_margin(BluefishTextView * btv)
 {
 	return (btv->show_right_margin);
@@ -3622,7 +3641,6 @@ GtkWidget *bftextview2_new(void)
 	g_return_val_if_fail(textview != NULL, NULL);
 	textview->master = textview;
 	textview->slave = NULL;
-	textview->show_indenting = TRUE;
 	return GTK_WIDGET(textview);
 }
 
