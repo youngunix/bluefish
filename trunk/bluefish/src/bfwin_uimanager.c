@@ -244,6 +244,16 @@ ui_show_visible_spacing(GtkAction * action, gpointer user_data)
 }
 
 static void
+ui_show_indenting(GtkAction * action, gpointer user_data)
+{
+	Tbfwin *bfwin = BFWIN(user_data);
+
+	if (bfwin->current_document)
+		bluefish_text_view_set_show_indenting(BLUEFISH_TEXT_VIEW(bfwin->current_document->view),
+													gtk_toggle_action_get_active(GTK_TOGGLE_ACTION(action)));
+}
+
+static void
 ui_tab_size_decrease(GtkAction * action, gpointer user_data)
 {
 	Tbfwin *bfwin = BFWIN(user_data);
@@ -968,6 +978,8 @@ static const GtkToggleActionEntry global_toggle_actions[] = {
 	 G_CALLBACK(ui_show_split_view), FALSE},
 	{"ShowVisibleSpacing", NULL, N_("Show V_isible Spacing"), NULL, N_("Show visible spacing"),
 	 G_CALLBACK(ui_show_visible_spacing), FALSE},
+	{"ShowIndenting", NULL, N_("Show Indenting"), NULL, N_("Show indenting"),
+	 G_CALLBACK(ui_show_indenting), FALSE},
 	{"WrapText", NULL, N_("_Wrap Text"), NULL, N_("Wrap text"), G_CALLBACK(ui_set_wrap_text), FALSE}
 };
 

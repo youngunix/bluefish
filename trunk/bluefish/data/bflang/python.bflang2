@@ -47,6 +47,7 @@
 
 <definition>
 	<context symbols=" ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;">
+	<indent foldable="0" />
 <element pattern="import[ &#9;][^&#10;&#13;]+" is_regex="1" highlight="imports" >
 	<autocomplete string="import" />
 </element>
