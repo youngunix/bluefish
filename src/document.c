@@ -3613,6 +3613,7 @@ doc_activate(Tdocument * doc)
 #endif
 
 /*	doc_scroll_to_cursor(doc);*/
+	bmark_focus_doc(doc);
 	if (doc->uri) {
 /*		gchar *dir1 = g_path_get_dirname(doc->uri);
 		gchar *dir2 = ending_slash(dir1);

@@ -769,6 +769,12 @@ popup_menu_default_permanent(GtkAction * action, gpointer user_data)
 }
 
 static void
+popup_menu_follow_document(GtkAction * action, gpointer user_data)
+{
+	main_v->globses.bookmarks_follow_document = gtk_toggle_action_get_active(GTK_TOGGLE_ACTION(action));
+}
+
+static void
 popup_menu_delete(GtkAction * action, gpointer user_data)
 {
 	Tbfwin *bfwin = BFWIN(user_data);
@@ -908,6 +914,7 @@ static const gchar *bookmark_menu_ui =
 	"    <menuitem action='DeleteAllBookmark'/>"
 	"    <separator/>"
 	"    <menuitem action='DefaultPermanent'/>"
+	"    <menuitem action='FollowDocument'/>"
 	"    <separator/>"
 	"    <menu action='ShowFileMenu'>"
 	"    	<menuitem action='BookmarkFileByName'/>"
@@ -948,7 +955,9 @@ static const GtkActionEntry bookmark_actions[] = {
 
 static const GtkToggleActionEntry bookmark_toggle_actions[] = {
 	{"DefaultPermanent", NULL, N_("Permanent by default"), NULL, N_("Permanent by default"),
-	 G_CALLBACK(popup_menu_default_permanent)}
+	 G_CALLBACK(popup_menu_default_permanent)},
+	 {"FollowDocument", NULL, N_("Follow active document"), NULL, N_("Follow active document"),
+	 G_CALLBACK(popup_menu_follow_document)}
 };
 
 static const GtkRadioActionEntry bookmark_file_radio_actions[] = {
@@ -2192,6 +2201,16 @@ bmark_add_at_bevent(Tdocument * doc)
 		gint offset = main_v->bevent_charoffset;
 		/* we have the location */
 		bmark_add_current_doc_backend(doc->bfwin, "", offset, !main_v->globses.bookmarks_default_store);
+	}
+}
+
+void
+bmark_focus_doc(Tdocument *doc) {
+	if (!doc || !doc->bmark_parent) return;
+	if (main_v->globses.bookmarks_follow_document) {
+		GtkTreePath *tpath = gtk_tree_model_get_path (GTK_TREE_MODEL(BMARKDATA(BFWIN(doc->bfwin)->bmarkdata)->bookmarkstore),doc->bmark_parent);
+		gtk_tree_view_scroll_to_cell (BFWIN(doc->bfwin)->bmark,tpath,NULL,TRUE,0.1,0.5);
+		gtk_tree_path_free(tpath);
 	}
 }
 

@@ -398,6 +398,7 @@ typedef struct {
 	gint print_linenumbers;
 	gchar *print_fontstring;
 	gint bookmarks_default_store;	/* 0= temporary by default, 1= permanent by default */
+	gint bookmarks_follow_document;
 	gint image_thumbnail_refresh_quality;	/* 1=GDK_INTERP_BILINEAR, 0=GDK_INTERP_NEAREST */
 	gint image_thumbnailsizing_type;	/* scaling ratio=0, fixed width=1, height=2, width+height (discard aspect ratio)=3 */
 	gint image_thumbnailsizing_val1;	/* the width, height or ratio, depending on the value above */
