@@ -20,7 +20,7 @@
 /*#define HL_PROFILING*/
 /*#define VALGRIND_PROFILING*/
 
-#define DUMP_SCANCACHE
+/*#define DUMP_SCANCACHE*/
 /*#define DUMP_SCANCACHE_UPDATE_OFFSET*/
 /*#define DUMP_HIGHLIGHTING*/
 
@@ -1440,7 +1440,7 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 			return scanning->context;
 		}
 	}
-	g_print
+	DBG_SCANNING
 		("found_match for pattern %d %s at charoffset %d-%d, starts_block=%d,ends_block=%d,is_indent=%d nextcontext=%d (current=%d)\n",
 		 match->patternum, pat->pattern, gtk_text_iter_get_offset(&match->start),gtk_text_iter_get_offset(&match->end), pat->starts_block,
 		 pat->ends_block, (pat->block == BLOCK_SPECIAL_INDENT), pat->nextcontext, scanning->context);
@@ -1597,7 +1597,7 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 	found->charoffset_o = match_end_o;
 	if (G_UNLIKELY(pat->block == BLOCK_SPECIAL_INDENT)) {
 		found->indentlevel = match_end_o - match_start_o;
-		g_print("set indentlevel=%d for found at offset %d\n",found->indentlevel, found->charoffset_o);
+		DBG_SCANNING("set indentlevel=%d for found at offset %d\n",found->indentlevel, found->charoffset_o);
 	} else {
 		found->indentlevel = NO_INDENT_FOUND;
 	}
@@ -1733,7 +1733,7 @@ bftextview2_run_scanner(BluefishTextView * btv, GtkTextIter * visible_end)
 #endif /*HL_PROFILING*/
 		return FALSE;
 	}
-	g_print("markregion_find_region2scan returned region %d:%d\n",gtk_text_iter_get_offset(&scanning.start),gtk_text_iter_get_offset(&scanning.end));
+	DBG_SCANNING("markregion_find_region2scan returned region %d:%d\n",gtk_text_iter_get_offset(&scanning.start),gtk_text_iter_get_offset(&scanning.end));
 	/* start timer */
 	scanning.timer = g_timer_new();
 
@@ -1764,7 +1764,7 @@ bftextview2_run_scanner(BluefishTextView * btv, GtkTextIter * visible_end)
 	stage1 = g_timer_elapsed(scanning.timer, NULL);
 #endif
 	iter = mstart = scanning.start;
-	g_print("set iter=mstart=scaning.start all to %d\n",gtk_text_iter_get_offset(&scanning.start));
+	DBG_SCANNING("set iter=mstart=scaning.start all to %d\n",gtk_text_iter_get_offset(&scanning.start));
 	if (gtk_text_iter_is_start(&scanning.start)) {
 		DBG_SCANNING("start scanning at start iter\n");
 		scanning.siter = g_sequence_get_begin_iter(btv->scancache.foundcaches);
@@ -1778,7 +1778,7 @@ bftextview2_run_scanner(BluefishTextView * btv, GtkTextIter * visible_end)
 		detect that the tag has changed. so we move scanning.start one position up. */
 		gtk_text_iter_backward_char(&iter);
 		mstart = scanning.start = iter;
-		g_print("moved scanning.start, mstart, iter back to %d\n",gtk_text_iter_get_offset(&scanning.start));
+		DBG_SCANNING("moved scanning.start, mstart, iter back to %d\n",gtk_text_iter_get_offset(&scanning.start));
 		/* reconstruct the context stack and the block stack */
 		reconstruction_o = reconstruct_scanning(btv, &iter, &scanning);
 		pos = 0;
@@ -1787,10 +1787,10 @@ bftextview2_run_scanner(BluefishTextView * btv, GtkTextIter * visible_end)
 		   where the stack was reconstructed, the largest offset */
 		gtk_text_buffer_get_iter_at_offset(btv->buffer, &iter, reconstruction_o);
 		gtk_text_iter_set_line_offset(&scanning.start, 0);
-		g_print("move scanning.start to start of line, new position %d\n",gtk_text_iter_get_offset(&scanning.start));
+		DBG_SCANNING("move scanning.start to start of line, new position %d\n",gtk_text_iter_get_offset(&scanning.start));
 		DBG_SCANNING("compare possible start positions %d and %d\n",
 					 gtk_text_iter_get_offset(&scanning.start), gtk_text_iter_get_offset(&iter));
-		g_print("should we start scanning at iter=%d (the scancache reconstruction point) or scanning.start=%d?\n", gtk_text_iter_get_offset(&iter), gtk_text_iter_get_offset(&scanning.start));
+		DBG_SCANNING("should we start scanning at iter=%d (the scancache reconstruction point) or scanning.start=%d?\n", gtk_text_iter_get_offset(&iter), gtk_text_iter_get_offset(&scanning.start));
 		if (gtk_text_iter_compare(&iter, &scanning.start) > 0) {
 			mstart = scanning.start = iter;
 		} else {
@@ -1806,8 +1806,6 @@ bftextview2_run_scanner(BluefishTextView * btv, GtkTextIter * visible_end)
 			scanning.end = iter;
 		iter = scanning.start;
 	}
-	g_print("scanning from %d to %d\n", gtk_text_iter_get_offset(&scanning.start),
-				 gtk_text_iter_get_offset(&scanning.end));
 	DBG_SCANNING("scanning from %d to %d\n", gtk_text_iter_get_offset(&scanning.start),
 				 gtk_text_iter_get_offset(&scanning.end));
 #ifdef HL_PROFILING
@@ -1953,14 +1951,14 @@ if newpos==0 we have a symbol (see bftextview2.h for an explanation of symbols a
 			but not if this is not the first character of a new match (indicated if mstart is at the same position as iter) 
 			this function has a problem with indenting detection, because it can find a match of zero length */
 			if (G_LIKELY(((gtk_text_iter_equal(&mstart, &iter)) && !zerolengthmatch) && !last_character_run)) {
-				g_print("did found a match, but don't rescan current character if it starts a new match, because iter is at mstart (pos=%d, newpos=%d)\n",pos,newpos);
+				DBG_SCANNING("did found a match, but don't rescan current character if it starts a new match, because iter is at mstart (pos=%d, newpos=%d)\n",pos,newpos);
 				gtk_text_iter_forward_char(&iter);
 #ifdef HL_PROFILING
 				hl_profiling.numchars++;
 #endif
 			}
 			mstart = iter;
-			g_print("mstart is set to offset %d, newpos=0\n",gtk_text_iter_get_offset(&mstart));
+			DBG_SCANNING("mstart is set to offset %d, newpos=0\n",gtk_text_iter_get_offset(&mstart));
 			newpos = 0;
 		} else if (G_LIKELY(!last_character_run)) {
 			gtk_text_iter_forward_char(&iter);
