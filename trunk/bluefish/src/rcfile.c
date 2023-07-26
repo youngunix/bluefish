@@ -1229,6 +1229,8 @@ return_globalsession_configlist(gboolean init_values)
 	init_prop_string_with_escape(&config_rc, &main_v->globses.print_fontstring, "print_fontstring:", NULL);
 	init_prop_integer(&config_rc, &main_v->globses.bookmarks_default_store, "bookmarks_default_store:", 1,
 					  init_values);
+	init_prop_integer(&config_rc, &main_v->globses.bookmarks_follow_document, "bookmarks_follow_document:", 1,
+					  init_values);	
 	init_prop_integer(&config_rc, &main_v->globses.image_thumbnail_refresh_quality,
 					  "image_thumbnail_refresh_quality:", 1, init_values);
 	init_prop_integer(&config_rc, &main_v->globses.image_thumbnailsizing_type, "image_thumbnailsizing_type:",

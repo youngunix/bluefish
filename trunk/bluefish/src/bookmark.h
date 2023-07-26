@@ -47,6 +47,7 @@ gchar *bmark_get_tooltip_for_line(Tdocument *doc, gint line);
 void bmark_add_at_bevent(Tdocument * doc);
 void bmark_del_at_bevent(Tdocument * doc);
 void bmark_store_bevent_location(Tdocument * doc, gint charoffset);
+void bmark_focus_doc(Tdocument *doc);
 
 void bmark_cleanup(Tbfwin * bfwin);
 gpointer bookmark_data_cleanup(gpointer data);
