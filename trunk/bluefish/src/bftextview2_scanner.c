@@ -1440,9 +1440,9 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 			return scanning->context;
 		}
 	}
-	DBG_SCANNING
-		("found_match for pattern %d %s at charoffset %d, starts_block=%d,ends_block=%d,is_indent=%d nextcontext=%d (current=%d)\n",
-		 match->patternum, pat->pattern, gtk_text_iter_get_offset(&match->start), pat->starts_block,
+	g_print
+		("found_match for pattern %d %s at charoffset %d-%d, starts_block=%d,ends_block=%d,is_indent=%d nextcontext=%d (current=%d)\n",
+		 match->patternum, pat->pattern, gtk_text_iter_get_offset(&match->start),gtk_text_iter_get_offset(&match->end), pat->starts_block,
 		 pat->ends_block, (pat->block == BLOCK_SPECIAL_INDENT), pat->nextcontext, scanning->context);
 /*	DBG_MSG("pattern no. %d (%s) matches (%d:%d) --> nextcontext=%d\n", match->patternum, scantable.matches[match->patternum].message,
 			gtk_text_iter_get_offset(&match->start), gtk_text_iter_get_offset(&match->end), scantable.matches[match->patternum].nextcontext);*/
@@ -1837,9 +1837,12 @@ if newpos==0 we have a symbol (see bftextview2.h for an explanation of symbols a
    if we find a symbol again, and we have a match, we have the start of the match (mstart) and the end of the match at the current position (iter)
 
 ****************************************************************************** */
+	gboolean didindentrun=FALSE;
+	gboolean zerolengthmatch;
 	do {
 		gunichar uc;
 		loop++;
+		zerolengthmatch=FALSE;
 #ifdef HL_PROFILING
 		hl_profiling.numloops++;
 #endif
@@ -1854,10 +1857,13 @@ if newpos==0 we have a symbol (see bftextview2.h for an explanation of symbols a
 				uc = 1;
 			}
 		}
-		if (G_UNLIKELY( g_array_index(btv->bflang->st->contexts, Tcontext, scanning.context).indent_detection && gtk_text_iter_starts_line(&iter))) {
+		if (G_UNLIKELY(!didindentrun && (pos == 0 || pos == 1) && g_array_index(btv->bflang->st->contexts, Tcontext, scanning.context).indent_detection && gtk_text_iter_starts_line(&iter))) {
 			/* if we are in a context that has indenting detection, and we are on the start of a line, we 
 			use ASCII character 2 STX (start of text) to enter the state for indenting */
 			pos = get_tablerow(btv->bflang->st,scanning.context,pos).row['\x02'];
+			didindentrun=TRUE;
+		} else{
+			didindentrun=FALSE;
 		}
 		
 		DBG_SCANNING("scanning offset %d pos %d '%c'=%d ", gtk_text_iter_get_offset(&iter), pos, uc, uc);
@@ -1884,6 +1890,10 @@ if newpos==0 we have a symbol (see bftextview2.h for an explanation of symbols a
 		DBG_SCANNING("(context=%d).. got newpos %d %s\n", scanning.context, newpos, (newpos==0?" -> symbol or pattern itself ends on symbol":""));
 		if (G_UNLIKELY(newpos == 0 || uc == '\0')) {
 			if (G_UNLIKELY(get_tablerow(btv->bflang->st,scanning.context,pos).match)) {
+				/* if the newpos goes to state 0, and pos indicates a match, we have a match!
+				everything that needs to be done for a found match is handled in the function found_match()
+				which returns a new context if needed
+				*/
 				Tmatch match;
 				guint oldcontext = scanning.context;
 				match.patternum = get_tablerow(btv->bflang->st,scanning.context,pos).match;
@@ -1893,6 +1903,11 @@ if newpos==0 we have a symbol (see bftextview2.h for an explanation of symbols a
 							 gtk_text_iter_get_offset(&match.end));
 				scanning.context = found_match(btv, &match, &scanning);
 				DBG_SCANNING("after match context=%d\n", scanning.context);
+				
+				/* because of indent detection we can find a zero length match */
+				zerolengthmatch =  gtk_text_iter_equal(&mstart, &iter);
+				
+				/* if this indicates an identifier, we call found_identifier() */
 				if (G_UNLIKELY(scanning.identmode == 2 && !gtk_text_iter_in_range(&itcursor, &mstart, &iter)
 								 && !gtk_text_iter_equal(&itcursor, &mstart)
 								 && !gtk_text_iter_equal(&itcursor, &iter))) {
@@ -1900,6 +1915,8 @@ if newpos==0 we have a symbol (see bftextview2.h for an explanation of symbols a
 					scanning.identmode = 0;
 				}
 			} else {
+
+				/* if there is no match, but the cache does have a match, we have to clean it up */
 				if (G_UNLIKELY(uc == '\0' && scanning.nextfound &&
 					scanning.nextfound->charoffset_o <= gtk_text_iter_get_offset(&iter))) {
 					guint invalidoffset;
@@ -1908,6 +1925,8 @@ if newpos==0 we have a symbol (see bftextview2.h for an explanation of symbols a
 					if (enlarge_scanning_region(btv, &scanning, invalidoffset))
 						last_character_run = FALSE;
 				}
+
+				/* if we are in identmode, we might have to call found_identifier() */
 				if (G_UNLIKELY
 					(scanning.identmode == 1 && pos == 1)) {
 					/* ignore if the cursor is within the range, because it could be that the user is still typing the name */
@@ -1920,23 +1939,28 @@ if newpos==0 we have a symbol (see bftextview2.h for an explanation of symbols a
 				}
 				DBG_SCANNING("no match, but do set mstart to offset %d and set newpos=0\n",gtk_text_iter_get_offset(&iter));
 			}
+
+			/* see if nextfound has a valid context and block stack, if not we enlarge the scanning area */
 			if (G_UNLIKELY(last_character_run && scanning.nextfound && !nextcache_valid(&scanning))) {
 				guint invalidoffset;
-				/* see if nextfound has a valid context and block stack, if not we enlarge the scanning area */
 				DBG_SCANNING("last_character_run, but nextfound %p is INVALID!\n", scanning.nextfound);
 				invalidoffset = remove_invalid_cache(btv, 0, &scanning);
 				enlarge_scanning_region(btv, &scanning, invalidoffset);
 				/* TODO: do we need to rescan this position with the real uc instead of uc='\0' ?? */
 			}
 
-			if (G_LIKELY(gtk_text_iter_equal(&mstart, &iter) && !last_character_run)) {
+			/* normally after we return to newpos 0, we restart the scanning at the current character (it might be the first character of a new match)
+			but not if this is not the first character of a new match (indicated if mstart is at the same position as iter) 
+			this function has a problem with indenting detection, because it can find a match of zero length */
+			if (G_LIKELY(((gtk_text_iter_equal(&mstart, &iter)) && !zerolengthmatch) && !last_character_run)) {
+				g_print("did found a match, but don't rescan current character if it starts a new match, because iter is at mstart (pos=%d, newpos=%d)\n",pos,newpos);
 				gtk_text_iter_forward_char(&iter);
 #ifdef HL_PROFILING
 				hl_profiling.numchars++;
 #endif
 			}
 			mstart = iter;
-			/*DBG_SCANNING("mstart is set to offset %d, newpos=0\n",gtk_text_iter_get_offset(&mstart));*/
+			g_print("mstart is set to offset %d, newpos=0\n",gtk_text_iter_get_offset(&mstart));
 			newpos = 0;
 		} else if (G_LIKELY(!last_character_run)) {
 			gtk_text_iter_forward_char(&iter);
