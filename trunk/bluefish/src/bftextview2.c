@@ -1175,14 +1175,15 @@ paint_indent_line(BluefishTextView * btv, cairo_t * cr, gint xs, gint ys, gint x
 static void
 paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible, GtkTextIter * endvisible)
 {
+	static const double dash[] = {4.0};
 	Tindent *ind;
 	Tfound *found = NULL;
 	BluefishTextView *master = btv->master;
 	GSequenceIter *siter = NULL;
 	guint startvisible_offset, endvisible_o;
-
 	
-	cairo_set_line_width(cr, 0.6);	/* 1.0 looks the best, smaller gives a half-transparent color */
+	cairo_set_line_width(cr, 0.5);	/* 1.0 looks the best, smaller gives a half-transparent color */
+	cairo_set_dash(cr, dash, 1, 0);
 	gdk_cairo_set_source_color(cr,&gtk_widget_get_style(GTK_WIDGET(btv))->fg[gtk_widget_get_state
 																				  (GTK_WIDGET(btv))]);
 	/*cairo_rectangle(cr, event->area.x, event->area.y, event->area.width, event->area.height);
