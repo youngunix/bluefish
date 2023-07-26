@@ -1440,14 +1440,13 @@ bfwin_set_document_menu_items(Tdocument * doc)
 	bfwin_set_menu_toggle_item_from_path(manager, "/MainMenu/DocumentMenu/ShowBlocks",
 										 bluefish_text_view_get_show_blocks(BLUEFISH_TEXT_VIEW(doc->view)));
 	bfwin_set_menu_toggle_item_from_path(manager, "/MainMenu/DocumentMenu/ShowLineNumbers",
-										 bluefish_text_view_get_show_line_numbers(BLUEFISH_TEXT_VIEW
-																				  (doc->view)));
+										 bluefish_text_view_get_show_line_numbers(BLUEFISH_TEXT_VIEW(doc->view)));
 	bfwin_set_menu_toggle_item_from_path(manager, "/MainMenu/DocumentMenu/ShowRightMargin",
-										 bluefish_text_view_get_show_right_margin(BLUEFISH_TEXT_VIEW
-																				  (doc->view)));
+										 bluefish_text_view_get_show_right_margin(BLUEFISH_TEXT_VIEW(doc->view)));
 	bfwin_set_menu_toggle_item_from_path(manager, "/MainMenu/DocumentMenu/ShowVisibleSpacing",
-										 bluefish_text_view_get_show_visible_spacing(BLUEFISH_TEXT_VIEW
-																					 (doc->view)));
+										 bluefish_text_view_get_show_visible_spacing(BLUEFISH_TEXT_VIEW(doc->view)));
+	bfwin_set_menu_toggle_item_from_path(manager, "/MainMenu/DocumentMenu/ShowIndenting",
+										 bluefish_text_view_get_show_indenting(BLUEFISH_TEXT_VIEW(doc->view)));
 	bfwin_set_menu_toggle_item_from_path(manager, "/MainMenu/DocumentMenu/ShowSplitView",
 										 (doc->slave != NULL));
 	bfwin_set_menu_toggle_item_from_path(manager, "/MainMenu/DocumentMenu/WrapText",
