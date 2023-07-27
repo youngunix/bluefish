@@ -1863,15 +1863,10 @@ set_commentid(Tbflangparsing * bfparser, gboolean topevel_context, guint8 * tose
 }
 
 
-static gint16
-process_scanning_indent(xmlTextReaderPtr reader, Tbflangparsing * bfparser, gint context, GQueue * contextstack)
+static inline void
+context_add_indent_detection(Tbflangparsing * bfparser, gint context)
 {
-	gboolean foldable = FALSE;
 	guint16 matchnum = 0;
-	Tattrib attribs[] = {
-					{"foldable", &foldable, attribtype_boolean},
-					};
-	parse_attributes(bfparser->bflang,reader, attribs, sizeof(attribs)/sizeof(Tattrib));
 	/*  ASCII character 02 is STX (start of text). in the scanner we use this to indicate we are on the start of a line */
 	matchnum = add_pattern_to_scanning_table(bfparser->st, "\x02""[ \t]*", TRUE, FALSE, context, &bfparser->ldb);
 	/*g_array_index(bfparser->st->matches, Tpattern, matchnum).starts_block = 1;*/
@@ -1885,7 +1880,7 @@ process_scanning_context(xmlTextReaderPtr reader, Tbflangparsing * bfparser, GQu
 {
 	gchar *symbols = NULL, *highlight = NULL, *id = NULL, *idref = NULL, *commentid_block =
 		NULL, *commentid_line = NULL, *dump_dfa_chars=NULL;
-	gboolean autocomplete_case_insens = FALSE, isempty, dump_dfa_run=FALSE;
+	gboolean autocomplete_case_insens = FALSE, isempty, dump_dfa_run=FALSE, detect_indent=FALSE;
 	gint default_spellcheck = SPELLCHECK_INHERIT;
 	gint context, depth;
 
@@ -1899,6 +1894,7 @@ process_scanning_context(xmlTextReaderPtr reader, Tbflangparsing * bfparser, GQu
 					{"autocomplete_case_insens", &autocomplete_case_insens, attribtype_boolean},
 					{"dump_dfa_chars", &dump_dfa_chars, attribtype_string},
 					{"dump_dfa_run", &dump_dfa_run, attribtype_boolean},
+					{"detect_indent", &detect_indent, attribtype_boolean},
 					};
 #ifdef HAVE_LIBENCHANT
 	if (g_queue_get_length(contextstack)==0) {
@@ -1973,6 +1969,12 @@ process_scanning_context(xmlTextReaderPtr reader, Tbflangparsing * bfparser, GQu
 
 	g_free(id);
 	g_free(symbols);
+	
+	if (detect_indent) {
+		context_add_indent_detection(bfparser, context);
+	}
+	
+	
 	/*g_free(highlight); stored in the structure */
 	/* now get the children */
 	while (xmlTextReaderRead(reader) == 1) {
@@ -1983,8 +1985,6 @@ process_scanning_context(xmlTextReaderPtr reader, Tbflangparsing * bfparser, GQu
 									 UNDEFINED, NULL);
 		} else if (xmlStrEqual(name, (xmlChar *) "tag")) {
 			process_scanning_tag(reader, bfparser, context, contextstack, NULL, NULL, NULL, 0, NULL);
-		} else if (xmlStrEqual(name, (xmlChar *) "indent")) {
-			process_scanning_indent(reader, bfparser, context, contextstack);
 		} else if (xmlStrEqual(name, (xmlChar *) "group")) {
 			process_scanning_group(reader, bfparser, context, contextstack, NULL, NULL, NULL, NULL,
 								   UNDEFINED, UNDEFINED, 0, NULL);

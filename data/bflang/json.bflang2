@@ -3,7 +3,7 @@
 	Bluefish HTML Editor
 	json.bflang2 $Revision: 1 $
 
-	Copyright (C) 2012 Olivier Sessink
+	Copyright (C) 2012-2023 Olivier Sessink
 
 		This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@
 </properties>
 
 <definition>
-	<context id="c.json.main" symbols=" &#9;&#10;&#13;{}:,&quot;">
+	<context id="c.json.main" symbols=" &#9;&#10;&#13;{}:,&quot;" detect_indent="1">
 		<element id="e.json.object" pattern="{" starts_block="1" highlight="json-brackets">
 			<context symbols=" &#9;&#10;&#13;{}[]:,&quot;">
 				<element pattern="&quot;" highlight="json-string">
