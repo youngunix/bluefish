@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		python.bflang2 $Revision$
 
-		P15 Olivier Sessink
+		Copyright 2023 Olivier Sessink
 
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -46,8 +46,7 @@
 </properties>
 
 <definition>
-	<context symbols=" ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;" dump_dfa_run="0">
-	<indent foldable="0" />
+	<context symbols=" ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;" dump_dfa_run="0", detect_indent="1"`>
 <element pattern="import[ &#9;][^&#10;&#13;]+" is_regex="1" highlight="imports" >
 	<autocomplete string="import" />
 </element>
