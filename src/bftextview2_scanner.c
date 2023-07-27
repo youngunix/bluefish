@@ -2259,6 +2259,7 @@ scancache_check_integrity(BluefishTextView * btv, GTimer *timer) {
 	GSequenceIter *siter;
 	gfloat start;
 	guint32 prevfound_o=0;
+	guint previndentlevel=NO_INDENT_FOUND;
 
 	start = g_timer_elapsed(timer, NULL);
 	g_queue_init(&contexts);
@@ -2278,7 +2279,7 @@ scancache_check_integrity(BluefishTextView * btv, GTimer *timer) {
 			g_warning("scancache_check_integrity, found(%p) has offset %d, the previous found had offset %d, not ordered correctly?!?!!\n",found,found->charoffset_o, prevfound_o);
 			dump_scancache(btv);
 			g_assert_not_reached();
-		} else if (found->charoffset_o == prevfound_o && prevfound_o != 0) {
+		} else if (found->charoffset_o == prevfound_o && prevfound_o != 0 && previndentlevel!=0) {
 			g_warning("scancache_check_integrity, previous found and the next found have offset %d, duplicate!!\n",found->charoffset_o);
 			dump_scancache(btv);
 			g_assert_not_reached();
@@ -2360,6 +2361,7 @@ scancache_check_integrity(BluefishTextView * btv, GTimer *timer) {
 			}
 		}
 		prevfound_o = found->charoffset_o;
+		previndentlevel = found->indentlevel;
 		siter = g_sequence_iter_next(siter);
 	}
 	g_queue_clear(&contexts);

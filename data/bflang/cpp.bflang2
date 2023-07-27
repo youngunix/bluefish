@@ -47,7 +47,7 @@
 	<smartselection characters="_" />
 </properties>
 <definition>
-	<context symbols=" ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;">
+	<context symbols=" ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;" detect_indent="1">
 
 	<group highlight="keyword" >
 		<autocomplete enable="1" />

@@ -48,7 +48,7 @@
 	<smartselection characters="_" />
 </properties>
 <definition>
-	<context id="c.css.main" symbols=" &#9;&#10;&#13;{}./*&lt;&gt;:+~[]()#,">
+	<context id="c.css.main" symbols=" &#9;&#10;&#13;{}./*&lt;&gt;:+~[]()#," detect_indent="1">
 		<!--<element id="e.css.grouping" pattern="/\* @group[^*]+\*/" starts_block="1" highlight="css-keyword"  is_regex="1">
 			<context symbols="*/&#9;&#10;&#13;@{}./*&lt;&gt;:+~[],">
 				<element id="e.css.grouping.lcomment" pattern="/*" starts_block="1" highlight="css-comment">
