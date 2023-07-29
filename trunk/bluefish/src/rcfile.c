@@ -793,6 +793,9 @@ GList *update_filters(GList *current, gboolean overwrite)
 	defaults =
 		g_list_append(defaults,
 					  array_from_arglist(_("PHP Beautifier"), "|php_beautifier -t|", NULL));
+	defaults =
+		g_list_append(defaults,
+					  array_from_arglist(_("JSON Beautifier"), "|"PKGDATADIR"/json_prettyprint.py|", NULL));
 #ifdef WIN32
 	defaults =
 		g_list_append(defaults,
