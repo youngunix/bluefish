@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * bftextview2_scanner.c
  *
- * Copyright (C) 2008,2009,2010,2011,2012,2013,2014,2015,2017 Olivier Sessink
+ * Copyright (C) 2008,2009,2010,2011,2012,2013,2014,2015,2017,2023 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1224,7 +1224,7 @@ cached_found_is_valid(BluefishTextView * btv, Tmatch * match, Tscanning * scanni
 	if (G_UNLIKELY(!nextcache_valid(scanning)))
 		return FALSE;
 
-	if (G_UNLIKELY(scanning->nextfound->indentlevel != match_end_o - match_start_o -1))
+	if (G_UNLIKELY(scanning->nextfound->indentlevel != match_end_o - match_start_o))
 		return FALSE;
 
 	DBG_SCANCACHE("with numcontextchange=%d, numblockchange=%d\n", scanning->nextfound->numcontextchange,
@@ -1372,53 +1372,6 @@ match_conditions_satisfied(BluefishTextView * btv, Tscanning *scanning, Tpattern
 	Tpattern_condition *pcond = &g_array_index(btv->bflang->st->conditions, Tpattern_condition, pat->condition);
 	DBG_SCANNING("match_conditions_satisfied, called for pattern %s pcond %d with mode=%d, ref=%d and parentrelation=%d\n",pat->pattern,pat->condition, pcond->relationtype, pcond->ref, pcond->parentrelation);
 	return test_condition(scanning->curfcontext, scanning->curfblock, pcond);
-	
-/*	if (pcond->relationtype == 1 || pcond->relationtype == 2) { / * context * /
-		Tfoundcontext *fcontext = scanning->curfcontext;
-		if (pcond->parentrelation == -1) {
-			while (fcontext) {
-				DBG_SCANNING("compare context %d with context ref=%d\n",fcontext->context,pcond->ref);
-				if (pcond->ref == fcontext->context) {
-					return (pcond->relationtype == 1);
-				}
-				fcontext = fcontext->parentfcontext;
-			}
-		} else {
-			for (i=0;i<pcond->parentrelation;i++) {
-				DBG_SCANNING("pop context %d before comparing\n",fcontext->context);
-				fcontext = fcontext->parentfcontext;
-				if (!fcontext)
-					return (pcond->relationtype == 2);
-			}
-			DBG_SCANNING("compare context %d with context ref=%d\n",fcontext?fcontext->context:0,pcond->ref);
-			if (pcond->ref == fcontext->context) {
-				return (pcond->relationtype == 1);
-			}
-		}
-		return (pcond->relationtype == 2);
-	} else if (pcond->relationtype == 3 || pcond->relationtype == 4) { / * pattern * /
-		Tfoundblock *fblock = scanning->curfblock;
-		if (pcond->parentrelation == -1) {
-			while (fblock) {
-				if (pcond->ref == fblock->patternum) {
-					return (pcond->relationtype == 3);
-				}
-				fblock = fblock->parentfblock;
-			}
-		} else {
-			for (i=0;i<pcond->parentrelation;i++) {
-				fblock = fblock->parentfblock;
-				if (!fblock)
-					return (pcond->relationtype == 4);
-			}
-			if (pcond->ref == fblock->patternum) {
-				return (pcond->relationtype == 3);
-			}
-		}
-		return (pcond->relationtype == 4);
-	}
-
-	return TRUE;*/
 }
 
 static inline int
@@ -1570,10 +1523,14 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 	} else {
 		numcontextchange = 0;
 	}
-	if (numblockchange == 0 && numcontextchange == 0 && numindentchange == 0 && pat->block != BLOCK_SPECIAL_INDENT) {
-		DBG_SCANCACHE("found_match, no context change, no block change, no indent, return\n");
+	if (numblockchange == 0 
+				&& numcontextchange == 0 
+				&& numindentchange == 0 
+				&& (pat->block != BLOCK_SPECIAL_INDENT || pat->block == BLOCK_SPECIAL_INDENT && gtk_text_iter_ends_line(&match->end))) {
+		DBG_SCANCACHE("found_match, no context change, no block change, no indent or indent on further enmpty line, return\n");
 		return scanning->context;
 	}
+	
 
 	if (cleanup_obsolete_cache_items && scanning->nextfound) {
 		/* we have to do the cleanup *after* found_start_of_block/found_end_of_block/found_context_change so
@@ -1596,7 +1553,8 @@ found_match(BluefishTextView * btv, Tmatch * match, Tscanning * scanning)
 	found->fcontext = fcontext;
 	found->charoffset_o = match_end_o;
 	if (G_UNLIKELY(pat->block == BLOCK_SPECIAL_INDENT)) {
-		found->indentlevel = match_end_o - match_start_o;
+		/* indentlevel is currently a 8bit unsigned integer, so we never store a value higher than MAX_INDENT_LEVEL */
+		found->indentlevel = MIN(match_end_o - match_start_o,MAX_INDENT_LEVEL);
 		DBG_SCANNING("set indentlevel=%d for found at offset %d\n",found->indentlevel, found->charoffset_o);
 	} else {
 		found->indentlevel = NO_INDENT_FOUND;

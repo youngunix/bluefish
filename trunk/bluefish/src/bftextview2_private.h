@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * bftextview2_private.h
  *
- * Copyright (C) 2012,2013,2014 Olivier Sessink
+ * Copyright (C) 2012,2013,2014,2023 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -229,6 +229,7 @@ typedef struct {
 								   on 32bit this type has size 4+4+4+2 + 2 padding = 16 bytes
 								 */
 #define NO_INDENT_FOUND 255
+#define MAX_INDENT_LEVEL 244
 
 typedef struct {
 	Tfoundcontext *fcontext;	/* if numcontextchange == 0 this points to the current active context
