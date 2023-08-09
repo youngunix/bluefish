@@ -490,6 +490,7 @@ sessionprefs_apply(Tsessionprefs * sprefs, Tsessionvars * sessionvars)
 	integer_apply(&sessionvars->wrap_text_default, sprefs->prefs[session_wrap_text], TRUE);
 	integer_apply(&sessionvars->display_right_margin, sprefs->prefs[display_right_margin], TRUE);
 	integer_apply(&sessionvars->show_visible_spacing, sprefs->prefs[show_visible_spacing], TRUE);
+	integer_apply(&sessionvars->show_indenting, sprefs->prefs[show_indenting], TRUE);
 
 	string_apply(&template_name, sprefs->prefs[template]);
 	g_free(sessionvars->template);
@@ -547,7 +548,7 @@ sessionprefs(const gchar * label, Tsessionprefs * sprefs, Tsessionvars * session
 	g_list_free(poplist);
 
 	vbox2 = dialog_vbox_labeled(_("<b>Options</b>"), sprefs->vbox);
-	table = dialog_table_in_vbox_defaults(6, 4, 0, vbox2);
+	table = dialog_table_in_vbox_defaults(7, 4, 0, vbox2);
 
 	sprefs->prefs[autocomplete] =
 		dialog_check_button_in_table(_("Enable a_uto-completion"), sessionvars->autocomplete, table, 0, 1, 0,1);
@@ -573,12 +574,13 @@ sessionprefs(const gchar * label, Tsessionprefs * sprefs, Tsessionvars * session
 		dialog_check_button_in_table(_("Enable syntax scanning"), sessionvars->enable_syntax_scan, table, 1,2,3,4);
 	sprefs->prefs[show_visible_spacing] =
 		dialog_check_button_in_table(_("Show _visible spacing"), sessionvars->show_visible_spacing, table, 1,2,4,5);
-
+	sprefs->prefs[show_indenting] =
+		dialog_check_button_in_table(_("Show _indenting"), sessionvars->show_indenting, table, 1,2,5,6);
 
 #ifdef HAVE_LIBENCHANT
 	sprefs->prefs[session_spell_check] = dialog_check_button_in_table(_("_Enable spell check"),
 																	  sessionvars->spell_check_default, table,
-																	  1,2,5,6);
+																	  0,1,6,7);
 #endif
 
 	vbox2 = dialog_vbox_labeled(_("<b>Tab Stops</b>"), sprefs->vbox);

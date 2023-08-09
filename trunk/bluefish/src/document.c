@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * document.c - the document
  *
- * Copyright (C) 1998-2018 Olivier Sessink
+ * Copyright (C) 1998-2023 Olivier Sessink
  * Copyright (C) 1998 Chris Mazuc
  * some additions Copyright (C) 2004 Eugene Morenko(More)
  *
@@ -3001,6 +3001,8 @@ doc_new_backend(Tbfwin * bfwin, gboolean force_new, gboolean readonly, gboolean 
 											 bfwin->session->display_right_margin);
 	bluefish_text_view_set_show_visible_spacing(BLUEFISH_TEXT_VIEW(newdoc->view),
 												bfwin->session->show_visible_spacing);
+	bluefish_text_view_set_show_indenting(BLUEFISH_TEXT_VIEW(newdoc->view),
+												bfwin->session->show_indenting);
 #ifdef HAVE_LIBENCHANT
 	BLUEFISH_TEXT_VIEW(newdoc->view)->spell_check = BFWIN(bfwin)->session->spell_check_default;
 #endif
