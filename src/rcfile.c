@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * rcfile.c - loading and parsing of the configfiles
  *
- * Copyright (C) 2000-2017 Olivier Sessink
+ * Copyright (C) 2000-2023 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1279,6 +1279,7 @@ return_session_configlist(GHashTable * configlist, Tsessionvars * session)
 	init_prop_integer(&configlist, &session->view_blockstack, "view_blockstack:", 1, FALSE);
 	init_prop_integer(&configlist, &session->autocomplete, "autocomplete:", 1, FALSE);
 	init_prop_integer(&configlist, &session->show_mbhl, "show_mbhl:", 1, FALSE);
+	init_prop_integer(&configlist, &session->show_indenting, "show_indenting:", 1, FALSE);
 
 	init_prop_integer(&configlist, &session->snr3_type, "snr_type:", 1, FALSE);
 	init_prop_integer(&configlist, &session->snr3_replacetype, "snr_replacetype:", 1, FALSE);

@@ -2,7 +2,7 @@
  * bluefish.h - global prototypes
  *
  * Copyright (C) 1998 Olivier Sessink and Chris Mazuc
- * Copyright (C) 1999-2017 Olivier Sessink
+ * Copyright (C) 1999-2023 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -428,6 +428,7 @@ typedef struct {
 	gint view_blockstack;
 	gint autocomplete;			/* whether or not to enable autocomplete by default for each new document */
 	gint show_mbhl;				/* show matching block begin-end by default */
+	gint show_indenting; 	/* show indenting by default */
 
 	/* snr3 advanced search and replace */
 	gint snr3_type;
@@ -468,9 +469,10 @@ typedef struct {
 	gint convertcolumn_horizontally;
 	gint display_right_margin;
 	gint show_visible_spacing;
-	/* 47 * sizeof(gint) */
+	/* 48 * sizeof(gint) */
 	/* IF YOU EDIT THIS STRUCTURE PLEASE EDIT THE CODE IN PROJECT.C THAT COPIES
-	   A Tsessionvar INTO A NEW Tsessionvar AND ADJUST THE SIZES!!!!!!!!!!!!!!!!!!!!!! */
+	   A Tsessionvar INTO A NEW Tsessionvar in project_setup_initial_session() 
+	   AND ADJUST THE SIZES!!!!!!!!!!!!!!!!!!!!!! */
 #ifdef HAVE_LIBENCHANT
 	gint spell_check_default;
 	gint spell_insert_entities;

@@ -1,7 +1,7 @@
 /* Bluefish HTML Editor
  * preferences.h - the preferences code
  *
- * Copyright (C) 2002-2011 Olivier Sessink
+ * Copyright (C) 2002-2023 Olivier Sessink
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,6 +36,7 @@ enum {
 	template,
 	display_right_margin,
 	show_visible_spacing,
+	show_indenting,
 #ifdef HAVE_LIBENCHANT
 	session_spell_check,
 #endif

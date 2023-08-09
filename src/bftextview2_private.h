@@ -95,7 +95,7 @@ typedef struct {
 	guint8 autocomplete_has_conditions; /* 0 means any autocomplete item is valid, 1 means we have to check for runtime conditions */
 	guint8 default_spellcheck;
 	guint8 dump_dfa_run;
-	guint8 indent_detection;
+	guint8 indent_detection; /* stores the number of characters for the indenting (so tab=1 character) */
 } Tcontext;
 /*
 32bit size = 5*32 + 7*8 = 208 + 8 padding bits = 28 bytes
