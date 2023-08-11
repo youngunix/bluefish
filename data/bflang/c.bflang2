@@ -25,6 +25,8 @@
 	<mime type="text/x-chdr"/>
 	<mime type="application/x-csrc"/>
 	<mime type="application/x-chdr"/>
+	<mime type="text/x-c"/> <!-- MacOS has these text/x-c and text/x-h mime types --> 
+	<mime type="text/x-h"/>
 	<mime type="text/plain?c"/>
 	<mime type="text/plain?h"/>
 	<option name="string_is_block" default="0" description="Show a string as a block"/>
