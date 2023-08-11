@@ -42,6 +42,7 @@
 <bflang name="PHP" version="3" contexts="421" matches="9456">
 <header>
 	<mime type="application/x-php"/>
+	<mime type="text/x-php" /><!-- macos -->
 	<mime type="text/plain?php"/>
 	<option name="load_reference" default="1" description="Load reference data"/>
 	<option name="load_completion" default="1" description="Load completion data"/>
