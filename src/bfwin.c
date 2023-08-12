@@ -23,7 +23,7 @@
 
 #ifdef MAC_INTEGRATION
 #include <gtkosxapplication.h>
-#include <gtk-mac-menu.h>
+/*#include <gtk-mac-menu.h>*/
 #endif
 
 #include <string.h>
