@@ -127,7 +127,7 @@ enum {
 
 static void bmark_get_iter_at_tree_position_and_show(Tbfwin * bfwin, Tbmark * m);
 static Tbmark *bmark_from_strarr(gchar **items, GFile *cacheduri);
-
+static gint bmark_margin_get_initial_bookmark(Tdocument * doc, guint offset, gpointer * bmark);
 /* Free bookmark structure */
 static void
 bmark_free(gpointer ptr)
@@ -1870,7 +1870,7 @@ bmark_margin_get_first_bookmark(Tdocument *doc, gpointer *bmark) {
 
 /* bmark_margin_get_initial_bookmark
 this function is only used for the previous and the next function */
-gint
+static gint
 bmark_margin_get_initial_bookmark(Tdocument * doc, guint offset, gpointer * bmark)
 {
 	GtkTextIter textit;
