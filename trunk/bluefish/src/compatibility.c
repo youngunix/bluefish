@@ -31,7 +31,7 @@
 
 #ifndef HAVE_STRCASESTR
 #include <ctype.h>
-char *strcasestr(char *a, char *b)
+char *strcasestr(const char *a, const char *b)
 {
 	size_t l;
 	char f[3];

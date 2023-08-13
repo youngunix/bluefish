@@ -29,7 +29,7 @@ void g_list_free_full(GList *list,GDestroyNotify free_func);
 #endif
 
 #ifndef HAVE_STRCASESTR
-char *strcasestr(char *a, char *b);
+char *strcasestr(const char *a, const char *b);
 #endif
 
 #if !GLIB_CHECK_VERSION(2,40,0)
