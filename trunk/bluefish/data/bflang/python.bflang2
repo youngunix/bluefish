@@ -19,7 +19,7 @@
 		along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<bflang name="Python" version="3" contexts="7" matches="2018">
+<bflang name="Python" version="3" contexts="6" matches="2019">
 <header>
 	<mime type="application/x-python"/>
 	<mime type="text/x-python" />

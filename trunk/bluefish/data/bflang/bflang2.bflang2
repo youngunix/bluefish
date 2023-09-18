@@ -40,7 +40,7 @@
 	<!--<smartselection characters="&gt;&lt;" />-->
 </properties>
 <definition>
-<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;">
+<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;" detect_indent="1">
 <element id="e.comment" pattern="&lt;!--" highlight="comment" starts_block="1">
 	<context id="c.comment" symbols="-&gt; &#9;&#10;&#13;" highlight="comment">
 	<element pattern="--&gt;" ends_block="1" blockstartelement="e.comment" highlight="comment" ends_context="1" />
@@ -50,13 +50,13 @@
 <tag name="bflang" highlight="tag" attributes="name,version,table,matches,contexts" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;" >
 <autocomplete append="name=&quot;&quot; version=&quot;1&quot;&gt;" />
 <reference>the <i>bflang</i> tag is the root tag of the bluefish language file. It should have attribute <i>name</i> and <i>version</i>.</reference>
-	<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;">
+	<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;"  detect_indent="1">
 	<element idref="e.comment"/>
 	<element idref="e.entity" />
 	<tag name="header" highlight="tag" >
 	<autocomplete append="&gt;" />
 	<reference>The <i>header</i> tag is the region of the language file that is always loaded, regardless if the language is used or not. </reference>
-		<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;">
+		<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;" detect_indent="1">
 		<element idref="e.comment"/>
 		<element idref="e.entity" />
 		<tag name="mime" highlight="tag" attributes="type" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;">
@@ -76,7 +76,7 @@ The default value defines the behavior if the user previously did not have this 
 	</tag>
 	<tag name="properties" highlight="tag">
 		<autocomplete append="&gt;&#10;&lt;/properties&gt;" backup_cursor="13" />
-		<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;" >
+		<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;"  detect_indent="1">
 			<element idref="e.comment"/>
 			<element idref="e.entity" />
 			<tag id="t.tagcomment" name="comment" highlight="tag" attributes="type,start,end,id" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;">
@@ -93,7 +93,7 @@ The default value defines the behavior if the user previously did not have this 
 	</tag>
 	<tag name="definition" highlight="tag" autocomplete_append="&gt;">
 	<reference>The <i>definition</i> tag is the region of the language file that actually defines the language. This region is only loaded when a file of this type is opened in the editor.</reference>
-		<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;" >
+		<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;" detect_indent="1">
 		<element idref="e.comment"/>
 		<element idref="e.entity" />
 		<tag name="context" id="t.context" highlight="tag" attributes="id,idref,symbols,highlight,commentid_block,commentid_line,default_spellcheck,dump_dfa_chars,dump_dfa_run,detect_indent" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;">
@@ -103,7 +103,7 @@ The default value defines the behavior if the user previously did not have this 
 Some contexts change to a different language syntax, e.g. javascript inside html. In such a case the context ay bring new options for the line coment (commentid_block; refers to the id in properties/comment), block comment (commentid_line; refers to the id in properties/comment) and the default spellcheck (default_spellcheck, set to 0 or 1 if words that are not highlighted should be checked for spelling or not).
 
 </reference>
-			<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;">
+			<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;" detect_indent="1">
 			<element idref="e.comment"/>
 			<element idref="e.entity" />
 			<tag id="t.element" name="element" highlight="pattern-tag" attributes="id,idref,pattern,starts_block,ends_block,block_name,ends_context,highlight,blockstartelement,stretch_blockstart,blockhighlight,class,notclass,is_regex,case_insens,identifier_mode,identifier_autocomp,identifier_jump,condition_contextref,condition_mode,condition_relation" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;" >
@@ -113,7 +113,7 @@ Several attributes of an element define the block behavior. An element may start
 An element may also end one or more contexts, the value of the attribute <b>ends_context</b> defines the number of contexts that will closed.
 Some elements are identifiers, for example the name of a function or variable. In some cases the pattern itself is an identifier, set <b>identifier_mode="2"</b>. An example is the php variable <i>$foo</i>. In some cases the name following the pattern is the identifier, set <b>identifier_mode="1"</b>. An example is in php <i>function foo</i>. You can add identifiers to the auto-completion popup, set <b>identifier_autocomp="1"</b> or make them a reference for the go to reference function, set <b>identifier_jump="1"</b>.
 </reference>
-				<context id="c.innerpattern" symbols="&gt;&lt;&amp;; &#9;&#10;&#13;">
+				<context id="c.innerpattern" symbols="&gt;&lt;&amp;; &#9;&#10;&#13;" detect_indent="1">
 					<element idref="e.comment"/>
 					<element idref="e.entity" />
 					<tag id="t.reference" name="reference" highlight="tag" block_name="Reference block">
@@ -144,7 +144,7 @@ Some elements are identifiers, for example the name of a function or variable. I
 			<tag id="t.tag" name="tag" highlight="pattern-tag" attributes="id,idref,name,highlight,class,block_name,notclass,attributes,autocomplete,autocomplete_append,autocomplete_backup_cursor,attribhighlight,attrib_autocomplete_append,attrib_autocomplete_backup_cursor,case_insens,sgml_shorttag,no_close" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;">
 			<autocomplete append=" name=&quot;&quot; /&gt;" />
 			<reference>tag is added for convenience. Everything within tag is possible with a combination of multiple element and context tags. A tag automatically is a block with its own end-tag, and a tag automatically creates a new context for all attributes and autocompletes them. Most attributes are the same as <i>element</i>.</reference>
-				<context id="c.innertag" symbols="&gt;&lt;&amp;; &#9;&#10;&#13;">
+				<context id="c.innertag" symbols="&gt;&lt;&amp;; &#9;&#10;&#13;" detect_indent="1">
 					<element idref="e.comment"/>
 					<element idref="e.entity" />
 					<tag idref="t.reference" />
@@ -163,7 +163,7 @@ Some elements are identifiers, for example the name of a function or variable. I
 			<tag name="group" id="t.group" highlight="tag" attributes="highlight,class,notclass,case_insens,is_regex,attrib_autocomplete_append,attrib_autocomplete_backup_cursor,attribhighlight,no_close,sgml_shorttag" attribhighlight="attribute" attrib_autocomplete_append="=&quot;&quot;">
 			<autocomplete append="&gt;" />
 			<reference>group is a tag that can be used to group multiple tags or multiple elements that share the same attribute values for the attributes highlight, autocomplete, autocomplete_append, class, case_insens, is_regex, attrib_autocomplete_append or attribhighlight. These attributes are then only set for the group tag, and not for the elements or tags immediately within this group tag.</reference>
-				<context id="c.group" symbols="&gt;&lt;&amp;; &#9;&#10;&#13;">
+				<context id="c.group" symbols="&gt;&lt;&amp;; &#9;&#10;&#13;" detect_indent="1">
 				<element idref="e.comment"/>
 				<element idref="e.entity" />
 				<tag idref="t.element"/>
@@ -181,7 +181,7 @@ Some elements are identifiers, for example the name of a function or variable. I
 
 <tag name="bfinc" highlight="tag" >
 <reference>the <i>bfinc</i> tag is the root tag of the bluefish language include file.</reference>
-	<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;" >
+	<context symbols="&gt;&lt;&amp;; &#9;&#10;&#13;" detect_indent="1">
 		<element idref="e.comment"/>
 		<element idref="e.entity" />
 		<tag idref="t.context" />

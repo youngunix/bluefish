@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		all-html5.bfinc $Revision$
 
-		Copyright (C) 2008-2012 Olivier Sessink
+		Copyright (C) 2008-2023 Olivier Sessink
 
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@
 
 <tag name="style" highlight="html-tag" case_insens="1" sgml_shorttag="1" attributes="media,type,&globals;" attribhighlight="html-attribute" attrib_autocomplete_append="=&#34;&#34;" attrib_autocomplete_backup_cursor="1">
 	<autocomplete append=" type=&quot;text/css&quot;&gt;&#10;&#10;&lt;/style&gt;" backup_cursor="9" />
-	<context id="c.html.css.main" symbols=" &#9;&#10;&#13;{}./*&lt;&gt;:" commentid_block="cm.cblockcomment" commentid_line="none" default_spellcheck="0">
+	<context id="c.html.css.main" symbols=" &#9;&#10;&#13;{}./*&lt;&gt;:" commentid_block="cm.cblockcomment" commentid_line="none" default_spellcheck="0" detect_indent="1">
 		<element idref="e.html.lcomment"/>
 		<element id="e.css.lcomment" pattern="/*" starts_block="1" highlight="css-comment">
 			<context symbols="*/&#9;&#10;&#13;" highlight="css-comment">
@@ -60,7 +60,7 @@
 				<element pattern="}" ends_block="1" highlight="css-brackets" blockstartelement="e.css.media.group.lbrace" ends_context="2" />
 			</group>
 		<element id="e.css.lbrace" pattern="{" starts_block="1" highlight="css-brackets">
-			<context symbols=" &#9;&#10;&#13;{}.:&quot;';/*">
+			<context symbols=" &#9;&#10;&#13;{}.:&quot;';/*" detect_indent="1">
 				<element id="e.css.lcomment" pattern="/*" starts_block="1" highlight="css-comment">
 					<context symbols="*/&#9;&#10;&#13;" highlight="css-comment">
 						<element pattern="*/" ends_block="1" blockstartelement="e.css.lcomment" highlight="css-comment" ends_context="1" />
@@ -97,7 +97,7 @@ css-rules are defined in the inner context for <style>  -->
 
 <tag name="script" id="t.html.script" highlight="html-tag" case_insens="1" sgml_shorttag="1" attributes="src,async,defer,type,charset,&globals;" attribhighlight="html-attribute"  attrib_autocomplete_append="=&#34;&#34;" attrib_autocomplete_backup_cursor="1" >
 	<autocomplete append=" type=&quot;text/javascript&quot;&gt;&#10;&#10;&lt;/script&gt;" backup_cursor="10" />
-	<context symbols=" ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;." commentid_line="cm.cpplinecomment"  commentid_block="none" default_spellcheck="0">
+	<context symbols=" ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;." commentid_line="cm.cpplinecomment"  commentid_block="none" default_spellcheck="0" detect_indent="1" >
 		<element pattern="(" id="e.html.js.lparen" starts_block="1" highlight="js-brackets" block_name="Javascript Parentheses block" />
 		<element pattern=")" highlight="js-brackets" ends_block="1" blockstartelement="e.html.js.lparen" />
 		<element pattern="{" id="e.html.js.lbrace" starts_block="1" highlight="js-brackets" block_name="Javascript Curly brackets block" />
