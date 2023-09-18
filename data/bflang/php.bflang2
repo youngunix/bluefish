@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		php.bflang2 $Revision$
 
-		Copyright (C) 2008-2015 Olivier Sessink
+		Copyright (C) 2008-2023 Olivier Sessink
 
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@
 	<!ENTITY JQuery SYSTEM "JQuery.bfinc">
 ]>
 
-<bflang name="PHP" version="3" contexts="421" matches="9456">
+<bflang name="PHP" version="3" contexts="352" matches="9071">
 <header>
 	<mime type="application/x-php"/>
 	<mime type="text/x-php" /><!-- macos -->
@@ -133,7 +133,7 @@
 
 <group class="php_short_open_tag">
 <element id="e.php.short.open" pattern="&lt;(\?|\?php)" is_regex="1" starts_block="1" block_name="PHP block" highlight="php-block-tag">
-<context symbols="'&#34;(){}[];#:.,/?!$^*-+=&gt;&lt;&amp; &#9;&#10;&#13;" commentid_block="cm.cblockcomment" commentid_line="cm.cpplinecomment" default_spellcheck="0" highlight="php-inner-context">
+<context symbols="'&#34;(){}[];#:.,/?!$^*-+=&gt;&lt;&amp; &#9;&#10;&#13;" commentid_block="cm.cblockcomment" commentid_line="cm.cpplinecomment" default_spellcheck="0" highlight="php-inner-context" detect_indent="1" >
 &all-php;
 <element id="e.php.short.lbrace" pattern="{" starts_block="1" highlight="brackets" block_name="Curly brackets block" />
 <element pattern="}" ends_block="1" blockstartelement="e.php.short.lbrace" highlight="brackets" />

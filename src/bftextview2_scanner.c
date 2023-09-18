@@ -2237,7 +2237,9 @@ scancache_check_integrity(BluefishTextView * btv, GTimer *timer) {
 			g_warning("scancache_check_integrity, found(%p) has offset %d, the previous found had offset %d, not ordered correctly?!?!!\n",found,found->charoffset_o, prevfound_o);
 			dump_scancache(btv);
 			g_assert_not_reached();
-		} else if (found->charoffset_o == prevfound_o && prevfound_o != 0 && previndentlevel!=0) {
+		} else if (found->charoffset_o == prevfound_o && prevfound_o != 0 && (previndentlevel == NO_INDENT_FOUND && found->indentlevel == NO_INDENT_FOUND)) {
+			/* only indentlevel detection can be at the same position as another found, so if they are both not set (for
+			the previous and the current found) we found a problem */
 			g_warning("scancache_check_integrity, previous found and the next found have offset %d, duplicate!!\n",found->charoffset_o);
 			dump_scancache(btv);
 			g_assert_not_reached();

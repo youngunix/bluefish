@@ -3,7 +3,7 @@
 	Bluefish HTML Editor
 	css-selectors.bfinc $Revision$
 
-	Copyright (C) 2008-2012 Olivier Sessink
+	Copyright (C) 2008-2023 Olivier Sessink
 
     This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -244,11 +244,11 @@
 	<autocomplete append="  {&#10;&#9;from {  }&#10;&#9;to {  }&#10;}" backup_cursor="24" />
 	<context symbols=" &#9;&#10;&#13;{}.:&quot;';*/">
 		<element pattern="{" starts_block="1" highlight="css-brackets" id="e.css.keyframes.lbrace">
-			<context symbols=" &#9;&#10;&#13;{}.:&quot;';*/" >
+			<context symbols=" &#9;&#10;&#13;{}.:&quot;';*/" detect_indent="1">
 				<element pattern="from" highlight="css-html-tag" />
 				<element pattern="to" highlight="css-html-tag" />
 				<element idref="e.css.lbrace" id="e.css.lbrace" pattern="{" starts_block="1" highlight="css-brackets" >
-					<context symbols=" &#9;&#10;&#13;{}.:&quot;';*/" id="c.css.rules">
+					<context symbols=" &#9;&#10;&#13;{}.:&quot;';*/" id="c.css.rules" detect_indent="1">
 						&css-rules;
 						<element idref="e.css.lcomment" />
 						<element id="e.css.rbrace" pattern="}" ends_block="1" blockstartelement="e.css.lbrace" highlight="css-brackets" ends_context="1" />
