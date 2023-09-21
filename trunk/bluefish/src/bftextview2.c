@@ -1108,7 +1108,15 @@ get_indent_paint_position_from_char_offset(BluefishTextView * btv, guint32 charo
 		rect.height=0;
 	*y = rect.y + rect.height;
 }
-
+#ifdef PAINTDEBUG
+static void 
+print_indent_stack(Tindent *ind){
+	while(ind) {
+		g_print("have ind %p with parent %p at level %d\n",ind,ind->parentindent,ind->level);
+		ind = ind->parentindent;
+	}
+}
+#endif
 static Tindent *
 new_indent(BluefishTextView *btv, guint level, guint charoffset_o, Tindent *parentindent) {
 	Tindent *ind = g_slice_new0(Tindent);
@@ -1122,8 +1130,9 @@ static Tindent *
 init_indent_stack(BluefishTextView * btv, GSequenceIter *siter) {
 	GSequenceIter *tmpsiter = siter;
 	Tfound *found;
-	gboolean have_so_indent = FALSE;
-	Tindent *ind=NULL;
+	gboolean have_so_indent = FALSE; /* once set to true we have found the start-of the indenting*/
+	Tindent *ind=NULL, *topind=NULL;
+	guint curlevel;
 	/* see if we have an indenting level here, and then move up to find lower indenting levels until 
 	we find a 0 indent level --> at that point we have a complete indent stack */
 	if (siter == NULL)
@@ -1134,13 +1143,24 @@ init_indent_stack(BluefishTextView * btv, GSequenceIter *siter) {
 		if (!found) return ind;
 		if (found->indentlevel == 0) {
 			have_so_indent = TRUE;
-		} else if (found->indentlevel != NO_INDENT_FOUND) {
-			ind = new_indent(btv, found->indentlevel, found->charoffset_o, ind);
-			DBG_PAINTINDENT("init_indent_stack, add indent with level %d at offset %d\n", found->indentlevel, found->charoffset_o);
+			DBG_PAINTINDENT("init_indent_stack, found indent 0 at offset %d, returning\n",found->charoffset_o);
+		} else if (found->indentlevel != NO_INDENT_FOUND && (!ind || found->indentlevel < curlevel)) {
+			Tindent *newind;
+			curlevel = found->indentlevel;
+			newind = new_indent(btv, found->indentlevel, found->charoffset_o, NULL);
+			/* should not be pushed on the top of stack, but pushed under the stack */
+			if (ind) {
+				ind->parentindent=newind;
+			} else {
+				topind=newind;
+			}
+			ind = newind;
+			DBG_PAINTINDENT("init_indent_stack, added indent %p with level %d at offset %d\n", newind, found->indentlevel, found->charoffset_o);
 		}
 		tmpsiter = g_sequence_iter_prev(tmpsiter);
 	}
-	return ind;
+	/*print_indent_stack(ind);*/
+	return topind;
 } 
 
 static void
@@ -1211,13 +1231,14 @@ paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible
 			// skip this found
 		} else if (found->indentlevel == 0) {
 			if (ind) {
+				DBG_PAINTINDENT("found indent level 0 at position %d, empty the stack\n",found->charoffset_o);
 				free_indent_stack(ind);
 				ind=NULL;
 			}
 		} else if (!ind || found->indentlevel > ind->level){
 			// new indenting level, push to stack
+			DBG_PAINTINDENT("paint_indenting, indent was at %d, found has new indenting level %d at offset %d, push to stack\n",ind?ind->level:-1,found->indentlevel, found->charoffset_o);
 			ind = new_indent(btv, found->indentlevel, found->charoffset_o, ind);
-			DBG_PAINTINDENT("paint_indenting, found has new indenting level %d at offset %d, push to stack\n",found->indentlevel, found->charoffset_o);
 		} else if (found->indentlevel == ind->level){
 			guint x2,y2;
 			// same level as before
@@ -1231,7 +1252,7 @@ paint_indenting(BluefishTextView * btv, cairo_t * cr, GtkTextIter * startvisible
 			do {
 				Tindent *oldind = ind;
 				ind = (Tindent *)ind->parentindent;
-				DBG_PAINTINDENT("paint_indenting, pop indent level %d from stack\n",oldind->level);
+				DBG_PAINTINDENT("paint_indenting, popped indent level %d from stack, new level is %d\n",oldind->level, ind?ind->level:-1);
 				g_slice_free(Tindent, oldind);
 			} while (ind && found->indentlevel < ind->level);
 			DBG_PAINTINDENT("paint_indenting, after pop, indent level on stack is %d\n",ind?ind->level:-1);
