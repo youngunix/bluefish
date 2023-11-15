@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		perl.bflang2 $Revision$
 
-		Copyright (C) 2008 Olivier Sessink
+		Copyright (C) 2008-2023 Olivier Sessink
 
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -30,20 +30,24 @@
 	<highlight name="built-in-function" style="function"  />
 	<highlight name="comment" style="comment"  />
 	<highlight name="function" style="special-function"  />
+	<highlight name="method" style="special-function"  />
 	<highlight name="keyword" style="keyword"  />
 	<highlight name="pragma" style="preprocessor"   />
 	<highlight name="pointer" style="special-value"  />
 	<highlight name="special_keyword" style="special-keyword"  />
 	<highlight name="string" style="string"  />
 	<highlight name="value" style="value"  />
+    <highlight name="attribute" style="variable"  />
 	<highlight name="variable" style="variable"  />
 	<highlight name="warning" style="warning"  />
 </header>
+
 <properties>
 	<!-- <comment type="block" start="=start" end="=end" /> -->
 	<comment type="line" start="#" />
 	<smartselection characters="_" />
 </properties>
+
 <definition>
 <context symbols=" ;(){}[]:\&#34;\\',&gt;&lt;*&amp;^%!+=-|/?#&#9;&#10;&#13;">
 
@@ -88,18 +92,21 @@
 	<element pattern="@ISA" />
 	<element pattern="$|" />
 </group>
+
 <group  highlight="special_keyword">
 	<autocomplete enable="1" />
 	<element pattern="package" />
 	<element pattern="require" />
 	<element pattern="use" />
 </group>
+
 <group  highlight="warning">
 	<autocomplete enable="1" />
 	<element pattern="strict" />
 	<element pattern="feature" />
 	<element pattern="warnings" />
 </group>
+
 <group  highlight="pragma">
 	<autocomplete enable="1" />
 	<element pattern="attributes" />
@@ -125,6 +132,7 @@
 	<element pattern="utf8" />
 	<element pattern="vars" />
 </group>
+
 <group  highlight="built-in-function">
 	<autocomplete enable="1" />
 	<element pattern="abs" />
@@ -317,11 +325,18 @@
 	<element pattern="write" />
 </group>
 
-<group highlight="variable" case_insens="1">
-	<!-- the next regex patterns used to start with @$?[a and %$?[a but that makes them overlap with the pointer patterns defined below -->
-	<element pattern="@$[a-z_][a-z0-9_]*" is_regex="1" />
-	<element pattern="%$[a-z_][a-z0-9_]*" is_regex="1" />
-	<element pattern="$[a-z_][a-z0-9_]*" is_regex="1" />
+<group  highlight="method">
+	<element pattern="[A-Za-z][a-z0-9_]*->[a-z_][a-z0-9_]*" is_regex="1" />
+	<element pattern="$[a-z_][a-z0-9_]*->[a-z_][a-z0-9_]*" is_regex="1" />
+</group>
+
+<group highlight="attribute">
+	<element pattern="$[a-z_][a-z0-9_]*->{$?[a-z_][a-z0-9_]*}" is_regex="1" />
+</group>
+
+<group highlight="variable">
+	<element pattern="[$@%][A-Za-z_][a-z0-9_]*::[a-z_][a-z0-9_]*" is_regex="1" />
+	<element pattern="[$@%][a-z_][a-z0-9_]*" is_regex="1" />
 	<element pattern="$#[a-z_][a-z0-9_]*" is_regex="1" />
 	<element pattern="$[1-9]" is_regex="1" />
 	<element pattern="$[`'@!]" is_regex="1" />
@@ -334,19 +349,21 @@
 	<element pattern="[0-9]+\.[0-9]+" is_regex="1"  />
 	<element pattern="[0-9]+" is_regex="1"  />
 </group>
-<group highlight="pointer" case_insens="1"><!-- does not yet work - use context? -->
-	<element pattern="\\@[a-z_][a-z0-9_]*" is_regex="1"  />
-	<element pattern="\\$[a-z_][a-z0-9_]*" is_regex="1"  />
-	<element pattern="\\%[a-z_][a-z0-9_]*" is_regex="1"  />
+
+<group highlight="pointer">
+	<element pattern="\\[$@%][A-Za-z_][a-z0-9_]*::[a-z_][a-z0-9_]*" is_regex="1"  />
+	<element pattern="\\[$@%][a-z_][a-z0-9_]*" is_regex="1"  />
 	<element pattern="\\&amp;[a-z_][a-z0-9_]*;" is_regex="1" />
 	<element pattern="\\&amp;{[a-z_][a-z0-9_]*}()" is_regex="1" />
 </group>
+
 <element pattern="&#34;" highlight="string">
 	<context symbols="\&#34;" highlight="string">
 		<element pattern="\\." is_regex="1" highlight="string"/>
 		<element pattern="&#34;" highlight="string" ends_context="1" />
 	</context>
 </element>
+
 <element pattern="'" highlight="string">
 	<context symbols="\'" highlight="string">
 		<element pattern="\\." is_regex="1" highlight="string"/>
