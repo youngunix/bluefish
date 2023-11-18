@@ -3,7 +3,7 @@
 		Bluefish HTML Editor
 		perl.bflang2 $Revision$
 
-		Copyright (C) 2008-2023 Olivier Sessink
+		Copyright (C) 2008 Olivier Sessink
 
 	    This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -325,17 +325,17 @@
 	<element pattern="write" />
 </group>
 
-<group  highlight="method">
-	<element pattern="[A-Za-z][a-z0-9_]*->[a-z_][a-z0-9_]*" is_regex="1" />
+<group  highlight="method" case_insens="1">
+	<element pattern="[A-Z_][a-z0-9_]*->[a-z_][a-z0-9_]*" is_regex="1" />
 	<element pattern="$[a-z_][a-z0-9_]*->[a-z_][a-z0-9_]*" is_regex="1" />
 </group>
 
-<group highlight="attribute">
+<group highlight="attribute" case_insens="1">
 	<element pattern="$[a-z_][a-z0-9_]*->{$?[a-z_][a-z0-9_]*}" is_regex="1" />
 </group>
 
-<group highlight="variable">
-	<element pattern="[$@%][A-Za-z_][a-z0-9_]*::[a-z_][a-z0-9_]*" is_regex="1" />
+<group highlight="variable" case_insens="1">
+	<element pattern="[$@%][A-Z_][a-z0-9_]*::[a-z_][a-z0-9_]*" is_regex="1" />
 	<element pattern="[$@%][a-z_][a-z0-9_]*" is_regex="1" />
 	<element pattern="$#[a-z_][a-z0-9_]*" is_regex="1" />
 	<element pattern="$[1-9]" is_regex="1" />
@@ -346,12 +346,12 @@
 
 <group highlight="value">
 	<element pattern="0x[0-9a-fA-F]+" is_regex="1"  />
-	<element pattern="[0-9]+\.[0-9]+" is_regex="1"  />
-	<element pattern="[0-9]+" is_regex="1"  />
+	<element pattern="[+-]?[0-9]+\.[0-9]+" is_regex="1"  />
+	<element pattern="[+-]?[0-9]+" is_regex="1"  />
 </group>
 
-<group highlight="pointer">
-	<element pattern="\\[$@%][A-Za-z_][a-z0-9_]*::[a-z_][a-z0-9_]*" is_regex="1"  />
+<group highlight="pointer" case_insens="1">
+	<element pattern="\\[$@%][A-Z_][a-z0-9_]*::[a-z_][a-z0-9_]*" is_regex="1"  />
 	<element pattern="\\[$@%][a-z_][a-z0-9_]*" is_regex="1"  />
 	<element pattern="\\&amp;[a-z_][a-z0-9_]*;" is_regex="1" />
 	<element pattern="\\&amp;{[a-z_][a-z0-9_]*}()" is_regex="1" />
